@@ -79,9 +79,40 @@ def _strip_noise(html: str) -> str:
     return str(body) if body else str(soup)
 
 
+def _fix_mojibake(text: str) -> str:
+    """Repair UTF-8 bytes that were decoded as Windows-1252.
+
+    e.g. "GroÃŸer" -> "Großer", "PÃ¤rt" -> "Pärt", "â€”" -> "—".
+    Safe no-op for already-clean strings (round-trip fails -> original kept).
+    """
+    if not isinstance(text, str) or not text:
+        return text
+    try:
+        return text.encode("windows-1252").decode("utf-8")
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        return text
+
+
+def _fix_event(event: Dict) -> Dict:
+    """Apply mojibake repair to all string fields in an event dict."""
+    for key, value in list(event.items()):
+        if isinstance(value, str):
+            event[key] = _fix_mojibake(value)
+        elif isinstance(value, list):
+            event[key] = [
+                _fix_mojibake(v) if isinstance(v, str) else v for v in value
+            ]
+    return event
+
+
 def fetch_static(url: str) -> str:
     response = requests.get(url, headers=HEADERS, timeout=30)
     response.raise_for_status()
+    # Force UTF-8 unless the server explicitly says otherwise. requests falls
+    # back to ISO-8859-1 when there's no charset header, which mangles German
+    # umlauts and em dashes on most modern sites.
+    if not response.encoding or response.encoding.lower() in ("iso-8859-1", "latin-1"):
+        response.encoding = response.apparent_encoding or "utf-8"
     return response.text
 
 
@@ -206,14 +237,19 @@ Output ONLY a JSON array. No prose, no markdown fences. If you find no events, r
 
     base = url
     now = datetime.utcnow().isoformat() + "Z"
+    cleaned: List[Dict] = []
     for event in events:
+        if not isinstance(event, dict):
+            continue
+        event = _fix_event(event)
         event["venue"] = venue_name
         event["source_url"] = url
         event["scraped_at"] = now
         # Make detail URLs absolute when relative
         if event.get("url"):
             event["url"] = urljoin(base, event["url"])
-    return events
+        cleaned.append(event)
+    return cleaned
 
 
 def extract_program_with_claude(
@@ -251,7 +287,7 @@ Output ONLY a JSON array. If no program is listed, return [].
         return []
     if not isinstance(program, list):
         return []
-    return [str(p) for p in program if p]
+    return [_fix_mojibake(str(p)) for p in program if p]
 
 
 # ---------------------------------------------------------------------------
