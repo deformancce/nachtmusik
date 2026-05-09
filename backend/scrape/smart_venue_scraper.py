@@ -8,10 +8,24 @@ For each venue in venues_germany.VENUES_GERMANY:
 
 Requires:
   export ANTHROPIC_API_KEY="sk-ant-..."
+
+Examples:
+  # List configured venues
+  python3 scrape/smart_venue_scraper.py --list
+
+  # Scrape a single venue (substring match on name)
+  python3 scrape/smart_venue_scraper.py --venue "Gewandhaus"
+
+  # Scrape an arbitrary URL
+  python3 scrape/smart_venue_scraper.py --url https://example.com/concerts --name "Example Hall"
+
+  # Scrape all venues
+  python3 scrape/smart_venue_scraper.py --all
 """
 from typing import List, Dict
 from datetime import datetime
 from pathlib import Path
+import argparse
 import json
 import os
 import sys
@@ -179,6 +193,69 @@ def save_results(result: Dict, filename: str = "all_venues_events.json") -> Path
     return output_path
 
 
+def _find_venues_by_name(needle: str) -> List[Dict]:
+    needle = needle.lower()
+    return [v for v in VENUES_GERMANY if needle in v["name"].lower()]
+
+
+def _print_venues() -> None:
+    print(f"{len(VENUES_GERMANY)} configured venues:\n")
+    by_tier: Dict = {}
+    for v in VENUES_GERMANY:
+        by_tier.setdefault(str(v["tier"]), []).append(v)
+    for tier in sorted(by_tier.keys()):
+        print(f"  Tier {tier}:")
+        for v in by_tier[tier]:
+            print(f"    - {v['name']:<45} {v['url']}")
+        print()
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Smart venue scraper (Claude API)")
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument("--all", action="store_true", help="Scrape all configured venues")
+    group.add_argument("--venue", help="Scrape one venue by substring of its name")
+    group.add_argument("--url", help="Scrape an arbitrary URL (use with --name)")
+    group.add_argument("--list", action="store_true", help="List configured venues and exit")
+    parser.add_argument("--name", default="Custom venue", help="Venue label when using --url")
+    parser.add_argument(
+        "--output",
+        default=None,
+        help="Output JSON filename (default depends on mode)",
+    )
+    args = parser.parse_args()
+
+    if args.list:
+        _print_venues()
+        return
+
+    if args.url:
+        target_venues = [{"name": args.name, "city": "", "url": args.url, "tier": "custom"}]
+        default_output = "single_venue_events.json"
+    elif args.venue:
+        target_venues = _find_venues_by_name(args.venue)
+        if not target_venues:
+            print(f"No venue matches '{args.venue}'. Try --list to see all venues.")
+            sys.exit(1)
+        if len(target_venues) > 1:
+            print(f"Matched {len(target_venues)} venues:")
+            for v in target_venues:
+                print(f"  - {v['name']}")
+            print("\nNarrow your --venue argument to pick exactly one.")
+            sys.exit(1)
+        default_output = "single_venue_events.json"
+    elif args.all:
+        target_venues = VENUES_GERMANY
+        default_output = "all_venues_events.json"
+    else:
+        # No args: default to first venue as a quick smoke test
+        target_venues = VENUES_GERMANY[:1]
+        default_output = "single_venue_events.json"
+        print("(No mode given — defaulting to a single venue smoke test. Use --help for options.)\n")
+
+    result = scrape_all_venues(target_venues)
+    save_results(result, args.output or default_output)
+
+
 if __name__ == "__main__":
-    result = scrape_all_venues()
-    save_results(result)
+    main()
