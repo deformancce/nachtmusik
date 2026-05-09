@@ -1,0 +1,181 @@
+"""
+Curated list of German concert halls and opera houses for op.us.
+
+Tiers:
+  - "top": flagship orchestras and philharmonic halls
+  - 1: major opera houses
+  - 2: mid-sized cities
+  - 3: smaller theaters and specialty venues
+
+URLs point at calendar / programme pages. The smart_venue_scraper iterates
+through this list, lets Claude extract events, and writes all_venues_events.json.
+"""
+from typing import List
+
+VENUES_GERMANY: List[dict] = [
+    # Top tier
+    {"name": "Gewandhaus Leipzig", "city": "Leipzig",
+     "url": "https://www.gewandhausorchester.de/grosse-concerte/", "tier": "top"},
+    {"name": "Elbphilharmonie Hamburg", "city": "Hamburg",
+     "url": "https://www.elbphilharmonie.de/de/programm", "tier": "top"},
+    {"name": "Berliner Philharmonie", "city": "Berlin",
+     "url": "https://www.berliner-philharmoniker.de/konzerte", "tier": "top"},
+    {"name": "Isarphilharmonie München", "city": "München",
+     "url": "https://www.gasteig.de/programm", "tier": "top"},
+    {"name": "Kölner Philharmonie", "city": "Köln",
+     "url": "https://www.koelner-philharmonie.de/de/programm", "tier": "top"},
+    {"name": "Tonhalle Düsseldorf", "city": "Düsseldorf",
+     "url": "https://www.tonhalle.de/de/programm", "tier": "top"},
+    {"name": "Alte Oper Frankfurt", "city": "Frankfurt",
+     "url": "https://www.alteoper.de/de/programm", "tier": "top"},
+    {"name": "Konzerthaus Berlin", "city": "Berlin",
+     "url": "https://www.konzerthaus.de/programm", "tier": "top"},
+    {"name": "Liederhalle Stuttgart", "city": "Stuttgart",
+     "url": "https://www.liederhalle-stuttgart.de/programm", "tier": "top"},
+    {"name": "Herkulessaal München", "city": "München",
+     "url": "https://www.residenz-muenchen.de/deutsch/konzerte/", "tier": "top"},
+
+    # Tier 1 — major opera houses
+    {"name": "Staatsoper Hamburg", "city": "Hamburg",
+     "url": "https://www.staatsoper-hamburg.de/de/spielplan", "tier": 1},
+    {"name": "Semperoper Dresden", "city": "Dresden",
+     "url": "https://www.semperoper.de/spielplan", "tier": 1},
+    {"name": "Staatsoper Stuttgart", "city": "Stuttgart",
+     "url": "https://www.staatsoper-stuttgart.de/spielplan", "tier": 1},
+    {"name": "Bayerische Staatsoper München", "city": "München",
+     "url": "https://www.staatsoper.de/spielplan", "tier": 1},
+    {"name": "Deutsche Oper Berlin", "city": "Berlin",
+     "url": "https://www.deutscheoperberlin.de/de_DE/calendar", "tier": 1},
+    {"name": "Staatsoper Berlin", "city": "Berlin",
+     "url": "https://www.staatsoper-berlin.de/de/spielplan", "tier": 1},
+    {"name": "Oper Frankfurt", "city": "Frankfurt",
+     "url": "https://oper-frankfurt.de/de/spielplan", "tier": 1},
+    {"name": "Oper Leipzig", "city": "Leipzig",
+     "url": "https://www.oper-leipzig.de/de/spielplan", "tier": 1},
+    {"name": "Oper Köln", "city": "Köln",
+     "url": "https://www.oper.koeln/spielplan", "tier": 1},
+    {"name": "Komische Oper Berlin", "city": "Berlin",
+     "url": "https://www.komische-oper-berlin.de/programm", "tier": 1},
+
+    # Tier 2 — mid-sized cities
+    {"name": "Beethovenhaus Bonn", "city": "Bonn",
+     "url": "https://www.beethoven.de/de/konzerte", "tier": 2},
+    {"name": "Konzerthaus Dortmund", "city": "Dortmund",
+     "url": "https://www.konzerthaus-dortmund.de/programm", "tier": 2},
+    {"name": "Meistersingerhalle Nürnberg", "city": "Nürnberg",
+     "url": "https://www.staatstheater-nuernberg.de/spielplan/konzerte", "tier": 2},
+    {"name": "Glocke Bremen", "city": "Bremen",
+     "url": "https://www.glocke.de/programm", "tier": 2},
+    {"name": "Laeiszhalle Hamburg", "city": "Hamburg",
+     "url": "https://www.elbphilharmonie.de/de/programm/laeiszhalle", "tier": 2},
+    {"name": "Prinzregententheater München", "city": "München",
+     "url": "https://www.staatsoper.de/spielstaetten/prinzregententheater.html", "tier": 2},
+    {"name": "Konzerthaus Freiburg", "city": "Freiburg",
+     "url": "https://www.konzerthaus.freiburg.de/programm", "tier": 2},
+    {"name": "Rosengarten Mannheim", "city": "Mannheim",
+     "url": "https://www.rosengarten-mannheim.de/veranstaltungen", "tier": 2},
+    {"name": "Philharmonie Essen", "city": "Essen",
+     "url": "https://www.theater-essen.de/philharmonie/spielplan", "tier": 2},
+    {"name": "Konzerthaus Karlsruhe", "city": "Karlsruhe",
+     "url": "https://www.staatstheater.karlsruhe.de/spielplan/konzerte", "tier": 2},
+    {"name": "Stadthalle Wuppertal", "city": "Wuppertal",
+     "url": "https://www.sinfonieorchester.wuppertal.de/de/konzerte", "tier": 2},
+    {"name": "Stadttheater Augsburg", "city": "Augsburg",
+     "url": "https://www.theater-augsburg.de/programm/konzerte", "tier": 2},
+    {"name": "Staatstheater Mainz", "city": "Mainz",
+     "url": "https://www.staatstheater-mainz.com/spielplan/konzerte", "tier": 2},
+    {"name": "Theater Regensburg", "city": "Regensburg",
+     "url": "https://www.theater-regensburg.de/programm/konzerte", "tier": 2},
+    {"name": "Staatstheater Kassel", "city": "Kassel",
+     "url": "https://www.staatstheater-kassel.de/programm/konzerte", "tier": 2},
+    {"name": "Festspielhaus Baden-Baden", "city": "Baden-Baden",
+     "url": "https://www.festspielhaus.de/spielplan", "tier": 2},
+    {"name": "Pierre Boulez Saal Berlin", "city": "Berlin",
+     "url": "https://www.boulezsaal.de/de/kalender", "tier": 2},
+
+    # Tier 3 — smaller theaters
+    {"name": "Staatstheater Braunschweig", "city": "Braunschweig",
+     "url": "https://www.staatstheater-braunschweig.de/spielplan/konzerte", "tier": 3},
+    {"name": "Theater Erfurt", "city": "Erfurt",
+     "url": "https://www.theater-erfurt.de/spielplan/konzerte", "tier": 3},
+    {"name": "Theater Chemnitz", "city": "Chemnitz",
+     "url": "https://www.theater-chemnitz.de/programm/konzerte", "tier": 3},
+    {"name": "Staatstheater Oldenburg", "city": "Oldenburg",
+     "url": "https://www.staatstheater-oldenburg.de/spielplan", "tier": 3},
+    {"name": "Theater Kiel", "city": "Kiel",
+     "url": "https://www.theater-kiel.de/programm/konzerte", "tier": 3},
+    {"name": "Theater Lübeck", "city": "Lübeck",
+     "url": "https://www.theater-luebeck.de/programm/konzerte", "tier": 3},
+    {"name": "Staatstheater Darmstadt", "city": "Darmstadt",
+     "url": "https://www.staatstheater-darmstadt.de/spielplan/konzerte", "tier": 3},
+    {"name": "Theater Ulm", "city": "Ulm",
+     "url": "https://www.theater.ulm.de/programm/konzerte", "tier": 3},
+    {"name": "Badisches Staatstheater Karlsruhe", "city": "Karlsruhe",
+     "url": "https://www.staatstheater.karlsruhe.de/spielplan", "tier": 3},
+    {"name": "Staatstheater Wiesbaden", "city": "Wiesbaden",
+     "url": "https://www.staatstheater-wiesbaden.de/spielplan/konzerte", "tier": 3},
+    {"name": "Philharmonie Hagen", "city": "Hagen",
+     "url": "https://www.theaterhagen.de/programm/konzerte", "tier": 3},
+    {"name": "Stadttheater Ingolstadt", "city": "Ingolstadt",
+     "url": "https://www.theater.ingolstadt.de/spielplan", "tier": 3},
+    {"name": "Landestheater Coburg", "city": "Coburg",
+     "url": "https://www.landestheater-coburg.de/spielplan/konzerte", "tier": 3},
+    {"name": "Theater Magdeburg", "city": "Magdeburg",
+     "url": "https://www.theater-magdeburg.de/programm/konzerte", "tier": 3},
+    {"name": "Mecklenburgisches Staatstheater Schwerin", "city": "Schwerin",
+     "url": "https://www.mecklenburgisches-staatstheater.de/spielplan/konzerte", "tier": 3},
+    {"name": "Theater Hof", "city": "Hof",
+     "url": "https://www.theater-hof.de/spielplan", "tier": 3},
+    {"name": "Theater Heidelberg", "city": "Heidelberg",
+     "url": "https://www.theaterheidelberg.de/spielplan/konzerte", "tier": 3},
+    {"name": "Theater Pforzheim", "city": "Pforzheim",
+     "url": "https://www.theater-pforzheim.de/spielplan/konzerte", "tier": 3},
+    {"name": "Landestheater Detmold", "city": "Detmold",
+     "url": "https://www.landestheater-detmold.de/spielplan/konzerte", "tier": 3},
+    {"name": "Pfalztheater Kaiserslautern", "city": "Kaiserslautern",
+     "url": "https://www.pfalztheater.de/spielplan/konzerte", "tier": 3},
+    {"name": "Staatstheater Cottbus", "city": "Cottbus",
+     "url": "https://www.staatstheater-cottbus.de/spielplan/konzerte", "tier": 3},
+    {"name": "Theater Freiburg", "city": "Freiburg",
+     "url": "https://www.theater.freiburg.de/spielplan/konzerte", "tier": 3},
+    {"name": "Staatstheater Saarbrücken", "city": "Saarbrücken",
+     "url": "https://www.staatstheater.saarland/spielplan/konzerte", "tier": 3},
+    {"name": "Theater Aachen", "city": "Aachen",
+     "url": "https://www.theater-aachen.de/spielplan/konzerte", "tier": 3},
+    {"name": "Theater Bonn", "city": "Bonn",
+     "url": "https://www.theater-bonn.de/spielplan/konzerte", "tier": 3},
+    {"name": "Theater Würzburg", "city": "Würzburg",
+     "url": "https://www.theaterwuerzburg.de/spielplan/konzerte", "tier": 3},
+    {"name": "Anhaltisches Theater Dessau", "city": "Dessau",
+     "url": "https://www.anhaltisches-theater.de/spielplan/konzerte", "tier": 3},
+    {"name": "Theater Görlitz", "city": "Görlitz",
+     "url": "https://www.theater-goerlitz.de/spielplan/konzerte", "tier": 3},
+    {"name": "Theater Plauen-Zwickau", "city": "Plauen",
+     "url": "https://www.theater-plauen-zwickau.de/spielplan/konzerte", "tier": 3},
+    {"name": "Theater Vorpommern", "city": "Stralsund",
+     "url": "https://www.theater-vorpommern.de/spielplan/konzerte", "tier": 3},
+    {"name": "Theater Altenburg Gera", "city": "Altenburg",
+     "url": "https://www.theater-altenburg-gera.de/spielplan/konzerte", "tier": 3},
+    {"name": "Stadttheater Hildesheim", "city": "Hildesheim",
+     "url": "https://www.theaterhildesheim.de/spielplan/konzerte", "tier": 3},
+    {"name": "Theater Trier", "city": "Trier",
+     "url": "https://www.theater-trier.de/spielplan/konzerte", "tier": 3},
+    {"name": "Stadttheater Gießen", "city": "Gießen",
+     "url": "https://www.stadttheater-giessen.de/spielplan/konzerte", "tier": 3},
+    {"name": "Theaterkonstanz", "city": "Konstanz",
+     "url": "https://www.theaterkonstanz.de/spielplan/konzerte", "tier": 3},
+    {"name": "Konzerthaus Blaibach", "city": "Blaibach",
+     "url": "https://www.konzerthaus-blaibach.de/konzerte", "tier": 3},
+]
+
+
+def get_all_venues() -> List[dict]:
+    return VENUES_GERMANY
+
+
+def get_venues_by_tier(tier) -> List[dict]:
+    return [v for v in VENUES_GERMANY if v["tier"] == tier]
+
+
+def get_venues_by_city(city: str) -> List[dict]:
+    return [v for v in VENUES_GERMANY if v["city"].lower() == city.lower()]

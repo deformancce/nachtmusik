@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+*.egg-info/
+
+# Generated data files (run scrapers to regenerate)
+backend/composers_klassika.json
+backend/works_klassika.json
+backend/gewandhaus_events.json
+backend/all_venues_events.json
+backend/*.html
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Node
+node_modules/
+dist/
+.netlify/
+*.log
+
+# Playwright
+playwright-report/
+test-results/
