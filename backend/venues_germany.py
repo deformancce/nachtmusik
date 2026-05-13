@@ -15,7 +15,7 @@ from typing import List
 VENUES_GERMANY: List[dict] = [
     # Top tier
     {"name": "Gewandhaus Leipzig", "city": "Leipzig",
-     "url": "https://www.gewandhausorchester.de/grosse-concerte/", "tier": "top"},
+     "url": "https://www.gewandhausorchester.de/spielplan/", "tier": "top"},
     {"name": "Elbphilharmonie Hamburg", "city": "Hamburg",
      "url": "https://www.elbphilharmonie.de/de/programm", "tier": "top"},
     {"name": "Berliner Philharmonie", "city": "Berlin",
