@@ -49,10 +49,24 @@ def load_data() -> None:
     COMPOSERS = _load_json(base / "composers_klassika.json", "composers")
     WORKS = _load_json(base / "works_klassika.json", "works")
 
-    # Events come from one of two scrapers — load whichever exists
     gewandhaus = _load_json(base / "gewandhaus_events.json", "events")
     venues = _load_json(base / "all_venues_events.json", "events")
-    EVENTS = gewandhaus + venues
+    single = _load_json(base / "single_venue_events.json", "events")
+
+    # Deduplicate by event id (prefer richer entries from newer scrapers)
+    seen_ids: set = set()
+    merged: List[Dict] = []
+    for ev in gewandhaus + venues + single:
+        eid = ev.get("id")
+        if eid:
+            if eid in seen_ids:
+                continue
+            seen_ids.add(eid)
+        merged.append(ev)
+    EVENTS = merged
+
+    # Sort by date ascending, undated events last
+    EVENTS.sort(key=lambda e: e.get("date") or "9999-99-99")
 
     print(f"Loaded {len(COMPOSERS)} composers")
     print(f"Loaded {len(WORKS)} works")
@@ -233,4 +247,17 @@ def get_work_performances(work_title: str, composer: str):
         "composer": composer,
         "total_performances": len(events),
         "performances": events,
+    }
+
+
+@app.get("/api/events")
+def get_events(skip: int = 0, limit: int = 8):
+    total = len(EVENTS)
+    page = EVENTS[skip : skip + limit]
+    return {
+        "total": total,
+        "skip": skip,
+        "limit": limit,
+        "has_more": (skip + limit) < total,
+        "events": page,
     }

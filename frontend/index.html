@@ -124,6 +124,142 @@
         .performance-card a { color: #5B3A9D; font-size: 13px; text-decoration: none; }
         .performance-card a:hover { text-decoration: underline; }
 
+        /* ── Konzerte-Sektion ── */
+        #concertsSection {
+            margin-top: 30px;
+        }
+        .concerts-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+        .concerts-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: white;
+        }
+        .concerts-subtitle {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            margin-top: 4px;
+        }
+
+        .concert-card {
+            background: white;
+            border-radius: 16px;
+            padding: 22px 26px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            margin-bottom: 16px;
+            border-left: 5px solid #7FD957;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .concert-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.28);
+        }
+        .concert-date-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .concert-date {
+            font-size: 15px;
+            font-weight: 700;
+            color: #5B3A9D;
+            background: rgba(91,58,157,0.08);
+            padding: 4px 12px;
+            border-radius: 8px;
+        }
+        .concert-time {
+            font-size: 14px;
+            color: #888;
+        }
+        .concert-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 6px;
+        }
+        .concert-venue {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .concert-program {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .concert-program-item {
+            padding: 2px 0;
+        }
+        .concert-artists {
+            font-size: 13px;
+            color: #888;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .concert-link {
+            display: inline-block;
+            color: #5B3A9D;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 6px 14px;
+            border: 2px solid #5B3A9D;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        .concert-link:hover {
+            background: #5B3A9D;
+            color: white;
+        }
+
+        #loadMoreBtn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #5B3A9D;
+            background: white;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            transition: all 0.2s;
+            margin-top: 8px;
+        }
+        #loadMoreBtn:hover:not(:disabled) {
+            background: #7FD957;
+            color: #1a1a1a;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        #loadMoreBtn:disabled {
+            opacity: 0.5;
+            cursor: default;
+        }
+
+        #concertsLoadingMsg {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            padding: 12px 0;
+            font-size: 15px;
+        }
+        #noMoreMsg {
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            padding: 14px;
+            font-size: 14px;
+        }
+
+        /* Scroll sentinel */
+        #scrollSentinel { height: 1px; }
+
+        /* ── Search loading ── */
         .loading { text-align: center; padding: 60px; color: white; }
         .spinner {
             border: 4px solid rgba(255,255,255,0.3);
@@ -175,29 +311,45 @@
             <p>Suche...</p>
         </div>
 
-        <div id="resultsDiv" class="results"></div>
+        <div id="resultsDiv" class="results hidden"></div>
+
+        <!-- Konzerte-Startseite -->
+        <div id="concertsSection">
+            <div class="concerts-header">
+                <div>
+                    <div class="concerts-title">Kommende Konzerte</div>
+                    <div class="concerts-subtitle" id="concertsSubtitle"></div>
+                </div>
+            </div>
+            <div id="concertsList"></div>
+            <div id="concertsLoadingMsg" class="hidden">Lade Konzerte…</div>
+            <button id="loadMoreBtn" class="hidden">Weitere laden</button>
+            <div id="noMoreMsg" class="hidden">Alle Konzerte geladen</div>
+            <div id="scrollSentinel"></div>
+        </div>
     </div>
 
     <script>
         const API_URL = 'http://localhost:8000';
+        const PAGE_SIZE = 8;
+
         const searchInput = document.getElementById('searchInput');
         const loadingDiv = document.getElementById('loadingDiv');
         const resultsDiv = document.getElementById('resultsDiv');
+        const concertsSection = document.getElementById('concertsSection');
+        const concertsList = document.getElementById('concertsList');
+        const concertsSubtitle = document.getElementById('concertsSubtitle');
+        const concertsLoadingMsg = document.getElementById('concertsLoadingMsg');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        const noMoreMsg = document.getElementById('noMoreMsg');
+        const scrollSentinel = document.getElementById('scrollSentinel');
 
-        let debounceTimer;
+        let concertsSkip = 0;
+        let concertsTotal = null;
+        let concertsLoading = false;
+        let concertsExhausted = false;
 
-        searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.trim();
-            clearTimeout(debounceTimer);
-            if (query.length < 2) {
-                resultsDiv.innerHTML = '';
-                loadingDiv.classList.add('hidden');
-                return;
-            }
-            loadingDiv.classList.remove('hidden');
-            resultsDiv.innerHTML = '';
-            debounceTimer = setTimeout(() => search(query), 400);
-        });
+        // ── Helpers ──────────────────────────────────────────────────────────
 
         function escapeHtml(s) {
             return String(s ?? '').replace(/[&<>"']/g, c => ({
@@ -213,15 +365,116 @@
             return String(s ?? '').replace(/[^a-z0-9]/gi, '');
         }
 
+        function formatDate(dateStr) {
+            if (!dateStr) return '';
+            const d = new Date(dateStr + 'T00:00:00');
+            return d.toLocaleDateString('de-DE', { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' });
+        }
+
+        // ── Concert cards ─────────────────────────────────────────────────────
+
+        function renderConcertCard(e) {
+            const program = (e.program || e.program_detailed || []);
+            const artists = (e.artists || []);
+            return `
+                <div class="concert-card">
+                    <div class="concert-date-row">
+                        ${e.date ? `<span class="concert-date">${escapeHtml(formatDate(e.date))}</span>` : ''}
+                        ${e.time ? `<span class="concert-time">${escapeHtml(e.time)} Uhr</span>` : ''}
+                    </div>
+                    <div class="concert-title">${escapeHtml(e.title || 'Konzert')}</div>
+                    <div class="concert-venue">${escapeHtml(e.venue || e.location || '')}</div>
+                    ${program.length ? `
+                        <div class="concert-program">
+                            ${program.map(p => `<div class="concert-program-item">· ${escapeHtml(p)}</div>`).join('')}
+                        </div>
+                    ` : ''}
+                    ${artists.length ? `<div class="concert-artists">${escapeHtml(artists.join(' · '))}</div>` : ''}
+                    ${e.url ? `<a class="concert-link" href="${escapeAttr(e.url)}" target="_blank" rel="noopener">Tickets &amp; Info →</a>` : ''}
+                </div>
+            `;
+        }
+
+        async function loadMoreConcerts() {
+            if (concertsLoading || concertsExhausted) return;
+            concertsLoading = true;
+            concertsLoadingMsg.classList.remove('hidden');
+            loadMoreBtn.disabled = true;
+
+            try {
+                const res = await fetch(`${API_URL}/api/events?skip=${concertsSkip}&limit=${PAGE_SIZE}`);
+                const data = await res.json();
+
+                concertsTotal = data.total;
+                concertsSubtitle.textContent = `${concertsTotal} Konzert${concertsTotal !== 1 ? 'e' : ''} gefunden`;
+
+                data.events.forEach(e => {
+                    concertsList.insertAdjacentHTML('beforeend', renderConcertCard(e));
+                });
+
+                concertsSkip += data.events.length;
+
+                if (!data.has_more || data.events.length === 0) {
+                    concertsExhausted = true;
+                    loadMoreBtn.classList.add('hidden');
+                    noMoreMsg.classList.remove('hidden');
+                } else {
+                    loadMoreBtn.classList.remove('hidden');
+                    noMoreMsg.classList.add('hidden');
+                }
+            } catch (err) {
+                console.error('Fehler beim Laden der Konzerte:', err);
+            } finally {
+                concertsLoading = false;
+                concertsLoadingMsg.classList.add('hidden');
+                loadMoreBtn.disabled = false;
+            }
+        }
+
+        // Infinite scroll via IntersectionObserver
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !concertsExhausted && !searchInput.value.trim()) {
+                loadMoreConcerts();
+            }
+        }, { rootMargin: '200px' });
+        observer.observe(scrollSentinel);
+
+        loadMoreBtn.addEventListener('click', loadMoreConcerts);
+
+        // ── Search ───────────────────────────────────────────────────────────
+
+        let debounceTimer;
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.trim();
+            clearTimeout(debounceTimer);
+
+            if (query.length < 2) {
+                resultsDiv.classList.add('hidden');
+                resultsDiv.innerHTML = '';
+                loadingDiv.classList.add('hidden');
+                concertsSection.classList.remove('hidden');
+                return;
+            }
+
+            concertsSection.classList.add('hidden');
+            loadingDiv.classList.remove('hidden');
+            resultsDiv.classList.add('hidden');
+            resultsDiv.innerHTML = '';
+            debounceTimer = setTimeout(() => search(query), 400);
+        });
+
         async function search(query) {
             try {
                 const response = await fetch(`${API_URL}/api/search?q=${encodeURIComponent(query)}`);
                 const data = await response.json();
                 loadingDiv.classList.add('hidden');
+                resultsDiv.classList.remove('hidden');
                 displayResults(data);
             } catch (error) {
                 console.error('Error:', error);
                 loadingDiv.classList.add('hidden');
+                resultsDiv.classList.remove('hidden');
                 resultsDiv.innerHTML = '<div class="no-results">Fehler beim Laden — läuft das Backend auf Port 8000?</div>';
             }
         }
@@ -297,11 +550,14 @@
         async function showComposerWorks(name) {
             searchInput.value = name;
             loadingDiv.classList.remove('hidden');
+            resultsDiv.classList.add('hidden');
             resultsDiv.innerHTML = '';
+            concertsSection.classList.add('hidden');
             try {
                 const response = await fetch(`${API_URL}/api/composer/${encodeURIComponent(name)}/works`);
                 const data = await response.json();
                 loadingDiv.classList.add('hidden');
+                resultsDiv.classList.remove('hidden');
                 if (!data.works || data.works.length === 0) {
                     resultsDiv.innerHTML = `
                         <div class="no-results">
@@ -360,6 +616,9 @@
                 perfDiv.innerHTML = '<p style="color: red; padding: 8px 0; font-size: 13px;">Fehler beim Laden</p>';
             }
         }
+
+        // Initial load
+        loadMoreConcerts();
     </script>
 </body>
 </html>

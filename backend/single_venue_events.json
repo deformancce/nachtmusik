@@ -1,0 +1,188 @@
+{
+  "total_events": 8,
+  "successful_venues": 1,
+  "failed_venues": 0,
+  "model": "claude-sonnet-4-6",
+  "scraped_at": "2026-05-09T09:47:56.782196Z",
+  "events": [
+    {
+      "date": "2026-05-14",
+      "time": "19:30",
+      "title": "Grosses Concert",
+      "location": "Großer Saal",
+      "program": [
+        "Sergej Rachmaninoff — 2. Konzert für Klavier und Orchester c-Moll op. 18",
+        "Dmitri Schostakowitsch — 10. Sinfonie e-Moll op. 93"
+      ],
+      "artists": [
+        "Gewandhausorchester",
+        "Andris Nelsons (Dirigent)",
+        "Yulianna Avdeeva (Klavier)"
+      ],
+      "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9373/",
+      "venue": "Gewandhaus Leipzig",
+      "source_url": "https://www.gewandhausorchester.de/grosse-concerte/",
+      "scraped_at": "2026-05-09T09:45:38.851155Z",
+      "program_detailed": [
+        "Sergej Rachmaninoff: Konzert für Klavier und Orchester Nr. 2 c-Moll op. 18",
+        "Dmitri Schostakowitsch: Sinfonie Nr. 10 e-Moll op. 93"
+      ]
+    },
+    {
+      "date": "2026-05-15",
+      "time": "19:30",
+      "title": "Grosses Concert",
+      "location": "Großer Saal",
+      "program": [
+        "Sergej Rachmaninoff — 2. Konzert für Klavier und Orchester c-Moll op. 18",
+        "Dmitri Schostakowitsch — 10. Sinfonie e-Moll op. 93"
+      ],
+      "artists": [
+        "Gewandhausorchester",
+        "Andris Nelsons (Dirigent)",
+        "Yulianna Avdeeva (Klavier)"
+      ],
+      "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9374/",
+      "venue": "Gewandhaus Leipzig",
+      "source_url": "https://www.gewandhausorchester.de/grosse-concerte/",
+      "scraped_at": "2026-05-09T09:45:38.851155Z",
+      "program_detailed": [
+        "Sergej Rachmaninoff: 2. Konzert für Klavier und Orchester c-Moll op. 18",
+        "Dmitri Schostakowitsch: 10. Sinfonie e-Moll op. 93"
+      ]
+    },
+    {
+      "date": "2026-06-18",
+      "time": "19:30",
+      "title": "Grosses Concert",
+      "location": "Großer Saal",
+      "program": [
+        "Arvo Pärt — Wenn Bach Bienen gezüchtet hätte ...",
+        "Robert Schumann — Konzert für Klavier und Orchester a-Moll op. 54",
+        "Arvo Pärt — Collage über B-A-C-H",
+        "Robert Schumann — 2. Sinfonie C-Dur op. 61"
+      ],
+      "artists": [
+        "Gewandhausorchester",
+        "Andris Nelsons (Dirigent)",
+        "Yunchan Lim (Klavier)"
+      ],
+      "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9390/",
+      "venue": "Gewandhaus Leipzig",
+      "source_url": "https://www.gewandhausorchester.de/grosse-concerte/",
+      "scraped_at": "2026-05-09T09:45:38.851155Z",
+      "program_detailed": [
+        "Arvo Pärt: Wenn Bach Bienen gezüchtet hätte ...",
+        "Robert Schumann: Konzert für Klavier und Orchester a-Moll op. 54",
+        "Arvo Pärt: Collage über B-A-C-H",
+        "Robert Schumann: 2. Sinfonie C-Dur op. 61"
+      ]
+    },
+    {
+      "date": "2026-06-19",
+      "time": "19:30",
+      "title": "Grosses Concert",
+      "location": "Großer Saal",
+      "program": [
+        "Arvo Pärt — Wenn Bach Bienen gezüchtet hätte ...",
+        "Robert Schumann — Konzert für Klavier und Orchester a-Moll op. 54",
+        "Arvo Pärt — Collage über B-A-C-H",
+        "Robert Schumann — 2. Sinfonie C-Dur op. 61"
+      ],
+      "artists": [
+        "Gewandhausorchester",
+        "Andris Nelsons (Dirigent)",
+        "Yunchan Lim (Klavier)"
+      ],
+      "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9391/",
+      "venue": "Gewandhaus Leipzig",
+      "source_url": "https://www.gewandhausorchester.de/grosse-concerte/",
+      "scraped_at": "2026-05-09T09:45:38.851155Z",
+      "program_detailed": [
+        "Arvo Pärt: Wenn Bach Bienen gezüchtet hätte ...",
+        "Robert Schumann: Konzert für Klavier und Orchester a-Moll op. 54",
+        "Arvo Pärt: Collage über B-A-C-H",
+        "Robert Schumann: 2. Sinfonie C-Dur op. 61"
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "time": "11:00",
+      "title": "Grosses Concert",
+      "location": "Großer Saal",
+      "program": [
+        "Arvo Pärt — Wenn Bach Bienen gezüchtet hätte ...",
+        "Robert Schumann — Konzert für Klavier und Orchester a-Moll op. 54",
+        "Arvo Pärt — Collage über B-A-C-H",
+        "Robert Schumann — 2. Sinfonie C-Dur op. 61"
+      ],
+      "artists": [
+        "Gewandhausorchester",
+        "Andris Nelsons (Dirigent)",
+        "Yunchan Lim (Klavier)"
+      ],
+      "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9397/",
+      "venue": "Gewandhaus Leipzig",
+      "source_url": "https://www.gewandhausorchester.de/grosse-concerte/",
+      "scraped_at": "2026-05-09T09:45:38.851155Z",
+      "program_detailed": [
+        "Arvo Pärt: Wenn Bach Bienen gezüchtet hätte ...",
+        "Robert Schumann: Konzert für Klavier und Orchester a-Moll op. 54",
+        "Arvo Pärt: Collage über B-A-C-H",
+        "Robert Schumann: Sinfonie Nr. 2 C-Dur op. 61"
+      ]
+    },
+    {
+      "date": "2026-06-26",
+      "time": "19:30",
+      "title": "Grosses Concert",
+      "location": "Großer Saal",
+      "program": [
+        "Ludwig van Beethoven — Ouvertüre zum Ballett \"Die Geschöpfe des Prometheus\" op. 43",
+        "Ludwig van Beethoven — 3. Konzert für Klavier und Orchester c-Moll op. 37",
+        "Ludwig van Beethoven — 5. Konzert für Klavier und Orchester Es-Dur op. 73"
+      ],
+      "artists": [
+        "Gewandhausorchester",
+        "Andris Nelsons (Dirigent)",
+        "Lang Lang (Klavier)"
+      ],
+      "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9398/",
+      "venue": "Gewandhaus Leipzig",
+      "source_url": "https://www.gewandhausorchester.de/grosse-concerte/",
+      "scraped_at": "2026-05-09T09:45:38.851155Z"
+    },
+    {
+      "date": "2026-07-03",
+      "time": "20:30",
+      "title": "Klassik airleben",
+      "location": "Open-Air-Bühne im Rosental",
+      "program": [],
+      "artists": [
+        "Gewandhausorchester",
+        "Daniel Harding (Dirigent)",
+        "Malte Arkona (Moderation)"
+      ],
+      "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9400/",
+      "venue": "Gewandhaus Leipzig",
+      "source_url": "https://www.gewandhausorchester.de/grosse-concerte/",
+      "scraped_at": "2026-05-09T09:45:38.851155Z"
+    },
+    {
+      "date": "2026-07-04",
+      "time": "20:30",
+      "title": "Klassik airleben",
+      "location": "Open-Air-Bühne im Rosental",
+      "program": [],
+      "artists": [
+        "Gewandhausorchester",
+        "Daniel Harding (Dirigent)",
+        "Malte Arkona (Moderation)"
+      ],
+      "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9401/",
+      "venue": "Gewandhaus Leipzig",
+      "source_url": "https://www.gewandhausorchester.de/grosse-concerte/",
+      "scraped_at": "2026-05-09T09:45:38.851155Z"
+    }
+  ]
+}
