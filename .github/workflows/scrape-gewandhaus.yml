@@ -1,0 +1,57 @@
+name: Scrape Gewandhaus events
+
+# Manual trigger from the Actions tab, plus a daily schedule.
+# The job fetches all 15 Gewandhaus category pages, parses concert events,
+# and commits backend/gewandhaus_events.json back to the branch.
+on:
+  workflow_dispatch:
+  schedule:
+    # Daily at 04:00 UTC (= ~05:00–06:00 in Europe)
+    - cron: "0 4 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install --quiet requests beautifulsoup4 lxml
+
+      - name: Run Gewandhaus scraper
+        working-directory: backend
+        run: python3 scrape/gewandhaus_scraper.py
+
+      - name: Show summary
+        working-directory: backend
+        run: |
+          python3 -c "
+          import json
+          with open('gewandhaus_events.json') as f:
+              data = json.load(f)
+          total = data.get('total', len(data.get('events', [])))
+          print(f'Total events: {total}')
+          for e in data.get('events', [])[:5]:
+              print(f\"  {e.get('date')} {e.get('time','')} {e.get('title','')[:60]}\")
+          "
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backend/gewandhaus_events.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Refresh gewandhaus_events.json (automated scrape)"
+            git push
+          fi

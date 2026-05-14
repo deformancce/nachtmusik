@@ -9,11 +9,12 @@ env/
 .venv/
 *.egg-info/
 
-# Generated data files (run scrapers to regenerate)
+# Generated data files
+# Composers/works are too large to track in git — regenerate locally with the scrapers.
+# Event JSONs (gewandhaus_events.json, all_venues_events.json) are committed
+# by the GitHub Action that runs the scrapers on schedule.
 backend/composers_klassika.json
 backend/works_klassika.json
-backend/gewandhaus_events.json
-backend/all_venues_events.json
 backend/*.html
 
 # Environment
