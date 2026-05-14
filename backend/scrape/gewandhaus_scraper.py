@@ -62,11 +62,61 @@ def fetch(url: str) -> str:
     return r.text
 
 
-def fetch_with_playwright(url: str, max_clicks: int = 10) -> tuple[str, int]:
-    """Render the URL with a headless browser, click 'Weitere laden' up to
-    max_clicks times, and return the final HTML + the number of successful
-    clicks. Raises ImportError if Playwright isn't installed."""
+def fetch_with_playwright(url: str, max_clicks: int = 10,
+                          verbose: bool = True) -> tuple[str, int]:
+    """Render the URL and exhaust the page's lazy-load:
+       1. scroll-to-bottom in a loop until the event count stops growing
+       2. click 'Weitere Veranstaltungen laden' if visible
+       3. repeat (1) again to soak up the freshly loaded chunk
+       4. repeat (2) until either max_clicks reached or button stops appearing
+
+    Returns the rendered HTML plus the number of successful button clicks.
+    Raises ImportError if Playwright isn't installed."""
     from playwright.sync_api import sync_playwright
+
+    def _count_teasers(page) -> int:
+        return page.evaluate("document.querySelectorAll('.event-teaser').length")
+
+    def _scroll_until_stable(page, max_passes: int = 8, settle: float = 1.4) -> int:
+        """Scroll to bottom until no new event teasers appear for two passes.
+        Returns the final teaser count."""
+        last = _count_teasers(page)
+        stable_passes = 0
+        for i in range(max_passes):
+            page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+            time.sleep(settle)
+            now = _count_teasers(page)
+            if verbose:
+                print(f"      scroll pass {i+1}: {last} → {now}")
+            if now == last:
+                stable_passes += 1
+                if stable_passes >= 2:
+                    break
+            else:
+                stable_passes = 0
+            last = now
+        return last
+
+    def _try_click_load_more(page) -> str | None:
+        """Click 'Weitere laden' button if visible. Returns clicked text or None."""
+        return page.evaluate(
+            """
+            (keywords) => {
+                const elements = document.querySelectorAll('a, button');
+                for (const el of elements) {
+                    const text = (el.textContent || '').trim();
+                    if (!text) continue;
+                    if (keywords.some(kw => text.includes(kw)) && el.offsetParent !== null) {
+                        el.scrollIntoView({block: 'center'});
+                        el.click();
+                        return text;
+                    }
+                }
+                return null;
+            }
+            """,
+            list(LOAD_MORE_KEYWORDS),
+        )
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
@@ -74,40 +124,31 @@ def fetch_with_playwright(url: str, max_clicks: int = 10) -> tuple[str, int]:
         page.set_default_timeout(60000)
         try:
             page.goto(url, wait_until="domcontentloaded", timeout=60000)
-            time.sleep(3)
+            time.sleep(2)
+
+            initial = _count_teasers(page)
+            if verbose:
+                print(f"    initial teasers visible: {initial}")
+
+            # Pass 1: drain whatever the infinite scroll gives us before any click
+            count = _scroll_until_stable(page)
 
             clicks = 0
-            consecutive_no_button = 0
             for _ in range(max_clicks):
-                page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-                time.sleep(0.6)
-                clicked = page.evaluate(
-                    """
-                    (keywords) => {
-                        const elements = document.querySelectorAll('a, button');
-                        for (const el of elements) {
-                            const text = (el.textContent || '').trim();
-                            if (!text) continue;
-                            if (keywords.some(kw => text.includes(kw)) && el.offsetParent !== null) {
-                                el.click();
-                                return true;
-                            }
-                        }
-                        return false;
-                    }
-                    """,
-                    list(LOAD_MORE_KEYWORDS),
-                )
-                if clicked:
-                    clicks += 1
-                    consecutive_no_button = 0
-                    time.sleep(2.2)
-                else:
-                    consecutive_no_button += 1
-                    if consecutive_no_button >= 2:
-                        break
-                    time.sleep(0.8)
+                clicked_text = _try_click_load_more(page)
+                if not clicked_text:
+                    if verbose:
+                        print(f"    no 'Weitere laden' button found — done")
+                    break
+                clicks += 1
+                if verbose:
+                    print(f"    clicked '{clicked_text[:40]}' ({clicks}/{max_clicks})")
+                # Wait for the click's network/DOM response, then drain again.
+                time.sleep(1.5)
+                count = _scroll_until_stable(page, max_passes=4)
 
+            if verbose:
+                print(f"    final teaser count: {count}")
             html = page.content()
         finally:
             browser.close()
