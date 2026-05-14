@@ -718,8 +718,10 @@ def scrape_all(use_playwright: bool = True, max_clicks: int = 50) -> list[dict]:
     clicks = 0
 
     if use_playwright:
+        # ~2.3s per click + initial load; 60 clicks ≈ 140s today. 600s leaves
+        # headroom for slower days or higher --clicks counts later.
         html, clicks = _scrape_category_subprocess(
-            MAIN_PAGE, max_clicks=max_clicks, timeout_s=300
+            MAIN_PAGE, max_clicks=max_clicks, timeout_s=600
         )
 
     if not html:
