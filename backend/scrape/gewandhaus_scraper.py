@@ -26,8 +26,18 @@ import re
 import sys
 import time
 
+import signal
+
 import requests
 from bs4 import BeautifulSoup
+
+
+class CategoryTimeout(Exception):
+    """Raised when a single category exceeds its hard wall-clock limit."""
+
+
+def _category_timeout_handler(signum, frame):
+    raise CategoryTimeout("category exceeded wall-clock limit")
 
 BASE = "https://www.gewandhausorchester.de"
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; op.us/0.1)"}
@@ -56,7 +66,8 @@ CATEGORIES = [
     "/in-der-oper/",
     "/nachklang/",
     "/perspektivwechsel/",
-    "/tacheles/",
+    # /tacheles/ removed: this category consistently hangs Playwright for 50+
+    # minutes and only carries a handful of events. Skip it.
 ]
 
 
@@ -666,15 +677,28 @@ def scrape_all(use_playwright: bool = True, max_clicks: int = 10) -> list[dict]:
                 if browser is not None:
                     page = browser.new_page()
                     page.set_default_timeout(45000)
+                    # Hard wall-clock timeout per category. A single hung
+                    # category cost us an entire 60-minute action run before.
+                    signal.signal(signal.SIGALRM, _category_timeout_handler)
+                    signal.alarm(120)
                     try:
                         html, clicks = fetch_with_playwright_session(
                             page, url, max_clicks=max_clicks
                         )
+                    except CategoryTimeout:
+                        print(f"  TIMEOUT on {cat} after 120s — skipping")
+                        html = ""
+                        clicks = 0
                     except Exception as exc:
                         print(f"  Playwright error on {cat}: {str(exc)[:80]} — static fallback")
-                        html = fetch(url)
+                        try:
+                            html = fetch(url)
+                        except Exception as fexc:
+                            print(f"  static fetch also failed: {fexc}")
+                            html = ""
                         clicks = 0
                     finally:
+                        signal.alarm(0)
                         try:
                             page.close()
                         except Exception:
