@@ -37,7 +37,7 @@ LOAD_MORE_KEYWORDS = (
 )
 OUTPUT_PATH = Path(__file__).parent.parent / "gewandhaus_events.json"
 CLAUDE_MODEL = "claude-haiku-4-5-20251001"  # cheap + good enough for HTML extraction
-MAX_DETAIL_HTML_CHARS = 30_000
+MAX_DETAIL_HTML_CHARS = 80_000  # fallback when no program section is found
 
 # Single entry point: the Gewandhaus homepage lists all upcoming events and
 # has a "Weitere Veranstaltungen laden" button. We scroll and click there
@@ -395,7 +395,56 @@ def _diagnose_claude_env() -> None:
         print(f"Claude diagnostic: probe call FAILED — {type(exc).__name__}: {str(exc)[:200]}", flush=True)
 
 
-def extract_program_with_claude(html: str, event: dict) -> list[str]:
+def _find_program_section_html(soup: BeautifulSoup) -> "str | None":
+    """Isolate the program section so we send Claude ~5 KB of relevant HTML
+    instead of an arbitrary 30 KB body prefix that often cuts off the program.
+
+    Returns the section's HTML, or None if no plausible section is found.
+    """
+    # Strategy 1: explicit container classes (TYPO3 / Gewandhaus markup)
+    for selector in (
+        '[class*="programm"]',
+        '[class*="program"]',
+        '[class*="werke"]',
+        '[id*="programm"]',
+        '[id*="program"]',
+    ):
+        nodes = soup.select(selector)
+        if not nodes:
+            continue
+        # Pick the largest match — small inline labels ("Programmheft") will
+        # also match but the actual program container has the most content.
+        largest = max(nodes, key=lambda n: len(n.get_text(strip=True)))
+        html = str(largest)
+        # Reject too small (probably a label/link) or too large (probably the
+        # whole page wrapper, which we'd rather truncate ourselves).
+        if 300 < len(html) < 30_000:
+            return html
+
+    # Strategy 2: heading text "Programm" + the following siblings up to the
+    # next major heading.
+    heading = soup.find(
+        ["h1", "h2", "h3", "h4"],
+        string=lambda s: s and "programm" in s.strip().lower() and len(s.strip()) < 20,
+    )
+    if heading:
+        parts = [str(heading)]
+        total = len(parts[0])
+        for sib in heading.find_all_next():
+            if sib.name in ("h1", "h2", "h3") and sib is not heading:
+                break
+            chunk = str(sib)
+            parts.append(chunk)
+            total += len(chunk)
+            if total > 20_000:
+                break
+        if total > 300:
+            return "".join(parts)
+
+    return None
+
+
+def extract_program_with_claude(html: str, event: dict, verbose: bool = False) -> list[str]:
     """Ask Claude (Haiku) to read a detail page and return the program as a
     JSON list of strings like 'Composer: Work (opus)'. Returns [] on failure."""
     client = _get_claude_client()
@@ -403,10 +452,21 @@ def extract_program_with_claude(html: str, event: dict) -> list[str]:
         return []
 
     soup = BeautifulSoup(html, "lxml")
-    for tag in soup(["script", "style", "noscript", "iframe", "svg"]):
+    for tag in soup(["script", "style", "noscript", "iframe", "svg", "header", "footer", "nav"]):
         tag.decompose()
-    body = soup.find("body") or soup
-    body_html = str(body)[:MAX_DETAIL_HTML_CHARS]
+
+    # Prefer a focused program section; fall back to (a larger slice of) the
+    # body so we don't miss programs on pages where the selector doesn't hit.
+    focused = _find_program_section_html(soup)
+    if focused:
+        body_html = focused
+        if verbose:
+            print(f"    [claude] focused section, {len(body_html)} chars", flush=True)
+    else:
+        body = soup.find("body") or soup
+        body_html = str(body)[:MAX_DETAIL_HTML_CHARS]
+        if verbose:
+            print(f"    [claude] body fallback, {len(body_html)} chars", flush=True)
 
     prompt = f"""Extract the concert program from this Gewandhaus Leipzig event detail page.
 
@@ -583,7 +643,7 @@ def enrich_with_detail_programs(
         if have_claude:
             claude_attempted = True
             try:
-                program = extract_program_with_claude(r.text, event)
+                program = extract_program_with_claude(r.text, event, verbose=verbose)
             except Exception as exc:
                 print(f"  [claude {eid}] EXCEPTION {type(exc).__name__}: {str(exc)[:120]}")
                 claude_errors += 1
