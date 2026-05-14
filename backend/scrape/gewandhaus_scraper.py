@@ -275,8 +275,18 @@ def _extract_program_after_heading(soup: BeautifulSoup) -> list[str]:
     return works
 
 
+_DEBUG_DUMP_PATH = Path(__file__).parent.parent / "_debug_detail_sample.html"
+_DEBUG_DUMPED = False
+
+
 def fetch_program_from_detail(url: str) -> list[str]:
-    """Fetch a single event's detail page and extract its program (works performed)."""
+    """Fetch a single event's detail page and extract its program (works performed).
+
+    On the first failure to extract a program, the raw HTML is dumped to
+    backend/_debug_detail_sample.html so we can refine the parser. Subsequent
+    failures are silent.
+    """
+    global _DEBUG_DUMPED
     if not url:
         return []
     try:
@@ -285,6 +295,19 @@ def fetch_program_from_detail(url: str) -> list[str]:
         return []
     soup = BeautifulSoup(html, "lxml")
     program = _extract_program_nodes(soup) or _extract_program_after_heading(soup)
+    if not program and not _DEBUG_DUMPED:
+        try:
+            # Strip <script>/<style> to keep the dump readable
+            for tag in soup(["script", "style", "noscript", "iframe", "svg"]):
+                tag.decompose()
+            body = soup.find("body") or soup
+            with open(_DEBUG_DUMP_PATH, "w", encoding="utf-8") as f:
+                f.write(f"<!-- source: {url} -->\n")
+                f.write(str(body))
+            _DEBUG_DUMPED = True
+            print(f"  [debug] dumped detail HTML for failed extraction → {_DEBUG_DUMP_PATH.name}")
+        except Exception:
+            pass
     return program
 
 

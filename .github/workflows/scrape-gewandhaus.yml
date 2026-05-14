@@ -56,6 +56,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add backend/gewandhaus_events.json
+          # Also pick up the debug HTML dump if the scraper produced one.
+          if [ -f backend/_debug_detail_sample.html ]; then
+            git add backend/_debug_detail_sample.html
+          fi
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
