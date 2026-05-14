@@ -37,7 +37,7 @@ LOAD_MORE_KEYWORDS = (
 )
 OUTPUT_PATH = Path(__file__).parent.parent / "gewandhaus_events.json"
 CLAUDE_MODEL = "claude-haiku-4-5-20251001"  # cheap + good enough for HTML extraction
-MAX_DETAIL_HTML_CHARS = 80_000  # fallback when no program section is found
+MAX_DETAIL_TEXT_CHARS = 40_000  # plain-text content sent to Claude per event
 
 # Single entry point: the Gewandhaus homepage lists all upcoming events and
 # has a "Weitere Veranstaltungen laden" button. We scroll and click there
@@ -395,17 +395,13 @@ def _diagnose_claude_env() -> None:
         print(f"Claude diagnostic: probe call FAILED — {type(exc).__name__}: {str(exc)[:200]}", flush=True)
 
 
-def _select_event_main(soup: BeautifulSoup) -> "str":
-    """Return the HTML chunk most likely to contain everything about the event:
-    title, composer-work line, description, program list, artists.
+def _select_event_text(soup: BeautifulSoup) -> "str":
+    """Return the plain-text content of the event-main container.
 
     Tries event-detail / article / main containers in turn, then falls back to
-    the cleaned <body>. The chunk is capped at MAX_DETAIL_HTML_CHARS.
+    the cleaned <body>. HTML tags are dropped — Claude only needs the words,
+    not the markup, and stripping tags halves the token cost.
     """
-    # Look for a sensibly-sized main content container first. This typically
-    # captures everything between the site header and footer — including both
-    # the composer-work header line (e.g. operas) and any explicit Programm
-    # block (e.g. Grosse Concerte) on the same page.
     for selector in (
         '[class*="event-detail"]',
         '[class*="event__detail"]',
@@ -418,10 +414,11 @@ def _select_event_main(soup: BeautifulSoup) -> "str":
     ):
         node = soup.select_one(selector)
         if node and len(node.get_text(strip=True)) > 200:
-            return str(node)[:MAX_DETAIL_HTML_CHARS]
+            text = node.get_text("\n", strip=True)
+            return text[:MAX_DETAIL_TEXT_CHARS]
 
     body = soup.find("body") or soup
-    return str(body)[:MAX_DETAIL_HTML_CHARS]
+    return body.get_text("\n", strip=True)[:MAX_DETAIL_TEXT_CHARS]
 
 
 def extract_program_with_claude(html: str, event: dict, verbose: bool = False) -> list[str]:
@@ -435,17 +432,17 @@ def extract_program_with_claude(html: str, event: dict, verbose: bool = False) -
     for tag in soup(["script", "style", "noscript", "iframe", "svg", "header", "footer", "nav"]):
         tag.decompose()
 
-    body_html = _select_event_main(soup)
+    page_text = _select_event_text(soup)
     if verbose:
-        print(f"    [claude] sending {len(body_html)} chars to Claude", flush=True)
+        print(f"    [claude] sending {len(page_text)} chars (text) to Claude", flush=True)
 
     prompt = f"""Extract the works performed at this Gewandhaus Leipzig event.
 
 Event title: {event.get('title', '')}
 Event date: {event.get('date', '')}
 
-HTML (cleaned):
-{body_html}
+Event page text:
+{page_text}
 
 Return a JSON array of works. Each entry should be a single string in the
 format "Composer: Work Title (opus/catalog number)" when available, e.g.:
