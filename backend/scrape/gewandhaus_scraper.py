@@ -377,6 +377,34 @@ def _get_claude_client():
     return _CLAUDE_CLIENT
 
 
+def _diagnose_claude_env() -> None:
+    """Print a one-line summary of whether Claude can be used."""
+    key = os.environ.get("ANTHROPIC_API_KEY", "")
+    if not key:
+        print("Claude diagnostic: ANTHROPIC_API_KEY is NOT set in env")
+        return
+    masked = f"{key[:8]}...{key[-4:]}" if len(key) > 12 else "(too short)"
+    print(f"Claude diagnostic: ANTHROPIC_API_KEY present ({masked}, {len(key)} chars)")
+    try:
+        import anthropic
+        print(f"Claude diagnostic: anthropic SDK version {anthropic.__version__} importable")
+    except ImportError as exc:
+        print(f"Claude diagnostic: anthropic SDK NOT importable ({exc})")
+        return
+    # Probe the API with a 1-token request to verify key works
+    try:
+        client = anthropic.Anthropic(api_key=key)
+        msg = client.messages.create(
+            model=CLAUDE_MODEL,
+            max_tokens=10,
+            messages=[{"role": "user", "content": "Say OK."}],
+        )
+        out = msg.content[0].text if msg.content else "(no content)"
+        print(f"Claude diagnostic: probe call OK, model replied {out!r}")
+    except Exception as exc:
+        print(f"Claude diagnostic: probe call FAILED — {type(exc).__name__}: {str(exc)[:200]}")
+
+
 def extract_program_with_claude(html: str, event: dict) -> list[str]:
     """Ask Claude (Haiku) to read a detail page and return the program as a
     JSON list of strings like 'Composer: Work (opus)'. Returns [] on failure."""
@@ -508,29 +536,60 @@ def enrich_with_detail_programs(events: list[dict]) -> None:
     print(f"\nFetching {len(todo)} detail pages for program extraction...")
     enriched_claude = 0
     enriched_static = 0
+    fetch_errors = 0
+    fetch_non_200 = 0
+    claude_errors = 0
+    claude_empty = 0
     for i, event in enumerate(todo, 1):
-        verbose = i <= 3
+        verbose = i <= 5  # noisy on the first five, then quiet
+        eid = event.get("id", "?")
+
         try:
             r = requests.get(event["url"], headers=HEADERS, timeout=20)
-            r.raise_for_status()
         except Exception as exc:
-            if verbose:
-                print(f"  [detail] {event['url']} → fetch error: {exc}")
+            print(f"  [detail {eid}] FETCH RAISED {type(exc).__name__}: {str(exc)[:120]}")
+            fetch_errors += 1
+            _dump_debug(
+                f"FETCH RAISED for {event['url']}: {type(exc).__name__}: {exc}",
+                f"fetch-exception ({event['url']})",
+            )
             time.sleep(0.3)
             continue
 
+        if r.status_code != 200:
+            print(f"  [detail {eid}] HTTP {r.status_code} for {event['url']}")
+            fetch_non_200 += 1
+            _dump_debug(
+                f"HTTP {r.status_code} for {event['url']}\n\nResponse body (first 5KB):\n{r.text[:5000]}",
+                f"http-{r.status_code} ({event['url']})",
+            )
+            time.sleep(0.3)
+            continue
+
+        if verbose:
+            print(f"  [detail {eid}] HTTP 200, {len(r.text)} chars")
+
         program: list[str] = []
+        claude_attempted = False
         if have_claude:
-            program = extract_program_with_claude(r.text, event)
-            if program and verbose:
-                print(f"  [claude] {event.get('id')} → {len(program)} works: {program[0][:70] if program else ''}")
+            claude_attempted = True
+            try:
+                program = extract_program_with_claude(r.text, event)
+            except Exception as exc:
+                print(f"  [claude {eid}] EXCEPTION {type(exc).__name__}: {str(exc)[:120]}")
+                claude_errors += 1
+            if verbose:
+                preview = program[0][:70] if program else "(empty)"
+                print(f"  [claude {eid}] returned {len(program)} works: {preview}")
+            if not program:
+                claude_empty += 1
 
         if not program:
             soup = BeautifulSoup(r.text, "lxml")
             program = _extract_program_nodes(soup) or _extract_program_after_heading(soup)
             if program:
                 enriched_static += 1
-        else:
+        elif claude_attempted:
             enriched_claude += 1
 
         if program:
@@ -546,11 +605,17 @@ def enrich_with_detail_programs(events: list[dict]) -> None:
             )
 
         if i % 10 == 0 or i == len(todo):
-            print(f"  {i}/{len(todo)} processed | claude:{enriched_claude} static:{enriched_static}")
+            print(f"  {i}/{len(todo)} processed | claude:{enriched_claude} static:{enriched_static} "
+                  f"fetch_err:{fetch_errors} non200:{fetch_non_200} claude_err:{claude_errors} claude_empty:{claude_empty}")
         time.sleep(0.3)
 
-    print(f"Detail pass complete: {enriched_claude} via Claude + {enriched_static} via selectors = "
-          f"{enriched_claude + enriched_static}/{len(todo)}")
+    print(
+        f"\nDetail pass summary:\n"
+        f"  programs found: {enriched_claude} via Claude + {enriched_static} via selectors\n"
+        f"  fetch failures: {fetch_errors} exceptions, {fetch_non_200} non-200 responses\n"
+        f"  claude calls:   {claude_errors} errors, {claude_empty} returned empty list\n"
+        f"  total processed: {len(todo)}"
+    )
 
 
 def parse_teasers(html: str, category: str) -> list[dict]:
@@ -645,6 +710,8 @@ def main():
     print(f"  Playwright: {'off' if args.no_playwright else 'on'}, "
           f"max clicks: {args.clicks}, "
           f"detail pages: {'off' if args.no_detail else 'on'}")
+    if not args.no_detail:
+        _diagnose_claude_env()
     print("=" * 50)
 
     events = scrape_all(use_playwright=not args.no_playwright,
