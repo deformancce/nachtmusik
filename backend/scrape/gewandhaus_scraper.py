@@ -16,6 +16,7 @@ Usage:
   python3 scrape/gewandhaus_scraper.py --no-playwright   # static-only
   python3 scrape/gewandhaus_scraper.py --no-detail       # listing only
   python3 scrape/gewandhaus_scraper.py --clicks 20       # raise load-more cap
+  python3 scrape/gewandhaus_scraper.py --single-cat /tacheles/  # internal subprocess mode
 """
 from datetime import datetime
 from pathlib import Path
@@ -23,6 +24,7 @@ import argparse
 import json
 import os
 import re
+import subprocess
 import sys
 import time
 
@@ -653,97 +655,113 @@ def parse_teasers(html: str, category: str) -> list[dict]:
     return events
 
 
+def _scrape_category_subprocess(cat: str, max_clicks: int,
+                                timeout_s: int = 90) -> tuple[str, int]:
+    """Scrape one category in a child process so any Playwright hang cannot
+    block the parent. subprocess.run(timeout=) sends SIGKILL after timeout_s
+    regardless of what the child is doing — the only truly reliable mechanism.
+
+    The child is invoked as: python3 this_file.py --single-cat CAT --clicks N
+    It writes HTML to stdout and "CLICKS:N" to stderr.
+    Returns (html, clicks) or ("", 0) on timeout / error."""
+    this_file = str(Path(__file__).resolve())
+    try:
+        result = subprocess.run(
+            [sys.executable, this_file, "--single-cat", cat,
+             "--clicks", str(max_clicks)],
+            capture_output=True,
+            text=True,
+            timeout=timeout_s,
+        )
+    except subprocess.TimeoutExpired:
+        print(f"\n    TIMEOUT after {timeout_s}s", flush=True)
+        return "", 0
+    except Exception as exc:
+        print(f"\n    subprocess ERROR: {exc}", flush=True)
+        return "", 0
+
+    clicks = 0
+    for line in (result.stderr or "").splitlines():
+        if line.startswith("CLICKS:"):
+            try:
+                clicks = int(line.split(":", 1)[1])
+            except ValueError:
+                pass
+        elif line.strip():
+            print(f"    {line.strip()}", flush=True)
+
+    if result.returncode != 0 or not result.stdout:
+        return "", 0
+    return result.stdout, clicks
+
+
 def scrape_all(use_playwright: bool = True, max_clicks: int = 10) -> list[dict]:
-    """Scrape all category pages using a single shared Playwright browser
-    but a fresh browser context per category.
+    """Scrape all category pages.
 
-    Using browser.new_context() (rather than just browser.new_page()) means
-    each category gets its own memory space. Closing the context after each
-    category frees all JS heap, cached resources, and DOM trees — preventing
-    the memory pressure that caused evaluate() to block on later categories
-    (the root cause of the /tacheles/ hang).
-
-    Playwright's sync_api uses greenlets bound to the calling thread; threads
-    or multiprocessing cannot be mixed in without breaking it, so the loop
-    stays single-threaded."""
+    Each category is run in a subprocess (--single-cat mode) so a Playwright
+    hang on any one category cannot block the parent process. The OS-level
+    subprocess timeout is the only mechanism that reliably kills stuck Chromium
+    instances — signals, greenlets and Python threads all fail for this."""
     seen_ids: set[str] = set()
     all_events: list[dict] = []
     now = datetime.utcnow().isoformat() + "Z"
 
-    playwright_ctx = None
-    browser = None
     if use_playwright:
-        try:
-            from playwright.sync_api import sync_playwright
-            playwright_ctx = sync_playwright().start()
-            browser = playwright_ctx.chromium.launch(headless=True)
-            print("Playwright browser started.")
-        except ImportError:
-            print("Playwright unavailable, using static fetch.")
-            playwright_ctx = None
-        except Exception as exc:
-            print(f"Playwright launch failed: {exc} — using static fetch.")
-            playwright_ctx = None
+        print("Playwright: subprocess-per-category mode (hang-safe).")
+    else:
+        print("Playwright: disabled — using static fetch.")
 
-    try:
-        for cat in CATEGORIES:
-            url = BASE + cat
-            print(f"  {cat:<26}", end="", flush=True)
-            clicks = 0
-            html = ""
+    for cat in CATEGORIES:
+        url = BASE + cat
+        print(f"  {cat:<26}", end="", flush=True)
+        html = ""
+        clicks = 0
+
+        if use_playwright:
+            html, clicks = _scrape_category_subprocess(cat, max_clicks=max_clicks)
+
+        if not html:
             try:
-                if browser is not None:
-                    # Fresh context per category — closed after use so its
-                    # JS heap and cached resources are freed immediately.
-                    ctx = browser.new_context()
-                    try:
-                        page = ctx.new_page()
-                        page.set_default_timeout(45000)
-                        html, clicks = fetch_with_playwright_session(
-                            page, url, max_clicks=max_clicks
-                        )
-                    except Exception as exc:
-                        print(f"\n  Playwright error on {cat}: {str(exc)[:80]} — static fallback")
-                        try:
-                            html = fetch(url)
-                        except Exception as fexc:
-                            print(f"    static fetch also failed: {fexc}")
-                            html = ""
-                        clicks = 0
-                    finally:
-                        try:
-                            ctx.close()  # frees all memory for this category
-                        except Exception:
-                            pass
-                else:
-                    html = fetch(url)
-
-                events = parse_teasers(html, cat)
-                new = 0
-                for e in events:
-                    if e["id"] not in seen_ids:
-                        seen_ids.add(e["id"])
-                        e["scraped_at"] = now
-                        all_events.append(e)
-                        new += 1
-                tag = f"+{clicks} clicks " if clicks else ""
-                print(f"  {tag}{len(events)} events ({new} new)")
+                html = fetch(url)
             except Exception as exc:
-                print(f"  ERROR for {cat}: {exc}")
-            time.sleep(0.3)
-    finally:
-        if browser is not None:
-            try:
-                browser.close()
-            except Exception:
-                pass
-        if playwright_ctx is not None:
-            try:
-                playwright_ctx.stop()
-            except Exception:
-                pass
+                print(f"\n    static fetch failed: {exc}")
+
+        events = parse_teasers(html, cat)
+        new = 0
+        for e in events:
+            if e["id"] not in seen_ids:
+                seen_ids.add(e["id"])
+                e["scraped_at"] = now
+                all_events.append(e)
+                new += 1
+        tag = f"+{clicks} clicks " if clicks else ""
+        print(f"  {tag}{len(events)} events ({new} new)")
+        time.sleep(0.1)
 
     return all_events
+
+
+def _run_single_cat_mode(cat: str, max_clicks: int) -> None:
+    """Entry point for --single-cat subprocess mode.
+    Scrapes one category, writes HTML to stdout, 'CLICKS:N' to stderr."""
+    try:
+        from playwright.sync_api import sync_playwright
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            ctx = browser.new_context()
+            page = ctx.new_page()
+            page.set_default_timeout(45000)
+            html, clicks = fetch_with_playwright_session(
+                page, BASE + cat, max_clicks=max_clicks, verbose=True
+            )
+            ctx.close()
+            browser.close()
+        print(f"CLICKS:{clicks}", file=sys.stderr, flush=True)
+        sys.stdout.write(html)
+        sys.stdout.flush()
+    except Exception as exc:
+        print(f"ERROR: {type(exc).__name__}: {str(exc)[:200]}", file=sys.stderr)
+        sys.exit(1)
 
 
 def main():
@@ -754,10 +772,17 @@ def main():
                         help="Skip detail-page program extraction")
     parser.add_argument("--clicks", type=int, default=10,
                         help="Max 'Weitere laden' clicks per category (default 10)")
+    parser.add_argument("--single-cat", metavar="CAT",
+                        help="Internal: scrape one category, write HTML to stdout")
     args = parser.parse_args()
 
+    # Subprocess mode: scrape exactly one category and exit.
+    if args.single_cat:
+        _run_single_cat_mode(args.single_cat, args.clicks)
+        return
+
     print(f"Gewandhaus scraper — {len(CATEGORIES)} categories")
-    print(f"  Playwright: {'off' if args.no_playwright else 'on'}, "
+    print(f"  Playwright: {'off' if args.no_playwright else 'subprocess-per-cat'}, "
           f"max clicks: {args.clicks}, "
           f"detail pages: {'off' if args.no_detail else 'on'}")
     if not args.no_detail:
