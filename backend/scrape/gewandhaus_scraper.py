@@ -46,12 +46,20 @@ def fetch(url: str) -> str:
     return r.text
 
 
+_TIME_RE = re.compile(r"(\d{1,2})[.:](\d{2})|(\d{1,2})\s*Uhr")
+
+
 def parse_time(teaser) -> str:
     el = teaser.find(class_=lambda c: c and "event-teaser__time" in " ".join(c if isinstance(c, list) else [c]))
     if not el:
         return ""
-    raw = el.get_text(strip=True)  # e.g. "19.30 Uhr"
-    return raw.replace(" Uhr", "").replace(".", ":")  # → "19:30"
+    raw = el.get_text(" ", strip=True)  # e.g. "19.30 Uhr" or "17 Uhr"
+    m = _TIME_RE.search(raw)
+    if not m:
+        return raw.replace(" Uhr", "").strip()
+    if m.group(1) is not None:
+        return f"{int(m.group(1)):02d}:{m.group(2)}"
+    return f"{int(m.group(3)):02d}:00"
 
 
 def parse_location(teaser) -> str:
@@ -80,15 +88,14 @@ def parse_title_artists(teaser):
     if not h2:
         return "", []
     title = h2.get_text(" ", strip=True)
-    # Siblings of h2 that are <p> tags contain soloists
-    artists = [title]
+    artists: list[str] = []
     for sib in h2.find_next_siblings("p"):
         # Stop at program-related blocks
         parent_classes = " ".join(sib.parent.get("class", []))
         if "details-level-1" in parent_classes or "details-hide" in parent_classes:
             break
         txt = sib.get_text(" ", strip=True)
-        if txt and "Werke von" not in txt:
+        if txt and "Werke von" not in txt and txt != title:
             artists.append(txt)
     return title, artists
 
@@ -118,6 +125,99 @@ def parse_detail_url(teaser) -> str:
 def parse_event_id(teaser) -> str:
     eid = teaser.get("id", "")  # e.g. "event-9373"
     return eid.replace("event-", "") if eid else ""
+
+
+# Common composer/work line shape: name (with comma or not) followed by work.
+# We use it as a coarse filter so we don't pick up boilerplate text like
+# "Programmänderungen vorbehalten" or "Pause".
+_BOILERPLATE = re.compile(
+    r"^(pause|ende|beginn|einlass|programm$|programmänderung|hinweis|"
+    r"besetzung|preise|tickets|programmheft|aufführungsdauer)\b",
+    re.IGNORECASE,
+)
+
+
+def _looks_like_work(text: str) -> bool:
+    if not text or len(text) < 8 or len(text) > 400:
+        return False
+    if _BOILERPLATE.match(text):
+        return False
+    # Strong signals that this is a concert work line
+    if (":" in text
+            or "op." in text.lower()
+            or "Nr." in text
+            or re.search(r"\b\d+\.\s+[A-ZÄÖÜ]", text)  # "1. Klavierkonzert"
+            or any(tok in text for tok in ("BWV", "KV", "K.", "Hob.", "D.", "WAB"))):
+        return True
+    # Fallback: two consecutive words starting with capital letters (looks like a name).
+    return bool(re.search(r"\b[A-ZÄÖÜ][a-zäöüß]+ [A-ZÄÖÜ][a-zäöüß]+", text))
+
+
+def _extract_program_nodes(soup: BeautifulSoup) -> list[str]:
+    """Try several selector strategies; return the first non-empty list of works."""
+    candidates = [
+        # TYPO3 / Gewandhaus-style class patterns
+        '[class*="program"] li',
+        '[class*="program"] p',
+        '[class*="programm"] li',
+        '[class*="programm"] p',
+        '[class*="werke"] li',
+        '[class*="werke"] p',
+        # Generic article body lines (worst case)
+        ".event-detail p",
+        ".event-detail li",
+    ]
+    for selector in candidates:
+        nodes = soup.select(selector)
+        works = []
+        for n in nodes:
+            text = " ".join(n.get_text(" ", strip=True).split())
+            if _looks_like_work(text):
+                works.append(text)
+        if works:
+            # Deduplicate while keeping order
+            seen = set()
+            ordered = []
+            for w in works:
+                if w not in seen:
+                    seen.add(w)
+                    ordered.append(w)
+            return ordered
+    return []
+
+
+def _extract_program_after_heading(soup: BeautifulSoup) -> list[str]:
+    """Find a 'Programm' heading and grab work lines that follow it."""
+    heading = soup.find(
+        ["h1", "h2", "h3", "h4"],
+        string=lambda s: s and "programm" in s.strip().lower() and len(s.strip()) < 20,
+    )
+    if not heading:
+        return []
+    works: list[str] = []
+    for sib in heading.find_all_next():
+        if sib.name in ("h1", "h2", "h3") and sib is not heading:
+            break
+        if sib.name in ("p", "li", "div"):
+            text = " ".join(sib.get_text(" ", strip=True).split())
+            if _looks_like_work(text) and text not in works:
+                works.append(text)
+        if len(works) >= 30:
+            break
+    return works
+
+
+def fetch_program_from_detail(url: str) -> list[str]:
+    """Fetch a single event's detail page and extract its program (works performed)."""
+    if not url:
+        return []
+    try:
+        html = fetch(url)
+    except Exception:
+        return []
+    soup = BeautifulSoup(html, "lxml")
+    program = _extract_program_nodes(soup) or _extract_program_after_heading(soup)
+    return program
 
 
 def parse_teasers(html: str, category: str) -> list[dict]:
@@ -176,12 +276,32 @@ def scrape_all() -> list[dict]:
     return all_events
 
 
+def enrich_with_detail_programs(events: list[dict]) -> None:
+    """For every event without a listing-derived program, fetch its detail page."""
+    todo = [e for e in events if not e.get("program") and e.get("url")]
+    if not todo:
+        return
+    print(f"\nFetching detail pages for {len(todo)} events (program extraction)...")
+    enriched = 0
+    for i, event in enumerate(todo, 1):
+        program = fetch_program_from_detail(event["url"])
+        if program:
+            event["program"] = program
+            enriched += 1
+        if i % 10 == 0 or i == len(todo):
+            print(f"  {i}/{len(todo)} processed, {enriched} with program so far")
+        time.sleep(0.3)
+    print(f"Detail pass complete: {enriched}/{len(todo)} events got a program")
+
+
 def main():
     print(f"Gewandhaus scraper — {len(CATEGORIES)} categories")
     print("=" * 50)
     events = scrape_all()
     events.sort(key=lambda e: e.get("date") or "9999-99-99")
     print(f"\nTotal unique events: {len(events)}")
+
+    enrich_with_detail_programs(events)
 
     out = Path(__file__).parent.parent / "gewandhaus_events.json"
     payload = {
