@@ -1,22 +1,18 @@
 """
 Gewandhaus Leipzig scraper.
 
-For each of the 15 concert category pages on gewandhausorchester.de:
-  1. Render the page with Playwright and click "Weitere Veranstaltungen laden"
-     up to N times to expose lazy-loaded events (falls back to a static fetch
-     if Playwright isn't available).
-  2. Parse the event teasers from the rendered HTML.
-  3. For every event without a listing-derived program, follow its detail URL
-     and extract the program (works performed) from the detail page.
+Loads the Gewandhaus homepage (gewandhausorchester.de) and clicks
+"Weitere Veranstaltungen laden" up to N times to expose all upcoming events,
+then extracts the concert program from each event's detail page.
 
 The result is written to backend/gewandhaus_events.json.
 
 Usage:
-  python3 scrape/gewandhaus_scraper.py                   # full run
-  python3 scrape/gewandhaus_scraper.py --no-playwright   # static-only
-  python3 scrape/gewandhaus_scraper.py --no-detail       # listing only
-  python3 scrape/gewandhaus_scraper.py --clicks 20       # raise load-more cap
-  python3 scrape/gewandhaus_scraper.py --single-cat /tacheles/  # internal subprocess mode
+  python3 scrape/gewandhaus_scraper.py                   # full run (60 clicks)
+  python3 scrape/gewandhaus_scraper.py --no-playwright   # static-only (fewer events)
+  python3 scrape/gewandhaus_scraper.py --no-detail       # listing only, no Claude
+  python3 scrape/gewandhaus_scraper.py --clicks 80       # raise load-more cap
+  python3 scrape/gewandhaus_scraper.py --single-cat /    # internal subprocess mode
 """
 from datetime import datetime
 from pathlib import Path
@@ -43,23 +39,10 @@ OUTPUT_PATH = Path(__file__).parent.parent / "gewandhaus_events.json"
 CLAUDE_MODEL = "claude-haiku-4-5-20251001"  # cheap + good enough for HTML extraction
 MAX_DETAIL_HTML_CHARS = 30_000
 
-CATEGORIES = [
-    "/grosse-concerte/",
-    "/kammermusik/",
-    "/klaviermusik/",
-    "/orgel/",
-    "/choere/",
-    "/alte-musik/",
-    "/musica-nova/",
-    "/salonmusik/",
-    "/klassik-airleben/",
-    "/impuls/",
-    "/in-der-thomaskirche/",
-    "/in-der-oper/",
-    "/nachklang/",
-    "/perspektivwechsel/",
-    "/tacheles/",
-]
+# Single entry point: the Gewandhaus homepage lists all upcoming events and
+# has a "Weitere Veranstaltungen laden" button. We scroll and click there
+# instead of visiting 15 separate category pages.
+MAIN_PAGE = "/"
 
 
 def fetch(url: str) -> str:
@@ -695,72 +678,52 @@ def _scrape_category_subprocess(cat: str, max_clicks: int,
     return result.stdout, clicks
 
 
-def scrape_all(use_playwright: bool = True, max_clicks: int = 10) -> list[dict]:
-    """Scrape all category pages.
+def scrape_all(use_playwright: bool = True, max_clicks: int = 50) -> list[dict]:
+    """Scrape the Gewandhaus homepage, scrolling and clicking 'Weitere
+    Veranstaltungen laden' until all events are loaded.
 
-    Each category is run in a subprocess (--single-cat mode) so a Playwright
-    hang on any one category cannot block the parent process. The OS-level
-    subprocess timeout is the only mechanism that reliably kills stuck Chromium
-    instances — signals, greenlets and Python threads all fail for this."""
-    seen_ids: set[str] = set()
-    all_events: list[dict] = []
+    This replaces the old 15-category loop. One page, one subprocess, no
+    per-category hang risk. The homepage lists events from all series."""
     now = datetime.utcnow().isoformat() + "Z"
+    url = BASE + MAIN_PAGE
+
+    print(f"  Scraping main page: {url}", flush=True)
+    html = ""
+    clicks = 0
 
     if use_playwright:
-        print("Playwright: subprocess-per-category mode (hang-safe).")
-    else:
-        print("Playwright: disabled — using static fetch.")
+        html, clicks = _scrape_category_subprocess(
+            MAIN_PAGE, max_clicks=max_clicks, timeout_s=300
+        )
 
-    for cat in CATEGORIES:
-        url = BASE + cat
-        # Print the category on its own complete line so GitHub Actions shows
-        # progress immediately. Partial lines (end="") are buffered and only
-        # rendered after a newline, which made the run look stuck on /tacheles/.
-        print(f"  {cat:<26} (starting…)", flush=True)
-        html = ""
-        clicks = 0
+    if not html:
+        print("  Playwright failed or disabled — static fetch fallback")
+        try:
+            html = fetch(url)
+        except Exception as exc:
+            print(f"  static fetch failed: {exc}")
+            return []
 
-        if use_playwright:
-            # /tacheles/ historically hangs Playwright; give it a tight timeout
-            # so we fail fast and fall back to static fetch.
-            cat_timeout = 45 if cat == "/tacheles/" else 90
-            html, clicks = _scrape_category_subprocess(
-                cat, max_clicks=max_clicks, timeout_s=cat_timeout
-            )
-
-        if not html:
-            try:
-                html = fetch(url)
-            except Exception as exc:
-                print(f"    static fetch failed: {exc}")
-
-        events = parse_teasers(html, cat)
-        new = 0
-        for e in events:
-            if e["id"] not in seen_ids:
-                seen_ids.add(e["id"])
-                e["scraped_at"] = now
-                all_events.append(e)
-                new += 1
-        tag = f"+{clicks} clicks " if clicks else ""
-        print(f"    → {tag}{len(events)} events ({new} new)", flush=True)
-        time.sleep(0.1)
-
-    return all_events
+    events = parse_teasers(html, "")
+    for e in events:
+        e["scraped_at"] = now
+    tag = f"+{clicks} clicks, " if clicks else ""
+    print(f"  → {tag}{len(events)} events loaded", flush=True)
+    return events
 
 
-def _run_single_cat_mode(cat: str, max_clicks: int) -> None:
+def _run_single_cat_mode(page_path: str, max_clicks: int) -> None:
     """Entry point for --single-cat subprocess mode.
-    Scrapes one category, writes HTML to stdout, 'CLICKS:N' to stderr."""
+    Scrapes one page path, writes HTML to stdout, 'CLICKS:N' to stderr."""
     try:
         from playwright.sync_api import sync_playwright
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
             ctx = browser.new_context()
             page = ctx.new_page()
-            page.set_default_timeout(45000)
+            page.set_default_timeout(60000)
             html, clicks = fetch_with_playwright_session(
-                page, BASE + cat, max_clicks=max_clicks, verbose=True
+                page, BASE + page_path, max_clicks=max_clicks, verbose=True
             )
             ctx.close()
             browser.close()
@@ -789,8 +752,8 @@ def main():
         _run_single_cat_mode(args.single_cat, args.clicks)
         return
 
-    print(f"Gewandhaus scraper — {len(CATEGORIES)} categories")
-    print(f"  Playwright: {'off' if args.no_playwright else 'subprocess-per-cat'}, "
+    print(f"Gewandhaus scraper — main page, up to {args.clicks} load-more clicks")
+    print(f"  Playwright: {'off' if args.no_playwright else 'on (subprocess)'}, "
           f"max clicks: {args.clicks}, "
           f"detail pages: {'off' if args.no_detail else 'on'}")
     if not args.no_detail:
