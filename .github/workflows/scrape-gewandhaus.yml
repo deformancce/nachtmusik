@@ -30,11 +30,15 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install --quiet requests beautifulsoup4 lxml
+        run: |
+          pip install --quiet requests beautifulsoup4 lxml playwright anthropic
+          python3 -m playwright install --with-deps chromium
 
       - name: Run Gewandhaus scraper
         working-directory: backend
-        run: python3 scrape/gewandhaus_scraper.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 scrape/gewandhaus_scraper.py --clicks 10
 
       - name: Show summary
         working-directory: backend
@@ -54,6 +58,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add backend/gewandhaus_events.json
+          # Also pick up the debug HTML dump if the scraper produced one.
+          if [ -f backend/_debug_detail_sample.html ]; then
+            git add backend/_debug_detail_sample.html
+          fi
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
