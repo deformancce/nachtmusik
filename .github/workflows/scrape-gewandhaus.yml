@@ -2,11 +2,16 @@ name: Scrape Gewandhaus events
 
 # Manual trigger from the Actions tab, plus a daily schedule.
 # The job fetches all 15 Gewandhaus category pages, parses concert events,
-# and commits backend/gewandhaus_events.json back to the branch.
+# and commits backend/gewandhaus_events.json back to the chosen branch.
 on:
   workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch to scrape from and commit to"
+        required: false
+        default: "claude/add-opus-code-iSPrR"
   schedule:
-    # Daily at 04:00 UTC (= ~05:00–06:00 in Europe)
+    # Daily at 04:00 UTC
     - cron: "0 4 * * *"
 
 permissions:
@@ -18,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref_name }}
+          ref: ${{ github.event.inputs.branch || github.ref_name }}
 
       - uses: actions/setup-python@v5
         with:
