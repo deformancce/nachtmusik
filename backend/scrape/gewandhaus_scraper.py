@@ -496,12 +496,31 @@ def fetch_program_from_detail(url: str, verbose: bool = False) -> list[str]:
     return program
 
 
-def enrich_with_detail_programs(events: list[dict]) -> None:
+def _save_checkpoint(events: list[dict], path: Path) -> None:
+    payload = {
+        "total_events": len(events),
+        "scraped_at": datetime.utcnow().isoformat() + "Z",
+        "events": events,
+    }
+    tmp = path.with_suffix(".tmp")
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    tmp.replace(path)
+
+
+def enrich_with_detail_programs(
+    events: list[dict],
+    checkpoint_path: "Path | None" = None,
+    checkpoint_every: int = 50,
+) -> None:
     """Populate event['program'] by, in order:
        1. Reusing data from the previous gewandhaus_events.json (cache).
        2. Asking Claude (Haiku) to extract the program from the detail page,
           when ANTHROPIC_API_KEY is set.
        3. Falling back to static CSS-selector parsing.
+
+    If checkpoint_path is given, a partial JSON is written every
+    checkpoint_every events so a crash or cancel doesn't lose work.
     """
     cache = _load_program_cache()
     if cache:
@@ -596,7 +615,13 @@ def enrich_with_detail_programs(events: list[dict]) -> None:
 
         if i % 10 == 0 or i == len(todo):
             print(f"  {i}/{len(todo)} processed | claude:{enriched_claude} static:{enriched_static} "
-                  f"fetch_err:{fetch_errors} non200:{fetch_non_200} claude_err:{claude_errors} claude_empty:{claude_empty}")
+                  f"fetch_err:{fetch_errors} non200:{fetch_non_200} claude_err:{claude_errors} claude_empty:{claude_empty}",
+                  flush=True)
+
+        if checkpoint_path and i % checkpoint_every == 0:
+            _save_checkpoint(events, checkpoint_path)
+            print(f"  [checkpoint] saved {checkpoint_path.name} after {i} events", flush=True)
+
         time.sleep(0.3)
 
     print(
@@ -765,17 +790,12 @@ def main():
     events.sort(key=lambda e: e.get("date") or "9999-99-99")
     print(f"\nTotal unique events: {len(events)}")
 
-    if not args.no_detail:
-        enrich_with_detail_programs(events)
-
     out = Path(__file__).parent.parent / "gewandhaus_events.json"
-    payload = {
-        "total_events": len(events),
-        "scraped_at": datetime.utcnow().isoformat() + "Z",
-        "events": events,
-    }
-    with open(out, "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False, indent=2)
+
+    if not args.no_detail:
+        enrich_with_detail_programs(events, checkpoint_path=out, checkpoint_every=50)
+
+    _save_checkpoint(events, out)
     print(f"Saved → {out}")
 
 
