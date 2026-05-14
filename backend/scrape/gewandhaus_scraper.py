@@ -371,15 +371,15 @@ def _diagnose_claude_env() -> None:
     """Print a one-line summary of whether Claude can be used."""
     key = os.environ.get("ANTHROPIC_API_KEY", "")
     if not key:
-        print("Claude diagnostic: ANTHROPIC_API_KEY is NOT set in env")
+        print("Claude diagnostic: ANTHROPIC_API_KEY is NOT set in env", flush=True)
         return
     masked = f"{key[:8]}...{key[-4:]}" if len(key) > 12 else "(too short)"
-    print(f"Claude diagnostic: ANTHROPIC_API_KEY present ({masked}, {len(key)} chars)")
+    print(f"Claude diagnostic: ANTHROPIC_API_KEY present ({masked}, {len(key)} chars)", flush=True)
     try:
         import anthropic
-        print(f"Claude diagnostic: anthropic SDK version {anthropic.__version__} importable")
+        print(f"Claude diagnostic: anthropic SDK version {anthropic.__version__} importable", flush=True)
     except ImportError as exc:
-        print(f"Claude diagnostic: anthropic SDK NOT importable ({exc})")
+        print(f"Claude diagnostic: anthropic SDK NOT importable ({exc})", flush=True)
         return
     # Probe the API with a 1-token request to verify key works
     try:
@@ -390,9 +390,9 @@ def _diagnose_claude_env() -> None:
             messages=[{"role": "user", "content": "Say OK."}],
         )
         out = msg.content[0].text if msg.content else "(no content)"
-        print(f"Claude diagnostic: probe call OK, model replied {out!r}")
+        print(f"Claude diagnostic: probe call OK, model replied {out!r}", flush=True)
     except Exception as exc:
-        print(f"Claude diagnostic: probe call FAILED — {type(exc).__name__}: {str(exc)[:200]}")
+        print(f"Claude diagnostic: probe call FAILED — {type(exc).__name__}: {str(exc)[:200]}", flush=True)
 
 
 def extract_program_with_claude(html: str, event: dict) -> list[str]:
@@ -524,10 +524,10 @@ def enrich_with_detail_programs(
     """
     cache = _load_program_cache()
     if cache:
-        print(f"\nProgram cache: {len(cache)} previously-extracted entries")
+        print(f"\nProgram cache: {len(cache)} previously-extracted entries", flush=True)
 
     have_claude = _get_claude_client() is not None
-    print(f"Claude API: {'enabled (Haiku)' if have_claude else 'disabled (no key)'}")
+    print(f"Claude API: {'enabled (Haiku)' if have_claude else 'disabled (no key)'}", flush=True)
 
     cache_hits = 0
     for ev in events:
@@ -535,14 +535,14 @@ def enrich_with_detail_programs(
             ev["program"] = cache[ev["id"]]
             cache_hits += 1
     if cache_hits:
-        print(f"Reused {cache_hits} programs from previous run")
+        print(f"Reused {cache_hits} programs from previous run", flush=True)
 
     todo = [e for e in events if not e.get("program") and e.get("url")]
     if not todo:
-        print("\nAll events already have a program — nothing to fetch.")
+        print("\nAll events already have a program — nothing to fetch.", flush=True)
         return
 
-    print(f"\nFetching {len(todo)} detail pages for program extraction...")
+    print(f"\nFetching {len(todo)} detail pages for program extraction...", flush=True)
     enriched_claude = 0
     enriched_static = 0
     fetch_errors = 0
@@ -629,7 +629,8 @@ def enrich_with_detail_programs(
         f"  programs found: {enriched_claude} via Claude + {enriched_static} via selectors\n"
         f"  fetch failures: {fetch_errors} exceptions, {fetch_non_200} non-200 responses\n"
         f"  claude calls:   {claude_errors} errors, {claude_empty} returned empty list\n"
-        f"  total processed: {len(todo)}"
+        f"  total processed: {len(todo)}",
+        flush=True,
     )
 
 
@@ -777,18 +778,18 @@ def main():
         _run_single_cat_mode(args.single_cat, args.clicks)
         return
 
-    print(f"Gewandhaus scraper — main page, up to {args.clicks} load-more clicks")
+    print(f"Gewandhaus scraper — main page, up to {args.clicks} load-more clicks", flush=True)
     print(f"  Playwright: {'off' if args.no_playwright else 'on (subprocess)'}, "
           f"max clicks: {args.clicks}, "
-          f"detail pages: {'off' if args.no_detail else 'on'}")
+          f"detail pages: {'off' if args.no_detail else 'on'}", flush=True)
     if not args.no_detail:
         _diagnose_claude_env()
-    print("=" * 50)
+    print("=" * 50, flush=True)
 
     events = scrape_all(use_playwright=not args.no_playwright,
                        max_clicks=args.clicks)
     events.sort(key=lambda e: e.get("date") or "9999-99-99")
-    print(f"\nTotal unique events: {len(events)}")
+    print(f"\nTotal unique events: {len(events)}", flush=True)
 
     out = Path(__file__).parent.parent / "gewandhaus_events.json"
 
@@ -796,7 +797,7 @@ def main():
         enrich_with_detail_programs(events, checkpoint_path=out, checkpoint_every=50)
 
     _save_checkpoint(events, out)
-    print(f"Saved → {out}")
+    print(f"Saved → {out}", flush=True)
 
 
 if __name__ == "__main__":

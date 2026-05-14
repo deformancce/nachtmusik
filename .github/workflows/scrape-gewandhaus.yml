@@ -38,6 +38,7 @@ jobs:
         working-directory: backend
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PYTHONUNBUFFERED: "1"
         run: python3 scrape/gewandhaus_scraper.py --clicks 60
 
       - name: Show summary
