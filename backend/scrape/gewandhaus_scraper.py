@@ -713,18 +713,26 @@ def scrape_all(use_playwright: bool = True, max_clicks: int = 10) -> list[dict]:
 
     for cat in CATEGORIES:
         url = BASE + cat
-        print(f"  {cat:<26}", end="", flush=True)
+        # Print the category on its own complete line so GitHub Actions shows
+        # progress immediately. Partial lines (end="") are buffered and only
+        # rendered after a newline, which made the run look stuck on /tacheles/.
+        print(f"  {cat:<26} (starting…)", flush=True)
         html = ""
         clicks = 0
 
         if use_playwright:
-            html, clicks = _scrape_category_subprocess(cat, max_clicks=max_clicks)
+            # /tacheles/ historically hangs Playwright; give it a tight timeout
+            # so we fail fast and fall back to static fetch.
+            cat_timeout = 45 if cat == "/tacheles/" else 90
+            html, clicks = _scrape_category_subprocess(
+                cat, max_clicks=max_clicks, timeout_s=cat_timeout
+            )
 
         if not html:
             try:
                 html = fetch(url)
             except Exception as exc:
-                print(f"\n    static fetch failed: {exc}")
+                print(f"    static fetch failed: {exc}")
 
         events = parse_teasers(html, cat)
         new = 0
@@ -735,7 +743,7 @@ def scrape_all(use_playwright: bool = True, max_clicks: int = 10) -> list[dict]:
                 all_events.append(e)
                 new += 1
         tag = f"+{clicks} clicks " if clicks else ""
-        print(f"  {tag}{len(events)} events ({new} new)")
+        print(f"    → {tag}{len(events)} events ({new} new)", flush=True)
         time.sleep(0.1)
 
     return all_events
