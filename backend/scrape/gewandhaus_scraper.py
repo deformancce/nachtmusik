@@ -279,36 +279,85 @@ _DEBUG_DUMP_PATH = Path(__file__).parent.parent / "_debug_detail_sample.html"
 _DEBUG_DUMPED = False
 
 
-def fetch_program_from_detail(url: str) -> list[str]:
+def _dump_debug(content: str, label: str) -> None:
+    """Write a one-time diagnostic file to backend/_debug_detail_sample.html."""
+    global _DEBUG_DUMPED
+    if _DEBUG_DUMPED:
+        return
+    try:
+        with open(_DEBUG_DUMP_PATH, "w", encoding="utf-8") as f:
+            f.write(f"<!-- DIAGNOSTIC DUMP: {label} -->\n")
+            f.write(content)
+        _DEBUG_DUMPED = True
+        print(f"  [debug] wrote {_DEBUG_DUMP_PATH.name} ({label}, {len(content)} chars)")
+    except Exception as exc:
+        print(f"  [debug] dump failed: {exc}")
+
+
+def fetch_program_from_detail(url: str, verbose: bool = False) -> list[str]:
     """Fetch a single event's detail page and extract its program (works performed).
 
-    On the first failure to extract a program, the raw HTML is dumped to
-    backend/_debug_detail_sample.html so we can refine the parser. Subsequent
-    failures are silent.
+    On the very first failure (network error or empty extraction), the raw
+    response is dumped to backend/_debug_detail_sample.html so we can refine
+    the parser. With verbose=True, prints diagnostics for each attempt.
     """
-    global _DEBUG_DUMPED
     if not url:
         return []
     try:
-        html = fetch(url)
-    except Exception:
+        r = requests.get(url, headers=HEADERS, timeout=20)
+    except Exception as exc:
+        if verbose:
+            print(f"  [detail] {url} → fetch raised {type(exc).__name__}: {exc}")
+        _dump_debug(f"FETCH ERROR for {url}: {type(exc).__name__}: {exc}", "fetch-exception")
         return []
+
+    if r.status_code != 200:
+        if verbose:
+            print(f"  [detail] {url} → HTTP {r.status_code}")
+        _dump_debug(
+            f"HTTP {r.status_code} for {url}\n\nResponse body:\n{r.text[:5000]}",
+            f"http-{r.status_code}",
+        )
+        return []
+
+    html = r.text
     soup = BeautifulSoup(html, "lxml")
     program = _extract_program_nodes(soup) or _extract_program_after_heading(soup)
-    if not program and not _DEBUG_DUMPED:
-        try:
-            # Strip <script>/<style> to keep the dump readable
-            for tag in soup(["script", "style", "noscript", "iframe", "svg"]):
-                tag.decompose()
-            body = soup.find("body") or soup
-            with open(_DEBUG_DUMP_PATH, "w", encoding="utf-8") as f:
-                f.write(f"<!-- source: {url} -->\n")
-                f.write(str(body))
-            _DEBUG_DUMPED = True
-            print(f"  [debug] dumped detail HTML for failed extraction → {_DEBUG_DUMP_PATH.name}")
-        except Exception:
-            pass
+
+    if verbose:
+        print(f"  [detail] {url} → {len(html)} chars, {len(program)} works")
+
+    if not program:
+        # Strip noise so the dump stays under ~100KB and is readable
+        for tag in soup(["script", "style", "noscript", "iframe", "svg"]):
+            tag.decompose()
+        body = soup.find("body") or soup
+        _dump_debug(
+            f"<!-- source: {url} -->\n<!-- size: {len(html)} chars -->\n{body}",
+            f"empty-extraction ({url})",
+        )
     return program
+
+
+def enrich_with_detail_programs(events: list[dict]) -> None:
+    """For every event without a listing-derived program, fetch its detail page."""
+    todo = [e for e in events if not e.get("program") and e.get("url")]
+    if not todo:
+        print("\nAll events already have a program — skipping detail pass.")
+        return
+    print(f"\nFetching detail pages for {len(todo)} events (program extraction)...")
+    enriched = 0
+    for i, event in enumerate(todo, 1):
+        # First three attempts: verbose, so action logs show what we're seeing.
+        verbose = i <= 3
+        program = fetch_program_from_detail(event["url"], verbose=verbose)
+        if program:
+            event["program"] = program
+            enriched += 1
+        if i % 10 == 0 or i == len(todo):
+            print(f"  {i}/{len(todo)} processed, {enriched} with program so far")
+        time.sleep(0.3)
+    print(f"Detail pass complete: {enriched}/{len(todo)} events got a program")
 
 
 def parse_teasers(html: str, category: str) -> list[dict]:
@@ -387,24 +436,6 @@ def scrape_all(use_playwright: bool = True, max_clicks: int = 10) -> list[dict]:
         time.sleep(0.4)
 
     return all_events
-
-
-def enrich_with_detail_programs(events: list[dict]) -> None:
-    """For every event without a listing-derived program, fetch its detail page."""
-    todo = [e for e in events if not e.get("program") and e.get("url")]
-    if not todo:
-        return
-    print(f"\nFetching detail pages for {len(todo)} events (program extraction)...")
-    enriched = 0
-    for i, event in enumerate(todo, 1):
-        program = fetch_program_from_detail(event["url"])
-        if program:
-            event["program"] = program
-            enriched += 1
-        if i % 10 == 0 or i == len(todo):
-            print(f"  {i}/{len(todo)} processed, {enriched} with program so far")
-        time.sleep(0.3)
-    print(f"Detail pass complete: {enriched}/{len(todo)} events got a program")
 
 
 def main():
