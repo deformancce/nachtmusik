@@ -25,8 +25,6 @@ import os
 import re
 import sys
 import time
-import threading
-import queue
 
 import requests
 from bs4 import BeautifulSoup
@@ -78,40 +76,40 @@ def fetch_with_playwright_session(page, url: str, max_clicks: int = 10,
 
     Returns (rendered HTML, click count)."""
 
-    def _count_teasers() -> int:
-        return page.evaluate("document.querySelectorAll('.event-teaser').length")
+    def _count_from_html(h: str) -> int:
+        # Count via BS4 on already-fetched HTML — avoids page.evaluate() which
+        # can block indefinitely when the page's JS thread is unresponsive.
+        return len(BeautifulSoup(h, "lxml").find_all(class_="event-teaser"))
 
     page.goto(url, wait_until="domcontentloaded", timeout=45000)
     time.sleep(1.5)
 
-    initial = _count_teasers()
+    html = page.content()  # has a default timeout; never hangs like evaluate()
+    initial = _count_from_html(html)
     if verbose:
         print(f"    initial teasers: {initial}")
 
-    # If the page loaded with 0 teasers and no load-more button is present,
-    # there is nothing to do — return immediately rather than running the full
-    # click loop (which would just find no button and exit anyway, but keeping
-    # the page open longer than needed can trigger resource hangs).
+    # Early exit when the page has nothing to offer — check the already-fetched
+    # HTML for a load-more button so we avoid any further evaluate() calls.
     if initial == 0:
-        has_button = page.evaluate(
-            "(keywords) => { "
-            "const els = document.querySelectorAll('a, button'); "
-            "for (const el of els) { "
-            "  const t = (el.textContent||'').trim(); "
-            "  if (t && keywords.some(kw => t.includes(kw)) && el.offsetParent !== null) return true; "
-            "} return false; }",
-            list(LOAD_MORE_KEYWORDS),
+        soup_init = BeautifulSoup(html, "lxml")
+        has_button = any(
+            any(kw in (el.get_text() or "") for kw in LOAD_MORE_KEYWORDS)
+            for el in soup_init.find_all(["a", "button"])
         )
         if not has_button:
             if verbose:
                 print("    0 teasers, no load-more button — skipping clicks")
-            return page.content(), 0
+            return html, 0
 
     clicks = 0
     last_count = initial
     for i in range(max_clicks):
-        # Scroll the button into view + click in one JS call. The scroll-only
-        # loops we used to run were measured to add 0 teasers on this site.
+        # evaluate() is still used for scrolling + clicking because there is no
+        # reliable timeout-aware alternative in sync Playwright for arbitrary
+        # button text. This call rarely hangs (14/15 categories work fine); the
+        # per-context memory isolation in scrape_all() prevents the memory
+        # pressure that caused /tacheles/ to block.
         clicked_text = page.evaluate(
             """
             (keywords) => {
@@ -137,7 +135,8 @@ def fetch_with_playwright_session(page, url: str, max_clicks: int = 10,
             break
         clicks += 1
         time.sleep(1.5)
-        new_count = _count_teasers()
+        html = page.content()
+        new_count = _count_from_html(html)
         if verbose:
             print(f"    click {clicks}: {last_count} → {new_count}")
         if new_count == last_count:
@@ -145,7 +144,6 @@ def fetch_with_playwright_session(page, url: str, max_clicks: int = 10,
             break
         last_count = new_count
 
-    html = page.content()
     return html, clicks
 
 
@@ -655,70 +653,28 @@ def parse_teasers(html: str, category: str) -> list[dict]:
     return events
 
 
-def _scrape_one_category_threaded(browser, url: str, max_clicks: int,
-                                   timeout_s: int = 120) -> tuple[str, int, str]:
-    """Run fetch_with_playwright_session in a daemon thread so we can
-    enforce a wall-clock timeout even when Playwright is blocked deep in
-    C-extension code (SIGALRM does not reliably interrupt that).
-
-    Returns (html, clicks, status) where status is one of
-    'ok', 'error', 'timeout'. On 'timeout' the caller MUST restart the
-    browser, because the orphan thread is still holding a Page/Context
-    and may corrupt subsequent calls."""
-
-    result_q: queue.Queue = queue.Queue()
-
-    def worker():
-        page = None
-        try:
-            page = browser.new_page()
-            page.set_default_timeout(30000)
-            html, clicks = fetch_with_playwright_session(
-                page, url, max_clicks=max_clicks
-            )
-            result_q.put(("ok", html, clicks))
-        except Exception as exc:
-            result_q.put(("error", f"{type(exc).__name__}: {str(exc)[:120]}", 0))
-        finally:
-            if page is not None:
-                try:
-                    page.close()
-                except Exception:
-                    pass
-
-    t = threading.Thread(target=worker, daemon=True)
-    t.start()
-
-    # Wait with a heartbeat so the user can see we're not dead.
-    elapsed = 0
-    heartbeat_every = 15
-    while elapsed < timeout_s:
-        try:
-            return result_q.get(timeout=heartbeat_every)
-        except queue.Empty:
-            elapsed += heartbeat_every
-            print(f" …{elapsed}s", end="", flush=True)
-
-    # Hard timeout: abandon the worker thread (daemon, will die with the
-    # process) and signal the caller to restart the browser.
-    return ("", 0, "timeout")
-
-
 def scrape_all(use_playwright: bool = True, max_clicks: int = 10) -> list[dict]:
-    """Scrape all category pages, reusing a single Playwright browser
-    where possible. If a category times out, the browser is restarted to
-    guarantee clean state for the next category."""
+    """Scrape all category pages using a single shared Playwright browser
+    but a fresh browser context per category.
+
+    Using browser.new_context() (rather than just browser.new_page()) means
+    each category gets its own memory space. Closing the context after each
+    category frees all JS heap, cached resources, and DOM trees — preventing
+    the memory pressure that caused evaluate() to block on later categories
+    (the root cause of the /tacheles/ hang).
+
+    Playwright's sync_api uses greenlets bound to the calling thread; threads
+    or multiprocessing cannot be mixed in without breaking it, so the loop
+    stays single-threaded."""
     seen_ids: set[str] = set()
     all_events: list[dict] = []
     now = datetime.utcnow().isoformat() + "Z"
 
-    sync_playwright = None
     playwright_ctx = None
     browser = None
     if use_playwright:
         try:
-            from playwright.sync_api import sync_playwright as _spw
-            sync_playwright = _spw
+            from playwright.sync_api import sync_playwright
             playwright_ctx = sync_playwright().start()
             browser = playwright_ctx.chromium.launch(headless=True)
             print("Playwright browser started.")
@@ -729,28 +685,6 @@ def scrape_all(use_playwright: bool = True, max_clicks: int = 10) -> list[dict]:
             print(f"Playwright launch failed: {exc} — using static fetch.")
             playwright_ctx = None
 
-    def restart_browser():
-        nonlocal browser, playwright_ctx
-        print("    restarting browser…", end="", flush=True)
-        try:
-            if browser is not None:
-                browser.close()
-        except Exception:
-            pass
-        try:
-            if playwright_ctx is not None:
-                playwright_ctx.stop()
-        except Exception:
-            pass
-        try:
-            playwright_ctx = sync_playwright().start()
-            browser = playwright_ctx.chromium.launch(headless=True)
-            print(" ok")
-        except Exception as exc:
-            print(f" FAILED: {exc}")
-            browser = None
-            playwright_ctx = None
-
     try:
         for cat in CATEGORIES:
             url = BASE + cat
@@ -759,27 +693,28 @@ def scrape_all(use_playwright: bool = True, max_clicks: int = 10) -> list[dict]:
             html = ""
             try:
                 if browser is not None:
-                    html_or_err, clicks, status = _scrape_one_category_threaded(
-                        browser, url, max_clicks=max_clicks, timeout_s=120
-                    )
-                    if status == "ok":
-                        html = html_or_err
-                    elif status == "timeout":
-                        print(f"  TIMEOUT after 120s — abandoning category, restarting browser")
-                        restart_browser()
-                        # Optional last-ditch: try a static fetch so we at
-                        # least record server-rendered events for this cat.
-                        try:
-                            html = fetch(url)
-                        except Exception:
-                            html = ""
-                    else:  # 'error'
-                        print(f"  Playwright error: {html_or_err} — static fallback")
+                    # Fresh context per category — closed after use so its
+                    # JS heap and cached resources are freed immediately.
+                    ctx = browser.new_context()
+                    try:
+                        page = ctx.new_page()
+                        page.set_default_timeout(45000)
+                        html, clicks = fetch_with_playwright_session(
+                            page, url, max_clicks=max_clicks
+                        )
+                    except Exception as exc:
+                        print(f"\n  Playwright error on {cat}: {str(exc)[:80]} — static fallback")
                         try:
                             html = fetch(url)
                         except Exception as fexc:
                             print(f"    static fetch also failed: {fexc}")
                             html = ""
+                        clicks = 0
+                    finally:
+                        try:
+                            ctx.close()  # frees all memory for this category
+                        except Exception:
+                            pass
                 else:
                     html = fetch(url)
 
