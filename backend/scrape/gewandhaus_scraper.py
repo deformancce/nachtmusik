@@ -468,7 +468,7 @@ def extract_program_with_claude(html: str, event: dict, verbose: bool = False) -
         if verbose:
             print(f"    [claude] body fallback, {len(body_html)} chars", flush=True)
 
-    prompt = f"""Extract the concert program from this Gewandhaus Leipzig event detail page.
+    prompt = f"""Extract the works performed at this Gewandhaus Leipzig event.
 
 Event title: {event.get('title', '')}
 Event date: {event.get('date', '')}
@@ -476,16 +476,23 @@ Event date: {event.get('date', '')}
 HTML (cleaned):
 {body_html}
 
-Return a JSON array of works performed at this concert. Each entry should be a
-single string in the format "Composer: Work Title (opus/catalog number)" when
-available, e.g.:
+Return a JSON array of works. Each entry should be a single string in the
+format "Composer: Work Title (opus/catalog number)" when available, e.g.:
 - "Johann Sebastian Bach: Weihnachts-Oratorium BWV 248"
 - "Ludwig van Beethoven: Symphonie Nr. 9 d-moll op. 125"
 - "Gustav Mahler: Symphonie Nr. 2 c-moll \\"Auferstehung\\""
+- "Georges Bizet: Carmen (Oper in vier Akten)"
 
-Skip filler like "Pause" or "Einlass". If the page lists no works (e.g. an
-opera evening that just states the opera title), return [] — the title is
-already known.
+Operas, oratorios and ballets count as a single work — return a one-element
+list with the composer and work, e.g. ["Georges Bizet: Carmen"]. Look for a
+line like "Georges Bizet — Carmen - Oper in vier Akten" on the page.
+
+For concerts with multiple works (Grosse Concerte, Kammermusik, Klavierabend,
+Motette, etc.), list each work separately in performance order.
+
+Skip filler like "Pause", "Einlass", "Ende ca.", and lines that are only
+artist/conductor names. Return [] only if you genuinely cannot find any
+composer-work information on the page.
 
 Respond with ONLY the JSON array. No prose, no markdown fences.
 """
