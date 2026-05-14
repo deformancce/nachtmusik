@@ -30,11 +30,13 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install --quiet requests beautifulsoup4 lxml
+        run: |
+          pip install --quiet requests beautifulsoup4 lxml playwright
+          python3 -m playwright install --with-deps chromium
 
       - name: Run Gewandhaus scraper
         working-directory: backend
-        run: python3 scrape/gewandhaus_scraper.py
+        run: python3 scrape/gewandhaus_scraper.py --clicks 10
 
       - name: Show summary
         working-directory: backend

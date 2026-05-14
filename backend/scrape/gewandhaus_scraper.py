@@ -1,25 +1,41 @@
 """
-Gewandhaus Leipzig scraper — API-key-free, Playwright-free.
+Gewandhaus Leipzig scraper.
 
-Fetches all concert category pages from gewandhausorchester.de,
-parses the hidden-but-present event teasers, deduplicates by event ID,
-and writes backend/gewandhaus_events.json.
+For each of the 15 concert category pages on gewandhausorchester.de:
+  1. Render the page with Playwright and click "Weitere Veranstaltungen laden"
+     up to N times to expose lazy-loaded events (falls back to a static fetch
+     if Playwright isn't available).
+  2. Parse the event teasers from the rendered HTML.
+  3. For every event without a listing-derived program, follow its detail URL
+     and extract the program (works performed) from the detail page.
+
+The result is written to backend/gewandhaus_events.json.
 
 Usage:
-  python3 scrape/gewandhaus_scraper.py
+  python3 scrape/gewandhaus_scraper.py                   # full run
+  python3 scrape/gewandhaus_scraper.py --no-playwright   # static-only
+  python3 scrape/gewandhaus_scraper.py --no-detail       # listing only
+  python3 scrape/gewandhaus_scraper.py --clicks 20       # raise load-more cap
 """
 from datetime import datetime
 from pathlib import Path
+import argparse
 import json
-import time
 import re
 import sys
+import time
 
 import requests
 from bs4 import BeautifulSoup
 
 BASE = "https://www.gewandhausorchester.de"
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; op.us/0.1)"}
+LOAD_MORE_KEYWORDS = (
+    "Weitere Veranstaltungen",
+    "Weitere laden",
+    "Mehr laden",
+    "Mehr anzeigen",
+)
 
 CATEGORIES = [
     "/grosse-concerte/",
@@ -44,6 +60,58 @@ def fetch(url: str) -> str:
     r = requests.get(url, headers=HEADERS, timeout=20)
     r.raise_for_status()
     return r.text
+
+
+def fetch_with_playwright(url: str, max_clicks: int = 10) -> tuple[str, int]:
+    """Render the URL with a headless browser, click 'Weitere laden' up to
+    max_clicks times, and return the final HTML + the number of successful
+    clicks. Raises ImportError if Playwright isn't installed."""
+    from playwright.sync_api import sync_playwright
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        page = browser.new_page()
+        page.set_default_timeout(60000)
+        try:
+            page.goto(url, wait_until="domcontentloaded", timeout=60000)
+            time.sleep(3)
+
+            clicks = 0
+            consecutive_no_button = 0
+            for _ in range(max_clicks):
+                page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+                time.sleep(0.6)
+                clicked = page.evaluate(
+                    """
+                    (keywords) => {
+                        const elements = document.querySelectorAll('a, button');
+                        for (const el of elements) {
+                            const text = (el.textContent || '').trim();
+                            if (!text) continue;
+                            if (keywords.some(kw => text.includes(kw)) && el.offsetParent !== null) {
+                                el.click();
+                                return true;
+                            }
+                        }
+                        return false;
+                    }
+                    """,
+                    list(LOAD_MORE_KEYWORDS),
+                )
+                if clicked:
+                    clicks += 1
+                    consecutive_no_button = 0
+                    time.sleep(2.2)
+                else:
+                    consecutive_no_button += 1
+                    if consecutive_no_button >= 2:
+                        break
+                    time.sleep(0.8)
+
+            html = page.content()
+        finally:
+            browser.close()
+    return html, clicks
 
 
 _TIME_RE = re.compile(r"(\d{1,2})[.:](\d{2})|(\d{1,2})\s*Uhr")
@@ -250,16 +318,37 @@ def parse_teasers(html: str, category: str) -> list[dict]:
     return events
 
 
-def scrape_all() -> list[dict]:
+def scrape_all(use_playwright: bool = True, max_clicks: int = 10) -> list[dict]:
+    """Scrape all category pages.
+
+    use_playwright=True clicks 'Weitere Veranstaltungen laden' up to max_clicks
+    times per category to expose lazy-loaded events. On ImportError it falls
+    back to a single static fetch (which only sees the initial events)."""
     seen_ids: set[str] = set()
     all_events: list[dict] = []
     now = datetime.utcnow().isoformat() + "Z"
+    playwright_ok = use_playwright
 
     for cat in CATEGORIES:
         url = BASE + cat
-        print(f"  {cat}", end="", flush=True)
+        print(f"  {cat:<26}", end="", flush=True)
         try:
-            html = fetch(url)
+            if playwright_ok:
+                try:
+                    html, clicks = fetch_with_playwright(url, max_clicks=max_clicks)
+                except ImportError:
+                    print(" (Playwright unavailable, falling back to static fetch)")
+                    playwright_ok = False
+                    html = fetch(url)
+                    clicks = 0
+                except Exception as exc:
+                    print(f"  Playwright error: {str(exc)[:60]} — static fallback")
+                    html = fetch(url)
+                    clicks = 0
+            else:
+                html = fetch(url)
+                clicks = 0
+
             events = parse_teasers(html, cat)
             new = 0
             for e in events:
@@ -268,7 +357,8 @@ def scrape_all() -> list[dict]:
                     e["scraped_at"] = now
                     all_events.append(e)
                     new += 1
-            print(f"  {len(events)} events ({new} new)")
+            tag = f"+{clicks} clicks " if clicks else ""
+            print(f"  {tag}{len(events)} events ({new} new)")
         except Exception as exc:
             print(f"  ERROR: {exc}")
         time.sleep(0.4)
@@ -295,13 +385,28 @@ def enrich_with_detail_programs(events: list[dict]) -> None:
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Gewandhaus Leipzig scraper")
+    parser.add_argument("--no-playwright", action="store_true",
+                        help="Skip Playwright rendering; use plain requests")
+    parser.add_argument("--no-detail", action="store_true",
+                        help="Skip detail-page program extraction")
+    parser.add_argument("--clicks", type=int, default=10,
+                        help="Max 'Weitere laden' clicks per category (default 10)")
+    args = parser.parse_args()
+
     print(f"Gewandhaus scraper — {len(CATEGORIES)} categories")
+    print(f"  Playwright: {'off' if args.no_playwright else 'on'}, "
+          f"max clicks: {args.clicks}, "
+          f"detail pages: {'off' if args.no_detail else 'on'}")
     print("=" * 50)
-    events = scrape_all()
+
+    events = scrape_all(use_playwright=not args.no_playwright,
+                       max_clicks=args.clicks)
     events.sort(key=lambda e: e.get("date") or "9999-99-99")
     print(f"\nTotal unique events: {len(events)}")
 
-    enrich_with_detail_programs(events)
+    if not args.no_detail:
+        enrich_with_detail_programs(events)
 
     out = Path(__file__).parent.parent / "gewandhaus_events.json"
     payload = {
