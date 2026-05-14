@@ -395,53 +395,33 @@ def _diagnose_claude_env() -> None:
         print(f"Claude diagnostic: probe call FAILED — {type(exc).__name__}: {str(exc)[:200]}", flush=True)
 
 
-def _find_program_section_html(soup: BeautifulSoup) -> "str | None":
-    """Isolate the program section so we send Claude ~5 KB of relevant HTML
-    instead of an arbitrary 30 KB body prefix that often cuts off the program.
+def _select_event_main(soup: BeautifulSoup) -> "str":
+    """Return the HTML chunk most likely to contain everything about the event:
+    title, composer-work line, description, program list, artists.
 
-    Returns the section's HTML, or None if no plausible section is found.
+    Tries event-detail / article / main containers in turn, then falls back to
+    the cleaned <body>. The chunk is capped at MAX_DETAIL_HTML_CHARS.
     """
-    # Strategy 1: explicit container classes (TYPO3 / Gewandhaus markup)
+    # Look for a sensibly-sized main content container first. This typically
+    # captures everything between the site header and footer — including both
+    # the composer-work header line (e.g. operas) and any explicit Programm
+    # block (e.g. Grosse Concerte) on the same page.
     for selector in (
-        '[class*="programm"]',
-        '[class*="program"]',
-        '[class*="werke"]',
-        '[id*="programm"]',
-        '[id*="program"]',
+        '[class*="event-detail"]',
+        '[class*="event__detail"]',
+        '[class*="event-content"]',
+        "article",
+        "main",
+        '[role="main"]',
+        "#content",
+        '[class*="content-main"]',
     ):
-        nodes = soup.select(selector)
-        if not nodes:
-            continue
-        # Pick the largest match — small inline labels ("Programmheft") will
-        # also match but the actual program container has the most content.
-        largest = max(nodes, key=lambda n: len(n.get_text(strip=True)))
-        html = str(largest)
-        # Reject too small (probably a label/link) or too large (probably the
-        # whole page wrapper, which we'd rather truncate ourselves).
-        if 300 < len(html) < 30_000:
-            return html
+        node = soup.select_one(selector)
+        if node and len(node.get_text(strip=True)) > 200:
+            return str(node)[:MAX_DETAIL_HTML_CHARS]
 
-    # Strategy 2: heading text "Programm" + the following siblings up to the
-    # next major heading.
-    heading = soup.find(
-        ["h1", "h2", "h3", "h4"],
-        string=lambda s: s and "programm" in s.strip().lower() and len(s.strip()) < 20,
-    )
-    if heading:
-        parts = [str(heading)]
-        total = len(parts[0])
-        for sib in heading.find_all_next():
-            if sib.name in ("h1", "h2", "h3") and sib is not heading:
-                break
-            chunk = str(sib)
-            parts.append(chunk)
-            total += len(chunk)
-            if total > 20_000:
-                break
-        if total > 300:
-            return "".join(parts)
-
-    return None
+    body = soup.find("body") or soup
+    return str(body)[:MAX_DETAIL_HTML_CHARS]
 
 
 def extract_program_with_claude(html: str, event: dict, verbose: bool = False) -> list[str]:
@@ -455,18 +435,9 @@ def extract_program_with_claude(html: str, event: dict, verbose: bool = False) -
     for tag in soup(["script", "style", "noscript", "iframe", "svg", "header", "footer", "nav"]):
         tag.decompose()
 
-    # Prefer a focused program section; fall back to (a larger slice of) the
-    # body so we don't miss programs on pages where the selector doesn't hit.
-    focused = _find_program_section_html(soup)
-    if focused:
-        body_html = focused
-        if verbose:
-            print(f"    [claude] focused section, {len(body_html)} chars", flush=True)
-    else:
-        body = soup.find("body") or soup
-        body_html = str(body)[:MAX_DETAIL_HTML_CHARS]
-        if verbose:
-            print(f"    [claude] body fallback, {len(body_html)} chars", flush=True)
+    body_html = _select_event_main(soup)
+    if verbose:
+        print(f"    [claude] sending {len(body_html)} chars to Claude", flush=True)
 
     prompt = f"""Extract the works performed at this Gewandhaus Leipzig event.
 
