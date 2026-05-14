@@ -1,6 +1,6 @@
 {
   "total_events": 70,
-  "scraped_at": "2026-05-14T10:16:23.011634Z",
+  "scraped_at": "2026-05-14T10:24:08.247858Z",
   "events": [
     {
       "id": "9373",
@@ -9,30 +9,26 @@
       "title": "Grosse Concerte",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "Gewandhausorchester, Andris Nelsons Dirigent"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9373/",
       "venue": "Gewandhaus Leipzig",
       "category": "grosse-concerte",
       "source_url": "https://www.gewandhausorchester.de/grosse-concerte/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9588",
       "date": "2026-05-14",
-      "time": "17",
+      "time": "17:00",
       "title": "CARMEN",
       "location": "Opernhaus",
       "program": [],
-      "artists": [
-        "CARMEN"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/carmen-9588/",
       "venue": "Gewandhaus Leipzig",
       "category": "in-der-oper",
       "source_url": "https://www.gewandhausorchester.de/in-der-oper/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9374",
@@ -41,94 +37,82 @@
       "title": "Grosse Concerte",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "Gewandhausorchester, Andris Nelsons Dirigent"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9374/",
       "venue": "Gewandhaus Leipzig",
       "category": "grosse-concerte",
       "source_url": "https://www.gewandhausorchester.de/grosse-concerte/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9589",
       "date": "2026-05-16",
-      "time": "19",
+      "time": "19:00",
       "title": "LA TRAVIATA",
       "location": "Opernhaus",
       "program": [],
-      "artists": [
-        "LA TRAVIATA"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/la-traviata-9589/",
       "venue": "Gewandhaus Leipzig",
       "category": "in-der-oper",
       "source_url": "https://www.gewandhausorchester.de/in-der-oper/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9375",
       "date": "2026-05-17",
-      "time": "18",
+      "time": "18:00",
       "title": "Kammermusik",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Quatuor Danel"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/quartettgesellschaft-kammermusik-9375/",
       "venue": "Gewandhaus Leipzig",
       "category": "kammermusik",
       "source_url": "https://www.gewandhausorchester.de/kammermusik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9590",
       "date": "2026-05-17",
-      "time": "17",
+      "time": "17:00",
       "title": "REGINA",
       "location": "Opernhaus",
       "program": [],
-      "artists": [
-        "REGINA"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/regina-9590/",
       "venue": "Gewandhaus Leipzig",
       "category": "in-der-oper",
       "source_url": "https://www.gewandhausorchester.de/in-der-oper/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9852",
       "date": "2026-05-23",
-      "time": "15",
+      "time": "15:00",
       "title": "Motette",
       "location": "Thomaskirche",
       "program": [],
-      "artists": [
-        "Motette"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/motette-9852/",
       "venue": "Gewandhaus Leipzig",
       "category": "in-der-thomaskirche",
       "source_url": "https://www.gewandhausorchester.de/in-der-thomaskirche/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9591",
       "date": "2026-05-23",
-      "time": "19",
+      "time": "19:00",
       "title": "COSÌ FAN TUTTE",
       "location": "Opernhaus",
       "program": [],
-      "artists": [
-        "COSÌ FAN TUTTE"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/cosi-fan-tutte-9591/",
       "venue": "Gewandhaus Leipzig",
       "category": "in-der-oper",
       "source_url": "https://www.gewandhausorchester.de/in-der-oper/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9376",
@@ -137,14 +121,12 @@
       "title": "Chöre | Orgel",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "»By the Rivers of Babylon«"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/orgelkonzert-choere-9376/",
       "venue": "Gewandhaus Leipzig",
       "category": "orgel",
       "source_url": "https://www.gewandhausorchester.de/orgel/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9853",
@@ -153,110 +135,96 @@
       "title": "Motette",
       "location": "Thomaskirche",
       "program": [],
-      "artists": [
-        "Motette"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/motette-9853/",
       "venue": "Gewandhaus Leipzig",
       "category": "in-der-thomaskirche",
       "source_url": "https://www.gewandhausorchester.de/in-der-thomaskirche/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9592",
       "date": "2026-05-24",
-      "time": "17",
+      "time": "17:00",
       "title": "DIE ZAUBERFLÖTE",
       "location": "Opernhaus",
       "program": [],
-      "artists": [
-        "DIE ZAUBERFLÖTE"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/die-zauberfloete-9592/",
       "venue": "Gewandhaus Leipzig",
       "category": "in-der-oper",
       "source_url": "https://www.gewandhausorchester.de/in-der-oper/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9593",
       "date": "2026-05-25",
-      "time": "17",
+      "time": "17:00",
       "title": "CARMEN",
       "location": "Opernhaus",
       "program": [],
-      "artists": [
-        "CARMEN"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/carmen-9593/",
       "venue": "Gewandhaus Leipzig",
       "category": "in-der-oper",
       "source_url": "https://www.gewandhausorchester.de/in-der-oper/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9377",
       "date": "2026-05-30",
-      "time": "16",
+      "time": "16:00",
       "title": "Chöre",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Von Zwergen, Riesen und Kindern"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/choere-9377/",
       "venue": "Gewandhaus Leipzig",
       "category": "choere",
       "source_url": "https://www.gewandhausorchester.de/choere/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9854",
       "date": "2026-05-30",
-      "time": "15",
+      "time": "15:00",
       "title": "Motette",
       "location": "Thomaskirche",
       "program": [],
-      "artists": [
-        "Motette"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/motette-9854/",
       "venue": "Gewandhaus Leipzig",
       "category": "in-der-thomaskirche",
       "source_url": "https://www.gewandhausorchester.de/in-der-thomaskirche/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9378",
       "date": "2026-05-31",
-      "time": "16",
+      "time": "16:00",
       "title": "Chöre",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Von Zwergen, Riesen und Kindern"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/choere-9378/",
       "venue": "Gewandhaus Leipzig",
       "category": "choere",
       "source_url": "https://www.gewandhausorchester.de/choere/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "10369",
       "date": "2026-06-05",
-      "time": "16",
+      "time": "16:00",
       "title": "Musik entdecken",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Der kleine Prinz"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/community-music-10369/",
       "venue": "Gewandhaus Leipzig",
       "category": "impuls",
       "source_url": "https://www.gewandhausorchester.de/impuls/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9453",
@@ -265,62 +233,54 @@
       "title": "Musik entdecken",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "Orgelpräsentation für Erwachsene"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/orgelpraesentation-fuer-erwachsene-9453/",
       "venue": "Gewandhaus Leipzig",
       "category": "orgel",
       "source_url": "https://www.gewandhausorchester.de/orgel/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9380",
       "date": "2026-06-07",
-      "time": "16",
+      "time": "16:00",
       "title": "Orgel",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "Michael Schönheit Orgel"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/orgelstunde-9380/",
       "venue": "Gewandhaus Leipzig",
       "category": "orgel",
       "source_url": "https://www.gewandhausorchester.de/orgel/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9381",
       "date": "2026-06-11",
-      "time": "20",
+      "time": "20:00",
       "title": "Klavierabend",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "Klavierabend"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/klavierabend-9381/",
       "venue": "Gewandhaus Leipzig",
       "category": "klaviermusik",
       "source_url": "https://www.gewandhausorchester.de/klaviermusik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9382",
       "date": "2026-06-13",
-      "time": "16",
+      "time": "16:00",
       "title": "Klavierabend",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "Klavierabend"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/klavierabend-9382/",
       "venue": "Gewandhaus Leipzig",
       "category": "klaviermusik",
       "source_url": "https://www.gewandhausorchester.de/klaviermusik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9454",
@@ -329,94 +289,82 @@
       "title": "Musik entdecken",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "Orgelpräsentation für Familien"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/orgelpraesentation-fuer-familien-9454/",
       "venue": "Gewandhaus Leipzig",
       "category": "orgel",
       "source_url": "https://www.gewandhausorchester.de/orgel/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9384",
       "date": "2026-06-14",
-      "time": "16",
+      "time": "16:00",
       "title": "Orgel",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "Michael Schönheit Orgel"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/orgelstunde-9384/",
       "venue": "Gewandhaus Leipzig",
       "category": "orgel",
       "source_url": "https://www.gewandhausorchester.de/orgel/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9383",
       "date": "2026-06-14",
-      "time": "13",
+      "time": "13:00",
       "title": "Alte Musik",
       "location": "Lutherkirche Leipzig",
       "program": [],
-      "artists": [
-        "Bachs Schüler im Dialog"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/alte-musik-9383/",
       "venue": "Gewandhaus Leipzig",
       "category": "alte-musik",
       "source_url": "https://www.gewandhausorchester.de/alte-musik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9386",
       "date": "2026-06-16",
-      "time": "17",
+      "time": "17:00",
       "title": "Klavierabend",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "Klavierabend"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/klavierabend-9386/",
       "venue": "Gewandhaus Leipzig",
       "category": "klaviermusik",
       "source_url": "https://www.gewandhausorchester.de/klaviermusik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9385",
       "date": "2026-06-16",
-      "time": "09",
+      "time": "09:00",
       "title": "Musik entdecken",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Eine Reise mit Bach"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/zwergenkonzert-9385/",
       "venue": "Gewandhaus Leipzig",
       "category": "impuls",
       "source_url": "https://www.gewandhausorchester.de/impuls/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "10368",
       "date": "2026-06-16",
-      "time": "15",
+      "time": "15:00",
       "title": "Musik entdecken",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Fusion.Club „Nächster Halt:“"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/clubfusion-festival-abschlusspraesentation-10368/",
       "venue": "Gewandhaus Leipzig",
       "category": "impuls",
       "source_url": "https://www.gewandhausorchester.de/impuls/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9388",
@@ -425,30 +373,26 @@
       "title": "musica nova",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "George Crumb & John Cage"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/musica-nova-9388/",
       "venue": "Gewandhaus Leipzig",
       "category": "musica-nova",
       "source_url": "https://www.gewandhausorchester.de/musica-nova/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9387",
       "date": "2026-06-17",
-      "time": "09",
+      "time": "09:00",
       "title": "Musik entdecken",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Eine Reise mit Bach"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/zwergenkonzert-9387/",
       "venue": "Gewandhaus Leipzig",
       "category": "impuls",
       "source_url": "https://www.gewandhausorchester.de/impuls/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9390",
@@ -457,14 +401,12 @@
       "title": "Grosse Concerte",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "Gewandhausorchester, Andris Nelsons Dirigent"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9390/",
       "venue": "Gewandhaus Leipzig",
       "category": "grosse-concerte",
       "source_url": "https://www.gewandhausorchester.de/grosse-concerte/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9391",
@@ -473,14 +415,12 @@
       "title": "Grosse Concerte",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "Gewandhausorchester, Andris Nelsons Dirigent"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9391/",
       "venue": "Gewandhaus Leipzig",
       "category": "grosse-concerte",
       "source_url": "https://www.gewandhausorchester.de/grosse-concerte/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9661",
@@ -489,14 +429,12 @@
       "title": "Nachklang im Anschluss an das Grosse Concert",
       "location": "Barlach-Ebene",
       "program": [],
-      "artists": [
-        "Nachklang im Anschluss an das Grosse Concert"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/nachklang-im-anschluss-an-das-konzert-9661/",
       "venue": "Gewandhaus Leipzig",
       "category": "nachklang",
       "source_url": "https://www.gewandhausorchester.de/nachklang/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9394",
@@ -505,30 +443,26 @@
       "title": "Orgel",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "Michael Schönheit Orgel"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/orgelkonzert-9394/",
       "venue": "Gewandhaus Leipzig",
       "category": "orgel",
       "source_url": "https://www.gewandhausorchester.de/orgel/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9393",
       "date": "2026-06-20",
-      "time": "19",
+      "time": "19:00",
       "title": "Chöre",
       "location": "Museum der bildenden Künste",
       "program": [],
-      "artists": [
-        "Astonishing Estonia"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/choere-9393/",
       "venue": "Gewandhaus Leipzig",
       "category": "choere",
       "source_url": "https://www.gewandhausorchester.de/choere/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9395",
@@ -537,62 +471,54 @@
       "title": "Chöre",
       "location": "Museum der bildenden Künste",
       "program": [],
-      "artists": [
-        "Astonishing Estonia"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/choere-9395/",
       "venue": "Gewandhaus Leipzig",
       "category": "choere",
       "source_url": "https://www.gewandhausorchester.de/choere/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9392",
       "date": "2026-06-20",
-      "time": "16",
+      "time": "16:00",
       "title": "Salonmusik",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Salonorchester CAPPUCCINO, Albrecht Winter Leitung"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/salonmusik-9392/",
       "venue": "Gewandhaus Leipzig",
       "category": "salonmusik",
       "source_url": "https://www.gewandhausorchester.de/salonmusik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9397",
       "date": "2026-06-21",
-      "time": "11",
+      "time": "11:00",
       "title": "Grosse Concerte",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "Gewandhausorchester, Andris Nelsons Dirigent"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9397/",
       "venue": "Gewandhaus Leipzig",
       "category": "grosse-concerte",
       "source_url": "https://www.gewandhausorchester.de/grosse-concerte/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9396",
       "date": "2026-06-21",
-      "time": "11",
+      "time": "11:00",
       "title": "Salonmusik",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Salonorchester CAPPUCCINO, Albrecht Winter Leitung"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/salonmusik-9396/",
       "venue": "Gewandhaus Leipzig",
       "category": "salonmusik",
       "source_url": "https://www.gewandhausorchester.de/salonmusik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9398",
@@ -601,14 +527,12 @@
       "title": "Grosse Concerte",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "Gewandhausorchester, Andris Nelsons Dirigent"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9398/",
       "venue": "Gewandhaus Leipzig",
       "category": "grosse-concerte",
       "source_url": "https://www.gewandhausorchester.de/grosse-concerte/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9400",
@@ -617,14 +541,12 @@
       "title": "Grosse Concerte",
       "location": "Open-Air-Bühne im Rosental",
       "program": [],
-      "artists": [
-        "Gewandhausorchester, Vasily Petrenko Dirigent"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9400/",
       "venue": "Gewandhaus Leipzig",
       "category": "klassik-airleben",
       "source_url": "https://www.gewandhausorchester.de/klassik-airleben/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9401",
@@ -633,30 +555,26 @@
       "title": "Grosse Concerte",
       "location": "Open-Air-Bühne im Rosental",
       "program": [],
-      "artists": [
-        "Gewandhausorchester, Vasily Petrenko Dirigent"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9401/",
       "venue": "Gewandhaus Leipzig",
       "category": "klassik-airleben",
       "source_url": "https://www.gewandhausorchester.de/klassik-airleben/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9913",
       "date": "2026-09-12",
-      "time": "18",
+      "time": "18:00",
       "title": "Kammermusik",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Con Spirito – Das Leipziger Kammermusikfestival"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/con-spirito-das-leipziger-kammermusikfestival-9913/",
       "venue": "Gewandhaus Leipzig",
       "category": "kammermusik",
       "source_url": "https://www.gewandhausorchester.de/kammermusik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9954",
@@ -665,62 +583,54 @@
       "title": "Chöre",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "De Profundis"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/choere-9954/",
       "venue": "Gewandhaus Leipzig",
       "category": "choere",
       "source_url": "https://www.gewandhausorchester.de/choere/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9956",
       "date": "2026-09-20",
-      "time": "18",
+      "time": "18:00",
       "title": "Kammermusik",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Gewandhaus-Quartett"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/kammermusik-9956/",
       "venue": "Gewandhaus Leipzig",
       "category": "kammermusik",
       "source_url": "https://www.gewandhausorchester.de/kammermusik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9960",
       "date": "2026-09-26",
-      "time": "16",
+      "time": "16:00",
       "title": "Salonmusik",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Salonorchester CAPPUCCINO, Albrecht Winter Leitung"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/salonmusik-9960/",
       "venue": "Gewandhaus Leipzig",
       "category": "salonmusik",
       "source_url": "https://www.gewandhausorchester.de/salonmusik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9963",
       "date": "2026-09-27",
-      "time": "18",
+      "time": "18:00",
       "title": "Kammermusik",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Gewandhaus-Oktett"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/kammermusik-9963/",
       "venue": "Gewandhaus Leipzig",
       "category": "kammermusik",
       "source_url": "https://www.gewandhausorchester.de/kammermusik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9964",
@@ -729,46 +639,40 @@
       "title": "Klavier",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "Daniil Trifonov Klavier"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/klavierrezital-9964/",
       "venue": "Gewandhaus Leipzig",
       "category": "klaviermusik",
       "source_url": "https://www.gewandhausorchester.de/klaviermusik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9961",
       "date": "2026-09-27",
-      "time": "11",
+      "time": "11:00",
       "title": "Salonmusik",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Salonorchester CAPPUCCINO, Albrecht Winter Leitung"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/salonmusik-9961/",
       "venue": "Gewandhaus Leipzig",
       "category": "salonmusik",
       "source_url": "https://www.gewandhausorchester.de/salonmusik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9970",
       "date": "2026-10-04",
-      "time": "18",
+      "time": "18:00",
       "title": "Kammermusik",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Gewandhaus-Bläserquintett"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/kammermusik-9970/",
       "venue": "Gewandhaus Leipzig",
       "category": "kammermusik",
       "source_url": "https://www.gewandhausorchester.de/kammermusik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9971",
@@ -777,14 +681,12 @@
       "title": "musica nova",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Ensemble Avantgarde, Mitglieder der Mendelssohn-Orchesterakademie"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/musica-nova-9971/",
       "venue": "Gewandhaus Leipzig",
       "category": "musica-nova",
       "source_url": "https://www.gewandhausorchester.de/musica-nova/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9972",
@@ -793,14 +695,12 @@
       "title": "Grosse Concerte",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "Gewandhausorchester & Daniel Barenboim"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9972/",
       "venue": "Gewandhaus Leipzig",
       "category": "tacheles",
       "source_url": "https://www.gewandhausorchester.de/tacheles/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9973",
@@ -809,30 +709,26 @@
       "title": "Grosse Concerte",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "Gewandhausorchester & Daniel Barenboim"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9973/",
       "venue": "Gewandhaus Leipzig",
       "category": "tacheles",
       "source_url": "https://www.gewandhausorchester.de/tacheles/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9975",
       "date": "2026-10-11",
-      "time": "18",
+      "time": "18:00",
       "title": "Kammermusik",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Streichquartette von Schubert, Brahms & Grieg"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/kammermusik-9975/",
       "venue": "Gewandhaus Leipzig",
       "category": "kammermusik",
       "source_url": "https://www.gewandhausorchester.de/kammermusik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9976",
@@ -841,14 +737,12 @@
       "title": "Klavier",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Georgijs Osokins Klavier"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/klavierrezital-9976/",
       "venue": "Gewandhaus Leipzig",
       "category": "klaviermusik",
       "source_url": "https://www.gewandhausorchester.de/klaviermusik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9977",
@@ -857,14 +751,12 @@
       "title": "Grosse Concerte",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "Gewandhausorchester & HK Gruber"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9977/",
       "venue": "Gewandhaus Leipzig",
       "category": "tacheles",
       "source_url": "https://www.gewandhausorchester.de/tacheles/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9979",
@@ -873,62 +765,54 @@
       "title": "Alte Musik",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Neues Bachisches Collegium Musicum, Reinhard Goebel Dirigent"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/alte-musik-9979/",
       "venue": "Gewandhaus Leipzig",
       "category": "alte-musik",
       "source_url": "https://www.gewandhausorchester.de/alte-musik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9985",
       "date": "2026-11-01",
-      "time": "11",
+      "time": "11:00",
       "title": "Klavier",
       "location": "Großer Saal",
       "program": [],
-      "artists": [
-        "Eröffnungskonzert & Verleihung des Internationalen Mendelssohn-Preises Leipzig"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/eroeffnungskonzert-9985/",
       "venue": "Gewandhaus Leipzig",
       "category": "klaviermusik",
       "source_url": "https://www.gewandhausorchester.de/klaviermusik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "9999",
       "date": "2026-11-14",
-      "time": "16",
+      "time": "16:00",
       "title": "Salonmusik",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Salonorchester CAPPUCCINO, Albrecht Winter Leitung"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/salonmusik-9999/",
       "venue": "Gewandhaus Leipzig",
       "category": "salonmusik",
       "source_url": "https://www.gewandhausorchester.de/salonmusik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "10001",
       "date": "2026-11-15",
-      "time": "11",
+      "time": "11:00",
       "title": "Salonmusik",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Salonorchester CAPPUCCINO, Albrecht Winter Leitung"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/salonmusik-10001/",
       "venue": "Gewandhaus Leipzig",
       "category": "salonmusik",
       "source_url": "https://www.gewandhausorchester.de/salonmusik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "10016",
@@ -937,62 +821,54 @@
       "title": "musica nova",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Christian Giger Violoncello , Steffen Schleiermacher Klavier"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/musica-nova-10016/",
       "venue": "Gewandhaus Leipzig",
       "category": "musica-nova",
       "source_url": "https://www.gewandhausorchester.de/musica-nova/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "10024",
       "date": "2026-12-11",
-      "time": "19",
+      "time": "19:00",
       "title": "Grosse Concerte",
       "location": "Thomaskirche",
       "program": [],
-      "artists": [
-        "Weihnachts-Oratorium"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/weihnachtsoratorium-10024/",
       "venue": "Gewandhaus Leipzig",
       "category": "in-der-thomaskirche",
       "source_url": "https://www.gewandhausorchester.de/in-der-thomaskirche/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "10027",
       "date": "2026-12-12",
-      "time": "17",
+      "time": "17:00",
       "title": "Grosse Concerte",
       "location": "Thomaskirche",
       "program": [],
-      "artists": [
-        "Weihnachts-Oratorium"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/weihnachtsoratorium-10027/",
       "venue": "Gewandhaus Leipzig",
       "category": "in-der-thomaskirche",
       "source_url": "https://www.gewandhausorchester.de/in-der-thomaskirche/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "10030",
       "date": "2026-12-13",
-      "time": "17",
+      "time": "17:00",
       "title": "Grosse Concerte",
       "location": "Thomaskirche",
       "program": [],
-      "artists": [
-        "Weihnachts-Oratorium"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/weihnachtsoratorium-10030/",
       "venue": "Gewandhaus Leipzig",
       "category": "in-der-thomaskirche",
       "source_url": "https://www.gewandhausorchester.de/in-der-thomaskirche/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "10037",
@@ -1001,14 +877,12 @@
       "title": "Alte Musik",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Neues Bachisches Collegium Musicum, Reinhard Goebel Dirigent"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/alte-musik-10037/",
       "venue": "Gewandhaus Leipzig",
       "category": "alte-musik",
       "source_url": "https://www.gewandhausorchester.de/alte-musik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "10057",
@@ -1017,14 +891,12 @@
       "title": "musica nova",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Ensemble Avantgarde, Steffen Schleiermacher Klavier/Leitung/Moderation"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/musica-nova-10057/",
       "venue": "Gewandhaus Leipzig",
       "category": "musica-nova",
       "source_url": "https://www.gewandhausorchester.de/musica-nova/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "10084",
@@ -1033,14 +905,12 @@
       "title": "Alte Musik",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Neues Bachisches Collegium Musicum, Reinhard Goebel Dirigent"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/alte-musik-10084/",
       "venue": "Gewandhaus Leipzig",
       "category": "alte-musik",
       "source_url": "https://www.gewandhausorchester.de/alte-musik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "10091",
@@ -1049,14 +919,12 @@
       "title": "musica nova",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "musica nova"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/musica-nova-10091/",
       "venue": "Gewandhaus Leipzig",
       "category": "musica-nova",
       "source_url": "https://www.gewandhausorchester.de/musica-nova/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "10121",
@@ -1065,14 +933,12 @@
       "title": "musica nova",
       "location": "Mendelssohn-Saal",
       "program": [],
-      "artists": [
-        "Ensemble Avantgarde, Steffen Schleiermacher Klavier/Leitung/Moderation"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/musica-nova-10121/",
       "venue": "Gewandhaus Leipzig",
       "category": "musica-nova",
       "source_url": "https://www.gewandhausorchester.de/musica-nova/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "10167",
@@ -1081,14 +947,12 @@
       "title": "Alte Musik",
       "location": "Evangelisch Reformierte Kirche",
       "program": [],
-      "artists": [
-        "Alte Musik"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/alte-musik-10167/",
       "venue": "Gewandhaus Leipzig",
       "category": "alte-musik",
       "source_url": "https://www.gewandhausorchester.de/alte-musik/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "10175",
@@ -1097,14 +961,12 @@
       "title": "Grosse Concerte",
       "location": "Open-Air-Bühne im Rosental",
       "program": [],
-      "artists": [
-        "KLASSIK AIRLEBEN"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-10175/",
       "venue": "Gewandhaus Leipzig",
       "category": "klassik-airleben",
       "source_url": "https://www.gewandhausorchester.de/klassik-airleben/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     },
     {
       "id": "10176",
@@ -1113,14 +975,12 @@
       "title": "Grosse Concerte",
       "location": "Open-Air-Bühne im Rosental",
       "program": [],
-      "artists": [
-        "KLASSIK AIRLEBEN"
-      ],
+      "artists": [],
       "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-10176/",
       "venue": "Gewandhaus Leipzig",
       "category": "klassik-airleben",
       "source_url": "https://www.gewandhausorchester.de/klassik-airleben/",
-      "scraped_at": "2026-05-14T10:16:02.801154Z"
+      "scraped_at": "2026-05-14T10:22:41.298148Z"
     }
   ]
 }
