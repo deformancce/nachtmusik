@@ -66,8 +66,7 @@ CATEGORIES = [
     "/in-der-oper/",
     "/nachklang/",
     "/perspektivwechsel/",
-    # /tacheles/ removed: this category consistently hangs Playwright for 50+
-    # minutes and only carries a handful of events. Skip it.
+    "/tacheles/",
 ]
 
 
@@ -96,6 +95,25 @@ def fetch_with_playwright_session(page, url: str, max_clicks: int = 10,
     initial = _count_teasers()
     if verbose:
         print(f"    initial teasers: {initial}")
+
+    # If the page loaded with 0 teasers and no load-more button is present,
+    # there is nothing to do — return immediately rather than running the full
+    # click loop (which would just find no button and exit anyway, but keeping
+    # the page open longer than needed can trigger resource hangs).
+    if initial == 0:
+        has_button = page.evaluate(
+            "(keywords) => { "
+            "const els = document.querySelectorAll('a, button'); "
+            "for (const el of els) { "
+            "  const t = (el.textContent||'').trim(); "
+            "  if (t && keywords.some(kw => t.includes(kw)) && el.offsetParent !== null) return true; "
+            "} return false; }",
+            list(LOAD_MORE_KEYWORDS),
+        )
+        if not has_button:
+            if verbose:
+                print("    0 teasers, no load-more button — skipping clicks")
+            return page.content(), 0
 
     clicks = 0
     last_count = initial
@@ -675,18 +693,20 @@ def scrape_all(use_playwright: bool = True, max_clicks: int = 10) -> list[dict]:
             clicks = 0
             try:
                 if browser is not None:
-                    page = browser.new_page()
-                    page.set_default_timeout(45000)
-                    # Hard wall-clock timeout per category. A single hung
-                    # category cost us an entire 60-minute action run before.
+                    page = None
+                    # Arm the alarm BEFORE new_page() so even a hung browser
+                    # context allocation is covered. 120 s is ample for any
+                    # category; /tacheles/ was previously hanging 50+ minutes.
                     signal.signal(signal.SIGALRM, _category_timeout_handler)
                     signal.alarm(120)
                     try:
+                        page = browser.new_page()
+                        page.set_default_timeout(45000)
                         html, clicks = fetch_with_playwright_session(
                             page, url, max_clicks=max_clicks
                         )
                     except CategoryTimeout:
-                        print(f"  TIMEOUT on {cat} after 120s — skipping")
+                        print(f"  TIMEOUT on {cat} after 120s — skipping", flush=True)
                         html = ""
                         clicks = 0
                     except Exception as exc:
@@ -699,10 +719,16 @@ def scrape_all(use_playwright: bool = True, max_clicks: int = 10) -> list[dict]:
                         clicks = 0
                     finally:
                         signal.alarm(0)
-                        try:
-                            page.close()
-                        except Exception:
-                            pass
+                        if page is not None:
+                            # page.close() itself could hang on a broken page;
+                            # give it 5 s then move on.
+                            signal.alarm(5)
+                            try:
+                                page.close()
+                            except Exception:
+                                pass
+                            finally:
+                                signal.alarm(0)
                 else:
                     html = fetch(url)
 
