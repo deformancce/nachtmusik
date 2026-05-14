@@ -66,46 +66,35 @@ def fetch(url: str) -> str:
     return r.text
 
 
-def fetch_with_playwright(url: str, max_clicks: int = 10,
-                          verbose: bool = True) -> tuple[str, int]:
-    """Render the URL and exhaust the page's lazy-load:
-       1. scroll-to-bottom in a loop until the event count stops growing
-       2. click 'Weitere Veranstaltungen laden' if visible
-       3. repeat (1) again to soak up the freshly loaded chunk
-       4. repeat (2) until either max_clicks reached or button stops appearing
+def fetch_with_playwright_session(page, url: str, max_clicks: int = 10,
+                                  verbose: bool = True) -> tuple[str, int]:
+    """Load a category page in the given Playwright page and click
+    'Weitere Veranstaltungen laden' repeatedly until no more appear or
+    max_clicks is reached. The caller owns the page lifecycle and the
+    browser, so launching 15 separate browsers (which hangs on resource
+    pressure) is avoided.
 
-    Returns the rendered HTML plus the number of successful button clicks.
-    Raises ImportError if Playwright isn't installed."""
-    from playwright.sync_api import sync_playwright
+    Returns (rendered HTML, click count)."""
 
-    def _count_teasers(page) -> int:
+    def _count_teasers() -> int:
         return page.evaluate("document.querySelectorAll('.event-teaser').length")
 
-    def _scroll_until_stable(page, max_passes: int = 8, settle: float = 1.4) -> int:
-        """Scroll to bottom until no new event teasers appear for two passes.
-        Returns the final teaser count."""
-        last = _count_teasers(page)
-        stable_passes = 0
-        for i in range(max_passes):
-            page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-            time.sleep(settle)
-            now = _count_teasers(page)
-            if verbose:
-                print(f"      scroll pass {i+1}: {last} → {now}")
-            if now == last:
-                stable_passes += 1
-                if stable_passes >= 2:
-                    break
-            else:
-                stable_passes = 0
-            last = now
-        return last
+    page.goto(url, wait_until="domcontentloaded", timeout=45000)
+    time.sleep(1.5)
 
-    def _try_click_load_more(page) -> str | None:
-        """Click 'Weitere laden' button if visible. Returns clicked text or None."""
-        return page.evaluate(
+    initial = _count_teasers()
+    if verbose:
+        print(f"    initial teasers: {initial}")
+
+    clicks = 0
+    last_count = initial
+    for i in range(max_clicks):
+        # Scroll the button into view + click in one JS call. The scroll-only
+        # loops we used to run were measured to add 0 teasers on this site.
+        clicked_text = page.evaluate(
             """
             (keywords) => {
+                window.scrollTo(0, document.body.scrollHeight);
                 const elements = document.querySelectorAll('a, button');
                 for (const el of elements) {
                     const text = (el.textContent || '').trim();
@@ -121,42 +110,39 @@ def fetch_with_playwright(url: str, max_clicks: int = 10,
             """,
             list(LOAD_MORE_KEYWORDS),
         )
+        if not clicked_text:
+            if verbose:
+                print(f"    no button found after {clicks} clicks")
+            break
+        clicks += 1
+        time.sleep(1.5)
+        new_count = _count_teasers()
+        if verbose:
+            print(f"    click {clicks}: {last_count} → {new_count}")
+        if new_count == last_count:
+            # Click happened but no new teasers — the load-more is exhausted
+            break
+        last_count = new_count
 
+    html = page.content()
+    return html, clicks
+
+
+# Kept for backward compatibility / standalone calls; opens its own browser.
+def fetch_with_playwright(url: str, max_clicks: int = 10,
+                          verbose: bool = True) -> tuple[str, int]:
+    from playwright.sync_api import sync_playwright
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-        page.set_default_timeout(60000)
         try:
-            page.goto(url, wait_until="domcontentloaded", timeout=60000)
-            time.sleep(2)
-
-            initial = _count_teasers(page)
-            if verbose:
-                print(f"    initial teasers visible: {initial}")
-
-            # Pass 1: drain whatever the infinite scroll gives us before any click
-            count = _scroll_until_stable(page)
-
-            clicks = 0
-            for _ in range(max_clicks):
-                clicked_text = _try_click_load_more(page)
-                if not clicked_text:
-                    if verbose:
-                        print(f"    no 'Weitere laden' button found — done")
-                    break
-                clicks += 1
-                if verbose:
-                    print(f"    clicked '{clicked_text[:40]}' ({clicks}/{max_clicks})")
-                # Wait for the click's network/DOM response, then drain again.
-                time.sleep(1.5)
-                count = _scroll_until_stable(page, max_passes=4)
-
-            if verbose:
-                print(f"    final teaser count: {count}")
-            html = page.content()
+            page = browser.new_page()
+            page.set_default_timeout(45000)
+            try:
+                return fetch_with_playwright_session(page, url, max_clicks, verbose)
+            finally:
+                page.close()
         finally:
             browser.close()
-    return html, clicks
 
 
 _TIME_RE = re.compile(r"(\d{1,2})[.:](\d{2})|(\d{1,2})\s*Uhr")
@@ -649,49 +635,77 @@ def parse_teasers(html: str, category: str) -> list[dict]:
 
 
 def scrape_all(use_playwright: bool = True, max_clicks: int = 10) -> list[dict]:
-    """Scrape all category pages.
-
-    use_playwright=True clicks 'Weitere Veranstaltungen laden' up to max_clicks
-    times per category to expose lazy-loaded events. On ImportError it falls
-    back to a single static fetch (which only sees the initial events)."""
+    """Scrape all category pages, reusing a single Playwright browser
+    instance across all 15 categories. The old per-category browser
+    spawn was hanging at the 15th launch under resource pressure."""
     seen_ids: set[str] = set()
     all_events: list[dict] = []
     now = datetime.utcnow().isoformat() + "Z"
-    playwright_ok = use_playwright
 
-    for cat in CATEGORIES:
-        url = BASE + cat
-        print(f"  {cat:<26}", end="", flush=True)
+    playwright_ctx = None
+    browser = None
+    if use_playwright:
         try:
-            if playwright_ok:
-                try:
-                    html, clicks = fetch_with_playwright(url, max_clicks=max_clicks)
-                except ImportError:
-                    print(" (Playwright unavailable, falling back to static fetch)")
-                    playwright_ok = False
-                    html = fetch(url)
-                    clicks = 0
-                except Exception as exc:
-                    print(f"  Playwright error: {str(exc)[:60]} — static fallback")
-                    html = fetch(url)
-                    clicks = 0
-            else:
-                html = fetch(url)
-                clicks = 0
-
-            events = parse_teasers(html, cat)
-            new = 0
-            for e in events:
-                if e["id"] not in seen_ids:
-                    seen_ids.add(e["id"])
-                    e["scraped_at"] = now
-                    all_events.append(e)
-                    new += 1
-            tag = f"+{clicks} clicks " if clicks else ""
-            print(f"  {tag}{len(events)} events ({new} new)")
+            from playwright.sync_api import sync_playwright
+            playwright_ctx = sync_playwright().start()
+            browser = playwright_ctx.chromium.launch(headless=True)
+            print("Playwright browser started.")
+        except ImportError:
+            print("Playwright unavailable, using static fetch.")
+            playwright_ctx = None
         except Exception as exc:
-            print(f"  ERROR: {exc}")
-        time.sleep(0.4)
+            print(f"Playwright launch failed: {exc} — using static fetch.")
+            playwright_ctx = None
+
+    try:
+        for cat in CATEGORIES:
+            url = BASE + cat
+            print(f"  {cat:<26}", end="", flush=True)
+            clicks = 0
+            try:
+                if browser is not None:
+                    page = browser.new_page()
+                    page.set_default_timeout(45000)
+                    try:
+                        html, clicks = fetch_with_playwright_session(
+                            page, url, max_clicks=max_clicks
+                        )
+                    except Exception as exc:
+                        print(f"  Playwright error on {cat}: {str(exc)[:80]} — static fallback")
+                        html = fetch(url)
+                        clicks = 0
+                    finally:
+                        try:
+                            page.close()
+                        except Exception:
+                            pass
+                else:
+                    html = fetch(url)
+
+                events = parse_teasers(html, cat)
+                new = 0
+                for e in events:
+                    if e["id"] not in seen_ids:
+                        seen_ids.add(e["id"])
+                        e["scraped_at"] = now
+                        all_events.append(e)
+                        new += 1
+                tag = f"+{clicks} clicks " if clicks else ""
+                print(f"  {tag}{len(events)} events ({new} new)")
+            except Exception as exc:
+                print(f"  ERROR for {cat}: {exc}")
+            time.sleep(0.3)
+    finally:
+        if browser is not None:
+            try:
+                browser.close()
+            except Exception:
+                pass
+        if playwright_ctx is not None:
+            try:
+                playwright_ctx.stop()
+            except Exception:
+                pass
 
     return all_events
 
