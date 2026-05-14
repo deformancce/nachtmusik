@@ -25,19 +25,11 @@ import os
 import re
 import sys
 import time
-
-import signal
+import threading
+import queue
 
 import requests
 from bs4 import BeautifulSoup
-
-
-class CategoryTimeout(Exception):
-    """Raised when a single category exceeds its hard wall-clock limit."""
-
-
-def _category_timeout_handler(signum, frame):
-    raise CategoryTimeout("category exceeded wall-clock limit")
 
 BASE = "https://www.gewandhausorchester.de"
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; op.us/0.1)"}
@@ -663,19 +655,70 @@ def parse_teasers(html: str, category: str) -> list[dict]:
     return events
 
 
+def _scrape_one_category_threaded(browser, url: str, max_clicks: int,
+                                   timeout_s: int = 120) -> tuple[str, int, str]:
+    """Run fetch_with_playwright_session in a daemon thread so we can
+    enforce a wall-clock timeout even when Playwright is blocked deep in
+    C-extension code (SIGALRM does not reliably interrupt that).
+
+    Returns (html, clicks, status) where status is one of
+    'ok', 'error', 'timeout'. On 'timeout' the caller MUST restart the
+    browser, because the orphan thread is still holding a Page/Context
+    and may corrupt subsequent calls."""
+
+    result_q: queue.Queue = queue.Queue()
+
+    def worker():
+        page = None
+        try:
+            page = browser.new_page()
+            page.set_default_timeout(30000)
+            html, clicks = fetch_with_playwright_session(
+                page, url, max_clicks=max_clicks
+            )
+            result_q.put(("ok", html, clicks))
+        except Exception as exc:
+            result_q.put(("error", f"{type(exc).__name__}: {str(exc)[:120]}", 0))
+        finally:
+            if page is not None:
+                try:
+                    page.close()
+                except Exception:
+                    pass
+
+    t = threading.Thread(target=worker, daemon=True)
+    t.start()
+
+    # Wait with a heartbeat so the user can see we're not dead.
+    elapsed = 0
+    heartbeat_every = 15
+    while elapsed < timeout_s:
+        try:
+            return result_q.get(timeout=heartbeat_every)
+        except queue.Empty:
+            elapsed += heartbeat_every
+            print(f" …{elapsed}s", end="", flush=True)
+
+    # Hard timeout: abandon the worker thread (daemon, will die with the
+    # process) and signal the caller to restart the browser.
+    return ("", 0, "timeout")
+
+
 def scrape_all(use_playwright: bool = True, max_clicks: int = 10) -> list[dict]:
     """Scrape all category pages, reusing a single Playwright browser
-    instance across all 15 categories. The old per-category browser
-    spawn was hanging at the 15th launch under resource pressure."""
+    where possible. If a category times out, the browser is restarted to
+    guarantee clean state for the next category."""
     seen_ids: set[str] = set()
     all_events: list[dict] = []
     now = datetime.utcnow().isoformat() + "Z"
 
+    sync_playwright = None
     playwright_ctx = None
     browser = None
     if use_playwright:
         try:
-            from playwright.sync_api import sync_playwright
+            from playwright.sync_api import sync_playwright as _spw
+            sync_playwright = _spw
             playwright_ctx = sync_playwright().start()
             browser = playwright_ctx.chromium.launch(headless=True)
             print("Playwright browser started.")
@@ -686,49 +729,57 @@ def scrape_all(use_playwright: bool = True, max_clicks: int = 10) -> list[dict]:
             print(f"Playwright launch failed: {exc} — using static fetch.")
             playwright_ctx = None
 
+    def restart_browser():
+        nonlocal browser, playwright_ctx
+        print("    restarting browser…", end="", flush=True)
+        try:
+            if browser is not None:
+                browser.close()
+        except Exception:
+            pass
+        try:
+            if playwright_ctx is not None:
+                playwright_ctx.stop()
+        except Exception:
+            pass
+        try:
+            playwright_ctx = sync_playwright().start()
+            browser = playwright_ctx.chromium.launch(headless=True)
+            print(" ok")
+        except Exception as exc:
+            print(f" FAILED: {exc}")
+            browser = None
+            playwright_ctx = None
+
     try:
         for cat in CATEGORIES:
             url = BASE + cat
             print(f"  {cat:<26}", end="", flush=True)
             clicks = 0
+            html = ""
             try:
                 if browser is not None:
-                    page = None
-                    # Arm the alarm BEFORE new_page() so even a hung browser
-                    # context allocation is covered. 120 s is ample for any
-                    # category; /tacheles/ was previously hanging 50+ minutes.
-                    signal.signal(signal.SIGALRM, _category_timeout_handler)
-                    signal.alarm(120)
-                    try:
-                        page = browser.new_page()
-                        page.set_default_timeout(45000)
-                        html, clicks = fetch_with_playwright_session(
-                            page, url, max_clicks=max_clicks
-                        )
-                    except CategoryTimeout:
-                        print(f"  TIMEOUT on {cat} after 120s — skipping", flush=True)
-                        html = ""
-                        clicks = 0
-                    except Exception as exc:
-                        print(f"  Playwright error on {cat}: {str(exc)[:80]} — static fallback")
+                    html_or_err, clicks, status = _scrape_one_category_threaded(
+                        browser, url, max_clicks=max_clicks, timeout_s=120
+                    )
+                    if status == "ok":
+                        html = html_or_err
+                    elif status == "timeout":
+                        print(f"  TIMEOUT after 120s — abandoning category, restarting browser")
+                        restart_browser()
+                        # Optional last-ditch: try a static fetch so we at
+                        # least record server-rendered events for this cat.
+                        try:
+                            html = fetch(url)
+                        except Exception:
+                            html = ""
+                    else:  # 'error'
+                        print(f"  Playwright error: {html_or_err} — static fallback")
                         try:
                             html = fetch(url)
                         except Exception as fexc:
-                            print(f"  static fetch also failed: {fexc}")
+                            print(f"    static fetch also failed: {fexc}")
                             html = ""
-                        clicks = 0
-                    finally:
-                        signal.alarm(0)
-                        if page is not None:
-                            # page.close() itself could hang on a broken page;
-                            # give it 5 s then move on.
-                            signal.alarm(5)
-                            try:
-                                page.close()
-                            except Exception:
-                                pass
-                            finally:
-                                signal.alarm(0)
                 else:
                     html = fetch(url)
 
