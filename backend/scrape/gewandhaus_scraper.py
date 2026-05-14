@@ -21,6 +21,7 @@ from datetime import datetime
 from pathlib import Path
 import argparse
 import json
+import os
 import re
 import sys
 import time
@@ -36,6 +37,9 @@ LOAD_MORE_KEYWORDS = (
     "Mehr laden",
     "Mehr anzeigen",
 )
+OUTPUT_PATH = Path(__file__).parent.parent / "gewandhaus_events.json"
+CLAUDE_MODEL = "claude-haiku-4-5-20251001"  # cheap + good enough for HTML extraction
+MAX_DETAIL_HTML_CHARS = 30_000
 
 CATEGORIES = [
     "/grosse-concerte/",
@@ -335,6 +339,100 @@ def _dump_debug(content: str, label: str) -> None:
         print(f"  [debug] dump failed: {exc}")
 
 
+def _load_program_cache() -> dict[str, list[str]]:
+    """Read previously-scraped programs from gewandhaus_events.json so we
+    don't have to refetch + re-extract them every run."""
+    if not OUTPUT_PATH.exists():
+        return {}
+    try:
+        with open(OUTPUT_PATH, encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception:
+        return {}
+    cache: dict[str, list[str]] = {}
+    for ev in data.get("events", []):
+        eid = ev.get("id")
+        prog = ev.get("program")
+        if eid and prog:
+            cache[eid] = prog
+    return cache
+
+
+_CLAUDE_CLIENT = None
+
+
+def _get_claude_client():
+    """Lazy-init Anthropic client. Returns None if no key set or lib missing."""
+    global _CLAUDE_CLIENT
+    if _CLAUDE_CLIENT is not None:
+        return _CLAUDE_CLIENT
+    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    if not api_key:
+        return None
+    try:
+        import anthropic
+    except ImportError:
+        return None
+    _CLAUDE_CLIENT = anthropic.Anthropic(api_key=api_key)
+    return _CLAUDE_CLIENT
+
+
+def extract_program_with_claude(html: str, event: dict) -> list[str]:
+    """Ask Claude (Haiku) to read a detail page and return the program as a
+    JSON list of strings like 'Composer: Work (opus)'. Returns [] on failure."""
+    client = _get_claude_client()
+    if client is None:
+        return []
+
+    soup = BeautifulSoup(html, "lxml")
+    for tag in soup(["script", "style", "noscript", "iframe", "svg"]):
+        tag.decompose()
+    body = soup.find("body") or soup
+    body_html = str(body)[:MAX_DETAIL_HTML_CHARS]
+
+    prompt = f"""Extract the concert program from this Gewandhaus Leipzig event detail page.
+
+Event title: {event.get('title', '')}
+Event date: {event.get('date', '')}
+
+HTML (cleaned):
+{body_html}
+
+Return a JSON array of works performed at this concert. Each entry should be a
+single string in the format "Composer: Work Title (opus/catalog number)" when
+available, e.g.:
+- "Johann Sebastian Bach: Weihnachts-Oratorium BWV 248"
+- "Ludwig van Beethoven: Symphonie Nr. 9 d-moll op. 125"
+- "Gustav Mahler: Symphonie Nr. 2 c-moll \\"Auferstehung\\""
+
+Skip filler like "Pause" or "Einlass". If the page lists no works (e.g. an
+opera evening that just states the opera title), return [] — the title is
+already known.
+
+Respond with ONLY the JSON array. No prose, no markdown fences.
+"""
+    try:
+        msg = client.messages.create(
+            model=CLAUDE_MODEL,
+            max_tokens=1500,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        text = msg.content[0].text.strip()
+        if text.startswith("```"):
+            text = text.split("```", 2)[1]
+            if text.startswith("json"):
+                text = text[4:]
+            text = text.strip()
+            if text.endswith("```"):
+                text = text[:-3].strip()
+        program = json.loads(text)
+        if isinstance(program, list):
+            return [str(p).strip() for p in program if p]
+    except Exception as exc:
+        print(f"  [claude] error for {event.get('id')}: {type(exc).__name__}: {str(exc)[:80]}")
+    return []
+
+
 def fetch_program_from_detail(url: str, verbose: bool = False) -> list[str]:
     """Fetch a single event's detail page and extract its program (works performed).
 
@@ -381,24 +479,78 @@ def fetch_program_from_detail(url: str, verbose: bool = False) -> list[str]:
 
 
 def enrich_with_detail_programs(events: list[dict]) -> None:
-    """For every event without a listing-derived program, fetch its detail page."""
+    """Populate event['program'] by, in order:
+       1. Reusing data from the previous gewandhaus_events.json (cache).
+       2. Asking Claude (Haiku) to extract the program from the detail page,
+          when ANTHROPIC_API_KEY is set.
+       3. Falling back to static CSS-selector parsing.
+    """
+    cache = _load_program_cache()
+    if cache:
+        print(f"\nProgram cache: {len(cache)} previously-extracted entries")
+
+    have_claude = _get_claude_client() is not None
+    print(f"Claude API: {'enabled (Haiku)' if have_claude else 'disabled (no key)'}")
+
+    cache_hits = 0
+    for ev in events:
+        if not ev.get("program") and ev.get("id") in cache:
+            ev["program"] = cache[ev["id"]]
+            cache_hits += 1
+    if cache_hits:
+        print(f"Reused {cache_hits} programs from previous run")
+
     todo = [e for e in events if not e.get("program") and e.get("url")]
     if not todo:
-        print("\nAll events already have a program — skipping detail pass.")
+        print("\nAll events already have a program — nothing to fetch.")
         return
-    print(f"\nFetching detail pages for {len(todo)} events (program extraction)...")
-    enriched = 0
+
+    print(f"\nFetching {len(todo)} detail pages for program extraction...")
+    enriched_claude = 0
+    enriched_static = 0
     for i, event in enumerate(todo, 1):
-        # First three attempts: verbose, so action logs show what we're seeing.
         verbose = i <= 3
-        program = fetch_program_from_detail(event["url"], verbose=verbose)
+        try:
+            r = requests.get(event["url"], headers=HEADERS, timeout=20)
+            r.raise_for_status()
+        except Exception as exc:
+            if verbose:
+                print(f"  [detail] {event['url']} → fetch error: {exc}")
+            time.sleep(0.3)
+            continue
+
+        program: list[str] = []
+        if have_claude:
+            program = extract_program_with_claude(r.text, event)
+            if program and verbose:
+                print(f"  [claude] {event.get('id')} → {len(program)} works: {program[0][:70] if program else ''}")
+
+        if not program:
+            soup = BeautifulSoup(r.text, "lxml")
+            program = _extract_program_nodes(soup) or _extract_program_after_heading(soup)
+            if program:
+                enriched_static += 1
+        else:
+            enriched_claude += 1
+
         if program:
             event["program"] = program
-            enriched += 1
+        elif not _DEBUG_DUMPED:
+            soup = BeautifulSoup(r.text, "lxml")
+            for tag in soup(["script", "style", "noscript", "iframe", "svg"]):
+                tag.decompose()
+            body = soup.find("body") or soup
+            _dump_debug(
+                f"<!-- source: {event['url']} -->\n<!-- size: {len(r.text)} chars -->\n{body}",
+                f"empty-extraction ({event['url']})",
+            )
+
         if i % 10 == 0 or i == len(todo):
-            print(f"  {i}/{len(todo)} processed, {enriched} with program so far")
+            print(f"  {i}/{len(todo)} processed | claude:{enriched_claude} static:{enriched_static}")
         time.sleep(0.3)
-    print(f"Detail pass complete: {enriched}/{len(todo)} events got a program")
+
+    print(f"Detail pass complete: {enriched_claude} via Claude + {enriched_static} via selectors = "
+          f"{enriched_claude + enriched_static}/{len(todo)}")
 
 
 def parse_teasers(html: str, category: str) -> list[dict]:

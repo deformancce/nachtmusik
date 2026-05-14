@@ -31,11 +31,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install --quiet requests beautifulsoup4 lxml playwright
+          pip install --quiet requests beautifulsoup4 lxml playwright anthropic
           python3 -m playwright install --with-deps chromium
 
       - name: Run Gewandhaus scraper
         working-directory: backend
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python3 scrape/gewandhaus_scraper.py --clicks 10
 
       - name: Show summary
