@@ -77,7 +77,24 @@ jobs:
           git add backend/berliner_philharmonie_events.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
-          else
-            git commit -m "Refresh berliner_philharmonie_events.json (automated scrape)"
-            git push
+            exit 0
           fi
+          git commit -m "Refresh berliner_philharmonie_events.json (automated scrape)"
+
+          # Race-resilient push: if the remote moved on during the ~15 min
+          # scrape (because we pushed an unrelated commit to the same
+          # branch), rebase our single-file commit on top and retry. Only
+          # the JSON file ever changes per run, so rebase conflicts are
+          # effectively impossible.
+          BRANCH="${GITHUB_REF_NAME:-claude/add-opus-code-iSPrR}"
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin "$BRANCH" || true
+            if git push origin "HEAD:$BRANCH"; then
+              echo "Push succeeded on attempt $i"
+              exit 0
+            fi
+            echo "Push attempt $i failed, retrying in $((i*3))s..."
+            sleep $((i * 3))
+          done
+          echo "Push failed after 3 attempts" >&2
+          exit 1
