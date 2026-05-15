@@ -293,14 +293,21 @@ def _dump_debug(content: str, label: str) -> None:
         print(f"  [debug] dump failed: {exc}")
 
 
-def _load_program_cache() -> dict[str, dict]:
-    """Read previously-scraped programs + artists from the output JSON so we
-    don't have to refetch + re-extract them every run.
+_BAD_TITLES = {"mehr lesen", "streamen", "tickets", "ticket", "details"}
 
-    Returns {event_id: {"program": [...], "artists": [...]}}. Only events
-    that have a non-empty program are cached — events with an empty program
-    will be re-fetched, giving them a chance to succeed (or pick up artists)
-    on a later run."""
+
+def _is_bad_title(s) -> bool:
+    return isinstance(s, str) and s.strip().lower() in _BAD_TITLES
+
+
+def _load_program_cache() -> dict:
+    """Read previously-scraped events from the output JSON and group them
+    by detail URL. A single detail URL can map to multiple events (the same
+    concert programme played on several nights), so the cache is
+    {url: [event, event, ...]}.
+
+    Only events with a non-empty program are cached — empty ones will be
+    re-fetched, giving them a chance to succeed on a later run."""
     if not OUTPUT_PATH.exists():
         return {}
     try:
@@ -308,30 +315,16 @@ def _load_program_cache() -> dict[str, dict]:
             data = json.load(f)
     except Exception:
         return {}
-    # Strings that an earlier run sometimes saved as title when the listing
-    # parser fell back to the link's own text ("Mehr lesen", "Streamen",
-    # "Tickets") instead of finding the real heading. Treat these as empty so
-    # the next run pulls a real title from the detail page via Claude.
-    bad_titles = {"mehr lesen", "streamen", "tickets", "ticket", "details"}
-
-    def _clean(field: str, value):
-        if field == "title" and isinstance(value, str) and value.strip().lower() in bad_titles:
-            return ""
-        return value or ("" if field != "artists" else [])
-
-    cache: dict[str, dict] = {}
+    cache: dict = {}
     for ev in data.get("events", []):
-        eid = ev.get("id")
+        url = ev.get("url")
         prog = ev.get("program")
-        if eid and prog:
-            cache[eid] = {
-                "program": prog,
-                "artists": ev.get("artists") or [],
-                "title": _clean("title", ev.get("title")),
-                "date": ev.get("date") or "",
-                "time": ev.get("time") or "",
-                "location": ev.get("location") or "",
-            }
+        if not url or not prog:
+            continue
+        # Wipe known-bogus titles so the next pass re-extracts them.
+        if _is_bad_title(ev.get("title")):
+            ev["title"] = ""
+        cache.setdefault(url, []).append(ev)
     return cache
 
 
@@ -440,53 +433,110 @@ def _select_event_text(soup: BeautifulSoup) -> "str":
 # all 366 events in a run so Anthropic's prompt cache (5-min TTL) charges us
 # at the 10% cache-read rate after the first call.
 _CLAUDE_SYSTEM = """You extract structured concert data from Berliner \
-Philharmonie event pages and return it as a JSON object with these keys: \
-"title", "date", "time", "location", "works", "artists".
+Philharmonie event pages and return it as a single JSON object.
 
-"title" (string): the concert's headline as it appears on the page, e.g. \
-"Kirill Petrenko dirigiert Brahms" or "Sir Simon Rattle & Yuja Wang". Use the \
-clearest short title — usually the largest heading. Empty string if none.
+Required keys:
 
-"date" (string): the concert date in ISO format YYYY-MM-DD. The page lists \
-the date in German like "Fr, 15. Mai 2026" — convert to "2026-05-15". Empty \
-string if no date is shown.
+"series" (string): the category/format label, e.g. "Lunchkonzert", \
+"Kammermusik", "Oper", "Konzert", "Orgel". Empty string if the page does not \
+label it.
 
-"time" (string): 24-hour start time HH:MM, e.g. "20:00". The page shows it \
-like "20.00 Uhr" or "20:00". Empty string if no time is shown.
+"title" (string): the concert's headline. Prefer the orchestra/ensemble \
+and conductor in the form "<Ensemble> · <Conductor>" — e.g. \
+"Berliner Philharmoniker · Klaus Mäkelä" or \
+"Quatuor Danel · Marc-André Hamelin". For operas use the work title \
+("CARMEN", "LA TRAVIATA"). Empty string only if absolutely nothing usable.
 
-"location" (string): the hall / room name as listed on the page, e.g. \
-"Großer Saal", "Kammermusiksaal", "Philharmonie", "Waldbühne Berlin". Empty \
-string if not shown.
+"subtitle" (string): supplementary line. Soloist(s) with role and/or works \
+in short, e.g. "Yulianna Avdeeva (Klavier) · Werke von Rachmaninoff, \
+Schostakowitsch" or "Mahlers Dritte". Empty string allowed.
+
+"dates" (array): one entry per performance date listed on the page. The \
+Berliner site shows recurring concerts (same program, multiple nights) on \
+one detail page — list ALL of them. Each entry: \
+{"date": "YYYY-MM-DD", "time": "HH:MM"}. \
+Example for a 3-night run: \
+[{"date":"2026-05-14","time":"20:00"},{"date":"2026-05-15","time":"20:00"},{"date":"2026-05-16","time":"19:00"}]. \
+Use [] only if no date is shown.
+
+"venue" (string): the venue / building name, e.g. "Berliner Philharmonie", \
+"Waldbühne Berlin". Default to "Berliner Philharmonie" if the page is \
+clearly inside the building but does not name the venue explicitly.
+
+"hall" (string): the hall / room within the venue, e.g. "Großer Saal", \
+"Kammermusiksaal", "Foyer Großer Saal". Empty string if not stated.
+
+"city" (string): the city, usually "Berlin". Empty string if not stated.
 
 "works" (array of strings): each work formatted "Composer: Work Title \
-(opus/catalog number)" when available, e.g.:
-- "Johann Sebastian Bach: Weihnachts-Oratorium BWV 248"
-- "Ludwig van Beethoven: Symphonie Nr. 9 d-moll op. 125"
-- "Georges Bizet: Carmen (Oper in vier Akten)"
+(opus/catalog number)", e.g. "Ludwig van Beethoven: Symphonie Nr. 9 d-Moll \
+op. 125". Operas, oratorios and ballets are one entry. List works in \
+performance order. Skip "Pause", "Einlass", "Ende ca.". Use [] only if no \
+composer-work information is present.
 
-Operas, oratorios and ballets count as a single work — one-element list. For \
-multi-work concerts list each work separately in performance order. Skip \
-filler like "Pause", "Einlass", "Ende ca.". Use [] only if no composer-work \
-information is present.
+"artists" (array of strings): each performer with role, e.g. \
+"Kirill Petrenko (Dirigent)", "Yuja Wang (Klavier)", "Berliner Philharmoniker". \
+Skip ticket-info lines and venue names. Use [] when none are listed.
 
-"artists" (array of strings): each performer or staff member with role, e.g.:
-- "Kirill Petrenko (Dirigent)"
-- "Yuja Wang (Klavier)"
-- "Berliner Philharmoniker"
-Skip generic ticket-info lines and venue names. Use [] when none are listed.
+"description" (string): the longer "Info" or "Hintergrund" marketing text \
+describing the concert (max ~800 chars; trim to the most informative \
+sentences if longer). Empty string when no description is present.
 
-Respond with ONLY the JSON object. No prose, no markdown fences. Example:
-{"title": "Kirill Petrenko dirigiert Beethoven", "date": "2026-09-12", "time": "20:00", "location": "Großer Saal", "works": ["Ludwig van Beethoven: Symphonie Nr. 5 c-Moll op. 67"], "artists": ["Kirill Petrenko (Dirigent)", "Berliner Philharmoniker"]}"""
+"duration" (string): the total duration as printed, e.g. "ca. 2 Stunden \
+(inkl. 20 Minuten Pause)" or "ca. 1 Stunde 40 Minuten". Empty if not stated.
+
+"prices" (string): the price range as printed, e.g. "39 bis 111 €" or \
+"24/20 EUR". Empty if not stated.
+
+"prices_reduced" (string): reduced prices when separately listed, e.g. \
+"49,29/42,59/29,89 EUR" or "Flexpreise: 26/22 EUR". Empty if none.
+
+"organizer" (string): "Veranstalter: …" line, e.g. "Oper Leipzig", \
+"Berliner Philharmoniker" — just the name, no "Veranstalter:" prefix. Empty \
+when not stated.
+
+"has_stream" (boolean): true when the page mentions a streaming option \
+(e.g. "Streamen", "Digital Concert Hall", "stream verfügbar"). False \
+otherwise.
+
+"intro" (string): pre-concert talk info if listed, e.g. \
+"Konzerteinführung 19:15 Uhr mit Meike Pfister". Empty when not present.
+
+"abo" (string): subscription label like "Abo G: Konzerte mit den Berliner \
+Philharmonikern" if present, else empty.
+
+"language" (string): for operas, the original language and surtitles, e.g. \
+"italienisch mit deutschen Übertiteln". Empty when not applicable.
+
+Respond with ONLY the JSON object. No prose, no markdown fences. Use empty \
+string ("") or empty array ([]) when a field is genuinely missing — do not \
+hallucinate values."""
+
+
+_EMPTY_CLAUDE_RESULT = {
+    "series": "", "title": "", "subtitle": "",
+    "dates": [],
+    "venue": "", "hall": "", "city": "",
+    "works": [], "artists": [],
+    "description": "", "duration": "",
+    "prices": "", "prices_reduced": "",
+    "organizer": "", "has_stream": False,
+    "intro": "", "abo": "", "language": "",
+}
 
 
 def extract_program_with_claude(html: str, event: dict, verbose: bool = False) -> "dict":
     """Ask Claude (Haiku) to read a detail page and return all the structured
-    fields it can pull from it: title, date, time, location, works, artists.
+    fields it can pull from it: series, title, subtitle, dates[], venue,
+    hall, city, works[], artists[], description, duration, prices,
+    prices_reduced, organizer, has_stream, intro, abo, language.
 
-    Returns a dict with those keys. Missing fields come back as "" or [].
-    Returns {} on a hard failure (API error, JSON parse error)."""
-    empty = {"title": "", "date": "", "time": "", "location": "",
-             "works": [], "artists": []}
+    Returns a dict with those keys. Missing fields come back as "" / [] /
+    False. Returns the empty-shaped dict on a hard failure."""
+    empty = dict(_EMPTY_CLAUDE_RESULT)
+    empty["dates"] = []
+    empty["works"] = []
+    empty["artists"] = []
     client = _get_claude_client()
     if client is None:
         return empty
@@ -503,7 +553,7 @@ def extract_program_with_claude(html: str, event: dict, verbose: bool = False) -
     try:
         msg = client.messages.create(
             model=CLAUDE_MODEL,
-            max_tokens=1500,
+            max_tokens=2500,  # bumped — description + more fields take more output
             system=[{
                 "type": "text",
                 "text": _CLAUDE_SYSTEM,
@@ -521,13 +571,40 @@ def extract_program_with_claude(html: str, event: dict, verbose: bool = False) -
                 text = text[:-3].strip()
         data = json.loads(text)
         if isinstance(data, dict):
+            # Normalize dates: list of {date,time} dicts. Tolerate the older
+            # top-level date+time fields from previous prompt versions.
+            raw_dates = data.get("dates") or []
+            dates = []
+            for d in raw_dates:
+                if isinstance(d, dict) and d.get("date"):
+                    dates.append({
+                        "date": str(d.get("date") or "").strip(),
+                        "time": str(d.get("time") or "").strip(),
+                    })
+            if not dates and (data.get("date") or data.get("time")):
+                dates = [{
+                    "date": str(data.get("date") or "").strip(),
+                    "time": str(data.get("time") or "").strip(),
+                }]
             return {
-                "title": str(data.get("title") or "").strip(),
-                "date": str(data.get("date") or "").strip(),
-                "time": str(data.get("time") or "").strip(),
-                "location": str(data.get("location") or "").strip(),
-                "works": [str(w).strip() for w in (data.get("works") or []) if w],
-                "artists": [str(a).strip() for a in (data.get("artists") or []) if a],
+                "series":         str(data.get("series") or "").strip(),
+                "title":          str(data.get("title") or "").strip(),
+                "subtitle":       str(data.get("subtitle") or "").strip(),
+                "dates":          dates,
+                "venue":          str(data.get("venue") or "").strip(),
+                "hall":           str(data.get("hall") or data.get("location") or "").strip(),
+                "city":           str(data.get("city") or "").strip(),
+                "works":          [str(w).strip() for w in (data.get("works") or []) if w],
+                "artists":        [str(a).strip() for a in (data.get("artists") or []) if a],
+                "description":    str(data.get("description") or "").strip(),
+                "duration":       str(data.get("duration") or "").strip(),
+                "prices":         str(data.get("prices") or "").strip(),
+                "prices_reduced": str(data.get("prices_reduced") or "").strip(),
+                "organizer":      str(data.get("organizer") or "").strip(),
+                "has_stream":     bool(data.get("has_stream")),
+                "intro":          str(data.get("intro") or "").strip(),
+                "abo":            str(data.get("abo") or "").strip(),
+                "language":       str(data.get("language") or "").strip(),
             }
         # Older bare-list shape — tolerate it for any cached responses
         if isinstance(data, list):
@@ -594,85 +671,174 @@ def _save_checkpoint(events: list[dict], path: Path) -> None:
     tmp.replace(path)
 
 
+_RICH_FIELDS = (
+    "series", "title", "subtitle",
+    "venue", "hall", "city",
+    "description", "duration",
+    "prices", "prices_reduced",
+    "organizer", "has_stream",
+    "intro", "abo", "language",
+)
+
+
+def _apply_claude_data(event: dict, c: dict) -> None:
+    """Copy Claude-extracted fields onto an event, only filling empties so
+    re-runs don't clobber existing data. has_stream is a bool — always copy
+    when Claude says true (overrides default false)."""
+    if c.get("works") and not event.get("program"):
+        event["program"] = c["works"]
+    if c.get("artists") and not event.get("artists"):
+        event["artists"] = c["artists"]
+    for field in _RICH_FIELDS:
+        val = c.get(field)
+        if field == "has_stream":
+            if val and not event.get("has_stream"):
+                event["has_stream"] = True
+            continue
+        if isinstance(val, str) and val.strip() and not event.get(field):
+            event[field] = val.strip()
+
+
+def _merge_expansion(events: list[dict], expansion: dict) -> list[dict]:
+    """Walk the events list; whenever a URL has been claimed via Claude
+    (i.e. exists in `expansion`), substitute the original entry with the
+    list of date-expanded events from the expansion table. Stubs whose URL
+    is not in `expansion` are kept as-is (they were already enriched via
+    cache, or didn't get fetched yet)."""
+    out: list[dict] = []
+    emitted: set = set()
+    for e in events:
+        url = e.get("url")
+        if url and url in expansion:
+            if url not in emitted:
+                out.extend(expansion[url])
+                emitted.add(url)
+            # else: this is a duplicate stub for the same URL — drop it,
+            # the expansion above already covers all dates.
+        else:
+            out.append(e)
+    return out
+
+
+def _build_event_per_date(stub: dict, c: dict) -> list[dict]:
+    """Take a stub event + Claude's data (which may contain N dates) and
+    return one event per date. Each event has id = "{base_id}-{date}"."""
+    dates = c.get("dates") or []
+    if not dates:
+        dates = [{"date": "", "time": ""}]
+    base_id = (stub.get("id") or "").split("-", 1)[0] or stub.get("id", "")
+    out: list[dict] = []
+    for d in dates:
+        clone = dict(stub)
+        _apply_claude_data(clone, c)
+        date_str = (d.get("date") or "").strip()
+        time_str = (d.get("time") or "").strip()
+        clone["date"] = date_str or clone.get("date", "")
+        clone["time"] = time_str or clone.get("time", "")
+        clone["id"] = f"{base_id}-{date_str}" if date_str else base_id
+        out.append(clone)
+    return out
+
+
 def enrich_with_detail_programs(
     events: list[dict],
     checkpoint_path: "Path | None" = None,
     checkpoint_every: int = 50,
 ) -> None:
-    """Populate event['program'] by, in order:
-       1. Reusing data from the previous output JSON (cache).
-       2. Asking Claude (Haiku) to extract the program from the detail page,
-          when ANTHROPIC_API_KEY is set.
-       3. Falling back to static CSS-selector parsing.
+    """Populate every event from its detail page, going through:
+       1. cache replay (cache is keyed by URL — a single URL can yield N
+          events when a programme plays on multiple nights),
+       2. Claude (Haiku) extraction with multi-date expansion,
+       3. static CSS-selector fallback for works only.
 
-    If checkpoint_path is given, a partial JSON is written every
-    checkpoint_every events so a crash or cancel doesn't lose work.
+    The `events` list is mutated in place: entries can be replaced (via
+    cache hit) or expanded (Claude returns multiple dates).
     """
-    cache = _load_program_cache()
-    if cache:
-        print(f"\nProgram cache: {len(cache)} previously-extracted entries", flush=True)
+    cache_by_url = _load_program_cache()
+    if cache_by_url:
+        total = sum(len(v) for v in cache_by_url.values())
+        print(f"\nProgram cache: {total} entries across {len(cache_by_url)} URLs",
+              flush=True)
 
     have_claude = _get_claude_client() is not None
-    print(f"Claude API: {'enabled (Haiku)' if have_claude else 'disabled (no key)'}", flush=True)
+    print(f"Claude API: {'enabled (Haiku)' if have_claude else 'disabled (no key)'}",
+          flush=True)
 
+    # Pass 1 — replay cache. A stub-from-listing matching a cached URL is
+    # replaced wholesale by the cached events (which may be 1 or N).
+    replaced: list[dict] = []
     cache_hits = 0
-    for ev in events:
-        cached = cache.get(ev.get("id"))
-        if not cached:
-            continue
-        if not ev.get("program"):
-            ev["program"] = cached["program"]
-            cache_hits += 1
-        for field in ("artists", "title", "date", "time", "location"):
-            if not ev.get(field) and cached.get(field):
-                ev[field] = cached[field]
+    for stub in events:
+        cached = cache_by_url.get(stub.get("url")) or []
+        if cached:
+            replaced.extend(cached)
+            cache_hits += len(cached)
+        else:
+            replaced.append(stub)
+    events.clear()
+    events.extend(replaced)
     if cache_hits:
-        print(f"Reused {cache_hits} programs from previous run", flush=True)
+        print(f"Reused {cache_hits} entries from previous run", flush=True)
 
-    # Re-fetch any event that's missing ANY important field — so events from
-    # older runs (program-only schema) get topped up with title/date/etc.
-    todo = [
-        e for e in events
-        if e.get("url") and (
-            not e.get("program")
-            or not e.get("artists")
-            or not e.get("title")
-            or not e.get("date")
-        )
-    ]
+    # Pass 2 — figure out what's still missing. A "complete" event has at
+    # least program + title + date populated.
+    def _needs_fetch(e: dict) -> bool:
+        if not e.get("url"):
+            return False
+        return not (e.get("program") and e.get("title") and e.get("date"))
+
+    # Dedupe TODO by URL — a single Claude call covers all dates from a URL.
+    todo_by_url: dict = {}
+    for e in events:
+        if _needs_fetch(e):
+            todo_by_url.setdefault(e["url"], e)
+    todo = list(todo_by_url.values())
+
     if not todo:
         print("\nAll events already fully populated — nothing to fetch.", flush=True)
         return
 
-    print(f"\nFetching {len(todo)} detail pages for program/artist extraction...", flush=True)
+    print(f"\nFetching {len(todo)} detail pages for full extraction...", flush=True)
     enriched_claude = 0
     enriched_static = 0
     fetch_errors = 0
     fetch_non_200 = 0
     claude_errors = 0
     claude_empty = 0
-    for i, event in enumerate(todo, 1):
-        verbose = i <= 5  # noisy on the first five, then quiet
-        eid = event.get("id", "?")
+    # We'll rebuild the events list with multi-date expansion. Stubs we
+    # didn't fetch (because they were already complete from cache) pass
+    # through unchanged. Stubs we did fetch get replaced by one or more
+    # date-specific events.
+    expansion: dict = {}  # url → list[event]
+
+    for i, stub in enumerate(todo, 1):
+        verbose = i <= 5
+        url = stub["url"]
+        eid = stub.get("id", "?")
 
         try:
-            r = requests.get(event["url"], headers=HEADERS, timeout=20)
+            r = requests.get(url, headers=HEADERS, timeout=20)
+            # A1 fix: requests defaults to ISO-8859-1 when the HTTP header
+            # lacks an explicit charset, even though the body's <meta>
+            # declares utf-8. Force chardet's detection so .text decodes
+            # cleanly and we don't end up with Â»…Â« mojibake in the JSON.
+            r.encoding = r.apparent_encoding or "utf-8"
         except Exception as exc:
             print(f"  [detail {eid}] FETCH RAISED {type(exc).__name__}: {str(exc)[:120]}")
             fetch_errors += 1
             _dump_debug(
-                f"FETCH RAISED for {event['url']}: {type(exc).__name__}: {exc}",
-                f"fetch-exception ({event['url']})",
+                f"FETCH RAISED for {url}: {type(exc).__name__}: {exc}",
+                f"fetch-exception ({url})",
             )
             time.sleep(0.3)
             continue
 
         if r.status_code != 200:
-            print(f"  [detail {eid}] HTTP {r.status_code} for {event['url']}")
+            print(f"  [detail {eid}] HTTP {r.status_code} for {url}")
             fetch_non_200 += 1
             _dump_debug(
-                f"HTTP {r.status_code} for {event['url']}\n\nResponse body (first 5KB):\n{r.text[:5000]}",
-                f"http-{r.status_code} ({event['url']})",
+                f"HTTP {r.status_code} for {url}\n\nResponse body (first 5KB):\n{r.text[:5000]}",
+                f"http-{r.status_code} ({url})",
             )
             time.sleep(0.3)
             continue
@@ -681,55 +847,48 @@ def enrich_with_detail_programs(
             print(f"  [detail {eid}] HTTP 200, {len(r.text)} chars")
 
         claude_data: dict = {}
-        program: list[str] = []
-        claude_attempted = False
         if have_claude:
-            claude_attempted = True
             try:
                 claude_data = extract_program_with_claude(
-                    r.text, event, verbose=verbose
+                    r.text, stub, verbose=verbose
                 )
             except Exception as exc:
                 print(f"  [claude {eid}] EXCEPTION {type(exc).__name__}: {str(exc)[:120]}")
                 claude_errors += 1
-            program = claude_data.get("works") or []
-            if verbose:
-                preview = program[0][:70] if program else "(empty)"
-                print(f"  [claude {eid}] returned {len(program)} works, "
-                      f"{len(claude_data.get('artists') or [])} artists, "
-                      f"title={claude_data.get('title','')[:40]!r}, "
-                      f"date={claude_data.get('date','')!r}: {preview}")
-            if not program:
-                claude_empty += 1
 
-        if not program:
-            soup = BeautifulSoup(r.text, "lxml")
-            program = _extract_program_nodes(soup) or _extract_program_after_heading(soup)
-            if program:
-                enriched_static += 1
-        elif claude_attempted:
+        works = claude_data.get("works") or []
+        dates = claude_data.get("dates") or []
+        if verbose:
+            preview = works[0][:70] if works else "(empty)"
+            print(f"  [claude {eid}] {len(works)}w / {len(claude_data.get('artists') or [])}a / "
+                  f"{len(dates)}dates · title={claude_data.get('title','')[:40]!r}: {preview}",
+                  flush=True)
+        if works:
             enriched_claude += 1
+        else:
+            claude_empty += 1
+            # Static fallback only when Claude found nothing
+            soup = BeautifulSoup(r.text, "lxml")
+            fallback = _extract_program_nodes(soup) or _extract_program_after_heading(soup)
+            if fallback:
+                claude_data["works"] = fallback
+                works = fallback
+                enriched_static += 1
 
-        # Fill any field that's currently empty on the event from Claude's
-        # extraction. Existing values are kept — re-runs shouldn't clobber
-        # data we already have.
-        if program and not event.get("program"):
-            event["program"] = program
-        for field in ("title", "date", "time", "location"):
-            val = (claude_data.get(field) or "").strip()
-            if val and not event.get(field):
-                event[field] = val
-        artists_from_claude = claude_data.get("artists") or []
-        if artists_from_claude and not event.get("artists"):
-            event["artists"] = artists_from_claude
-        if not event.get("program") and not _DEBUG_DUMPED:
+        # Build one event per date (the date may be empty if Claude found
+        # none — we still produce a single placeholder so the listing entry
+        # isn't lost).
+        expanded = _build_event_per_date(stub, claude_data)
+        expansion[url] = expanded
+
+        if not works and not _DEBUG_DUMPED:
             soup = BeautifulSoup(r.text, "lxml")
             for tag in soup(["script", "style", "noscript", "iframe", "svg"]):
                 tag.decompose()
             body = soup.find("body") or soup
             _dump_debug(
-                f"<!-- source: {event['url']} -->\n<!-- size: {len(r.text)} chars -->\n{body}",
-                f"empty-extraction ({event['url']})",
+                f"<!-- source: {url} -->\n<!-- size: {len(r.text)} chars -->\n{body}",
+                f"empty-extraction ({url})",
             )
 
         if i % 10 == 0 or i == len(todo):
@@ -738,10 +897,19 @@ def enrich_with_detail_programs(
                   flush=True)
 
         if checkpoint_path and i % checkpoint_every == 0:
-            _save_checkpoint(events, checkpoint_path)
-            print(f"  [checkpoint] saved {checkpoint_path.name} after {i} events", flush=True)
+            # Apply all expansions so far so the checkpoint contains the
+            # latest enriched + date-expanded events, not the stubs.
+            merged = _merge_expansion(events, expansion)
+            _save_checkpoint(merged, checkpoint_path)
+            print(f"  [checkpoint] saved {checkpoint_path.name} after {i} events ({len(merged)} total)",
+                  flush=True)
 
         time.sleep(0.3)
+
+    # Final apply: replace processed stubs by their expanded forms.
+    merged_final = _merge_expansion(events, expansion)
+    events.clear()
+    events.extend(merged_final)
 
     print(
         f"\nDetail pass summary:\n"
@@ -792,11 +960,22 @@ def parse_teasers(html: str, category: str) -> list[dict]:
             "time": "",          # Claude extracts from detail
             "title": "",         # Claude extracts from detail
             "series": "",        # Claude extracts from detail
-            "location": "",      # Claude extracts from detail
+            "subtitle": "",      # Claude extracts from detail
+            "venue": "Berliner Philharmonie",  # default, overridable by Claude
+            "hall": "",          # Claude extracts from detail
+            "city": "Berlin",    # default, overridable by Claude
             "program": [],
             "artists": [],
+            "description": "",
+            "duration": "",
+            "prices": "",
+            "prices_reduced": "",
+            "organizer": "",
+            "has_stream": False,
+            "intro": "",
+            "abo": "",
+            "language": "",
             "url": url,
-            "venue": "Berliner Philharmonie",
             "category": category.strip("/"),
             "source_url": source_url,
         })

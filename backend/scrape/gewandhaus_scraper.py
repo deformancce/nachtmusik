@@ -344,15 +344,21 @@ def _load_program_cache() -> dict[str, dict]:
             data = json.load(f)
     except Exception:
         return {}
+    rich_fields = ("subtitle", "description", "duration", "prices",
+                   "prices_reduced", "organizer", "intro", "abo", "language")
     cache: dict[str, dict] = {}
     for ev in data.get("events", []):
         eid = ev.get("id")
         prog = ev.get("program")
         if eid and prog:
-            cache[eid] = {
+            entry = {
                 "program": prog,
                 "artists": ev.get("artists") or [],
             }
+            for f in rich_fields:
+                if ev.get(f):
+                    entry[f] = ev[f]
+            cache[eid] = entry
     return cache
 
 
@@ -458,51 +464,78 @@ def _select_event_text(soup: BeautifulSoup) -> "str":
 # all 366 events in a run so Anthropic's prompt cache (5-min TTL) charges us
 # at the 10% cache-read rate after the first call.
 _CLAUDE_SYSTEM = """You extract structured concert data from Gewandhaus Leipzig \
-event pages and return it as a JSON object with two keys: "works" and "artists".
+event pages and return it as a single JSON object with these keys.
 
-"works" is an array of strings, each formatted "Composer: Work Title \
+"works" (array of strings): each work formatted "Composer: Work Title \
 (opus/catalog number)" when available, e.g.:
 - "Johann Sebastian Bach: Weihnachts-Oratorium BWV 248"
 - "Ludwig van Beethoven: Symphonie Nr. 9 d-moll op. 125"
-- "Gustav Mahler: Symphonie Nr. 2 c-moll \\"Auferstehung\\""
 - "Georges Bizet: Carmen (Oper in vier Akten)"
 
-Operas, oratorios and ballets count as a single work — return a one-element \
-list with the composer and work, e.g. ["Georges Bizet: Carmen"]. Look for a \
-line like "Georges Bizet — Carmen - Oper in vier Akten" on the page.
+Operas, oratorios and ballets count as a single work — one-element list. For \
+multi-work concerts list each work separately in performance order. Skip \
+filler like "Pause", "Einlass", "Ende ca.". Use [] only if no composer-work \
+information is present.
 
-For concerts with multiple works (Grosse Concerte, Kammermusik, Klavierabend, \
-Motette, etc.), list each work separately in performance order.
-
-Skip filler like "Pause", "Einlass", "Ende ca.", and lines that are only \
-artist/conductor names. Use "works": [] only if you genuinely cannot find any \
-composer-work information.
-
-"artists" is an array of strings — each performer or staff member with their \
-role, e.g.:
+"artists" (array of strings): each performer or staff member with role, e.g.:
 - "Andris Nelsons (Dirigent)"
 - "Yuja Wang (Klavier)"
 - "Gewandhausorchester"
 - "Lindy Hume (Inszenierung)"
+Skip generic ticket-info lines and venue names. Use [] when none are listed.
 
-Include the conductor, soloists, ensembles, and (for operas) director/staging. \
-Skip generic ticket-info lines and venue names. Use "artists": [] when none \
-are listed.
+"subtitle" (string): supplementary line. Soloist(s) with role and/or short \
+work hint, e.g. "Yulianna Avdeeva (Klavier) · Werke von Rachmaninoff, \
+Schostakowitsch" or "Lang Lang spielt Beethoven". Empty string allowed.
 
-Respond with ONLY the JSON object. No prose, no markdown fences. Example:
-{"works": ["Georges Bizet: Carmen"], "artists": ["Matthias Foremny (Musikalische Leitung)", "Lindy Hume (Inszenierung)", "Gewandhausorchester"]}"""
+"description" (string): the longer marketing text describing the concert \
+(max ~800 chars; trim to the most informative sentences if longer). Empty \
+string when no description is present.
+
+"duration" (string): the total duration as printed, e.g. "ca. 2 1/4 Stunden \
+| 1 Pause" or "ca. 1 Stunde 40 Minuten". Empty if not stated.
+
+"prices" (string): the price range as printed, e.g. "88/78/63/48/39/18 EUR" \
+or "24/20 EUR". Empty if not stated.
+
+"prices_reduced" (string): reduced prices when separately listed, e.g. \
+"49,29/42,59/29,89 EUR" or "Flexpreise: 26/22 EUR". Empty if none.
+
+"organizer" (string): "Veranstalter: …" line — just the name, e.g. \
+"Oper Leipzig", "Gewandhaus zu Leipzig", "Weltkonzerte". Empty when not \
+stated.
+
+"intro" (string): pre-concert talk info if listed. Empty when not present.
+
+"abo" (string): subscription label, e.g. "Grosse Concerte" / "Quartett". \
+Empty if none.
+
+"language" (string): for operas, the original language and surtitles, e.g. \
+"italienisch mit deutschen Übertiteln". Empty when not applicable.
+
+Respond with ONLY the JSON object. No prose, no markdown fences. Use empty \
+string ("") or empty array ([]) when a field is missing — do not \
+hallucinate values."""
 
 
-def extract_program_with_claude(html: str, event: dict, verbose: bool = False) -> "tuple[list[str], list[str]]":
-    """Ask Claude (Haiku) to read a detail page and return (works, artists).
+_RICH_FIELDS = ("subtitle", "description", "duration", "prices", "prices_reduced",
+                "organizer", "intro", "abo", "language")
 
-    works   — list of 'Composer: Work (opus)' strings
-    artists — list of 'Name (Role)' strings (conductor, soloists, ensembles)
 
-    Returns ([], []) on failure or when no data can be extracted."""
+def extract_program_with_claude(html: str, event: dict, verbose: bool = False) -> dict:
+    """Ask Claude (Haiku) to read a detail page and return a dict with:
+    works, artists, subtitle, description, duration, prices, prices_reduced,
+    organizer, intro, abo, language.
+
+    Returns the empty-shaped dict on a hard failure (API error, JSON
+    parse error)."""
+    empty = {"works": [], "artists": [],
+             "subtitle": "", "description": "", "duration": "",
+             "prices": "", "prices_reduced": "",
+             "organizer": "", "intro": "", "abo": "", "language": ""}
     client = _get_claude_client()
     if client is None:
-        return [], []
+        return dict(empty)
 
     soup = BeautifulSoup(html, "lxml")
     for tag in soup(["script", "style", "noscript", "iframe", "svg", "header", "footer", "nav"]):
@@ -520,7 +553,7 @@ def extract_program_with_claude(html: str, event: dict, verbose: bool = False) -
     try:
         msg = client.messages.create(
             model=CLAUDE_MODEL,
-            max_tokens=1500,
+            max_tokens=2500,  # bumped for description + more fields
             system=[{
                 "type": "text",
                 "text": _CLAUDE_SYSTEM,
@@ -537,17 +570,18 @@ def extract_program_with_claude(html: str, event: dict, verbose: bool = False) -
             if text.endswith("```"):
                 text = text[:-3].strip()
         data = json.loads(text)
-        # Tolerate either the new object schema or the older bare-list shape
-        # (in case Claude regresses) — older runs returned just a list.
         if isinstance(data, dict):
-            works = [str(w).strip() for w in (data.get("works") or []) if w]
-            artists = [str(a).strip() for a in (data.get("artists") or []) if a]
-            return works, artists
+            out = dict(empty)
+            out["works"] = [str(w).strip() for w in (data.get("works") or []) if w]
+            out["artists"] = [str(a).strip() for a in (data.get("artists") or []) if a]
+            for f in _RICH_FIELDS:
+                out[f] = str(data.get(f) or "").strip()
+            return out
         if isinstance(data, list):
-            return [str(p).strip() for p in data if p], []
+            return {**empty, "works": [str(p).strip() for p in data if p]}
     except Exception as exc:
         print(f"  [claude] error for {event.get('id')}: {type(exc).__name__}: {str(exc)[:80]}")
-    return [], []
+    return dict(empty)
 
 
 def fetch_program_from_detail(url: str, verbose: bool = False) -> list[str]:
@@ -638,18 +672,24 @@ def enrich_with_detail_programs(
             cache_hits += 1
         if not ev.get("artists") and cached.get("artists"):
             ev["artists"] = cached["artists"]
+        for f in _RICH_FIELDS:
+            if not ev.get(f) and cached.get(f):
+                ev[f] = cached[f]
     if cache_hits:
         print(f"Reused {cache_hits} programs from previous run", flush=True)
 
-    # Re-fetch any event that's missing EITHER a program OR an artists list —
-    # so events from older runs (program-only schema) get topped up on the
-    # next pass.
+    # Re-fetch any event that's missing program, artists, OR description —
+    # older runs (pre-rich-schema) populated program+artists but no description.
     todo = [
         e for e in events
-        if e.get("url") and (not e.get("program") or not e.get("artists"))
+        if e.get("url") and (
+            not e.get("program")
+            or not e.get("artists")
+            or not e.get("description")
+        )
     ]
     if not todo:
-        print("\nAll events already have program + artists — nothing to fetch.", flush=True)
+        print("\nAll events already fully populated — nothing to fetch.", flush=True)
         return
 
     print(f"\nFetching {len(todo)} detail pages for program/artist extraction...", flush=True)
@@ -688,22 +728,25 @@ def enrich_with_detail_programs(
         if verbose:
             print(f"  [detail {eid}] HTTP 200, {len(r.text)} chars")
 
+        claude_data: dict = {}
         program: list[str] = []
-        artists_from_claude: list[str] = []
         claude_attempted = False
         if have_claude:
             claude_attempted = True
             try:
-                program, artists_from_claude = extract_program_with_claude(
+                claude_data = extract_program_with_claude(
                     r.text, event, verbose=verbose
                 )
             except Exception as exc:
                 print(f"  [claude {eid}] EXCEPTION {type(exc).__name__}: {str(exc)[:120]}")
                 claude_errors += 1
+            program = claude_data.get("works") or []
             if verbose:
                 preview = program[0][:70] if program else "(empty)"
-                print(f"  [claude {eid}] returned {len(program)} works, "
-                      f"{len(artists_from_claude)} artists: {preview}")
+                print(f"  [claude {eid}] {len(program)}w / "
+                      f"{len(claude_data.get('artists') or [])}a · "
+                      f"desc={'y' if claude_data.get('description') else 'n'} "
+                      f"prices={'y' if claude_data.get('prices') else 'n'}: {preview}")
             if not program:
                 claude_empty += 1
 
@@ -715,12 +758,15 @@ def enrich_with_detail_programs(
         elif claude_attempted:
             enriched_claude += 1
 
-        # Only set program when the event doesn't already have one — we may
-        # be re-fetching this page solely to backfill artists.
+        # Fill empties from Claude — never overwrite existing data.
         if program and not event.get("program"):
             event["program"] = program
-        if artists_from_claude and not event.get("artists"):
-            event["artists"] = artists_from_claude
+        if claude_data.get("artists") and not event.get("artists"):
+            event["artists"] = claude_data["artists"]
+        for f in _RICH_FIELDS:
+            val = (claude_data.get(f) or "").strip() if claude_data else ""
+            if val and not event.get(f):
+                event[f] = val
         if not event.get("program") and not _DEBUG_DUMPED:
             soup = BeautifulSoup(r.text, "lxml")
             for tag in soup(["script", "style", "noscript", "iframe", "svg"]):
@@ -752,6 +798,49 @@ def enrich_with_detail_programs(
     )
 
 
+# Mapping from the hall string we see in the teaser to (venue, city). When the
+# hall is e.g. "Opernhaus", the event is NOT at the Gewandhaus — it's at the
+# Oper Leipzig. Same for Thomaskirche, Nikolaikirche, etc. Resolving this
+# correctly makes the venue field truthful and lets the frontend filter by
+# the real building.
+_HALL_TO_VENUE: dict = {
+    # Gewandhaus halls (same building)
+    "Großer Saal":      ("Gewandhaus zu Leipzig", "Leipzig"),
+    "Mendelssohn-Saal": ("Gewandhaus zu Leipzig", "Leipzig"),
+    # Other Leipzig venues hosted by Gewandhaus or co-listed
+    "Opernhaus":        ("Oper Leipzig", "Leipzig"),
+    "Thomaskirche":     ("Thomaskirche Leipzig", "Leipzig"),
+    "Nikolaikirche":    ("Nikolaikirche Leipzig", "Leipzig"),
+    "Rosental":         ("Open-Air Rosental", "Leipzig"),
+}
+
+# Cities mentioned in guest-tour location strings ("Musikverein Wien" etc.)
+_KNOWN_CITIES = (
+    "Wien", "Hongkong", "Beijing", "Shanghai", "Taipei", "Tainan", "Wuxi",
+    "Frankfurt", "München", "Hamburg", "Berlin", "Köln", "Dresden", "Salzburg",
+)
+
+
+def _resolve_venue_hall_city(loc: str) -> tuple:
+    """Resolve a teaser location string into (venue, hall, city).
+
+    Examples:
+      "Großer Saal"        → ("Gewandhaus zu Leipzig", "Großer Saal", "Leipzig")
+      "Opernhaus"          → ("Oper Leipzig",          "Opernhaus",   "Leipzig")
+      "Musikverein Wien"   → ("Musikverein Wien",      "",            "Wien")
+      ""                   → ("Gewandhaus zu Leipzig", "",            "Leipzig")
+    """
+    if not loc:
+        return ("Gewandhaus zu Leipzig", "", "Leipzig")
+    for hall_key, (venue, city) in _HALL_TO_VENUE.items():
+        if hall_key in loc:
+            return (venue, hall_key, city)
+    for city in _KNOWN_CITIES:
+        if city in loc:
+            return (loc, "", city)  # guest tour: location IS the venue
+    return ("Gewandhaus zu Leipzig", loc, "Leipzig")
+
+
 def parse_teasers(html: str, category: str) -> list[dict]:
     soup = BeautifulSoup(html, "lxml")
     events = []
@@ -765,23 +854,32 @@ def parse_teasers(html: str, category: str) -> list[dict]:
 
         title, artists = parse_title_artists(teaser)
         series = parse_series(teaser)
+        loc = parse_location(teaser)
+        venue, hall, city = _resolve_venue_hall_city(loc)
 
-        # The small highlight ("Oper", "Grosse Concerte", "Motette", ...) is
-        # really the category. The H2 is the real event title (e.g. "CARMEN"
-        # for operas, "Beethoven 9 mit Jansons" for concerts). Keep them as
-        # distinct fields so the UI can render "Grosse Concerte: Beethoven 9"
-        # and matching uses the actual work title.
+        # The small highlight ("Oper", "Grosse Concerte", "Motette", …) is the
+        # category. The H2 is the real event title ("CARMEN" / "Beethoven 9 …").
         events.append({
             "id": event_id,
             "date": date,
             "time": parse_time(teaser),
             "title": title,
             "series": series,
-            "location": parse_location(teaser),
+            "subtitle": "",       # filled by Claude on detail page
+            "venue": venue,
+            "hall": hall,
+            "city": city,
             "program": parse_program(teaser),
             "artists": artists,
+            "description": "",
+            "duration": "",
+            "prices": "",
+            "prices_reduced": "",
+            "organizer": "",
+            "intro": "",
+            "abo": "",
+            "language": "",
             "url": parse_detail_url(teaser),
-            "venue": "Gewandhaus Leipzig",
             "category": series or category.strip("/"),
             "source_url": BASE + category,
         })
