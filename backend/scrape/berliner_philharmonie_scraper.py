@@ -308,6 +308,17 @@ def _load_program_cache() -> dict[str, dict]:
             data = json.load(f)
     except Exception:
         return {}
+    # Strings that an earlier run sometimes saved as title when the listing
+    # parser fell back to the link's own text ("Mehr lesen", "Streamen",
+    # "Tickets") instead of finding the real heading. Treat these as empty so
+    # the next run pulls a real title from the detail page via Claude.
+    bad_titles = {"mehr lesen", "streamen", "tickets", "ticket", "details"}
+
+    def _clean(field: str, value):
+        if field == "title" and isinstance(value, str) and value.strip().lower() in bad_titles:
+            return ""
+        return value or ("" if field != "artists" else [])
+
     cache: dict[str, dict] = {}
     for ev in data.get("events", []):
         eid = ev.get("id")
@@ -316,7 +327,7 @@ def _load_program_cache() -> dict[str, dict]:
             cache[eid] = {
                 "program": prog,
                 "artists": ev.get("artists") or [],
-                "title": ev.get("title") or "",
+                "title": _clean("title", ev.get("title")),
                 "date": ev.get("date") or "",
                 "time": ev.get("time") or "",
                 "location": ev.get("location") or "",
@@ -339,7 +350,10 @@ def _get_claude_client():
         import anthropic
     except ImportError:
         return None
-    _CLAUDE_CLIENT = anthropic.Anthropic(api_key=api_key)
+    # max_retries=5 absorbs transient 429/5xx/529 (overloaded) errors with
+    # exponential backoff. SDK default is 2; on busy days we routinely see
+    # OverloadedError 529 chains that need more retries to ride out.
+    _CLAUDE_CLIENT = anthropic.Anthropic(api_key=api_key, max_retries=5)
     return _CLAUDE_CLIENT
 
 
