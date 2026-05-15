@@ -346,10 +346,39 @@ def _load_program_cache() -> dict[str, dict]:
         return {}
     rich_fields = ("subtitle", "description", "duration", "prices",
                    "prices_reduced", "organizer", "intro", "abo", "language")
+
+    def _title_matches_program(title: str, prog: list) -> bool:
+        """Sanity check: for opera-style ALL-CAPS titles like 'REGINA' /
+        'CARMEN' / 'LA TRAVIATA', the title word(s) should appear somewhere
+        in the cached programme entry. If not, the cache likely captured
+        a cross-promotion bleed from an earlier broken run — invalidate
+        so we re-fetch. Returns True if consistent OR title isn't ALL-CAPS
+        (we only police the obvious opera case)."""
+        if not title or not prog or not isinstance(prog[0], str):
+            return True
+        # Only enforce on uppercase titles (opera-style on Gewandhaus pages)
+        letters = [c for c in title if c.isalpha()]
+        if not letters or not all(c.isupper() for c in letters):
+            return True
+        # Reduce title to its meaningful word tokens (drop articles)
+        title_tokens = [t.lower() for t in title.split()
+                        if len(t) > 2 and t.lower() not in ("der", "die", "das")]
+        if not title_tokens:
+            return True
+        prog_lower = prog[0].lower()
+        return any(t in prog_lower for t in title_tokens)
+
     cache: dict[str, dict] = {}
+    dropped_inconsistent = 0
     for ev in data.get("events", []):
         eid = ev.get("id")
         prog = ev.get("program")
+        # Drop entries where the cached program clearly disagrees with the
+        # title — these are from a cross-promotion bleed that got cached
+        # before the fix. Will be re-fetched on this run.
+        if eid and prog and not _title_matches_program(ev.get("title", ""), prog):
+            dropped_inconsistent += 1
+            continue
         if eid and prog:
             entry = {
                 "program": prog,
@@ -359,6 +388,9 @@ def _load_program_cache() -> dict[str, dict]:
                 if ev.get(f):
                     entry[f] = ev[f]
             cache[eid] = entry
+    if dropped_inconsistent:
+        print(f"  (cache: dropped {dropped_inconsistent} entries with "
+              f"title-program mismatch — will re-fetch)", flush=True)
     return cache
 
 
