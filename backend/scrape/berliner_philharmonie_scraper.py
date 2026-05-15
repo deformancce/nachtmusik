@@ -764,20 +764,33 @@ def _merge_expansion(events: list[dict], expansion: dict) -> list[dict]:
 
 def _build_event_per_date(stub: dict, c: dict) -> list[dict]:
     """Take a stub event + Claude's data (which may contain N dates) and
-    return one event per date. Each event has id = "{base_id}-{date}"."""
+    return one event per date. Each event has id = "{base_id}-{date}".
+
+    When dates are empty/duplicated, an index suffix is added so two
+    sibling events never share an id — the events list dedupes by id in
+    the backend and would otherwise drop one silently.
+    """
     dates = c.get("dates") or []
     if not dates:
         dates = [{"date": "", "time": ""}]
     base_id = (stub.get("id") or "").split("-", 1)[0] or stub.get("id", "")
     out: list[dict] = []
-    for d in dates:
+    seen_ids: set = set()
+    for i, d in enumerate(dates):
         clone = dict(stub)
         _apply_claude_data(clone, c)
         date_str = (d.get("date") or "").strip()
         time_str = (d.get("time") or "").strip()
         clone["date"] = date_str or clone.get("date", "")
         clone["time"] = time_str or clone.get("time", "")
-        clone["id"] = f"{base_id}-{date_str}" if date_str else base_id
+        # Prefer date as the disambiguator. When date is missing or
+        # collides with a sibling, fall back to an index suffix so each
+        # event keeps a unique id.
+        eid = f"{base_id}-{date_str}" if date_str else f"{base_id}-{i}"
+        while eid in seen_ids:
+            eid += "_"
+        seen_ids.add(eid)
+        clone["id"] = eid
         out.append(clone)
     return out
 

@@ -779,6 +779,10 @@ def enrich_with_detail_programs(
 
         try:
             r = requests.get(event["url"], headers=HEADERS, timeout=20)
+            # Preventive: force chardet-detected encoding so we don't end up
+            # with mojibake if the response lacks an explicit charset header
+            # (same fix as in the Berliner scraper).
+            r.encoding = r.apparent_encoding or "utf-8"
         except Exception as exc:
             print(f"  [detail {eid}] FETCH RAISED {type(exc).__name__}: {str(exc)[:120]}")
             fetch_errors += 1
@@ -978,8 +982,16 @@ def _scrape_category_subprocess(cat: str, max_clicks: int,
             text=True,
             timeout=timeout_s,
         )
-    except subprocess.TimeoutExpired:
-        print(f"\n    TIMEOUT after {timeout_s}s", flush=True)
+    except subprocess.TimeoutExpired as exc:
+        # SIGKILL fired — surface any partial stderr the child managed to
+        # write before being killed, so we can tell whether it was a
+        # Playwright hang, OOM, or a network stall.
+        partial = (getattr(exc, "stderr", None) or b"")
+        if isinstance(partial, bytes):
+            partial = partial.decode("utf-8", "replace")
+        tail = "\n".join(partial.strip().splitlines()[-5:]) if partial else "(no stderr)"
+        print(f"\n    TIMEOUT after {timeout_s}s — child stderr tail:\n{tail}",
+              flush=True)
         return "", 0
     except Exception as exc:
         print(f"\n    subprocess ERROR: {exc}", flush=True)
