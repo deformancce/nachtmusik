@@ -376,13 +376,34 @@ def get_work_performances(
 
 
 @app.get("/api/events")
-def get_events(skip: int = 0, limit: int = 8):
-    total = len(EVENTS)
-    page = EVENTS[skip : skip + limit]
+def get_events(
+    skip: int = 0,
+    limit: int = 8,
+    venue: Optional[str] = None,
+    include_past: bool = False,
+):
+    """Paginated upcoming-concerts feed.
+
+    - Past events (date < today UTC) are hidden by default; pass
+      include_past=true to disable that filter.
+    - venue=... narrows to a single venue (exact match on the venue field).
+    """
+    from datetime import date as _date
+    today = _date.today().isoformat()
+
+    pool = EVENTS
+    if not include_past:
+        pool = [e for e in pool if (e.get("date") or "0000-00-00") >= today]
+    if venue:
+        pool = [e for e in pool if e.get("venue") == venue]
+
+    total = len(pool)
+    page = pool[skip : skip + limit]
     return {
         "total": total,
         "skip": skip,
         "limit": limit,
+        "venue": venue,
         "has_more": (skip + limit) < total,
         "events": page,
     }
