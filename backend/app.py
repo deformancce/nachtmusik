@@ -49,20 +49,25 @@ def load_data() -> None:
     COMPOSERS = _load_json(base / "composers_klassika.json", "composers")
     WORKS = _load_json(base / "works_klassika.json", "works")
 
-    gewandhaus = _load_json(base / "gewandhaus_events.json", "events")
-    venues = _load_json(base / "all_venues_events.json", "events")
-    single = _load_json(base / "single_venue_events.json", "events")
+    # Each scraper writes to its own venue-named file.
+    venue_files = [
+        "gewandhaus_events.json",
+        "berliner_philharmonie_events.json",
+        # add more as we onboard venues
+    ]
 
-    # Deduplicate by event id (prefer richer entries from newer scrapers)
-    seen_ids: set = set()
+    # Dedup by (venue, id) so the Gewandhaus's "9588" and the Berliner's
+    # "56430" don't collide; same event reposted by the same venue collapses.
+    seen: set = set()
     merged: List[Dict] = []
-    for ev in gewandhaus + venues + single:
-        eid = ev.get("id")
-        if eid:
-            if eid in seen_ids:
+    for fname in venue_files:
+        for ev in _load_json(base / fname, "events"):
+            key = (ev.get("venue", ""), ev.get("id", ""))
+            if key in seen:
                 continue
-            seen_ids.add(eid)
-        merged.append(ev)
+            if ev.get("id"):
+                seen.add(key)
+            merged.append(ev)
     EVENTS = merged
 
     # Sort by date ascending, undated events last
@@ -70,7 +75,7 @@ def load_data() -> None:
 
     print(f"Loaded {len(COMPOSERS)} composers")
     print(f"Loaded {len(WORKS)} works")
-    print(f"Loaded {len(EVENTS)} events")
+    print(f"Loaded {len(EVENTS)} events from {len(venue_files)} venues")
 
 
 load_data()
@@ -148,60 +153,158 @@ def smart_search(query: str) -> Dict:
     }
 
 
-def find_matching_events(work_title: str, composer_name: str) -> List[Dict]:
-    """Find events that appear to perform a given work.
+# Genre keywords used for fuzzy work matching. Each value lists the variants
+# (German, English, abbreviations) that count as "the same thing" so the user
+# can search "symphony 3" or "sinfonie 3" or "symphonie nr. 3" interchangeably.
+_GENRE_ALIASES: Dict[str, List[str]] = {
+    "symphonie":     ["symphonie", "sinfonie", "symphony"],
+    "klavierkonzert": ["klavierkonzert", "piano concerto", "konzert für klavier"],
+    "violinkonzert":  ["violinkonzert", "violin concerto", "konzert für violine"],
+    "cellokonzert":   ["cellokonzert", "cello concerto", "konzert für violoncello"],
+    "konzert":       ["konzert", "concerto"],  # generic concerto, lower priority
+    "streichquartett": ["streichquartett", "string quartet"],
+    "streichquintett": ["streichquintett", "string quintet"],
+    "klaviersonate":  ["klaviersonate", "piano sonata", "sonate für klavier"],
+    "messe":         ["messe", "mass"],
+    "requiem":       ["requiem"],
+    "oratorium":     ["oratorium", "oratorio"],
+    "oper":          ["oper", "opera"],
+    "ouvertüre":     ["ouvertüre", "ouverture", "overture"],
+}
 
-    Matching strategy:
-      - composer surname AND a meaningful work keyword in event title  → high
-      - 2+ work keywords in event title                                → medium
-      - work title appears in event.program list                       → high
+# Particles to drop from a composer's name when picking the surname.
+_NAME_PARTICLES = {"sir", "dr", "dr.", "von", "van", "de", "der", "von_der"}
+
+
+def composer_surname(name: str) -> str:
+    """Take the last meaningful token of a composer name.
+    'Gustav Mahler' → 'mahler'; 'Johann Sebastian Bach' → 'bach';
+    'Sergej Rachmaninoff' → 'rachmaninoff'."""
+    parts = [p for p in normalize_text(name).split() if p and p not in _NAME_PARTICLES]
+    return parts[-1] if parts else ""
+
+
+def parse_program_entry(entry: str) -> tuple:
+    """Split a 'Composer: Werk' program string into (composer, work).
+    Falls back to ('', entry) when there's no colon."""
+    if ":" in entry:
+        composer, _, work = entry.partition(":")
+        return composer.strip(), work.strip()
+    return "", entry.strip()
+
+
+def extract_work_signature(query: str) -> Dict:
+    """Turn a free-text work query into a structured signature for matching.
+
+    'Symphonie Nr. 3'    → {'genre': 'symphonie', 'number': 3, 'keywords': []}
+    'Mahler 3'           → {'genre': None,        'number': 3, 'keywords': []}
+    'Carmen'             → {'genre': None,        'number': None, 'keywords': ['carmen']}
+    'Klavierkonzert Nr. 2 d-moll' → {'genre': 'klavierkonzert', 'number': 2, 'keywords': ['d-moll']}
     """
-    matches: List[Dict] = []
-    work_norm = normalize_text(work_title)
-    composer_surname = normalize_text(composer_name).split(",")[0].strip()
+    text = normalize_text(query)
+    sig: Dict = {"raw": text, "genre": None, "number": None, "keywords": []}
 
-    # Keep only meaningful keywords (drop opus/catalog markers, short words)
-    work_keywords = [
-        w for w in work_norm.split()
-        if len(w) > 3 and not w.startswith(("op", "kv", "bwv", "wab", "hob"))
+    # Genre: longest-match wins so "klavierkonzert" beats the generic "konzert"
+    for genre, aliases in sorted(_GENRE_ALIASES.items(), key=lambda kv: -max(len(a) for a in kv[1])):
+        if any(a in text for a in aliases):
+            sig["genre"] = genre
+            break
+
+    # Number — tolerate "nr. 3", "no. 3", "3.", "#3", or just "3"
+    num_match = re.search(r"(?:nr\.?\s*|no\.?\s*|#\s*)?(\d+)\.?", text)
+    if num_match:
+        # Reject if the number is preceded by an opus marker (op./kv./bwv/...)
+        start = num_match.start(1)
+        prefix = text[max(0, start - 6):start]
+        if not re.search(r"(op\.?\s*|kv\.?\s*|bwv\s*|wab\s*|hob\.?\s*|d\.?\s*)$", prefix):
+            sig["number"] = int(num_match.group(1))
+
+    # Other keywords (drop genre aliases, the number itself, and short words)
+    drop = {a for aliases in _GENRE_ALIASES.values() for a in aliases}
+    if sig["number"] is not None:
+        drop.add(str(sig["number"]))
+    sig["keywords"] = [
+        w for w in text.split()
+        if len(w) > 3 and w not in drop and not re.match(r"^(nr|no)\.?$", w)
     ]
+    return sig
+
+
+def work_text_matches(work_text: str, sig: Dict) -> bool:
+    """Does this 'Composer: Work' work-half match the signature?"""
+    text = normalize_text(work_text)
+
+    if sig["genre"]:
+        if not any(a in text for a in _GENRE_ALIASES[sig["genre"]]):
+            return False
+
+    if sig["number"] is not None:
+        # Number must appear as a standalone token, not inside an opus/catalog
+        # number that happens to contain it.
+        n = sig["number"]
+        for m in re.finditer(rf"\b{n}\b\.?", text):
+            prefix = text[max(0, m.start() - 6):m.start()]
+            if not re.search(r"(op\.?\s*|kv\.?\s*|bwv\s*|wab\s*|hob\.?\s*|d\.?\s*)$", prefix):
+                break
+        else:
+            return False
+
+    # If neither genre nor number is set, every keyword must appear.
+    if sig["genre"] is None and sig["number"] is None:
+        if not sig["keywords"]:
+            return False
+        if not all(kw in text for kw in sig["keywords"]):
+            return False
+
+    return True
+
+
+def find_matching_events(work_title: str, composer_name: str) -> List[Dict]:
+    """Find events whose program lists a work matching the query.
+
+    Matching is structured:
+      - composer surname must equal the surname of the program-entry composer
+      - work half must satisfy the work signature (genre, number, or keywords)
+
+    Returns a list with the matched program entry attached so the caller can
+    show *what* matched (helpful when an event has multiple works)."""
+    sig = extract_work_signature(work_title)
+    target_surname = composer_surname(composer_name)
+    matches: List[Dict] = []
 
     for event in EVENTS:
-        event_title = normalize_text(event.get("title", ""))
-        event_program = " ".join(
-            normalize_text(p) for p in event.get("program", []) if isinstance(p, str)
-        )
-
-        # Direct hit in program list
-        if work_norm and work_norm in event_program:
-            matches.append({**event, "confidence": "high",
-                            "matched_keywords": [work_norm]})
-            continue
-
-        composer_match = bool(composer_surname) and composer_surname in event_title
-        title_keyword_matches = [kw for kw in work_keywords if kw in event_title]
-
-        if composer_match and title_keyword_matches:
-            matches.append({**event, "confidence": "high",
-                            "matched_keywords": title_keyword_matches})
-        elif len(title_keyword_matches) >= 2:
-            matches.append({**event, "confidence": "medium",
-                            "matched_keywords": title_keyword_matches})
+        for entry in (event.get("program") or []):
+            if not isinstance(entry, str):
+                continue
+            entry_composer, entry_work = parse_program_entry(entry)
+            if target_surname and composer_surname(entry_composer) != target_surname:
+                continue
+            if not work_text_matches(entry_work, sig):
+                continue
+            matches.append({
+                **event,
+                "matched_program_entry": entry,
+                "confidence": "high",
+            })
+            break  # one matched work per event is enough
 
     return matches
 
 
 @app.get("/")
 def root():
+    venues = sorted({e.get("venue", "") for e in EVENTS if e.get("venue")})
     return {
         "message": "op.us API",
         "composers": len(COMPOSERS),
         "works": len(WORKS),
         "events": len(EVENTS),
+        "venues": venues,
         "examples": [
             "/api/search?q=brahms 1",
             "/api/search?q=mozart requiem",
             "/api/composer/Bach, Johann Sebastian/works",
+            "/api/work/performances?q=mahler+3",
             "/api/work/performances?work_title=Symphonie Nr. 9&composer=Beethoven",
         ],
     }
@@ -240,9 +343,31 @@ def get_composer_works(composer_name: str):
 
 
 @app.get("/api/work/performances")
-def get_work_performances(work_title: str, composer: str):
+def get_work_performances(
+    work_title: Optional[str] = None,
+    composer: Optional[str] = None,
+    q: Optional[str] = None,
+):
+    """Find concerts performing a work.
+
+    Two ways to call this:
+      ?work_title=Symphonie+Nr.+3&composer=Mahler   (explicit)
+      ?q=mahler+3                                   (auto-split: first word
+                                                     is treated as composer
+                                                     surname, rest as work)
+    """
+    if q and not work_title and not composer:
+        # Naive split: first token is the composer surname, rest is the work.
+        # Works for the common case ("mahler 3", "beethoven 9", "brahms requiem"),
+        # falls back to all-keyword matching for ambiguous queries.
+        parts = q.strip().split(None, 1)
+        composer = parts[0] if parts else ""
+        work_title = parts[1] if len(parts) > 1 else q
+    work_title = work_title or ""
+    composer = composer or ""
     events = find_matching_events(work_title, composer)
     return {
+        "query": q,
         "work": work_title,
         "composer": composer,
         "total_performances": len(events),
