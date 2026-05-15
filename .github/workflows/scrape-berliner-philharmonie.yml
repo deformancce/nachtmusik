@@ -1,0 +1,83 @@
+name: Scrape Berliner Philharmonie events
+
+# Manual trigger from the Actions tab, plus a daily schedule.
+# The job loads the Berliner Philharmonie concert calendar, parses event
+# detail pages with Claude, and commits backend/berliner_philharmonie_events.json
+# back to the chosen branch.
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch to scrape from and commit to"
+        required: false
+        default: "claude/add-opus-code-iSPrR"
+  schedule:
+    # Daily at 04:30 UTC — staggered 30 min after the Gewandhaus job so they
+    # don't compete for runner minutes or overlap each other's pushes.
+    - cron: "30 4 * * *"
+
+permissions:
+  contents: write
+
+# Per-venue concurrency group so a manual + cron overlap queue rather than race.
+concurrency:
+  group: scrape-berliner-philharmonie
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75   # ~900 events × 3s Claude + scrolling + setup
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || 'claude/add-opus-code-iSPrR' }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install --quiet requests beautifulsoup4 lxml playwright anthropic
+          python3 -m playwright install --with-deps chromium
+
+      - name: Run Berliner Philharmonie scraper
+        working-directory: backend
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PYTHONUNBUFFERED: "1"
+        run: python3 scrape/berliner_philharmonie_scraper.py --clicks 150
+
+      - name: Show summary
+        working-directory: backend
+        run: |
+          python3 -c "
+          import json
+          with open('berliner_philharmonie_events.json') as f:
+              data = json.load(f)
+          total = data.get('total_events', len(data.get('events', [])))
+          print(f'Total events: {total}')
+          for e in data.get('events', [])[:5]:
+              print(f\"  {e.get('date')} {e.get('time','')} {e.get('title','')[:60]}\")
+          "
+
+      - name: Upload debug HTML if present
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: berliner-debug-detail-sample
+          path: backend/_debug_detail_sample.html
+          if-no-files-found: ignore
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backend/berliner_philharmonie_events.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Refresh berliner_philharmonie_events.json (automated scrape)"
+            git push
+          fi
