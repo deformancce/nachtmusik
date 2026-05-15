@@ -201,7 +201,9 @@ def smart_search(query: str) -> Dict:
 # Genre keywords used for fuzzy work matching. Each value lists the variants
 # (German, English, abbreviations) that count as "the same thing" so the user
 # can search "symphony 3" or "sinfonie 3" or "symphonie nr. 3" interchangeably.
-_GENRE_ALIASES: Dict[str, List[str]] = {
+# Values are PRE-NORMALIZED at module load so comparisons against
+# normalize_text(work_text) work even with German umlauts (ü→u etc.).
+_GENRE_ALIASES_RAW: Dict[str, List[str]] = {
     "symphonie":     ["symphonie", "sinfonie", "symphony"],
     "klavierkonzert": ["klavierkonzert", "piano concerto", "konzert für klavier"],
     "violinkonzert":  ["violinkonzert", "violin concerto", "konzert für violine"],
@@ -216,17 +218,80 @@ _GENRE_ALIASES: Dict[str, List[str]] = {
     "oper":          ["oper", "opera"],
     "ouvertüre":     ["ouvertüre", "ouverture", "overture"],
 }
+_GENRE_ALIASES: Dict[str, List[str]] = {
+    key: [normalize_text(a) for a in aliases]
+    for key, aliases in _GENRE_ALIASES_RAW.items()
+}
 
 # Particles to drop from a composer's name when picking the surname.
 _NAME_PARTICLES = {"sir", "dr", "dr.", "von", "van", "de", "der", "von_der"}
 
 
+# Composer name aliases — different sources use different transliterations
+# for the same person (German vs. English vs. Russian transliteration).
+# Values are the canonical form we normalize TO. Lowercased on lookup.
+# Keys come from any source string; values are the "winner" used for matching.
+_COMPOSER_ALIASES: Dict[str, str] = {
+    # Rachmaninoff family
+    "rachmaninow":   "rachmaninoff",
+    "rachmaninov":   "rachmaninoff",
+    "rachmaninoff":  "rachmaninoff",
+    # Tchaikovsky family
+    "tschaikowski":  "tschaikowski",
+    "tschaikowsky":  "tschaikowski",
+    "tchaikowski":   "tschaikowski",
+    "tchaikovsky":   "tschaikowski",
+    "tchaikowsky":   "tschaikowski",
+    "chaikovskij":   "tschaikowski",
+    # Shostakovich
+    "schostakowitsch": "schostakowitsch",
+    "shostakovich":    "schostakowitsch",
+    "schostakovich":   "schostakowitsch",
+    "shostakovich":    "schostakowitsch",
+    # Stravinsky
+    "strawinsky":   "strawinsky",
+    "stravinsky":   "strawinsky",
+    "strawinski":   "strawinsky",
+    # Prokofiev
+    "prokoffjew":   "prokoffjew",
+    "prokofiev":    "prokoffjew",
+    "prokofjew":    "prokoffjew",
+    "prokofieff":   "prokoffjew",
+    # Mussorgsky
+    "mussorgski":   "mussorgski",
+    "mussorgsky":   "mussorgski",
+    "musorgskij":   "mussorgski",
+    "mussorgskij":  "mussorgski",
+    # Rimsky-Korsakov
+    "rimski-korsakow": "rimski-korsakow",
+    "rimsky-korsakov": "rimski-korsakow",
+    "rimski-korsakov": "rimski-korsakow",
+    # Schoenberg
+    "schoenberg":   "schönberg",
+    "schönberg":    "schönberg",
+    # Dvořák
+    "dvořák":       "dvorak",
+    "dvorak":       "dvorak",
+    # Sibelius — no aliasing needed
+    # Bach (no transliteration variants, but multiple Bachs)
+    # ...add more as we encounter them in the wild
+}
+
+
 def composer_surname(name: str) -> str:
-    """Take the last meaningful token of a composer name.
-    'Gustav Mahler' → 'mahler'; 'Johann Sebastian Bach' → 'bach';
-    'Sergej Rachmaninoff' → 'rachmaninoff'."""
-    parts = [p for p in normalize_text(name).split() if p and p not in _NAME_PARTICLES]
-    return parts[-1] if parts else ""
+    """Take the surname of a composer name. Handles both formats:
+      - "Surname, First Middle"  (klassika style)
+      - "First Middle Surname"   (event programme style)
+    Returns the canonical surname form via _COMPOSER_ALIASES so that
+    e.g. "Rachmaninow" and "Rachmaninoff" both collapse to the same key
+    and match each other across data sources.
+    """
+    if "," in name:
+        surname = normalize_text(name.split(",", 1)[0])
+    else:
+        parts = [p for p in normalize_text(name).split() if p and p not in _NAME_PARTICLES]
+        surname = parts[-1] if parts else ""
+    return _COMPOSER_ALIASES.get(surname, surname)
 
 
 def parse_program_entry(entry: str) -> tuple:
@@ -405,14 +470,36 @@ def autocomplete(q: str, limit: int = 8):
     surfaces the obvious household names first. Returns a flat list of
     {type, label, composer, work?, opus?} entries the frontend can render
     as a dropdown.
+
+    Handles three input shapes:
+      - short query "mahl"  → composer prefix-match
+      - "mahler 3"          → composer + work token match
+      - "Sergej Rachmaninoff: 2. Konzert ..." (paste from a programme
+         listing) → split on ":", canonical-surname-match the composer
+         half, token-match the work half. Aliases ensure Rachmaninoff /
+         Rachmaninow / Rachmaninov all collapse to the same canonical key.
     """
     q = (q or "").strip()
     if len(q) < 1:
         return {"suggestions": []}
+
+    # Detect paste-from-programme shape ("Composer: Werk") so we can split
+    # and aliasing-match the composer side properly.
+    pasted_composer = ""
+    pasted_work_q = ""
+    if ":" in q and len(q) > 20:
+        head, _, tail = q.partition(":")
+        if head.strip() and tail.strip():
+            pasted_composer = head.strip()
+            pasted_work_q = tail.strip()
+
     q_norm = normalize_text(q)
     q_parts = [p for p in q_norm.split() if p]
     if not q_parts:
         return {"suggestions": []}
+
+    # Canonical surname of the query (for cross-transliteration matching).
+    target_surname = composer_surname(pasted_composer or q)
 
     suggestions: List[Dict] = []
 
@@ -422,13 +509,21 @@ def autocomplete(q: str, limit: int = 8):
         if not name:
             continue
         name_norm = normalize_text(name)
-        # All query parts must appear in the composer name (e.g. "bee" matches
-        # "Beethoven, Ludwig van"; "mahl" matches "Mahler, Gustav").
-        if not all(p in name_norm for p in q_parts):
+        c_surname = composer_surname(name)
+
+        # Three ways to match:
+        #   (a) every query token appears somewhere in the composer name
+        #       — handles "mahl" and "bee" prefix typing
+        #   (b) canonical surname equality — handles "Rachmaninoff" query
+        #       finding "Rachmaninow, Sergei Wassiljewitsch"
+        #   (c) when the user pasted a Composer: Werk string, the
+        #       canonical surname of the head matches
+        token_match = all(p in name_norm for p in q_parts)
+        alias_match = bool(target_surname) and target_surname == c_surname
+        if not (token_match or alias_match):
             continue
         score = 100 + _famous_boost(name)
         # Bigger boost when the surname starts with the query (typed-prefix).
-        # Works for both "Surname, First" and "First Surname" forms.
         if "," in name_norm:
             surname_norm = name_norm.split(",")[0].strip()
         else:
@@ -436,6 +531,10 @@ def autocomplete(q: str, limit: int = 8):
             surname_norm = parts_n[-1] if parts_n else ""
         if surname_norm.startswith(q_parts[0]):
             score += 40
+        if alias_match and not token_match:
+            # User typed a transliteration that doesn't substring-match —
+            # still useful to suggest, but lower than a direct hit.
+            score -= 20
         suggestions.append({
             "type": "composer",
             "label": name,
@@ -446,6 +545,11 @@ def autocomplete(q: str, limit: int = 8):
     # Work matches — every query part has to be findable somewhere in the
     # composer-name+work-title concatenation. Numbers like "3" match works
     # whose title contains "3" (Symphonie Nr. 3, Klavierkonzert Nr. 3, …).
+    # When the user pasted "Composer: Werk", we instead require the work
+    # tokens to be in the title and the canonical surname to match.
+    work_q_parts = ([p for p in normalize_text(pasted_work_q).split() if p]
+                    if pasted_work_q else q_parts)
+
     for w in WORKS:
         composer = w.get("composer", "")
         title = w.get("title", "")
@@ -453,14 +557,29 @@ def autocomplete(q: str, limit: int = 8):
             continue
         composer_norm = normalize_text(composer)
         title_norm = normalize_text(title)
-        haystack = f"{composer_norm} {title_norm}"
-        if not all(p in haystack for p in q_parts):
-            continue
-        score = 50 + _famous_boost(composer)
-        # If the user clearly types a composer hit ("mahl") AND something
-        # else ("3"), require the composer-hit part to be in the composer name.
-        if len(q_parts) >= 2 and q_parts[0] in composer_norm:
-            score += 20
+        w_surname = composer_surname(composer)
+
+        if pasted_composer:
+            # Paste-mode: alias-match composer, then signature-match the
+            # work half. Signature matching collapses "Klavierkonzert Nr. 2"
+            # (Klassika-Spelling) and "2. Konzert für Klavier" (event
+            # programme spelling) into the same {genre, number} pair.
+            if target_surname != w_surname:
+                continue
+            work_sig = extract_work_signature(pasted_work_q)
+            if not work_text_matches(title, work_sig):
+                continue
+            score = 70 + _famous_boost(composer)
+        else:
+            haystack = f"{composer_norm} {title_norm}"
+            token_match = all(p in haystack for p in q_parts)
+            alias_match = bool(target_surname) and target_surname == w_surname \
+                          and all(p in title_norm for p in q_parts[1:] or q_parts)
+            if not (token_match or alias_match):
+                continue
+            score = 50 + _famous_boost(composer)
+            if len(q_parts) >= 2 and q_parts[0] in composer_norm:
+                score += 20
         suggestions.append({
             "type": "work",
             "label": f"{composer} — {title}",
