@@ -300,6 +300,33 @@ def _is_bad_title(s) -> bool:
     return isinstance(s, str) and s.strip().lower() in _BAD_TITLES
 
 
+def _looks_mojibaked(text: str) -> bool:
+    """Detect leftover UTF-8-as-Latin-1 mojibake from earlier broken runs.
+    These sequences ('Â»', 'Ã¼', 'Ã¶', 'Ã¤', 'Ã¢', 'Å¾') don't appear in real
+    German concert metadata, so their presence means we should drop the
+    cached entry and re-fetch with the encoding fix in place."""
+    if not isinstance(text, str):
+        return False
+    return any(seq in text for seq in ("Ã¼", "Ã¶", "Ã¤", "Ã©", "Ã¨", "Ã ", "Â»", "Â«", "Â§", "Å¾", "Å¡", "Ã "))
+
+
+def _entry_has_mojibake(ev: dict) -> bool:
+    """Walk the relevant string-bearing fields of an event and flag if any
+    value still carries mojibake."""
+    for v in (ev.get("program") or []):
+        if _looks_mojibaked(v):
+            return True
+    for v in (ev.get("artists") or []):
+        if _looks_mojibaked(v):
+            return True
+    for f in ("title", "subtitle", "description", "hall", "venue", "city",
+              "duration", "prices", "prices_reduced", "organizer", "intro",
+              "abo", "language"):
+        if _looks_mojibaked(ev.get(f, "") or ""):
+            return True
+    return False
+
+
 def _load_program_cache() -> dict:
     """Read previously-scraped events from the output JSON and group them
     by detail URL. A single detail URL can map to multiple events (the same
@@ -316,15 +343,25 @@ def _load_program_cache() -> dict:
     except Exception:
         return {}
     cache: dict = {}
+    dropped_mojibake = 0
     for ev in data.get("events", []):
         url = ev.get("url")
         prog = ev.get("program")
         if not url or not prog:
             continue
+        # Old runs hit a charset bug and saved Â»/Ã¼ etc. Drop those entries
+        # entirely — the cache should not propagate broken text. Next run
+        # will re-fetch with proper encoding handling.
+        if _entry_has_mojibake(ev):
+            dropped_mojibake += 1
+            continue
         # Wipe known-bogus titles so the next pass re-extracts them.
         if _is_bad_title(ev.get("title")):
             ev["title"] = ""
         cache.setdefault(url, []).append(ev)
+    if dropped_mojibake:
+        print(f"  (cache: dropped {dropped_mojibake} entries with mojibake — will re-fetch)",
+              flush=True)
     return cache
 
 
