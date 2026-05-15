@@ -73,9 +73,54 @@ def load_data() -> None:
     # Sort by date ascending, undated events last
     EVENTS.sort(key=lambda e: e.get("date") or "9999-99-99")
 
+    # If the klassika data is missing (the JSONs are gitignored — a fresh
+    # checkout doesn't have them), synthesize composers + works from what
+    # the venues are actually programming. Suggestions stay grounded in
+    # real upcoming concerts; the user types "Mahler" and only sees the
+    # composers that have something on the schedule.
+    if not COMPOSERS and not WORKS:
+        COMPOSERS, WORKS = _derive_composers_and_works(EVENTS)
+        print(f"  (klassika data missing — derived {len(COMPOSERS)} composers "
+              f"and {len(WORKS)} works from {len(EVENTS)} events)")
+
     print(f"Loaded {len(COMPOSERS)} composers")
     print(f"Loaded {len(WORKS)} works")
     print(f"Loaded {len(EVENTS)} events from {len(venue_files)} venues")
+
+
+def _derive_composers_and_works(events: List[Dict]) -> "tuple[List[Dict], List[Dict]]":
+    """Build composer + work suggestion lists from events' program entries.
+
+    Each program entry has the shape "Composer Name: Work Title (opus)".
+    We split on the first colon, treat the LHS as the composer and the RHS
+    as the work. Composers come back as {name, count} so the autocomplete
+    can rank by how often a composer actually shows up on the schedule.
+    Works come back as {composer, title, count} similarly.
+    """
+    from collections import Counter
+    composer_counts: Counter = Counter()
+    work_counts: Counter = Counter()  # key = (composer, work)
+    for ev in events:
+        for entry in ev.get("program") or []:
+            if not isinstance(entry, str) or ":" not in entry:
+                continue
+            composer, _, work = entry.partition(":")
+            composer = composer.strip()
+            work = work.strip()
+            if not composer or not work:
+                continue
+            composer_counts[composer] += 1
+            work_counts[(composer, work)] += 1
+
+    composers = [
+        {"name": name, "count": n}
+        for name, n in composer_counts.most_common()
+    ]
+    works = [
+        {"composer": c, "title": w, "count": n}
+        for (c, w), n in work_counts.most_common()
+    ]
+    return composers, works
 
 
 load_data()
@@ -329,8 +374,13 @@ _FAMOUS_SURNAMES = frozenset({
 
 
 def _famous_boost(name: str) -> int:
-    # name is "Surname, First" — surname is the bit before the comma
-    surname = name.split(",")[0].strip().lower()
+    # Tolerant of both "Surname, First" (klassika data) and "First Surname"
+    # (composers derived from event program strings).
+    if "," in name:
+        surname = name.split(",")[0].strip().lower()
+    else:
+        parts = name.strip().split()
+        surname = parts[-1].lower() if parts else ""
     return 30 if surname in _FAMOUS_SURNAMES else 0
 
 
@@ -378,7 +428,12 @@ def autocomplete(q: str, limit: int = 8):
             continue
         score = 100 + _famous_boost(name)
         # Bigger boost when the surname starts with the query (typed-prefix).
-        surname_norm = name_norm.split(",")[0].strip()
+        # Works for both "Surname, First" and "First Surname" forms.
+        if "," in name_norm:
+            surname_norm = name_norm.split(",")[0].strip()
+        else:
+            parts_n = name_norm.strip().split()
+            surname_norm = parts_n[-1] if parts_n else ""
         if surname_norm.startswith(q_parts[0]):
             score += 40
         suggestions.append({

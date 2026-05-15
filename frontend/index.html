@@ -769,23 +769,39 @@
             acItems = [];
         }
 
-        function renderAutocomplete(suggestions) {
-            if (!suggestions.length) {
-                hideAutocomplete();
+        function renderAutocomplete(suggestions, query) {
+            acItems = suggestions || [];
+            acActiveIndex = -1;
+            if (!acItems.length) {
+                autocompleteDD.innerHTML = `
+                    <div class="autocomplete-item" style="cursor:default;color:#888;">
+                        <div class="ac-label">Keine Treffer für „${escapeHtml(query || '')}"</div>
+                        <div class="ac-type">Drücke Enter um trotzdem zu suchen</div>
+                    </div>`;
+                autocompleteDD.classList.remove('hidden');
                 return;
             }
-            acItems = suggestions;
-            acActiveIndex = -1;
-            autocompleteDD.innerHTML = suggestions.map((s, i) => `
+            autocompleteDD.innerHTML = acItems.map((s, i) => `
                 <div class="autocomplete-item" data-index="${i}">
                     <div class="ac-label">${escapeHtml(s.label)}</div>
                     <div class="ac-type">${s.type === 'composer' ? 'Komponist' : 'Werk'}${s.opus ? ' · ' + escapeHtml(s.opus) : ''}</div>
                 </div>
             `).join('');
             autocompleteDD.classList.remove('hidden');
-            autocompleteDD.querySelectorAll('.autocomplete-item').forEach(el => {
+            autocompleteDD.querySelectorAll('.autocomplete-item[data-index]').forEach(el => {
                 el.addEventListener('click', () => selectSuggestion(parseInt(el.dataset.index, 10)));
             });
+        }
+
+        function showAutocompleteError(message) {
+            acItems = [];
+            acActiveIndex = -1;
+            autocompleteDD.innerHTML = `
+                <div class="autocomplete-item" style="cursor:default;color:#c33;">
+                    <div class="ac-label">⚠ ${escapeHtml(message)}</div>
+                    <div class="ac-type">Läuft das Backend auf ${escapeHtml(API_URL)}?</div>
+                </div>`;
+            autocompleteDD.classList.remove('hidden');
         }
 
         function updateActive() {
@@ -811,10 +827,11 @@
         async function fetchAutocomplete(q) {
             try {
                 const res = await fetch(`${API_URL}/api/autocomplete?q=${encodeURIComponent(q)}`);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
                 const data = await res.json();
-                renderAutocomplete(data.suggestions || []);
+                renderAutocomplete(data.suggestions || [], q);
             } catch (err) {
-                hideAutocomplete();
+                showAutocompleteError('Suche nicht erreichbar');
             }
         }
 

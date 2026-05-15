@@ -469,8 +469,13 @@ def _select_event_text(soup: BeautifulSoup) -> "str":
 # Instruction block sent as a cached system message. Stays identical across
 # all 366 events in a run so Anthropic's prompt cache (5-min TTL) charges us
 # at the 10% cache-read rate after the first call.
-_CLAUDE_SYSTEM = """You extract structured concert data from Berliner \
-Philharmonie event pages and return it as a single JSON object.
+_CLAUDE_SYSTEM = """You extract structured concert data from a Berliner \
+Philharmonie event detail page and return it as a single JSON object.
+
+CRITICAL: only extract works/artists/info that belong to THIS specific \
+concert. Detail pages can carry cross-promotion or related-concert blocks \
+referring to OTHER events — ignore those. If unsure whether a work belongs \
+to this concert or to a recommendation block, prefer to omit it.
 
 Required keys:
 

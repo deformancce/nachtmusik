@@ -37,7 +37,7 @@ LOAD_MORE_KEYWORDS = (
 )
 OUTPUT_PATH = Path(__file__).parent.parent / "gewandhaus_events.json"
 CLAUDE_MODEL = "claude-haiku-4-5-20251001"  # cheap + good enough for HTML extraction
-MAX_DETAIL_TEXT_CHARS = 40_000  # plain-text content sent to Claude per event
+MAX_DETAIL_TEXT_CHARS = 60_000  # plain-text content sent to Claude per event
 
 # Single entry point: the Gewandhaus homepage lists all upcoming events and
 # has a "Weitere Veranstaltungen laden" button. We scroll and click there
@@ -435,36 +435,73 @@ def _trim_after_boilerplate(text: str) -> str:
 
 
 def _select_event_text(soup: BeautifulSoup) -> "str":
-    """Return the plain-text content of the event-main container.
+    """Return the plain-text content of the page, stripped of obvious noise.
 
-    Tries event-detail / article / main containers in turn, then falls back to
-    the cleaned <body>. HTML tags are dropped — Claude only needs the words,
-    not the markup, and stripping tags halves the token cost.
+    The Gewandhaus event-detail pages have a left column (image +
+    description with "weiterlesen") and a right column (title, works,
+    prices, organiser). Earlier we picked the narrowest matching container
+    first ([class*="event-detail"]), which on some templates only covered
+    the right column — losing the description and (worse) sometimes
+    capturing cross-promotion blocks instead.
+
+    New strategy:
+      1. Strip side panels: <aside>, "related events" blocks, calendar
+         widgets — these are what bleed La-bohème into REGINA.
+      2. Prefer the WIDEST sensible container so both columns of the
+         layout are in: <article>, <main>, [role=main], #content. Only
+         fall back to event-detail / event-content classes if none of
+         those exist.
+      3. Send the full text up to MAX_DETAIL_TEXT_CHARS — don't trim at
+         boilerplate markers, because the description and other useful
+         fields (prices, duration, organizer) sit AROUND those markers.
+         Claude is good enough at separating concert data from boilerplate.
     """
+    # 1. Remove cross-promotion / sidebars / "weitere veranstaltungen" blocks
+    #    that would otherwise feed Claude info from OTHER concerts.
+    for sel in (
+        "aside",
+        '[class*="related"]', '[class*="empfehl"]',  # related/recommendations
+        '[class*="upcoming"]', '[class*="next-event"]',
+        '[class*="cross-sell"]', '[class*="weiterer-termin"]',
+        '[class*="weitere-veranstaltung"]',
+        '[class*="calendar"]', '[class*="kalender"]',
+        '[id*="related"]', '[id*="sidebar"]',
+    ):
+        for el in soup.select(sel):
+            el.decompose()
+
+    # 2. Pick the widest meaningful container.
     for selector in (
-        '[class*="event-detail"]',
-        '[class*="event__detail"]',
-        '[class*="event-content"]',
         "article",
         "main",
         '[role="main"]',
         "#content",
         '[class*="content-main"]',
+        '[class*="page-content"]',
+        '[class*="event-detail"]',
+        '[class*="event__detail"]',
+        '[class*="event-content"]',
     ):
         node = soup.select_one(selector)
         if node and len(node.get_text(strip=True)) > 200:
-            text = node.get_text("\n", strip=True)
-            return _trim_after_boilerplate(text)[:MAX_DETAIL_TEXT_CHARS]
+            return node.get_text("\n", strip=True)[:MAX_DETAIL_TEXT_CHARS]
 
     body = soup.find("body") or soup
-    return _trim_after_boilerplate(body.get_text("\n", strip=True))[:MAX_DETAIL_TEXT_CHARS]
+    return body.get_text("\n", strip=True)[:MAX_DETAIL_TEXT_CHARS]
 
 
 # Instruction block sent as a cached system message. Stays identical across
 # all 366 events in a run so Anthropic's prompt cache (5-min TTL) charges us
 # at the 10% cache-read rate after the first call.
-_CLAUDE_SYSTEM = """You extract structured concert data from Gewandhaus Leipzig \
-event pages and return it as a single JSON object with these keys.
+_CLAUDE_SYSTEM = """You extract structured concert data from a Gewandhaus \
+Leipzig event detail page and return it as a single JSON object with the \
+keys below.
+
+CRITICAL: the user message starts with "Event title:" and "Event date:". \
+Only extract works/artists/info that belong to THAT specific concert. \
+Gewandhaus pages sometimes contain cross-promotion or "related concerts" \
+blocks for OTHER events (e.g. a REGINA page that mentions an upcoming La \
+bohème). Ignore those — they are NOT the concert you are describing.
 
 "works" (array of strings): each work formatted "Composer: Work Title \
 (opus/catalog number)" when available, e.g.:
@@ -472,9 +509,11 @@ event pages and return it as a single JSON object with these keys.
 - "Ludwig van Beethoven: Symphonie Nr. 9 d-moll op. 125"
 - "Georges Bizet: Carmen (Oper in vier Akten)"
 
-Operas, oratorios and ballets count as a single work — one-element list. For \
-multi-work concerts list each work separately in performance order. Skip \
-filler like "Pause", "Einlass", "Ende ca.". Use [] only if no composer-work \
+For operas, oratorios and ballets: ONE-ELEMENT list with the composer of
+THIS specific opera (matching the event title). If the page lists works
+by a different composer than the title suggests, prefer [] over guessing.
+For multi-work concerts list each work separately in performance order. \
+Skip "Pause", "Einlass", "Ende ca.". Use [] only if no composer-work \
 information is present.
 
 "artists" (array of strings): each performer or staff member with role, e.g.:
@@ -488,9 +527,12 @@ Skip generic ticket-info lines and venue names. Use [] when none are listed.
 work hint, e.g. "Yulianna Avdeeva (Klavier) · Werke von Rachmaninoff, \
 Schostakowitsch" or "Lang Lang spielt Beethoven". Empty string allowed.
 
-"description" (string): the longer marketing text describing the concert \
-(max ~800 chars; trim to the most informative sentences if longer). Empty \
-string when no description is present.
+"description" (string): the marketing/info text describing this concert \
+(typically appears below "weiterlesen" or near the image; can describe the \
+work, the soloist's interpretation, historical context, plot synopsis for \
+operas, etc.). Up to ~1200 chars; if longer, keep the most informative \
+opening sentences. Empty string ONLY if the page genuinely has no \
+descriptive prose about this event — most pages do, even short ones.
 
 "duration" (string): the total duration as printed, e.g. "ca. 2 1/4 Stunden \
 | 1 Pause" or "ca. 1 Stunde 40 Minuten". Empty if not stated.
