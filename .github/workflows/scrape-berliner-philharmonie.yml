@@ -27,7 +27,7 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 75   # ~900 events × 3s Claude + scrolling + setup
     steps:
       - uses: actions/checkout@v4
         with:
@@ -47,7 +47,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           PYTHONUNBUFFERED: "1"
-        run: python3 scrape/berliner_philharmonie_scraper.py --clicks 60
+        run: python3 scrape/berliner_philharmonie_scraper.py --clicks 150
 
       - name: Show summary
         working-directory: backend
