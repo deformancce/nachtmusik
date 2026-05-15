@@ -158,34 +158,25 @@ def fetch_with_playwright(url: str, max_clicks: int = 10,
             browser.close()
 
 
-# Patterns in the URL path that flag a link as an event detail page rather
-# than a navigation/static page. Tune on first run if the Berliner site uses
-# different URLs.
-_EVENT_URL_PATTERNS = (
-    "/konzert/",
-    "/konzerte/",
-    "/concert/",
-    "/concerts/",
-    "/event/",
-    "/events/",
-    "/veranstaltung/",
-    "/programm-detail/",
-    "/programm/detail/",
+# Verified URL shape for an event detail page on the Berliner Philharmoniker
+# site: https://www.berliner-philharmoniker.de/konzerte/kalender/<numeric_id>/
+# Anything else under /konzerte/ (e.g. /abos-und-flex-pakete,
+# /saisonhighlights, /ticketinfo) is a navigation/info page and must be
+# rejected. External links to digitalconcerthall.com are excluded entirely
+# (those are stream tickets, not events at the venue).
+_EVENT_URL_RE = re.compile(
+    r"^(?:https?://(?:www\.)?berliner-philharmoniker\.de)?/konzerte/kalender/\d+/?$",
+    re.IGNORECASE,
 )
-
-_EVENT_ID_RE = re.compile(r"(\d{4,})")  # numeric ID anywhere in URL
+_EVENT_ID_RE = re.compile(r"/konzerte/kalender/(\d+)/?$")
 
 
 def _looks_like_event_link(href: str) -> bool:
     if not href or ".ics" in href:
         return False
-    h = href.lower()
-    if not any(p in h for p in _EVENT_URL_PATTERNS):
-        return False
-    # Must look like a specific event, not the listing root itself.
-    # Accept either a numeric ID or a slug containing a hyphen.
-    tail = href.rstrip("/").rsplit("/", 1)[-1]
-    return bool(_EVENT_ID_RE.search(href) or "-" in tail)
+    # Strip query/fragment before matching the path shape
+    clean = href.split("#")[0].split("?")[0]
+    return bool(_EVENT_URL_RE.match(clean))
 
 
 def _nearest_event_container(node, max_depth: int = 6):
@@ -325,6 +316,10 @@ def _load_program_cache() -> dict[str, dict]:
             cache[eid] = {
                 "program": prog,
                 "artists": ev.get("artists") or [],
+                "title": ev.get("title") or "",
+                "date": ev.get("date") or "",
+                "time": ev.get("time") or "",
+                "location": ev.get("location") or "",
             }
     return cache
 
@@ -431,53 +426,56 @@ def _select_event_text(soup: BeautifulSoup) -> "str":
 # all 366 events in a run so Anthropic's prompt cache (5-min TTL) charges us
 # at the 10% cache-read rate after the first call.
 _CLAUDE_SYSTEM = """You extract structured concert data from Berliner \
-Philharmonie event pages and return it as a JSON object with two keys: \
-"works" and "artists".
+Philharmonie event pages and return it as a JSON object with these keys: \
+"title", "date", "time", "location", "works", "artists".
 
-"works" is an array of strings, each formatted "Composer: Work Title \
+"title" (string): the concert's headline as it appears on the page, e.g. \
+"Kirill Petrenko dirigiert Brahms" or "Sir Simon Rattle & Yuja Wang". Use the \
+clearest short title — usually the largest heading. Empty string if none.
+
+"date" (string): the concert date in ISO format YYYY-MM-DD. The page lists \
+the date in German like "Fr, 15. Mai 2026" — convert to "2026-05-15". Empty \
+string if no date is shown.
+
+"time" (string): 24-hour start time HH:MM, e.g. "20:00". The page shows it \
+like "20.00 Uhr" or "20:00". Empty string if no time is shown.
+
+"location" (string): the hall / room name as listed on the page, e.g. \
+"Großer Saal", "Kammermusiksaal", "Philharmonie", "Waldbühne Berlin". Empty \
+string if not shown.
+
+"works" (array of strings): each work formatted "Composer: Work Title \
 (opus/catalog number)" when available, e.g.:
 - "Johann Sebastian Bach: Weihnachts-Oratorium BWV 248"
 - "Ludwig van Beethoven: Symphonie Nr. 9 d-moll op. 125"
-- "Gustav Mahler: Symphonie Nr. 2 c-moll \\"Auferstehung\\""
 - "Georges Bizet: Carmen (Oper in vier Akten)"
 
-Operas, oratorios and ballets count as a single work — return a one-element \
-list with the composer and work, e.g. ["Georges Bizet: Carmen"]. Look for a \
-line like "Georges Bizet — Carmen - Oper in vier Akten" on the page.
+Operas, oratorios and ballets count as a single work — one-element list. For \
+multi-work concerts list each work separately in performance order. Skip \
+filler like "Pause", "Einlass", "Ende ca.". Use [] only if no composer-work \
+information is present.
 
-For concerts with multiple works (symphony concerts, chamber music, recitals, \
-choir concerts, etc.), list each work separately in performance order.
-
-Skip filler like "Pause", "Einlass", "Ende ca.", and lines that are only \
-artist/conductor names. Use "works": [] only if you genuinely cannot find any \
-composer-work information.
-
-"artists" is an array of strings — each performer or staff member with their \
-role, e.g.:
-- "Kirill Petrenko (Dirigent / Conductor)"
-- "Yuja Wang (Klavier / Piano)"
+"artists" (array of strings): each performer or staff member with role, e.g.:
+- "Kirill Petrenko (Dirigent)"
+- "Yuja Wang (Klavier)"
 - "Berliner Philharmoniker"
-- "Lindy Hume (Inszenierung / Director)"
-
-Include the conductor, soloists, ensembles, and (for operas) director/staging. \
-Roles may appear in German or English on the page — keep whichever the page \
-uses. Skip generic ticket-info lines and venue names. Use "artists": [] when \
-none are listed.
+Skip generic ticket-info lines and venue names. Use [] when none are listed.
 
 Respond with ONLY the JSON object. No prose, no markdown fences. Example:
-{"works": ["Ludwig van Beethoven: Symphonie Nr. 5 c-Moll op. 67"], "artists": ["Kirill Petrenko (Dirigent)", "Berliner Philharmoniker"]}"""
+{"title": "Kirill Petrenko dirigiert Beethoven", "date": "2026-09-12", "time": "20:00", "location": "Großer Saal", "works": ["Ludwig van Beethoven: Symphonie Nr. 5 c-Moll op. 67"], "artists": ["Kirill Petrenko (Dirigent)", "Berliner Philharmoniker"]}"""
 
 
-def extract_program_with_claude(html: str, event: dict, verbose: bool = False) -> "tuple[list[str], list[str]]":
-    """Ask Claude (Haiku) to read a detail page and return (works, artists).
+def extract_program_with_claude(html: str, event: dict, verbose: bool = False) -> "dict":
+    """Ask Claude (Haiku) to read a detail page and return all the structured
+    fields it can pull from it: title, date, time, location, works, artists.
 
-    works   — list of 'Composer: Work (opus)' strings
-    artists — list of 'Name (Role)' strings (conductor, soloists, ensembles)
-
-    Returns ([], []) on failure or when no data can be extracted."""
+    Returns a dict with those keys. Missing fields come back as "" or [].
+    Returns {} on a hard failure (API error, JSON parse error)."""
+    empty = {"title": "", "date": "", "time": "", "location": "",
+             "works": [], "artists": []}
     client = _get_claude_client()
     if client is None:
-        return [], []
+        return empty
 
     soup = BeautifulSoup(html, "lxml")
     for tag in soup(["script", "style", "noscript", "iframe", "svg", "header", "footer", "nav"]):
@@ -487,11 +485,7 @@ def extract_program_with_claude(html: str, event: dict, verbose: bool = False) -
     if verbose:
         print(f"    [claude] sending {len(page_text)} chars (text) to Claude", flush=True)
 
-    user_msg = (
-        f"Event title: {event.get('title', '')}\n"
-        f"Event date: {event.get('date', '')}\n\n"
-        f"Event page text:\n{page_text}"
-    )
+    user_msg = f"Event page text:\n{page_text}"
     try:
         msg = client.messages.create(
             model=CLAUDE_MODEL,
@@ -512,17 +506,21 @@ def extract_program_with_claude(html: str, event: dict, verbose: bool = False) -
             if text.endswith("```"):
                 text = text[:-3].strip()
         data = json.loads(text)
-        # Tolerate either the new object schema or the older bare-list shape
-        # (in case Claude regresses) — older runs returned just a list.
         if isinstance(data, dict):
-            works = [str(w).strip() for w in (data.get("works") or []) if w]
-            artists = [str(a).strip() for a in (data.get("artists") or []) if a]
-            return works, artists
+            return {
+                "title": str(data.get("title") or "").strip(),
+                "date": str(data.get("date") or "").strip(),
+                "time": str(data.get("time") or "").strip(),
+                "location": str(data.get("location") or "").strip(),
+                "works": [str(w).strip() for w in (data.get("works") or []) if w],
+                "artists": [str(a).strip() for a in (data.get("artists") or []) if a],
+            }
+        # Older bare-list shape — tolerate it for any cached responses
         if isinstance(data, list):
-            return [str(p).strip() for p in data if p], []
+            return {**empty, "works": [str(p).strip() for p in data if p]}
     except Exception as exc:
         print(f"  [claude] error for {event.get('id')}: {type(exc).__name__}: {str(exc)[:80]}")
-    return [], []
+    return empty
 
 
 def fetch_program_from_detail(url: str, verbose: bool = False) -> list[str]:
@@ -611,20 +609,25 @@ def enrich_with_detail_programs(
         if not ev.get("program"):
             ev["program"] = cached["program"]
             cache_hits += 1
-        if not ev.get("artists") and cached.get("artists"):
-            ev["artists"] = cached["artists"]
+        for field in ("artists", "title", "date", "time", "location"):
+            if not ev.get(field) and cached.get(field):
+                ev[field] = cached[field]
     if cache_hits:
         print(f"Reused {cache_hits} programs from previous run", flush=True)
 
-    # Re-fetch any event that's missing EITHER a program OR an artists list —
-    # so events from older runs (program-only schema) get topped up on the
-    # next pass.
+    # Re-fetch any event that's missing ANY important field — so events from
+    # older runs (program-only schema) get topped up with title/date/etc.
     todo = [
         e for e in events
-        if e.get("url") and (not e.get("program") or not e.get("artists"))
+        if e.get("url") and (
+            not e.get("program")
+            or not e.get("artists")
+            or not e.get("title")
+            or not e.get("date")
+        )
     ]
     if not todo:
-        print("\nAll events already have program + artists — nothing to fetch.", flush=True)
+        print("\nAll events already fully populated — nothing to fetch.", flush=True)
         return
 
     print(f"\nFetching {len(todo)} detail pages for program/artist extraction...", flush=True)
@@ -663,22 +666,25 @@ def enrich_with_detail_programs(
         if verbose:
             print(f"  [detail {eid}] HTTP 200, {len(r.text)} chars")
 
+        claude_data: dict = {}
         program: list[str] = []
-        artists_from_claude: list[str] = []
         claude_attempted = False
         if have_claude:
             claude_attempted = True
             try:
-                program, artists_from_claude = extract_program_with_claude(
+                claude_data = extract_program_with_claude(
                     r.text, event, verbose=verbose
                 )
             except Exception as exc:
                 print(f"  [claude {eid}] EXCEPTION {type(exc).__name__}: {str(exc)[:120]}")
                 claude_errors += 1
+            program = claude_data.get("works") or []
             if verbose:
                 preview = program[0][:70] if program else "(empty)"
                 print(f"  [claude {eid}] returned {len(program)} works, "
-                      f"{len(artists_from_claude)} artists: {preview}")
+                      f"{len(claude_data.get('artists') or [])} artists, "
+                      f"title={claude_data.get('title','')[:40]!r}, "
+                      f"date={claude_data.get('date','')!r}: {preview}")
             if not program:
                 claude_empty += 1
 
@@ -690,10 +696,16 @@ def enrich_with_detail_programs(
         elif claude_attempted:
             enriched_claude += 1
 
-        # Only set program when the event doesn't already have one — we may
-        # be re-fetching this page solely to backfill artists.
+        # Fill any field that's currently empty on the event from Claude's
+        # extraction. Existing values are kept — re-runs shouldn't clobber
+        # data we already have.
         if program and not event.get("program"):
             event["program"] = program
+        for field in ("title", "date", "time", "location"):
+            val = (claude_data.get(field) or "").strip()
+            if val and not event.get(field):
+                event[field] = val
+        artists_from_claude = claude_data.get("artists") or []
         if artists_from_claude and not event.get("artists"):
             event["artists"] = artists_from_claude
         if not event.get("program") and not _DEBUG_DUMPED:
@@ -728,11 +740,12 @@ def enrich_with_detail_programs(
 
 
 def parse_teasers(html: str, category: str) -> list[dict]:
-    """Generic listing-page parser: find event detail URLs by URL pattern,
-    then walk up to the nearest container to grab a date and title.
+    """Listing-page parser: collect event detail URLs and stable IDs only.
 
-    Designed to work with minimal venue knowledge — Claude does the heavy
-    lifting on each detail page (program, artists, location, etc.).
+    Title/date/time/location come from Claude on the detail page where they
+    are clearly labelled. Listing-side DOM parsing is brittle on the SPA
+    (titles render as styled divs, dates as plain text), so we don't even
+    try here — keeping this function venue-portable.
     """
     soup = BeautifulSoup(html, "lxml")
     events: list[dict] = []
@@ -743,48 +756,27 @@ def parse_teasers(html: str, category: str) -> list[dict]:
         href = a["href"]
         if not _looks_like_event_link(href):
             continue
-        url = href if href.startswith("http") else BASE + href.lstrip("/").rjust(len(href) + 1, "/")
-        # Normalize: strip query/fragment for dedupe
-        norm = url.split("#")[0].split("?")[0].rstrip("/")
-        if norm in seen:
+        # Normalize: ensure exactly one leading slash before BASE, strip
+        # query/fragment, and drop trailing slash so dedupe is consistent.
+        if href.startswith("http"):
+            url = href
+        else:
+            url = BASE + "/" + href.lstrip("/")
+        url = url.split("#")[0].split("?")[0].rstrip("/")
+        if url in seen:
             continue
-        seen.add(norm)
-        url = norm
+        seen.add(url)
 
-        container = _nearest_event_container(a)
-
-        # Date — prefer <time datetime=...>; fall back to ISO-like strings in text
-        date = ""
-        if container is not None:
-            date_el = container.find("time", attrs={"datetime": True})
-            if date_el and date_el.get("datetime"):
-                date = date_el["datetime"][:10]
-        if not date:
-            time_el = a.find("time", attrs={"datetime": True})
-            if time_el and time_el.get("datetime"):
-                date = time_el["datetime"][:10]
-
-        # Title — prefer h1-h4 in container, else the link's own text
-        title = ""
-        if container is not None:
-            for tag in ("h1", "h2", "h3", "h4"):
-                h = container.find(tag)
-                if h:
-                    title = h.get_text(" ", strip=True)
-                    break
-        if not title:
-            title = a.get_text(" ", strip=True)
-        title = title[:300]
-
-        # Stable-ish ID: numeric chunk in the URL, else last path segment
         m = _EVENT_ID_RE.search(url)
-        event_id = m.group(1) if m else url.rsplit("/", 1)[-1] or url
+        if not m:
+            continue
+        event_id = m.group(1)
 
         events.append({
             "id": event_id,
-            "date": date,
+            "date": "",          # Claude extracts from detail
             "time": "",          # Claude extracts from detail
-            "title": title,
+            "title": "",         # Claude extracts from detail
             "series": "",        # Claude extracts from detail
             "location": "",      # Claude extracts from detail
             "program": [],
