@@ -310,6 +310,30 @@ def root():
     }
 
 
+# Top-50 commonly-programmed composers — rough fame ranking used to bias
+# autocomplete towards what users most likely want when they type just one
+# letter. Lower-cased surnames; the order doesn't matter (membership test).
+_FAMOUS_SURNAMES = frozenset({
+    "bach", "beethoven", "mozart", "brahms", "schubert", "wagner", "mahler",
+    "chopin", "tschaikowski", "tchaikovsky", "schumann", "haydn", "handel",
+    "händel", "dvorak", "dvořák", "debussy", "ravel", "verdi", "puccini",
+    "rachmaninoff", "rachmaninow", "sibelius", "mendelssohn", "bruckner",
+    "schostakowitsch", "schostakovich", "shostakovich", "strawinsky",
+    "stravinsky", "prokoffjew", "prokofiev", "liszt", "berlioz", "elgar",
+    "fauré", "faure", "gershwin", "bartók", "bartok", "hindemith", "strauss",
+    "rimsky-korsakov", "rimski-korsakow", "scarlatti", "purcell", "monteverdi",
+    "vivaldi", "telemann", "buxtehude", "schütz", "gluck", "weber",
+    "donizetti", "rossini", "bellini", "berg", "webern", "schönberg",
+    "schoenberg", "messiaen", "ligeti", "pärt", "part",
+})
+
+
+def _famous_boost(name: str) -> int:
+    # name is "Surname, First" — surname is the bit before the comma
+    surname = name.split(",")[0].strip().lower()
+    return 30 if surname in _FAMOUS_SURNAMES else 0
+
+
 @app.get("/api/search")
 def search(q: str):
     results = smart_search(q)
@@ -320,6 +344,93 @@ def search(q: str):
         "composers": results["composers"],
         "works": results["works"],
     }
+
+
+@app.get("/api/autocomplete")
+def autocomplete(q: str, limit: int = 8):
+    """Live-suggestion endpoint for the search box.
+
+    Ranks composer-name matches above work matches; well-known composers
+    (Mahler, Bach, Beethoven, …) get a fame boost so a single-letter query
+    surfaces the obvious household names first. Returns a flat list of
+    {type, label, composer, work?, opus?} entries the frontend can render
+    as a dropdown.
+    """
+    q = (q or "").strip()
+    if len(q) < 1:
+        return {"suggestions": []}
+    q_norm = normalize_text(q)
+    q_parts = [p for p in q_norm.split() if p]
+    if not q_parts:
+        return {"suggestions": []}
+
+    suggestions: List[Dict] = []
+
+    # Composer matches — each composer surfaces at most once.
+    for c in COMPOSERS:
+        name = c.get("name", "")
+        if not name:
+            continue
+        name_norm = normalize_text(name)
+        # All query parts must appear in the composer name (e.g. "bee" matches
+        # "Beethoven, Ludwig van"; "mahl" matches "Mahler, Gustav").
+        if not all(p in name_norm for p in q_parts):
+            continue
+        score = 100 + _famous_boost(name)
+        # Bigger boost when the surname starts with the query (typed-prefix).
+        surname_norm = name_norm.split(",")[0].strip()
+        if surname_norm.startswith(q_parts[0]):
+            score += 40
+        suggestions.append({
+            "type": "composer",
+            "label": name,
+            "composer": name,
+            "score": score,
+        })
+
+    # Work matches — every query part has to be findable somewhere in the
+    # composer-name+work-title concatenation. Numbers like "3" match works
+    # whose title contains "3" (Symphonie Nr. 3, Klavierkonzert Nr. 3, …).
+    for w in WORKS:
+        composer = w.get("composer", "")
+        title = w.get("title", "")
+        if not composer or not title:
+            continue
+        composer_norm = normalize_text(composer)
+        title_norm = normalize_text(title)
+        haystack = f"{composer_norm} {title_norm}"
+        if not all(p in haystack for p in q_parts):
+            continue
+        score = 50 + _famous_boost(composer)
+        # If the user clearly types a composer hit ("mahl") AND something
+        # else ("3"), require the composer-hit part to be in the composer name.
+        if len(q_parts) >= 2 and q_parts[0] in composer_norm:
+            score += 20
+        suggestions.append({
+            "type": "work",
+            "label": f"{composer} — {title}",
+            "composer": composer,
+            "work": title,
+            "opus": w.get("opus", ""),
+            "score": score,
+        })
+
+    # Dedupe by visible label, keep the highest-scoring instance.
+    suggestions.sort(key=lambda x: -x["score"])
+    seen: set = set()
+    ranked: List[Dict] = []
+    for s in suggestions:
+        if s["label"] in seen:
+            continue
+        seen.add(s["label"])
+        ranked.append(s)
+        if len(ranked) >= limit:
+            break
+
+    # Drop the internal "score" before responding.
+    for s in ranked:
+        s.pop("score", None)
+    return {"query": q, "suggestions": ranked}
 
 
 @app.get("/api/composer/{composer_name}/works")
