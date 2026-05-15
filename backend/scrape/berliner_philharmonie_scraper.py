@@ -30,30 +30,36 @@ import time
 import requests
 from bs4 import BeautifulSoup
 
-# TODO(verify on first run): if the events live on a different host or path,
-# adjust BASE and MAIN_PAGE here. Most likely candidates:
-#   /de/konzerte/   (the orchestra's own concerts + venue events)
-#   /en/concerts/   (English equivalent)
-#   /de/spielplan/  (alternative path on some classical sites)
+# Confirmed URL: /konzerte/kalender/ is the SPA-based concert calendar.
+# The "#/" hash fragment is client-side routing — browsers don't send it to
+# the server, but Playwright still navigates to it correctly. The page is a
+# JavaScript SPA, so the events appear in the DOM only AFTER the JS bundle
+# loads and fetches them. fetch_with_playwright_session() handles this via
+# its post-goto wait + page.content() approach.
 BASE = "https://www.berliner-philharmoniker.de"
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; op.us/0.1)"}
 LOAD_MORE_KEYWORDS = (
+    # SPA calendar likely uses month navigation, not a "load more" button.
+    # Include date-navigation labels too in case they're clickable.
     "Weitere Konzerte",
     "Weitere Veranstaltungen",
     "Weitere Termine",
+    "Weitere anzeigen",
     "Weitere laden",
     "Mehr laden",
     "Mehr anzeigen",
     "Show more",
     "Load more",
+    "Nächster Monat",
+    "Next month",
 )
 OUTPUT_PATH = Path(__file__).parent.parent / "berliner_philharmonie_events.json"
 CLAUDE_MODEL = "claude-haiku-4-5-20251001"  # cheap + good enough for HTML extraction
 MAX_DETAIL_TEXT_CHARS = 40_000  # plain-text content sent to Claude per event
 
-# Single entry point: the concert calendar page lists all upcoming events.
-# We scroll and click "Weitere Konzerte" / "Mehr anzeigen" until exhausted.
-MAIN_PAGE = "/de/konzerte/"
+# Single entry point: the SPA-based concert calendar.
+# We scroll and click any "load more" / "next month" controls until exhausted.
+MAIN_PAGE = "/konzerte/kalender/"
 
 
 def fetch(url: str) -> str:
@@ -73,71 +79,63 @@ def fetch_with_playwright_session(page, url: str, max_clicks: int = 10,
     Returns (rendered HTML, click count)."""
 
     def _count_from_html(h: str) -> int:
-        # Count via BS4 on already-fetched HTML — avoids page.evaluate() which
-        # can block indefinitely when the page's JS thread is unresponsive.
-        return len(BeautifulSoup(h, "lxml").find_all(class_="event-teaser"))
+        # Count anything that looks like a concert link in the current DOM.
+        # On the Berliner Philharmoniker SPA the calendar renders events as
+        # links matching /konzert/, /konzerte/<slug>/ etc., not as fixed-class
+        # teasers — so use the same predicate as parse_teasers does.
+        soup = BeautifulSoup(h, "lxml")
+        return sum(
+            1 for a in soup.find_all("a", href=True)
+            if _looks_like_event_link(a["href"])
+        )
 
-    page.goto(url, wait_until="domcontentloaded", timeout=45000)
-    time.sleep(1.5)
+    # SPA: wait for networkidle so the JS bundle has loaded and event data
+    # has been fetched. Fall back to domcontentloaded + sleep if networkidle
+    # doesn't settle within the timeout (some sites have permanent pings).
+    try:
+        page.goto(url, wait_until="networkidle", timeout=45000)
+    except Exception as exc:
+        if verbose:
+            print(f"    networkidle timeout — falling back to domcontentloaded: {exc}", flush=True)
+        page.goto(url, wait_until="domcontentloaded", timeout=45000)
+    time.sleep(4.0)  # extra cushion for late-rendering SPA content
 
     html = page.content()  # has a default timeout; never hangs like evaluate()
     initial = _count_from_html(html)
     if verbose:
-        print(f"    initial teasers: {initial}")
+        print(f"    initial event links: {initial}", flush=True)
 
-    # Early exit when the page has nothing to offer — check the already-fetched
-    # HTML for a load-more button so we avoid any further evaluate() calls.
-    if initial == 0:
-        soup_init = BeautifulSoup(html, "lxml")
-        has_button = any(
-            any(kw in (el.get_text() or "") for kw in LOAD_MORE_KEYWORDS)
-            for el in soup_init.find_all(["a", "button"])
-        )
-        if not has_button:
-            if verbose:
-                print("    0 teasers, no load-more button — skipping clicks")
-            return html, 0
-
+    # The Berliner Philharmoniker calendar is a SPA with infinite scroll —
+    # no "load more" button to click. We scroll to the bottom, wait for
+    # newly-loaded events to render, and repeat until the count stops
+    # growing (2 consecutive scrolls with no new events → end of list).
     clicks = 0
     last_count = initial
+    stagnant = 0
     for i in range(max_clicks):
-        # evaluate() is still used for scrolling + clicking because there is no
-        # reliable timeout-aware alternative in sync Playwright for arbitrary
-        # button text. This call rarely hangs (14/15 categories work fine); the
-        # per-context memory isolation in scrape_all() prevents the memory
-        # pressure that caused /tacheles/ to block.
-        clicked_text = page.evaluate(
-            """
-            (keywords) => {
-                window.scrollTo(0, document.body.scrollHeight);
-                const elements = document.querySelectorAll('a, button');
-                for (const el of elements) {
-                    const text = (el.textContent || '').trim();
-                    if (!text) continue;
-                    if (keywords.some(kw => text.includes(kw)) && el.offsetParent !== null) {
-                        el.scrollIntoView({block: 'center'});
-                        el.click();
-                        return text;
-                    }
-                }
-                return null;
-            }
-            """,
-            list(LOAD_MORE_KEYWORDS),
-        )
-        if not clicked_text:
+        try:
+            page.evaluate("window.scrollTo(0, document.body.scrollHeight);")
+        except Exception as exc:
             if verbose:
-                print(f"    no button found after {clicks} clicks")
+                print(f"    scroll {i+1}: evaluate raised {exc}", flush=True)
             break
         clicks += 1
-        time.sleep(1.5)
+        time.sleep(2.0)  # let the SPA fetch + render the next batch
+
         html = page.content()
         new_count = _count_from_html(html)
         if verbose:
-            print(f"    click {clicks}: {last_count} → {new_count}")
-        if new_count == last_count:
-            # Click happened but no new teasers — the load-more is exhausted
-            break
+            print(f"    scroll {clicks}: {last_count} → {new_count}", flush=True)
+
+        if new_count <= last_count:
+            stagnant += 1
+            if stagnant >= 2:
+                # Two scrolls with no new events — we've hit the bottom
+                if verbose:
+                    print(f"    no growth for {stagnant} scrolls — done", flush=True)
+                break
+        else:
+            stagnant = 0
         last_count = new_count
 
     return html, clicks
