@@ -3,359 +3,540 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>op.us — find classical music live</title>
+    <title>nachtmusik — find classical music live</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-0: #0A0A0A;          /* page background */
+            --bg-1: #121212;          /* surfaces */
+            --bg-2: #1A1A1A;          /* elevated cards */
+            --bg-3: #232323;          /* hover / focus surfaces */
+            --line: #262626;          /* subtle divider */
+            --line-2: #353535;        /* emphasized divider */
+            --text-0: #F2EFE8;        /* primary, warm off-white */
+            --text-1: #B8B3AC;        /* secondary */
+            --text-2: #7A746E;        /* muted */
+            --gold: #D4B788;          /* primary accent — warm champagne */
+            --gold-dim: #8E7B59;      /* accent muted */
+            --gold-glow: rgba(212, 183, 136, 0.12);
+            --red: #C75959;           /* venue badge (Oper Leipzig style) */
+            --blue: #6B8DB5;          /* venue badge (Berlin style) */
+            --amber: #B89868;         /* venue badge (Gewandhaus style) */
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #5B3A9D 0%, #764ba2 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-0);
             min-height: 100vh;
-            padding: 40px 20px;
-            color: #1a1a1a;
+            padding: 60px 24px;
+            color: var(--text-0);
+            font-weight: 400;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        .container { max-width: 1000px; margin: 0 auto; }
+        /* Subtle texture — soft radial light behind the masthead. */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 800px 400px at 50% 0%, rgba(212, 183, 136, 0.04), transparent 70%),
+                radial-gradient(ellipse 600px 600px at 80% 100%, rgba(107, 141, 181, 0.03), transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
 
-        .logo { text-align: center; margin-bottom: 40px; }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Masthead ─────────────────────────────────────────────────── */
+        .logo {
+            text-align: center;
+            margin-bottom: 72px;
+            padding-top: 20px;
+        }
         .logo h1 {
-            font-size: 72px;
-            color: #7FD957;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            margin-bottom: 10px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(56px, 9vw, 96px);
+            font-weight: 500;
+            font-style: italic;
+            color: var(--text-0);
+            letter-spacing: -0.02em;
+            line-height: 1;
+            margin-bottom: 14px;
             cursor: pointer;
+            transition: color 0.25s ease-out;
         }
-        .logo p { color: white; font-size: 18px; opacity: 0.9; }
+        .logo h1:hover { color: var(--gold); }
+        .logo h1 .dot {
+            display: inline-block;
+            width: 0.18em;
+            height: 0.18em;
+            border-radius: 50%;
+            background: var(--gold);
+            vertical-align: middle;
+            margin: 0 0.04em 0.2em 0.02em;
+        }
+        .logo p {
+            font-size: 13px;
+            color: var(--text-2);
+            text-transform: uppercase;
+            letter-spacing: 0.32em;
+            font-weight: 400;
+        }
 
         /* ── Search ───────────────────────────────────────────────────── */
         .search-box {
-            background: white;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-            margin-bottom: 30px;
+            background: var(--bg-1);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 26px 28px;
+            margin-bottom: 48px;
             position: relative;
+            transition: border-color 0.2s ease-out;
+        }
+        .search-box:focus-within {
+            border-color: var(--gold-dim);
         }
         .search-input {
             width: 100%;
-            padding: 18px 24px;
-            font-size: 20px;
-            border: 3px solid #5B3A9D;
-            border-radius: 12px;
+            padding: 14px 0;
+            font-size: 22px;
+            font-family: inherit;
+            font-weight: 400;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--line-2);
+            color: var(--text-0);
             outline: none;
-            transition: all 0.3s;
+            transition: border-color 0.2s ease-out;
+        }
+        .search-input::placeholder {
+            color: var(--text-2);
+            font-style: italic;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
         }
         .search-input:focus {
-            border-color: #7FD957;
-            box-shadow: 0 0 0 4px rgba(127, 217, 87, 0.2);
+            border-bottom-color: var(--gold);
         }
-        .search-hint { margin-top: 12px; font-size: 14px; color: #666; }
+        .search-hint {
+            margin-top: 14px;
+            font-size: 12px;
+            color: var(--text-2);
+            letter-spacing: 0.04em;
+        }
         .search-hint code {
-            background: #f0f0f0;
-            padding: 2px 8px;
+            background: var(--bg-3);
+            color: var(--text-1);
+            padding: 3px 9px;
             border-radius: 4px;
             font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            font-size: 11px;
+            margin: 0 2px;
         }
 
         .autocomplete-dropdown {
             position: absolute;
-            left: 30px;
-            right: 30px;
-            top: 78px;
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 12px 28px rgba(0,0,0,0.18);
-            max-height: 360px;
+            left: 28px;
+            right: 28px;
+            top: 76px;
+            background: var(--bg-2);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+            max-height: 380px;
             overflow-y: auto;
             z-index: 50;
         }
         .autocomplete-item {
-            padding: 12px 18px;
+            padding: 14px 20px;
             cursor: pointer;
-            border-bottom: 1px solid #f3f3f3;
+            border-bottom: 1px solid var(--line);
             display: flex;
             flex-direction: column;
-            gap: 2px;
+            gap: 4px;
+            transition: background 0.15s ease-out;
         }
         .autocomplete-item:last-child { border-bottom: none; }
         .autocomplete-item:hover,
         .autocomplete-item.is-active {
-            background: rgba(91,58,157,0.08);
+            background: var(--bg-3);
         }
         .autocomplete-item .ac-label {
-            font-size: 15px;
-            color: #1a1a1a;
+            font-size: 14px;
+            color: var(--text-0);
+            font-weight: 400;
         }
         .autocomplete-item .ac-type {
-            font-size: 11px;
-            color: #888;
+            font-size: 10px;
+            color: var(--gold-dim);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 600;
+            letter-spacing: 0.18em;
+            font-weight: 500;
         }
 
         /* ── Concert cards ────────────────────────────────────────────── */
         .concerts-header {
             display: flex;
-            align-items: center;
+            align-items: baseline;
             justify-content: space-between;
-            margin-bottom: 16px;
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--line);
         }
-        .concerts-title { font-size: 26px; font-weight: 700; color: white; }
+        .concerts-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--text-0);
+            letter-spacing: -0.01em;
+        }
         .concerts-subtitle {
-            font-size: 14px;
-            color: rgba(255,255,255,0.7);
-            margin-top: 4px;
+            font-size: 12px;
+            color: var(--text-2);
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
         }
 
         .concert-card {
-            background: white;
-            border-radius: 16px;
-            padding: 22px 26px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-            margin-bottom: 16px;
-            border-left: 5px solid #7FD957;
-            transition: transform 0.15s, box-shadow 0.15s;
+            background: var(--bg-1);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin-bottom: 14px;
             cursor: pointer;
+            transition: border-color 0.25s ease-out,
+                        transform 0.25s ease-out,
+                        background 0.25s ease-out;
         }
         .concert-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.28);
+            border-color: var(--line-2);
+            background: var(--bg-2);
+            transform: translateY(-1px);
         }
         .concert-meta-row {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             flex-wrap: wrap;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
         .concert-date {
-            font-size: 15px;
-            font-weight: 700;
-            color: #5B3A9D;
-            background: rgba(91,58,157,0.08);
-            padding: 4px 12px;
-            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--gold);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
-        .concert-time { font-size: 14px; color: #888; }
+        .concert-time {
+            font-size: 12px;
+            color: var(--text-2);
+            letter-spacing: 0.04em;
+        }
+        .concert-meta-row .dot-sep {
+            color: var(--text-2);
+            font-size: 10px;
+            opacity: 0.6;
+        }
         .venue-badge {
-            font-size: 11px;
-            font-weight: 700;
-            padding: 3px 10px;
-            border-radius: 8px;
+            font-size: 10px;
+            font-weight: 500;
+            padding: 3px 9px;
+            border-radius: 3px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.14em;
+            border: 1px solid;
         }
-        .venue-leipzig-gewandhaus { background: #FFE5B4; color: #8B5A00; }
-        .venue-leipzig-oper       { background: #FFD2D2; color: #8B0000; }
-        .venue-leipzig-other      { background: #FFEFC2; color: #806000; }
-        .venue-berlin             { background: #D4E5FF; color: #1A4480; }
-        .venue-other              { background: #E8E8E8; color: #555; }
+        .venue-leipzig-gewandhaus { color: var(--amber); border-color: rgba(184, 152, 104, 0.3); }
+        .venue-leipzig-oper       { color: var(--red);   border-color: rgba(199, 89, 89, 0.3); }
+        .venue-leipzig-other      { color: var(--amber); border-color: rgba(184, 152, 104, 0.25); }
+        .venue-berlin             { color: var(--blue);  border-color: rgba(107, 141, 181, 0.3); }
+        .venue-other              { color: var(--text-1); border-color: var(--line-2); }
         .stream-badge {
-            font-size: 11px;
-            font-weight: 700;
-            background: #E3F8E1;
-            color: #2A5C1A;
-            padding: 3px 10px;
-            border-radius: 8px;
+            font-size: 10px;
+            font-weight: 500;
+            color: var(--gold);
+            padding: 3px 9px;
+            border-radius: 3px;
             text-transform: uppercase;
-            letter-spacing: 0.4px;
+            letter-spacing: 0.14em;
+            border: 1px solid rgba(212, 183, 136, 0.3);
         }
         .series-chip {
-            font-size: 12px;
-            color: #5B3A9D;
-            background: rgba(91,58,157,0.08);
-            padding: 3px 10px;
-            border-radius: 8px;
-            font-weight: 600;
+            font-size: 11px;
+            color: var(--text-1);
+            padding: 3px 0;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
         .concert-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 4px;
-            line-height: 1.3;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 500;
+            color: var(--text-0);
+            margin-bottom: 6px;
+            line-height: 1.2;
+            letter-spacing: -0.005em;
         }
         .concert-subtitle {
             font-size: 14px;
-            color: #555;
-            margin-bottom: 10px;
-            line-height: 1.4;
+            color: var(--text-1);
+            margin-bottom: 12px;
+            line-height: 1.5;
+            font-weight: 300;
         }
         .concert-where {
-            font-size: 13px;
-            color: #888;
-            margin-bottom: 10px;
+            font-size: 12px;
+            color: var(--text-2);
+            margin-bottom: 12px;
+            letter-spacing: 0.02em;
         }
         .concert-works-short {
             font-size: 13px;
-            color: #444;
+            color: var(--text-1);
             font-style: italic;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            font-weight: 400;
         }
 
         /* ── Detail view ─────────────────────────────────────────────── */
         .detail-card {
-            background: white;
-            border-radius: 16px;
-            padding: 32px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            background: var(--bg-1);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 48px 56px;
             margin-bottom: 20px;
         }
         .back-link {
-            display: inline-block;
-            color: white;
-            font-size: 14px;
-            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-2);
+            font-size: 12px;
+            margin-bottom: 32px;
             text-decoration: none;
-            padding: 6px 14px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            transition: color 0.2s ease-out;
         }
-        .back-link:hover { background: rgba(255,255,255,0.25); }
+        .back-link:hover { color: var(--gold); }
         .detail-header {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 14px;
             flex-wrap: wrap;
-            margin-bottom: 18px;
+            margin-bottom: 28px;
         }
         .detail-title {
-            font-size: 30px;
-            font-weight: 800;
-            margin: 6px 0 8px 0;
-            line-height: 1.2;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(36px, 5vw, 52px);
+            font-weight: 500;
+            color: var(--text-0);
+            letter-spacing: -0.015em;
+            margin: 16px 0 12px 0;
+            line-height: 1.05;
         }
         .detail-subtitle {
-            font-size: 17px;
-            color: #444;
-            margin-bottom: 18px;
-            line-height: 1.4;
+            font-size: 18px;
+            color: var(--text-1);
+            margin-bottom: 24px;
+            line-height: 1.5;
+            font-weight: 300;
+            font-style: italic;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
         }
         .detail-where {
-            font-size: 15px;
-            color: #666;
-            margin-bottom: 24px;
+            font-size: 13px;
+            color: var(--text-2);
+            margin-bottom: 32px;
+            letter-spacing: 0.04em;
         }
         .detail-section {
-            margin-top: 24px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
+            margin-top: 32px;
+            padding-top: 28px;
+            border-top: 1px solid var(--line);
         }
         .detail-section h3 {
-            font-size: 13px;
+            font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #5B3A9D;
-            margin-bottom: 12px;
-            font-weight: 700;
+            letter-spacing: 0.24em;
+            color: var(--gold-dim);
+            margin-bottom: 18px;
+            font-weight: 500;
         }
         .detail-section ul { list-style: none; padding: 0; }
         .detail-section li {
-            padding: 4px 0;
+            padding: 6px 0;
             font-size: 15px;
-            line-height: 1.5;
+            line-height: 1.6;
+            color: var(--text-0);
+            font-weight: 300;
+        }
+        .detail-section li::before {
+            content: "—";
+            color: var(--gold-dim);
+            margin-right: 12px;
         }
         .detail-description {
             font-size: 15px;
-            line-height: 1.6;
-            color: #333;
+            line-height: 1.75;
+            color: var(--text-1);
             white-space: pre-wrap;
+            font-weight: 300;
+            max-width: 70ch;
         }
         .detail-meta-grid {
             display: grid;
             grid-template-columns: max-content 1fr;
-            gap: 8px 16px;
-            font-size: 14px;
+            gap: 10px 24px;
+            font-size: 13px;
         }
         .detail-meta-grid dt {
-            color: #888;
-            font-weight: 500;
+            color: var(--text-2);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 11px;
+            padding-top: 2px;
         }
-        .detail-meta-grid dd { color: #1a1a1a; }
+        .detail-meta-grid dd {
+            color: var(--text-0);
+            font-weight: 300;
+        }
         .ticket-link-big {
             display: inline-block;
-            margin-top: 20px;
-            background: #5B3A9D;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 10px;
-            font-weight: 600;
+            margin-top: 28px;
+            background: transparent;
+            color: var(--gold);
+            padding: 14px 28px;
+            border: 1px solid var(--gold);
+            border-radius: 4px;
+            font-weight: 500;
             text-decoration: none;
-            font-size: 15px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            transition: background 0.2s ease-out, color 0.2s ease-out;
         }
-        .ticket-link-big:hover { background: #4a2f80; }
+        .ticket-link-big:hover {
+            background: var(--gold);
+            color: var(--bg-0);
+        }
 
         /* ── Search results ──────────────────────────────────────────── */
         .results { display: grid; gap: 20px; }
         .section {
-            background: white;
-            border-radius: 16px;
-            padding: 25px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            background: var(--bg-1);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 32px 36px;
         }
         .section-header {
             display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #f0f0f0;
+            align-items: baseline;
+            gap: 14px;
+            margin-bottom: 24px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--line);
         }
-        .section-title { font-size: 22px; font-weight: 700; color: #333; }
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--text-0);
+            letter-spacing: -0.01em;
+        }
         .section-count {
-            background: #5B3A9D;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 600;
+            color: var(--gold-dim);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
         }
         .composer-item, .work-item {
             padding: 16px 20px;
-            background: #f8f9fa;
-            border-radius: 12px;
-            margin-bottom: 12px;
+            background: transparent;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            margin-bottom: 10px;
             cursor: pointer;
-            transition: all 0.2s;
-            border-left: 4px solid transparent;
+            transition: border-color 0.2s ease-out, background 0.2s ease-out;
         }
-        .composer-item { border-left-color: #5B3A9D; }
-        .work-item { border-left-color: #7FD957; }
         .composer-item:hover, .work-item:hover {
-            background: #e9ecef;
-            transform: translateX(4px);
+            border-color: var(--gold-dim);
+            background: var(--bg-2);
         }
-        .item-title { font-weight: 600; color: #333; font-size: 18px; margin-bottom: 6px; }
-        .item-subtitle { color: #666; font-size: 14px; }
-        .work-meta { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 8px; font-size: 13px; }
-        .work-composer { color: #5B3A9D; font-weight: 600; }
-        .work-opus { color: #7FD957; font-weight: 500; }
-        .work-genre { color: #999; }
+        .item-title {
+            font-weight: 400;
+            color: var(--text-0);
+            font-size: 17px;
+            margin-bottom: 6px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+        }
+        .item-subtitle {
+            color: var(--text-2);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+        .work-meta {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+            font-size: 12px;
+        }
+        .work-composer { color: var(--gold); letter-spacing: 0.04em; }
+        .work-opus { color: var(--text-1); font-family: ui-monospace, monospace; }
+        .work-genre {
+            color: var(--text-2);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 10px;
+        }
 
         .performance-card {
-            background: white;
-            padding: 14px 16px;
-            border-radius: 8px;
+            background: var(--bg-2);
+            padding: 18px 20px;
+            border-radius: 6px;
             margin-bottom: 10px;
-            border-left: 3px solid #7FD957;
+            border: 1px solid var(--line);
             cursor: pointer;
-            transition: all 0.15s;
+            transition: border-color 0.2s ease-out, background 0.2s ease-out;
         }
         .performance-card:hover {
-            background: #f8fffb;
-            transform: translateX(2px);
+            border-color: var(--gold-dim);
+            background: var(--bg-3);
         }
         .matched-entry {
-            background: rgba(127, 217, 87, 0.15);
-            border-left: 3px solid #7FD957;
-            padding: 8px 12px;
-            border-radius: 6px;
+            background: var(--gold-glow);
+            border-left: 2px solid var(--gold);
+            padding: 10px 14px;
+            border-radius: 0 4px 4px 0;
             font-size: 13px;
-            color: #2a4a1a;
-            margin: 6px 0;
-            font-weight: 500;
+            color: var(--gold);
+            margin: 8px 0;
+            font-weight: 400;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            font-style: italic;
         }
 
         /* ── Misc ─────────────────────────────────────────────────────── */
@@ -363,31 +544,35 @@
             display: block;
             width: 100%;
             padding: 16px;
-            font-size: 16px;
-            font-weight: 700;
-            color: #5B3A9D;
-            background: white;
-            border: none;
-            border-radius: 14px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-1);
+            background: transparent;
+            border: 1px solid var(--line-2);
+            border-radius: 6px;
             cursor: pointer;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-            transition: all 0.2s;
-            margin-top: 8px;
+            transition: border-color 0.2s ease-out,
+                        color 0.2s ease-out,
+                        background 0.2s ease-out;
+            margin-top: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-family: inherit;
         }
         #loadMoreBtn:hover:not(:disabled) {
-            background: #7FD957;
-            color: #1a1a1a;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            border-color: var(--gold);
+            color: var(--gold);
+            background: var(--bg-1);
         }
-        #loadMoreBtn:disabled { opacity: 0.5; cursor: default; }
+        #loadMoreBtn:disabled { opacity: 0.4; cursor: default; }
 
-        .loading { text-align: center; padding: 60px; color: white; }
+        .loading { text-align: center; padding: 60px; color: var(--text-2); }
         .spinner {
-            border: 4px solid rgba(255,255,255,0.3);
-            border-top: 4px solid white;
+            border: 2px solid var(--line);
+            border-top: 2px solid var(--gold);
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            width: 32px;
+            height: 32px;
             animation: spin 1s linear infinite;
             margin: 0 auto 20px;
         }
@@ -398,32 +583,62 @@
 
         .no-results {
             text-align: center;
-            padding: 40px;
-            color: #666;
-            background: white;
-            border-radius: 16px;
+            padding: 56px 32px;
+            color: var(--text-2);
+            background: var(--bg-1);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+        }
+        .no-results h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--text-0);
+            margin-bottom: 10px;
+        }
+        .no-results p {
+            font-size: 14px;
+            line-height: 1.6;
         }
 
         #concertsLoadingMsg {
             text-align: center;
-            color: rgba(255,255,255,0.8);
-            padding: 12px 0;
-            font-size: 15px;
+            color: var(--text-2);
+            padding: 16px 0;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
         }
         #noMoreMsg {
             text-align: center;
-            color: rgba(255,255,255,0.6);
-            padding: 14px;
+            color: var(--text-2);
+            padding: 18px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-family: 'Cormorant Garamond', serif;
             font-size: 14px;
+            text-transform: none;
+            letter-spacing: 0;
+            font-style: italic;
         }
         #scrollSentinel { height: 1px; }
         .hidden { display: none !important; }
+
+        /* ── Scrollbar (subtle) ──────────────────────────────────────── */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb {
+            background: var(--bg-3);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover { background: var(--line-2); }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="logo">
-            <h1 id="logoTitle">op.us</h1>
+            <h1 id="logoTitle">nachtmusik<span class="dot"></span></h1>
             <p>find classical music live</p>
         </div>
 
@@ -434,14 +649,14 @@
                     type="text"
                     id="searchInput"
                     class="search-input"
-                    placeholder="z.B. Brahms 3. Sinfonie"
+                    placeholder="Suche nach Werk, Komponist oder Konzert …"
                     autocomplete="off"
                 >
                 <div class="search-hint">
-                    Beispiele:
-                    <code>mahler 3</code> ·
-                    <code>brahms requiem</code> ·
-                    <code>bach weihnachts-oratorium</code>
+                    Versuche
+                    <code>mahler 3</code>
+                    <code>brahms requiem</code>
+                    <code>rachmaninow klavierkonzert 2</code>
                 </div>
                 <div id="autocompleteDropdown" class="autocomplete-dropdown hidden"></div>
             </div>
@@ -461,9 +676,9 @@
                     </div>
                 </div>
                 <div id="concertsList"></div>
-                <div id="concertsLoadingMsg" class="hidden">Lade Konzerte…</div>
-                <button id="loadMoreBtn" class="hidden">Weitere laden</button>
-                <div id="noMoreMsg" class="hidden">Alle Konzerte geladen</div>
+                <div id="concertsLoadingMsg" class="hidden">Lade Konzerte …</div>
+                <button id="loadMoreBtn" class="hidden">Mehr anzeigen</button>
+                <div id="noMoreMsg" class="hidden">Das war's für jetzt.</div>
                 <div id="scrollSentinel"></div>
             </div>
         </div>
