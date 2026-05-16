@@ -18,6 +18,7 @@ import asyncio
 import importlib
 import json
 import os
+import random
 import re
 import sys
 from datetime import datetime, date
@@ -226,9 +227,12 @@ async def run(slug: str, dry_run: bool = False, max_events: int | None = None) -
 
     # Step 1: Listing
     teasers = await scrape_listing(config)
-    if max_events:
-        teasers = teasers[:max_events]
-    print(f"  Found {len(teasers)} event URLs on listing page")
+    total_found = len(teasers)
+    if max_events and len(teasers) > max_events:
+        teasers = random.sample(teasers, max_events)
+        print(f"  Found {total_found} event URLs on listing page (smoke: sampled {max_events} random)")
+    else:
+        print(f"  Found {total_found} event URLs on listing page")
 
     if not teasers:
         print("  WARNING: no events found — check event_url_pattern in config")

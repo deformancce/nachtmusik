@@ -37,39 +37,60 @@ jobs:
           pip install --quiet crawl4ai pydantic anthropic fastapi
           python3 -m playwright install --with-deps chromium
 
-      - name: Run all Tier-1 scrapers
+      - name: Scrape each Tier-1 venue and commit after each
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           PYTHONUNBUFFERED: "1"
           MAX_EVENTS: ${{ github.event.inputs.max_events }}
         run: |
-          if [ -n "$MAX_EVENTS" ]; then
-            python3 -m backend.scrape.run_scraper --all-tier 1 --max-events "$MAX_EVENTS"
-          else
-            python3 -m backend.scrape.run_scraper --all-tier 1
-          fi
-
-      - name: Commit and push results
-        env:
-          MAX_EVENTS: ${{ github.event.inputs.max_events }}
-        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add backend/*_events.json
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-            exit 0
-          fi
+
+          BRANCH="${{ github.event.inputs.branch || 'main' }}"
           if [ -n "$MAX_EVENTS" ]; then
-            MSG="Refresh Tier-1 events [smoke max=$MAX_EVENTS]"
+            TAG="[smoke max=$MAX_EVENTS]"
+            ARG=(--max-events "$MAX_EVENTS")
           else
-            MSG="Refresh Tier-1 events (manual scrape run)"
+            TAG=""
+            ARG=()
           fi
-          git commit -m "$MSG"
-          BRANCH="${GITHUB_REF_NAME:-main}"
-          for i in 1 2 3; do
-            git pull --rebase --autostash origin "$BRANCH" || true
-            if git push origin "HEAD:$BRANCH"; then exit 0; fi
-            sleep $((i * 3))
+
+          # Collect tier-1 slugs that have a config
+          SLUGS=$(python3 -c "
+          import re, pathlib
+          from backend.venues_germany import get_venues_by_tier
+          base = pathlib.Path('backend/scrape/configs')
+          for v in get_venues_by_tier(1):
+              slug = re.sub(r'[^a-z0-9]+', '_', v['name'].lower()).strip('_')
+              if (base / f'{slug}.py').exists():
+                  print(slug)
+          ")
+
+          for slug in $SLUGS; do
+            echo "::group::Scraping $slug"
+            python3 -m backend.scrape.run_scraper "$slug" "${ARG[@]}" || {
+              echo "::warning::Scraper failed for $slug, continuing"
+              echo "::endgroup::"
+              continue
+            }
+            echo "::endgroup::"
+
+            FILE="backend/${slug}_events.json"
+            if [ ! -f "$FILE" ]; then
+              echo "No output for $slug, skipping commit"
+              continue
+            fi
+            git add "$FILE"
+            if git diff --cached --quiet; then
+              echo "No changes for $slug"
+              continue
+            fi
+            MSG="Refresh ${slug} events ${TAG}"
+            git commit -m "$MSG"
+            for i in 1 2 3; do
+              git pull --rebase --autostash origin "$BRANCH" || true
+              if git push origin "HEAD:$BRANCH"; then break; fi
+              [ $i -eq 3 ] && { echo "::error::push failed for $slug"; exit 1; }
+              sleep $((i * 3))
+            done
           done
-          exit 1
