@@ -1,24 +1,81 @@
 {
   "venue": "Liederhalle Stuttgart",
   "city": "Stuttgart",
-  "scraped_at": "2026-05-16T19:56:50.501140Z",
+  "scraped_at": "2026-05-16T20:26:55.918062Z",
   "total_events": 5,
   "events": [
     {
-      "detail_url": "https://liederhalle.de/veranstaltung/tim-bendzko-alles-nur-nicht-zurueck",
-      "title": "Tim Bendzko: Alles, nur nicht zurück",
+      "detail_url": "https://liederhalle.de/veranstaltung/chopin-preistraeger",
+      "title": "Chopin Preisträger",
+      "date": "Mittwoch, 20.5.2026",
+      "time": "19:30 Uhr",
+      "venue_hall": "Beethoven-Saal",
+      "program": [
+        "Robert Schumann: Waldszenen op. 82",
+        "Frédéric Chopin: Polonaise Nr. 2 op. 71",
+        "Frédéric Chopin: Ballade Nr. 4 op. 52",
+        "Frédéric Chopin: Sonate Nr. 3 op. 58",
+        "Franz Schubert: Impromptu D 935 op. 142/1"
+      ],
+      "performers": [],
+      "conductor": null,
+      "duration_min": null,
+      "intro": "The eighth evening of the Meisterpianisten series celebrates the 100th anniversary of the Chopin Competition, which has launched legendary pianists such as Maurizio Pollini, Martha Argerich, and Krystian Zimerman. The program features solo piano works by Schumann, Chopin, and Schubert.",
+      "venue": "Liederhalle Stuttgart",
+      "hall": "Beethoven-Saal",
+      "city": "Stuttgart"
+    },
+    {
+      "detail_url": "https://liederhalle.de/veranstaltung/cornamusa-world-of-pipe-rock-and-irish-dance",
+      "title": "Cornamusa - World of Pipe Rock and Irish Dance",
       "date": "Sonntag, 17.5.2026",
-      "time": "20:00 Uhr",
-      "venue_hall": "Hegel-Saal",
+      "time": "18:00 Uhr",
+      "venue_hall": "Beethoven-Saal",
       "program": [],
       "performers": [
-        "Tim Bendzko (vocalist)"
+        "Cornamusa (live band and dancers)"
       ],
       "conductor": null,
       "duration_min": null,
-      "intro": "Tim Bendzko performs his tour 'Alles, nur nicht zurück' in support of his upcoming album of the same name, rescheduled from April 29, 2025 to May 17, 2026 at the Hegel-Saal in Stuttgart.",
+      "intro": "Award-winning dancers and a seven-piece live band bring 'Im Schatten der Krone' (In the Shadow of the Crown) to life in a captivating show full of emotion, rhythm, and artistic expression.",
+      "venue": "Liederhalle Stuttgart",
+      "hall": "Beethoven-Saal",
+      "city": "Stuttgart"
+    },
+    {
+      "detail_url": "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
+      "title": "SWR Symphonieorchester: Dans la cuisine du chef",
+      "date": "Mittwoch, 20.5.2026",
+      "time": "19:00 Uhr",
+      "venue_hall": "Hegel-Saal",
+      "program": [
+        "Joseph Haydn: Sinfonie Nr. 101 D-Dur (\"Die Uhr\")"
+      ],
+      "performers": [
+        "SWR Symphonieorchester (orchestra)"
+      ],
+      "conductor": "François-Xavier Roth",
+      "duration_min": null,
+      "intro": "An open rehearsal with chief conductor François-Xavier Roth, where he invites the audience to explore the unique recipes of great masterworks, uncovering the layers and ingredients that composers like Haydn used to craft their works.",
       "venue": "Liederhalle Stuttgart",
       "hall": "Hegel-Saal",
+      "city": "Stuttgart"
+    },
+    {
+      "detail_url": "https://liederhalle.de/veranstaltung/bee-gees-by-maincourse-europas-groesste-bee-gees-tribute-show-0",
+      "title": "Bee Gees by Maincourse: Europas größte Bee Gees Tribute Show",
+      "date": "Donnerstag, 21.5.2026",
+      "time": "19:30 Uhr",
+      "venue_hall": "Beethoven-Saal",
+      "program": [],
+      "performers": [
+        "Bee Gees by MainCourse (band)"
+      ],
+      "conductor": null,
+      "duration_min": null,
+      "intro": "Bee Gees by MainCourse brings Europe's biggest Bee Gees tribute show to the Beethoven-Saal, recreating the timeless hits of the Bee Gees with the energy and power of a live band performing today.",
+      "venue": "Liederhalle Stuttgart",
+      "hall": "Beethoven-Saal",
       "city": "Stuttgart"
     },
     {
@@ -37,57 +94,7 @@
       ],
       "conductor": null,
       "duration_min": null,
-      "intro": "This chamber concert by the Staatsorchester Stuttgart explores the connection between concert music and film, featuring works by Nino Rota, Ralph Vaughan Williams, and Erich Wolfgang Korngold – three composers whose musical styles were shaped by their work in cinema.",
-      "venue": "Liederhalle Stuttgart",
-      "hall": "Mozart-Saal",
-      "city": "Stuttgart"
-    },
-    {
-      "detail_url": "https://liederhalle.de/veranstaltung/mariani-klavierquartett",
-      "title": "Mariani Klavierquartett",
-      "date": "Donnerstag, 21.5.2026",
-      "time": "19:30 Uhr",
-      "venue_hall": "Mozart-Saal",
-      "_detail_error": "Expecting ',' delimiter: line 15 column 151 (char 568)",
-      "venue": "Liederhalle Stuttgart",
-      "hall": "Mozart-Saal",
-      "city": "Stuttgart"
-    },
-    {
-      "detail_url": "https://liederhalle.de/veranstaltung/homin-choir",
-      "title": "Homin Choir",
-      "date": "Montag, 18.5.2026",
-      "time": "19:00 Uhr",
-      "venue_hall": "Mozart-Saal",
-      "program": [],
-      "performers": [
-        "Homin Choir (choir)"
-      ],
-      "conductor": null,
-      "duration_min": null,
-      "intro": "The Lemberg-based professional choir Homin, founded in 1988, performs a wide range of choral music including Ukrainian folk and patriotic songs, sacred music, and contemporary compositions. The ensemble has toured extensively across Europe and America, promoting Ukrainian choral art.",
-      "venue": "Liederhalle Stuttgart",
-      "hall": "Mozart-Saal",
-      "city": "Stuttgart"
-    },
-    {
-      "detail_url": "https://liederhalle.de/veranstaltung/jubilaeumskonzert-75-jahre-orchester-stuttgarter-musikfreunde",
-      "title": "Jubiläumskonzert - 75 Jahre Orchester Stuttgarter Musikfreunde",
-      "date": "Sonntag, 17.5.2026",
-      "time": "19:00 Uhr",
-      "venue_hall": "Mozart-Saal",
-      "program": [
-        "Carl Maria von Weber: Freischütz Ouvertüre",
-        "Wolfgang Amadeus Mozart: Violinkonzert Nr. 3 in G-Dur",
-        "Antonín Dvořák: Sinfonie Nr. 9 (Aus der neuen Welt)"
-      ],
-      "performers": [
-        "Christine Busch (Violine)",
-        "Orchester Stuttgarter Musikfreunde (OSM) e.V. (Orchester)"
-      ],
-      "conductor": "Klaus Kulling",
-      "duration_min": null,
-      "intro": "Jubiläumskonzert zum 75-jährigen Bestehen des Orchesters Stuttgarter Musikfreunde, mit Werken von Weber, Mozart und Dvořák. Als Solistin im Mozartschen Violinkonzert tritt Christine Busch auf.",
+      "intro": "A chamber concert themed around film music featuring works by Nino Rota, Ralph Vaughan Williams, and Erich Wolfgang Korngold, exploring the intersection of cinematic and concert music traditions. The program ranges from Rota's lyrical Clarinet Trio to Korngold's passionate Piano Quintet op. 15.",
       "venue": "Liederhalle Stuttgart",
       "hall": "Mozart-Saal",
       "city": "Stuttgart"
