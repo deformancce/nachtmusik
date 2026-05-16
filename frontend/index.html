@@ -188,6 +188,200 @@
             font-weight: 500;
         }
 
+        /* ── Filter bar ───────────────────────────────────────────────── */
+        .filter-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 56px;
+            padding: 0 4px;
+        }
+        .filter-label {
+            font-size: 11px;
+            color: var(--text-2);
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            margin-right: 4px;
+        }
+        .filter-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-1);
+            border: 1px solid var(--line);
+            color: var(--text-1);
+            padding: 8px 14px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-family: inherit;
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s, background 0.2s;
+            letter-spacing: 0.04em;
+            position: relative;
+        }
+        .filter-chip:hover {
+            border-color: var(--gold-dim);
+            color: var(--text-0);
+        }
+        .filter-chip.is-active {
+            border-color: var(--gold);
+            color: var(--gold);
+            background: var(--bg-2);
+        }
+        .filter-chip .chip-count {
+            background: var(--gold);
+            color: var(--bg-0);
+            font-size: 10px;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 9px;
+            min-width: 18px;
+            text-align: center;
+        }
+        .filter-chip .chip-caret {
+            font-size: 9px;
+            color: var(--text-2);
+            margin-left: 2px;
+        }
+        .filter-reset {
+            font-size: 11px;
+            color: var(--text-2);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            padding: 8px 6px;
+            transition: color 0.2s;
+            font-family: inherit;
+        }
+        .filter-reset:hover { color: var(--gold); }
+
+        .filter-panel {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            background: var(--bg-2);
+            border: 1px solid var(--line-2);
+            border-radius: 6px;
+            box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
+            min-width: 260px;
+            max-height: 320px;
+            overflow-y: auto;
+            z-index: 40;
+            padding: 8px 0;
+        }
+        .filter-panel.is-date {
+            min-width: 280px;
+            padding: 16px 18px;
+        }
+        .filter-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 9px 16px;
+            cursor: pointer;
+            font-size: 13px;
+            color: var(--text-0);
+            transition: background 0.15s;
+            user-select: none;
+        }
+        .filter-option:hover { background: var(--bg-3); }
+        .filter-option .opt-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .filter-option input[type="checkbox"] {
+            appearance: none;
+            width: 14px;
+            height: 14px;
+            border: 1px solid var(--line-2);
+            border-radius: 2px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+            transition: border-color 0.15s, background 0.15s;
+        }
+        .filter-option input[type="checkbox"]:checked {
+            background: var(--gold);
+            border-color: var(--gold);
+        }
+        .filter-option input[type="checkbox"]:checked::after {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 1px;
+            width: 4px;
+            height: 8px;
+            border-right: 2px solid var(--bg-0);
+            border-bottom: 2px solid var(--bg-0);
+            transform: rotate(45deg);
+        }
+        .filter-option .opt-count {
+            font-size: 10px;
+            color: var(--text-2);
+            letter-spacing: 0.08em;
+        }
+        .filter-panel-label {
+            font-size: 10px;
+            color: var(--text-2);
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .date-input {
+            width: 100%;
+            background: var(--bg-1);
+            border: 1px solid var(--line);
+            color: var(--text-0);
+            padding: 10px 12px;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 13px;
+            margin-bottom: 14px;
+            color-scheme: dark;
+        }
+        .date-input:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+
+        /* ── Notification stub (empty-state) ──────────────────────────── */
+        .notify-stub {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 22px;
+            background: transparent;
+            color: var(--text-2);
+            border: 1px solid var(--line-2);
+            padding: 12px 22px;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            cursor: not-allowed;
+            opacity: 0.55;
+            position: relative;
+        }
+        .notify-stub::before {
+            content: "🔔";
+            font-size: 13px;
+            opacity: 0.7;
+        }
+        .notify-stub .stub-hint {
+            font-size: 9px;
+            color: var(--text-2);
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            margin-left: 6px;
+            opacity: 0.7;
+        }
+
         /* ── Concert cards ────────────────────────────────────────────── */
         .concerts-header {
             display: flex;
@@ -661,6 +855,34 @@
                 <div id="autocompleteDropdown" class="autocomplete-dropdown hidden"></div>
             </div>
 
+            <!-- Filter bar — populated from /api/filters on page load -->
+            <div class="filter-bar" id="filterBar">
+                <span class="filter-label">Filter</span>
+                <div class="filter-chip-wrap" style="position:relative;">
+                    <button class="filter-chip" data-filter="city">
+                        Stadt <span class="chip-caret">▾</span>
+                    </button>
+                </div>
+                <div class="filter-chip-wrap" style="position:relative;">
+                    <button class="filter-chip" data-filter="venue">
+                        Spielstätte <span class="chip-caret">▾</span>
+                    </button>
+                </div>
+                <div class="filter-chip-wrap" style="position:relative;">
+                    <button class="filter-chip" data-filter="date">
+                        Datum <span class="chip-caret">▾</span>
+                    </button>
+                </div>
+                <div class="filter-chip-wrap" style="position:relative;">
+                    <button class="filter-chip" data-filter="series">
+                        Format <span class="chip-caret">▾</span>
+                    </button>
+                </div>
+                <button class="filter-reset hidden" id="filterReset">
+                    Zurücksetzen
+                </button>
+            </div>
+
             <div id="loadingDiv" class="loading hidden">
                 <div class="spinner"></div>
                 <p>Suche...</p>
@@ -922,6 +1144,197 @@
             location.hash = '';
         });
 
+        // ── Filter state ─────────────────────────────────────────────────────
+        let filterOptions = null;   // populated from /api/filters
+        const activeFilters = {
+            city: new Set(),
+            venue: new Set(),
+            series: new Set(),
+            from_date: "",
+            to_date: "",
+        };
+        let activePanel = null;     // currently-open filter panel element
+
+        function buildEventsQuery() {
+            const p = new URLSearchParams();
+            p.set("skip", String(concertsSkip));
+            p.set("limit", String(PAGE_SIZE));
+            if (activeFilters.city.size)   p.set("city",   [...activeFilters.city].join(","));
+            if (activeFilters.venue.size)  p.set("venue",  [...activeFilters.venue].join(","));
+            if (activeFilters.series.size) p.set("series", [...activeFilters.series].join(","));
+            if (activeFilters.from_date)   p.set("from_date", activeFilters.from_date);
+            if (activeFilters.to_date)     p.set("to_date",   activeFilters.to_date);
+            return p.toString();
+        }
+
+        function activeFilterCount() {
+            return activeFilters.city.size
+                 + activeFilters.venue.size
+                 + activeFilters.series.size
+                 + (activeFilters.from_date ? 1 : 0)
+                 + (activeFilters.to_date ? 1 : 0);
+        }
+
+        function updateFilterChips() {
+            // Reflect counts on the chip buttons + show/hide reset button
+            const counts = {
+                city: activeFilters.city.size,
+                venue: activeFilters.venue.size,
+                series: activeFilters.series.size,
+                date: (activeFilters.from_date || activeFilters.to_date) ? 1 : 0,
+            };
+            document.querySelectorAll('.filter-chip[data-filter]').forEach(btn => {
+                const f = btn.dataset.filter;
+                const n = counts[f] || 0;
+                btn.classList.toggle('is-active', n > 0);
+                // Strip any existing count badge, then re-add if needed
+                const old = btn.querySelector('.chip-count');
+                if (old) old.remove();
+                if (n > 0) {
+                    const badge = document.createElement('span');
+                    badge.className = 'chip-count';
+                    badge.textContent = String(n);
+                    btn.insertBefore(badge, btn.querySelector('.chip-caret'));
+                }
+            });
+            const total = activeFilterCount();
+            document.getElementById('filterReset').classList.toggle('hidden', total === 0);
+        }
+
+        function closePanel() {
+            if (activePanel) {
+                activePanel.remove();
+                activePanel = null;
+            }
+        }
+
+        function openPanel(chipBtn, filterKey) {
+            closePanel();
+            const panel = document.createElement('div');
+            panel.className = 'filter-panel';
+
+            if (filterKey === 'date') {
+                panel.classList.add('is-date');
+                panel.innerHTML = `
+                    <label class="filter-panel-label">Von</label>
+                    <input type="date" class="date-input" id="dateFromInput"
+                           value="${escapeAttr(activeFilters.from_date)}"
+                           min="${escapeAttr(filterOptions?.date_range?.min || '')}"
+                           max="${escapeAttr(filterOptions?.date_range?.max || '')}">
+                    <label class="filter-panel-label">Bis</label>
+                    <input type="date" class="date-input" id="dateToInput"
+                           value="${escapeAttr(activeFilters.to_date)}"
+                           min="${escapeAttr(filterOptions?.date_range?.min || '')}"
+                           max="${escapeAttr(filterOptions?.date_range?.max || '')}">
+                `;
+                chipBtn.parentNode.appendChild(panel);
+                panel.querySelector('#dateFromInput').addEventListener('change', (e) => {
+                    activeFilters.from_date = e.target.value;
+                    updateFilterChips();
+                    reloadConcerts();
+                });
+                panel.querySelector('#dateToInput').addEventListener('change', (e) => {
+                    activeFilters.to_date = e.target.value;
+                    updateFilterChips();
+                    reloadConcerts();
+                });
+            } else {
+                // Multi-select list. Source depends on the key.
+                const listKey = filterKey === 'city' ? 'cities'
+                              : filterKey === 'venue' ? 'venues'
+                              : 'series';
+                let opts = (filterOptions && filterOptions[listKey]) || [];
+                // Venues filtered by currently-selected cities (if any)
+                if (filterKey === 'venue' && activeFilters.city.size) {
+                    opts = opts.filter(o => !o.city || activeFilters.city.has(o.city));
+                }
+                if (!opts.length) {
+                    panel.innerHTML = `<div style="padding:14px 18px;color:var(--text-2);font-size:12px;">Keine Optionen</div>`;
+                } else {
+                    panel.innerHTML = opts.map(o => {
+                        const checked = activeFilters[filterKey].has(o.name);
+                        return `<label class="filter-option">
+                            <span class="opt-left">
+                                <input type="checkbox" data-value="${escapeAttr(o.name)}"${checked ? ' checked' : ''}>
+                                <span>${escapeHtml(o.name)}</span>
+                            </span>
+                            <span class="opt-count">${o.count}</span>
+                        </label>`;
+                    }).join('');
+                }
+                chipBtn.parentNode.appendChild(panel);
+                panel.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                    cb.addEventListener('change', () => {
+                        const v = cb.dataset.value;
+                        if (cb.checked) activeFilters[filterKey].add(v);
+                        else            activeFilters[filterKey].delete(v);
+                        // Clearing cities should clear the venues that no longer
+                        // belong to a selected city (otherwise stale filter).
+                        if (filterKey === 'city' && activeFilters.venue.size) {
+                            const cities = activeFilters.city;
+                            for (const v of [...activeFilters.venue]) {
+                                const venueObj = (filterOptions.venues || []).find(x => x.name === v);
+                                if (cities.size && venueObj && venueObj.city
+                                        && !cities.has(venueObj.city)) {
+                                    activeFilters.venue.delete(v);
+                                }
+                            }
+                        }
+                        updateFilterChips();
+                        reloadConcerts();
+                    });
+                });
+            }
+            activePanel = panel;
+        }
+
+        document.querySelectorAll('.filter-chip[data-filter]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (activePanel && activePanel.parentNode === btn.parentNode) {
+                    closePanel();
+                } else {
+                    openPanel(btn, btn.dataset.filter);
+                }
+            });
+        });
+        document.getElementById('filterReset').addEventListener('click', () => {
+            activeFilters.city.clear();
+            activeFilters.venue.clear();
+            activeFilters.series.clear();
+            activeFilters.from_date = "";
+            activeFilters.to_date = "";
+            closePanel();
+            updateFilterChips();
+            reloadConcerts();
+        });
+        // Click outside the panel to close it
+        document.addEventListener('click', (e) => {
+            if (activePanel && !e.target.closest('.filter-panel')
+                            && !e.target.closest('.filter-chip')) {
+                closePanel();
+            }
+        });
+
+        async function loadFilterOptions() {
+            try {
+                const res = await fetch(`${API_URL}/api/filters`);
+                filterOptions = await res.json();
+            } catch (err) {
+                console.error('Filter-Optionen konnten nicht geladen werden:', err);
+                filterOptions = { cities: [], venues: [], series: [], date_range: {} };
+            }
+        }
+
+        function reloadConcerts() {
+            // Reset pagination + clear the list, then fetch the first page
+            concertsSkip = 0;
+            concertsExhausted = false;
+            concertsList.innerHTML = '';
+            noMoreMsg.classList.add('hidden');
+            loadMoreConcerts();
+        }
+
         // ── Concerts feed (infinite scroll) ─────────────────────────────────
         let concertsSkip = 0;
         let concertsTotal = null;
@@ -935,10 +1348,12 @@
             loadMoreBtn.disabled = true;
 
             try {
-                const res = await fetch(`${API_URL}/api/events?skip=${concertsSkip}&limit=${PAGE_SIZE}`);
+                const res = await fetch(`${API_URL}/api/events?${buildEventsQuery()}`);
                 const data = await res.json();
                 concertsTotal = data.total;
-                concertsSubtitle.textContent = `${concertsTotal} Konzert${concertsTotal !== 1 ? 'e' : ''} gefunden`;
+                const suffix = activeFilterCount() ? ' · gefiltert' : '';
+                concertsSubtitle.textContent =
+                    `${concertsTotal} Konzert${concertsTotal !== 1 ? 'e' : ''}${suffix}`;
 
                 data.events.forEach(e => {
                     eventsById.set(e.id, e);
@@ -949,7 +1364,16 @@
                 if (!data.has_more || data.events.length === 0) {
                     concertsExhausted = true;
                     loadMoreBtn.classList.add('hidden');
-                    noMoreMsg.classList.remove('hidden');
+                    if (data.events.length === 0 && concertsSkip === 0) {
+                        // Filtered to zero results — show a tasteful empty state
+                        concertsList.innerHTML = `<div class="no-results">
+                            <h3>Keine Konzerte für diese Filterauswahl.</h3>
+                            <p>Probiere weniger restriktive Filter — oder setze sie zurück.</p>
+                        </div>`;
+                        noMoreMsg.classList.add('hidden');
+                    } else {
+                        noMoreMsg.classList.remove('hidden');
+                    }
                 } else {
                     loadMoreBtn.classList.remove('hidden');
                     noMoreMsg.classList.add('hidden');
@@ -1210,14 +1634,18 @@
             </div>`;
             if (!sorted.length) {
                 resultsDiv.innerHTML = `<div class="section">${header}
-                    <div style="padding:24px 8px;text-align:center;">
-                        <p style="font-weight:600;color:#333;margin-bottom:10px;font-size:16px;">
-                            Aktuell keine Aufführung von „${escapeHtml(composer)} — ${escapeHtml(work)}" in der Datenbank.
+                    <div style="padding:32px 8px;text-align:center;">
+                        <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--text-0);margin-bottom:12px;line-height:1.3;">
+                            Aktuell keine Aufführung von „${escapeHtml(composer)} — ${escapeHtml(work)}"
                         </p>
-                        <p style="font-size:13px;color:#888;line-height:1.6;">
+                        <p style="font-size:13px;color:var(--text-2);line-height:1.7;max-width:46ch;margin:0 auto;">
                             Leipzig und Berlin haben dieses Werk gerade nicht im Spielplan.<br>
                             Schau in ein paar Tagen wieder vorbei — die Programme ergänzen sich laufend.
                         </p>
+                        <button class="notify-stub" disabled title="Diese Funktion ist in Vorbereitung.">
+                            Benachrichtigen
+                            <span class="stub-hint">bald verfügbar</span>
+                        </button>
                     </div>
                 </div>`;
                 return;
@@ -1245,7 +1673,10 @@
 
         // ── Init ────────────────────────────────────────────────────────────
         handleRoute();
-        loadMoreConcerts();
+        loadFilterOptions().then(() => {
+            // Filter options + first page of events in parallel-ish
+            loadMoreConcerts();
+        });
     </script>
 </body>
 </html>

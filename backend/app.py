@@ -660,27 +660,106 @@ def get_work_performances(
     }
 
 
+@app.get("/api/filters")
+def get_filter_options():
+    """Aggregate the distinct filter values currently present in EVENTS,
+    so the frontend can populate the city / venue / series dropdowns
+    with only choices that actually have concerts behind them.
+
+    Cities and venues come back sorted by event count (most-programmed
+    first); series too. Date range is the min/max date in the data."""
+    from collections import Counter
+    from datetime import date as _date
+
+    today = _date.today().isoformat()
+    upcoming = [e for e in EVENTS if (e.get("date") or "0000-00-00") >= today]
+
+    city_counts:   Counter = Counter()
+    venue_counts:  Counter = Counter()
+    series_counts: Counter = Counter()
+    # Venue → which cities it lives in (so the frontend can show the right
+    # venues when the user picks a city). Most venues are in exactly one city.
+    venue_city: Dict[str, str] = {}
+    dates: List[str] = []
+    for e in upcoming:
+        if e.get("city"):
+            city_counts[e["city"]] += 1
+        if e.get("venue"):
+            venue_counts[e["venue"]] += 1
+            if e.get("city"):
+                venue_city[e["venue"]] = e["city"]
+        if e.get("series"):
+            series_counts[e["series"]] += 1
+        if e.get("date"):
+            dates.append(e["date"])
+
+    return {
+        "cities":  [{"name": c, "count": n} for c, n in city_counts.most_common()],
+        "venues":  [{"name": v, "count": n, "city": venue_city.get(v, "")}
+                    for v, n in venue_counts.most_common()],
+        "series":  [{"name": s, "count": n} for s, n in series_counts.most_common()],
+        "date_range": {
+            "min": min(dates) if dates else today,
+            "max": max(dates) if dates else today,
+        },
+        "total_upcoming": len(upcoming),
+    }
+
+
+def _parse_csv(value: Optional[str]) -> List[str]:
+    """Turn 'a,b,c' query param into ['a','b','c']. Strips whitespace, drops empties."""
+    if not value:
+        return []
+    return [p.strip() for p in value.split(",") if p.strip()]
+
+
 @app.get("/api/events")
 def get_events(
     skip: int = 0,
     limit: int = 8,
     venue: Optional[str] = None,
+    city: Optional[str] = None,
+    series: Optional[str] = None,
+    from_date: Optional[str] = None,
+    to_date: Optional[str] = None,
+    has_stream: Optional[bool] = None,
     include_past: bool = False,
 ):
     """Paginated upcoming-concerts feed.
 
-    - Past events (date < today UTC) are hidden by default; pass
-      include_past=true to disable that filter.
-    - venue=... narrows to a single venue (exact match on the venue field).
+    Query parameters:
+      - skip / limit:    pagination
+      - venue, city, series:  comma-separated lists. Empty → no filter.
+        Multi-value semantics: event matches if its value is in the list.
+      - from_date / to_date:  inclusive YYYY-MM-DD bounds
+      - has_stream=true:      only events with a streaming option
+      - include_past=true:    keep past events (default: hide)
     """
     from datetime import date as _date
     today = _date.today().isoformat()
 
+    venues = _parse_csv(venue)
+    cities = _parse_csv(city)
+    series_filter = _parse_csv(series)
+
     pool = EVENTS
     if not include_past:
         pool = [e for e in pool if (e.get("date") or "0000-00-00") >= today]
-    if venue:
-        pool = [e for e in pool if e.get("venue") == venue]
+    if venues:
+        venue_set = set(venues)
+        pool = [e for e in pool if e.get("venue") in venue_set]
+    if cities:
+        city_set = set(cities)
+        pool = [e for e in pool if e.get("city") in city_set]
+    if series_filter:
+        series_set = set(series_filter)
+        pool = [e for e in pool if e.get("series") in series_set]
+    if from_date:
+        pool = [e for e in pool if (e.get("date") or "0000-00-00") >= from_date]
+    if to_date:
+        pool = [e for e in pool if (e.get("date") or "9999-99-99") <= to_date]
+    if has_stream:
+        pool = [e for e in pool if e.get("has_stream")]
 
     total = len(pool)
     page = pool[skip : skip + limit]
@@ -688,7 +767,11 @@ def get_events(
         "total": total,
         "skip": skip,
         "limit": limit,
-        "venue": venue,
+        "filters": {
+            "venues": venues, "cities": cities, "series": series_filter,
+            "from_date": from_date, "to_date": to_date,
+            "has_stream": bool(has_stream),
+        },
         "has_more": (skip + limit) < total,
         "events": page,
     }
