@@ -1,0 +1,63 @@
+{
+  "venue": "Kölner Philharmonie",
+  "city": "Köln",
+  "scraped_at": "2026-05-16T20:47:43.219155Z",
+  "total_events": 5,
+  "events": [
+    {
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/zwischen-den-zeilen-schostakowitschs-funfte/4871",
+      "title": "Zwischen den Zeilen – Schostakowitschs Fünfte",
+      "date": "16.05.2026",
+      "time": "20:00",
+      "venue_hall": "",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uPHvfL1o1e8NgdyQmW'}",
+      "venue": "Kölner Philharmonie",
+      "hall": "",
+      "city": "Köln"
+    },
+    {
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/singout-koln-2026/9097",
+      "title": "singOUT Köln 2026",
+      "date": "23.05.2026",
+      "time": "15:00",
+      "venue_hall": "",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uPXidV6ft91w2zt8CQ'}",
+      "venue": "Kölner Philharmonie",
+      "hall": "",
+      "city": "Köln"
+    },
+    {
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/ford-sinfonieorchester/4740",
+      "title": "Ford-Sinfonieorchester",
+      "date": "17.05.2026",
+      "time": "11:00",
+      "venue_hall": "",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uPmXaxREcu84kMm2GX'}",
+      "venue": "Kölner Philharmonie",
+      "hall": "",
+      "city": "Köln"
+    },
+    {
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/klassik-mal-anders-heute-schon-gelacht/4872",
+      "title": "Klassik mal anders: Heute schon gelacht?",
+      "date": "21.05.2026",
+      "time": "19:00",
+      "venue_hall": "",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uQ1cfYARVs9aQDaG21'}",
+      "venue": "Kölner Philharmonie",
+      "hall": "",
+      "city": "Köln"
+    },
+    {
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/singout-koln-2026/9090",
+      "title": "singOUT Köln 2026",
+      "date": "23.05.2026",
+      "time": "20:00",
+      "venue_hall": "",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uQFDy3anpoYwCEyrfb'}",
+      "venue": "Kölner Philharmonie",
+      "hall": "",
+      "city": "Köln"
+    }
+  ]
+}
