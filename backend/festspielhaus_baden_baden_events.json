@@ -1,0 +1,102 @@
+{
+  "venue": "Festspielhaus Baden-Baden",
+  "city": "Baden-Baden",
+  "scraped_at": "2026-05-16T20:20:27.286336Z",
+  "total_events": 5,
+  "events": [
+    {
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/schwanensee/?date=2026-12-12-1800",
+      "title": "Schwanensee",
+      "date": "Samstag 12.12.26 18:00 Uhr",
+      "time": "18:00 Uhr",
+      "venue_hall": "",
+      "_detail_error": "Expecting property name enclosed in double quotes: line 15 column 118 (char 506)",
+      "venue": "Festspielhaus Baden-Baden",
+      "hall": "",
+      "city": "Baden-Baden"
+    },
+    {
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/turngala-2027/?date=2027-01-05-1330",
+      "title": "TurnGala",
+      "date": "Dienstag 5.1.27 13:30 Uhr",
+      "time": "13:30 Uhr",
+      "venue_hall": "",
+      "program": [],
+      "performers": [
+        "Badischer Turner-Bund (gymnastics group)",
+        "Schwäbischer Turnerbund (gymnastics group)"
+      ],
+      "conductor": null,
+      "duration_min": null,
+      "intro": "Die TurnGala 2027 unter dem Motto \"Lumina\" verbindet Turnen, Akrobatik, Tanz und Comedy mit internationalen Künstlern, Weltklasse-Artisten und regionalen Gruppen für ein familiengerechtes Unterhaltungsprogramm.",
+      "venue": "Festspielhaus Baden-Baden",
+      "hall": "",
+      "city": "Baden-Baden"
+    },
+    {
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/illusionen-wie-schwanensee/?date=2026-10-02-1930",
+      "title": "Illusionen – wie Schwanensee",
+      "date": "Freitag 2.10.26 19:30 Uhr",
+      "time": "19:30 Uhr",
+      "venue_hall": "",
+      "_detail_error": "Expecting ',' delimiter: line 14 column 59 (char 386)",
+      "venue": "Festspielhaus Baden-Baden",
+      "hall": "",
+      "city": "Baden-Baden"
+    },
+    {
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/teodor-currentzis-2026/?date=2026-11-07-1900",
+      "title": "Teodor Currentzis",
+      "date": "Samstag 7.11.26 19:00 Uhr",
+      "time": "19:00 Uhr",
+      "venue_hall": "",
+      "program": [
+        "Dmitri Schostakowitsch: Violinkonzert Nr. 1 a-Moll op. 77",
+        "Igor Strawinsky: Le Sacre du printemps"
+      ],
+      "performers": [
+        "Daniel Lozakovich (Violine)",
+        "Utopia Orchestra"
+      ],
+      "conductor": "Teodor Currentzis",
+      "duration_min": 120,
+      "intro": "Teodor Currentzis kehrt mit seinem Utopia Orchestra zurück und präsentiert zwei Schlüsselwerke des 20. Jahrhunderts: Schostakowitschs Violinkonzert Nr. 1 und Strawinskys Le Sacre du Printemps. Als Solist ist der Geiger Daniel Lozakovich zu erleben.",
+      "venue": "Festspielhaus Baden-Baden",
+      "hall": "",
+      "city": "Baden-Baden"
+    },
+    {
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/die-12-cellisten-der-berliner-philharmoniker-2026/?date=2026-12-06-1600",
+      "title": "Die 12 Cellisten der Berliner Philharmoniker",
+      "date": "Sonntag 6.12.26 16:00 Uhr",
+      "time": "16:00 Uhr",
+      "venue_hall": "",
+      "program": [
+        "Julius Klengel: Hymnus",
+        "Giovanni Sollima: Neues Stück",
+        "Dmitri Schostakowitsch: Lyrischer Walzer (arr. David Riniker)",
+        "Edith Piaf: L'homme à la moto (arr. B. Delepelaire)",
+        "Maurice Ravel: Pavane (arr. Wilh. Kaiser-Lindemann)",
+        "Vincent Scotto: Sous les ponts de Paris (arr. Wilh. Kaiser-Lindeman)",
+        "Stephan Koncz: Swing on Dvorak",
+        "Juan Tizol, Duke Ellington: Caravan (arr. Wilh. Kaiser-Lindemann)",
+        "Jean Francaix: Noël nouvelet",
+        "James Pierpont: Jingle Bells (arr. Josep Castanyer Alonso)",
+        "Andy Williams: It's the most wonderful time of the year (arr. B. Delepelaire)",
+        "John Williams: Catch me if you can (arr. David Riniker)",
+        "Bernhard Herman: Vertigo (arr. Wilh. Kaiser-Lindemann)",
+        "Ennio Morricone: The Man with the harmonica (arr. Wilh. Kaiser-Lindemann)",
+        "John Barry: James Bond (arr. S. Koncz)"
+      ],
+      "performers": [
+        "Die 12 Cellisten der Berliner Philharmoniker (ensemble)"
+      ],
+      "conductor": null,
+      "duration_min": 105,
+      "intro": "Die 12 Cellisten der Berliner Philharmoniker, gegründet 1972, präsentieren ein vielseitiges Programm von Klassik über Jazz und Tango bis hin zu Filmmusik und Weihnachtsstücken. Das Ensemble begeistert mit einem Repertoire, das von Klengel und Ravel bis zu John Williams und James Bond reicht.",
+      "venue": "Festspielhaus Baden-Baden",
+      "hall": "",
+      "city": "Baden-Baden"
+    }
+  ]
+}
