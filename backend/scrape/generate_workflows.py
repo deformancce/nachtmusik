@@ -118,7 +118,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{{{ github.event.inputs.branch || 'claude/add-opus-code-iSPrR' }}}}
+          ref: ${{ github.event.inputs.branch || 'claude/add-opus-code-iSPrR' }}
 
       - uses: actions/setup-python@v5
         with:
@@ -131,7 +131,7 @@ jobs:
 
       - name: Run all Tier-1 scrapers
         env:
-          ANTHROPIC_API_KEY: ${{{{ secrets.ANTHROPIC_API_KEY }}}}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           PYTHONUNBUFFERED: "1"
         run: python3 -m backend.scrape.run_scraper --all-tier 1
 
@@ -145,7 +145,7 @@ jobs:
             exit 0
           fi
           git commit -m "Refresh Tier-1 events (manual scrape run)"
-          BRANCH="${{GITHUB_REF_NAME:-claude/add-opus-code-iSPrR}}"
+          BRANCH="${GITHUB_REF_NAME:-claude/add-opus-code-iSPrR}"
           for i in 1 2 3; do
             git pull --rebase --autostash origin "$BRANCH" || true
             if git push origin "HEAD:$BRANCH"; then exit 0; fi
