@@ -170,7 +170,35 @@ async def scrape_listing(config: VenueConfig) -> list[dict]:
                 "venue_hall": "",
             })
 
+    if not events:
+        _dump_listing_debug(config, html, result)
+
     return events
+
+
+def _dump_listing_debug(config, html: str, result) -> None:
+    """Print diagnostic info when 0 events were extracted, so we can tune
+    selectors without spending Claude calls on a follow-up smoke run."""
+    print(f"  [debug] rendered HTML: {len(html)} bytes")
+    if len(html) < 500:
+        print(f"  [debug] HTML body: {html[:500]!r}")
+    else:
+        # Show first non-empty lines from <body>
+        import re as _re
+        body_match = _re.search(r"<body[^>]*>(.*?)</body>", html, _re.DOTALL | _re.IGNORECASE)
+        snippet = (body_match.group(1) if body_match else html)[:1500]
+        snippet = _re.sub(r"\s+", " ", snippet).strip()
+        print(f"  [debug] body snippet: {snippet[:800]}")
+
+    links = (result.links or {}).get("internal") or []
+    print(f"  [debug] total internal links: {len(links)}")
+    pat = config.event_url_pattern or ""
+    matching = [l for l in links if pat and _re.search(pat, l.get("href", ""), _re.IGNORECASE)]
+    print(f"  [debug] links matching pattern {pat!r}: {len(matching)}")
+    for l in links[:8]:
+        href = l.get("href", "")[:90]
+        txt = " ".join((l.get("text", "") or "").split())[:50]
+        print(f"  [debug]   link: {href}  text={txt!r}")
 
 
 async def enrich_event(
