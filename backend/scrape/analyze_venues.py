@@ -117,7 +117,8 @@ async def _render_and_analyze(url: str, venue_name: str) -> dict:
     browser_cfg = BrowserConfig(headless=True, verbose=False)
     run_cfg = CrawlerRunConfig(
         wait_for="body",
-        scroll_to_bottom=True,
+        scan_full_page=True,
+        scroll_delay=0.5,
         delay_before_return_html=2.0,
     )
 

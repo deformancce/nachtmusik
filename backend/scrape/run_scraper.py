@@ -68,7 +68,8 @@ async def scrape_listing(config: VenueConfig) -> list[dict]:
     browser_cfg = BrowserConfig(headless=True, verbose=False)
 
     scroll_cfg = dict(
-        scroll_to_bottom=(config.load_method in ("scroll", "spa")),
+        scan_full_page=(config.load_method in ("scroll", "spa")),
+        scroll_delay=0.5,
         delay_before_return_html=config.scroll_wait_s,
     )
     if config.needs_networkidle:
