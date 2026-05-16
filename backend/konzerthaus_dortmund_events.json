@@ -1,105 +1,110 @@
 {
   "venue": "Konzerthaus Dortmund",
   "city": "Dortmund",
-  "scraped_at": "2026-05-16T20:23:30.294037Z",
+  "scraped_at": "2026-05-16T20:45:05.828776Z",
   "total_events": 5,
   "events": [
     {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/28-05-2026-naturally-7/",
-      "title": "Naturally 7",
-      "date": "Do 28.05.2026",
-      "time": "20.00 Uhr",
-      "venue_hall": "",
-      "program": [],
-      "performers": [
-        "Naturally 7 (vocal ensemble)"
-      ],
-      "conductor": null,
-      "duration_min": 135,
-      "intro": "Naturally 7, das aus New York stammende A-cappella-Septett, präsentiert ihr «Closer Look»-Programm – ein Best-of ihrer Bandgeschichte, bei dem sie den Klang einer vollständigen Band ausschließlich mit ihren Stimmen erzeugen.",
-      "venue": "Konzerthaus Dortmund",
-      "hall": "",
-      "city": "Dortmund"
-    },
-    {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/05-05-2027-7-philharmonisches-konzert-gluecksversprechen/",
-      "title": "7. Philharmonisches Konzert – Glücksversprechen",
-      "date": "Mi 05.05.2027",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-11-2026-3-philharmonisches-konzert-urknall/",
+      "title": "3. Philharmonisches Konzert – Urknall",
+      "date": "Mi 18.11.2026",
       "time": "19.30 Uhr",
       "venue_hall": "",
       "program": [
-        "Bohdana Frolyak: Let there be light",
-        "Robert Schumann: Konzert für Violine und Orchester d-moll WoO 1",
-        "Antonín Dvořák: Sinfonie Nr. 6 D-Dur op. 60"
+        "Wolfgang Amadeus Mozart: Sinfonie Nr. 25 g-moll KV 183",
+        "Carl Nielsen: Konzert für Flöte und Orchester",
+        "Richard Strauss: Also sprach Zarathustra, Tondichtung für großes Orchester op. 30"
       ],
       "performers": [
-        "Dortmunder Philharmoniker (orchestra)",
-        "Dmytro Udovychenko (Violine)"
+        "Jasmine Choi (Flöte)",
+        "Dortmunder Philharmoniker (Orchester)"
       ],
-      "conductor": "Oksana Lyniv",
+      "conductor": "Jordan de Souza",
       "duration_min": 120,
-      "intro": "The 7th Philharmonic Concert brings together works centered on the theme of light and happiness: Frolyak's hopeful orchestral piece written in the shadow of war, Schumann's intimate Violin Concerto, and Dvořák's pastoral 6th Symphony. Ukrainian conductor Oksana Lyniv leads the Dortmunder Philharmoniker.",
+      "intro": "Ein Konzert unter dem Motto 'Urknall' mit Mozarts leidenschaftlicher g-moll-Sinfonie KV 183, Nielsens spielerischem Flötenkonzert mit der Solistin Jasmine Choi und Strauss' epochaler Tondichtung 'Also sprach Zarathustra'. Die Dortmunder Philharmoniker werden von Jordan de Souza dirigiert.",
       "venue": "Konzerthaus Dortmund",
       "hall": "",
       "city": "Dortmund"
     },
     {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/15-12-2026-weihnachtsoratorium/",
-      "title": "Weihnachtsoratorium",
-      "date": "Di 15.12.2026",
-      "time": "20.00 Uhr",
-      "venue_hall": "",
-      "program": [
-        "Johann Sebastian Bach: Kantate Nr. 1 aus Weihnachtsoratorium BWV 248",
-        "Johann Sebastian Bach: Kantate Nr. 2 aus Weihnachtsoratorium BWV 248",
-        "Johann Sebastian Bach: Kantate Nr. 3 aus Weihnachtsoratorium BWV 248",
-        "Johann Sebastian Bach: Kantate Nr. 4 aus Weihnachtsoratorium BWV 248"
-      ],
-      "performers": [
-        "Jugendkonzertchor der Chorakademie (Chor)",
-        "Konzertchor Westfalica der Chorakademie (Chor)",
-        "Bochumer Symphoniker (Orchester)"
-      ],
-      "conductor": "Johannes Honecker",
-      "duration_min": 150,
-      "intro": "Der Jugendkonzertchor und der Konzertchor Westfalica der Chorakademie am Konzerthaus Dortmund laden gemeinsam mit den Bochumer Symphonikern zu einer festlichen Aufführung von Bachs Weihnachtsoratorium ein. Das Konzert verspricht ein Erlebnis voller Wärme, Freude und festlicher Stimmung.",
-      "venue": "Konzerthaus Dortmund",
-      "hall": "",
-      "city": "Dortmund"
-    },
-    {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/07-02-2027-die-schoene-und-das-biest-das-musical/",
-      "title": "Die Schöne und das Biest – das Musical",
-      "date": "So 07.02.2027",
-      "time": "15.00 Uhr",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/11-01-2027-kopfnoten-eine-musikalische-geschichte-amerikas/",
+      "title": "Kopfnoten – Eine musikalische Geschichte Amerikas",
+      "date": "Mo 11.01.2027",
+      "time": "18.30 Uhr",
       "venue_hall": "",
       "program": [],
       "performers": [
-        "Ensemble Theater Liberi (Ensemble)"
+        "Michael Stegemann (Moderation/Vortrag)"
       ],
       "conductor": null,
-      "duration_min": 120,
-      "intro": "Das Theater Liberi präsentiert das französische Volksmärchen »Die Schöne und das Biest« in einer zeitgemäßen Musical-Fassung mit Eigenkompositionen, romantischen Balladen und poppigen Songs. Ein Live-Erlebnis für die ganze Familie mit abwechslungsreichen Choreografien und opulenten Kostümen.",
+      "duration_min": 90,
+      "intro": "Eine musikalische Betrachtung der Einflüsse (afro)amerikanischer Musik – insbesondere Jazz und Blues – auf europäische Komponisten wie Debussy, Ravel, Strawinsky und Gershwin zu Beginn des 20. Jahrhunderts. Die Veranstaltung findet im Orchesterzentrum|NRW, Brückstraße 47, Dortmund statt.",
       "venue": "Konzerthaus Dortmund",
       "hall": "",
       "city": "Dortmund"
     },
     {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/23-10-2026-loriot-szenen-einer-ehe/",
-      "title": "Loriot: Szenen einer Ehe",
-      "date": "Fr 23.10.2026",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/26-11-2026-orgel-im-konzerthaus-jan-liebermann/",
+      "title": "Orgel im Konzerthaus – Jan Liebermann",
+      "date": "Do 26.11.2026",
       "time": "19.30 Uhr",
       "venue_hall": "",
       "program": [
-        "Loriot: Szenen einer Ehe"
+        "Johann Sebastian Bach: Passacaglia und Fuge c-moll BWV 582",
+        "Sigfrid Karg-Elert: Die Legende des Berges aus Sieben Pastelle vom Bodensee op. 96",
+        "Sigfrid Karg-Elert: Der Sonne Abendlied aus Sieben Pastelle vom Bodensee op. 96",
+        "Richard Wagner: Ouvertüre zu Tannhäuser und der Sängerkrieg auf Wartburg WWV 70 (Fassung für Orgel von Edwin Henry Lemare)",
+        "Johann Sebastian Bach: Christ, unser Herr, zum Jordan kam – Choralvorspiel BWV 684",
+        "Johann Sebastian Bach: An Wasserflüssen Babylon – Choralvorspiel BWV 653",
+        "Franz Liszt: Fantasie und Fuge über Ad nos, ad salutarem undam"
       ],
       "performers": [
-        "Senta Berger (Schauspiel)",
-        "Friedrich von Thun (Schauspiel)"
+        "Jan Liebermann (Orgel)"
       ],
       "conductor": null,
+      "duration_min": 120,
+      "intro": "Junges Orgeltalent Jan Liebermann präsentiert ein vielseitiges Programm, das die komplette Klangpalette der Orgel zeigt – von Bach und Karg-Elert über Wagner bis hin zu Liszt.",
+      "venue": "Konzerthaus Dortmund",
+      "hall": "",
+      "city": "Dortmund"
+    },
+    {
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/06-06-2027-giuseppe-verdi-i-masnadieri/",
+      "title": "Giuseppe Verdi: I Masnadieri",
+      "date": "So 06.06.2027",
+      "time": "18.00 Uhr",
+      "venue_hall": "",
+      "program": [
+        "Giuseppe Verdi: I masnadieri (Oper in vier Akten)"
+      ],
+      "performers": [
+        "Gilda Fiume (Amalia)",
+        "Angelo Villari (Carlo)",
+        "George Petean (Francesco)",
+        "N. N. (Massimiliano)",
+        "WDR Rundfunkchor",
+        "WDR Funkhausorchester"
+      ],
+      "conductor": "Giacomo Sagripanti",
       "duration_min": 150,
-      "intro": "Eine szenische Hommage an den humoristischen Großmeister Loriot, bei der Senta Berger und Friedrich von Thun die legendären, 1983 veröffentlichten Szenen einer Ehe zum Leben erwecken. Die Vorstellung beleuchtet mit feinsinnigem Humor die alltäglichen Tücken des Zusammenlebens und der Paarbeziehung.",
+      "intro": "Konzertante Aufführung von Verdis Oper »I masnadieri« in italienischer Sprache mit deutschen Übertiteln, präsentiert vom Klangvokal Musikfestival Dortmund. Mit Gilda Fiume, Angelo Villari und George Petean sowie dem WDR Rundfunkchor und WDR Funkhausorchester unter Giacomo Sagripanti.",
+      "venue": "Konzerthaus Dortmund",
+      "hall": "",
+      "city": "Dortmund"
+    },
+    {
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/22-12-2026-drei-haselnuesse-fuer-aschenbroedel/",
+      "title": "Drei Haselnüsse für Aschenbrödel",
+      "date": "Di 22.12.2026",
+      "time": "16.00 Uhr",
+      "venue_hall": "",
+      "program": [
+        "Karel Svoboda: Drei Haselnüsse für Aschenbrödel (Filmmusik)"
+      ],
+      "performers": [],
+      "conductor": null,
+      "duration_min": 90,
+      "intro": "Der Weihnachtsklassiker »Drei Haselnüsse für Aschenbrödel« wird als Originalfilm mit Live-Orchester präsentiert. Seit seiner Erstausstrahlung 1973 begeistert das Märchenfilm mit seiner Schneekulisse und winterlich-romantischen Stimmung Generationen von Zuschauern.",
       "venue": "Konzerthaus Dortmund",
       "hall": "",
       "city": "Dortmund"
