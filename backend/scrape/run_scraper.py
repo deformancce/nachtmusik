@@ -99,13 +99,18 @@ async def scrape_listing(config: VenueConfig) -> list[dict]:
 
     browser_cfg = BrowserConfig(headless=True, verbose=False)
 
+    # Wait strategy: avoid wait_for="networkidle" — many venues have
+    # continuous analytics/polling traffic that never settles, causing 60s
+    # timeouts. Use a fixed post-DCL delay instead. SPAs get a longer one.
+    is_spa = config.load_method in ("spa", "scroll") or config.needs_networkidle
+    delay = max(config.scroll_wait_s, 6.0 if is_spa else 2.0)
+
     scroll_cfg = dict(
         scan_full_page=(config.load_method in ("scroll", "spa")),
         scroll_delay=0.5,
-        delay_before_return_html=config.scroll_wait_s,
+        delay_before_return_html=delay,
+        page_timeout=45000,
     )
-    if config.needs_networkidle:
-        scroll_cfg["wait_for"] = "networkidle"
 
     run_cfg = CrawlerRunConfig(**scroll_cfg)
 
