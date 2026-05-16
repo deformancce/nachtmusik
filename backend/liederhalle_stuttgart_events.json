@@ -1,16 +1,38 @@
 {
   "venue": "Liederhalle Stuttgart",
   "city": "Stuttgart",
-  "scraped_at": "2026-05-16T20:48:52.330805Z",
+  "scraped_at": "2026-05-16T21:03:19.589627Z",
   "total_events": 5,
   "events": [
     {
-      "detail_url": "https://liederhalle.de/veranstaltung/tim-bendzko-alles-nur-nicht-zurueck",
-      "title": "Tim Bendzko: Alles, nur nicht zurück",
+      "detail_url": "https://liederhalle.de/veranstaltung/jubilaeumskonzert-75-jahre-orchester-stuttgarter-musikfreunde",
+      "title": "Jubiläumskonzert - 75 Jahre Orchester Stuttgarter Musikfreunde",
       "date": "Sonntag, 17.5.2026",
-      "time": "20:00 Uhr",
+      "time": "19:00 Uhr",
+      "venue_hall": "Mozart-Saal",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6va3GXbifXNXGgoSR7u'}",
+      "venue": "Liederhalle Stuttgart",
+      "hall": "Mozart-Saal",
+      "city": "Stuttgart"
+    },
+    {
+      "detail_url": "https://liederhalle.de/veranstaltung/staatsorchester-stuttgart-7-kammerkonzert-film-ab",
+      "title": "Staatsorchester Stuttgart: 7. Kammerkonzert - Film ab!",
+      "date": "Mittwoch, 20.5.2026",
+      "time": "19:30 Uhr",
+      "venue_hall": "Mozart-Saal",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vaLkzKtvx2piHkTzjU'}",
+      "venue": "Liederhalle Stuttgart",
+      "hall": "Mozart-Saal",
+      "city": "Stuttgart"
+    },
+    {
+      "detail_url": "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
+      "title": "SWR Symphonieorchester: Dans la cuisine du chef",
+      "date": "Mittwoch, 20.5.2026",
+      "time": "19:00 Uhr",
       "venue_hall": "Hegel-Saal",
-      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uUPsjJUBqfbu6GjxqB'}",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vae1aGVW4et4GVBWnd'}",
       "venue": "Liederhalle Stuttgart",
       "hall": "Hegel-Saal",
       "city": "Stuttgart"
@@ -21,18 +43,7 @@
       "date": "Donnerstag, 21.5.2026",
       "time": "19:30 Uhr",
       "venue_hall": "Mozart-Saal",
-      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uUdpd5AeRfQz8YM7Qv'}",
-      "venue": "Liederhalle Stuttgart",
-      "hall": "Mozart-Saal",
-      "city": "Stuttgart"
-    },
-    {
-      "detail_url": "https://liederhalle.de/veranstaltung/homin-choir",
-      "title": "Homin Choir",
-      "date": "Montag, 18.5.2026",
-      "time": "19:00 Uhr",
-      "venue_hall": "Mozart-Saal",
-      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uUsCYFj62TAiSC5kE9'}",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vawX2Qij9F5ZBo3YLe'}",
       "venue": "Liederhalle Stuttgart",
       "hall": "Mozart-Saal",
       "city": "Stuttgart"
@@ -43,20 +54,9 @@
       "date": "Donnerstag, 21.5.2026",
       "time": "19:30 Uhr",
       "venue_hall": "Beethoven-Saal",
-      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uV78wRiFWWuKh1T579'}",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vbGjRcpQy1pwHobqQu'}",
       "venue": "Liederhalle Stuttgart",
       "hall": "Beethoven-Saal",
-      "city": "Stuttgart"
-    },
-    {
-      "detail_url": "https://liederhalle.de/veranstaltung/jubilaeumskonzert-75-jahre-orchester-stuttgarter-musikfreunde",
-      "title": "Jubiläumskonzert - 75 Jahre Orchester Stuttgarter Musikfreunde",
-      "date": "Sonntag, 17.5.2026",
-      "time": "19:00 Uhr",
-      "venue_hall": "Mozart-Saal",
-      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uVLrC2MDjvKUo2rH7s'}",
-      "venue": "Liederhalle Stuttgart",
-      "hall": "Mozart-Saal",
       "city": "Stuttgart"
     }
   ]
