@@ -1,110 +1,60 @@
 {
   "venue": "Konzerthaus Dortmund",
   "city": "Dortmund",
-  "scraped_at": "2026-05-16T20:45:05.828776Z",
+  "scraped_at": "2026-05-16T20:58:23.320774Z",
   "total_events": 5,
   "events": [
     {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-11-2026-3-philharmonisches-konzert-urknall/",
-      "title": "3. Philharmonisches Konzert – Urknall",
-      "date": "Mi 18.11.2026",
-      "time": "19.30 Uhr",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/29-04-2027-max-raabe-palast-orchester/",
+      "title": "Max Raabe & Palast Orchester",
+      "date": "Do 29.04.2027",
+      "time": "20.00 Uhr",
       "venue_hall": "",
-      "program": [
-        "Wolfgang Amadeus Mozart: Sinfonie Nr. 25 g-moll KV 183",
-        "Carl Nielsen: Konzert für Flöte und Orchester",
-        "Richard Strauss: Also sprach Zarathustra, Tondichtung für großes Orchester op. 30"
-      ],
-      "performers": [
-        "Jasmine Choi (Flöte)",
-        "Dortmunder Philharmoniker (Orchester)"
-      ],
-      "conductor": "Jordan de Souza",
-      "duration_min": 120,
-      "intro": "Ein Konzert unter dem Motto 'Urknall' mit Mozarts leidenschaftlicher g-moll-Sinfonie KV 183, Nielsens spielerischem Flötenkonzert mit der Solistin Jasmine Choi und Strauss' epochaler Tondichtung 'Also sprach Zarathustra'. Die Dortmunder Philharmoniker werden von Jordan de Souza dirigiert.",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6v9sk82pamKdD2FApa2'}",
       "venue": "Konzerthaus Dortmund",
       "hall": "",
       "city": "Dortmund"
     },
     {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/11-01-2027-kopfnoten-eine-musikalische-geschichte-amerikas/",
-      "title": "Kopfnoten – Eine musikalische Geschichte Amerikas",
-      "date": "Mo 11.01.2027",
-      "time": "18.30 Uhr",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/20-02-2027-kat-frankie-bodies/",
+      "title": "Kat Frankie – BODIES",
+      "date": "Sa 20.02.2027",
+      "time": "20.00 Uhr",
       "venue_hall": "",
-      "program": [],
-      "performers": [
-        "Michael Stegemann (Moderation/Vortrag)"
-      ],
-      "conductor": null,
-      "duration_min": 90,
-      "intro": "Eine musikalische Betrachtung der Einflüsse (afro)amerikanischer Musik – insbesondere Jazz und Blues – auf europäische Komponisten wie Debussy, Ravel, Strawinsky und Gershwin zu Beginn des 20. Jahrhunderts. Die Veranstaltung findet im Orchesterzentrum|NRW, Brückstraße 47, Dortmund statt.",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vAK4NpvzsBrn3vmBfp'}",
       "venue": "Konzerthaus Dortmund",
       "hall": "",
       "city": "Dortmund"
     },
     {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/26-11-2026-orgel-im-konzerthaus-jan-liebermann/",
-      "title": "Orgel im Konzerthaus – Jan Liebermann",
-      "date": "Do 26.11.2026",
-      "time": "19.30 Uhr",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/02-06-2027-junge-wilde-lucie-horsch/",
+      "title": "Junge Wilde – Lucie Horsch",
+      "date": "Mi 02.06.2027",
+      "time": "19.00 Uhr",
       "venue_hall": "",
-      "program": [
-        "Johann Sebastian Bach: Passacaglia und Fuge c-moll BWV 582",
-        "Sigfrid Karg-Elert: Die Legende des Berges aus Sieben Pastelle vom Bodensee op. 96",
-        "Sigfrid Karg-Elert: Der Sonne Abendlied aus Sieben Pastelle vom Bodensee op. 96",
-        "Richard Wagner: Ouvertüre zu Tannhäuser und der Sängerkrieg auf Wartburg WWV 70 (Fassung für Orgel von Edwin Henry Lemare)",
-        "Johann Sebastian Bach: Christ, unser Herr, zum Jordan kam – Choralvorspiel BWV 684",
-        "Johann Sebastian Bach: An Wasserflüssen Babylon – Choralvorspiel BWV 653",
-        "Franz Liszt: Fantasie und Fuge über Ad nos, ad salutarem undam"
-      ],
-      "performers": [
-        "Jan Liebermann (Orgel)"
-      ],
-      "conductor": null,
-      "duration_min": 120,
-      "intro": "Junges Orgeltalent Jan Liebermann präsentiert ein vielseitiges Programm, das die komplette Klangpalette der Orgel zeigt – von Bach und Karg-Elert über Wagner bis hin zu Liszt.",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vCbPChKtUqQpzZXSvm'}",
       "venue": "Konzerthaus Dortmund",
       "hall": "",
       "city": "Dortmund"
     },
     {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/06-06-2027-giuseppe-verdi-i-masnadieri/",
-      "title": "Giuseppe Verdi: I Masnadieri",
-      "date": "So 06.06.2027",
-      "time": "18.00 Uhr",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/08-12-2026-gregory-porter-orchestra/",
+      "title": "Gregory Porter & Orchestra",
+      "date": "Di 08.12.2026",
+      "time": "20.00 Uhr",
       "venue_hall": "",
-      "program": [
-        "Giuseppe Verdi: I masnadieri (Oper in vier Akten)"
-      ],
-      "performers": [
-        "Gilda Fiume (Amalia)",
-        "Angelo Villari (Carlo)",
-        "George Petean (Francesco)",
-        "N. N. (Massimiliano)",
-        "WDR Rundfunkchor",
-        "WDR Funkhausorchester"
-      ],
-      "conductor": "Giacomo Sagripanti",
-      "duration_min": 150,
-      "intro": "Konzertante Aufführung von Verdis Oper »I masnadieri« in italienischer Sprache mit deutschen Übertiteln, präsentiert vom Klangvokal Musikfestival Dortmund. Mit Gilda Fiume, Angelo Villari und George Petean sowie dem WDR Rundfunkchor und WDR Funkhausorchester unter Giacomo Sagripanti.",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vD2Hf1N7H4USkDjZ17'}",
       "venue": "Konzerthaus Dortmund",
       "hall": "",
       "city": "Dortmund"
     },
     {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/22-12-2026-drei-haselnuesse-fuer-aschenbroedel/",
-      "title": "Drei Haselnüsse für Aschenbrödel",
-      "date": "Di 22.12.2026",
-      "time": "16.00 Uhr",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/30-06-2027-8-philharmonisches-konzert-farbenrausch-2/",
+      "title": "8. Philharmonisches Konzert – Farbenrausch",
+      "date": "Mi 30.06.2027",
+      "time": "11.00 Uhr",
       "venue_hall": "",
-      "program": [
-        "Karel Svoboda: Drei Haselnüsse für Aschenbrödel (Filmmusik)"
-      ],
-      "performers": [],
-      "conductor": null,
-      "duration_min": 90,
-      "intro": "Der Weihnachtsklassiker »Drei Haselnüsse für Aschenbrödel« wird als Originalfilm mit Live-Orchester präsentiert. Seit seiner Erstausstrahlung 1973 begeistert das Märchenfilm mit seiner Schneekulisse und winterlich-romantischen Stimmung Generationen von Zuschauern.",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vDS2Qj9ZYNVKKFXhG7'}",
       "venue": "Konzerthaus Dortmund",
       "hall": "",
       "city": "Dortmund"
