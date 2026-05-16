@@ -1,64 +1,40 @@
 {
   "venue": "Liederhalle Stuttgart",
   "city": "Stuttgart",
-  "scraped_at": "2026-05-16T20:26:55.918062Z",
+  "scraped_at": "2026-05-16T20:48:52.330805Z",
   "total_events": 5,
   "events": [
     {
-      "detail_url": "https://liederhalle.de/veranstaltung/chopin-preistraeger",
-      "title": "Chopin Preisträger",
-      "date": "Mittwoch, 20.5.2026",
-      "time": "19:30 Uhr",
-      "venue_hall": "Beethoven-Saal",
-      "program": [
-        "Robert Schumann: Waldszenen op. 82",
-        "Frédéric Chopin: Polonaise Nr. 2 op. 71",
-        "Frédéric Chopin: Ballade Nr. 4 op. 52",
-        "Frédéric Chopin: Sonate Nr. 3 op. 58",
-        "Franz Schubert: Impromptu D 935 op. 142/1"
-      ],
-      "performers": [],
-      "conductor": null,
-      "duration_min": null,
-      "intro": "The eighth evening of the Meisterpianisten series celebrates the 100th anniversary of the Chopin Competition, which has launched legendary pianists such as Maurizio Pollini, Martha Argerich, and Krystian Zimerman. The program features solo piano works by Schumann, Chopin, and Schubert.",
-      "venue": "Liederhalle Stuttgart",
-      "hall": "Beethoven-Saal",
-      "city": "Stuttgart"
-    },
-    {
-      "detail_url": "https://liederhalle.de/veranstaltung/cornamusa-world-of-pipe-rock-and-irish-dance",
-      "title": "Cornamusa - World of Pipe Rock and Irish Dance",
+      "detail_url": "https://liederhalle.de/veranstaltung/tim-bendzko-alles-nur-nicht-zurueck",
+      "title": "Tim Bendzko: Alles, nur nicht zurück",
       "date": "Sonntag, 17.5.2026",
-      "time": "18:00 Uhr",
-      "venue_hall": "Beethoven-Saal",
-      "program": [],
-      "performers": [
-        "Cornamusa (live band and dancers)"
-      ],
-      "conductor": null,
-      "duration_min": null,
-      "intro": "Award-winning dancers and a seven-piece live band bring 'Im Schatten der Krone' (In the Shadow of the Crown) to life in a captivating show full of emotion, rhythm, and artistic expression.",
-      "venue": "Liederhalle Stuttgart",
-      "hall": "Beethoven-Saal",
-      "city": "Stuttgart"
-    },
-    {
-      "detail_url": "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
-      "title": "SWR Symphonieorchester: Dans la cuisine du chef",
-      "date": "Mittwoch, 20.5.2026",
-      "time": "19:00 Uhr",
+      "time": "20:00 Uhr",
       "venue_hall": "Hegel-Saal",
-      "program": [
-        "Joseph Haydn: Sinfonie Nr. 101 D-Dur (\"Die Uhr\")"
-      ],
-      "performers": [
-        "SWR Symphonieorchester (orchestra)"
-      ],
-      "conductor": "François-Xavier Roth",
-      "duration_min": null,
-      "intro": "An open rehearsal with chief conductor François-Xavier Roth, where he invites the audience to explore the unique recipes of great masterworks, uncovering the layers and ingredients that composers like Haydn used to craft their works.",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uUPsjJUBqfbu6GjxqB'}",
       "venue": "Liederhalle Stuttgart",
       "hall": "Hegel-Saal",
+      "city": "Stuttgart"
+    },
+    {
+      "detail_url": "https://liederhalle.de/veranstaltung/mariani-klavierquartett",
+      "title": "Mariani Klavierquartett",
+      "date": "Donnerstag, 21.5.2026",
+      "time": "19:30 Uhr",
+      "venue_hall": "Mozart-Saal",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uUdpd5AeRfQz8YM7Qv'}",
+      "venue": "Liederhalle Stuttgart",
+      "hall": "Mozart-Saal",
+      "city": "Stuttgart"
+    },
+    {
+      "detail_url": "https://liederhalle.de/veranstaltung/homin-choir",
+      "title": "Homin Choir",
+      "date": "Montag, 18.5.2026",
+      "time": "19:00 Uhr",
+      "venue_hall": "Mozart-Saal",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uUsCYFj62TAiSC5kE9'}",
+      "venue": "Liederhalle Stuttgart",
+      "hall": "Mozart-Saal",
       "city": "Stuttgart"
     },
     {
@@ -67,34 +43,18 @@
       "date": "Donnerstag, 21.5.2026",
       "time": "19:30 Uhr",
       "venue_hall": "Beethoven-Saal",
-      "program": [],
-      "performers": [
-        "Bee Gees by MainCourse (band)"
-      ],
-      "conductor": null,
-      "duration_min": null,
-      "intro": "Bee Gees by MainCourse brings Europe's biggest Bee Gees tribute show to the Beethoven-Saal, recreating the timeless hits of the Bee Gees with the energy and power of a live band performing today.",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uV78wRiFWWuKh1T579'}",
       "venue": "Liederhalle Stuttgart",
       "hall": "Beethoven-Saal",
       "city": "Stuttgart"
     },
     {
-      "detail_url": "https://liederhalle.de/veranstaltung/staatsorchester-stuttgart-7-kammerkonzert-film-ab",
-      "title": "Staatsorchester Stuttgart: 7. Kammerkonzert - Film ab!",
-      "date": "Mittwoch, 20.5.2026",
-      "time": "19:30 Uhr",
+      "detail_url": "https://liederhalle.de/veranstaltung/jubilaeumskonzert-75-jahre-orchester-stuttgarter-musikfreunde",
+      "title": "Jubiläumskonzert - 75 Jahre Orchester Stuttgarter Musikfreunde",
+      "date": "Sonntag, 17.5.2026",
+      "time": "19:00 Uhr",
       "venue_hall": "Mozart-Saal",
-      "program": [
-        "Nino Rota: Trio für Klarinette, Violoncello und Klavier",
-        "Ralph Vaughan Williams: Phantasy Quintet für Streichquintett",
-        "Erich Wolfgang Korngold: Klavierquintett E-Dur op. 15"
-      ],
-      "performers": [
-        "Staatsorchester Stuttgart (ensemble)"
-      ],
-      "conductor": null,
-      "duration_min": null,
-      "intro": "A chamber concert themed around film music featuring works by Nino Rota, Ralph Vaughan Williams, and Erich Wolfgang Korngold, exploring the intersection of cinematic and concert music traditions. The program ranges from Rota's lyrical Clarinet Trio to Korngold's passionate Piano Quintet op. 15.",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uVLrC2MDjvKUo2rH7s'}",
       "venue": "Liederhalle Stuttgart",
       "hall": "Mozart-Saal",
       "city": "Stuttgart"
