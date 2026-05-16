@@ -1,102 +1,60 @@
 {
   "venue": "Festspielhaus Baden-Baden",
   "city": "Baden-Baden",
-  "scraped_at": "2026-05-16T20:41:58.127994Z",
+  "scraped_at": "2026-05-16T20:55:40.736353Z",
   "total_events": 5,
   "events": [
     {
-      "detail_url": "https://www.festspielhaus.de/veranstaltungen/der-nussknacker/?date=2026-10-11-1500",
-      "title": "Der Nussknacker",
-      "date": "Sonntag 11.10.26 15:00 Uhr",
-      "time": "15:00 Uhr",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/london-symphony-orchestra-2026/?date=2026-07-04-1900",
+      "title": "London Symphony Orchestra",
+      "date": "Samstag 4.7.26 19:00 Uhr",
+      "time": "19:00 Uhr",
       "venue_hall": "",
-      "_detail_error": "Expecting ',' delimiter: line 14 column 72 (char 378)",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uxtSyZNZJkVAaeh1og'}",
       "venue": "Festspielhaus Baden-Baden",
       "hall": "",
       "city": "Baden-Baden"
     },
     {
-      "detail_url": "https://www.festspielhaus.de/veranstaltungen/schumann-berlioz/?date=2027-03-24-1800",
-      "title": "Schumann & Berlioz",
-      "date": "Mittwoch 24.3.27 18:00 Uhr",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/workshop-rhythmik-feel-the-groove/?date=2026-10-25-1300",
+      "title": "Rhythmik - Feel the Groove",
+      "date": "Sonntag 25.10.26 13:00 Uhr",
+      "time": "13:00 Uhr",
+      "venue_hall": "Ballettprobesaal, Festspielhaus Baden-Baden",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uyXDovwvzoXKwsZMnP'}",
+      "venue": "Festspielhaus Baden-Baden",
+      "hall": "Ballettprobesaal, Festspielhaus Baden-Baden",
+      "city": "Baden-Baden"
+    },
+    {
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/philharmonisches-klarinettenquartett/?date=2026-12-05-1400",
+      "title": "Philharmonisches Klarinettenquartett",
+      "date": "Samstag 5.12.26 14:00 Uhr",
+      "time": "14:00 Uhr",
+      "venue_hall": "Weinbrennersaal, Kurhaus Baden-Baden",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uzAAopE3oovkaVQZcs'}",
+      "venue": "Festspielhaus Baden-Baden",
+      "hall": "Weinbrennersaal, Kurhaus Baden-Baden",
+      "city": "Baden-Baden"
+    },
+    {
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/beethoven-fidelio/?date=2027-03-20-1800",
+      "title": "Beethoven: Fidelio",
+      "date": "Samstag 20.3.27 18:00 Uhr",
       "time": "18:00 Uhr",
       "venue_hall": "",
-      "program": [
-        "Robert Schumann: Sinfonie Nr. 1 B-Dur op. 38",
-        "Hector Berlioz: Symphonie Fantastique"
-      ],
-      "performers": [
-        "Royal Concertgebouw Orchestra (orchestra)"
-      ],
-      "conductor": "Klaus Mäkelä",
-      "duration_min": null,
-      "intro": "Klaus Mäkelä leads the Royal Concertgebouw Orchestra in a program pairing Schumann's optimistic 'Spring' Symphony with Berlioz's autobiographical Symphonie Fantastique — two landmark works of the Romantic repertoire performed together in one concert.",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uzoXcexpGRrkucspMh'}",
       "venue": "Festspielhaus Baden-Baden",
       "hall": "",
       "city": "Baden-Baden"
     },
     {
-      "detail_url": "https://www.festspielhaus.de/veranstaltungen/the-birds/?date=2026-11-02-1100",
-      "title": "The Birds",
-      "date": "Montag 2.11.26 11:00 Uhr",
-      "time": "11:00 Uhr",
-      "venue_hall": "Orchesterprobesaal, Festspielhaus Baden-Baden",
-      "program": [],
-      "performers": [
-        "Lydia Mahnkopf (Sopran)",
-        "Jonathan Ware (Klavier)",
-        "Lullula Music (Ensemble)"
-      ],
-      "conductor": null,
-      "duration_min": 45,
-      "intro": "An interactive concert for children aged 3 to 5, featuring songs and stories about birds in the forest and garden. Lydia Mahnkopf and Jonathan Ware invite young audiences and their accompanying adults to explore and use their own voices.",
-      "venue": "Festspielhaus Baden-Baden",
-      "hall": "Orchesterprobesaal, Festspielhaus Baden-Baden",
-      "city": "Baden-Baden"
-    },
-    {
-      "detail_url": "https://www.festspielhaus.de/veranstaltungen/dionne-warwick/?date=2026-05-28-1930",
-      "title": "Dionne Warwick",
-      "date": "Donnerstag 28.5.26 19:30 Uhr",
-      "time": "19:30 Uhr",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/hello-again/?date=2027-04-10-1430",
+      "title": "Hello! Again?",
+      "date": "Samstag 10.4.27 14:30 Uhr",
+      "time": "14:30 Uhr",
       "venue_hall": "",
-      "program": [],
-      "performers": [
-        "Dionne Warwick (vocalist)",
-        "Klassische Philharmonie Nordwest (orchestra)"
-      ],
-      "conductor": null,
-      "duration_min": 150,
-      "intro": "Dionne Warwick celebrates her farewell tour at age 84, performing timeless hits such as \"I Say a Little Prayer\", \"I'll Never Fall in Love Again\", and \"That's What Friends Are For\", accompanied by the Klassische Philharmonie Nordwest. This is the rescheduled date for the originally planned event on 14 September 2025.",
-      "venue": "Festspielhaus Baden-Baden",
-      "hall": "",
-      "city": "Baden-Baden"
-    },
-    {
-      "detail_url": "https://www.festspielhaus.de/veranstaltungen/die-zauberfloete/?date=2026-12-20-1700",
-      "title": "Die Zauberflöte",
-      "date": "Sonntag 20.12.26 17:00 Uhr",
-      "time": "17:00 Uhr",
-      "venue_hall": "",
-      "program": [
-        "Wolfgang Amadeus Mozart: Die Zauberflöte, K. 620 (Große Oper in zwei Aufzügen)"
-      ],
-      "performers": [
-        "Julian Prégardien (Tamino)",
-        "Samantha Gaul (Pamina)",
-        "Franz-Josef Selig (Sarastro)",
-        "Alina Wunderlin (Königin der Nacht)",
-        "Markus Werba (Papageno)",
-        "Sarah Maria Sun (Papagena)",
-        "Mirella Hagen (Erste Dame)",
-        "Olivia Vermeulen (Zweite Dame)",
-        "Peter Harvey (Sprecher / Zweiter Priester / Zweiter Geharnischter)",
-        "Budapest Festival Orchestra (Orchester)",
-        "Chor der Iván Fischer Opera Company (Chor)"
-      ],
-      "conductor": "Iván Fischer",
-      "duration_min": 210,
-      "intro": "Iván Fischer dirigiert und inszeniert Mozarts 'Die Zauberflöte' in einem halbszenischen Format, das er auf seinem Opernfestival in Vicenza entwickelte. Das Budapest Festival Orchestra begleitet die Produktion, die nach 'Don Giovanni' Fischers zweite Opernpräsentation im Festspielhaus Baden-Baden ist.",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6v1SwQ6wBHPjLM5EcR7'}",
       "venue": "Festspielhaus Baden-Baden",
       "hall": "",
       "city": "Baden-Baden"
