@@ -1,49 +1,27 @@
 {
   "venue": "Kölner Philharmonie",
   "city": "Köln",
-  "scraped_at": "2026-05-16T20:47:43.219155Z",
+  "scraped_at": "2026-05-16T21:01:44.427910Z",
   "total_events": 5,
   "events": [
-    {
-      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/zwischen-den-zeilen-schostakowitschs-funfte/4871",
-      "title": "Zwischen den Zeilen – Schostakowitschs Fünfte",
-      "date": "16.05.2026",
-      "time": "20:00",
-      "venue_hall": "",
-      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uPHvfL1o1e8NgdyQmW'}",
-      "venue": "Kölner Philharmonie",
-      "hall": "",
-      "city": "Köln"
-    },
     {
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/singout-koln-2026/9097",
       "title": "singOUT Köln 2026",
       "date": "23.05.2026",
       "time": "15:00",
       "venue_hall": "",
-      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uPXidV6ft91w2zt8CQ'}",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vT2zxbDizrC6gF1DKS'}",
       "venue": "Kölner Philharmonie",
       "hall": "",
       "city": "Köln"
     },
     {
-      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/ford-sinfonieorchester/4740",
-      "title": "Ford-Sinfonieorchester",
-      "date": "17.05.2026",
-      "time": "11:00",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/zwischen-den-zeilen-schostakowitschs-funfte/4871",
+      "title": "Zwischen den Zeilen – Schostakowitschs Fünfte",
+      "date": "16.05.2026",
+      "time": "20:00",
       "venue_hall": "",
-      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uPmXaxREcu84kMm2GX'}",
-      "venue": "Kölner Philharmonie",
-      "hall": "",
-      "city": "Köln"
-    },
-    {
-      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/klassik-mal-anders-heute-schon-gelacht/4872",
-      "title": "Klassik mal anders: Heute schon gelacht?",
-      "date": "21.05.2026",
-      "time": "19:00",
-      "venue_hall": "",
-      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uQ1cfYARVs9aQDaG21'}",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vTLWfZT9jDF1L3a8Bp'}",
       "venue": "Kölner Philharmonie",
       "hall": "",
       "city": "Köln"
@@ -54,7 +32,29 @@
       "date": "23.05.2026",
       "time": "20:00",
       "venue_hall": "",
-      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uQFDy3anpoYwCEyrfb'}",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vTeJEjjv9P4ZgCyXRQ'}",
+      "venue": "Kölner Philharmonie",
+      "hall": "",
+      "city": "Köln"
+    },
+    {
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/lucia-cadotsch-aki/4651",
+      "title": "Lucia Cadotsch AKI",
+      "date": "22.05.2026",
+      "time": "20:00",
+      "venue_hall": "",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vTx2bKYA4JzZwgSAXD'}",
+      "venue": "Kölner Philharmonie",
+      "hall": "",
+      "city": "Köln"
+    },
+    {
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/rising-stars-alfheiur-erla-gumundsdottir-kunal-lahiry/4708",
+      "title": "Rising Stars: Álfheiður Erla Guðmundsdóttir & Kunal Lahiry",
+      "date": "17.05.2026",
+      "time": "16:00",
+      "venue_hall": "",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vUFjCxDA6nL1mKNeY3'}",
       "venue": "Kölner Philharmonie",
       "hall": "",
       "city": "Köln"
