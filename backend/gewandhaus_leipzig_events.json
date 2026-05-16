@@ -1,96 +1,60 @@
 {
   "venue": "Gewandhaus Leipzig",
   "city": "Leipzig",
-  "scraped_at": "2026-05-16T20:26:10.992122Z",
+  "scraped_at": "2026-05-16T20:48:02.703483Z",
   "total_events": 5,
   "events": [
-    {
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/element-of-crime-9804/",
-      "title": "Konzerthaus Tour 2026\n        \n    \n\n    \n    \n            \n                Element of Crime",
-      "date": "2026-05-17",
-      "time": "19:00",
-      "venue_hall": "",
-      "program": [],
-      "performers": [
-        "Element of Crime (band)"
-      ],
-      "conductor": null,
-      "duration_min": null,
-      "intro": "Element of Crime performs at the Großer Saal of the Gewandhaus Leipzig as part of their Konzerthaus Tour 2026. The concert is sold out.",
-      "venue": "Gewandhaus Leipzig",
-      "hall": "",
-      "city": "Leipzig"
-    },
-    {
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/regina-9590/",
-      "title": "Oper\n        \n    \n\n    \n    \n            \n                REGINA\n            \n        \n\n\n    \n        \n            Gewandhausorchester, Constantin Trinks Musikalische Leitung, Bernd Mottl Inszenierung\n        \n    \n\n\n                                \n                                    \n\n\n\n\n    \n        \n            \n                \n                        Albert Lortzing —\n                        Regina - Oper in drei Akten\n                    \n            \n        \n    \n    \n\n\n\n\n                                \n\n                                \n                                    \n\n\n\n\n    \n        \n                Albert Lortzing — Regina - Oper in drei Akten",
-      "date": "2026-05-17",
-      "time": "17:00",
-      "venue_hall": "",
-      "program": [
-        "Albert Lortzing: Regina – Oper in drei Akten"
-      ],
-      "performers": [
-        "Gewandhausorchester (orchestra)"
-      ],
-      "conductor": "Constantin Trinks",
-      "duration_min": null,
-      "intro": "Albert Lortzing's final opera 'Regina', set against the backdrop of the 1848 revolution, tells the story of two factory workers who love Regina, the factory owner's daughter, while belonging to opposing political factions. This rarely performed work was suppressed for decades due to its political content and was only performed in censored form at its 1899 premiere, long after Lortzing's death.",
-      "venue": "Gewandhaus Leipzig",
-      "hall": "",
-      "city": "Leipzig"
-    },
-    {
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/la-traviata-9589/",
-      "title": "Oper\n        \n    \n\n    \n    \n            \n                LA TRAVIATA\n            \n        \n\n\n    \n        \n            Gewandhausorchester, Christoph Gedschold Musikalische Leitung, Andreas Homoki Inszenierung\n        \n    \n\n\n                                \n                                    \n\n\n\n\n    \n        \n            \n                \n                        Giuseppe Verdi —\n                        La Traviata - Melodramma in drei Akten\n                    \n            \n        \n    \n    \n\n\n\n\n                                \n\n                                \n                                    \n\n\n\n\n    \n        \n                Giuseppe Verdi — La Traviata - Melodramma in drei Akten",
-      "date": "2026-05-16",
-      "time": "19:00",
-      "venue_hall": "",
-      "program": [
-        "Giuseppe Verdi: La Traviata - Melodramma in drei Akten"
-      ],
-      "performers": [
-        "Gewandhausorchester (orchestra)"
-      ],
-      "conductor": "Christoph Gedschold",
-      "duration_min": 135,
-      "intro": "Andreas Homoki's production of Verdi's La Traviata, with libretto by Francesco Maria Piave after Alexandre Dumas's 'Die Kameliendame', performed in Italian with German surtitles. The staging is reduced to the essentials, bringing great emotions and great music to the fore.",
-      "venue": "Gewandhaus Leipzig",
-      "hall": "",
-      "city": "Leipzig"
-    },
     {
       "detail_url": "https://www.gewandhausorchester.de/veranstaltung/gastspiel-in-frankfurt-9425/konzert.ics",
       "title": "(Link öffnet einen neuen Tab)",
       "date": "",
       "time": "",
       "venue_hall": "",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "duration_min": null,
-      "intro": null,
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uR8xDSGntnFam3NEAJ'}",
       "venue": "Gewandhaus Leipzig",
       "hall": "",
       "city": "Leipzig"
     },
     {
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/gastspiel-in-frankfurt-9425/",
-      "title": "Gastspiel des Gewandhausorchesters in Frankfurt\n            \n        \n\n\n    \n        \n            Gewandhausorchester, Andris Nelsons Dirigent, Yulianna Avdeeva Klavier\n        \n    \n\n\n                                \n                                    \n\n\n\n\n    \n    \n        \n            \n                Werke von\n                \n                    Sergej Rachmaninoff,\n                \n                    Dmitri Schostakowitsch\n                \n            \n        \n    \n\n\n\n\n                                \n\n                                \n                                    \n\n\n\n\n    \n        \n                Sergej Rachmaninoff — 2. Konzert für Klavier und Orchester c-Moll op. 18\n            \n        \n    \n\n    \n        \n                Pause\n            \n        \n    \n\n    \n        \n                Dmitri Schostakowitsch — 10. Sinfonie e-Moll op. 93",
-      "date": "2026-05-17",
-      "time": "19:00",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/quartettgesellschaft-kammermusik-9375/konzert.ics",
+      "title": "(Link öffnet einen neuen Tab)",
+      "date": "",
+      "time": "",
       "venue_hall": "",
-      "program": [
-        "Sergej Rachmaninoff: Konzert für Klavier und Orchester Nr. 2 c-Moll op. 18",
-        "Dmitri Schostakowitsch: Sinfonie Nr. 10 e-Moll op. 93"
-      ],
-      "performers": [
-        "Yulianna Avdeeva (Klavier)",
-        "Gewandhausorchester"
-      ],
-      "conductor": "Andris Nelsons",
-      "duration_min": null,
-      "intro": "The Gewandhausorchester performs as a guest at the Alte Oper Frankfurt, presenting Rachmaninoff's Second Piano Concerto with soloist Yulianna Avdeeva and Shostakovich's Tenth Symphony, under the baton of Andris Nelsons.",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uREfWXtXRqt8YSJDvM'}",
+      "venue": "Gewandhaus Leipzig",
+      "hall": "",
+      "city": "Leipzig"
+    },
+    {
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/element-of-crime-9804/konzert.ics",
+      "title": "(Link öffnet einen neuen Tab)",
+      "date": "",
+      "time": "",
+      "venue_hall": "",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uRLAuDTS7CAAqoTUuH'}",
+      "venue": "Gewandhaus Leipzig",
+      "hall": "",
+      "city": "Leipzig"
+    },
+    {
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/the-ten-tenors-9142/",
+      "title": "The Ten Tenors",
+      "date": "",
+      "time": "",
+      "venue_hall": "",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uRaoUdSFYSfUwPrcsU'}",
+      "venue": "Gewandhaus Leipzig",
+      "hall": "",
+      "city": "Leipzig"
+    },
+    {
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/la-traviata-9589/konzert.ics",
+      "title": "(Link öffnet einen neuen Tab)",
+      "date": "",
+      "time": "",
+      "venue_hall": "",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uRgehknVuPjY9YCF4r'}",
       "venue": "Gewandhaus Leipzig",
       "hall": "",
       "city": "Leipzig"
