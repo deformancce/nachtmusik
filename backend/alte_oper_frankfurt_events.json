@@ -1,86 +1,102 @@
 {
   "venue": "Alte Oper Frankfurt",
   "city": "Frankfurt",
-  "scraped_at": "2026-05-16T20:24:25.751305Z",
+  "scraped_at": "2026-05-16T20:46:56.184620Z",
   "total_events": 5,
   "events": [
-    {
-      "detail_url": "https://www.alteoper.de/de/programm/haydn-jahreszeiten/18466",
-      "title": "Haydn, Jahreszeiten",
-      "date": "Mo 18 Mai 2026",
-      "time": "20:00",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Joseph Haydn: Die Jahreszeiten Hob. XXI:3"
-      ],
-      "performers": [],
-      "conductor": null,
-      "duration_min": null,
-      "intro": "A concert at the Alte Oper Frankfurt featuring Joseph Haydn's oratorio 'Die Jahreszeiten'. Further details about performers, conductor, and date are not available from the provided page content.",
-      "venue": "Alte Oper Frankfurt",
-      "hall": "Großer Saal",
-      "city": "Frankfurt"
-    },
-    {
-      "detail_url": "https://www.alteoper.de/de/programm/six-the-musical/18721",
-      "title": "SIX - The Musical",
-      "date": "Sa 20 Juni 2026",
-      "time": "19:00",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Toby Marlow and Lucy Moss: SIX - The Musical"
-      ],
-      "performers": [],
-      "conductor": null,
-      "duration_min": 80,
-      "intro": "SIX ist ein weltweites Phänomen und die geniale Verschmelzung von Musical, Popkonzert und Geschichte, in dem die sechs Ehefrauen Heinrichs VIII. in einem 80-minütigen Konzert-Battle ihre Geschichten erzählen. Das energiegeladene Musical wurde von Toby Marlow und Lucy Moss während ihres Studiums an der University of Cambridge geschrieben.",
-      "venue": "Alte Oper Frankfurt",
-      "hall": "Großer Saal",
-      "city": "Frankfurt"
-    },
     {
       "detail_url": "https://www.alteoper.de/de/programm/hr-sinfonieorchester/18582",
       "title": "hr-Sinfonieorchester",
       "date": "Do 11 Juni 2026",
       "time": "19:00",
       "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [
-        "hr-Sinfonieorchester (orchestra)"
+      "program": [
+        "Béla Bartók: Violinkonzert Nr. 2",
+        "Johannes Brahms: Sinfonie Nr. 4 e-Moll op. 98"
       ],
-      "conductor": null,
+      "performers": [
+        "Vilde Frang (Violine)",
+        "hr-Sinfonieorchester (Orchester)"
+      ],
+      "conductor": "Alain Altinoglu",
       "duration_min": null,
-      "intro": null,
+      "intro": "Das hr-Sinfonieorchester unter Chefdirigent Alain Altinoglu präsentiert Bartóks mitreißendes 2. Violinkonzert mit der Solistin Vilde Frang sowie Brahms' 4. Sinfonie, mit der Altinoglu seine Brahms-Reihe mit dem Orchester fortsetzt.",
       "venue": "Alte Oper Frankfurt",
       "hall": "Großer Saal",
       "city": "Frankfurt"
     },
     {
-      "detail_url": "https://www.alteoper.de/de/programm/ten-tenors/18350",
-      "title": "Ten Tenors",
-      "date": "Fr 05 Juni 2026",
-      "time": "20:00",
+      "detail_url": "https://www.alteoper.de/de/programm/haydn-jahreszeiten/18465",
+      "title": "Haydn, Jahreszeiten",
+      "date": "So 17 Mai 2026",
+      "time": "11:00",
       "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [
-        "Ten Tenors (vocal ensemble)"
+      "program": [
+        "Joseph Haydn: Die Jahreszeiten Hob. XXI:3"
       ],
-      "conductor": null,
-      "duration_min": null,
-      "intro": "The Ten Tenors return to Germany for their 'Time of Your Life Tour 2026', presenting a captivating mix of classical opera, rock, and pop, including beloved classics and new surprises.",
+      "performers": [
+        "Frankfurter Opern- und Museumsorchester (orchestra)",
+        "Cäcilienchor Frankfurt (choir)",
+        "Figuralchor Frankfurt (choir)",
+        "Frankfurter Kantorei (choir)",
+        "Frankfurter Singakademie (choir)",
+        "Karolina Bengtsson (Sopran)",
+        "Magnus Dietrich (Tenor)",
+        "David Steffens (Bariton)"
+      ],
+      "conductor": "Thomas Guggeis",
+      "duration_min": 165,
+      "intro": "Joseph Haydn's oratorio 'Die Jahreszeiten' (The Seasons), composed shortly after the successful premiere of 'Die Schöpfung', depicts the existence of the world through the course of the year and the experience of divine creation in the cyclical rhythms of nature. The work is performed here with massed choral forces and soloists under conductor Thomas Guggeis.",
       "venue": "Alte Oper Frankfurt",
       "hall": "Großer Saal",
       "city": "Frankfurt"
     },
     {
-      "detail_url": "https://www.alteoper.de/de/programm/buhne-der-vielfalt-frankfurt-ladt-ein/18439",
-      "title": "Bühne der Vielfalt: Frankfurt lädt ein",
-      "date": "Do 11 Juni 2026",
-      "time": "19:00",
+      "detail_url": "https://www.alteoper.de/de/programm/tempo/18600",
+      "title": "Tempo",
+      "date": "So 07 Juni 2026",
+      "time": "14:00",
       "venue_hall": "Mozart Saal",
-      "_detail_error": "Expecting ',' delimiter: line 10 column 22 (char 281)",
+      "program": [
+        "Ludwig van Beethoven: Werke (unspecified)",
+        "Johannes Brahms: Werke (unspecified)",
+        "Claudio Monteverdi: Werke (unspecified)"
+      ],
+      "performers": [
+        "Michela Zanoni (Harfe)",
+        "Michele Mazzini (Klarinette)",
+        "Robbrecht Van Cauwenberghe (Bajan)",
+        "Veysel Dzhesur (Percussion)",
+        "Valentine Blangé (Violine)",
+        "Oorkaan (Ensemble)"
+      ],
+      "conductor": null,
+      "duration_min": 50,
+      "intro": "Das niederländische Oorkaan Ensemble präsentiert ein Familienkonzert für Kinder ab sechs Jahren, das klassische Musik von Beethoven, Brahms, Monteverdi und anderen zugänglich macht. Die Musiker spielen mit Zeit und Tempo – beschleunigen, verlangsamen und brechen die Regeln, sodass die Zeit zu fliegen scheint und gleichzeitig stillzustehen.",
       "venue": "Alte Oper Frankfurt",
       "hall": "Mozart Saal",
+      "city": "Frankfurt"
+    },
+    {
+      "detail_url": "https://www.alteoper.de/de/programm/tempo/18599",
+      "title": "Tempo",
+      "date": "So 07 Juni 2026",
+      "time": "11:00",
+      "venue_hall": "Mozart Saal",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uLXYscNQdd2d34hyHy'}",
+      "venue": "Alte Oper Frankfurt",
+      "hall": "Mozart Saal",
+      "city": "Frankfurt"
+    },
+    {
+      "detail_url": "https://www.alteoper.de/de/programm/six-the-musical/18720",
+      "title": "SIX - The Musical",
+      "date": "Sa 20 Juni 2026",
+      "time": "14:30",
+      "venue_hall": "Großer Saal",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uLmhRQJcHKQFBgJDzf'}",
+      "venue": "Alte Oper Frankfurt",
+      "hall": "Großer Saal",
       "city": "Frankfurt"
     }
   ]
