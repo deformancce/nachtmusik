@@ -1,121 +1,116 @@
 {
   "venue": "Konzerthaus Berlin",
   "city": "Berlin",
-  "scraped_at": "2026-05-16T19:50:34.138400Z",
+  "scraped_at": "2026-05-16T20:21:22.661140Z",
   "total_events": 5,
   "events": [
     {
-      "detail_url": "https://www.konzerthaus.de/de/programm/2-x-horen/11722",
-      "title": "2 x hören",
-      "date": "2026-05-22",
-      "time": "20:00",
+      "detail_url": "https://www.konzerthaus.de/de/programm/haydn-im-quartett/12420",
+      "title": "Haydn im Quartett",
+      "date": "2026-06-07",
+      "time": "11:30",
       "venue_hall": "",
       "program": [
-        "Olga Neuwirth: in the realms of the unreal für Streichquartett"
+        "Joseph Haydn: Streichquartett C-Dur op. 33 Nr. 3 Hob III:39 (\"Vogelquartett\")",
+        "Maddalena Laura Lombardini Sirmen: Streichquartett B-Dur op. 3 Nr. 4",
+        "Joseph Haydn: Streichquartett B-Dur op. 76 Nr. 4 Hob III:78 (\"Sonnenaufgang\")"
       ],
       "performers": [
-        "Ensemble Resonanz (string quartet)",
-        "Barbara Bultmann (Violine)",
-        "Benjamin Spillner (Violine)",
-        "Tim-Erik Winzer (Viola)",
-        "Martin Egidi (Violoncello)"
+        "Petr Matěják (Violine)",
+        "Linda Fichtner (Violine)",
+        "Matthias Gallien (Viola)",
+        "Nerina Mancini (Violoncello)"
       ],
       "conductor": null,
-      "duration_min": 90,
-      "intro": "A conversation concert (Gesprächskonzert) in which moderator Christian Jost introduces a contemporary work, the piece is performed, discussed, and then heard again — allowing the audience to discover how much their perception has deepened.",
+      "duration_min": 65,
+      "intro": "Members of the Konzerthausorchester Berlin perform two beloved Haydn string quartets — the playful 'Bird' Quartet and the radiant 'Sunrise' Quartet — alongside a work by the gifted Venetian composer Maddalena Sirmen, whose six quartets op. 3 appeared in Paris in the same year as Haydn's op. 9.",
       "venue": "Konzerthaus Berlin",
       "hall": "",
       "city": "Berlin"
     },
     {
-      "detail_url": "https://www.konzerthaus.de/de/programm/espresso-konzert/11724",
-      "title": "Espresso-Konzert",
-      "date": "2026-05-26",
+      "detail_url": "https://www.konzerthaus.de/de/programm/8zehn30-kurzkonzert/11531",
+      "title": "8ZEHN30 – Kurzkonzert",
+      "date": "2026-05-21",
+      "time": "18:30",
+      "venue_hall": "",
+      "program": [
+        "Gustav Mahler: Sinfonie Nr. 5 cis-Moll"
+      ],
+      "performers": [
+        "Konzerthausorchester Berlin (orchestra)"
+      ],
+      "conductor": "Joana Mallwitz",
+      "duration_min": 90,
+      "intro": "A short concert as part of the 8ZEHN30 series at Konzerthaus Berlin, offering 60 minutes of uninterrupted music starting at 18:30. The programme features Mahler's Fifth Symphony, conducted by Joana Mallwitz with the Konzerthausorchester Berlin.",
+      "venue": "Konzerthaus Berlin",
+      "hall": "",
+      "city": "Berlin"
+    },
+    {
+      "detail_url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-gastspiel-hamburg/12955",
+      "title": "Konzerthausorchester Gastspiel Hamburg",
+      "date": "2026-05-27",
+      "time": "20:00",
+      "venue_hall": "",
+      "program": [
+        "Ludwig van Beethoven: Konzert für Klavier und Orchester Nr. 3 c-Moll op. 37",
+        "Gustav Mahler: Sinfonie Nr. 5 cis-Moll"
+      ],
+      "performers": [
+        "Alice Sara Ott (Klavier)",
+        "Konzerthausorchester Berlin (Orchester)"
+      ],
+      "conductor": "Joana Mallwitz",
+      "duration_min": 150,
+      "intro": "The Konzerthausorchester Berlin performs at the Elbphilharmonie Hamburg with conductor Joana Mallwitz and pianist Alice Sara Ott as Artist in Residence. The program features Beethoven's Third Piano Concerto and Mahler's Fifth Symphony.",
+      "venue": "Konzerthaus Berlin",
+      "hall": "",
+      "city": "Berlin"
+    },
+    {
+      "detail_url": "https://www.konzerthaus.de/de/programm/rundfunk-sinfonieorchester-berlin-simone-young/11977",
+      "title": "Rundfunk-Sinfonieorchester Berlin, Simone Young",
+      "date": "2026-05-30",
+      "time": "20:00",
+      "venue_hall": "",
+      "program": [
+        "Antonín Dvořák: Konzert für Violine und Orchester a-Moll op. 53",
+        "Erich Wolfgang Korngold: Sinfonie Fis-Dur op. 40"
+      ],
+      "performers": [
+        "Christian Tetzlaff (Violine)",
+        "Rundfunk-Sinfonieorchester Berlin (Orchester)"
+      ],
+      "conductor": "Simone Young",
+      "duration_min": 120,
+      "intro": "The Rundfunk-Sinfonieorchester Berlin, conducted by Simone Young, presents violinist Christian Tetzlaff in Dvořák's Violin Concerto, followed by Korngold's Symphony in F-sharp major.",
+      "venue": "Konzerthaus Berlin",
+      "hall": "",
+      "city": "Berlin"
+    },
+    {
+      "detail_url": "https://www.konzerthaus.de/de/programm/espresso-konzert/11726",
+      "title": "Espresso-Konzert: Brave New World",
+      "date": "2026-06-03",
       "time": "14:00",
       "venue_hall": "",
       "program": [
-        "Paul Hindemith: Drei Stücke für Violoncello und Klavier op. 8 (Auszüge)",
-        "César Franck: Sonate für Violoncello und Klavier A-Dur (nach der Violinsonate)",
-        "Witold Lutosławski: Sacher Variationen für Violoncello solo",
-        "Gabriel Fauré: Romanze für Violoncello und Klavier A-Dur op. 69"
+        "Benjamin Britten: Lieder",
+        "Hanns Eisler: Lieder",
+        "Erich Korngold: Lieder",
+        "Alma Mahler: Lieder",
+        "Arnold Schönberg: Lieder",
+        "Ruth Schönthal: Lieder",
+        "Kurt Weill: Lieder"
       ],
       "performers": [
-        "Yu-Ju Yen (Violoncello)",
-        "Maria Guignard (Klavier)",
-        "Mitglieder der Kurt-Sanderling-Akademie des Konzerthausorchesters Berlin (ensemble)"
+        "Valerie Eickhoff (Mezzosopran)",
+        "Elenora Pertz (Klavier)"
       ],
       "conductor": null,
       "duration_min": 60,
-      "intro": "Ein Espresso-Konzert am frühen Nachmittag mit Mitgliedern der Kurt-Sanderling-Akademie des Konzerthausorchesters Berlin, das Werke von Hindemith, Franck, Lutosławski und Fauré für Violoncello und Klavier präsentiert.",
-      "venue": "Konzerthaus Berlin",
-      "hall": "",
-      "city": "Berlin"
-    },
-    {
-      "detail_url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-gastspiel-essen/12954",
-      "title": "Konzerthausorchester Gastspiel Essen",
-      "date": "2026-05-26",
-      "time": "20:00",
-      "venue_hall": "",
-      "program": [
-        "Ludwig van Beethoven: Konzert für Klavier und Orchester Nr. 3 c-Moll op. 37",
-        "Gustav Mahler: Sinfonie Nr. 5 cis-Moll"
-      ],
-      "performers": [
-        "Alice Sara Ott (Klavier)",
-        "Konzerthausorchester Berlin (Orchester)"
-      ],
-      "conductor": "Joana Mallwitz",
-      "duration_min": 150,
-      "intro": "Das Konzerthausorchester Berlin gastiert mit Chefdirigentin Joana Mallwitz und Artist in Residence Alice Sara Ott im Alfried-Krupp-Saal der Philharmonie Essen. Auf dem Programm stehen Beethovens drittes Klavierkonzert und Mahlers Fünfte Sinfonie.",
-      "venue": "Konzerthaus Berlin",
-      "hall": "",
-      "city": "Berlin"
-    },
-    {
-      "detail_url": "https://www.konzerthaus.de/de/programm/quatuor-zaide/11535",
-      "title": "Quatuor Zaïde",
-      "date": "2026-05-26",
-      "time": "20:00",
-      "venue_hall": "",
-      "program": [
-        "Bryce Dessner: Impermanence für Streichquartett",
-        "Rebecca Clarke: Poem für Streichquartett",
-        "Fanny Hensel: Streichquartett Es-Dur",
-        "Ludwig van Beethoven: Streichquartett c-Moll op. 18 Nr. 4",
-        "Bryce Dessner: Aheym für Streichquartett"
-      ],
-      "performers": [
-        "Charlotte Maclet (Violine)",
-        "Leslie Boulin Raulet (Violine)",
-        "Céline Tison (Viola)",
-        "Juliette Salmona (Violoncello)",
-        "Quatuor Zaïde (Streichquartett)"
-      ],
-      "conductor": null,
-      "duration_min": 120,
-      "intro": "Das Quatuor Zaïde, 2009 in Paris gegründet, präsentiert ein abwechslungsreiches Programm mit zwei Werken des Composers in Residence Bryce Dessner sowie Kammermusik von Rebecca Clarke, Fanny Hensel und Ludwig van Beethoven.",
-      "venue": "Konzerthaus Berlin",
-      "hall": "",
-      "city": "Berlin"
-    },
-    {
-      "detail_url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-berlin-joana-mallwitz/11533",
-      "title": "Konzerthausorchester Berlin, Joana Mallwitz",
-      "date": "2026-05-23",
-      "time": "19:00",
-      "venue_hall": "",
-      "program": [
-        "Ludwig van Beethoven: Konzert für Klavier und Orchester Nr. 3 c-Moll op. 37",
-        "Gustav Mahler: Sinfonie Nr. 5 cis-Moll"
-      ],
-      "performers": [
-        "Alice Sara Ott (Klavier)",
-        "Konzerthausorchester Berlin (Orchester)"
-      ],
-      "conductor": "Joana Mallwitz",
-      "duration_min": 150,
-      "intro": "Das Konzerthausorchester Berlin musiziert unter Chefdirigentin Joana Mallwitz mit Alice Sara Ott als Solistin am Klavier. Das Programm vereint Beethovens drittes Klavierkonzert mit Mahlers Fünfter Sinfonie, bevor das Ensemble auf Tournee durch Deutschland und Österreich geht.",
+      "intro": "Ein Espresso-Konzert mit dem Programm \"Brave New World\" – Lieder von Britten, Eisler, Korngold, Alma Mahler, Schönberg, Schönthal und Weill, präsentiert von Mezzosopranistin Valerie Eickhoff und Pianistin Elenora Pertz. Die Espresso-Konzerte am frühen Nachmittag stellen ausgezeichnete Nachwuchsmusiker*innen mit wachmachenden Überraschungsprogrammen vor.",
       "venue": "Konzerthaus Berlin",
       "hall": "",
       "city": "Berlin"
