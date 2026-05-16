@@ -1,0 +1,182 @@
+{
+  "konzerthaus_berlin": {
+    "slug": "konzerthaus_berlin",
+    "name": "Konzerthaus Berlin",
+    "city": "Berlin",
+    "url": "https://www.konzerthaus.de/programm",
+    "tier": 1,
+    "_analyzed_at": "2026-05-16T00:00:00Z",
+    "validation": "needs_review",
+    "load_method": "scroll",
+    "needs_networkidle": false,
+    "scroll_max": 60,
+    "click_keywords": [],
+    "event_url_pattern": "/veranstaltung/[a-z0-9_-]+",
+    "teaser_selector": ".event-item, .c-event-teaser, article.event",
+    "field_selectors": {
+      "title": "h2, h3, .event-title",
+      "date": "time, .event-date, .date",
+      "time": ".event-time, .time",
+      "venue_hall": ".event-venue, .hall"
+    },
+    "detail_selectors": {
+      "program_section": ".program, .programm, #programm",
+      "performers_section": ".performers, .mitwirkende, .artists"
+    },
+    "structured_source": null,
+    "cross_promotion_risk": "low",
+    "multi_date_per_event": false,
+    "default_venue": "Konzerthaus Berlin",
+    "default_city": "Berlin",
+    "hall_mappings": {
+      "Großer Saal": "Konzerthaus Berlin",
+      "Werner-Otto-Saal": "Konzerthaus Berlin",
+      "Musikclub": "Konzerthaus Berlin"
+    },
+    "notes": "Manually configured — run analyze_venues.py --only konzerthaus_berlin with ANTHROPIC_API_KEY to auto-refine selectors",
+    "confidence": 0.6,
+    "_detail_url_sample": ""
+  },
+  "alte_oper_frankfurt": {
+    "slug": "alte_oper_frankfurt",
+    "name": "Alte Oper Frankfurt",
+    "city": "Frankfurt",
+    "url": "https://www.alteoper.de/de/programm",
+    "tier": 1,
+    "_analyzed_at": "2026-05-16T00:00:00Z",
+    "validation": "needs_review",
+    "load_method": "static",
+    "needs_networkidle": false,
+    "scroll_max": 30,
+    "click_keywords": [],
+    "event_url_pattern": "/de/(veranstaltung|event|programm)/[a-z0-9_-]+",
+    "teaser_selector": ".event, .program-item, .concert-item",
+    "field_selectors": {
+      "title": "h2, h3, .event-title, .title",
+      "date": "time, .date, .event-date",
+      "time": ".time, .event-time",
+      "venue_hall": ".hall, .venue, .location"
+    },
+    "detail_selectors": {
+      "program_section": ".program, #programm",
+      "performers_section": ".performers, .cast"
+    },
+    "structured_source": null,
+    "cross_promotion_risk": "low",
+    "multi_date_per_event": false,
+    "default_venue": "Alte Oper Frankfurt",
+    "default_city": "Frankfurt",
+    "hall_mappings": {
+      "Großer Saal": "Alte Oper Frankfurt",
+      "Mozart Saal": "Alte Oper Frankfurt"
+    },
+    "notes": "Manually configured — run analyze_venues.py --only alte_oper_frankfurt with ANTHROPIC_API_KEY to auto-refine",
+    "confidence": 0.6,
+    "_detail_url_sample": ""
+  },
+  "koelner_philharmonie": {
+    "slug": "koelner_philharmonie",
+    "name": "Kölner Philharmonie",
+    "city": "Köln",
+    "url": "https://www.koelner-philharmonie.de/de/programm",
+    "tier": 1,
+    "_analyzed_at": "2026-05-16T00:00:00Z",
+    "validation": "needs_review",
+    "load_method": "scroll",
+    "needs_networkidle": false,
+    "scroll_max": 60,
+    "click_keywords": ["Mehr laden", "Weitere Konzerte", "Mehr anzeigen"],
+    "event_url_pattern": "/de/(veranstaltung|konzert|event)/[a-z0-9_-]+",
+    "teaser_selector": ".event-teaser, .concert-item, .program-entry",
+    "field_selectors": {
+      "title": "h2, h3, .title, .event-title",
+      "date": "time, .date",
+      "time": ".time",
+      "venue_hall": ".hall, .location"
+    },
+    "detail_selectors": {
+      "program_section": ".programm, .program, #programm-section",
+      "performers_section": ".mitwirkende, .artists, .solisten"
+    },
+    "structured_source": null,
+    "cross_promotion_risk": "low",
+    "multi_date_per_event": false,
+    "default_venue": "Kölner Philharmonie",
+    "default_city": "Köln",
+    "hall_mappings": {},
+    "notes": "Manually configured — run analyze_venues.py --only koelner_philharmonie with ANTHROPIC_API_KEY",
+    "confidence": 0.6,
+    "_detail_url_sample": ""
+  },
+  "festspielhaus_baden_baden": {
+    "slug": "festspielhaus_baden_baden",
+    "name": "Festspielhaus Baden-Baden",
+    "city": "Baden-Baden",
+    "url": "https://www.festspielhaus.de/spielplan",
+    "tier": 1,
+    "_analyzed_at": "2026-05-16T00:00:00Z",
+    "validation": "needs_review",
+    "load_method": "static",
+    "needs_networkidle": false,
+    "scroll_max": 30,
+    "click_keywords": [],
+    "event_url_pattern": "/veranstaltungen?/[a-z0-9_-]+",
+    "teaser_selector": ".event, .performance, .spielplan-item",
+    "field_selectors": {
+      "title": "h2, h3, .title",
+      "date": ".date, time",
+      "time": ".time",
+      "venue_hall": ".hall, .location"
+    },
+    "detail_selectors": {
+      "program_section": ".programm, .program",
+      "performers_section": ".mitwirkende, .kuenstler"
+    },
+    "structured_source": null,
+    "cross_promotion_risk": "low",
+    "multi_date_per_event": false,
+    "default_venue": "Festspielhaus Baden-Baden",
+    "default_city": "Baden-Baden",
+    "hall_mappings": {},
+    "notes": "Manually configured",
+    "confidence": 0.55,
+    "_detail_url_sample": ""
+  },
+  "glocke_bremen": {
+    "slug": "glocke_bremen",
+    "name": "Glocke Bremen",
+    "city": "Bremen",
+    "url": "https://www.glocke.de/programm",
+    "tier": 1,
+    "_analyzed_at": "2026-05-16T00:00:00Z",
+    "validation": "needs_review",
+    "load_method": "scroll",
+    "needs_networkidle": false,
+    "scroll_max": 40,
+    "click_keywords": [],
+    "event_url_pattern": "/programm/[a-z0-9_-]+",
+    "teaser_selector": ".event, .veranstaltung, .programm-item",
+    "field_selectors": {
+      "title": "h2, h3, .title",
+      "date": ".date, time",
+      "time": ".time",
+      "venue_hall": ".hall"
+    },
+    "detail_selectors": {
+      "program_section": ".programm, .program",
+      "performers_section": ".mitwirkende"
+    },
+    "structured_source": null,
+    "cross_promotion_risk": "low",
+    "multi_date_per_event": false,
+    "default_venue": "Die Glocke",
+    "default_city": "Bremen",
+    "hall_mappings": {
+      "Großer Saal": "Die Glocke",
+      "Kleiner Saal": "Die Glocke"
+    },
+    "notes": "Manually configured",
+    "confidence": 0.55,
+    "_detail_url_sample": ""
+  }
+}
