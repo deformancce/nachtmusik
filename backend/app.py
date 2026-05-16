@@ -13,6 +13,7 @@ Endpoints:
 from typing import Optional, List, Dict
 from pathlib import Path
 import json
+import os
 import re
 
 from fastapi import FastAPI
@@ -125,6 +126,38 @@ def _derive_composers_and_works(events: List[Dict]) -> "tuple[List[Dict], List[D
 
 load_data()
 
+# ── Popularity / genre-boost ─────────────────────────────────────────────────
+
+_POPULARITY_DATA: Dict = {}
+
+def _load_popularity() -> None:
+    p = Path(__file__).parent / "data" / "work_popularity.json"
+    if p.exists():
+        _POPULARITY_DATA.update(json.loads(p.read_text()))
+
+_load_popularity()
+
+_GENRE_DEFAULTS: Dict[str, int] = _POPULARITY_DATA.get("_genre_defaults", {})
+_WORK_OVERRIDES: Dict[str, int] = _POPULARITY_DATA.get("works", {})
+
+
+def _work_genre_bonus(title: str) -> int:
+    title_n = normalize_text(title) if title else ""
+    for keyword, score in _GENRE_DEFAULTS.items():
+        if keyword in title_n:
+            return score
+    return 30
+
+
+def _work_popularity(composer: str, title: str) -> int:
+    c_short = composer.split(",")[0].strip()
+    for key, score in _WORK_OVERRIDES.items():
+        k_composer, _, k_title = key.partition("|")
+        if (k_composer.lower() in composer.lower()
+                and k_title.lower() in title.lower()):
+            return score
+    return _work_genre_bonus(title)
+
 
 def normalize_text(text: str) -> str:
     text = (text or "").lower()
@@ -170,24 +203,35 @@ def smart_search(query: str) -> Dict:
         opus_norm = normalize_text(work.get("opus", ""))
 
         composer_match = any(part in composer_norm for part in q_parts)
-        work_match = any(part in title_norm for part in q_parts)
+        # Numbers must match as whole tokens to avoid "1" matching inside "51" or "91"
+        def _part_in(part: str, text: str) -> bool:
+            if re.match(r'^\d+$', part):
+                return bool(re.search(rf'\b{part}\b', text))
+            return part in text
+        work_match = any(_part_in(part, title_norm) for part in q_parts)
 
         relevance = 0
         if composer_match and work_match:
-            relevance = 100
+            relevance = 1000
         elif composer_match and q_number is not None:
             num = str(q_number)
-            if (num in title_norm
+            if (bool(re.search(rf'\b{num}\b', title_norm))
                     or f"nr. {num}" in title_norm
                     or f"no. {num}" in title_norm):
-                relevance = 95
+                relevance = 950
         elif work_match:
-            relevance = 70
+            relevance = 700
         elif q_norm in opus_norm:
-            relevance = 60
+            relevance = 600
 
         if relevance > 0:
-            matching_works.append({**work, "type": "work", "relevance": relevance})
+            # Add popularity as fine-grained tiebreaker (0-100) within each relevance band
+            popularity = _work_popularity(work.get("composer", ""), work.get("title", ""))
+            matching_works.append({
+                **work,
+                "type": "work",
+                "relevance": relevance + popularity,
+            })
 
     matching_composers.sort(key=lambda x: x["relevance"], reverse=True)
     matching_works.sort(key=lambda x: x["relevance"], reverse=True)
@@ -449,9 +493,49 @@ def _famous_boost(name: str) -> int:
     return 30 if surname in _FAMOUS_SURNAMES else 0
 
 
+_MEILI_URL = os.getenv("MEILI_URL", "")
+_MEILI_KEY = os.getenv("MEILI_MASTER_KEY", "")
+_meili_client = None
+
+def _get_meili_client():
+    global _meili_client
+    if _meili_client is not None:
+        return _meili_client
+    if not _MEILI_URL:
+        return None
+    try:
+        import meilisearch
+        client = meilisearch.Client(_MEILI_URL, _MEILI_KEY or None)
+        client.health()  # raises if not reachable
+        _meili_client = client
+        print(f"Meilisearch connected at {_MEILI_URL}")
+    except Exception:
+        _meili_client = None
+    return _meili_client
+
+
+def _meili_search(q: str) -> Dict | None:
+    client = _get_meili_client()
+    if client is None:
+        return None
+    try:
+        result = client.index("works").search(q, {
+            "limit": 20,
+            "sort": ["popularity:desc"],
+        })
+        works = [
+            {"composer": h["composer"], "title": h["title"],
+             "type": "work", "relevance": h.get("popularity", 50)}
+            for h in result.get("hits", [])
+        ]
+        return {"composers": [], "works": works}
+    except Exception:
+        return None
+
+
 @app.get("/api/search")
 def search(q: str):
-    results = smart_search(q)
+    results = _meili_search(q) or smart_search(q)
     return {
         "query": q,
         "total_composers": len(results["composers"]),
