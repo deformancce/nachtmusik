@@ -1,7 +1,7 @@
 {
   "venue": "Gewandhaus Leipzig",
   "city": "Leipzig",
-  "scraped_at": "2026-05-16T20:48:02.703483Z",
+  "scraped_at": "2026-05-16T21:02:18.067702Z",
   "total_events": 5,
   "events": [
     {
@@ -10,18 +10,7 @@
       "date": "",
       "time": "",
       "venue_hall": "",
-      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uR8xDSGntnFam3NEAJ'}",
-      "venue": "Gewandhaus Leipzig",
-      "hall": "",
-      "city": "Leipzig"
-    },
-    {
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/quartettgesellschaft-kammermusik-9375/konzert.ics",
-      "title": "(Link öffnet einen neuen Tab)",
-      "date": "",
-      "time": "",
-      "venue_hall": "",
-      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uREfWXtXRqt8YSJDvM'}",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vVPBTDrSxJrVjTTJaL'}",
       "venue": "Gewandhaus Leipzig",
       "hall": "",
       "city": "Leipzig"
@@ -32,29 +21,40 @@
       "date": "",
       "time": "",
       "venue_hall": "",
-      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uRLAuDTS7CAAqoTUuH'}",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vVVKJQchmy2JnNSAvA'}",
       "venue": "Gewandhaus Leipzig",
       "hall": "",
       "city": "Leipzig"
     },
     {
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/the-ten-tenors-9142/",
-      "title": "The Ten Tenors",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/la-traviata-9589/",
+      "title": "Oper LA TRAVIATA Gewandhausorchester, Christoph Gedschold Musikalische Leitung, Andreas Homoki Inszenierung Giuseppe Verdi — La Traviata - Melodramma in drei Akten Giuseppe Verdi — La Traviata - Melodramma in drei Akten",
       "date": "",
       "time": "",
       "venue_hall": "",
-      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uRaoUdSFYSfUwPrcsU'}",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vW5B1npBTCseVPchgx'}",
       "venue": "Gewandhaus Leipzig",
       "hall": "",
       "city": "Leipzig"
     },
     {
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/la-traviata-9589/konzert.ics",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/element-of-crime-9804/",
+      "title": "Konzerthaus Tour 2026 Element of Crime",
+      "date": "",
+      "time": "",
+      "venue_hall": "",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vWdfsGYohTwuEDZaKv'}",
+      "venue": "Gewandhaus Leipzig",
+      "hall": "",
+      "city": "Leipzig"
+    },
+    {
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/the-ten-tenors-9142/konzert.ics",
       "title": "(Link öffnet einen neuen Tab)",
       "date": "",
       "time": "",
       "venue_hall": "",
-      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uRgehknVuPjY9YCF4r'}",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vWji1RDHm4dQ4eZ8Hv'}",
       "venue": "Gewandhaus Leipzig",
       "hall": "",
       "city": "Leipzig"
