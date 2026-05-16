@@ -203,17 +203,6 @@
     "error": "Expecting value: line 1 column 1 (char 0)",
     "confidence": 0.0
   },
-  "tonhalle_d_sseldorf": {
-    "slug": "tonhalle_d_sseldorf",
-    "name": "Tonhalle Düsseldorf",
-    "city": "Düsseldorf",
-    "url": "https://www.tonhalle.de/de/programm",
-    "tier": 1,
-    "_analyzed_at": "2026-05-16T11:49:01.522316Z",
-    "validation": "error",
-    "error": "Expecting value: line 1 column 1 (char 0)",
-    "confidence": 0.0
-  },
   "philharmonie_essen": {
     "slug": "philharmonie_essen",
     "name": "Philharmonie Essen",
@@ -276,37 +265,6 @@
     "confidence": 0.1,
     "_detail_url_sample": ""
   },
-  "k_lner_philharmonie": {
-    "slug": "k_lner_philharmonie",
-    "name": "Kölner Philharmonie",
-    "city": "Köln",
-    "url": "https://www.koelner-philharmonie.de/de/programm",
-    "tier": 1,
-    "_analyzed_at": "2026-05-16T11:50:44.394397Z",
-    "validation": "needs_review",
-    "load_method": "static",
-    "needs_networkidle": false,
-    "scroll_max": 60,
-    "click_keywords": [],
-    "event_url_pattern": "/de/konzerte/[a-z0-9-]+/\\d+",
-    "teaser_selector": "ul li:has(a[href*='/de/konzerte/'])",
-    "field_selectors": {
-      "title": "a[href*='/de/konzerte/']",
-      "date": "li > .date, li > span:first-child",
-      "time": null,
-      "venue_hall": null
-    },
-    "detail_selectors": {
-      "program_section": null,
-      "performers_section": null
-    },
-    "structured_source": null,
-    "cross_promotion_risk": "medium",
-    "multi_date_per_event": false,
-    "notes": "Cookie consent wall present (accept/decline). The listing page shows events as list items with date, time, title and performers. Date and time appear as plain text within the list item (e.g. 'Sa 16.05.2026 20:00'). Some events take place at external/offsite venues (PhilharmonieVeedel Pänz, Im Veedel tagged events) — these should be flagged or filtered. The URL pattern is /de/konzerte/{slug}/{id}. Each event has its own URL with a unique numeric ID. The page appears to be server-side rendered with all events visible in the initial HTML (static load), though JavaScript may enhance it. No JSON-LD detected from the listing page sample. Anti-bot measures not evident beyond the cookie banner. Cross-promotion risk is medium because some concerts feature external orchestras (Gürzenich-Orchester uses mandant=260) and community/outreach events at other venues.",
-    "confidence": 0.62,
-    "_detail_url_sample": ""
-  },
   "gewandhaus_leipzig": {
     "slug": "gewandhaus_leipzig",
     "name": "Gewandhaus Leipzig",
@@ -340,17 +298,6 @@
     "confidence": 0.45,
     "_detail_url_sample": "https://www.gewandhausorchester.de/veranstaltung/quartettgesellschaft-kammermusik-9375/"
   },
-  "isarphilharmonie_m_nchen": {
-    "slug": "isarphilharmonie_m_nchen",
-    "name": "Isarphilharmonie München",
-    "city": "München",
-    "url": "https://www.gasteig.de/programm",
-    "tier": 1,
-    "_analyzed_at": "2026-05-16T11:51:33.175797Z",
-    "validation": "error",
-    "error": "Expecting value: line 1 column 1 (char 0)",
-    "confidence": 0.0
-  },
   "liederhalle_stuttgart": {
     "slug": "liederhalle_stuttgart",
     "name": "Liederhalle Stuttgart",
@@ -358,6 +305,28 @@
     "url": "https://www.liederhalle-stuttgart.de/programm",
     "tier": 1,
     "_analyzed_at": "2026-05-16T11:51:56.524597Z",
+    "validation": "error",
+    "error": "Expecting value: line 1 column 1 (char 0)",
+    "confidence": 0.0
+  },
+  "tonhalle_duesseldorf": {
+    "slug": "tonhalle_duesseldorf",
+    "name": "Tonhalle Düsseldorf",
+    "city": "Düsseldorf",
+    "url": "https://www.tonhalle.de/de/programm",
+    "tier": 1,
+    "_analyzed_at": "2026-05-16T11:49:01.522316Z",
+    "validation": "error",
+    "error": "Expecting value: line 1 column 1 (char 0)",
+    "confidence": 0.0
+  },
+  "isarphilharmonie_muenchen": {
+    "slug": "isarphilharmonie_muenchen",
+    "name": "Isarphilharmonie München",
+    "city": "München",
+    "url": "https://www.gasteig.de/programm",
+    "tier": 1,
+    "_analyzed_at": "2026-05-16T11:51:33.175797Z",
     "validation": "error",
     "error": "Expecting value: line 1 column 1 (char 0)",
     "confidence": 0.0

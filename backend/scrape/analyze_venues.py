@@ -79,8 +79,12 @@ Rules:
 """
 
 
+_UMLAUT_MAP = str.maketrans({"ä": "ae", "ö": "oe", "ü": "ue", "ß": "ss",
+                              "Ä": "ae", "Ö": "oe", "Ü": "ue"})
+
+
 def _slug(name: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
+    return re.sub(r"[^a-z0-9]+", "_", name.translate(_UMLAUT_MAP).lower()).strip("_")
 
 
 def _probe_structured_sources(url: str) -> str | None:
