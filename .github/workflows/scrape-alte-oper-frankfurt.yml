@@ -6,7 +6,7 @@ on:
       branch:
         description: "Branch to scrape from and commit to"
         required: false
-        default: "claude/add-opus-code-iSPrR"
+        default: "main"
 
 permissions:
   contents: write
@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.inputs.branch || 'claude/add-opus-code-iSPrR' }}
+          ref: ${{ github.event.inputs.branch || 'main' }}
 
       - uses: actions/setup-python@v5
         with:
@@ -61,7 +61,7 @@ jobs:
             exit 0
           fi
           git commit -m "Refresh alte_oper_frankfurt_events.json (manual scrape)"
-          BRANCH="${GITHUB_REF_NAME:-claude/add-opus-code-iSPrR}"
+          BRANCH="${GITHUB_REF_NAME:-main}"
           for i in 1 2 3; do
             git pull --rebase --autostash origin "$BRANCH" || true
             if git push origin "HEAD:$BRANCH"; then exit 0; fi
