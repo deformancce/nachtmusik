@@ -60,8 +60,11 @@ jobs:
           import re, pathlib
           from backend.venues_germany import get_venues_by_tier
           base = pathlib.Path('backend/scrape/configs')
+          UMLAUTS = str.maketrans({'ü':'ue', 'ö':'oe', 'ä':'ae', 'ß':'ss',
+                                   'Ü':'ue', 'Ö':'oe', 'Ä':'ae'})
           for v in get_venues_by_tier(1):
-              slug = re.sub(r'[^a-z0-9]+', '_', v['name'].lower()).strip('_')
+              name = v['name'].translate(UMLAUTS).lower()
+              slug = re.sub(r'[^a-z0-9]+', '_', name).strip('_')
               if (base / f'{slug}.py').exists():
                   print(slug)
           ")

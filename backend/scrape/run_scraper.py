@@ -161,9 +161,10 @@ async def scrape_listing(config: VenueConfig) -> list[dict]:
             if full in seen:
                 continue
             seen.add(full)
+            raw_title = link.get("text", "") or ""
             events.append({
                 "detail_url": full,
-                "title": link.get("text", "").strip(),
+                "title": " ".join(raw_title.split()),
                 "date": "",
                 "time": "",
                 "venue_hall": "",
