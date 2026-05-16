@@ -1,33 +1,108 @@
 {
   "venue": "Konzerthaus Dortmund",
   "city": "Dortmund",
-  "scraped_at": "2026-05-16T18:57:58.289392Z",
-  "total_events": 2,
+  "scraped_at": "2026-05-16T19:46:36.175422Z",
+  "total_events": 5,
   "events": [
     {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/21-04-2027-margret-koell-barockharfe-solo/platzwahl/",
-      "title": "Tickets\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t29 €",
-      "program": [],
-      "performers": [
-        "Margret Koell (Barockharfe)"
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/20-12-2026-simon-hoefele-orchestre-philharmonique-royal-de-liege/",
+      "title": "Simon Höfele & Orchestre Philharmonique Royal de Liège",
+      "date": "So 20.12.2026",
+      "time": "16.00 Uhr",
+      "venue_hall": "",
+      "program": [
+        "Wolfgang Amadeus Mozart: Ouvertüre zu »Die Entführung aus dem Serail« KV 384",
+        "Joseph Haydn: Konzert für Trompete und Orchester Es-Dur Hob. VIIe:1",
+        "Nikolai Rimsky-Korsakow: »Scheherazade« Sinfonische Suite op. 35"
       ],
-      "conductor": null,
-      "duration_min": null,
-      "intro": "A solo baroque harp recital by Margret Koell, presented as a 'Silent Opera' about Queen Christina of Sweden.",
+      "performers": [
+        "Simon Höfele (Trompete)",
+        "Orchestre Philharmonique Royal de Liège (Orchester)"
+      ],
+      "conductor": "David Reiland",
+      "duration_min": 120,
+      "intro": "Trumpeter Simon Höfele joins the Orchestre Philharmonique Royal de Liège and conductor David Reiland for an Advent concert featuring Haydn's Trumpet Concerto in E-flat major alongside Mozart's overture to 'Die Entführung aus dem Serail' and Rimsky-Korsakov's colorful orchestral suite 'Scheherazade'.",
       "venue": "Konzerthaus Dortmund",
       "hall": "",
       "city": "Dortmund"
     },
     {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/09-04-2027-luiza/platzwahl/",
-      "title": "Tickets\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t16 € – 39 €",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/01-04-2027-rock-the-ballet/",
+      "title": "Rock the Ballet",
+      "date": "Do 01.04.2027",
+      "time": "19.30 Uhr",
+      "venue_hall": "",
       "program": [],
       "performers": [
-        "Luiza (vocalist)"
+        "Rock the Ballet (dance company)"
       ],
       "conductor": null,
-      "duration_min": null,
-      "intro": "Luiza is presented as the new voice of French chanson-pop, performing at Konzerthaus Dortmund on 9 April 2027.",
+      "duration_min": 180,
+      "intro": "An explosive fusion of world-class ballet technique, acrobatics, and modern street dance set to iconic rock and pop songs. Created by Rasta Thomas and choreographer Adrienne Canterna, the show has thrilled millions of audiences worldwide.",
+      "venue": "Konzerthaus Dortmund",
+      "hall": "",
+      "city": "Dortmund"
+    },
+    {
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/19-05-2027-sir-simon-rattle-br-symphonieorchester-beethoven-eroica/",
+      "title": "Sir Simon Rattle & BR-Symphonieorchester – Beethoven Eroica",
+      "date": "Mi 19.05.2027",
+      "time": "19.30 Uhr",
+      "venue_hall": "",
+      "program": [
+        "Francesco Filidei: Konzert für Viola und Orchester",
+        "Ludwig van Beethoven: Sinfonie Nr. 3 Es-Dur op. 55 »Eroica«"
+      ],
+      "performers": [
+        "Antoine Tamestit (Viola)",
+        "Symphonieorchester des Bayerischen Rundfunks (Orchestra)"
+      ],
+      "conductor": "Sir Simon Rattle",
+      "duration_min": 120,
+      "intro": "Antoine Tamestit, Curating Artist of the 2026/27 season, performs Francesco Filidei's viola concerto alongside Beethoven's iconic 'Eroica' Symphony with the Symphonieorchester des Bayerischen Rundfunks under Sir Simon Rattle. The program pairs a 2024-premiered contemporary work with one of the most beloved symphonies in the repertoire.",
+      "venue": "Konzerthaus Dortmund",
+      "hall": "",
+      "city": "Dortmund"
+    },
+    {
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/06-12-2026-weihnachtskonzert-2026-der-chorakademie/",
+      "title": "Weihnachtskonzert 2026 der Chorakademie",
+      "date": "So 06.12.2026",
+      "time": "11.00 Uhr",
+      "venue_hall": "",
+      "program": [],
+      "performers": [
+        "Chöre der Chorakademie am Konzerthaus Dortmund (choir)"
+      ],
+      "conductor": null,
+      "duration_min": 180,
+      "intro": "Die Chöre der Chorakademie am Konzerthaus Dortmund präsentieren im traditionellen Weihnachtskonzert festliche Lieder im Advent – eine fröhliche Einstimmung auf Weihnachten für die ganze Familie.",
+      "venue": "Konzerthaus Dortmund",
+      "hall": "",
+      "city": "Dortmund"
+    },
+    {
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/13-03-2027-antoine-tamestit-swr-ensemble-schalom-alechem/",
+      "title": "Antoine Tamestit & SWR Ensemble – Schalom Alechem",
+      "date": "Sa 13.03.2027",
+      "time": "19.30 Uhr",
+      "venue_hall": "",
+      "program": [
+        "Sergei Prokofiev: Ouvertüre über hebräische Themen (arr. Anton Hollich)",
+        "Max Bruch: Werk für Viola",
+        "Joseph Achron: Werk für Viola",
+        "Ernest Bloch: Werk für Viola",
+        "Béla Kovács: Klezmer-inspiriertes Stück (arr. Anton Hollich)",
+        "Șerban Nichifor: Klezmer-Tanz (arr. Anton Hollich)"
+      ],
+      "performers": [
+        "Antoine Tamestit (Viola)",
+        "SWR Ensemble",
+        "Tabea Dupree (Moderation)"
+      ],
+      "conductor": null,
+      "duration_min": 120,
+      "intro": "Antoine Tamestit leads the audience through the world of Jewish music – from Ernest Bloch's intimate pieces to exhilarating Klezmer dances – together with soloists of the SWR Symphonieorchester, with arrangements by ensemble member Anton Hollich. The concert is part of the festival 'Antoine Tamestit & Friends' at Konzerthaus Dortmund.",
       "venue": "Konzerthaus Dortmund",
       "hall": "",
       "city": "Dortmund"
