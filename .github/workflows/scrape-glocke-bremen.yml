@@ -31,7 +31,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --quiet crawl4ai pydantic anthropic fastapi
-          python3 -m crawl4ai-setup
+          python3 -m playwright install --with-deps chromium
 
       - name: Run scraper
         env:
