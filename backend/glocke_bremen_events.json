@@ -1,50 +1,28 @@
 {
   "venue": "Glocke Bremen",
   "city": "Bremen",
-  "scraped_at": "2026-05-16T19:51:39.005355Z",
+  "scraped_at": "2026-05-16T20:22:30.692277Z",
   "total_events": 5,
   "events": [
     {
-      "detail_url": "https://www.glocke.de/event/flamenco-rosas-negras-2/?back_btn=1",
-      "title": "Flamenco - Rosas Negras",
-      "date": "Samstag 6 Jun",
-      "time": "20:00 Uhr  | Kleiner Saal",
-      "venue_hall": "20:00 Uhr  | Kleiner Saal",
-      "program": [],
-      "performers": [
-        "Manuel Reina (Tanz)",
-        "Blanca Nieves (Tanz)",
-        "Celedonio Garrido (Gesang)",
-        "Javi Castrillon (Gesang)",
-        "Gilberto Torres (Gitarre und E-Gitarre)",
-        "Josel (Gitarre und E-Bass)",
-        "Antonio »El Pumuki« (Perkussion)"
-      ],
-      "conductor": null,
-      "duration_min": null,
-      "intro": "Das neue Programm von ROSAS NEGRAS präsentiert intensiven und authentischen Flamenco mit einem breiten Spektrum dieser Jahrhunderte alten Kunst. Das Konzert vereint Dramatik und Sensibilität, Tradition und Moderne, Sinnlichkeit und Intimität.",
-      "venue": "Glocke Bremen",
-      "hall": "20:00 Uhr  | Kleiner Saal",
-      "city": "Bremen"
-    },
-    {
-      "detail_url": "https://www.glocke.de/event/alice-im-wunderland-orchestererzaehlung-von-henrik-albrecht/?back_btn=1",
-      "title": "»Alice im Wunderland« Orchestererzählung von Henrik Albrecht",
-      "date": "Sonntag 7 Jun",
-      "time": "15:00 Uhr  | Großer Saal",
-      "venue_hall": "15:00 Uhr  | Großer Saal",
+      "detail_url": "https://www.glocke.de/event/bremer-philharmoniker-time-to-shine-11-philharmonisches-konzert-2/?back_btn=1",
+      "title": "Bremer Philharmoniker »Time to shine« 11. Philharmonisches Konzert",
+      "date": "Montag 1 Jun",
+      "time": "19:30 Uhr  | Großer Saal",
+      "venue_hall": "19:30 Uhr  | Großer Saal",
       "program": [
-        "Henrik Albrecht: Alice im Wunderland (Orchestererzählung)"
+        "Ludwig van Beethoven: Klavierkonzert Nr. 4 G-Dur op. 58",
+        "Béla Bartók: Konzert für Orchester"
       ],
       "performers": [
-        "Schauspieler*innen der bremer shakespeare company (actors)",
-        "Landesjugendorchester Bremen (orchestra)"
+        "Marc-André Hamelin (Klavier)",
+        "Bremer Philharmoniker (Orchester)"
       ],
-      "conductor": "Stefan Geiger",
+      "conductor": "Delyana Lazarova",
       "duration_min": null,
-      "intro": "A family concert featuring Henrik Albrecht's orchestral narrative of Alice in Wonderland, performed with scenic spoken texts by actors of the bremer shakespeare company and the Landesjugendorchester Bremen. Suitable for children aged 6 and above.",
+      "intro": "Pianist Marc-André Hamelin und Dirigentin Delyana Lazarova treffen mit den Bremer Philharmonikern aufeinander für Beethovens innovatives viertes Klavierkonzert und Bartóks virtuoses Konzert für Orchester, in dem das gesamte Ensemble als Solist fungiert.",
       "venue": "Glocke Bremen",
-      "hall": "15:00 Uhr  | Großer Saal",
+      "hall": "19:30 Uhr  | Großer Saal",
       "city": "Bremen"
     },
     {
@@ -60,12 +38,12 @@
         "Johannes Brahms: Werke (unspecified)"
       ],
       "performers": [
-        "Philharmonie der Solisten (orchestra)",
-        "Vladik Otaryan (Violine)"
+        "Vladik Otaryan (Violine)",
+        "Philharmonie der Solisten (Kammerorchester)"
       ],
       "conductor": "Vladik Otaryan",
       "duration_min": null,
-      "intro": "The Philharmonie der Solisten, an ensemble of professionally trained musicians who each perform as soloists, presents Vivaldi's Four Seasons alongside works by Mozart, Bach, and Brahms. The concert is led by violinist Vladik Otaryan.",
+      "intro": "The Philharmonie der Solisten, an ensemble of professionally trained musicians who each perform as soloists, presents Vivaldi's Four Seasons alongside works by Mozart, Bach, and Brahms. Violinist and director Vladik Otaryan leads the ensemble in this chamber concert at the Kleiner Saal.",
       "venue": "Glocke Bremen",
       "hall": "17:00 Uhr  | Kleiner Saal",
       "city": "Bremen"
@@ -91,26 +69,47 @@
       ],
       "conductor": null,
       "duration_min": null,
-      "intro": "The Curtis on Tour Ensemble, led by violinist Liza Ferschtman and pianist Benjamin Hochman, presents a chamber music program featuring works by Martinů, Beethoven, and Brahms. The concert brings together young musicians from the Curtis Institute of Music on a European tour.",
+      "intro": "The Curtis on Tour Ensemble, led by violinist Liza Ferschtman and pianist Benjamin Hochman, presents a chamber music program featuring works by Martinů, Beethoven, and Brahms. Young musicians from the Curtis Institute of Music join their mentors on this European tour.",
       "venue": "Glocke Bremen",
       "hall": "19:00 Uhr  | Kleiner Saal",
       "city": "Bremen"
     },
     {
-      "detail_url": "https://www.glocke.de/event/dennis-alexander-volk-storytelling-piano/?back_btn=1",
-      "title": "Dennis Alexander Volk »Storytelling Piano«",
-      "date": "Samstag 23 Mai",
+      "detail_url": "https://www.glocke.de/event/die-deutsche-kammerphilharmonie-bremen-hauptsache-tschaikowsky-3-highlight-abonnementkonzert/?back_btn=1",
+      "title": "Die Deutsche Kammerphilharmonie Bremen »Haupt­sache Tschai­kowsky« 3. Highlight-Abonnementkonzert",
+      "date": "Freitag 29 Mai",
       "time": "19:30 Uhr  | Großer Saal",
       "venue_hall": "19:30 Uhr  | Großer Saal",
-      "program": [],
-      "performers": [
-        "Dennis Alexander Volk (piano)"
+      "program": [
+        "Johannes Brahms: Klavierkonzert Nr. 2 B-Dur op. 83",
+        "Peter Iljitsch Tschaikowsky: Sinfonie Nr. 4 f-Moll op. 36"
       ],
-      "conductor": null,
-      "duration_min": 120,
-      "intro": "Pianist, yoga teacher and author Dennis Alexander Volk presents an evening of meditative piano music combined with readings from his book »Storytelling Piano« and compositions from his new album.",
+      "performers": [
+        "Fabian Müller (Klavier)",
+        "Die Deutsche Kammerphilharmonie Bremen (Orchester)"
+      ],
+      "conductor": "Jérémie Rhorer",
+      "duration_min": null,
+      "intro": "Pianist, Dirigent und Komponist Fabian Müller kehrt mit der Deutschen Kammerphilharmonie Bremen für eine längere Konzertperiode zurück, um Tschaikowskys 4. Sinfonie und Brahms' monumentales 2. Klavierkonzert zu präsentieren. Die Konzerte sind Teil des fortlaufenden Tschaikowsky-Projekts mit Jérémie Rhorer, dem eine Skandinavien-Tournee folgt.",
       "venue": "Glocke Bremen",
       "hall": "19:30 Uhr  | Großer Saal",
+      "city": "Bremen"
+    },
+    {
+      "detail_url": "https://www.glocke.de/event/marc-uwe-kling-neues-vom-kaenguru/?back_btn=1",
+      "title": "Marc-Uwe Kling: »Neues vom Känguru«",
+      "date": "Mittwoch 20 Mai",
+      "time": "20:00 Uhr  | Großer Saal",
+      "venue_hall": "20:00 Uhr  | Großer Saal",
+      "program": [],
+      "performers": [
+        "Marc-Uwe Kling (Lesung)"
+      ],
+      "conductor": null,
+      "duration_min": null,
+      "intro": "Marc-Uwe Kling liest die besten Geschichten aus seinem neuen Buch »Die Känguru-Rebellion«, in dem das Känguru eine Rebellion gegen die Zustände der Welt startet.",
+      "venue": "Glocke Bremen",
+      "hall": "20:00 Uhr  | Großer Saal",
       "city": "Bremen"
     }
   ]
