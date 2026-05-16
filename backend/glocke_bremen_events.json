@@ -1,74 +1,16 @@
 {
   "venue": "Glocke Bremen",
   "city": "Bremen",
-  "scraped_at": "2026-05-16T20:44:03.349634Z",
+  "scraped_at": "2026-05-16T20:57:01.880188Z",
   "total_events": 5,
   "events": [
     {
-      "detail_url": "https://www.glocke.de/event/flying-sound-klang-emotion-praezision-mit-tigran-maytesian-und-daniel-blumenthal/?back_btn=1",
-      "title": "»Flying Sound – Klang. Emotion. Präzision« mit Tigran Maytesian und Daniel Blumenthal",
-      "date": "Samstag 30 Mai",
-      "time": "20:00 Uhr  | Kleiner Saal",
-      "venue_hall": "20:00 Uhr  | Kleiner Saal",
-      "program": [
-        "Ludwig van Beethoven: Sonate Nr. 5 F-Dur op. 24 »Frühlingssonate«",
-        "Franz Schubert: Sonatine Nr. 3 g-Moll D 408",
-        "Jules Massenet: Méditation aus »Thaïs«",
-        "Pablo de Sarasate: Romanza Andaluza",
-        "Christoph Willibald Gluck: Melodie (arr. Fritz Kreisler)",
-        "Johannes Brahms: Ungarischer Tanz Nr. 5",
-        "Johann Sebastian Bach: Air (arr. August Wilhelmj)",
-        "Pjotr Iljitsch Tschaikowsky: Russischer Tanz",
-        "Komitas Vardapet: Krunk",
-        "Niccolò Paganini: Sonate Nr. 6",
-        "Manuel Ponce: Estrellita (arr. Jascha Heifetz)",
-        "Vittorio Monti: Csárdás"
-      ],
-      "performers": [
-        "Tigran Maytesian (Violine)",
-        "Daniel Blumenthal (Klavier)"
-      ],
-      "conductor": null,
-      "duration_min": null,
-      "intro": "Belgian-Armenian violin virtuoso Tigran Maytesian and renowned pianist Daniel Blumenthal perform an evening of chamber music ranging from lyrical intimacy to virtuosic brilliance. The program centers on Beethoven's »Spring Sonata« alongside works by Sarasate, Massenet, Monti, and others, presented in the transparent acoustics of the Kleiner Saal.",
-      "venue": "Glocke Bremen",
-      "hall": "20:00 Uhr  | Kleiner Saal",
-      "city": "Bremen"
-    },
-    {
-      "detail_url": "https://www.glocke.de/event/die-deutsche-kammerphilharmonie-bremen-hauptsache-tschaikowsky-3-highlight-abonnementkonzert/?back_btn=1",
-      "title": "Die Deutsche Kammerphilharmonie Bremen »Haupt­sache Tschai­kowsky« 3. Highlight-Abonnementkonzert",
-      "date": "Freitag 29 Mai",
-      "time": "19:30 Uhr  | Großer Saal",
-      "venue_hall": "19:30 Uhr  | Großer Saal",
-      "program": [
-        "Johannes Brahms: Klavierkonzert Nr. 2 B-Dur op. 83",
-        "Peter Iljitsch Tschaikowsky: Sinfonie Nr. 4 f-Moll op. 36"
-      ],
-      "performers": [
-        "Fabian Müller (Klavier)",
-        "Die Deutsche Kammerphilharmonie Bremen (Orchester)"
-      ],
-      "conductor": "Jérémie Rhorer",
-      "duration_min": null,
-      "intro": "Pianist Fabian Müller joins the Deutsche Kammerphilharmonie Bremen and conductor Jérémie Rhorer for an evening featuring Brahms's monumental Second Piano Concerto alongside Tchaikovsky's dramatic Fourth Symphony, as part of an ongoing Tchaikovsky project followed by a Scandinavian tour.",
-      "venue": "Glocke Bremen",
-      "hall": "19:30 Uhr  | Großer Saal",
-      "city": "Bremen"
-    },
-    {
-      "detail_url": "https://www.glocke.de/event/marc-uwe-kling-neues-vom-kaenguru/?back_btn=1",
-      "title": "Marc-Uwe Kling: »Neues vom Känguru«",
-      "date": "Mittwoch 20 Mai",
+      "detail_url": "https://www.glocke.de/event/noa-ensemble-the-giver-and-the-see/?back_btn=1",
+      "title": "Noa & Ensemble »The Giver and the See«",
+      "date": "Mittwoch 3 Jun",
       "time": "20:00 Uhr  | Großer Saal",
       "venue_hall": "20:00 Uhr  | Großer Saal",
-      "program": [],
-      "performers": [
-        "Marc-Uwe Kling (Lesung/Reading)"
-      ],
-      "conductor": null,
-      "duration_min": null,
-      "intro": "Marc-Uwe Kling liest die besten Geschichten aus seinem neuen Buch »Die Känguru-Rebellion«, in dem das Känguru eine Rebellion gegen die Zustände der Welt startet.",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6v5bVCt7CN19jpTKbnN'}",
       "venue": "Glocke Bremen",
       "hall": "20:00 Uhr  | Großer Saal",
       "city": "Bremen"
@@ -79,37 +21,42 @@
       "date": "Sonntag 17 Mai",
       "time": "19:00 Uhr  | Kleiner Saal",
       "venue_hall": "19:00 Uhr  | Kleiner Saal",
-      "program": [],
-      "performers": [
-        "Reiner Calmund (Host/Gast)"
-      ],
-      "conductor": null,
-      "duration_min": null,
-      "intro": "Reiner Calmund, former Bundesliga manager and TV expert, hosts a live football talk show featuring stories, anecdotes, and behind-the-scenes insights from the world of football, joined by a sports moderator and a surprise guest.",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6v64KVxwv7JwFhs94iB'}",
       "venue": "Glocke Bremen",
       "hall": "19:00 Uhr  | Kleiner Saal",
       "city": "Bremen"
     },
     {
-      "detail_url": "https://www.glocke.de/event/bremer-kaffeehaus-orchester-frisch-aufgeblueht-fruehlingskonzert/?back_btn=1",
-      "title": "Bremer Kaffeehaus-Orchester »Frisch aufgeblüht« Frühlingskonzert",
-      "date": "Sonntag 31 Mai",
-      "time": "15:30 Uhr  | Kleiner Saal",
-      "venue_hall": "15:30 Uhr  | Kleiner Saal",
-      "program": [],
-      "performers": [
-        "Klaus Fischer (Flöten, Klarinetten, Saxofon und Moderation)",
-        "Constantin Dorsch (Violine)",
-        "Gero John (Violoncello)",
-        "Machiko Totani (Klavier)",
-        "Anselm Hauke (Kontrabass)",
-        "Bremer Kaffeehaus-Orchester (Ensemble)"
-      ],
-      "conductor": null,
-      "duration_min": null,
-      "intro": "The five musicians celebrate spring with lively Kaffeehaus music featuring melodies by Verdi, Mozart, Ravel and others, alongside swing, tango, jazz and rock. The concert promises virtuosity and playfulness across musical styles and epochs, framed by the ensemble's characteristic witty commentary.",
+      "detail_url": "https://www.glocke.de/event/bremer-philharmoniker-time-to-shine-11-philharmonisches-konzert/?back_btn=1",
+      "title": "Bremer Philharmoniker »Time to shine« 11. Philharmonisches Konzert",
+      "date": "Dienstag 2 Jun",
+      "time": "19:30 Uhr  | Großer Saal",
+      "venue_hall": "19:30 Uhr  | Großer Saal",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6v6WdXrzhy3nzr9oDAB'}",
       "venue": "Glocke Bremen",
-      "hall": "15:30 Uhr  | Kleiner Saal",
+      "hall": "19:30 Uhr  | Großer Saal",
+      "city": "Bremen"
+    },
+    {
+      "detail_url": "https://www.glocke.de/event/philharmonie-der-solisten-vivaldi-die-vier-jahreszeiten-7/?back_btn=1",
+      "title": "Philharmonie der Solisten »Vivaldi – Die vier Jahreszeiten«",
+      "date": "Sonntag 24 Mai",
+      "time": "17:00 Uhr  | Kleiner Saal",
+      "venue_hall": "17:00 Uhr  | Kleiner Saal",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6v6yUpdJhBoGcaU6gGx'}",
+      "venue": "Glocke Bremen",
+      "hall": "17:00 Uhr  | Kleiner Saal",
+      "city": "Bremen"
+    },
+    {
+      "detail_url": "https://www.glocke.de/event/die-deutsche-kammerphilharmonie-bremen-hauptsache-tschaikowsky-3-highlight-abonnementkonzert/?back_btn=1",
+      "title": "Die Deutsche Kammerphilharmonie Bremen »Haupt­sache Tschai­kowsky« 3. Highlight-Abonnementkonzert",
+      "date": "Freitag 29 Mai",
+      "time": "19:30 Uhr  | Großer Saal",
+      "venue_hall": "19:30 Uhr  | Großer Saal",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6v7Rs54Z7AL3mhHyw3m'}",
+      "venue": "Glocke Bremen",
+      "hall": "19:30 Uhr  | Großer Saal",
       "city": "Bremen"
     }
   ]
