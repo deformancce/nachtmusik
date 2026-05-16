@@ -1,0 +1,113 @@
+{
+  "venue": "Glocke Bremen",
+  "city": "Bremen",
+  "scraped_at": "2026-05-16T19:45:30.906362Z",
+  "total_events": 5,
+  "events": [
+    {
+      "detail_url": "https://www.glocke.de/event/dennis-alexander-volk-storytelling-piano/?back_btn=1",
+      "title": "Dennis Alexander Volk »Storytelling Piano«",
+      "date": "Samstag 23 Mai",
+      "time": "19:30 Uhr  | Großer Saal",
+      "venue_hall": "19:30 Uhr  | Großer Saal",
+      "program": [],
+      "performers": [
+        "Dennis Alexander Volk (piano)"
+      ],
+      "conductor": null,
+      "duration_min": 120,
+      "intro": "Pianist, author, and yoga teacher Dennis Alexander Volk presents an evening of original piano compositions combined with readings from his book »Storytelling Piano«, offering music for relaxation and personal reflection.",
+      "venue": "Glocke Bremen",
+      "hall": "19:30 Uhr  | Großer Saal",
+      "city": "Bremen"
+    },
+    {
+      "detail_url": "https://www.glocke.de/event/noa-ensemble-the-giver-and-the-see/?back_btn=1",
+      "title": "Noa & Ensemble »The Giver and the See«",
+      "date": "Mittwoch 3 Jun",
+      "time": "20:00 Uhr  | Großer Saal",
+      "venue_hall": "20:00 Uhr  | Großer Saal",
+      "program": [],
+      "performers": [
+        "Noa (Gesang)",
+        "Ruslan Sirota (Klavier)",
+        "Daniel Dor (Perkussion)"
+      ],
+      "conductor": null,
+      "duration_min": null,
+      "intro": "Noa, die israelische Sängerin mit jemenitischen Wurzeln, präsentiert ihr aktuelles Album »The Giver and the See«, das in Zusammenarbeit mit dem Grammy-prämierten Pianisten Ruslan Sirota entstanden ist. Sie verbindet poetischen Jazz mit orientalischen Einflüssen und setzt sich musikalisch für Frieden und Versöhnung im Nahost-Konflikt ein.",
+      "venue": "Glocke Bremen",
+      "hall": "20:00 Uhr  | Großer Saal",
+      "city": "Bremen"
+    },
+    {
+      "detail_url": "https://www.glocke.de/event/die-deutsche-kammerphilharmonie-bremen-hauptsache-tschaikowsky-3-highlight-abonnementkonzert/?back_btn=1",
+      "title": "Die Deutsche Kammerphilharmonie Bremen »Haupt­sache Tschai­kowsky« 3. Highlight-Abonnementkonzert",
+      "date": "Freitag 29 Mai",
+      "time": "19:30 Uhr  | Großer Saal",
+      "venue_hall": "19:30 Uhr  | Großer Saal",
+      "program": [
+        "Johannes Brahms: Klavierkonzert Nr. 2 B-Dur op. 83",
+        "Peter Iljitsch Tschaikowsky: Sinfonie Nr. 4 f-Moll op. 36"
+      ],
+      "performers": [
+        "Fabian Müller (Klavier)",
+        "Die Deutsche Kammerphilharmonie Bremen (Orchester)"
+      ],
+      "conductor": "Jérémie Rhorer",
+      "duration_min": null,
+      "intro": "Pianist, Dirigent und Komponist Fabian Müller tritt gemeinsam mit der Deutschen Kammerphilharmonie Bremen und Dirigent Jérémie Rhorer auf, mit Brahms' monumentalem 2. Klavierkonzert und Tschaikowskys 4. Sinfonie im Rahmen des fortlaufenden Tschaikowsky-Projekts.",
+      "venue": "Glocke Bremen",
+      "hall": "19:30 Uhr  | Großer Saal",
+      "city": "Bremen"
+    },
+    {
+      "detail_url": "https://www.glocke.de/event/curtis-on-tour-8-philharmonisches-kammerkonzert/?back_btn=1",
+      "title": "»Curtis on Tour« 8. Philharmonisches Kammerkonzert",
+      "date": "Mittwoch 20 Mai",
+      "time": "19:00 Uhr  | Kleiner Saal",
+      "venue_hall": "19:00 Uhr  | Kleiner Saal",
+      "program": [
+        "Bohuslav Martinů: Drei Madrigale",
+        "Ludwig van Beethoven: Klaviertrio D-Dur op. 70/1 (»Geistertrio«)",
+        "Johannes Brahms: Klavierquintett f-Moll op. 34"
+      ],
+      "performers": [
+        "Liza Ferschtman (Violine und Leitung)",
+        "Benjamin Hochman (Klavier und Leitung)",
+        "Leah Amory (Violine)",
+        "Davin Mar (Viola)",
+        "Carson Ling-Efird (Violoncello)",
+        "Curtis on Tour Ensemble"
+      ],
+      "conductor": null,
+      "duration_min": null,
+      "intro": "The Curtis on Tour Ensemble, led by violinist Liza Ferschtman and pianist Benjamin Hochman, presents a chamber music program featuring works by Martinů, Beethoven, and Brahms. The concert brings together young musicians from the Curtis Institute of Music on a European tour.",
+      "venue": "Glocke Bremen",
+      "hall": "19:00 Uhr  | Kleiner Saal",
+      "city": "Bremen"
+    },
+    {
+      "detail_url": "https://www.glocke.de/event/jan-lisiecki-tanz-auf-den-tasten-5-meisterkonzert/?back_btn=1",
+      "title": "Jan Lisiecki »Tanz auf den Tasten« 5. Meisterkonzert",
+      "date": "Dienstag 19 Mai",
+      "time": "20:00 Uhr  | Großer Saal",
+      "venue_hall": "20:00 Uhr  | Großer Saal",
+      "program": [
+        "Franz Schubert: 16 Deutsche Tänze D 783",
+        "Béla Bartók: Rumänische Volkstänze Sz 56",
+        "Frédéric Chopin: Grande valse brillante Es-Dur op. 18",
+        "Johannes Brahms: Walzer As-Dur op. 39/15"
+      ],
+      "performers": [
+        "Jan Lisiecki (Klavier)"
+      ],
+      "conductor": null,
+      "duration_min": null,
+      "intro": "Pianist Jan Lisiecki presents a program centered on dances from across Europe and Argentina, featuring works by Schubert, Bartók, Chopin, Brahms, Ginastera, Piazzolla, Albéniz, de Falla, Martinů, Szymanowski, and others. The first half spotlights various dance forms, while the second half focuses on waltzes and Hispanic-American rhythms, concluding with Chopin's As-Dur Polonaise.",
+      "venue": "Glocke Bremen",
+      "hall": "20:00 Uhr  | Großer Saal",
+      "city": "Bremen"
+    }
+  ]
+}
