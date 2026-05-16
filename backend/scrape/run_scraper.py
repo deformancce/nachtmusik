@@ -214,7 +214,7 @@ async def enrich_event(
                                 f"\n\nVenue: {config.name}, {config.city}.")
     try:
         msg = client.messages.create(
-            model="claude-sonnet-4-6",
+            model="claude-haiku-4-5-20251001",
             max_tokens=1024,
             system=system,
             messages=[{"role": "user", "content": f"URL: {detail_url}\n\n{detail_md}"}],
