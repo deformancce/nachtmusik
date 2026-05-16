@@ -247,37 +247,6 @@
     "confidence": 0.35,
     "_detail_url_sample": "https://www.theater-essen.de/programm/kalender/2027-06/philharmonie-essen?scheduleScrollTo=2027-06-05-p4130"
   },
-  "laeiszhalle_hamburg": {
-    "slug": "laeiszhalle_hamburg",
-    "name": "Laeiszhalle Hamburg",
-    "city": "Hamburg",
-    "url": "https://www.elbphilharmonie.de/de/programm/laeiszhalle",
-    "tier": 1,
-    "_analyzed_at": "2026-05-16T11:50:18.348545Z",
-    "validation": "needs_review",
-    "load_method": "static",
-    "needs_networkidle": false,
-    "scroll_max": 30,
-    "click_keywords": [],
-    "event_url_pattern": "/de/programm/[a-z0-9-]+",
-    "teaser_selector": null,
-    "field_selectors": {
-      "title": null,
-      "date": null,
-      "time": null,
-      "venue_hall": null
-    },
-    "detail_selectors": {
-      "program_section": null,
-      "performers_section": null
-    },
-    "structured_source": null,
-    "cross_promotion_risk": "low",
-    "multi_date_per_event": false,
-    "notes": "The listing page https://www.elbphilharmonie.de/de/programm/laeiszhalle returns a 404 Not Found page. The correct Laeiszhalle filter URL may differ — try https://www.elbphilharmonie.de/de/programm?venue=laeiszhalle or similar. No event data could be extracted from the provided HTML. Manual review of the correct URL is required before configuring selectors.",
-    "confidence": 0.1,
-    "_detail_url_sample": ""
-  },
   "gewandhaus_leipzig": {
     "slug": "gewandhaus_leipzig",
     "name": "Gewandhaus Leipzig",
