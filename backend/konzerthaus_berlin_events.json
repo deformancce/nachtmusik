@@ -1,0 +1,123 @@
+{
+  "venue": "Konzerthaus Berlin",
+  "city": "Berlin",
+  "scraped_at": "2026-05-16T19:44:26.345015Z",
+  "total_events": 5,
+  "events": [
+    {
+      "detail_url": "https://www.konzerthaus.de/de/programm/8zehn30-kurzkonzert/11531",
+      "title": "8ZEHN30 – Kurzkonzert",
+      "date": "2026-05-21",
+      "time": "18:30",
+      "venue_hall": "",
+      "program": [
+        "Gustav Mahler: Sinfonie Nr. 5 cis-Moll"
+      ],
+      "performers": [
+        "Konzerthausorchester Berlin (orchestra)"
+      ],
+      "conductor": "Joana Mallwitz",
+      "duration_min": 90,
+      "intro": "A short concert (8ZEHN30) featuring the Konzerthausorchester Berlin under Joana Mallwitz, performing Mahler's Fifth Symphony in approximately 60 minutes without a pause. The evening includes a pre-concert introduction and an after-concert drink at the bar.",
+      "venue": "Konzerthaus Berlin",
+      "hall": "",
+      "city": "Berlin"
+    },
+    {
+      "detail_url": "https://www.konzerthaus.de/de/programm/deutsch-romantisches-orchester-marina-quasha/12703",
+      "title": "Deutsch-Romantisches Orchester, Marina Quasha",
+      "date": "2026-05-28",
+      "time": "20:00",
+      "venue_hall": "",
+      "program": [
+        "Franz Krommer: Konzert für zwei Klarinetten und Orchester Es-Dur op. 35",
+        "Gustav Mahler: Sinfonie Nr. 4 G-Dur für Orchester und Sopran"
+      ],
+      "performers": [
+        "Wenzel Fuchs (Klarinette)",
+        "Matic Kuder (Klarinette)",
+        "Christiane Karg (Sopran)",
+        "Deutsch-Romantisches Orchester"
+      ],
+      "conductor": "Marina Quasha",
+      "duration_min": 120,
+      "intro": "The Deutsch-Romantisches Orchester under Generalmusikdirektorin Marina Quasha presents Franz Krommer's rarely performed Concerto for Two Clarinets with soloists Wenzel Fuchs and Matic Kuder, alongside Gustav Mahler's Symphony No. 4 featuring soprano Christiane Karg.",
+      "venue": "Konzerthaus Berlin",
+      "hall": "",
+      "city": "Berlin"
+    },
+    {
+      "detail_url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-berlin-rias-kammerchor-berlin-joana-mallwitz-justin-doyle/12424",
+      "title": "Konzerthausorchester Berlin, RIAS Kammerchor Berlin, Joana Mallwitz & Justin Doyle",
+      "date": "2026-06-07",
+      "time": "18:00",
+      "venue_hall": "",
+      "program": [
+        "Joseph Haydn: Sinfonie Nr. 8 G-Dur Hob I:8 (\"Le Soir\")",
+        "Joseph Haydn: Messe für Soli, Chor und Orchester B-Dur Hob XXII:13 (\"Schöpfungsmesse\")"
+      ],
+      "performers": [
+        "Konzerthausorchester Berlin (orchestra)",
+        "RIAS Kammerchor Berlin (choir)",
+        "Anna Dennis (Sopran)",
+        "Anna Lucia Richter (Mezzosopran)",
+        "Patrick Grahl (Tenor)",
+        "Manuel Winckhler (Bass)"
+      ],
+      "conductor": "Joana Mallwitz, Justin Doyle",
+      "duration_min": 75,
+      "intro": "The Konzerthausorchester Berlin and RIAS Kammerchor Berlin present a Haydn evening featuring the Symphony No. 8 'Le Soir' and the 'Schöpfungsmesse', with Joana Mallwitz leading the symphony and Justin Doyle conducting the mass. The program is part of the Konzerthaus's Haydn-Tag series.",
+      "venue": "Konzerthaus Berlin",
+      "hall": "",
+      "city": "Berlin"
+    },
+    {
+      "detail_url": "https://www.konzerthaus.de/de/programm/espresso-konzert/11724",
+      "title": "Espresso-Konzert",
+      "date": "2026-05-26",
+      "time": "14:00",
+      "venue_hall": "",
+      "program": [
+        "Paul Hindemith: Drei Stücke für Violoncello und Klavier op. 8 (Auszüge)",
+        "César Franck: Sonate für Violoncello und Klavier A-Dur (nach der Violinsonate)",
+        "Witold Lutosławski: Sacher Variationen für Violoncello solo",
+        "Gabriel Fauré: Romanze für Violoncello und Klavier A-Dur op. 69"
+      ],
+      "performers": [
+        "Yu-Ju Yen (Violoncello)",
+        "Maria Guignard (Klavier)",
+        "Mitglieder der Kurt-Sanderling-Akademie des Konzerthausorchesters Berlin"
+      ],
+      "conductor": null,
+      "duration_min": 60,
+      "intro": "Ein Espresso-Konzert mit Mitgliedern der Kurt-Sanderling-Akademie des Konzerthausorchesters Berlin, das Werke für Violoncello und Klavier von Hindemith, Franck, Lutosławski und Fauré präsentiert. Die Reihe bietet ausgezeichneten Nachwuchsmusiker*innen die Möglichkeit, Überraschungsprogramme am frühen Nachmittag vorzustellen.",
+      "venue": "Konzerthaus Berlin",
+      "hall": "",
+      "city": "Berlin"
+    },
+    {
+      "detail_url": "https://www.konzerthaus.de/de/programm/haydn-im-quartett/12420",
+      "title": "Haydn im Quartett",
+      "date": "2026-06-07",
+      "time": "11:30",
+      "venue_hall": "",
+      "program": [
+        "Joseph Haydn: Streichquartett C-Dur op. 33 Nr. 3 Hob III:39 (\"Vogelquartett\")",
+        "Maddalena Laura Lombardini Sirmen: Streichquartett B-Dur op. 3 Nr. 4",
+        "Joseph Haydn: Streichquartett B-Dur op. 76 Nr. 4 Hob III:78 (\"Sonnenaufgang\")"
+      ],
+      "performers": [
+        "Petr Matěják (Violine)",
+        "Linda Fichtner (Violine)",
+        "Matthias Gallien (Viola)",
+        "Nerina Mancini (Violoncello)"
+      ],
+      "conductor": null,
+      "duration_min": 65,
+      "intro": "Members of the Konzerthausorchester Berlin perform two beloved Haydn string quartets — the 'Bird' and the 'Sunrise' — alongside a quartet by the gifted Venetian composer and Tartini pupil Maddalena Sirmen, whose six Op. 3 quartets appeared in Paris in the same year as Haydn's Op. 9.",
+      "venue": "Konzerthaus Berlin",
+      "hall": "",
+      "city": "Berlin"
+    }
+  ]
+}
