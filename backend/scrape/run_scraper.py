@@ -103,7 +103,7 @@ async def scrape_listing(config: VenueConfig) -> list[dict]:
     # continuous analytics/polling traffic that never settles, causing 60s
     # timeouts. Use a fixed post-DCL delay instead. SPAs get a longer one.
     is_spa = config.load_method in ("spa", "scroll") or config.needs_networkidle
-    delay = max(config.scroll_wait_s, 6.0 if is_spa else 2.0)
+    delay = max(config.scroll_wait_s, 8.0 if is_spa else 2.0)
 
     scroll_cfg = dict(
         scan_full_page=(config.load_method in ("scroll", "spa")),
@@ -188,7 +188,15 @@ async def enrich_event(
 
     detail_url = event["detail_url"]
     browser_cfg = BrowserConfig(headless=True, verbose=False)
-    run_cfg = CrawlerRunConfig(wait_for="body", delay_before_return_html=1.0)
+    # Detail pages on SPA venues (Nuxt SSR, etc.) need more time to render
+    # the program/performer sections, otherwise Claude only sees navigation.
+    is_spa = config.load_method in ("spa", "scroll") or config.needs_networkidle
+    detail_delay = 5.0 if is_spa else 1.5
+    run_cfg = CrawlerRunConfig(
+        wait_for="body",
+        delay_before_return_html=detail_delay,
+        page_timeout=30000,
+    )
 
     try:
         async with AsyncWebCrawler(config=browser_cfg) as crawler:
