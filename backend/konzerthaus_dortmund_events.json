@@ -1,108 +1,109 @@
 {
   "venue": "Konzerthaus Dortmund",
   "city": "Dortmund",
-  "scraped_at": "2026-05-16T19:46:36.175422Z",
+  "scraped_at": "2026-05-16T19:52:39.824412Z",
   "total_events": 5,
   "events": [
     {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/20-12-2026-simon-hoefele-orchestre-philharmonique-royal-de-liege/",
-      "title": "Simon Höfele & Orchestre Philharmonique Royal de Liège",
-      "date": "So 20.12.2026",
-      "time": "16.00 Uhr",
-      "venue_hall": "",
-      "program": [
-        "Wolfgang Amadeus Mozart: Ouvertüre zu »Die Entführung aus dem Serail« KV 384",
-        "Joseph Haydn: Konzert für Trompete und Orchester Es-Dur Hob. VIIe:1",
-        "Nikolai Rimsky-Korsakow: »Scheherazade« Sinfonische Suite op. 35"
-      ],
-      "performers": [
-        "Simon Höfele (Trompete)",
-        "Orchestre Philharmonique Royal de Liège (Orchester)"
-      ],
-      "conductor": "David Reiland",
-      "duration_min": 120,
-      "intro": "Trumpeter Simon Höfele joins the Orchestre Philharmonique Royal de Liège and conductor David Reiland for an Advent concert featuring Haydn's Trumpet Concerto in E-flat major alongside Mozart's overture to 'Die Entführung aus dem Serail' and Rimsky-Korsakov's colorful orchestral suite 'Scheherazade'.",
-      "venue": "Konzerthaus Dortmund",
-      "hall": "",
-      "city": "Dortmund"
-    },
-    {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/01-04-2027-rock-the-ballet/",
-      "title": "Rock the Ballet",
-      "date": "Do 01.04.2027",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/05-10-2026-es-war-einmal-in-amerika-haben-wir-einen-kulturkonfliktij/",
+      "title": "Es war einmal in Amerika – Haben wir einen Kulturkonflikt?",
+      "date": "Mo 05.10.2026",
       "time": "19.30 Uhr",
       "venue_hall": "",
       "program": [],
       "performers": [
-        "Rock the Ballet (dance company)"
+        "Elmar Theveßen (Journalist, Autor)",
+        "Axel Rüger (Direktor der Frick Collection, New York)",
+        "Klaus Wegener (Moderation)"
       ],
       "conductor": null,
-      "duration_min": 180,
-      "intro": "An explosive fusion of world-class ballet technique, acrobatics, and modern street dance set to iconic rock and pop songs. Created by Rasta Thomas and choreographer Adrienne Canterna, the show has thrilled millions of audiences worldwide.",
+      "duration_min": 90,
+      "intro": "Ein Podiumsgespräch mit ZDF-Washington-Korrespondent Elmar Theveßen und Axel Rüger über kulturelle Freiheit, gesellschaftliche Polarisierung und die Frage, ob sich die kulturellen Selbstverständnisse Europas und der USA voneinander entfernen. Der Abend beleuchtet Kultur als politisches Kampffeld und fragt nach der Rolle von Kunst und Institutionen in einer Zeit wachsender gesellschaftlicher Spannungen.",
       "venue": "Konzerthaus Dortmund",
       "hall": "",
       "city": "Dortmund"
     },
     {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/19-05-2027-sir-simon-rattle-br-symphonieorchester-beethoven-eroica/",
-      "title": "Sir Simon Rattle & BR-Symphonieorchester – Beethoven Eroica",
-      "date": "Mi 19.05.2027",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/23-10-2026-loriot-szenen-einer-ehe/",
+      "title": "Loriot: Szenen einer Ehe",
+      "date": "Fr 23.10.2026",
       "time": "19.30 Uhr",
       "venue_hall": "",
       "program": [
-        "Francesco Filidei: Konzert für Viola und Orchester",
-        "Ludwig van Beethoven: Sinfonie Nr. 3 Es-Dur op. 55 »Eroica«"
+        "Loriot: Szenen einer Ehe"
       ],
       "performers": [
-        "Antoine Tamestit (Viola)",
-        "Symphonieorchester des Bayerischen Rundfunks (Orchestra)"
+        "Senta Berger (Schauspiel)",
+        "Friedrich von Thun (Schauspiel)"
       ],
-      "conductor": "Sir Simon Rattle",
-      "duration_min": 120,
-      "intro": "Antoine Tamestit, Curating Artist of the 2026/27 season, performs Francesco Filidei's viola concerto alongside Beethoven's iconic 'Eroica' Symphony with the Symphonieorchester des Bayerischen Rundfunks under Sir Simon Rattle. The program pairs a 2024-premiered contemporary work with one of the most beloved symphonies in the repertoire.",
+      "conductor": null,
+      "duration_min": 150,
+      "intro": "Eine Hommage an den humoristischen Großmeister Loriot, bei der Senta Berger und Friedrich von Thun die legendären, 1983 veröffentlichten Szenen einer Ehe zum Leben erwecken. Mit feinem Gespür für das Zwischenmenschliche und die Komik der alltäglichen Kommunikation beleuchtet Loriot die unüberwindbaren Tücken der Paarbeziehung.",
       "venue": "Konzerthaus Dortmund",
       "hall": "",
       "city": "Dortmund"
     },
     {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/06-12-2026-weihnachtskonzert-2026-der-chorakademie/",
-      "title": "Weihnachtskonzert 2026 der Chorakademie",
-      "date": "So 06.12.2026",
-      "time": "11.00 Uhr",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/15-10-2026-emma-jean-thackray/",
+      "title": "Emma-Jean Thackray",
+      "date": "Do 15.10.2026",
+      "time": "20.00 Uhr",
       "venue_hall": "",
       "program": [],
       "performers": [
-        "Chöre der Chorakademie am Konzerthaus Dortmund (choir)"
+        "Emma-Jean Thackray (Multiinstrumentalistin)"
       ],
       "conductor": null,
-      "duration_min": 180,
-      "intro": "Die Chöre der Chorakademie am Konzerthaus Dortmund präsentieren im traditionellen Weihnachtskonzert festliche Lieder im Advent – eine fröhliche Einstimmung auf Weihnachten für die ganze Familie.",
+      "duration_min": 120,
+      "intro": "Emma-Jean Thackray, eine der talentiertesten Künstlerinnen des Nu Jazz, verbindet Jazz-Elemente mit elektronischer Musik, Funk, Disco und Garage-Pop. Die britische Komponistin und Produzentin präsentiert ihr Multitalent als Multiinstrumentalistin mit Keyboards, Blechblasinstrumenten und Gesang.",
       "venue": "Konzerthaus Dortmund",
       "hall": "",
       "city": "Dortmund"
     },
     {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/13-03-2027-antoine-tamestit-swr-ensemble-schalom-alechem/",
-      "title": "Antoine Tamestit & SWR Ensemble – Schalom Alechem",
-      "date": "Sa 13.03.2027",
-      "time": "19.30 Uhr",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/01-01-2027-neujahrskonzert-paris-mon-amour/",
+      "title": "Neujahrskonzert – Paris, mon amour!",
+      "date": "Fr 01.01.2027",
+      "time": "15.00 Uhr",
       "venue_hall": "",
       "program": [
-        "Sergei Prokofiev: Ouvertüre über hebräische Themen (arr. Anton Hollich)",
-        "Max Bruch: Werk für Viola",
-        "Joseph Achron: Werk für Viola",
-        "Ernest Bloch: Werk für Viola",
-        "Béla Kovács: Klezmer-inspiriertes Stück (arr. Anton Hollich)",
-        "Șerban Nichifor: Klezmer-Tanz (arr. Anton Hollich)"
+        "Jacques Offenbach: Ouvertüre zu »La vie parisienne«",
+        "George Gershwin: An American in Paris (Sinfonische Dichtung)",
+        "Erik Satie: Gymnopédie Nr. 1 (Fassung für Orchester von Claude Debussy)",
+        "Erik Satie: Gymnopédie Nr. 3 (Fassung für Orchester von Claude Debussy)",
+        "Maurice Ravel: Konzert für Klavier und Orchester G-Dur"
       ],
       "performers": [
-        "Antoine Tamestit (Viola)",
-        "SWR Ensemble",
-        "Tabea Dupree (Moderation)"
+        "Frank Dupree (Klavier)",
+        "Dortmunder Philharmoniker (Orchester)"
       ],
-      "conductor": null,
-      "duration_min": 120,
-      "intro": "Antoine Tamestit leads the audience through the world of Jewish music – from Ernest Bloch's intimate pieces to exhilarating Klezmer dances – together with soloists of the SWR Symphonieorchester, with arrangements by ensemble member Anton Hollich. The concert is part of the festival 'Antoine Tamestit & Friends' at Konzerthaus Dortmund.",
+      "conductor": "Jordan de Souza",
+      "duration_min": 90,
+      "intro": "A New Year's concert celebrating Paris with works by Offenbach, Gershwin, Satie, and Ravel, featuring pianist Frank Dupree and the Dortmunder Philharmoniker under Jordan de Souza. The program blends Parisian elegance, jazz-inflected coolness, and impressionistic beauty.",
+      "venue": "Konzerthaus Dortmund",
+      "hall": "",
+      "city": "Dortmund"
+    },
+    {
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/27-05-2026-hr-bigband-miles-davis-zum-100/",
+      "title": "hr-Bigband – Miles Davis zum 100.",
+      "date": "Mi 27.05.2026",
+      "time": "20.00 Uhr",
+      "venue_hall": "",
+      "program": [
+        "Miles Davis / Gil Evans: Miles Ahead",
+        "Miles Davis / Gil Evans: Porgy and Bess",
+        "Miles Davis / Gil Evans: Sketches of Spain"
+      ],
+      "performers": [
+        "hr-Bigband (ensemble)",
+        "Arve Henriksen (Trompete, Flügelhorn)",
+        "Paolo Fresu (Trompete, Flügelhorn)",
+        "Axel Schlosser (Flügelhorn)"
+      ],
+      "conductor": "Miho Hazama",
+      "duration_min": 200,
+      "intro": "A centenary tribute to Miles Davis featuring the hr-Bigband performing three landmark albums – 'Miles Ahead', 'Porgy and Bess', and 'Sketches of Spain' – in full, celebrating the iconic collaborations between Davis and arranger Gil Evans.",
       "venue": "Konzerthaus Dortmund",
       "hall": "",
       "city": "Dortmund"
