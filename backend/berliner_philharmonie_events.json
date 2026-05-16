@@ -1,6 +1,6 @@
 {
   "total_events": 329,
-  "scraped_at": "2026-05-15T11:55:58.887065Z",
+  "scraped_at": "2026-05-16T06:46:43.764903Z",
   "events": [
     {
       "id": "56430-2026-05-14",
@@ -363,7 +363,7 @@
       "duration": "ca. 1 Stunde und 30 Minuten",
       "prices": "13 €",
       "prices_reduced": "",
-      "organizer": "Berliner Philharmoniker / Deutschlandfunk",
+      "organizer": "Deutschlandfunk",
       "has_stream": false,
       "intro": "",
       "abo": "",
@@ -371,7 +371,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56433",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "56416-2026-06-02",
@@ -552,7 +552,7 @@
       "time": "10:00",
       "title": "»Juchhe!«",
       "series": "Mitmachkonzert",
-      "subtitle": "",
+      "subtitle": "Mitglieder der Berliner Philharmoniker · Choreografie und Tanz: Carley Josephine Marholin, Giordan Cruz",
       "venue": "Berliner Philharmonie",
       "hall": "Oberes Foyer Kammermusiksaal / Einführungsbereich",
       "city": "Berlin",
@@ -564,11 +564,11 @@
         "Sarah Jeanne Babits (Regie)",
         "Julia Schnittger (Bühne und Kostüm)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Kleine und große Musikentdecker*innen lernen verschiedene Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennen. Das Publikum sitzt mitten im Geschehen und wird selbst aktiv. Kinder summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte.",
+      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Kleine und große Musikentdecker*innen lernen die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennen. Das Publikum sitzt mitten im Geschehen und wird selbst aktiv. Kinder summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte. Zum fünfjährigen Geburtstag der Mitmachkonzerte soll das Feiern im Mittelpunkt stehen.",
       "duration": "ca. 45 Minuten",
       "prices": "7,50 bis 15 €",
       "prices_reduced": "",
-      "organizer": "",
+      "organizer": "Berliner Philharmoniker",
       "has_stream": false,
       "intro": "",
       "abo": "Abo MM: Mitmachkonzerte",
@@ -576,15 +576,15 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56435",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
-      "id": "56435-2026-06-06",
+      "id": "56435-2026-06-06_",
       "date": "2026-06-06",
       "time": "11:30",
       "title": "»Juchhe!«",
       "series": "Mitmachkonzert",
-      "subtitle": "",
+      "subtitle": "Mitglieder der Berliner Philharmoniker · Choreografie und Tanz: Carley Josephine Marholin, Giordan Cruz",
       "venue": "Berliner Philharmonie",
       "hall": "Oberes Foyer Kammermusiksaal / Einführungsbereich",
       "city": "Berlin",
@@ -596,11 +596,11 @@
         "Sarah Jeanne Babits (Regie)",
         "Julia Schnittger (Bühne und Kostüm)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Kleine und große Musikentdecker*innen lernen verschiedene Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennen. Das Publikum sitzt mitten im Geschehen und wird selbst aktiv. Kinder summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte.",
+      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Kleine und große Musikentdecker*innen lernen die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennen. Das Publikum sitzt mitten im Geschehen und wird selbst aktiv. Kinder summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte. Zum fünfjährigen Geburtstag der Mitmachkonzerte soll das Feiern im Mittelpunkt stehen.",
       "duration": "ca. 45 Minuten",
       "prices": "7,50 bis 15 €",
       "prices_reduced": "",
-      "organizer": "",
+      "organizer": "Berliner Philharmoniker",
       "has_stream": false,
       "intro": "",
       "abo": "Abo MM: Mitmachkonzerte",
@@ -608,7 +608,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56435",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "56435-2026-06-07",
@@ -616,7 +616,7 @@
       "time": "10:00",
       "title": "»Juchhe!«",
       "series": "Mitmachkonzert",
-      "subtitle": "",
+      "subtitle": "Mitglieder der Berliner Philharmoniker · Choreografie und Tanz: Carley Josephine Marholin, Giordan Cruz",
       "venue": "Berliner Philharmonie",
       "hall": "Oberes Foyer Kammermusiksaal / Einführungsbereich",
       "city": "Berlin",
@@ -628,11 +628,11 @@
         "Sarah Jeanne Babits (Regie)",
         "Julia Schnittger (Bühne und Kostüm)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Kleine und große Musikentdecker*innen lernen verschiedene Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennen. Das Publikum sitzt mitten im Geschehen und wird selbst aktiv. Kinder summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte.",
+      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Kleine und große Musikentdecker*innen lernen die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennen. Das Publikum sitzt mitten im Geschehen und wird selbst aktiv. Kinder summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte. Zum fünfjährigen Geburtstag der Mitmachkonzerte soll das Feiern im Mittelpunkt stehen.",
       "duration": "ca. 45 Minuten",
       "prices": "7,50 bis 15 €",
       "prices_reduced": "",
-      "organizer": "",
+      "organizer": "Berliner Philharmoniker",
       "has_stream": false,
       "intro": "",
       "abo": "Abo MM: Mitmachkonzerte",
@@ -640,15 +640,15 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56435",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
-      "id": "56435-2026-06-07",
+      "id": "56435-2026-06-07_",
       "date": "2026-06-07",
       "time": "11:30",
       "title": "»Juchhe!«",
       "series": "Mitmachkonzert",
-      "subtitle": "",
+      "subtitle": "Mitglieder der Berliner Philharmoniker · Choreografie und Tanz: Carley Josephine Marholin, Giordan Cruz",
       "venue": "Berliner Philharmonie",
       "hall": "Oberes Foyer Kammermusiksaal / Einführungsbereich",
       "city": "Berlin",
@@ -660,11 +660,11 @@
         "Sarah Jeanne Babits (Regie)",
         "Julia Schnittger (Bühne und Kostüm)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Kleine und große Musikentdecker*innen lernen verschiedene Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennen. Das Publikum sitzt mitten im Geschehen und wird selbst aktiv. Kinder summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte.",
+      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Kleine und große Musikentdecker*innen lernen die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennen. Das Publikum sitzt mitten im Geschehen und wird selbst aktiv. Kinder summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte. Zum fünfjährigen Geburtstag der Mitmachkonzerte soll das Feiern im Mittelpunkt stehen.",
       "duration": "ca. 45 Minuten",
       "prices": "7,50 bis 15 €",
       "prices_reduced": "",
-      "organizer": "",
+      "organizer": "Berliner Philharmoniker",
       "has_stream": false,
       "intro": "",
       "abo": "Abo MM: Mitmachkonzerte",
@@ -672,7 +672,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56435",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "56436-2026-06-07",
@@ -710,14 +710,14 @@
       "date": "2026-06-09",
       "time": "11:00",
       "title": "youngSTAR Festival",
-      "series": "youngSTAR Festival",
-      "subtitle": "Festival für Schulensembles",
+      "series": "Festival",
+      "subtitle": "Schulensembles aus Berlin",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal / Großer Saal",
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Bei unserem youngSTAR Festival erobern Schulensembles aus Berlin an vier Tagen die Bühnen der Philharmonie Berlin und musizieren vor großem Publikum. Schulorchester, Jazz-Ensembles, Rock- und Popbands aus Berlin sind eingeladen. Im Publikum sind Berliner Schüler*innen eingeladen, zuzuhören und die Ensembles bei ihrem oftmals ersten Auftritt anzufeuern. Beim Vokalhelden-Mitsingkonzert werden alle Grundschulkinder im Saal zu Sänger*innen.",
+      "description": "Bei unserem youngSTAR Festival erobern Schulensembles aus Berlin an vier Tagen die Bühnen der Philharmonie Berlin und musizieren vor großem Publikum. Wir laden Schulorchester, Jazz-Ensembles, Rock- und Popbands aus Berlin ein, bei unserem viertägigen Festival dabei zu sein. Im Publikum sind Berliner Schüler*innen eingeladen, zuzuhören und die Ensembles bei ihrem oftmals ersten Auftritt in der Philharmonie Berlin anzufeuern. Beim Vokalhelden-Mitsingkonzert werden dann alle Grundschulkinder im Saal zu Sänger*innen.",
       "duration": "",
       "prices": "kostenfrei",
       "prices_reduced": "",
@@ -729,21 +729,21 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56493",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "56493-2026-06-10",
       "date": "2026-06-10",
       "time": "11:00",
       "title": "youngSTAR Festival",
-      "series": "youngSTAR Festival",
-      "subtitle": "Festival für Schulensembles",
+      "series": "Festival",
+      "subtitle": "Schulensembles aus Berlin",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal / Großer Saal",
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Bei unserem youngSTAR Festival erobern Schulensembles aus Berlin an vier Tagen die Bühnen der Philharmonie Berlin und musizieren vor großem Publikum. Schulorchester, Jazz-Ensembles, Rock- und Popbands aus Berlin sind eingeladen. Im Publikum sind Berliner Schüler*innen eingeladen, zuzuhören und die Ensembles bei ihrem oftmals ersten Auftritt anzufeuern. Beim Vokalhelden-Mitsingkonzert werden alle Grundschulkinder im Saal zu Sänger*innen.",
+      "description": "Bei unserem youngSTAR Festival erobern Schulensembles aus Berlin an vier Tagen die Bühnen der Philharmonie Berlin und musizieren vor großem Publikum. Wir laden Schulorchester, Jazz-Ensembles, Rock- und Popbands aus Berlin ein, bei unserem viertägigen Festival dabei zu sein. Im Publikum sind Berliner Schüler*innen eingeladen, zuzuhören und die Ensembles bei ihrem oftmals ersten Auftritt in der Philharmonie Berlin anzufeuern. Beim Vokalhelden-Mitsingkonzert werden dann alle Grundschulkinder im Saal zu Sänger*innen.",
       "duration": "",
       "prices": "kostenfrei",
       "prices_reduced": "",
@@ -755,21 +755,21 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56493",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "56493-2026-06-11",
       "date": "2026-06-11",
       "time": "11:00",
       "title": "youngSTAR Festival",
-      "series": "youngSTAR Festival",
-      "subtitle": "Festival für Schulensembles",
+      "series": "Festival",
+      "subtitle": "Schulensembles aus Berlin",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal / Großer Saal",
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Bei unserem youngSTAR Festival erobern Schulensembles aus Berlin an vier Tagen die Bühnen der Philharmonie Berlin und musizieren vor großem Publikum. Schulorchester, Jazz-Ensembles, Rock- und Popbands aus Berlin sind eingeladen. Im Publikum sind Berliner Schüler*innen eingeladen, zuzuhören und die Ensembles bei ihrem oftmals ersten Auftritt anzufeuern. Beim Vokalhelden-Mitsingkonzert werden alle Grundschulkinder im Saal zu Sänger*innen.",
+      "description": "Bei unserem youngSTAR Festival erobern Schulensembles aus Berlin an vier Tagen die Bühnen der Philharmonie Berlin und musizieren vor großem Publikum. Wir laden Schulorchester, Jazz-Ensembles, Rock- und Popbands aus Berlin ein, bei unserem viertägigen Festival dabei zu sein. Im Publikum sind Berliner Schüler*innen eingeladen, zuzuhören und die Ensembles bei ihrem oftmals ersten Auftritt in der Philharmonie Berlin anzufeuern. Beim Vokalhelden-Mitsingkonzert werden dann alle Grundschulkinder im Saal zu Sänger*innen.",
       "duration": "",
       "prices": "kostenfrei",
       "prices_reduced": "",
@@ -781,21 +781,21 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56493",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "56493-2026-06-12",
       "date": "2026-06-12",
       "time": "10:00",
       "title": "youngSTAR Festival",
-      "series": "youngSTAR Festival",
-      "subtitle": "Festival für Schulensembles",
+      "series": "Festival",
+      "subtitle": "Schulensembles aus Berlin",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal / Großer Saal",
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Bei unserem youngSTAR Festival erobern Schulensembles aus Berlin an vier Tagen die Bühnen der Philharmonie Berlin und musizieren vor großem Publikum. Schulorchester, Jazz-Ensembles, Rock- und Popbands aus Berlin sind eingeladen. Im Publikum sind Berliner Schüler*innen eingeladen, zuzuhören und die Ensembles bei ihrem oftmals ersten Auftritt anzufeuern. Beim Vokalhelden-Mitsingkonzert werden alle Grundschulkinder im Saal zu Sänger*innen.",
+      "description": "Bei unserem youngSTAR Festival erobern Schulensembles aus Berlin an vier Tagen die Bühnen der Philharmonie Berlin und musizieren vor großem Publikum. Wir laden Schulorchester, Jazz-Ensembles, Rock- und Popbands aus Berlin ein, bei unserem viertägigen Festival dabei zu sein. Im Publikum sind Berliner Schüler*innen eingeladen, zuzuhören und die Ensembles bei ihrem oftmals ersten Auftritt in der Philharmonie Berlin anzufeuern. Beim Vokalhelden-Mitsingkonzert werden dann alle Grundschulkinder im Saal zu Sänger*innen.",
       "duration": "",
       "prices": "kostenfrei",
       "prices_reduced": "",
@@ -807,7 +807,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56493",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "56565-2026-06-10",
@@ -853,7 +853,7 @@
       ],
       "description": "In der Karajan-Akademie der Berliner Philharmoniker werden herausragende junge Musikerinnen und Musiker auf die künstlerische Arbeit in einem Spitzenorchester vorbereitet. Dass sie auch in Solo- und Kammermusikwerken höchste Erwartungen erfüllen, zeigen sie bei freiem Eintritt in den Konzerten der Carte blanche-Reihe.",
       "duration": "ca. 1 Stunde und 15 Minuten",
-      "prices": "",
+      "prices": "Kostenlos",
       "prices_reduced": "",
       "organizer": "",
       "has_stream": false,
@@ -863,7 +863,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56438",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "56439-2026-06-11",
@@ -1187,7 +1187,7 @@
       "time": "11:00",
       "title": "Tag der offenen Tür",
       "series": "",
-      "subtitle": "Berliner Philharmoniker",
+      "subtitle": "Berliner Philharmoniker · Orchester- und Kammerkonzerte, Meisterkurse, Führungen",
       "venue": "Berliner Philharmonie",
       "hall": "",
       "city": "Berlin",
@@ -1195,11 +1195,11 @@
       "artists": [
         "Berliner Philharmoniker"
       ],
-      "description": "Der Tag der offenen Tür in der Philharmonie Berlin ist ein Tag voller Höhepunkte. Bei freiem Eintritt sind die Musiker*innen der Berliner Philharmoniker in moderierten Orchester- und Kammerkonzerten zu erleben, an unterschiedlichsten Orten des Hauses. In Meisterkursen und Interviews geben sie spannende Einblicke in ihr Handwerk. Auf Führungen lässt sich Hans Scharouns visionäre Architektur erkunden. Es gibt Basteln, das Ausprobieren von Instrumenten, Familien-Führungen und vieles mehr.",
+      "description": "Der Tag der offenen Tür in der Philharmonie Berlin ist ein Tag voller Höhepunkte. Bei freiem Eintritt sind die Musiker*innen der Berliner Philharmoniker in moderierten Orchester- und Kammerkonzerten zu erleben, an unterschiedlichsten Orten des Hauses. In Meisterkursen und Interviews geben sie zudem spannende Einblicke in ihr Handwerk. Auf Führungen lässt sich Hans Scharouns visionäre Architektur bis in hinterste Winkel erkunden.",
       "duration": "",
-      "prices": "",
+      "prices": "Freier Eintritt",
       "prices_reduced": "",
-      "organizer": "Berliner Philharmoniker",
+      "organizer": "",
       "has_stream": true,
       "intro": "",
       "abo": "",
@@ -1207,7 +1207,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56535",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "56567-2026-06-24",
@@ -1561,7 +1561,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontan zu einem Konzert in die Philharmonie während der Mittagspause mit freiem Eintritt. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Von 12 Uhr bis kurz vor Konzertbeginn gibt es Catering.",
+      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -1573,7 +1573,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56998",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "56999-2026-09-02",
@@ -1864,8 +1864,8 @@
       "date": "2026-09-07",
       "time": "20:00",
       "title": "Satzwechsel · Han Kang",
-      "series": "Satzwechsel",
-      "subtitle": "mit Mitgliedern der Berliner Philharmoniker",
+      "series": "Kammermusik",
+      "subtitle": "Mitglieder der Berliner Philharmoniker",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal",
       "city": "Berlin",
@@ -1874,7 +1874,7 @@
         "Han Kang (Gast)",
         "Mitglieder der Berliner Philharmoniker"
       ],
-      "description": "Die Literatur wie die Musik reflektieren die Welt und das Leben: sinnlich, spannend, inspirierend. In der neuen Reihe Satzwechsel bringen wir beide Kunstformen zusammen. Dreimal pro Saison laden wir gemeinsam mit dem internationalen literaturfestival berlin berühmte Autorinnen und Autoren in den Kammermusiksaal ein. Sie lesen aus aktuellen Werken und geben im Gespräch Einblicke in ihre Arbeit und ihr Denken. Mitglieder der Berliner Philharmoniker steuern Kammermusik bei, die das Thema des Abends weitet und vertieft.",
+      "description": "Die Literatur wie die Musik reflektieren die Welt und das Leben: sinnlich, spannend, inspirierend. In der neuen Reihe Satzwechsel werden beide Kunstformen zusammengebracht. Han Kang liest aus aktuellen Werken und gibt im Gespräch Einblicke in ihre Arbeit und ihr Denken. Mitglieder der Berliner Philharmoniker steuern Kammermusik bei, die das Thema des Abends weitet und vertieft.",
       "duration": "ca. 1 Stunde und 30 Minuten",
       "prices": "18 bis 41 €",
       "prices_reduced": "",
@@ -1886,7 +1886,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57007",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57006-2026-09-07",
@@ -1980,7 +1980,7 @@
       "id": "57008-2026-09-09",
       "date": "2026-09-09",
       "time": "13:00",
-      "title": "",
+      "title": "Lunchkonzert",
       "series": "Lunchkonzert",
       "subtitle": "",
       "venue": "Berliner Philharmonie",
@@ -1988,7 +1988,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontan zu einem Konzert in die Philharmonie während der Mittagspause mit freiem Eintritt. Für 40 bis 50 Minuten gibt es Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis kurz vor Konzertbeginn.",
+      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -2000,7 +2000,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57008",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57009-2026-09-09",
@@ -2276,7 +2276,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontan während der Mittagspause in die Philharmonie gehen: An jedem Mittwoch um 13 Uhr gibt es zwischen September und Juni Lunchkonzerte mit freiem Eintritt. Das Programm dauert 40 bis 50 Minuten und umfasst Kammermusik, Klavierwerke oder Schlagzeug-Duos – von Tschaikowsky bis Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf. Von 12 Uhr bis kurz vor Konzertbeginn gibt es hochwertiges und preiswert Catering.",
+      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. Programm mit Kammermusik, Klavierwerken oder Schlagzeug-Duos – von Tschaikowsky bis Tango. Oft treten Mitglieder der Berliner Philharmoniker, der Karajan-Akademie oder Gäste anderer Orchester auf. Catering von 12 Uhr bis kurz vor Konzertbeginn.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -2288,7 +2288,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57014",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57215-2026-09-16",
@@ -2656,15 +2656,15 @@
       "time": "11:00",
       "title": "Nō-Theater · Kiyokazu Kanze",
       "series": "Education-Veranstaltung",
-      "subtitle": "Großmeister der Kanze-Schule · Eine Reise in die Welt des Nō-Theaters und der traditionellen Bühnenkunst Japans",
+      "subtitle": "Großmeister der Kanze-Schule für Berliner Schüler*innen",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal",
       "city": "Berlin",
       "program": [],
       "artists": [
-        "Kiyokazu Kanze (XXVI. Großmeister der Kanze-Schule)"
+        "Kiyokazu Kanze (Großmeister der Kanze-Schule)"
       ],
-      "description": "Nach dem Gastspiel am 21.9. gibt der Großmeister Kiyokazu Kanze einmalige Einblicke in die Welt des Nō-Theaters im Rahmen einer Education-Veranstaltung für Kinder und Jugendliche von Berliner Schulen. Als eine der ältesten Bühnenkünste der Welt wurde Nō im 14. Jahrhundert von dem Künstler Kan'ami und seinem Sohn Zeami zur Vollendung gebracht und wird seit rund 700 Jahren nahezu unverändert bis in die Gegenwart überliefert. Als musikdramatische Kunstform vereint Nō-Theater Gesang, Tanz und Instrumentalmusik. Im Jahr 2008 wurde Nō in die UNESCO-Liste des immateriellen Kulturerbes aufgenommen.",
+      "description": "Der Großmeister Kiyokazu Kanze gibt einmalige Einblicke in die Welt des Nō-Theaters im Rahmen einer Education-Veranstaltung für Kinder und Jugendliche von Berliner Schulen. Als eine der ältesten Bühnenkünste der Welt wurde Nō im 14. Jahrhundert zur Vollendung gebracht und wird seit rund 700 Jahren nahezu unverändert überliefert. Die musikdramatische Kunstform vereint Gesang, Tanz und Instrumentalmusik. Nō-Theater wurde 2008 in die UNESCO-Liste des immateriellen Kulturerbes aufgenommen.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -2676,7 +2676,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57019",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57020-2026-09-23",
@@ -2690,11 +2690,11 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontanes Konzertbesuch während der Mittagspause mit freiem Eintritt. Zwischen September und Juni jeden Mittwoch um 13 Uhr möglich. Programm von 40 bis 50 Minuten mit Kammermusik, Klavierwerken oder Schlagzeug-Duos von Tschaikowsky bis Tango. Mitglieder der Berliner Philharmoniker, der Karajan-Akademie oder Gäste anderer Orchester treten auf. Catering von 12 Uhr bis Konzertbeginn.",
+      "description": "Spontanes Konzertangebot zwischen September und Juni an jedem Mittwoch um 13 Uhr mit freiem Eintritt. Für 40 bis 50 Minuten gibt es Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Von 12 Uhr bis kurz vor Konzertbeginn gibt es Catering.",
       "duration": "ca. 1 Stunde",
-      "prices": "Freier Eintritt",
+      "prices": "",
       "prices_reduced": "",
-      "organizer": "Berliner Philharmoniker",
+      "organizer": "",
       "has_stream": false,
       "intro": "",
       "abo": "",
@@ -2702,7 +2702,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57020",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57218-2026-09-23",
@@ -2905,7 +2905,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen.",
+      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -2917,15 +2917,15 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57024",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57196-2026-09-30",
       "date": "2026-09-30",
       "time": "18:00",
-      "title": "Berliner Philharmoniker",
+      "title": "Berliner Philharmoniker · After Work",
       "series": "Kammermusik",
-      "subtitle": "»50 Minuten Kammermusik« – After Work",
+      "subtitle": "50 Minuten Kammermusik",
       "venue": "Berliner Philharmonie",
       "hall": "",
       "city": "Berlin",
@@ -2945,7 +2945,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57196",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57025-2026-09-30",
@@ -2991,9 +2991,9 @@
       ],
       "description": "In der Karajan-Akademie der Berliner Philharmoniker werden herausragende junge Musikerinnen und Musiker auf die künstlerische Arbeit in einem Spitzenorchester vorbereitet. Dass sie auch in Solo- und Kammermusikwerken höchste Erwartungen erfüllen, zeigen sie bei freiem Eintritt in den Konzerten der Carte blanche-Reihe.",
       "duration": "ca. 1 Stunde und 15 Minuten",
-      "prices": "Kostenlos",
+      "prices": "kostenlos",
       "prices_reduced": "",
-      "organizer": "Berliner Philharmoniker",
+      "organizer": "",
       "has_stream": false,
       "intro": "",
       "abo": "",
@@ -3001,7 +3001,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57026",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57027-2026-10-01",
@@ -3108,7 +3108,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontan zu einem Konzert in die Philharmonie während der Mittagspause mit freiem Eintritt. Für 40 bis 50 Minuten gibt es Kammermusikalisches, Klavierwerke oder Schlagzeug-Duos – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Von 12 Uhr bis kurz vor Konzertbeginn Catering.",
+      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -3120,7 +3120,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57028",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57029-2026-10-08",
@@ -3303,7 +3303,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontanes Konzertformat für die Mittagspause an jedem Mittwoch zwischen September und Juni. 40 bis 50 Minuten Programm mit Kammermusik, Klavierwerken oder Schlagzeug-Duo – von Tschaikowsky bis Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis kurz vor Konzertbeginn.",
+      "description": "Spontanes Konzertangebot während der Mittagspause mit freiem Eintritt. Das Programm dauert 40 bis 50 Minuten und umfasst Kammermusikalisches, Klavierwerke oder Schlagzeug-Duos von Tschaikowsky bis Tango. Oft treten Mitglieder der Berliner Philharmoniker, der Karajan-Akademie oder Gäste von DSO, Staatskapelle Berlin und Berliner Musikhochschulen auf. Catering von 12 Uhr bis kurz vor Konzertbeginn verfügbar.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -3315,7 +3315,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57036",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57037-2026-10-14",
@@ -3453,7 +3453,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. Für 40 bis 50 Minuten gibt es kammermusikalisches Programm, Klavierwerke oder Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis kurz vor Konzertbeginn.",
+      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -3465,7 +3465,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57042",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57043-2026-10-21",
@@ -3579,7 +3579,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontan während der Mittagspause in die Philharmonie gehen mit freiem Eintritt. An jedem Mittwoch von September bis Juni um 13 Uhr gibt es Kammermusikalisches, Klavierwerke oder Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Von 12 Uhr bis kurz vor Konzertbeginn gibt es hochwertiges und preiswertes Catering.",
+      "description": "Spontan während der Mittagspause ein Konzert in der Philharmonie besuchen – bei freiem Eintritt. Für 40 bis 50 Minuten gibt es Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Von 12 Uhr bis kurz vor Konzertbeginn gibt es hochwertiges und preiswertes Catering.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -3591,7 +3591,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57047",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57048-2026-10-29",
@@ -3611,7 +3611,7 @@
       "duration": "ca. 1 Stunde und 30 Minuten",
       "prices": "",
       "prices_reduced": "",
-      "organizer": "",
+      "organizer": "Berliner Philharmoniker",
       "has_stream": false,
       "intro": "",
       "abo": "",
@@ -3619,7 +3619,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57048",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57049-2026-10-31",
@@ -3660,11 +3660,11 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen.",
+      "description": "Spontanes Konzertbesuch während der Mittagspause mit freiem Eintritt. Das Lunchkonzert findet zwischen September und Juni jeden Mittwoch um 13 Uhr statt und bietet kammermusikalisches Programm, Klavierwerke oder Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis kurz vor Konzertbeginn.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
-      "organizer": "",
+      "organizer": "Berliner Philharmoniker",
       "has_stream": false,
       "intro": "",
       "abo": "",
@@ -3672,7 +3672,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57050",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57051-2026-11-05",
@@ -3793,7 +3793,7 @@
       "artists": [],
       "description": "",
       "duration": "ca. 1 Stunde und 30 Minuten",
-      "prices": "20 EUR (Gäste), 10 EUR (Kinder); frei für Mitglieder",
+      "prices": "20 EUR (Gäste), 10 EUR (Kinder); Mitglieder frei",
       "prices_reduced": "",
       "organizer": "Freunde der Berliner Philharmoniker e. V.",
       "has_stream": false,
@@ -3803,7 +3803,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57052",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57053-2026-11-10",
@@ -3844,9 +3844,9 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. Für 40 bis 50 Minuten gibt es Kammermusikalisches, Klavierwerke oder auch Schlagzeug-Duos – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis kurz vor Konzertbeginn.",
+      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. Das Programm umfasst Kammermusikalisches, Klavierwerke oder auch Schlagzeug-Duos – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis kurz vor Konzertbeginn.",
       "duration": "ca. 1 Stunde",
-      "prices": "Eintritt frei",
+      "prices": "",
       "prices_reduced": "",
       "organizer": "",
       "has_stream": false,
@@ -3856,7 +3856,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57054",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57055-2026-11-11",
@@ -3994,9 +3994,9 @@
       "id": "57057-2026-11-14",
       "date": "2026-11-14",
       "time": "10:00",
-      "title": "Im Zoo: Roar-törööö",
+      "title": "Berliner Philharmoniker · Mitmachkonzert »Im Zoo: Roar-törööö«",
       "series": "Mitmachkonzert",
-      "subtitle": "Mitglieder der Berliner Philharmoniker · Choreografie und Tanz: Carley Josephine Marholin, Giordan Cruz",
+      "subtitle": "Carley Josephine Marholin, Giordan Cruz (Choreografie und Tanz)",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal Oberes Foyer",
       "city": "Berlin",
@@ -4007,11 +4007,11 @@
         "Giordan Cruz (Choreografie und Tanz)",
         "Annechien Koerselman (Regie)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe. Sie summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte.",
+      "description": "Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Kleine und große Musikentdecker*innen lernen die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennen. Das Publikum sitzt mitten im Geschehen und wird selbst aktiv. Kinder summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte.",
       "duration": "ca. 45 Minuten",
       "prices": "8 bis 16 €",
       "prices_reduced": "",
-      "organizer": "Berliner Philharmoniker",
+      "organizer": "",
       "has_stream": false,
       "intro": "",
       "abo": "Abo MM: Mitmachkonzerte",
@@ -4019,15 +4019,15 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57057",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
-      "id": "57057-2026-11-14",
+      "id": "57057-2026-11-14_",
       "date": "2026-11-14",
       "time": "11:30",
-      "title": "Im Zoo: Roar-törööö",
+      "title": "Berliner Philharmoniker · Mitmachkonzert »Im Zoo: Roar-törööö«",
       "series": "Mitmachkonzert",
-      "subtitle": "Mitglieder der Berliner Philharmoniker · Choreografie und Tanz: Carley Josephine Marholin, Giordan Cruz",
+      "subtitle": "Carley Josephine Marholin, Giordan Cruz (Choreografie und Tanz)",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal Oberes Foyer",
       "city": "Berlin",
@@ -4038,11 +4038,11 @@
         "Giordan Cruz (Choreografie und Tanz)",
         "Annechien Koerselman (Regie)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe. Sie summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte.",
+      "description": "Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Kleine und große Musikentdecker*innen lernen die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennen. Das Publikum sitzt mitten im Geschehen und wird selbst aktiv. Kinder summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte.",
       "duration": "ca. 45 Minuten",
       "prices": "8 bis 16 €",
       "prices_reduced": "",
-      "organizer": "Berliner Philharmoniker",
+      "organizer": "",
       "has_stream": false,
       "intro": "",
       "abo": "Abo MM: Mitmachkonzerte",
@@ -4050,15 +4050,15 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57057",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57057-2026-11-15",
       "date": "2026-11-15",
       "time": "10:00",
-      "title": "Im Zoo: Roar-törööö",
+      "title": "Berliner Philharmoniker · Mitmachkonzert »Im Zoo: Roar-törööö«",
       "series": "Mitmachkonzert",
-      "subtitle": "Mitglieder der Berliner Philharmoniker · Choreografie und Tanz: Carley Josephine Marholin, Giordan Cruz",
+      "subtitle": "Carley Josephine Marholin, Giordan Cruz (Choreografie und Tanz)",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal Oberes Foyer",
       "city": "Berlin",
@@ -4069,11 +4069,11 @@
         "Giordan Cruz (Choreografie und Tanz)",
         "Annechien Koerselman (Regie)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe. Sie summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte.",
+      "description": "Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Kleine und große Musikentdecker*innen lernen die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennen. Das Publikum sitzt mitten im Geschehen und wird selbst aktiv. Kinder summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte.",
       "duration": "ca. 45 Minuten",
       "prices": "8 bis 16 €",
       "prices_reduced": "",
-      "organizer": "Berliner Philharmoniker",
+      "organizer": "",
       "has_stream": false,
       "intro": "",
       "abo": "Abo MM: Mitmachkonzerte",
@@ -4081,15 +4081,15 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57057",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
-      "id": "57057-2026-11-15",
+      "id": "57057-2026-11-15_",
       "date": "2026-11-15",
       "time": "11:30",
-      "title": "Im Zoo: Roar-törööö",
+      "title": "Berliner Philharmoniker · Mitmachkonzert »Im Zoo: Roar-törööö«",
       "series": "Mitmachkonzert",
-      "subtitle": "Mitglieder der Berliner Philharmoniker · Choreografie und Tanz: Carley Josephine Marholin, Giordan Cruz",
+      "subtitle": "Carley Josephine Marholin, Giordan Cruz (Choreografie und Tanz)",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal Oberes Foyer",
       "city": "Berlin",
@@ -4100,11 +4100,11 @@
         "Giordan Cruz (Choreografie und Tanz)",
         "Annechien Koerselman (Regie)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe. Sie summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte.",
+      "description": "Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Kleine und große Musikentdecker*innen lernen die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennen. Das Publikum sitzt mitten im Geschehen und wird selbst aktiv. Kinder summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte.",
       "duration": "ca. 45 Minuten",
       "prices": "8 bis 16 €",
       "prices_reduced": "",
-      "organizer": "Berliner Philharmoniker",
+      "organizer": "",
       "has_stream": false,
       "intro": "",
       "abo": "Abo MM: Mitmachkonzerte",
@@ -4112,7 +4112,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57057",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57202-2026-11-15",
@@ -4133,7 +4133,7 @@
       "duration": "ca. 2 Stunden und 15 Minuten",
       "prices": "",
       "prices_reduced": "",
-      "organizer": "Berliner Philharmoniker",
+      "organizer": "",
       "has_stream": false,
       "intro": "",
       "abo": "",
@@ -4141,7 +4141,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57202",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57058-2026-11-16",
@@ -4187,7 +4187,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei.",
+      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -4199,7 +4199,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57059",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57060-2026-11-19",
@@ -4318,7 +4318,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontan zu einem Konzert in die Philharmonie gehen während der Mittagspause mit freiem Eintritt. Das Programm dauert 40 bis 50 Minuten und umfasst Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Von 12 Uhr bis kurz vor Konzertbeginn gibt es hochwertiges und preiswertes Catering.",
+      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -4330,22 +4330,22 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57061",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57062-2026-11-25",
       "date": "2026-11-25",
       "time": "20:00",
-      "title": "iiro Rantala Trio · Shuteen Erdenebaatar",
+      "title": "Jazz at Berlin Philharmonic",
       "series": "Jazz at Berlin Philharmonic",
-      "subtitle": "iiro Rantala (Klavier) · Nils Kugelmann (Bass, Klarinette) · Morten Lund (Schlagzeug)",
+      "subtitle": "Shuteen Erdenebaatar (Klavier) · iiro Rantala Trio",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal",
       "city": "Berlin",
       "program": [],
       "artists": [
         "Shuteen Erdenebaatar (Klavier)",
-        "Nils Kugelmann (Klarinette, Bass)",
+        "Nils Kugelmann (Klarinette und Bass)",
         "iiro Rantala (Klavier)",
         "Morten Lund (Schlagzeug)"
       ],
@@ -4361,7 +4361,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57062",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57063-2026-11-26",
@@ -4503,7 +4503,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontan ein Konzert in der Philharmonie besuchen während der Mittagspause mit freiem Eintritt. Zwischen September und Juni jeden Mittwoch um 13 Uhr. 40 bis 50 Minuten Programm mit Kammermusikalischem, Klavierwerken oder Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf. Von 12 Uhr bis kurz vor Konzertbeginn hochwertiges und preiswertes Catering.",
+      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -4515,7 +4515,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57065",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57066-2026-12-02",
@@ -4608,9 +4608,9 @@
       "id": "57069-2026-12-06",
       "date": "2026-12-06",
       "time": "11:00",
-      "title": "Berliner Philharmoniker",
+      "title": "Berliner Philharmoniker · Werkstatt.Dialog.Musik",
       "series": "Kammermusik",
-      "subtitle": "Werkstatt.Dialog.Musik – Konzertfrühstück",
+      "subtitle": "Konzertfrühstück im PalaisPopulaire",
       "venue": "Berliner Philharmonie",
       "hall": "",
       "city": "Berlin",
@@ -4618,7 +4618,7 @@
       "artists": [
         "Berliner Philharmoniker"
       ],
-      "description": "In der beliebten Kammermusik-Reihe Werkstatt. Dialog. Musik. stellen Musikerinnen und Musiker der Berliner Philharmoniker sich und ihre Instrumente vor, sprechen in entspannter Atmosphäre über die vorgestellten Werke, ihre Interpretationen und ihre Herangehensweise. Fragen und ein Dialog mit dem Publikum sind ausdrücklich erwünscht! Vor dem Konzert können Besucherinnen und Besucher sich ab 11 Uhr mit einem französischen Frühstück stärken, bevor um 11.30 Uhr das Konzert beginnt. Das Frühstück ist im Ticketpreis enthalten.",
+      "description": "In der beliebten Kammermusik-Reihe Werkstatt. Dialog. Musik. stellen Musikerinnen und Musiker der Berliner Philharmoniker sich und ihre Instrumente vor, sprechen in entspannter Atmosphäre über die vorgestellten Werke, ihre Interpretationen und ihre Herangehensweise. Fragen und ein Dialog mit dem Publikum sind ausdrücklich erwünscht! Vor dem Konzert können Besucherinnen und Besucher sich ab 11 Uhr mit einem französischen Frühstück stärken. Das Frühstück ist im Ticketpreis enthalten. Nach dem Konzert kann das Publikum kostenlos die aktuelle Ausstellung aus der Sammlung Deutsche Bank besuchen.",
       "duration": "ca. 1 Stunde und 30 Minuten",
       "prices": "25 €",
       "prices_reduced": "",
@@ -4630,7 +4630,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57069",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57070-2026-12-06",
@@ -4695,7 +4695,7 @@
       "id": "57072-2026-12-09",
       "date": "2026-12-09",
       "time": "13:00",
-      "title": "",
+      "title": "Lunchkonzert",
       "series": "Lunchkonzert",
       "subtitle": "",
       "venue": "Berliner Philharmonie",
@@ -4715,7 +4715,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57072",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57073-2026-12-09",
@@ -4935,11 +4935,11 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. Das Programm dauert 40 bis 50 Minuten und umfasst Kammermusikalisches, Klavierwerke oder Schlagzeug-Duos – von Tschaikowsky bis Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, sowie Gäste weiterer Berliner Orchester und Musikhochschulen. Von 12 Uhr bis Konzertbeginn gibt es hochwertiges und preiswertetes Catering.",
+      "description": "Lunchkonzert mit freiem Eintritt zwischen September und Juni an jedem Mittwoch um 13 Uhr. Das Programm wechselt und umfasst Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering ab 12 Uhr verfügbar.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
-      "organizer": "",
+      "organizer": "Berliner Philharmoniker",
       "has_stream": false,
       "intro": "",
       "abo": "",
@@ -4947,7 +4947,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57077",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57078-2026-12-16",
@@ -5207,7 +5207,7 @@
       "id": "57081-2027-01-06",
       "date": "2027-01-06",
       "time": "13:00",
-      "title": "",
+      "title": "Lunchkonzert",
       "series": "Lunchkonzert",
       "subtitle": "",
       "venue": "Berliner Philharmonie",
@@ -5215,7 +5215,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei.",
+      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -5227,7 +5227,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57081",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57082-2027-01-06",
@@ -5431,7 +5431,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. Kammermusikalisches, Klavierwerke oder Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis kurz vor Konzertbeginn verfügbar.",
+      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -5443,7 +5443,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57087",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57088-2027-01-14",
@@ -5600,9 +5600,9 @@
       "id": "57091-2027-01-17",
       "date": "2027-01-17",
       "time": "20:00",
-      "title": "NDR Vokalensemble · Daniel García Trio · Adam Baldych Quintet",
+      "title": "Jazz at Berlin Philharmonic",
       "series": "Jazz at Berlin Philharmonic",
-      "subtitle": "",
+      "subtitle": "NDR Vokalensemble · Daniel García Trio · Adam Baldych Quintet",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal",
       "city": "Berlin",
@@ -5611,7 +5611,7 @@
         "NDR Vokalensemble",
         "Daniel García (Klavier, Rhodes und Synthesizer)",
         "Reinier Elizarde (Bass)",
-        "Michael Olivera (Schlagzeug)",
+        "Pablo Martín Caminero (Bass)",
         "Adam Bałdych (Violine und Renaissancevioline)",
         "Marek Konarski (Tenorsaxofon)",
         "Sebastian Zawadzki (Klavier)",
@@ -5630,7 +5630,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57091",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57092-2027-01-19",
@@ -5668,7 +5668,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontan während der Mittagspause in die Philharmonie gehen mit freiem Eintritt. Kammermusikalisches, Klavierwerke oder Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, sowie Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis kurz vor Konzertbeginn.",
+      "description": "Spontanes Konzertbesuch während der Mittagspause mit freiem Eintritt. Kammermusikalisches, Klavierwerke oder Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis kurz vor Konzertbeginn verfügbar.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -5680,7 +5680,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57093",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57094-2027-01-20",
@@ -5688,19 +5688,19 @@
       "time": "20:00",
       "title": "Diskurs in der Philharmonie · Christiane Florin",
       "series": "Diskurs in der Philharmonie",
-      "subtitle": "",
+      "subtitle": "Biennale der Berliner Philharmoniker",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal Oberes Foyer",
       "city": "Berlin",
       "program": [],
       "artists": [
-        "Christiane Florin (Moderatorin)"
+        "Christiane Florin (Moderation)"
       ],
       "description": "Unser Diskurs in der Philharmonie behandelt Themen, die bewegen, berühren, neugierig machen: Prominente Gäste und Moderatorin Christiane Florin diskutieren aktuelle Fragen und Aspekte aus Politik, Gesellschaft, Kultur und Geschichte.",
       "duration": "ca. 1 Stunde und 30 Minuten",
       "prices": "13 €",
       "prices_reduced": "",
-      "organizer": "Berliner Philharmoniker",
+      "organizer": "",
       "has_stream": false,
       "intro": "",
       "abo": "",
@@ -5708,7 +5708,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57094",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57095-2027-01-21",
@@ -5884,7 +5884,7 @@
       "date": "2027-01-24",
       "time": "20:00",
       "title": "Harlem Gospel Singers",
-      "series": "",
+      "series": "Biennale der Berliner Philharmoniker",
       "subtitle": "",
       "venue": "Berliner Philharmonie",
       "hall": "Großer Saal",
@@ -5905,7 +5905,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57099",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57100-2027-01-25",
@@ -5933,7 +5933,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57100",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57101-2027-01-27",
@@ -5947,7 +5947,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontan während der Mittagspause ein Konzert besuchen – mit freiem Eintritt. Für 40 bis 50 Minuten gibt es Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste anderer renommierter Orchester und Hochschulen. Von 12 Uhr bis kurz vor Konzertbeginn gibt es hochwertiges und preiswertes Catering.",
+      "description": "Spontan während der Mittagspause ein Konzert besuchen – jeden Mittwoch um 13 Uhr mit freiem Eintritt. Kammermusikalisches, Klavierwerke oder Schlagzeug-Duos von Tschaikowsky bis Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, sowie Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis Konzertbeginn.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -5959,7 +5959,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57101",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57102-2027-01-28",
@@ -6078,7 +6078,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering verfügbar von 12 Uhr bis kurz vor Konzertbeginn.",
+      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -6090,7 +6090,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57103",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57104-2027-02-07",
@@ -6163,7 +6163,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontan während der Mittagspause in die Philharmonie gehen mit freiem Eintritt. 40 bis 50 Minuten Programm mit Kammermusikalischem, Klavierwerken oder Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf. Catering von 12 Uhr bis kurz vor Konzertbeginn.",
+      "description": "Spontan während der Mittagspause in die Philharmonie gehen – kostenlos an jedem Mittwoch um 13 Uhr. 40 bis 50 Minuten Programm mit Kammermusikalischem, Klavierwerken oder Schlagzeug-Duos von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf. Von 12 Uhr bis kurz vor Konzertbeginn Catering.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -6175,7 +6175,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57106",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57195-2027-02-10",
@@ -6203,7 +6203,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57195",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57107-2027-02-10",
@@ -6371,7 +6371,7 @@
       "id": "57110-2027-02-17",
       "date": "2027-02-17",
       "time": "13:00",
-      "title": "",
+      "title": "Lunchkonzert",
       "series": "Lunchkonzert",
       "subtitle": "",
       "venue": "Berliner Philharmonie",
@@ -6379,7 +6379,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei.",
+      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -6391,7 +6391,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57110",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57111-2027-02-18",
@@ -6504,7 +6504,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei.",
+      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. 40 bis 50 Minuten Programm mit Kammermusikalischem, Klavierwerken oder Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis kurz vor Konzertbeginn.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -6516,7 +6516,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57112",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57113-2027-02-25",
@@ -6534,7 +6534,7 @@
       ],
       "description": "In der Karajan-Akademie der Berliner Philharmoniker werden herausragende junge Musikerinnen und Musiker auf die künstlerische Arbeit in einem Spitzenorchester vorbereitet. Dass sie auch in Solo- und Kammermusikwerken höchste Erwartungen erfüllen, zeigen sie bei freiem Eintritt in den Konzerten der Carte blanche-Reihe.",
       "duration": "ca. 1 Stunde und 15 Minuten",
-      "prices": "",
+      "prices": "Freier Eintritt",
       "prices_reduced": "",
       "organizer": "",
       "has_stream": false,
@@ -6544,7 +6544,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57113",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57114-2027-02-25",
@@ -6650,8 +6650,8 @@
       "date": "2027-02-26",
       "time": "10:00",
       "title": "Vokalhelden · Johannes David Wolff",
-      "series": "Mitsingkonzert",
-      "subtitle": "Vokalhelden-Mitsingkonzert für Grundschulklassen",
+      "series": "Konzert",
+      "subtitle": "Vokalhelden-Mitsingkonzert",
       "venue": "Berliner Philharmonie",
       "hall": "Großer Saal",
       "city": "Berlin",
@@ -6673,15 +6673,15 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57115",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
-      "id": "57115-2027-02-26",
+      "id": "57115-2027-02-26_",
       "date": "2027-02-26",
       "time": "12:00",
       "title": "Vokalhelden · Johannes David Wolff",
-      "series": "Mitsingkonzert",
-      "subtitle": "Vokalhelden-Mitsingkonzert für Grundschulklassen",
+      "series": "Konzert",
+      "subtitle": "Vokalhelden-Mitsingkonzert",
       "venue": "Berliner Philharmonie",
       "hall": "Großer Saal",
       "city": "Berlin",
@@ -6703,7 +6703,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57115",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57116-2027-02-27",
@@ -6711,22 +6711,22 @@
       "time": "10:00",
       "title": "»Auf dem Bahnhof: Tschu-tschuu«",
       "series": "Mitmachkonzert",
-      "subtitle": "",
+      "subtitle": "Berliner Philharmoniker",
       "venue": "Berliner Philharmonie",
       "hall": "Oberes Foyer Kammermusiksaal / Einführungsbereich",
       "city": "Berlin",
       "program": [],
       "artists": [
-        "Mitglieder der Berliner Philharmoniker",
+        "Berliner Philharmoniker",
         "Carley Josephine Marholin (Choreografie und Tanz)",
         "Giordan Cruz (Choreografie und Tanz)",
         "Annechien Koerselman (Regie)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe. Sie summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv.",
+      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv.",
       "duration": "ca. 45 Minuten",
       "prices": "8 bis 16 €",
       "prices_reduced": "",
-      "organizer": "",
+      "organizer": "Berliner Philharmoniker",
       "has_stream": false,
       "intro": "",
       "abo": "Abo MM: Mitmachkonzerte",
@@ -6734,30 +6734,30 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57116",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
-      "id": "57116-2027-02-27",
+      "id": "57116-2027-02-27_",
       "date": "2027-02-27",
       "time": "11:30",
       "title": "»Auf dem Bahnhof: Tschu-tschuu«",
       "series": "Mitmachkonzert",
-      "subtitle": "",
+      "subtitle": "Berliner Philharmoniker",
       "venue": "Berliner Philharmonie",
       "hall": "Oberes Foyer Kammermusiksaal / Einführungsbereich",
       "city": "Berlin",
       "program": [],
       "artists": [
-        "Mitglieder der Berliner Philharmoniker",
+        "Berliner Philharmoniker",
         "Carley Josephine Marholin (Choreografie und Tanz)",
         "Giordan Cruz (Choreografie und Tanz)",
         "Annechien Koerselman (Regie)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe. Sie summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv.",
+      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv.",
       "duration": "ca. 45 Minuten",
       "prices": "8 bis 16 €",
       "prices_reduced": "",
-      "organizer": "",
+      "organizer": "Berliner Philharmoniker",
       "has_stream": false,
       "intro": "",
       "abo": "Abo MM: Mitmachkonzerte",
@@ -6765,7 +6765,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57116",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57116-2027-02-28",
@@ -6773,22 +6773,22 @@
       "time": "10:00",
       "title": "»Auf dem Bahnhof: Tschu-tschuu«",
       "series": "Mitmachkonzert",
-      "subtitle": "",
+      "subtitle": "Berliner Philharmoniker",
       "venue": "Berliner Philharmonie",
       "hall": "Oberes Foyer Kammermusiksaal / Einführungsbereich",
       "city": "Berlin",
       "program": [],
       "artists": [
-        "Mitglieder der Berliner Philharmoniker",
+        "Berliner Philharmoniker",
         "Carley Josephine Marholin (Choreografie und Tanz)",
         "Giordan Cruz (Choreografie und Tanz)",
         "Annechien Koerselman (Regie)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe. Sie summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv.",
+      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv.",
       "duration": "ca. 45 Minuten",
       "prices": "8 bis 16 €",
       "prices_reduced": "",
-      "organizer": "",
+      "organizer": "Berliner Philharmoniker",
       "has_stream": false,
       "intro": "",
       "abo": "Abo MM: Mitmachkonzerte",
@@ -6796,30 +6796,30 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57116",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
-      "id": "57116-2027-02-28",
+      "id": "57116-2027-02-28_",
       "date": "2027-02-28",
       "time": "11:30",
       "title": "»Auf dem Bahnhof: Tschu-tschuu«",
       "series": "Mitmachkonzert",
-      "subtitle": "",
+      "subtitle": "Berliner Philharmoniker",
       "venue": "Berliner Philharmonie",
       "hall": "Oberes Foyer Kammermusiksaal / Einführungsbereich",
       "city": "Berlin",
       "program": [],
       "artists": [
-        "Mitglieder der Berliner Philharmoniker",
+        "Berliner Philharmoniker",
         "Carley Josephine Marholin (Choreografie und Tanz)",
         "Giordan Cruz (Choreografie und Tanz)",
         "Annechien Koerselman (Regie)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe. Sie summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv.",
+      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv.",
       "duration": "ca. 45 Minuten",
       "prices": "8 bis 16 €",
       "prices_reduced": "",
-      "organizer": "",
+      "organizer": "Berliner Philharmoniker",
       "has_stream": false,
       "intro": "",
       "abo": "Abo MM: Mitmachkonzerte",
@@ -6827,7 +6827,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57116",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57117-2027-02-28",
@@ -6843,8 +6843,8 @@
       "artists": [],
       "description": "",
       "duration": "ca. 1 Stunde und 30 Minuten",
-      "prices": "20 €",
-      "prices_reduced": "10 €",
+      "prices": "20 € (10 € für Kinder für Gäste)",
+      "prices_reduced": "",
       "organizer": "Freunde der Berliner Philharmoniker e. V.",
       "has_stream": false,
       "intro": "",
@@ -6853,7 +6853,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57117",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57118-2027-03-03",
@@ -6867,7 +6867,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. 40 bis 50 Minuten Programm mit Kammermusik, Klavierwerken oder Schlagzeug-Duos von Tschaikowsky bis Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, sowie Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering ab 12 Uhr bis kurz vor Konzertbeginn.",
+      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -6879,15 +6879,15 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57118",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57119-2027-03-07",
       "date": "2027-03-07",
-      "time": "11:30",
-      "title": "Berliner Philharmoniker",
+      "time": "11:00",
+      "title": "Berliner Philharmoniker · Werkstatt.Dialog.Musik",
       "series": "Kammermusik",
-      "subtitle": "Werkstatt.Dialog.Musik – Konzertfrühstück",
+      "subtitle": "Konzertfrühstück im PalaisPopulaire",
       "venue": "Berliner Philharmonie",
       "hall": "",
       "city": "Berlin",
@@ -6895,7 +6895,7 @@
       "artists": [
         "Berliner Philharmoniker"
       ],
-      "description": "In der beliebten Kammermusik-Reihe Werkstatt. Dialog. Musik. stellen Musikerinnen und Musiker der Berliner Philharmoniker sich und ihre Instrumente vor, sprechen in entspannter Atmosphäre über die vorgestellten Werke, ihre Interpretationen und ihre Herangehensweise. Fragen und ein Dialog mit dem Publikum sind ausdrücklich erwünscht! Vor dem Konzert können Besucherinnen und Besucher sich ab 11 Uhr mit einem französischen Frühstück stärken. Das Frühstück ist im Ticketpreis enthalten.",
+      "description": "In der beliebten Kammermusik-Reihe Werkstatt.Dialog.Musik stellen Musikerinnen und Musiker der Berliner Philharmoniker sich und ihre Instrumente vor, sprechen in entspannter Atmosphäre über die vorgestellten Werke, ihre Interpretationen und ihre Herangehensweise. Fragen und ein Dialog mit dem Publikum sind ausdrücklich erwünscht! Vor dem Konzert können Besucherinnen und Besucher sich ab 11 Uhr mit einem französischen Frühstück stärken, bevor um 11.30 Uhr das Konzert beginnt. Das Frühstück ist im Ticketpreis enthalten.",
       "duration": "ca. 1 Stunde und 30 Minuten",
       "prices": "25 €",
       "prices_reduced": "",
@@ -6907,7 +6907,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57119",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57120-2027-03-10",
@@ -6921,7 +6921,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. 40–50 Minuten Programm mit Kammermusik, Klavierwerken oder Schlagzeug-Duos. Oft treten Mitglieder der Berliner Philharmoniker, der Karajan-Akademie oder Gäste anderer Berliner Orchester auf. Catering von 12 Uhr an verfügbar.",
+      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. Programm von 40 bis 50 Minuten mit Kammermusik, Klavierwerken oder Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis kurz vor Konzertbeginn.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -6933,7 +6933,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57120",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57121-2027-03-10",
@@ -6949,11 +6949,11 @@
       "artists": [
         "Berliner Philharmoniker"
       ],
-      "description": "Die Literatur wie die Musik reflektieren die Welt und das Leben: sinnlich, spannend, inspirierend. In dieser neuen Reihe bringen wir beide Kunstformen zusammen. Berühmte Autorinnen und Autoren lesen aus aktuellen Werken und geben im Gespräch Einblicke in ihre Arbeit und ihr Denken. Mitglieder der Berliner Philharmoniker steuern Kammermusik bei, die das Thema des Abends weitet und vertieft.",
+      "description": "Die Literatur wie die Musik reflektieren die Welt und das Leben: sinnlich, spannend, inspirierend. In dieser neuen Reihe bringen wir beide Kunstformen zusammen. Dreimal pro Saison laden wir gemeinsam mit dem internationalen literaturfestival berlin berühmte Autorinnen und Autoren ein. Sie lesen aus aktuellen Werken und geben im Gespräch Einblicke in ihre Arbeit und ihr Denken. Mitglieder der Berliner Philharmoniker steuern Kammermusik bei, die das Thema des Abends weitet und vertieft.",
       "duration": "ca. 1 Stunde und 30 Minuten",
       "prices": "18 bis 41 €",
       "prices_reduced": "",
-      "organizer": "Berliner Philharmoniker",
+      "organizer": "",
       "has_stream": false,
       "intro": "",
       "abo": "",
@@ -6961,7 +6961,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57121",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57122-2027-03-11",
@@ -6995,7 +6995,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57122",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57123-2027-03-14",
@@ -7037,7 +7037,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [
-        "Christiane Florin (Moderation)"
+        "Christiane Florin (Moderatorin)"
       ],
       "description": "Unser Diskurs in der Philharmonie behandelt Themen, die bewegen, berühren, neugierig machen: Prominente Gäste und Moderatorin Christiane Florin diskutieren aktuelle Fragen und Aspekte aus Politik, Gesellschaft, Kultur und Geschichte.",
       "duration": "ca. 1 Stunde und 30 Minuten",
@@ -7051,7 +7051,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57124",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57125-2027-03-17",
@@ -7065,7 +7065,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. Kammermusikalisches, Klavierwerke oder Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis kurz vor Konzertbeginn.",
+      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -7077,7 +7077,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57125",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57200-2027-03-20",
@@ -7351,7 +7351,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57129",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57130-2027-03-24",
@@ -7423,7 +7423,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontanes Konzertbesuch während der Mittagspause mit freiem Eintritt. Programm von 40 bis 50 Minuten mit Kammermusik, Klavierwerken und anderen Werken von klassisch bis Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf. Catering von 12 Uhr bis kurz vor Konzertbeginn verfügbar.",
+      "description": "Lunchkonzert: Spontan während der Mittagspause zu freiem Eintritt. Programm mit Kammermusik, Klavierwerken oder Schlagzeug-Duo – von Tschaikowsky bis Tango. Mitglieder der Berliner Philharmoniker, Karajan-Akademie und Gäste. Catering von 12 Uhr bis Konzertbeginn.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -7435,7 +7435,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57131",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57132-2027-04-03",
@@ -7483,7 +7483,7 @@
       "id": "57134-2027-04-07",
       "date": "2027-04-07",
       "time": "13:00",
-      "title": "",
+      "title": "Lunchkonzert",
       "series": "Lunchkonzert",
       "subtitle": "",
       "venue": "Berliner Philharmonie",
@@ -7491,7 +7491,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. 40 bis 50 Minuten Programm mit Kammermusik, Klavierwerken oder Schlagzeug-Duos. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf. Catering von 12 Uhr bis kurz vor Konzertbeginn.",
+      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -7503,7 +7503,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57134",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57135-2027-04-08",
@@ -7712,7 +7712,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontan zu einem Konzert in die Philharmonie während der Mittagspause mit freiem Eintritt. Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis kurz vor Konzertbeginn.",
+      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -7724,7 +7724,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57139",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57140-2027-04-14",
@@ -7849,9 +7849,9 @@
       "id": "57142-2027-04-17",
       "date": "2027-04-17",
       "time": "10:00",
-      "title": "Auf der Baustelle: Klong-bumm",
+      "title": "»Auf der Baustelle: Klong-bumm«",
       "series": "Mitmachkonzert",
-      "subtitle": "",
+      "subtitle": "Mitglieder der Karajan-Akademie der Berliner Philharmoniker",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal Oberes Foyer",
       "city": "Berlin",
@@ -7862,7 +7862,7 @@
         "Giordan Cruz (Choreografie und Tanz)",
         "Annechien Koerselman (Regie)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv.",
+      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe. Sie summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv.",
       "duration": "ca. 45 Minuten",
       "prices": "8 bis 16 €",
       "prices_reduced": "",
@@ -7874,15 +7874,15 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57142",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
-      "id": "57142-2027-04-17",
+      "id": "57142-2027-04-17_",
       "date": "2027-04-17",
       "time": "11:30",
-      "title": "Auf der Baustelle: Klong-bumm",
+      "title": "»Auf der Baustelle: Klong-bumm«",
       "series": "Mitmachkonzert",
-      "subtitle": "",
+      "subtitle": "Mitglieder der Karajan-Akademie der Berliner Philharmoniker",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal Oberes Foyer",
       "city": "Berlin",
@@ -7893,7 +7893,7 @@
         "Giordan Cruz (Choreografie und Tanz)",
         "Annechien Koerselman (Regie)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv.",
+      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe. Sie summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv.",
       "duration": "ca. 45 Minuten",
       "prices": "8 bis 16 €",
       "prices_reduced": "",
@@ -7905,15 +7905,15 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57142",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57142-2027-04-18",
       "date": "2027-04-18",
       "time": "10:00",
-      "title": "Auf der Baustelle: Klong-bumm",
+      "title": "»Auf der Baustelle: Klong-bumm«",
       "series": "Mitmachkonzert",
-      "subtitle": "",
+      "subtitle": "Mitglieder der Karajan-Akademie der Berliner Philharmoniker",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal Oberes Foyer",
       "city": "Berlin",
@@ -7924,7 +7924,7 @@
         "Giordan Cruz (Choreografie und Tanz)",
         "Annechien Koerselman (Regie)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv.",
+      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe. Sie summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv.",
       "duration": "ca. 45 Minuten",
       "prices": "8 bis 16 €",
       "prices_reduced": "",
@@ -7936,15 +7936,15 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57142",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
-      "id": "57142-2027-04-18",
+      "id": "57142-2027-04-18_",
       "date": "2027-04-18",
       "time": "11:30",
-      "title": "Auf der Baustelle: Klong-bumm",
+      "title": "»Auf der Baustelle: Klong-bumm«",
       "series": "Mitmachkonzert",
-      "subtitle": "",
+      "subtitle": "Mitglieder der Karajan-Akademie der Berliner Philharmoniker",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal Oberes Foyer",
       "city": "Berlin",
@@ -7955,7 +7955,7 @@
         "Giordan Cruz (Choreografie und Tanz)",
         "Annechien Koerselman (Regie)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv.",
+      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe. Sie summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv.",
       "duration": "ca. 45 Minuten",
       "prices": "8 bis 16 €",
       "prices_reduced": "",
@@ -7967,7 +7967,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57142",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57143-2027-04-18",
@@ -8022,7 +8022,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57203",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57144-2027-04-19",
@@ -8087,7 +8087,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei.",
+      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. 40 bis 50 Minuten Programm mit Kammermusik, Klavierwerken oder Schlagzeug-Duo – von Tschaikowsky bis Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf. Catering von 12 Uhr bis kurz vor Konzertbeginn verfügbar.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -8099,7 +8099,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57146",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57147-2027-04-22",
@@ -8203,7 +8203,7 @@
       "time": "11:00",
       "title": "Vokalhelden · Johannes David Wolff",
       "series": "Konzert",
-      "subtitle": "Jahreskonzert",
+      "subtitle": "Vokalhelden-Jahreskonzert",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal",
       "city": "Berlin",
@@ -8224,7 +8224,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57148",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57149-2027-04-28",
@@ -8238,7 +8238,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. Kammermusikalisches, Klavierwerke oder Schlagzeug-Duo – von Tschaikowsky bis Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis kurz vor Konzertbeginn.",
+      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. Programm von 40 bis 50 Minuten mit Kammermusikalisches, Klavierwerke oder Schlagzeug-Duos – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf. Catering von 12 Uhr bis Konzertbeginn verfügbar.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -8250,7 +8250,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57149",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57150-2027-04-28",
@@ -8286,7 +8286,7 @@
       "id": "57151-2027-04-29",
       "date": "2027-04-29",
       "time": "20:00",
-      "title": "Michael Wollny · Tamar Halperin · Nils Landgren · Émile Parisien · Vincent Peirani · Andreas Schaerer",
+      "title": "Michael Wollny · Jazz at Berlin Philharmonic",
       "series": "Jazz at Berlin Philharmonic",
       "subtitle": "»Wanderlust«",
       "venue": "Berliner Philharmonie",
@@ -8313,7 +8313,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57151",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57152-2027-04-30",
@@ -8535,7 +8535,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontan während der Mittagspause in die Philharmonie gehen bei freiem Eintritt. Kammermusikalisches, Klavierwerke oder Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis kurz vor Konzertbeginn.",
+      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. Kammermusikalisches, Klavierwerke oder Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering verfügbar von 12 Uhr bis kurz vor Konzertbeginn.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -8547,7 +8547,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57161",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57163-2027-05-13",
@@ -8575,7 +8575,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57163",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57162-2027-05-13",
@@ -8677,9 +8677,9 @@
       "id": "57164-2027-05-16",
       "date": "2027-05-16",
       "time": "20:00",
-      "title": "Yuja Wang",
+      "title": "Yuja Wang · Klavier",
       "series": "Klavierabend",
-      "subtitle": "Klavier",
+      "subtitle": "",
       "venue": "Berliner Philharmonie",
       "hall": "Großer Saal",
       "city": "Berlin",
@@ -8691,7 +8691,7 @@
       "duration": "ca. 2 Stunden",
       "prices": "50 bis 161 €",
       "prices_reduced": "",
-      "organizer": "",
+      "organizer": "Berliner Philharmoniker",
       "has_stream": false,
       "intro": "",
       "abo": "Abo U: Klavier",
@@ -8699,15 +8699,15 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57164",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57165-2027-05-18",
       "date": "2027-05-18",
       "time": "20:00",
-      "title": "Satzwechsel · Literatur und Musik",
-      "series": "Satzwechsel",
-      "subtitle": "",
+      "title": "Satzwechsel",
+      "series": "Literatur und Musik",
+      "subtitle": "Literatur und Musik",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal",
       "city": "Berlin",
@@ -8715,7 +8715,7 @@
       "artists": [
         "Berliner Philharmoniker"
       ],
-      "description": "Die Literatur wie die Musik reflektieren die Welt und das Leben: sinnlich, spannend, inspirierend. In der neuen Reihe Satzwechsel werden beide Kunstformen zusammengebracht. Berühmte Autorinnen und Autoren lesen aus aktuellen Werken und geben im Gespräch Einblicke in ihre Arbeit. Mitglieder der Berliner Philharmoniker steuern Kammermusik bei, die das Thema des Abends weitet und vertieft.",
+      "description": "Die Literatur wie die Musik reflektieren die Welt und das Leben: sinnlich, spannend, inspirierend. In dieser neuen Reihe bringen wir beide Kunstformen zusammen. Dreimal pro Saison laden wir gemeinsam mit dem internationalen literaturfestival berlin berühmte Autorinnen und Autoren ein. Sie lesen aus aktuellen Werken und geben im Gespräch Einblicke in ihre Arbeit und ihr Denken. Hinzu kommt der Dialog mit der Musik. Mitglieder der Berliner Philharmoniker steuern Kammermusik bei, die das Thema des Abends weitet und vertieft.",
       "duration": "ca. 1 Stunde und 30 Minuten",
       "prices": "18 bis 41 €",
       "prices_reduced": "",
@@ -8727,7 +8727,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57165",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57166-2027-05-19",
@@ -8741,11 +8741,11 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. 40 bis 50 Minuten Programm mit Kammermusikalischem, Klavierwerken oder Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis kurz vor Konzertbeginn.",
+      "description": "Spontan zu einem Konzert in die Philharmonie während der Mittagspause mit freiem Eintritt. Für 40 bis 50 Minuten Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Von 12 Uhr bis kurz vor Konzertbeginn Catering.",
       "duration": "ca. 1 Stunde",
-      "prices": "",
+      "prices": "Freier Eintritt",
       "prices_reduced": "",
-      "organizer": "",
+      "organizer": "Berliner Philharmoniker",
       "has_stream": false,
       "intro": "",
       "abo": "",
@@ -8753,7 +8753,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57166",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57167-2027-05-19",
@@ -8900,7 +8900,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. 40 bis 50 Minuten Programm mit Kammermusik, Klavierwerken oder Schlagzeug-Duos von Tschaikowsky bis Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf. Catering von 12 Uhr bis Konzertbeginn.",
+      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -8912,7 +8912,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57169",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57170-2027-05-27",
@@ -9038,11 +9038,11 @@
       "id": "57171-2027-05-29",
       "date": "2027-05-29",
       "time": "10:00",
-      "title": "Im Blumengarten: Bzzz-flirr",
+      "title": "Berliner Philharmoniker · Mitmachkonzert",
       "series": "Mitmachkonzert",
-      "subtitle": "Berliner Philharmoniker",
+      "subtitle": "»Im Blumengarten: Bzzz-flirr«",
       "venue": "Berliner Philharmonie",
-      "hall": "Oberes Foyer Kammermusiksaal",
+      "hall": "Oberes Foyer Kammermusiksaal / Einführungsbereich",
       "city": "Berlin",
       "program": [],
       "artists": [
@@ -9051,7 +9051,7 @@
         "Giordan Cruz (Choreografie und Tanz)",
         "Annechien Koerselman (Regie)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe.",
+      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe. Sie summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte.",
       "duration": "ca. 45 Minuten",
       "prices": "8 bis 16 €",
       "prices_reduced": "",
@@ -9063,17 +9063,17 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57171",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
-      "id": "57171-2027-05-29",
+      "id": "57171-2027-05-29_",
       "date": "2027-05-29",
       "time": "11:30",
-      "title": "Im Blumengarten: Bzzz-flirr",
+      "title": "Berliner Philharmoniker · Mitmachkonzert",
       "series": "Mitmachkonzert",
-      "subtitle": "Berliner Philharmoniker",
+      "subtitle": "»Im Blumengarten: Bzzz-flirr«",
       "venue": "Berliner Philharmonie",
-      "hall": "Oberes Foyer Kammermusiksaal",
+      "hall": "Oberes Foyer Kammermusiksaal / Einführungsbereich",
       "city": "Berlin",
       "program": [],
       "artists": [
@@ -9082,7 +9082,7 @@
         "Giordan Cruz (Choreografie und Tanz)",
         "Annechien Koerselman (Regie)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe.",
+      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe. Sie summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte.",
       "duration": "ca. 45 Minuten",
       "prices": "8 bis 16 €",
       "prices_reduced": "",
@@ -9094,17 +9094,17 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57171",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57171-2027-05-30",
       "date": "2027-05-30",
       "time": "10:00",
-      "title": "Im Blumengarten: Bzzz-flirr",
+      "title": "Berliner Philharmoniker · Mitmachkonzert",
       "series": "Mitmachkonzert",
-      "subtitle": "Berliner Philharmoniker",
+      "subtitle": "»Im Blumengarten: Bzzz-flirr«",
       "venue": "Berliner Philharmonie",
-      "hall": "Oberes Foyer Kammermusiksaal",
+      "hall": "Oberes Foyer Kammermusiksaal / Einführungsbereich",
       "city": "Berlin",
       "program": [],
       "artists": [
@@ -9113,7 +9113,7 @@
         "Giordan Cruz (Choreografie und Tanz)",
         "Annechien Koerselman (Regie)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe.",
+      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe. Sie summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte.",
       "duration": "ca. 45 Minuten",
       "prices": "8 bis 16 €",
       "prices_reduced": "",
@@ -9125,17 +9125,17 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57171",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
-      "id": "57171-2027-05-30",
+      "id": "57171-2027-05-30_",
       "date": "2027-05-30",
       "time": "11:30",
-      "title": "Im Blumengarten: Bzzz-flirr",
+      "title": "Berliner Philharmoniker · Mitmachkonzert",
       "series": "Mitmachkonzert",
-      "subtitle": "Berliner Philharmoniker",
+      "subtitle": "»Im Blumengarten: Bzzz-flirr«",
       "venue": "Berliner Philharmonie",
-      "hall": "Oberes Foyer Kammermusiksaal",
+      "hall": "Oberes Foyer Kammermusiksaal / Einführungsbereich",
       "city": "Berlin",
       "program": [],
       "artists": [
@@ -9144,7 +9144,7 @@
         "Giordan Cruz (Choreografie und Tanz)",
         "Annechien Koerselman (Regie)"
       ],
-      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe.",
+      "description": "Unsere Mitmachkonzerte verbinden Musik, Tanz und Bewegung zu einem kunterbunten Erlebnis. Viermal in der Saison können kleine und große Musikentdecker*innen die Philharmonie Berlin besuchen und die verschiedenen Klangfarben mit Streich-, Blas- und Schlagwerkinstrumenten kennenlernen. In diesen Konzerten sitzt das Publikum mitten im Geschehen und wird selbst aktiv. Dabei haben die Kinder den besten Platz in der ersten Reihe. Sie summen, tanzen, klatschen und erleben Musik spielerisch und interaktiv, verpackt in vier mitreißende Geschichten ohne Worte.",
       "duration": "ca. 45 Minuten",
       "prices": "8 bis 16 €",
       "prices_reduced": "",
@@ -9156,7 +9156,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57171",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57191-2027-05-31",
@@ -9166,11 +9166,11 @@
       "series": "",
       "subtitle": "25 Jahre Education & Outreach",
       "venue": "Berliner Philharmonie",
-      "hall": "Großer Saal, Kammermusiksaal",
+      "hall": "",
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Bei unserem youngSTAR Festival erobern Schulensembles aus Berlin an vier Tagen die Bühnen der Philharmonie Berlin und musizieren vor großem Publikum. Wir laden Schulorchester, Jazz-Ensembles, Rock- und Popbands aus Berlin ein, dabei zu sein. Im Publikum sind Berliner Schüler*innen eingeladen, zuzuhören und die Ensembles anzufeuern. Beim Vokalhelden-Mitsingkonzert werden dann alle Grundschulkinder im Saal zu Sänger*innen.",
+      "description": "Bei unserem youngSTAR Festival erobern Schulensembles aus Berlin an vier Tagen die Bühnen der Philharmonie Berlin und musizieren vor großem Publikum. Schulorchester, Jazz-Ensembles, Rock- und Popbands sind eingeladen. Im Publikum sind Berliner Schüler*innen eingeladen, zuzuhören und die Ensembles bei ihrem oftmals ersten Auftritt anzufeuern. Beim Vokalhelden-Mitsingkonzert werden dann alle Grundschulkinder im Saal zu Sänger*innen.",
       "duration": "ca. 1 Stunde und 15 Minuten",
       "prices": "kostenfrei",
       "prices_reduced": "",
@@ -9182,7 +9182,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57191",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57191-2027-06-01",
@@ -9192,11 +9192,11 @@
       "series": "",
       "subtitle": "25 Jahre Education & Outreach",
       "venue": "Berliner Philharmonie",
-      "hall": "Großer Saal, Kammermusiksaal",
+      "hall": "",
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Bei unserem youngSTAR Festival erobern Schulensembles aus Berlin an vier Tagen die Bühnen der Philharmonie Berlin und musizieren vor großem Publikum. Wir laden Schulorchester, Jazz-Ensembles, Rock- und Popbands aus Berlin ein, dabei zu sein. Im Publikum sind Berliner Schüler*innen eingeladen, zuzuhören und die Ensembles anzufeuern. Beim Vokalhelden-Mitsingkonzert werden dann alle Grundschulkinder im Saal zu Sänger*innen.",
+      "description": "Bei unserem youngSTAR Festival erobern Schulensembles aus Berlin an vier Tagen die Bühnen der Philharmonie Berlin und musizieren vor großem Publikum. Schulorchester, Jazz-Ensembles, Rock- und Popbands sind eingeladen. Im Publikum sind Berliner Schüler*innen eingeladen, zuzuhören und die Ensembles bei ihrem oftmals ersten Auftritt anzufeuern. Beim Vokalhelden-Mitsingkonzert werden dann alle Grundschulkinder im Saal zu Sänger*innen.",
       "duration": "ca. 1 Stunde und 15 Minuten",
       "prices": "kostenfrei",
       "prices_reduced": "",
@@ -9208,7 +9208,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57191",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57191-2027-06-02",
@@ -9218,11 +9218,11 @@
       "series": "",
       "subtitle": "25 Jahre Education & Outreach",
       "venue": "Berliner Philharmonie",
-      "hall": "Großer Saal, Kammermusiksaal",
+      "hall": "",
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Bei unserem youngSTAR Festival erobern Schulensembles aus Berlin an vier Tagen die Bühnen der Philharmonie Berlin und musizieren vor großem Publikum. Wir laden Schulorchester, Jazz-Ensembles, Rock- und Popbands aus Berlin ein, dabei zu sein. Im Publikum sind Berliner Schüler*innen eingeladen, zuzuhören und die Ensembles anzufeuern. Beim Vokalhelden-Mitsingkonzert werden dann alle Grundschulkinder im Saal zu Sänger*innen.",
+      "description": "Bei unserem youngSTAR Festival erobern Schulensembles aus Berlin an vier Tagen die Bühnen der Philharmonie Berlin und musizieren vor großem Publikum. Schulorchester, Jazz-Ensembles, Rock- und Popbands sind eingeladen. Im Publikum sind Berliner Schüler*innen eingeladen, zuzuhören und die Ensembles bei ihrem oftmals ersten Auftritt anzufeuern. Beim Vokalhelden-Mitsingkonzert werden dann alle Grundschulkinder im Saal zu Sänger*innen.",
       "duration": "ca. 1 Stunde und 15 Minuten",
       "prices": "kostenfrei",
       "prices_reduced": "",
@@ -9234,7 +9234,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57191",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57191-2027-06-04",
@@ -9244,11 +9244,11 @@
       "series": "",
       "subtitle": "25 Jahre Education & Outreach",
       "venue": "Berliner Philharmonie",
-      "hall": "Großer Saal, Kammermusiksaal",
+      "hall": "",
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Bei unserem youngSTAR Festival erobern Schulensembles aus Berlin an vier Tagen die Bühnen der Philharmonie Berlin und musizieren vor großem Publikum. Wir laden Schulorchester, Jazz-Ensembles, Rock- und Popbands aus Berlin ein, dabei zu sein. Im Publikum sind Berliner Schüler*innen eingeladen, zuzuhören und die Ensembles anzufeuern. Beim Vokalhelden-Mitsingkonzert werden dann alle Grundschulkinder im Saal zu Sänger*innen.",
+      "description": "Bei unserem youngSTAR Festival erobern Schulensembles aus Berlin an vier Tagen die Bühnen der Philharmonie Berlin und musizieren vor großem Publikum. Schulorchester, Jazz-Ensembles, Rock- und Popbands sind eingeladen. Im Publikum sind Berliner Schüler*innen eingeladen, zuzuhören und die Ensembles bei ihrem oftmals ersten Auftritt anzufeuern. Beim Vokalhelden-Mitsingkonzert werden dann alle Grundschulkinder im Saal zu Sänger*innen.",
       "duration": "ca. 1 Stunde und 15 Minuten",
       "prices": "kostenfrei",
       "prices_reduced": "",
@@ -9260,7 +9260,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57191",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57172-2027-06-02",
@@ -9274,7 +9274,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf.",
+      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. Kammermusikalisches, Klavierwerke oder Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis kurz vor Konzertbeginn.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -9286,7 +9286,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57172",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57173-2027-06-03",
@@ -9398,7 +9398,7 @@
       "artists": [
         "Berliner Philharmoniker"
       ],
-      "description": "In der beliebten Kammermusik-Reihe Werkstatt. Dialog. Musik. stellen Musikerinnen und Musiker der Berliner Philharmoniker sich und ihre Instrumente vor, sprechen in entspannter Atmosphäre über die vorgestellten Werke, ihre Interpretationen und ihre Herangehensweise. Fragen und ein Dialog mit dem Publikum sind ausdrücklich erwünscht! Vor dem Konzert können Besucherinnen und Besucher sich ab 11 Uhr mit einem französischen Frühstück stärken. Das Frühstück ist im Ticketpreis enthalten.",
+      "description": "In der beliebten Kammermusik-Reihe Werkstatt. Dialog. Musik. stellen Musikerinnen und Musiker der Berliner Philharmoniker sich und ihre Instrumente vor, sprechen in entspannter Atmosphäre über die vorgestellten Werke, ihre Interpretationen und ihre Herangehensweise. Fragen und ein Dialog mit dem Publikum sind ausdrücklich erwünscht! Vor dem Konzert können Besucherinnen und Besucher sich ab 11 Uhr mit einem französischen Frühstück stärken, bevor um 11.30 Uhr das Konzert beginnt. Das Frühstück ist im Ticketpreis enthalten.",
       "duration": "ca. 1 Stunde und 30 Minuten",
       "prices": "25 €",
       "prices_reduced": "",
@@ -9410,7 +9410,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57174",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57176-2027-06-08",
@@ -9439,7 +9439,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57176",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57175-2027-06-09",
@@ -9453,7 +9453,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontanes Konzerterleben während der Mittagspause mit freiem Eintritt. 40 bis 50 Minuten Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis kurz vor Konzertbeginn.",
+      "description": "Einfach mal zu einem Konzert in die Philharmonie gehen, spontan während der Mittagspause und das auch noch bei freiem Eintritt: Das ist zwischen September und Juni an jedem Mittwoch um 13 Uhr möglich. Für 40 bis 50 Minuten gibt es Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -9465,7 +9465,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57175",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57177-2027-06-10",
@@ -9483,7 +9483,7 @@
       ],
       "description": "In der Karajan-Akademie der Berliner Philharmoniker werden herausragende junge Musikerinnen und Musiker auf die künstlerische Arbeit in einem Spitzenorchester vorbereitet. Dass sie auch in Solo- und Kammermusikwerken höchste Erwartungen erfüllen, zeigen sie bei freiem Eintritt in den Konzerten der Carte blanche-Reihe.",
       "duration": "ca. 1 Stunde und 15 Minuten",
-      "prices": "",
+      "prices": "kostenlos",
       "prices_reduced": "",
       "organizer": "",
       "has_stream": false,
@@ -9493,7 +9493,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57177",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57178-2027-06-10",
@@ -9664,7 +9664,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontan während der Mittagspause ein Konzert in der Philharmonie besuchen bei freiem Eintritt. 40 bis 50 Minuten Programm: Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf. Catering von 12 Uhr bis kurz vor Konzertbeginn verfügbar.",
+      "description": "Spontanes Konzert während der Mittagspause mit freiem Eintritt. Programm mit Kammermusikalisches, Klavierwerke oder Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Catering von 12 Uhr bis kurz vor Konzertbeginn verfügbar.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -9676,7 +9676,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57181",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57182-2027-06-17",
@@ -9797,7 +9797,7 @@
       "duration": "ca. 1 Stunde und 45 Minuten",
       "prices": "23 bis 54 €",
       "prices_reduced": "",
-      "organizer": "",
+      "organizer": "Berliner Philharmoniker",
       "has_stream": false,
       "intro": "",
       "abo": "Abo P: Jazz at Berlin Philharmonic",
@@ -9805,15 +9805,15 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57183",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57184-2027-06-20",
       "date": "2027-06-20",
       "time": "11:00",
-      "title": "",
+      "title": "Matinee des Freunde der Berliner Philharmoniker e. V.",
       "series": "Matinee",
-      "subtitle": "Matinee des Freunde der Berliner Philharmoniker e. V.",
+      "subtitle": "",
       "venue": "Berliner Philharmonie",
       "hall": "Großer Saal",
       "city": "Berlin",
@@ -9821,7 +9821,7 @@
       "artists": [],
       "description": "",
       "duration": "ca. 1 Stunde und 30 Minuten",
-      "prices": "20 € (10 € für Kinder)",
+      "prices": "20 EUR (Gäste), 10 EUR (Kinder); frei für Mitglieder",
       "prices_reduced": "",
       "organizer": "Freunde der Berliner Philharmoniker e. V.",
       "has_stream": false,
@@ -9831,7 +9831,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57184",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57185-2027-06-22",
@@ -9839,16 +9839,17 @@
       "time": "20:00",
       "title": "The Zawose Queens · Sousou & Maher Cissoko",
       "series": "World",
-      "subtitle": "",
+      "subtitle": "Pendo Zawose, Leah Zawose (Gesang) · Maher Sissoko (Gesang, Kora) · Sousou Sissoko (Gesang, Gitarre)",
       "venue": "Berliner Philharmonie",
       "hall": "Kammermusiksaal",
       "city": "Berlin",
       "program": [],
       "artists": [
+        "The Zawose Queens",
         "Pendo Zawose (Gesang)",
         "Leah Zawose (Gesang)",
-        "Maher Sissoko (Gesang und Kora)",
-        "Sousou Sissoko (Gesang und Gitarre)"
+        "Maher Sissoko (Gesang, Kora)",
+        "Sousou Sissoko (Gesang, Gitarre)"
       ],
       "description": "",
       "duration": "ca. 2 Stunden",
@@ -9862,7 +9863,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57185",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57186-2027-06-23",
@@ -9876,7 +9877,7 @@
       "city": "Berlin",
       "program": [],
       "artists": [],
-      "description": "Spontan während der Mittagspause ein Konzert in der Philharmonie besuchen – bei freiem Eintritt. Für 40 bis 50 Minuten gibt es Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango ist alles dabei. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Von 12 Uhr bis kurz vor Konzertbeginn gibt es hochwertiges und preiswertes Catering.",
+      "description": "Spontan während der Mittagspause ein Konzert in der Philharmonie besuchen – zwischen September und Juni an jedem Mittwoch um 13 Uhr bei freiem Eintritt. Kammermusikalisches, Klavierwerke oder auch mal ein Schlagzeug-Duo – von Tschaikowsky bis zum Tango. Oft treten Mitglieder der Berliner Philharmoniker oder der Karajan-Akademie auf, aber auch Gäste des Deutschen Symphonie-Orchesters, der Staatskapelle Berlin oder der Berliner Musikhochschulen. Von 12 Uhr bis kurz vor Konzertbeginn gibt es hochwertiges und preiswertes Catering.",
       "duration": "ca. 1 Stunde",
       "prices": "",
       "prices_reduced": "",
@@ -9888,7 +9889,7 @@
       "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57186",
       "category": "",
       "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-      "scraped_at": "2026-05-15T11:37:58.937231Z"
+      "scraped_at": "2026-05-16T06:40:42.905138Z"
     },
     {
       "id": "57187-2027-06-26",
