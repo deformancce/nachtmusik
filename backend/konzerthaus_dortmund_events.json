@@ -1,0 +1,36 @@
+{
+  "venue": "Konzerthaus Dortmund",
+  "city": "Dortmund",
+  "scraped_at": "2026-05-16T18:57:58.289392Z",
+  "total_events": 2,
+  "events": [
+    {
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/21-04-2027-margret-koell-barockharfe-solo/platzwahl/",
+      "title": "Tickets\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t29 €",
+      "program": [],
+      "performers": [
+        "Margret Koell (Barockharfe)"
+      ],
+      "conductor": null,
+      "duration_min": null,
+      "intro": "A solo baroque harp recital by Margret Koell, presented as a 'Silent Opera' about Queen Christina of Sweden.",
+      "venue": "Konzerthaus Dortmund",
+      "hall": "",
+      "city": "Dortmund"
+    },
+    {
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/09-04-2027-luiza/platzwahl/",
+      "title": "Tickets\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t16 € – 39 €",
+      "program": [],
+      "performers": [
+        "Luiza (vocalist)"
+      ],
+      "conductor": null,
+      "duration_min": null,
+      "intro": "Luiza is presented as the new voice of French chanson-pop, performing at Konzerthaus Dortmund on 9 April 2027.",
+      "venue": "Konzerthaus Dortmund",
+      "hall": "",
+      "city": "Dortmund"
+    }
+  ]
+}
