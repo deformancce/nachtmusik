@@ -1,99 +1,102 @@
 {
   "venue": "Festspielhaus Baden-Baden",
   "city": "Baden-Baden",
-  "scraped_at": "2026-05-16T20:20:27.286336Z",
+  "scraped_at": "2026-05-16T20:41:58.127994Z",
   "total_events": 5,
   "events": [
     {
-      "detail_url": "https://www.festspielhaus.de/veranstaltungen/schwanensee/?date=2026-12-12-1800",
-      "title": "Schwanensee",
-      "date": "Samstag 12.12.26 18:00 Uhr",
-      "time": "18:00 Uhr",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/der-nussknacker/?date=2026-10-11-1500",
+      "title": "Der Nussknacker",
+      "date": "Sonntag 11.10.26 15:00 Uhr",
+      "time": "15:00 Uhr",
       "venue_hall": "",
-      "_detail_error": "Expecting property name enclosed in double quotes: line 15 column 118 (char 506)",
+      "_detail_error": "Expecting ',' delimiter: line 14 column 72 (char 378)",
       "venue": "Festspielhaus Baden-Baden",
       "hall": "",
       "city": "Baden-Baden"
     },
     {
-      "detail_url": "https://www.festspielhaus.de/veranstaltungen/turngala-2027/?date=2027-01-05-1330",
-      "title": "TurnGala",
-      "date": "Dienstag 5.1.27 13:30 Uhr",
-      "time": "13:30 Uhr",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/schumann-berlioz/?date=2027-03-24-1800",
+      "title": "Schumann & Berlioz",
+      "date": "Mittwoch 24.3.27 18:00 Uhr",
+      "time": "18:00 Uhr",
+      "venue_hall": "",
+      "program": [
+        "Robert Schumann: Sinfonie Nr. 1 B-Dur op. 38",
+        "Hector Berlioz: Symphonie Fantastique"
+      ],
+      "performers": [
+        "Royal Concertgebouw Orchestra (orchestra)"
+      ],
+      "conductor": "Klaus Mäkelä",
+      "duration_min": null,
+      "intro": "Klaus Mäkelä leads the Royal Concertgebouw Orchestra in a program pairing Schumann's optimistic 'Spring' Symphony with Berlioz's autobiographical Symphonie Fantastique — two landmark works of the Romantic repertoire performed together in one concert.",
+      "venue": "Festspielhaus Baden-Baden",
+      "hall": "",
+      "city": "Baden-Baden"
+    },
+    {
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/the-birds/?date=2026-11-02-1100",
+      "title": "The Birds",
+      "date": "Montag 2.11.26 11:00 Uhr",
+      "time": "11:00 Uhr",
+      "venue_hall": "Orchesterprobesaal, Festspielhaus Baden-Baden",
+      "program": [],
+      "performers": [
+        "Lydia Mahnkopf (Sopran)",
+        "Jonathan Ware (Klavier)",
+        "Lullula Music (Ensemble)"
+      ],
+      "conductor": null,
+      "duration_min": 45,
+      "intro": "An interactive concert for children aged 3 to 5, featuring songs and stories about birds in the forest and garden. Lydia Mahnkopf and Jonathan Ware invite young audiences and their accompanying adults to explore and use their own voices.",
+      "venue": "Festspielhaus Baden-Baden",
+      "hall": "Orchesterprobesaal, Festspielhaus Baden-Baden",
+      "city": "Baden-Baden"
+    },
+    {
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/dionne-warwick/?date=2026-05-28-1930",
+      "title": "Dionne Warwick",
+      "date": "Donnerstag 28.5.26 19:30 Uhr",
+      "time": "19:30 Uhr",
       "venue_hall": "",
       "program": [],
       "performers": [
-        "Badischer Turner-Bund (gymnastics group)",
-        "Schwäbischer Turnerbund (gymnastics group)"
+        "Dionne Warwick (vocalist)",
+        "Klassische Philharmonie Nordwest (orchestra)"
       ],
       "conductor": null,
-      "duration_min": null,
-      "intro": "Die TurnGala 2027 unter dem Motto \"Lumina\" verbindet Turnen, Akrobatik, Tanz und Comedy mit internationalen Künstlern, Weltklasse-Artisten und regionalen Gruppen für ein familiengerechtes Unterhaltungsprogramm.",
+      "duration_min": 150,
+      "intro": "Dionne Warwick celebrates her farewell tour at age 84, performing timeless hits such as \"I Say a Little Prayer\", \"I'll Never Fall in Love Again\", and \"That's What Friends Are For\", accompanied by the Klassische Philharmonie Nordwest. This is the rescheduled date for the originally planned event on 14 September 2025.",
       "venue": "Festspielhaus Baden-Baden",
       "hall": "",
       "city": "Baden-Baden"
     },
     {
-      "detail_url": "https://www.festspielhaus.de/veranstaltungen/illusionen-wie-schwanensee/?date=2026-10-02-1930",
-      "title": "Illusionen – wie Schwanensee",
-      "date": "Freitag 2.10.26 19:30 Uhr",
-      "time": "19:30 Uhr",
-      "venue_hall": "",
-      "_detail_error": "Expecting ',' delimiter: line 14 column 59 (char 386)",
-      "venue": "Festspielhaus Baden-Baden",
-      "hall": "",
-      "city": "Baden-Baden"
-    },
-    {
-      "detail_url": "https://www.festspielhaus.de/veranstaltungen/teodor-currentzis-2026/?date=2026-11-07-1900",
-      "title": "Teodor Currentzis",
-      "date": "Samstag 7.11.26 19:00 Uhr",
-      "time": "19:00 Uhr",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/die-zauberfloete/?date=2026-12-20-1700",
+      "title": "Die Zauberflöte",
+      "date": "Sonntag 20.12.26 17:00 Uhr",
+      "time": "17:00 Uhr",
       "venue_hall": "",
       "program": [
-        "Dmitri Schostakowitsch: Violinkonzert Nr. 1 a-Moll op. 77",
-        "Igor Strawinsky: Le Sacre du printemps"
+        "Wolfgang Amadeus Mozart: Die Zauberflöte, K. 620 (Große Oper in zwei Aufzügen)"
       ],
       "performers": [
-        "Daniel Lozakovich (Violine)",
-        "Utopia Orchestra"
+        "Julian Prégardien (Tamino)",
+        "Samantha Gaul (Pamina)",
+        "Franz-Josef Selig (Sarastro)",
+        "Alina Wunderlin (Königin der Nacht)",
+        "Markus Werba (Papageno)",
+        "Sarah Maria Sun (Papagena)",
+        "Mirella Hagen (Erste Dame)",
+        "Olivia Vermeulen (Zweite Dame)",
+        "Peter Harvey (Sprecher / Zweiter Priester / Zweiter Geharnischter)",
+        "Budapest Festival Orchestra (Orchester)",
+        "Chor der Iván Fischer Opera Company (Chor)"
       ],
-      "conductor": "Teodor Currentzis",
-      "duration_min": 120,
-      "intro": "Teodor Currentzis kehrt mit seinem Utopia Orchestra zurück und präsentiert zwei Schlüsselwerke des 20. Jahrhunderts: Schostakowitschs Violinkonzert Nr. 1 und Strawinskys Le Sacre du Printemps. Als Solist ist der Geiger Daniel Lozakovich zu erleben.",
-      "venue": "Festspielhaus Baden-Baden",
-      "hall": "",
-      "city": "Baden-Baden"
-    },
-    {
-      "detail_url": "https://www.festspielhaus.de/veranstaltungen/die-12-cellisten-der-berliner-philharmoniker-2026/?date=2026-12-06-1600",
-      "title": "Die 12 Cellisten der Berliner Philharmoniker",
-      "date": "Sonntag 6.12.26 16:00 Uhr",
-      "time": "16:00 Uhr",
-      "venue_hall": "",
-      "program": [
-        "Julius Klengel: Hymnus",
-        "Giovanni Sollima: Neues Stück",
-        "Dmitri Schostakowitsch: Lyrischer Walzer (arr. David Riniker)",
-        "Edith Piaf: L'homme à la moto (arr. B. Delepelaire)",
-        "Maurice Ravel: Pavane (arr. Wilh. Kaiser-Lindemann)",
-        "Vincent Scotto: Sous les ponts de Paris (arr. Wilh. Kaiser-Lindeman)",
-        "Stephan Koncz: Swing on Dvorak",
-        "Juan Tizol, Duke Ellington: Caravan (arr. Wilh. Kaiser-Lindemann)",
-        "Jean Francaix: Noël nouvelet",
-        "James Pierpont: Jingle Bells (arr. Josep Castanyer Alonso)",
-        "Andy Williams: It's the most wonderful time of the year (arr. B. Delepelaire)",
-        "John Williams: Catch me if you can (arr. David Riniker)",
-        "Bernhard Herman: Vertigo (arr. Wilh. Kaiser-Lindemann)",
-        "Ennio Morricone: The Man with the harmonica (arr. Wilh. Kaiser-Lindemann)",
-        "John Barry: James Bond (arr. S. Koncz)"
-      ],
-      "performers": [
-        "Die 12 Cellisten der Berliner Philharmoniker (ensemble)"
-      ],
-      "conductor": null,
-      "duration_min": 105,
-      "intro": "Die 12 Cellisten der Berliner Philharmoniker, gegründet 1972, präsentieren ein vielseitiges Programm von Klassik über Jazz und Tango bis hin zu Filmmusik und Weihnachtsstücken. Das Ensemble begeistert mit einem Repertoire, das von Klengel und Ravel bis zu John Williams und James Bond reicht.",
+      "conductor": "Iván Fischer",
+      "duration_min": 210,
+      "intro": "Iván Fischer dirigiert und inszeniert Mozarts 'Die Zauberflöte' in einem halbszenischen Format, das er auf seinem Opernfestival in Vicenza entwickelte. Das Budapest Festival Orchestra begleitet die Produktion, die nach 'Don Giovanni' Fischers zweite Opernpräsentation im Festspielhaus Baden-Baden ist.",
       "venue": "Festspielhaus Baden-Baden",
       "hall": "",
       "city": "Baden-Baden"
