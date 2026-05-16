@@ -1,7 +1,87 @@
 {
   "venue": "Alte Oper Frankfurt",
   "city": "Frankfurt",
-  "scraped_at": "2026-05-16T18:58:41.260581Z",
-  "total_events": 0,
-  "events": []
+  "scraped_at": "2026-05-16T20:24:25.751305Z",
+  "total_events": 5,
+  "events": [
+    {
+      "detail_url": "https://www.alteoper.de/de/programm/haydn-jahreszeiten/18466",
+      "title": "Haydn, Jahreszeiten",
+      "date": "Mo 18 Mai 2026",
+      "time": "20:00",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Joseph Haydn: Die Jahreszeiten Hob. XXI:3"
+      ],
+      "performers": [],
+      "conductor": null,
+      "duration_min": null,
+      "intro": "A concert at the Alte Oper Frankfurt featuring Joseph Haydn's oratorio 'Die Jahreszeiten'. Further details about performers, conductor, and date are not available from the provided page content.",
+      "venue": "Alte Oper Frankfurt",
+      "hall": "Großer Saal",
+      "city": "Frankfurt"
+    },
+    {
+      "detail_url": "https://www.alteoper.de/de/programm/six-the-musical/18721",
+      "title": "SIX - The Musical",
+      "date": "Sa 20 Juni 2026",
+      "time": "19:00",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Toby Marlow and Lucy Moss: SIX - The Musical"
+      ],
+      "performers": [],
+      "conductor": null,
+      "duration_min": 80,
+      "intro": "SIX ist ein weltweites Phänomen und die geniale Verschmelzung von Musical, Popkonzert und Geschichte, in dem die sechs Ehefrauen Heinrichs VIII. in einem 80-minütigen Konzert-Battle ihre Geschichten erzählen. Das energiegeladene Musical wurde von Toby Marlow und Lucy Moss während ihres Studiums an der University of Cambridge geschrieben.",
+      "venue": "Alte Oper Frankfurt",
+      "hall": "Großer Saal",
+      "city": "Frankfurt"
+    },
+    {
+      "detail_url": "https://www.alteoper.de/de/programm/hr-sinfonieorchester/18582",
+      "title": "hr-Sinfonieorchester",
+      "date": "Do 11 Juni 2026",
+      "time": "19:00",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [
+        "hr-Sinfonieorchester (orchestra)"
+      ],
+      "conductor": null,
+      "duration_min": null,
+      "intro": null,
+      "venue": "Alte Oper Frankfurt",
+      "hall": "Großer Saal",
+      "city": "Frankfurt"
+    },
+    {
+      "detail_url": "https://www.alteoper.de/de/programm/ten-tenors/18350",
+      "title": "Ten Tenors",
+      "date": "Fr 05 Juni 2026",
+      "time": "20:00",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [
+        "Ten Tenors (vocal ensemble)"
+      ],
+      "conductor": null,
+      "duration_min": null,
+      "intro": "The Ten Tenors return to Germany for their 'Time of Your Life Tour 2026', presenting a captivating mix of classical opera, rock, and pop, including beloved classics and new surprises.",
+      "venue": "Alte Oper Frankfurt",
+      "hall": "Großer Saal",
+      "city": "Frankfurt"
+    },
+    {
+      "detail_url": "https://www.alteoper.de/de/programm/buhne-der-vielfalt-frankfurt-ladt-ein/18439",
+      "title": "Bühne der Vielfalt: Frankfurt lädt ein",
+      "date": "Do 11 Juni 2026",
+      "time": "19:00",
+      "venue_hall": "Mozart Saal",
+      "_detail_error": "Expecting ',' delimiter: line 10 column 22 (char 281)",
+      "venue": "Alte Oper Frankfurt",
+      "hall": "Mozart Saal",
+      "city": "Frankfurt"
+    }
+  ]
 }
