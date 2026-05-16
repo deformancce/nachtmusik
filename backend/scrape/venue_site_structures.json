@@ -5,37 +5,30 @@
     "city": "Berlin",
     "url": "https://www.konzerthaus.de/programm",
     "tier": 1,
-    "_analyzed_at": "2026-05-16T00:00:00Z",
+    "_analyzed_at": "2026-05-16T11:47:23.455937Z",
     "validation": "needs_review",
-    "load_method": "scroll",
+    "load_method": "static",
     "needs_networkidle": false,
-    "scroll_max": 60,
+    "scroll_max": 30,
     "click_keywords": [],
-    "event_url_pattern": "/veranstaltung/[a-z0-9_-]+",
-    "teaser_selector": ".event-item, .c-event-teaser, article.event",
+    "event_url_pattern": "/de/programm/[a-z0-9-]+/\\d+",
+    "teaser_selector": "ul.program-list li.program-item, .event-list-item, li:has(h2 a[href*='/de/programm/'])",
     "field_selectors": {
-      "title": "h2, h3, .event-title",
-      "date": "time, .event-date, .date",
-      "time": ".event-time, .time",
-      "venue_hall": ".event-venue, .hall"
+      "title": "h2 a",
+      "date": ".date, li > span.day, .program-date",
+      "time": ".time, span:contains('Uhr')",
+      "venue_hall": ".location, .hall, span.saal"
     },
     "detail_selectors": {
-      "program_section": ".program, .programm, #programm",
-      "performers_section": ".performers, .mitwirkende, .artists"
+      "program_section": "h4 ~ p, .program-works, strong + br",
+      "performers_section": "h4, .performers, .cast"
     },
     "structured_source": null,
-    "cross_promotion_risk": "low",
+    "cross_promotion_risk": "high",
     "multi_date_per_event": false,
-    "default_venue": "Konzerthaus Berlin",
-    "default_city": "Berlin",
-    "hall_mappings": {
-      "Großer Saal": "Konzerthaus Berlin",
-      "Werner-Otto-Saal": "Konzerthaus Berlin",
-      "Musikclub": "Konzerthaus Berlin"
-    },
-    "notes": "Manually configured — run analyze_venues.py --only konzerthaus_berlin with ANTHROPIC_API_KEY to auto-refine selectors",
-    "confidence": 0.6,
-    "_detail_url_sample": ""
+    "notes": "The listing page at /de/programm is a calendar view organized by month. Each day links to a date-specific page like /de/programm/DD-MM-YYYY which lists that day's events. Individual event detail pages follow the pattern /de/programm/[slug]/[id]. The listing mixes own events (marked 'EV Eigenveranstaltungen') with external/guest events and even includes Konzerthausorchester Gastspiel events at other venues (Essen, Hamburg, Bielefeld, etc.) - high cross-promotion risk. Some events show expanded program/performers inline in the listing via a toggle ('weitere Infos'). No JSON-LD structured data detected. Navigation between months uses JavaScript links. The scraper should iterate date pages to collect all events. CSS selectors are approximate as rendered Markdown does not expose actual HTML class names - manual inspection of live HTML is needed to confirm exact selectors.",
+    "confidence": 0.45,
+    "_detail_url_sample": "https://www.konzerthaus.de/de/programm/16-05-2026"
   },
   "alte_oper_frankfurt": {
     "slug": "alte_oper_frankfurt",
@@ -43,36 +36,30 @@
     "city": "Frankfurt",
     "url": "https://www.alteoper.de/de/programm",
     "tier": 1,
-    "_analyzed_at": "2026-05-16T00:00:00Z",
+    "_analyzed_at": "2026-05-16T11:50:03.437085Z",
     "validation": "needs_review",
     "load_method": "static",
     "needs_networkidle": false,
     "scroll_max": 30,
     "click_keywords": [],
-    "event_url_pattern": "/de/(veranstaltung|event|programm)/[a-z0-9_-]+",
-    "teaser_selector": ".event, .program-item, .concert-item",
+    "event_url_pattern": "/de/programm/[a-z0-9-]+/\\d+",
+    "teaser_selector": "div.program-item, article.event-teaser, div[class*='teaser']",
     "field_selectors": {
-      "title": "h2, h3, .event-title, .title",
-      "date": "time, .date, .event-date",
-      "time": ".time, .event-time",
-      "venue_hall": ".hall, .venue, .location"
+      "title": "a[href*='/de/programm/']",
+      "date": "span[class*='date'], div[class*='date']",
+      "time": "span[class*='time'], div[class*='time']",
+      "venue_hall": "span[class*='hall'], div[class*='location'], span[class*='location']"
     },
     "detail_selectors": {
-      "program_section": ".program, #programm",
-      "performers_section": ".performers, .cast"
+      "program_section": "section.program, div.program, h2 + ul, section:has(h2:-soup-contains('Programm'))",
+      "performers_section": "section.cast, div.cast, section:has(h2:-soup-contains('Besetzung'))"
     },
     "structured_source": null,
     "cross_promotion_risk": "low",
     "multi_date_per_event": false,
-    "default_venue": "Alte Oper Frankfurt",
-    "default_city": "Frankfurt",
-    "hall_mappings": {
-      "Großer Saal": "Alte Oper Frankfurt",
-      "Mozart Saal": "Alte Oper Frankfurt"
-    },
-    "notes": "Manually configured — run analyze_venues.py --only alte_oper_frankfurt with ANTHROPIC_API_KEY to auto-refine",
-    "confidence": 0.6,
-    "_detail_url_sample": ""
+    "notes": "The site has a cookie consent wall that may block scraping; no infinite scroll or pagination observed on listing page — all events appear statically. Event URLs follow pattern /de/programm/{slug}/{id}. Date, time, and hall are rendered inline in text nodes near each event teaser (e.g. 'Sa 16 Mai 2026 19:00 Großer Saal') — exact CSS selectors for teaser blocks not fully determinable from Markdown alone; manual inspection of rendered HTML recommended. Some events link to external ticket providers. Detail page has 'Besetzung' (cast) and 'Programm' (works) sections as h2-headed blocks.",
+    "confidence": 0.55,
+    "_detail_url_sample": "https://www.alteoper.de/de/programm/brahms-requiem/18486"
   },
   "koelner_philharmonie": {
     "slug": "koelner_philharmonie",
@@ -85,7 +72,11 @@
     "load_method": "scroll",
     "needs_networkidle": false,
     "scroll_max": 60,
-    "click_keywords": ["Mehr laden", "Weitere Konzerte", "Mehr anzeigen"],
+    "click_keywords": [
+      "Mehr laden",
+      "Weitere Konzerte",
+      "Mehr anzeigen"
+    ],
     "event_url_pattern": "/de/(veranstaltung|konzert|event)/[a-z0-9_-]+",
     "teaser_selector": ".event-teaser, .concert-item, .program-entry",
     "field_selectors": {
@@ -114,33 +105,30 @@
     "city": "Baden-Baden",
     "url": "https://www.festspielhaus.de/spielplan",
     "tier": 1,
-    "_analyzed_at": "2026-05-16T00:00:00Z",
+    "_analyzed_at": "2026-05-16T11:46:42.559141Z",
     "validation": "needs_review",
     "load_method": "static",
     "needs_networkidle": false,
     "scroll_max": 30,
     "click_keywords": [],
-    "event_url_pattern": "/veranstaltungen?/[a-z0-9_-]+",
-    "teaser_selector": ".event, .performance, .spielplan-item",
+    "event_url_pattern": "/veranstaltungen/[a-z0-9äöüß-]+/?(\\?date=[0-9-]+)?",
+    "teaser_selector": ".event-teaser, article.event, .program-item",
     "field_selectors": {
-      "title": "h2, h3, .title",
-      "date": ".date, time",
-      "time": ".time",
-      "venue_hall": ".hall, .location"
+      "title": "h2, h3",
+      "date": ".date, .event-date",
+      "time": ".time, .event-time",
+      "venue_hall": ".location, .venue"
     },
     "detail_selectors": {
-      "program_section": ".programm, .program",
-      "performers_section": ".mitwirkende, .kuenstler"
+      "program_section": ".program-details, .program-content, .works",
+      "performers_section": ".performers, .cast, .artists"
     },
     "structured_source": null,
-    "cross_promotion_risk": "low",
-    "multi_date_per_event": false,
-    "default_venue": "Festspielhaus Baden-Baden",
-    "default_city": "Baden-Baden",
-    "hall_mappings": {},
-    "notes": "Manually configured",
-    "confidence": 0.55,
-    "_detail_url_sample": ""
+    "cross_promotion_risk": "medium",
+    "multi_date_per_event": true,
+    "notes": "The listing URL /spielplan returns a 404; the actual program page is at /programm/. Events are listed on /programm/ with filters for month, festival, genre, and location. The same event (e.g. YAMATO, Rosenkavalier) appears multiple times with different dates encoded in query parameters (?date=YYYY-MM-DD-HHMM). Events take place at multiple venues beyond the main Festspielhaus (Kurhaus, Theater Baden-Baden, Kongresshaus, etc.) which raises cross-promotion risk slightly. The page appears to be server-rendered with filter dropdowns. No JSON-LD detected in the provided HTML. CSS selectors are estimates since only Markdown was provided — manual inspection of actual HTML needed to confirm selectors. Confidence is moderate.",
+    "confidence": 0.45,
+    "_detail_url_sample": "https://www.festspielhaus.de/programm/"
   },
   "glocke_bremen": {
     "slug": "glocke_bremen",
@@ -148,35 +136,230 @@
     "city": "Bremen",
     "url": "https://www.glocke.de/programm",
     "tier": 1,
-    "_analyzed_at": "2026-05-16T00:00:00Z",
+    "_analyzed_at": "2026-05-16T11:48:27.103903Z",
     "validation": "needs_review",
-    "load_method": "scroll",
+    "load_method": "static",
     "needs_networkidle": false,
-    "scroll_max": 40,
+    "scroll_max": 30,
     "click_keywords": [],
-    "event_url_pattern": "/programm/[a-z0-9_-]+",
-    "teaser_selector": ".event, .veranstaltung, .programm-item",
+    "event_url_pattern": "/event/[a-z0-9-]+/",
+    "teaser_selector": "ul li:has(a[href*='/event/'])",
     "field_selectors": {
-      "title": "h2, h3, .title",
-      "date": ".date, time",
-      "time": ".time",
-      "venue_hall": ".hall"
+      "title": "h2 a",
+      "date": "li > span, .tribe-event-date-start",
+      "time": "h4",
+      "venue_hall": "h4"
     },
     "detail_selectors": {
-      "program_section": ".programm, .program",
-      "performers_section": ".mitwirkende"
+      "program_section": null,
+      "performers_section": "div.tribe-events-single-section p strong"
     },
     "structured_source": null,
     "cross_promotion_risk": "low",
     "multi_date_per_event": false,
-    "default_venue": "Die Glocke",
-    "default_city": "Bremen",
-    "hall_mappings": {
-      "Großer Saal": "Die Glocke",
-      "Kleiner Saal": "Die Glocke"
+    "notes": "Site uses The Events Calendar WordPress plugin (tribe-bar-date URL pattern). Listing page at /programm shows only a few upcoming events; full event list is at /all-events/ and paginated calendar at /event-result-page. Detail pages use /event/[slug]/ pattern. Performers listed as bold text in description body (e.g. 'Noa Gesang', 'Ruslan Sirota Klavier'). No structured JSON-LD detected. The listing page teaser items are inside a <ul> list with day/month displayed in styled elements. Time and venue hall are combined in an h4 element separated by pipe (e.g. '20:00 Uhr | Großer Saal'). For comprehensive scraping, use /all-events/ or /event-result-page pagination rather than /programm homepage. No obvious anti-bot measures or cookie walls detected.",
+    "confidence": 0.62,
+    "_detail_url_sample": "https://www.glocke.de/event/noa-ensemble-the-giver-and-the-see/"
+  },
+  "berliner_philharmonie": {
+    "slug": "berliner_philharmonie",
+    "name": "Berliner Philharmonie",
+    "city": "Berlin",
+    "url": "https://www.berliner-philharmoniker.de/konzerte",
+    "tier": 1,
+    "_analyzed_at": "2026-05-16T11:47:53.232802Z",
+    "validation": "needs_review",
+    "load_method": "static",
+    "needs_networkidle": false,
+    "scroll_max": 60,
+    "click_keywords": [],
+    "event_url_pattern": "/konzerte/kalender/[0-9]+",
+    "teaser_selector": ".tx-bphconcerts-pi1 .concert-teaser, article.concert, .concert-list-item",
+    "field_selectors": {
+      "title": "strong, .concert-title, h2, h3",
+      "date": "strong:first-child",
+      "time": "strong:first-child",
+      "venue_hall": ".concert-location, strong + text"
     },
-    "notes": "Manually configured",
-    "confidence": 0.55,
+    "detail_selectors": {
+      "program_section": ".concert-program, .program-section, .programm",
+      "performers_section": ".concert-performers, .artists, .besetzung"
+    },
+    "structured_source": null,
+    "cross_promotion_risk": "medium",
+    "multi_date_per_event": true,
+    "notes": "The actual listing page is at /konzerte/kalender/ not /konzerte/. The calendar mixes Berliner Philharmoniker concerts with guest events (Gastveranstaltungen). Events with the same program appear multiple times for different dates (e.g. Mahler Symphony No. 3 appears Thu/Fri/Sat). Event detail URLs follow pattern /konzerte/kalender/{numeric_id}/. The provided markdown is rendered content from a SPA-like calendar with month navigation. Teaser blocks appear to be rendered directly in the page HTML. No JSON-LD detected. The listing page /konzerte/ is just a hub page with links, not the actual calendar - scraper should target /konzerte/kalender/. Date and time appear combined in bold text like 'Sa 16. Mai 2026, 19.00 Uhr'. Hall info appears right after the date bold text. CSS selectors are uncertain without inspecting actual DOM - manual review of real HTML needed to confirm selectors.",
+    "confidence": 0.45,
+    "_detail_url_sample": "https://www.berliner-philharmoniker.de/konzerte/kalender/"
+  },
+  "konzerthaus_dortmund": {
+    "slug": "konzerthaus_dortmund",
+    "name": "Konzerthaus Dortmund",
+    "city": "Dortmund",
+    "url": "https://www.konzerthaus-dortmund.de/programm",
+    "tier": 1,
+    "_analyzed_at": "2026-05-16T11:48:41.784054Z",
+    "validation": "error",
+    "error": "Expecting value: line 1 column 1 (char 0)",
+    "confidence": 0.0
+  },
+  "tonhalle_d_sseldorf": {
+    "slug": "tonhalle_d_sseldorf",
+    "name": "Tonhalle Düsseldorf",
+    "city": "Düsseldorf",
+    "url": "https://www.tonhalle.de/de/programm",
+    "tier": 1,
+    "_analyzed_at": "2026-05-16T11:49:01.522316Z",
+    "validation": "error",
+    "error": "Expecting value: line 1 column 1 (char 0)",
+    "confidence": 0.0
+  },
+  "philharmonie_essen": {
+    "slug": "philharmonie_essen",
+    "name": "Philharmonie Essen",
+    "city": "Essen",
+    "url": "https://www.theater-essen.de/philharmonie/spielplan",
+    "tier": 1,
+    "_analyzed_at": "2026-05-16T11:49:32.212892Z",
+    "validation": "needs_review",
+    "load_method": "static",
+    "needs_networkidle": false,
+    "scroll_max": 30,
+    "click_keywords": [],
+    "event_url_pattern": "/programm/kalender/\\d{4}-\\d{2}/\\?scheduleScrollTo=\\d{4}-\\d{2}-\\d{2}-p\\d+",
+    "teaser_selector": ".schedule-item, .event-teaser, [class*='schedule'], [class*='event']",
+    "field_selectors": {
+      "title": ".event-title, .schedule-item__title, h3",
+      "date": ".event-date, .schedule-item__date, time",
+      "time": ".event-time, .schedule-item__time",
+      "venue_hall": ".event-venue, .schedule-item__venue"
+    },
+    "detail_selectors": {
+      "program_section": ".program-section, .event-program, [class*='program']",
+      "performers_section": ".performers, .cast, [class*='performer'], [class*='cast']"
+    },
+    "structured_source": null,
+    "cross_promotion_risk": "high",
+    "multi_date_per_event": false,
+    "notes": "The originally specified listing URL (https://www.theater-essen.de/philharmonie/spielplan) returns a 404. The actual calendar is at https://www.theater-essen.de/programm/kalender/ with monthly sub-pages (e.g. /programm/kalender/2025-09/). The calendar mixes events from multiple venues (Musiktheater, Ballett, Schauspiel, Philharmoniker, Philharmonie), so cross_promotion_risk is high. To filter for Philharmonie Essen only, use /programm/kalender/philharmonie-essen/. There is a cookie consent wall. Event URLs use query parameter pattern ?scheduleScrollTo=YYYY-MM-DD-pNNNN. The detail page HTML was not available (returned the calendar page instead), so CSS selectors for teasers and detail sections are guesses requiring manual review. Month pagination navigates via URL changes.",
+    "confidence": 0.35,
+    "_detail_url_sample": "https://www.theater-essen.de/programm/"
+  },
+  "laeiszhalle_hamburg": {
+    "slug": "laeiszhalle_hamburg",
+    "name": "Laeiszhalle Hamburg",
+    "city": "Hamburg",
+    "url": "https://www.elbphilharmonie.de/de/programm/laeiszhalle",
+    "tier": 1,
+    "_analyzed_at": "2026-05-16T11:50:18.348545Z",
+    "validation": "needs_review",
+    "load_method": "static",
+    "needs_networkidle": false,
+    "scroll_max": 30,
+    "click_keywords": [],
+    "event_url_pattern": "/de/programm/[a-z0-9-]+",
+    "teaser_selector": null,
+    "field_selectors": {
+      "title": null,
+      "date": null,
+      "time": null,
+      "venue_hall": null
+    },
+    "detail_selectors": {
+      "program_section": null,
+      "performers_section": null
+    },
+    "structured_source": null,
+    "cross_promotion_risk": "low",
+    "multi_date_per_event": false,
+    "notes": "The listing page https://www.elbphilharmonie.de/de/programm/laeiszhalle returns a 404 Not Found page. The correct Laeiszhalle filter URL may differ — try https://www.elbphilharmonie.de/de/programm?venue=laeiszhalle or similar. No event data could be extracted from the provided HTML. Manual review of the correct URL is required before configuring selectors.",
+    "confidence": 0.1,
     "_detail_url_sample": ""
+  },
+  "k_lner_philharmonie": {
+    "slug": "k_lner_philharmonie",
+    "name": "Kölner Philharmonie",
+    "city": "Köln",
+    "url": "https://www.koelner-philharmonie.de/de/programm",
+    "tier": 1,
+    "_analyzed_at": "2026-05-16T11:50:44.394397Z",
+    "validation": "needs_review",
+    "load_method": "static",
+    "needs_networkidle": false,
+    "scroll_max": 60,
+    "click_keywords": [],
+    "event_url_pattern": "/de/konzerte/[a-z0-9-]+/\\d+",
+    "teaser_selector": "ul li:has(a[href*='/de/konzerte/'])",
+    "field_selectors": {
+      "title": "a[href*='/de/konzerte/']",
+      "date": "li > .date, li > span:first-child",
+      "time": null,
+      "venue_hall": null
+    },
+    "detail_selectors": {
+      "program_section": null,
+      "performers_section": null
+    },
+    "structured_source": null,
+    "cross_promotion_risk": "medium",
+    "multi_date_per_event": false,
+    "notes": "Cookie consent wall present (accept/decline). The listing page shows events as list items with date, time, title and performers. Date and time appear as plain text within the list item (e.g. 'Sa 16.05.2026 20:00'). Some events take place at external/offsite venues (PhilharmonieVeedel Pänz, Im Veedel tagged events) — these should be flagged or filtered. The URL pattern is /de/konzerte/{slug}/{id}. Each event has its own URL with a unique numeric ID. The page appears to be server-side rendered with all events visible in the initial HTML (static load), though JavaScript may enhance it. No JSON-LD detected from the listing page sample. Anti-bot measures not evident beyond the cookie banner. Cross-promotion risk is medium because some concerts feature external orchestras (Gürzenich-Orchester uses mandant=260) and community/outreach events at other venues.",
+    "confidence": 0.62,
+    "_detail_url_sample": ""
+  },
+  "gewandhaus_leipzig": {
+    "slug": "gewandhaus_leipzig",
+    "name": "Gewandhaus Leipzig",
+    "city": "Leipzig",
+    "url": "https://www.gewandhausorchester.de/spielplan/",
+    "tier": 1,
+    "_analyzed_at": "2026-05-16T11:51:08.012799Z",
+    "validation": "needs_review",
+    "load_method": "click",
+    "needs_networkidle": true,
+    "scroll_max": 30,
+    "click_keywords": [
+      "Weitere Veranstaltungen laden"
+    ],
+    "event_url_pattern": "/veranstaltung/[a-z0-9-]+/?$",
+    "teaser_selector": ".tx-csconcerts-pi1 .concert-item, article.concert, .event-item",
+    "field_selectors": {
+      "title": "h2 a, h3 a, .concert-title a",
+      "date": ".date, time, [class*='date']",
+      "time": "[class*='time'], .uhrzeit",
+      "venue_hall": "[class*='location'], [class*='venue'], [class*='saal']"
+    },
+    "detail_selectors": {
+      "program_section": ".concert-program, [class*='program'], [class*='werke']",
+      "performers_section": ".concert-performers, [class*='performer'], [class*='artist'], [class*='mitwirkende']"
+    },
+    "structured_source": "ical",
+    "cross_promotion_risk": "high",
+    "multi_date_per_event": false,
+    "notes": "The listing page shows events from multiple venues including Gewandhaus, Opernhaus (Oper Leipzig), Alte Oper Frankfurt (guest concerts), etc. Cross-promotion risk is high due to third-party organizer events (e.g. Concertbüro Zahlmann, MAWI Concert GmbH, Oper Leipzig). A 'Weitere Veranstaltungen laden' click-to-load-more button is present. The actual HTML class names could not be confirmed from the Markdown rendering - CSS selectors are best guesses and require manual verification against the live DOM. Cookie consent wall present but does not block content. The detail page appears to be essentially the same template as the expanded teaser on the listing page. ICS calendar files are available per event at /veranstaltung/{slug}/konzert.ics which could be used as an alternative structured source.",
+    "confidence": 0.45,
+    "_detail_url_sample": "https://www.gewandhausorchester.de/veranstaltung/quartettgesellschaft-kammermusik-9375/"
+  },
+  "isarphilharmonie_m_nchen": {
+    "slug": "isarphilharmonie_m_nchen",
+    "name": "Isarphilharmonie München",
+    "city": "München",
+    "url": "https://www.gasteig.de/programm",
+    "tier": 1,
+    "_analyzed_at": "2026-05-16T11:51:33.175797Z",
+    "validation": "error",
+    "error": "Expecting value: line 1 column 1 (char 0)",
+    "confidence": 0.0
+  },
+  "liederhalle_stuttgart": {
+    "slug": "liederhalle_stuttgart",
+    "name": "Liederhalle Stuttgart",
+    "city": "Stuttgart",
+    "url": "https://www.liederhalle-stuttgart.de/programm",
+    "tier": 1,
+    "_analyzed_at": "2026-05-16T11:51:56.524597Z",
+    "validation": "error",
+    "error": "Expecting value: line 1 column 1 (char 0)",
+    "confidence": 0.0
   }
 }
