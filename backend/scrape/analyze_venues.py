@@ -41,12 +41,13 @@ _ANALYSIS_PROMPT = """\
 You are analyzing a concert hall website to configure an automated scraper.
 
 I will give you:
-1. The rendered HTML/Markdown of the LISTING page (concert calendar / Spielplan)
-2. The rendered HTML/Markdown of ONE DETAIL page (a single event)
+1. A Markdown render of the LISTING page (for understanding structure and content)
+2. A raw HTML snippet of the LISTING page (use this to find REAL CSS class names)
+3. Optionally: the same for ONE DETAIL page
 
-Your task: produce a JSON configuration object that describes how to scrape this site.
+Your task: produce a JSON configuration object. Use the HTML to derive accurate CSS selectors.
 
-Return ONLY valid JSON, no markdown, no explanation:
+Return ONLY valid JSON, no markdown fences, no explanation. Even if the page is empty or blocked, return the JSON with confidence=0.0 and an explanation in "notes".
 
 {
   "load_method": "scroll" | "click" | "static" | "spa" | "jsonld" | "ical",
@@ -54,10 +55,10 @@ Return ONLY valid JSON, no markdown, no explanation:
   "scroll_max": <int, 30-120>,
   "click_keywords": [<button texts to click for "load more">, ...],
   "event_url_pattern": "<regex matching event detail URLs, e.g. /veranstaltung/[a-z0-9-]+>",
-  "teaser_selector": "<CSS selector for a single event teaser block>",
+  "teaser_selector": "<CSS selector for a single event teaser block, derived from real HTML classes>",
   "field_selectors": {
-    "title": "<CSS within teaser>",
-    "date": "<CSS within teaser>",
+    "title": "<CSS within teaser, use real class names from HTML>",
+    "date": "<CSS within teaser, use real class names from HTML>",
     "time": "<CSS within teaser, or null>",
     "venue_hall": "<CSS within teaser, or null>"
   },
@@ -68,14 +69,16 @@ Return ONLY valid JSON, no markdown, no explanation:
   "structured_source": null | "jsonld" | "ical",
   "cross_promotion_risk": "low" | "medium" | "high",
   "multi_date_per_event": <bool>,
-  "notes": "<any important quirks, anti-bot measures, cookie walls, etc.>",
+  "notes": "<important quirks: correct URLs, anti-bot measures, cookie walls, pagination, cross-promotion sources>",
   "confidence": <float 0.0-1.0>
 }
 
 Rules:
-- If the site has <script type="application/ld+json"> with MusicEvent data, set structured_source="jsonld" and load_method="jsonld"
-- cross_promotion_risk is "high" if the page mixes concerts from multiple venues in one listing
-- confidence reflects how certain you are about the selectors (0.7+ means ready to use, <0.7 means manual review needed)
+- Derive teaser_selector and field_selectors from REAL class names visible in the HTML snippet
+- If the site has <script type="application/ld+json"> with MusicEvent data, set structured_source="jsonld"
+- cross_promotion_risk is "high" if the listing mixes concerts from multiple different venues
+- confidence: 0.8+ if you can see real class names and event structure clearly; 0.5 if partially visible; 0.2 if page was blocked/empty
+- ALWAYS return valid JSON even if the page failed to load
 """
 
 
@@ -127,56 +130,80 @@ async def _render_and_analyze(url: str, venue_name: str) -> dict:
     )
 
     listing_md = ""
+    listing_html = ""
     detail_url = ""
     detail_md = ""
+    detail_html = ""
 
     async with AsyncWebCrawler(config=browser_cfg) as crawler:
         # 1. Render listing page
         result = await crawler.arun(url=url, config=run_cfg)
-        listing_md = (result.markdown or "")[:40000]
+        listing_md = (result.markdown or "")[:30000]
+        listing_html = (result.cleaned_html or result.html or "")[:25000]
 
-        # 2. Find a detail page link
+        # 2. Find a detail page link — broad pattern to catch more site structures
         if result.links:
             all_links = (result.links.get("internal") or [])
             candidates = [
                 lnk["href"] for lnk in all_links
                 if lnk.get("href") and re.search(
-                    r"/(veranstaltung|event|konzert|kalender|programm|spielplan|detail|id)/",
+                    r"/(veranstaltung|veranstaltungen|event|events|konzert|konzerte"
+                    r"|kalender|programm|spielplan|detail|ticket|id|show)/",
                     lnk["href"], re.IGNORECASE
                 )
+                and not re.search(r"\.(pdf|jpg|png|css|js)$", lnk["href"])
             ]
             if candidates:
                 detail_url = candidates[0]
                 if not detail_url.startswith("http"):
                     detail_url = urljoin(url, detail_url)
                 dr = await crawler.arun(url=detail_url, config=run_cfg)
-                detail_md = (dr.markdown or "")[:20000]
+                detail_md = (dr.markdown or "")[:15000]
+                detail_html = (dr.cleaned_html or dr.html or "")[:15000]
 
     # 3. Ask Claude to produce config JSON
     import anthropic
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
     user_content = (
         f"Venue: {venue_name}\nListing URL: {url}\n\n"
-        f"=== LISTING PAGE (first 40k chars of Markdown) ===\n{listing_md}\n\n"
+        f"=== LISTING PAGE — Markdown ===\n{listing_md}\n\n"
+        f"=== LISTING PAGE — HTML snippet (use for real CSS class names) ===\n{listing_html}\n\n"
     )
     if detail_md:
-        user_content += f"=== DETAIL PAGE ({detail_url}) ===\n{detail_md}\n"
+        user_content += (
+            f"=== DETAIL PAGE ({detail_url}) — Markdown ===\n{detail_md}\n\n"
+            f"=== DETAIL PAGE — HTML snippet ===\n{detail_html}\n"
+        )
 
-    try:
+    def _call_claude(content: str) -> dict:
         msg = client.messages.create(
             model="claude-sonnet-4-6",
-            max_tokens=1024,
+            max_tokens=2048,
             system=_ANALYSIS_PROMPT,
-            messages=[{"role": "user", "content": user_content}],
+            messages=[{"role": "user", "content": content}],
         )
         raw = msg.content[0].text.strip()
-        # Strip any accidental markdown fences
         raw = re.sub(r"^```json\s*|^```\s*|\s*```$", "", raw, flags=re.MULTILINE).strip()
-        config = json.loads(raw)
-        config["_detail_url_sample"] = detail_url
-        return config
+        return json.loads(raw)
+
+    try:
+        config = _call_claude(user_content)
+    except json.JSONDecodeError:
+        # Retry with a simplified prompt if Claude returned non-JSON
+        try:
+            config = _call_claude(
+                f"Venue: {venue_name}\nURL: {url}\n\n"
+                f"The page content was minimal or blocked. Return a best-effort JSON config "
+                f"with confidence=0.2 and explain in 'notes' what you know about this venue's website.\n\n"
+                f"Markdown preview:\n{listing_md[:5000]}"
+            )
+        except Exception as e2:
+            return {"error": str(e2), "confidence": 0.0}
     except Exception as e:
         return {"error": str(e), "confidence": 0.0}
+
+    config["_detail_url_sample"] = detail_url
+    return config
 
 
 async def analyze_venue(venue: dict) -> dict:
