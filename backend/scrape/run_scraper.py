@@ -41,6 +41,9 @@ You are extracting structured data from a classical music concert detail page.
 
 Return ONLY valid JSON matching this schema:
 {
+  "title": "<event title, or null if unknown>",
+  "date": "<ISO date YYYY-MM-DD, or null>",
+  "time": "<HH:MM 24h, or null>",
   "program": ["Composer: Work title (opus/catalog)", ...],
   "performers": ["Name (role)", ...],
   "conductor": "<name or null>",
@@ -49,6 +52,7 @@ Return ONLY valid JSON matching this schema:
 }
 
 Rules:
+- title should be the concert name, not the ticket button or page title
 - program entries must be "Firstname Lastname: Full Work Title with opus"
 - Include ALL works listed, not just the main one
 - performers: include soloists and ensemble name, not the conductor
@@ -57,14 +61,41 @@ Rules:
 """
 
 
+def _select_text(elem, selector) -> str:
+    if not selector or elem is None:
+        return ""
+    try:
+        found = elem.select_one(selector)
+    except Exception:
+        return ""
+    return found.get_text(" ", strip=True) if found else ""
+
+
+def _extract_teaser_url(teaser, base_url: str, pattern: str) -> str | None:
+    """Find the best detail-page URL inside a teaser element."""
+    matches = []
+    for a in teaser.find_all("a", href=True):
+        href = a["href"].strip()
+        if not href or href.startswith(("#", "mailto:", "javascript:")):
+            continue
+        full = href if href.startswith("http") else urljoin(base_url, href)
+        if pattern and not re.search(pattern, full, re.IGNORECASE):
+            continue
+        matches.append(full)
+    if not matches:
+        return None
+    # Prefer the shortest matching URL (avoid /tickets/, /platzwahl/ trailing paths)
+    return min(matches, key=len)
+
+
 async def scrape_listing(config: VenueConfig) -> list[dict]:
-    """Fetch the listing page and extract event teasers."""
+    """Render the listing page with crawl4ai, then parse teasers with BeautifulSoup."""
     try:
         from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
-        from crawl4ai.extraction_strategy import JsonCssExtractionStrategy
     except ImportError:
         print("ERROR: crawl4ai not installed. Run: pip install crawl4ai", file=sys.stderr)
         sys.exit(1)
+    from bs4 import BeautifulSoup
 
     browser_cfg = BrowserConfig(headless=True, verbose=False)
 
@@ -81,35 +112,59 @@ async def scrape_listing(config: VenueConfig) -> list[dict]:
     async with AsyncWebCrawler(config=browser_cfg) as crawler:
         result = await crawler.arun(url=config.url, config=run_cfg)
 
-    # Extract event detail URLs from internal links
-    all_links = []
-    if result.links:
-        all_links = result.links.get("internal") or []
+    html = result.html or ""
+    soup = BeautifulSoup(html, "lxml")
 
-    events = []
-    pattern = config.event_url_pattern
-    for link in all_links:
-        href = link.get("href", "")
-        if not href:
-            continue
-        if pattern and not re.search(pattern, href, re.IGNORECASE):
-            continue
-        full_url = href if href.startswith("http") else urljoin(config.url, href)
-        events.append({
-            "detail_url": full_url,
-            "title": link.get("text", "").strip(),
-        })
+    pattern = config.event_url_pattern or ""
+    fs = config.field_selectors or {}
+    events: list[dict] = []
+    seen: set[str] = set()
 
-    # Deduplicate by URL
-    seen = set()
-    unique = []
-    for ev in events:
-        url = ev["detail_url"]
-        if url not in seen:
-            seen.add(url)
-            unique.append(ev)
+    # Primary path: teaser_selector + field_selectors
+    if config.teaser_selector:
+        try:
+            teaser_elements = soup.select(config.teaser_selector)
+        except Exception as e:
+            print(f"  WARNING: teaser_selector {config.teaser_selector!r} invalid: {e}")
+            teaser_elements = []
 
-    return unique
+        for teaser in teaser_elements:
+            detail_url = _extract_teaser_url(teaser, config.url, pattern)
+            if not detail_url or detail_url in seen:
+                continue
+            seen.add(detail_url)
+            events.append({
+                "detail_url": detail_url,
+                "title": _select_text(teaser, fs.get("title")),
+                "date": _select_text(teaser, fs.get("date")),
+                "time": _select_text(teaser, fs.get("time")),
+                "venue_hall": _select_text(teaser, fs.get("venue_hall")),
+            })
+
+    # Fallback: URL-pattern over all internal links (the old behaviour)
+    if not events:
+        if config.teaser_selector:
+            print(f"  WARNING: teaser_selector matched 0 events — falling back to URL pattern")
+        all_links = (result.links or {}).get("internal") or []
+        for link in all_links:
+            href = link.get("href", "")
+            if not href:
+                continue
+            if pattern and not re.search(pattern, href, re.IGNORECASE):
+                continue
+            full = href if href.startswith("http") else urljoin(config.url, href)
+            if full in seen:
+                continue
+            seen.add(full)
+            events.append({
+                "detail_url": full,
+                "title": link.get("text", "").strip(),
+                "date": "",
+                "time": "",
+                "venue_hall": "",
+            })
+
+    return events
 
 
 async def enrich_event(
@@ -153,6 +208,13 @@ async def enrich_event(
         raw = msg.content[0].text.strip()
         raw = re.sub(r"^```json\s*|^```\s*|\s*```$", "", raw, flags=re.MULTILINE).strip()
         detail = json.loads(raw)
+        # Claude title/date only fill in when the listing didn't provide them
+        if not event.get("title") and detail.get("title"):
+            event["title"] = detail["title"]
+        if not event.get("date") and detail.get("date"):
+            event["date"] = detail["date"]
+        if not event.get("time") and detail.get("time"):
+            event["time"] = detail["time"]
         event.update({
             "program": detail.get("program") or [],
             "performers": detail.get("performers") or [],

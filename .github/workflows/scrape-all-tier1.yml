@@ -34,7 +34,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install --quiet crawl4ai pydantic anthropic fastapi
+          pip install --quiet crawl4ai pydantic anthropic fastapi beautifulsoup4 lxml
           python3 -m playwright install --with-deps chromium
 
       - name: Scrape each Tier-1 venue and commit after each
