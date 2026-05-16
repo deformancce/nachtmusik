@@ -7,6 +7,10 @@ on:
         description: "Branch to scrape from and commit to"
         required: false
         default: "main"
+      max_events:
+        description: "Smoke-test: limit events per venue (empty = unlimited)"
+        required: false
+        default: "5"
 
 permissions:
   contents: write
@@ -37,9 +41,17 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           PYTHONUNBUFFERED: "1"
-        run: python3 -m backend.scrape.run_scraper --all-tier 1
+          MAX_EVENTS: ${{ github.event.inputs.max_events }}
+        run: |
+          if [ -n "$MAX_EVENTS" ]; then
+            python3 -m backend.scrape.run_scraper --all-tier 1 --max-events "$MAX_EVENTS"
+          else
+            python3 -m backend.scrape.run_scraper --all-tier 1
+          fi
 
       - name: Commit and push results
+        env:
+          MAX_EVENTS: ${{ github.event.inputs.max_events }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -48,7 +60,12 @@ jobs:
             echo "No changes to commit."
             exit 0
           fi
-          git commit -m "Refresh Tier-1 events (manual scrape run)"
+          if [ -n "$MAX_EVENTS" ]; then
+            MSG="Refresh Tier-1 events [smoke max=$MAX_EVENTS]"
+          else
+            MSG="Refresh Tier-1 events (manual scrape run)"
+          fi
+          git commit -m "$MSG"
           BRANCH="${GITHUB_REF_NAME:-main}"
           for i in 1 2 3; do
             git pull --rebase --autostash origin "$BRANCH" || true

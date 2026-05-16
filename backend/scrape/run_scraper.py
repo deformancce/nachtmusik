@@ -274,7 +274,7 @@ async def run(slug: str, dry_run: bool = False, max_events: int | None = None) -
     return output
 
 
-async def run_all_tier(tier: int, dry_run: bool) -> None:
+async def run_all_tier(tier: int, dry_run: bool, max_events: int | None = None) -> None:
     import importlib
     from backend.venues_germany import get_venues_by_tier
     venues = get_venues_by_tier(tier)
@@ -286,11 +286,13 @@ async def run_all_tier(tier: int, dry_run: bool) -> None:
 
     if missing:
         print(f"No config for: {', '.join(missing)} — run generate_configs.py first")
+    if max_events:
+        print(f"SMOKE MODE: capping at {max_events} events per venue")
     print(f"Running {len(available)} venue(s)...")
 
     for slug in available:
         try:
-            await run(slug, dry_run=dry_run)
+            await run(slug, dry_run=dry_run, max_events=max_events)
         except Exception as e:
             print(f"ERROR in {slug}: {e}")
 
@@ -307,7 +309,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.all_tier is not None:
-        asyncio.run(run_all_tier(args.all_tier, dry_run=args.dry_run))
+        asyncio.run(run_all_tier(args.all_tier, dry_run=args.dry_run, max_events=args.max_events))
     elif args.slug:
         asyncio.run(run(args.slug, dry_run=args.dry_run, max_events=args.max_events))
     else:
