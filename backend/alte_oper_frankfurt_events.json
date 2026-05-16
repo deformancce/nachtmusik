@@ -1,100 +1,60 @@
 {
   "venue": "Alte Oper Frankfurt",
   "city": "Frankfurt",
-  "scraped_at": "2026-05-16T20:46:56.184620Z",
+  "scraped_at": "2026-05-16T21:00:28.588999Z",
   "total_events": 5,
   "events": [
     {
-      "detail_url": "https://www.alteoper.de/de/programm/hr-sinfonieorchester/18582",
-      "title": "hr-Sinfonieorchester",
-      "date": "Do 11 Juni 2026",
-      "time": "19:00",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Béla Bartók: Violinkonzert Nr. 2",
-        "Johannes Brahms: Sinfonie Nr. 4 e-Moll op. 98"
-      ],
-      "performers": [
-        "Vilde Frang (Violine)",
-        "hr-Sinfonieorchester (Orchester)"
-      ],
-      "conductor": "Alain Altinoglu",
-      "duration_min": null,
-      "intro": "Das hr-Sinfonieorchester unter Chefdirigent Alain Altinoglu präsentiert Bartóks mitreißendes 2. Violinkonzert mit der Solistin Vilde Frang sowie Brahms' 4. Sinfonie, mit der Altinoglu seine Brahms-Reihe mit dem Orchester fortsetzt.",
-      "venue": "Alte Oper Frankfurt",
-      "hall": "Großer Saal",
-      "city": "Frankfurt"
-    },
-    {
-      "detail_url": "https://www.alteoper.de/de/programm/haydn-jahreszeiten/18465",
-      "title": "Haydn, Jahreszeiten",
+      "detail_url": "https://www.alteoper.de/de/programm/hereinspaziert-gewandhausorchester/18421",
+      "title": "Hereinspaziert: Gewandhausorchester",
       "date": "So 17 Mai 2026",
-      "time": "11:00",
+      "time": "18:00",
+      "venue_hall": "Albert Mangelsdorff Foyer",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vLY2GPEjrmdx6o8GPE'}",
+      "venue": "Alte Oper Frankfurt",
+      "hall": "Albert Mangelsdorff Foyer",
+      "city": "Frankfurt"
+    },
+    {
+      "detail_url": "https://www.alteoper.de/de/programm/hr-sinfonieorchester/18583",
+      "title": "hr-Sinfonieorchester",
+      "date": "Fr 12 Juni 2026",
+      "time": "20:00",
       "venue_hall": "Großer Saal",
-      "program": [
-        "Joseph Haydn: Die Jahreszeiten Hob. XXI:3"
-      ],
-      "performers": [
-        "Frankfurter Opern- und Museumsorchester (orchestra)",
-        "Cäcilienchor Frankfurt (choir)",
-        "Figuralchor Frankfurt (choir)",
-        "Frankfurter Kantorei (choir)",
-        "Frankfurter Singakademie (choir)",
-        "Karolina Bengtsson (Sopran)",
-        "Magnus Dietrich (Tenor)",
-        "David Steffens (Bariton)"
-      ],
-      "conductor": "Thomas Guggeis",
-      "duration_min": 165,
-      "intro": "Joseph Haydn's oratorio 'Die Jahreszeiten' (The Seasons), composed shortly after the successful premiere of 'Die Schöpfung', depicts the existence of the world through the course of the year and the experience of divine creation in the cyclical rhythms of nature. The work is performed here with massed choral forces and soloists under conductor Thomas Guggeis.",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vM4hyrJMTGvHdMJram'}",
       "venue": "Alte Oper Frankfurt",
       "hall": "Großer Saal",
       "city": "Frankfurt"
     },
     {
-      "detail_url": "https://www.alteoper.de/de/programm/tempo/18600",
-      "title": "Tempo",
-      "date": "So 07 Juni 2026",
-      "time": "14:00",
-      "venue_hall": "Mozart Saal",
-      "program": [
-        "Ludwig van Beethoven: Werke (unspecified)",
-        "Johannes Brahms: Werke (unspecified)",
-        "Claudio Monteverdi: Werke (unspecified)"
-      ],
-      "performers": [
-        "Michela Zanoni (Harfe)",
-        "Michele Mazzini (Klarinette)",
-        "Robbrecht Van Cauwenberghe (Bajan)",
-        "Veysel Dzhesur (Percussion)",
-        "Valentine Blangé (Violine)",
-        "Oorkaan (Ensemble)"
-      ],
-      "conductor": null,
-      "duration_min": 50,
-      "intro": "Das niederländische Oorkaan Ensemble präsentiert ein Familienkonzert für Kinder ab sechs Jahren, das klassische Musik von Beethoven, Brahms, Monteverdi und anderen zugänglich macht. Die Musiker spielen mit Zeit und Tempo – beschleunigen, verlangsamen und brechen die Regeln, sodass die Zeit zu fliegen scheint und gleichzeitig stillzustehen.",
+      "detail_url": "https://www.alteoper.de/de/programm/steve-hackett/18732",
+      "title": "Steve Hackett",
+      "date": "Mi 27 Mai 2026",
+      "time": "20:00",
+      "venue_hall": "Großer Saal",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vMbLj5abZGsQtXnjat'}",
       "venue": "Alte Oper Frankfurt",
-      "hall": "Mozart Saal",
+      "hall": "Großer Saal",
       "city": "Frankfurt"
     },
     {
-      "detail_url": "https://www.alteoper.de/de/programm/tempo/18599",
-      "title": "Tempo",
-      "date": "So 07 Juni 2026",
-      "time": "11:00",
-      "venue_hall": "Mozart Saal",
-      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uLXYscNQdd2d34hyHy'}",
-      "venue": "Alte Oper Frankfurt",
-      "hall": "Mozart Saal",
-      "city": "Frankfurt"
-    },
-    {
-      "detail_url": "https://www.alteoper.de/de/programm/six-the-musical/18720",
+      "detail_url": "https://www.alteoper.de/de/programm/six-the-musical/18721",
       "title": "SIX - The Musical",
       "date": "Sa 20 Juni 2026",
-      "time": "14:30",
+      "time": "19:00",
       "venue_hall": "Großer Saal",
-      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6uLmhRQJcHKQFBgJDzf'}",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vN91UXbtSS6fRtrFv4'}",
+      "venue": "Alte Oper Frankfurt",
+      "hall": "Großer Saal",
+      "city": "Frankfurt"
+    },
+    {
+      "detail_url": "https://www.alteoper.de/de/programm/miles-davis-100/18438",
+      "title": "Miles Davis 100",
+      "date": "Di 26 Mai 2026",
+      "time": "19:00",
+      "venue_hall": "Großer Saal",
+      "_detail_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cb6vNfWmj2WKPki4FMRYd'}",
       "venue": "Alte Oper Frankfurt",
       "hall": "Großer Saal",
       "city": "Frankfurt"
