@@ -1,77 +1,38 @@
 {
   "venue": "Glocke Bremen",
   "city": "Bremen",
-  "scraped_at": "2026-05-16T20:22:30.692277Z",
+  "scraped_at": "2026-05-16T20:44:03.349634Z",
   "total_events": 5,
   "events": [
     {
-      "detail_url": "https://www.glocke.de/event/bremer-philharmoniker-time-to-shine-11-philharmonisches-konzert-2/?back_btn=1",
-      "title": "Bremer Philharmoniker »Time to shine« 11. Philharmonisches Konzert",
-      "date": "Montag 1 Jun",
-      "time": "19:30 Uhr  | Großer Saal",
-      "venue_hall": "19:30 Uhr  | Großer Saal",
+      "detail_url": "https://www.glocke.de/event/flying-sound-klang-emotion-praezision-mit-tigran-maytesian-und-daniel-blumenthal/?back_btn=1",
+      "title": "»Flying Sound – Klang. Emotion. Präzision« mit Tigran Maytesian und Daniel Blumenthal",
+      "date": "Samstag 30 Mai",
+      "time": "20:00 Uhr  | Kleiner Saal",
+      "venue_hall": "20:00 Uhr  | Kleiner Saal",
       "program": [
-        "Ludwig van Beethoven: Klavierkonzert Nr. 4 G-Dur op. 58",
-        "Béla Bartók: Konzert für Orchester"
+        "Ludwig van Beethoven: Sonate Nr. 5 F-Dur op. 24 »Frühlingssonate«",
+        "Franz Schubert: Sonatine Nr. 3 g-Moll D 408",
+        "Jules Massenet: Méditation aus »Thaïs«",
+        "Pablo de Sarasate: Romanza Andaluza",
+        "Christoph Willibald Gluck: Melodie (arr. Fritz Kreisler)",
+        "Johannes Brahms: Ungarischer Tanz Nr. 5",
+        "Johann Sebastian Bach: Air (arr. August Wilhelmj)",
+        "Pjotr Iljitsch Tschaikowsky: Russischer Tanz",
+        "Komitas Vardapet: Krunk",
+        "Niccolò Paganini: Sonate Nr. 6",
+        "Manuel Ponce: Estrellita (arr. Jascha Heifetz)",
+        "Vittorio Monti: Csárdás"
       ],
       "performers": [
-        "Marc-André Hamelin (Klavier)",
-        "Bremer Philharmoniker (Orchester)"
-      ],
-      "conductor": "Delyana Lazarova",
-      "duration_min": null,
-      "intro": "Pianist Marc-André Hamelin und Dirigentin Delyana Lazarova treffen mit den Bremer Philharmonikern aufeinander für Beethovens innovatives viertes Klavierkonzert und Bartóks virtuoses Konzert für Orchester, in dem das gesamte Ensemble als Solist fungiert.",
-      "venue": "Glocke Bremen",
-      "hall": "19:30 Uhr  | Großer Saal",
-      "city": "Bremen"
-    },
-    {
-      "detail_url": "https://www.glocke.de/event/philharmonie-der-solisten-vivaldi-die-vier-jahreszeiten-7/?back_btn=1",
-      "title": "Philharmonie der Solisten »Vivaldi – Die vier Jahreszeiten«",
-      "date": "Sonntag 24 Mai",
-      "time": "17:00 Uhr  | Kleiner Saal",
-      "venue_hall": "17:00 Uhr  | Kleiner Saal",
-      "program": [
-        "Antonio Vivaldi: Die vier Jahreszeiten op. 8/1-4",
-        "Wolfgang Amadeus Mozart: Werke (unspecified)",
-        "Johann Sebastian Bach: Werke (unspecified)",
-        "Johannes Brahms: Werke (unspecified)"
-      ],
-      "performers": [
-        "Vladik Otaryan (Violine)",
-        "Philharmonie der Solisten (Kammerorchester)"
-      ],
-      "conductor": "Vladik Otaryan",
-      "duration_min": null,
-      "intro": "The Philharmonie der Solisten, an ensemble of professionally trained musicians who each perform as soloists, presents Vivaldi's Four Seasons alongside works by Mozart, Bach, and Brahms. Violinist and director Vladik Otaryan leads the ensemble in this chamber concert at the Kleiner Saal.",
-      "venue": "Glocke Bremen",
-      "hall": "17:00 Uhr  | Kleiner Saal",
-      "city": "Bremen"
-    },
-    {
-      "detail_url": "https://www.glocke.de/event/curtis-on-tour-8-philharmonisches-kammerkonzert/?back_btn=1",
-      "title": "»Curtis on Tour« 8. Philharmonisches Kammerkonzert",
-      "date": "Mittwoch 20 Mai",
-      "time": "19:00 Uhr  | Kleiner Saal",
-      "venue_hall": "19:00 Uhr  | Kleiner Saal",
-      "program": [
-        "Bohuslav Martinů: Drei Madrigale",
-        "Ludwig van Beethoven: Klaviertrio D-Dur op. 70/1 (»Geistertrio«)",
-        "Johannes Brahms: Klavierquintett f-Moll op. 34"
-      ],
-      "performers": [
-        "Liza Ferschtman (Violine)",
-        "Benjamin Hochman (Klavier)",
-        "Leah Amory (Violine)",
-        "Davin Mar (Viola)",
-        "Carson Ling-Efird (Violoncello)",
-        "Curtis on Tour Ensemble"
+        "Tigran Maytesian (Violine)",
+        "Daniel Blumenthal (Klavier)"
       ],
       "conductor": null,
       "duration_min": null,
-      "intro": "The Curtis on Tour Ensemble, led by violinist Liza Ferschtman and pianist Benjamin Hochman, presents a chamber music program featuring works by Martinů, Beethoven, and Brahms. Young musicians from the Curtis Institute of Music join their mentors on this European tour.",
+      "intro": "Belgian-Armenian violin virtuoso Tigran Maytesian and renowned pianist Daniel Blumenthal perform an evening of chamber music ranging from lyrical intimacy to virtuosic brilliance. The program centers on Beethoven's »Spring Sonata« alongside works by Sarasate, Massenet, Monti, and others, presented in the transparent acoustics of the Kleiner Saal.",
       "venue": "Glocke Bremen",
-      "hall": "19:00 Uhr  | Kleiner Saal",
+      "hall": "20:00 Uhr  | Kleiner Saal",
       "city": "Bremen"
     },
     {
@@ -90,7 +51,7 @@
       ],
       "conductor": "Jérémie Rhorer",
       "duration_min": null,
-      "intro": "Pianist, Dirigent und Komponist Fabian Müller kehrt mit der Deutschen Kammerphilharmonie Bremen für eine längere Konzertperiode zurück, um Tschaikowskys 4. Sinfonie und Brahms' monumentales 2. Klavierkonzert zu präsentieren. Die Konzerte sind Teil des fortlaufenden Tschaikowsky-Projekts mit Jérémie Rhorer, dem eine Skandinavien-Tournee folgt.",
+      "intro": "Pianist Fabian Müller joins the Deutsche Kammerphilharmonie Bremen and conductor Jérémie Rhorer for an evening featuring Brahms's monumental Second Piano Concerto alongside Tchaikovsky's dramatic Fourth Symphony, as part of an ongoing Tchaikovsky project followed by a Scandinavian tour.",
       "venue": "Glocke Bremen",
       "hall": "19:30 Uhr  | Großer Saal",
       "city": "Bremen"
@@ -103,13 +64,52 @@
       "venue_hall": "20:00 Uhr  | Großer Saal",
       "program": [],
       "performers": [
-        "Marc-Uwe Kling (Lesung)"
+        "Marc-Uwe Kling (Lesung/Reading)"
       ],
       "conductor": null,
       "duration_min": null,
       "intro": "Marc-Uwe Kling liest die besten Geschichten aus seinem neuen Buch »Die Känguru-Rebellion«, in dem das Känguru eine Rebellion gegen die Zustände der Welt startet.",
       "venue": "Glocke Bremen",
       "hall": "20:00 Uhr  | Großer Saal",
+      "city": "Bremen"
+    },
+    {
+      "detail_url": "https://www.glocke.de/event/reiner-calmund-ein-runder-abend-mit-fussball-freunden/?back_btn=1",
+      "title": "Reiner Calmund »Ein runder Abend – mit Fußball & Freunden«",
+      "date": "Sonntag 17 Mai",
+      "time": "19:00 Uhr  | Kleiner Saal",
+      "venue_hall": "19:00 Uhr  | Kleiner Saal",
+      "program": [],
+      "performers": [
+        "Reiner Calmund (Host/Gast)"
+      ],
+      "conductor": null,
+      "duration_min": null,
+      "intro": "Reiner Calmund, former Bundesliga manager and TV expert, hosts a live football talk show featuring stories, anecdotes, and behind-the-scenes insights from the world of football, joined by a sports moderator and a surprise guest.",
+      "venue": "Glocke Bremen",
+      "hall": "19:00 Uhr  | Kleiner Saal",
+      "city": "Bremen"
+    },
+    {
+      "detail_url": "https://www.glocke.de/event/bremer-kaffeehaus-orchester-frisch-aufgeblueht-fruehlingskonzert/?back_btn=1",
+      "title": "Bremer Kaffeehaus-Orchester »Frisch aufgeblüht« Frühlingskonzert",
+      "date": "Sonntag 31 Mai",
+      "time": "15:30 Uhr  | Kleiner Saal",
+      "venue_hall": "15:30 Uhr  | Kleiner Saal",
+      "program": [],
+      "performers": [
+        "Klaus Fischer (Flöten, Klarinetten, Saxofon und Moderation)",
+        "Constantin Dorsch (Violine)",
+        "Gero John (Violoncello)",
+        "Machiko Totani (Klavier)",
+        "Anselm Hauke (Kontrabass)",
+        "Bremer Kaffeehaus-Orchester (Ensemble)"
+      ],
+      "conductor": null,
+      "duration_min": null,
+      "intro": "The five musicians celebrate spring with lively Kaffeehaus music featuring melodies by Verdi, Mozart, Ravel and others, alongside swing, tango, jazz and rock. The concert promises virtuosity and playfulness across musical styles and epochs, framed by the ensemble's characteristic witty commentary.",
+      "venue": "Glocke Bremen",
+      "hall": "15:30 Uhr  | Kleiner Saal",
       "city": "Bremen"
     }
   ]
