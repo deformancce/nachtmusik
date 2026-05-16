@@ -1,0 +1,103 @@
+{
+  "venue": "Tonhalle Düsseldorf",
+  "city": "Düsseldorf",
+  "scraped_at": "2026-05-16T20:46:01.601294Z",
+  "total_events": 5,
+  "events": [
+    {
+      "detail_url": "https://www.tonhalle.de/veranstaltung/komet/19505-hoehner",
+      "title": "Höhner",
+      "date": "21.12.26",
+      "time": "19:30",
+      "venue_hall": "",
+      "program": [
+        "Traditional: White Christmas",
+        "Traditional: Jingle Bells",
+        "Traditional: Europäische Weihnachtslieder und Adventsmusik"
+      ],
+      "performers": [
+        "Die Höhner (Band)",
+        "Patrick Lück (vocals/performer)",
+        "Jens Streifling (performer)",
+        "Micki Schläger (performer)",
+        "Heiko Braun (performer)",
+        "Edin Čolić (performer)",
+        "Freddi Lubitz-Ragland (performer)"
+      ],
+      "conductor": null,
+      "duration_min": null,
+      "intro": "Die Höhner Weihnacht ist eine festliche Weihnachtsshow mit kölschem Temperament, bei der die Band eigene Songs, klassische Weihnachtslieder aus aller Welt sowie bekannte Evergreens wie 'White Christmas' und 'Jingle Bells' präsentiert.",
+      "venue": "Tonhalle Düsseldorf",
+      "hall": "",
+      "city": "Düsseldorf"
+    },
+    {
+      "detail_url": "https://www.tonhalle.de/veranstaltung/komet/19150-ferdinand-von-schirach",
+      "title": "Ferdinand von Schirach",
+      "date": "22.10.26",
+      "time": "",
+      "venue_hall": "",
+      "_detail_error": "Expecting ',' delimiter: line 9 column 102 (char 309)",
+      "venue": "Tonhalle Düsseldorf",
+      "hall": "",
+      "city": "Düsseldorf"
+    },
+    {
+      "detail_url": "https://www.tonhalle.de/veranstaltung/piano-solo/20370-hayato-sumino",
+      "title": "Hayato Sumino",
+      "date": "13.11.26",
+      "time": "20:00",
+      "venue_hall": "",
+      "program": [
+        "Frédéric Chopin: Scherzo Nr. 1 h-Moll op. 20",
+        "Alberto Ginastera: Sonate Nr. 1 op. 22",
+        "Igor Strawinsky: Danse infernale, Berceuse et Finale (aus: »L'oiseau de feu«)",
+        "Hayato Sumino: Imaginary Polonaise",
+        "Frédéric Chopin: Weitere Werke",
+        "Hayato Sumino: Weitere Werke",
+        "Thomas Adès: Weitere Werke"
+      ],
+      "performers": [
+        "Hayato Sumino (Klavier)"
+      ],
+      "conductor": null,
+      "duration_min": null,
+      "intro": "Pianist Hayato Sumino, internationally acclaimed for his Chopin interpretations, presents a program that pairs works by the Polish composer with his own compositions and pieces by other composers. The concert explores the connection between past and present through works by Chopin, Ginastera, Stravinsky, Adès, and Sumino himself.",
+      "venue": "Tonhalle Düsseldorf",
+      "hall": "",
+      "city": "Düsseldorf"
+    },
+    {
+      "detail_url": "https://www.tonhalle.de/veranstaltung/komet/20224-dieter-nuhr",
+      "title": "Dieter Nuhr",
+      "date": "12.12.26",
+      "time": "20:00",
+      "venue_hall": "",
+      "program": [],
+      "performers": [
+        "Dieter Nuhr (Kabarettist)"
+      ],
+      "conductor": null,
+      "duration_min": null,
+      "intro": "Dieter Nuhr präsentiert sein aktuelles Programm 'Nuhr auf Tour', das sich im ständigen Wandel befindet und stets neue Pointen bietet. Ein Abend, der Spaß und Therapie zugleich verspricht.",
+      "venue": "Tonhalle Düsseldorf",
+      "hall": "",
+      "city": "Düsseldorf"
+    },
+    {
+      "detail_url": "https://www.tonhalle.de/veranstaltung/schumannfest/20066-fuehrung-durch-das-schumann-haus",
+      "title": "Führung durch das Schumann-Haus",
+      "date": "8.6.26",
+      "time": "17:30",
+      "venue_hall": "",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "duration_min": null,
+      "intro": "Exklusive Führung durch das Schumann-Haus, ein historisches Wohnhaus von Clara und Robert Schumann, das denkmalgerecht saniert und zu einem modernen Musikmuseum umgebaut wurde. Die Veranstaltung findet im Rahmen des Schumannfests in Kooperation mit dem Heine-Institut und Schumann-Haus statt.",
+      "venue": "Tonhalle Düsseldorf",
+      "hall": "",
+      "city": "Düsseldorf"
+    }
+  ]
+}
