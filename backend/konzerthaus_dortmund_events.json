@@ -1,24 +1,85 @@
 {
   "venue": "Konzerthaus Dortmund",
   "city": "Dortmund",
-  "scraped_at": "2026-05-16T19:52:39.824412Z",
+  "scraped_at": "2026-05-16T20:23:30.294037Z",
   "total_events": 5,
   "events": [
     {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/05-10-2026-es-war-einmal-in-amerika-haben-wir-einen-kulturkonfliktij/",
-      "title": "Es war einmal in Amerika – Haben wir einen Kulturkonflikt?",
-      "date": "Mo 05.10.2026",
-      "time": "19.30 Uhr",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/28-05-2026-naturally-7/",
+      "title": "Naturally 7",
+      "date": "Do 28.05.2026",
+      "time": "20.00 Uhr",
       "venue_hall": "",
       "program": [],
       "performers": [
-        "Elmar Theveßen (Journalist, Autor)",
-        "Axel Rüger (Direktor der Frick Collection, New York)",
-        "Klaus Wegener (Moderation)"
+        "Naturally 7 (vocal ensemble)"
       ],
       "conductor": null,
-      "duration_min": 90,
-      "intro": "Ein Podiumsgespräch mit ZDF-Washington-Korrespondent Elmar Theveßen und Axel Rüger über kulturelle Freiheit, gesellschaftliche Polarisierung und die Frage, ob sich die kulturellen Selbstverständnisse Europas und der USA voneinander entfernen. Der Abend beleuchtet Kultur als politisches Kampffeld und fragt nach der Rolle von Kunst und Institutionen in einer Zeit wachsender gesellschaftlicher Spannungen.",
+      "duration_min": 135,
+      "intro": "Naturally 7, das aus New York stammende A-cappella-Septett, präsentiert ihr «Closer Look»-Programm – ein Best-of ihrer Bandgeschichte, bei dem sie den Klang einer vollständigen Band ausschließlich mit ihren Stimmen erzeugen.",
+      "venue": "Konzerthaus Dortmund",
+      "hall": "",
+      "city": "Dortmund"
+    },
+    {
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/05-05-2027-7-philharmonisches-konzert-gluecksversprechen/",
+      "title": "7. Philharmonisches Konzert – Glücksversprechen",
+      "date": "Mi 05.05.2027",
+      "time": "19.30 Uhr",
+      "venue_hall": "",
+      "program": [
+        "Bohdana Frolyak: Let there be light",
+        "Robert Schumann: Konzert für Violine und Orchester d-moll WoO 1",
+        "Antonín Dvořák: Sinfonie Nr. 6 D-Dur op. 60"
+      ],
+      "performers": [
+        "Dortmunder Philharmoniker (orchestra)",
+        "Dmytro Udovychenko (Violine)"
+      ],
+      "conductor": "Oksana Lyniv",
+      "duration_min": 120,
+      "intro": "The 7th Philharmonic Concert brings together works centered on the theme of light and happiness: Frolyak's hopeful orchestral piece written in the shadow of war, Schumann's intimate Violin Concerto, and Dvořák's pastoral 6th Symphony. Ukrainian conductor Oksana Lyniv leads the Dortmunder Philharmoniker.",
+      "venue": "Konzerthaus Dortmund",
+      "hall": "",
+      "city": "Dortmund"
+    },
+    {
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/15-12-2026-weihnachtsoratorium/",
+      "title": "Weihnachtsoratorium",
+      "date": "Di 15.12.2026",
+      "time": "20.00 Uhr",
+      "venue_hall": "",
+      "program": [
+        "Johann Sebastian Bach: Kantate Nr. 1 aus Weihnachtsoratorium BWV 248",
+        "Johann Sebastian Bach: Kantate Nr. 2 aus Weihnachtsoratorium BWV 248",
+        "Johann Sebastian Bach: Kantate Nr. 3 aus Weihnachtsoratorium BWV 248",
+        "Johann Sebastian Bach: Kantate Nr. 4 aus Weihnachtsoratorium BWV 248"
+      ],
+      "performers": [
+        "Jugendkonzertchor der Chorakademie (Chor)",
+        "Konzertchor Westfalica der Chorakademie (Chor)",
+        "Bochumer Symphoniker (Orchester)"
+      ],
+      "conductor": "Johannes Honecker",
+      "duration_min": 150,
+      "intro": "Der Jugendkonzertchor und der Konzertchor Westfalica der Chorakademie am Konzerthaus Dortmund laden gemeinsam mit den Bochumer Symphonikern zu einer festlichen Aufführung von Bachs Weihnachtsoratorium ein. Das Konzert verspricht ein Erlebnis voller Wärme, Freude und festlicher Stimmung.",
+      "venue": "Konzerthaus Dortmund",
+      "hall": "",
+      "city": "Dortmund"
+    },
+    {
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/07-02-2027-die-schoene-und-das-biest-das-musical/",
+      "title": "Die Schöne und das Biest – das Musical",
+      "date": "So 07.02.2027",
+      "time": "15.00 Uhr",
+      "venue_hall": "",
+      "program": [],
+      "performers": [
+        "Ensemble Theater Liberi (Ensemble)"
+      ],
+      "conductor": null,
+      "duration_min": 120,
+      "intro": "Das Theater Liberi präsentiert das französische Volksmärchen »Die Schöne und das Biest« in einer zeitgemäßen Musical-Fassung mit Eigenkompositionen, romantischen Balladen und poppigen Songs. Ein Live-Erlebnis für die ganze Familie mit abwechslungsreichen Choreografien und opulenten Kostümen.",
       "venue": "Konzerthaus Dortmund",
       "hall": "",
       "city": "Dortmund"
@@ -38,72 +99,7 @@
       ],
       "conductor": null,
       "duration_min": 150,
-      "intro": "Eine Hommage an den humoristischen Großmeister Loriot, bei der Senta Berger und Friedrich von Thun die legendären, 1983 veröffentlichten Szenen einer Ehe zum Leben erwecken. Mit feinem Gespür für das Zwischenmenschliche und die Komik der alltäglichen Kommunikation beleuchtet Loriot die unüberwindbaren Tücken der Paarbeziehung.",
-      "venue": "Konzerthaus Dortmund",
-      "hall": "",
-      "city": "Dortmund"
-    },
-    {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/15-10-2026-emma-jean-thackray/",
-      "title": "Emma-Jean Thackray",
-      "date": "Do 15.10.2026",
-      "time": "20.00 Uhr",
-      "venue_hall": "",
-      "program": [],
-      "performers": [
-        "Emma-Jean Thackray (Multiinstrumentalistin)"
-      ],
-      "conductor": null,
-      "duration_min": 120,
-      "intro": "Emma-Jean Thackray, eine der talentiertesten Künstlerinnen des Nu Jazz, verbindet Jazz-Elemente mit elektronischer Musik, Funk, Disco und Garage-Pop. Die britische Komponistin und Produzentin präsentiert ihr Multitalent als Multiinstrumentalistin mit Keyboards, Blechblasinstrumenten und Gesang.",
-      "venue": "Konzerthaus Dortmund",
-      "hall": "",
-      "city": "Dortmund"
-    },
-    {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/01-01-2027-neujahrskonzert-paris-mon-amour/",
-      "title": "Neujahrskonzert – Paris, mon amour!",
-      "date": "Fr 01.01.2027",
-      "time": "15.00 Uhr",
-      "venue_hall": "",
-      "program": [
-        "Jacques Offenbach: Ouvertüre zu »La vie parisienne«",
-        "George Gershwin: An American in Paris (Sinfonische Dichtung)",
-        "Erik Satie: Gymnopédie Nr. 1 (Fassung für Orchester von Claude Debussy)",
-        "Erik Satie: Gymnopédie Nr. 3 (Fassung für Orchester von Claude Debussy)",
-        "Maurice Ravel: Konzert für Klavier und Orchester G-Dur"
-      ],
-      "performers": [
-        "Frank Dupree (Klavier)",
-        "Dortmunder Philharmoniker (Orchester)"
-      ],
-      "conductor": "Jordan de Souza",
-      "duration_min": 90,
-      "intro": "A New Year's concert celebrating Paris with works by Offenbach, Gershwin, Satie, and Ravel, featuring pianist Frank Dupree and the Dortmunder Philharmoniker under Jordan de Souza. The program blends Parisian elegance, jazz-inflected coolness, and impressionistic beauty.",
-      "venue": "Konzerthaus Dortmund",
-      "hall": "",
-      "city": "Dortmund"
-    },
-    {
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/27-05-2026-hr-bigband-miles-davis-zum-100/",
-      "title": "hr-Bigband – Miles Davis zum 100.",
-      "date": "Mi 27.05.2026",
-      "time": "20.00 Uhr",
-      "venue_hall": "",
-      "program": [
-        "Miles Davis / Gil Evans: Miles Ahead",
-        "Miles Davis / Gil Evans: Porgy and Bess",
-        "Miles Davis / Gil Evans: Sketches of Spain"
-      ],
-      "performers": [
-        "hr-Bigband (ensemble)",
-        "Arve Henriksen (Trompete, Flügelhorn)",
-        "Paolo Fresu (Trompete, Flügelhorn)",
-        "Axel Schlosser (Flügelhorn)"
-      ],
-      "conductor": "Miho Hazama",
-      "duration_min": 200,
-      "intro": "A centenary tribute to Miles Davis featuring the hr-Bigband performing three landmark albums – 'Miles Ahead', 'Porgy and Bess', and 'Sketches of Spain' – in full, celebrating the iconic collaborations between Davis and arranger Gil Evans.",
+      "intro": "Eine szenische Hommage an den humoristischen Großmeister Loriot, bei der Senta Berger und Friedrich von Thun die legendären, 1983 veröffentlichten Szenen einer Ehe zum Leben erwecken. Die Vorstellung beleuchtet mit feinsinnigem Humor die alltäglichen Tücken des Zusammenlebens und der Paarbeziehung.",
       "venue": "Konzerthaus Dortmund",
       "hall": "",
       "city": "Dortmund"
