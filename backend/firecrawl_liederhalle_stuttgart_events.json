@@ -3,7 +3,7 @@
   "city": "Stuttgart",
   "slug": "liederhalle_stuttgart",
   "source_url": "https://liederhalle.de/eventkalender",
-  "scraped_at": "2026-05-17T09:26:41.321641Z",
+  "scraped_at": "2026-05-17T13:03:38.032708Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -12,7 +12,9 @@
       "title": "Cornamusa - World of Pipe Rock and Irish Dance",
       "venue_hall": "Beethoven-Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Cornamusa Scheler & Bähring GbR"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/cornamusa-world-of-pipe-rock-and-irish-dance",
@@ -27,7 +29,7 @@
       "program": [
         "Weber: Freischütz Ouvertüre",
         "Mozart: Violinkonzert Nr. 3 in G-Dur",
-        "Dvořák: Sinfonie Nr. 9 (Aus der neuen Welt)"
+        "Dvořak: Sinfonie Nr. 9 (Aus der neuen Welt)"
       ],
       "performers": [
         "Christine Busch",
@@ -75,13 +77,13 @@
       "title": "SWR Symphonieorchester: Dans la cuisine du chef",
       "venue_hall": "Hegel-Saal",
       "program": [
-        "Haydn: Sinfonie Nr. 101 D-Dur ('Die Uhr')"
+        "Haydn: Sinfonie Nr. 101 D-Dur (\"Die Uhr\")"
       ],
       "performers": [
         "SWR Symphonieorchester"
       ],
       "conductor": "François-Xavier Roth",
-      "price": "Freier Eintritt, Reservierung erforderlich",
+      "price": "Freier Eintritt",
       "detail_url": "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart"

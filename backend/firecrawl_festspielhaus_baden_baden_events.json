@@ -3,25 +3,31 @@
   "city": "Baden-Baden",
   "slug": "festspielhaus_baden_baden",
   "source_url": "https://www.festspielhaus.de/programm/",
-  "scraped_at": "2026-05-17T09:14:46.509217Z",
+  "scraped_at": "2026-05-17T12:51:00.702834Z",
   "engine": "firecrawl",
   "events": [
     {
       "date": "2026-05-17",
       "time": "16:00",
-      "title": "Pfingstfestspiele",
+      "title": "SWR Symphonieorchester",
       "venue_hall": "Festspielhaus Baden-Baden",
       "program": [
-        "Strauss: Der Rosenkavalier"
+        "Richard Strauss: Der Rosenkavalier, Op. 59, TrV 227",
+        "Rudi Stephan: Musik für sieben Saiteninstrumente, Op. 16",
+        "Gustav Mahler: Ich bin der Welt abhanden gekommen",
+        "J.B. Lully: Le Bourgeois gentilhomme, LWV 43",
+        "W.A. Mozart: Piano Concerto No. 27 in B-Flat Major, K. 595",
+        "F.J. Haydn: Symphony No. 101 in D Major, Hob. I:101 'The Clock'"
       ],
       "performers": [
         "Julia Kleiter",
         "Emily D’Angelo",
         "Jonathan Tetelman",
-        "SWR Symphonieorchester"
+        "SWR Symphonieorchester",
+        "Libor Šíma"
       ],
       "conductor": "François-Xavier Roth",
-      "price": "ab €33",
+      "price": "ab 33 €",
       "detail_url": "https://www.festspielhaus.de/festivals/presence/",
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden"
@@ -30,11 +36,11 @@
       "date": "2026-05-21",
       "time": "19:00",
       "title": "Richard Strauss: Der Rosenkavalier",
-      "venue_hall": "Festspielhaus Baden-Baden",
+      "venue_hall": "",
       "program": [],
       "performers": [],
       "conductor": "François-Xavier Roth",
-      "price": "€29",
+      "price": "29 €",
       "detail_url": null,
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden"
@@ -43,13 +49,13 @@
       "date": "2026-05-22",
       "time": "21:00",
       "title": "Ich atmet' einen linden Duft",
-      "venue_hall": "Festspielhaus Baden-Baden",
+      "venue_hall": "",
       "program": [
-        "Gustav Mahler: Lieder von Gustav Mahler"
+        "Gustav Mahler: Ich atmet' einen linden Duft"
       ],
       "performers": [],
-      "conductor": null,
-      "price": "€45",
+      "conductor": "",
+      "price": "45 €",
       "detail_url": null,
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden"
@@ -58,13 +64,13 @@
       "date": "2026-05-23",
       "time": "18:00",
       "title": "Late Night",
-      "venue_hall": "Festspielhaus Baden-Baden",
+      "venue_hall": "",
       "program": [],
       "performers": [
         "Libor Šíma & Friends"
       ],
-      "conductor": null,
-      "price": "ab €25",
+      "conductor": "",
+      "price": "ab 25 €",
       "detail_url": null,
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden"
@@ -73,19 +79,17 @@
       "date": "2026-05-24",
       "time": "16:00",
       "title": "Von Versailles nach Wien",
-      "venue_hall": "Festspielhaus Baden-Baden",
-      "program": [
-        "Lully: Un concert; Mozart: Eine Sinfonie; Haydn: Eine Sinfonie"
-      ],
+      "venue_hall": "",
+      "program": [],
       "performers": [],
-      "conductor": null,
-      "price": "ab €33",
+      "conductor": "",
+      "price": "ab 33 €",
       "detail_url": null,
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 25,
-  "total_events_discovered": 25
+  "total_events_visible": 23,
+  "total_events_discovered": 23
 }

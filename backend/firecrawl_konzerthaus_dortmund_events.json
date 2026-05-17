@@ -3,13 +3,13 @@
   "city": "Dortmund",
   "slug": "konzerthaus_dortmund",
   "source_url": "https://www.konzerthaus-dortmund.de/de/programm/",
-  "scraped_at": "2026-05-17T09:17:46.932610Z",
+  "scraped_at": "2026-05-17T12:54:29.939815Z",
   "engine": "firecrawl",
   "events": [
     {
       "date": "2026-05-17",
       "time": "16:00",
-      "title": "Constantinos Carydis & WDR Sinfonieorchester",
+      "title": "Orchesterkonzert",
       "venue_hall": "Großer Saal",
       "program": [
         "Periklis Koukos: Prooimion Rhapsodie über Odysseus für großes Orchester",
@@ -23,87 +23,12 @@
       ],
       "conductor": "Constantinos Carydis",
       "price": "19 € – 89 €",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/17-05-2026-constantinos-carydis-wdr-sinfonieorchester/platzwahl/",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund"
-    },
-    {
-      "date": "2026-05-18",
-      "time": "18:30",
-      "title": "Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Bach: Concerto in D minor BWV 1052",
-        "Beethoven: Symphony No. 5 in C minor op. 67"
-      ],
-      "performers": [
-        "Dortmunder Philharmoniker",
-        "Klavier Soloist"
-      ],
-      "conductor": "Max Mustermann",
-      "price": "8 €",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-05-2026-kopfnoten-eine-kleine-geschichte-der-epochen-und-stile/platzwahl/",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "duration_min": 90
-    },
-    {
-      "date": "2026-05-19",
-      "time": "19:30",
-      "title": "7. Philharmonisches Konzert",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum Schauspielmusik op. 61 (Auszüge)",
-        "Jörg Widmann: ad absurdum Konzertstück für Trompete und kleines Orchester",
-        "Ludwig van Beethoven: Sinfonie Nr. 4 B-Dur op. 60"
-      ],
-      "performers": [
-        "Dortmunder Philharmoniker",
-        "Patrick Lange",
-        "Sergei Nakariakov"
-      ],
-      "conductor": "Patrick Lange",
-      "price": "19 € – 49 €",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/19-05-2026-7-philharmonisches-konzert/platzwahl/",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund"
-    },
-    {
-      "date": "2026-05-20",
-      "time": "19:30",
-      "title": "7. Philharmonisches Konzert",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum Schauspielmusik op. 61 (Auszüge)",
-        "Jörg Widmann: ad absurdum Konzertstück für Trompete und kleines Orchester",
-        "Ludwig van Beethoven: Sinfonie Nr. 4 B-Dur op. 60"
-      ],
-      "performers": [
-        "Dortmunder Philharmoniker",
-        "Patrick Lange",
-        "Sergei Nakariakov"
-      ],
-      "conductor": "Patrick Lange",
-      "price": "19 € – 49 €",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/20-05-2026-7-philharmonisches-konzert/platzwahl/",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund"
-    },
-    {
-      "date": "2026-05-21",
-      "time": "19:30",
-      "title": "Überraschungskonzert – Der Joker",
-      "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": "Dr. Raphael von Hoensbroech",
-      "price": "25 €",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/21-05-2026-ueberraschungskonzert-der-joker/platzwahl/",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/17-05-2026-constantinos-carydis-wdr-sinfonieorchester/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund"
     }
   ],
-  "total_events": 5,
-  "total_events_visible": 56,
+  "total_events": 1,
+  "total_events_visible": 40,
   "total_events_discovered": 95
 }

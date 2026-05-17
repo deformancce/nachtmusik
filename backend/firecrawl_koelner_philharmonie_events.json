@@ -3,25 +3,25 @@
   "city": "Köln",
   "slug": "koelner_philharmonie",
   "source_url": "https://www.koelner-philharmonie.de/de/konzerte",
-  "scraped_at": "2026-05-17T09:23:30.185931Z",
+  "scraped_at": "2026-05-17T12:59:09.552790Z",
   "engine": "firecrawl",
   "events": [
     {
       "date": "2026-05-17",
       "time": "11:00",
-      "title": "Jubiläumskonzert – 90 Jahre",
+      "title": "Ford-Sinfonieorchester",
       "venue_hall": "Kölner Philharmonie",
       "program": [
-        "Händel: Ouvertüre zur 'Feuerwerksmusik'",
-        "Dvořák: Nr. 1 C-Dur op. 46,1 aus: Slawische Tänze. I. Reihe op. 46 B 83 für Orchester",
-        "Falla: Danza española Nr. 1 aus: La vida breve",
-        "Janáček: Nr. 1 Starodávný (Der Altertümliche I) aus: Lašské tance (Lachische Tänze) JW VI/17 für Orchester",
-        "Borodin: Polowetzer Tänze aus: Knjaz' Igor' (Fürst Igor)",
-        "Gershwin: Ouvertüre aus: Funny Face",
-        "Prokofjew: Tanz der Ritter aus: Romeo und Julia op. 64",
-        "Fauré: Pavane fis-Moll op. 50 für Orchester und Chor ad libitum",
-        "Rachmaninow: I. Non Allegro – Lento – Tempo primo aus: Symphonic Dances op. 45",
-        "Márquez: Danzón 2 für Orchester"
+        "Georg Friedrich Händel: Ouvertüre zur \"Feuerwerksmusik\"",
+        "Antonín Dvořák: Nr. 1 C-Dur op. 46,1 aus: Slawische Tänze. I. Reihe op. 46 B 83 für Orchester",
+        "Manuel de Falla: Danza española Nr. 1 aus: La vida breve",
+        "Leoš Janáček: Nr. 1 Starodávný (Der Altertümliche I) aus: Lašské tance (Lachische Tänze) JW VI/17 für Orchester",
+        "Alexander Borodin: Polowetzer Tänze aus: Knjaz' Igor' (Fürst Igor) (1869–70, 1874–87)",
+        "George Gershwin: Ouvertüre aus: Funny Face",
+        "Sergej Prokofjew: Tanz der Ritter aus: Romeo und Julia op. 64",
+        "Gabriel Fauré: Pavane fis-Moll op. 50 für Orchester und Chor ad libitum",
+        "Sergej Rachmaninow: I. Non Allegro – Lento – Tempo primo aus: Symphonic Dances op. 45",
+        "Arturo Márquez: Danzón 2 für Orchester"
       ],
       "performers": [
         "Ford-Sinfonieorchester",
@@ -37,25 +37,25 @@
     {
       "date": "2026-05-17",
       "time": "16:00",
-      "title": "»Migrations«",
+      "title": "Rising Stars: Álfheiður Erla Guðmundsdóttir & Kunal Lahiry",
       "venue_hall": "Kölner Philharmonie",
       "program": [
-        "Olivier Messiaen: I. Pourquoi?. aus: Trois Mélodies",
+        "Olivier Messiaen: Pourquoi? aus: Trois Mélodies",
         "Samuel Barber: The Crucifixion aus: Hermit Songs op. 29",
-        "Judith Weir: II. White Eggs in the Bush. aus: The Voice of Desire",
+        "Judith Weir: II. White Eggs in the Bush. Yoruba-sprachiger Text in der englischen Version von Ulli Beier aus: The Voice of Desire",
         "Tinnitus: Blur",
         "Ukrainisches Volkslied: A Duckling Swims in the Tisza (Plywe katscha po Tyssyni)",
-        "Joseph Haydn: The Wanderer Hob. XXVIa:32. aus: Sechs englische Kanzonetten Hob. XXVIa:31–36",
-        "Nico Muhly: »Sá ég svani«",
-        "Claude Debussy: Apparition (»La lune s’attristait«)",
-        "María Huld Markan Sigfúsdóttir: Náðarstef",
-        "Errollyn Wallen: North. The Seven Mountains",
-        "Sergej Rachmaninow: Son (Traum) op. 8,5. aus: 6 Lieder op. 8",
-        "Felix Mendelssohn Bartholdy: Andres Maienlied (»Die Schwalbe fliegt«) op. 8,8",
+        "Joseph Haydn: The Wanderer Hob. XXVIa:32. Text von Anne Hunter aus: Sechs englische Kanzonetten Hob. XXVIa:31–36",
+        "Nico Muhly: Sá ég svani für Sopran und Klavier",
+        "Claude Debussy: Apparition (»La lune s’attristait«) für Singstimme und Klavier. Text von Stéphane Mallarmé",
+        "María Huld Markan Sigfúsdóttir: Náðarstef für Sopran und Klavier",
+        "Errollyn Wallen: North. The Seven Mountains für Singstimme und Klavier. Text von Erollyn Wallen",
+        "Sergej Rachmaninow: Son (Traum) op. 8,5. Text von Heinrich Heine aus: 6 Lieder op. 8 für Singstimme und Klavier. Übersetzung der Gedichte ins Russische von Aleksej Plešceev",
+        "Felix Mendelssohn Bartholdy: Andres Maienlied (»Die Schwalbe fliegt«) op. 8,8. Text von Ludwig Hölty",
         "Palestinensisches Volkslied: Hadi Ya Bahar",
-        "Philip Glass: Etude Nr. 9 aus: Etudes",
+        "Philip Glass: Etude Nr. 9 aus: Etudes für Klavier",
         "Shawn E. Okpebholo: Oh Freedom",
-        "Jean Sibelius: Norden op. 90,1. aus: Sechs Lieder op. 90"
+        "Jean Sibelius: Norden op. 90,1 aus: Sechs Lieder op. 90 für Singstimme und Klavier. Texte von J. L. Runeberg"
       ],
       "performers": [
         "Álfheiður Erla Guðmundsdóttir",
@@ -71,23 +71,23 @@
     {
       "date": "2026-05-18",
       "time": "20:00",
-      "title": "Orgel Plus...",
+      "title": "Aurel Dawidiuk",
       "venue_hall": "Kölner Philharmonie",
       "program": [
         "Bach: Toccata und Fuge für Orgel d-Moll BWV 565",
         "Szathmáry: B-A-C-H »Hommage à...« für große Orgel",
-        "Liszt: Präludium und Fuge über den Namen B-A-C-H S 260/2",
-        "Tournemire: Improvisation sur le Te Deum aus: Cinq Improvisations für Orgel. Transkription von Maurice Duruflé",
-        "Bach: »Ertöt uns durch dein Güte« Choral aus der Kantate »Jesus nahm zu sich die Zwölfe« BWV 22 Transkription für Orgel von Maurice Duruflé",
+        "Liszt: Präludium und Fuge über den Namen B-A-C-H S 260/2 Zweite Fassung für Orgel",
+        "Tournemire/Duruflé: Improvisation sur le Te Deum aus: Cinq Improvisations für Orgel. Transkription von Maurice Duruflé",
+        "Bach/Duruflé: »Ertöt uns durch dein Güte« Choral aus der Kantate »Jesus nahm zu sich die Zwölfe« BWV 22 Transkription für Orgel von Maurice Duruflé",
         "Franck: Choral Nr. 3 a-Moll FWV 40 aus: Trois Chorals FWV 38–40 für große Orgel mit obligatem Pedal",
-        "Bach: »Jesu bleibet meine Freude« Choral aus der Kantate »Herz und Mund und Tat und Leben« BWV 147 Transkription für Orgel von Maurice Duruflé",
-        "Tournemire: Choral-Improvisation sur le Victimae paschali aus: Cinq Improvisations für Orgel. Transkription von Maurice Duruflé"
+        "Bach/Duruflé: »Jesu bleibet meine Freude« Choral aus der Kantate »Herz und Mund und Tat und Leben« BWV 147 Transkription für Orgel von Maurice Duruflé",
+        "Tournemire/Duruflé: Choral-Improvisation sur le Victimae paschali aus: Cinq Improvisations für Orgel. Transkription von Maurice Duruflé"
       ],
       "performers": [
         "Aurel Dawidiuk"
       ],
       "conductor": null,
-      "price": "€ 34",
+      "price": "€ 34,-",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/aurel-dawidiuk/4603",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
@@ -96,26 +96,17 @@
     {
       "date": "2026-05-19",
       "time": "20:00",
-      "title": "»Quatuor pour la fin du Temps«",
-      "venue_hall": "Kölner Philharmonie",
+      "title": "Jörg Widmann | Isabelle Faust | Jean-Guihen Queyras | Pierre-Laurent Aimard",
+      "venue_hall": null,
       "program": [
-        "Boulez: Douze Notations",
-        "Ravel: Sonate für Violine und Violoncello (»Le Tombeau de Debussy«)",
-        "Berg: Vier Stücke für Klarinette und Klavier op. 5",
-        "Messiaen: Quatuor pour la fin du Temps für Violine, Klarinette, Violoncello und Klavier"
+        "Jörg Widmann: Title"
       ],
-      "performers": [
-        "Jörg Widmann",
-        "Isabelle Faust",
-        "Jean-Guihen Queyras",
-        "Pierre-Laurent Aimard"
-      ],
+      "performers": [],
       "conductor": null,
-      "price": "€ 34,-",
+      "price": null,
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/jorg-widmann-isabelle-faust-jean-guihen-queyras-pierre-laurent-aimard/4649",
       "venue": "Kölner Philharmonie",
-      "city": "Köln",
-      "duration_min": 105
+      "city": "Köln"
     },
     {
       "date": "2026-05-21",
@@ -146,6 +137,6 @@
     }
   ],
   "total_events": 5,
-  "total_events_visible": 65,
+  "total_events_visible": 479,
   "total_events_discovered": 4056
 }

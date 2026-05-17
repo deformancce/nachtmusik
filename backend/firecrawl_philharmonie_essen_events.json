@@ -2,96 +2,97 @@
   "venue": "Philharmonie Essen",
   "city": "Essen",
   "slug": "philharmonie_essen",
-  "source_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen?scheduleScrollTo=2026-06-06-p3271",
-  "scraped_at": "2026-05-17T09:20:34.078209Z",
+  "source_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/",
+  "scraped_at": "2026-05-17T12:56:24.319472Z",
   "engine": "firecrawl",
   "events": [
     {
-      "date": "2026-06-01",
-      "time": "20:00",
-      "title": "Chilly Gonzales",
+      "date": "2026-05-22",
+      "time": "19:00",
+      "title": "Takeover! by Miki und Eva Briegel (JULI)",
       "venue_hall": "Alfried Krupp Saal",
       "program": [],
       "performers": [
-        "Chilly Gonzales"
+        "Eva Briegel",
+        "Mihalj Kekenj",
+        "Takeover!Ensemble"
       ],
-      "conductor": null,
-      "price": "Ausverkauft",
-      "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/chilly-gonzales-161019/3649/",
+      "conductor": "Mihalj Kekenj",
+      "price": "ab €40",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/takeover-by-miki-und-eva-briegel-juli-151425/3177/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "duration_min": 120
     },
     {
-      "date": "2026-06-03",
+      "date": "2026-05-23",
       "time": "19:00",
-      "title": "Ensemble Wien-Berlin: Mozart Serenade",
-      "venue_hall": "NATIONAL-BANK Pavillon",
-      "program": [
-        "Antonín Dvorák: Title",
-        "Luciano Berio: Title",
-        "Vinko Globokar: Title",
-        "Wolfgang Amadeus Mozart: Title"
-      ],
-      "performers": [],
-      "conductor": null,
-      "price": "35,00 €",
-      "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/ensemble-wien-berlinmozart-serenade-154355/3052/",
-      "venue": "Philharmonie Essen",
-      "city": "Essen"
-    },
-    {
-      "date": "2026-06-06",
-      "time": "19:00",
-      "title": "Spielzeitpräsentationen der Essener Philharmoniker und der Philharmonie Essen",
+      "title": "Takeover! by Miki und Eva Briegel (JULI)",
       "venue_hall": "Alfried Krupp Saal",
       "program": [],
+      "performers": [
+        "Eva Briegel",
+        "Mihalj Kekenj",
+        "Takeover!Ensemble"
+      ],
+      "conductor": "Mihalj Kekenj",
+      "price": "ab €40",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/takeover-by-miki-und-eva-briegel-juli-151425/3178/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 120
+    },
+    {
+      "date": "2026-05-24",
+      "time": "18:00",
+      "title": "Die Prinzen Symphonisch",
+      "venue_hall": "Alfried Krupp Saal",
+      "program": [],
+      "performers": [
+        "Die Prinzen"
+      ],
+      "conductor": null,
+      "price": "ab €89,90",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/die-prinzen-symphonisch-157996/3335/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 120
+    },
+    {
+      "date": "2026-05-26",
+      "time": "20:00",
+      "title": "Joana Mallwitz \u0005 Konzerthausorchester Berlin",
+      "venue_hall": "Alfried Krupp Saal",
+      "program": [
+        "Gustav Mahler: Symphony No. 1",
+        "Ludwig van Beethoven: Violin Concerto"
+      ],
       "performers": [],
       "conductor": null,
-      "price": "Kostenlose Eintrittskarten",
-      "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/spielzeitpraesentation-153000/1232/",
+      "price": "ab €71,50",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/joana-mallwitzkonzerthausorchester-berlin-154813/2711/",
       "venue": "Philharmonie Essen",
       "city": "Essen"
     },
     {
-      "date": "2026-06-10",
+      "date": "2026-05-27",
       "time": "19:00",
-      "title": "Happy Hour - Romantische Sinfonie",
+      "title": "Gautier Capuçon \u0005 Sächsische Staatskapelle Dresden",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
-        "Mendelssohn Bartholdy: Ouvertüre zu \"Ruy Blas\", op. 95",
-        "Mendelssohn Bartholdy: Sinfonie Nr. 3 a-Moll, op. 56 \"Schottische\""
-      ],
-      "performers": [
-        "WDR Sinfonieorchester"
-      ],
-      "conductor": "Maxim Emelyanychev",
-      "price": "19,00 €",
-      "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/happy-hour-romantische-sinfonie-149216/3267/",
-      "venue": "Philharmonie Essen",
-      "city": "Essen",
-      "duration_min": 60
-    },
-    {
-      "date": "2026-06-11",
-      "time": "20:00",
-      "title": "Igor Levit",
-      "venue_hall": "Alfried Krupp Saal",
-      "program": [
-        "Dmitri Schostakowitsch: Title",
-        "Felix Mendelssohn Bartholdy: Title",
-        "Franz Liszt: Title",
-        "Maurice Ravel: Title"
+        "Camille Saint-Saëns: Cello Concerto No. 1",
+        "Claude Debussy: La Mer",
+        "Richard Wagner: Siegfried Idyll"
       ],
       "performers": [],
       "conductor": null,
-      "price": "-85,00--  €",
-      "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/igor-levit-158010/3650/",
+      "price": "ab €45,00",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/gautier-capuconsaechsische-staatskapelle-dresden-149566/3226/",
       "venue": "Philharmonie Essen",
       "city": "Essen"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 24,
-  "total_events_discovered": 3
+  "total_events_visible": 12,
+  "total_events_discovered": 4
 }

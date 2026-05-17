@@ -3,10 +3,51 @@
   "city": "München",
   "slug": "isarphilharmonie_muenchen",
   "source_url": "https://www.mphil.de/kalender",
-  "scraped_at": "2026-05-17T09:25:39.554825Z",
+  "scraped_at": "2026-05-17T13:02:26.308762Z",
   "engine": "firecrawl",
-  "events": [],
-  "total_events": 0,
-  "total_events_visible": 6,
-  "total_events_discovered": 6
+  "events": [
+    {
+      "date": "2026-05-29",
+      "time": "19:30",
+      "title": "Mussorgsky      Chatschaturjan      Bizet",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Modest Mussorgsky: Vorspiel zu »Chowanschtschina«",
+        "Aram Chatschaturjan: Klavierkonzert",
+        "Georges Bizet: »L’Arlésienne«-Suiten Nr. 1 & 2"
+      ],
+      "performers": [
+        "Alain Altinoglu",
+        "Giorgi Gigashvili"
+      ],
+      "conductor": "Alain Altinoglu",
+      "price": "Derzeit ausverkauft",
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/chatschaturjan-mussorgsky-bizet-2026-05-29-19-3",
+      "venue": "Isarphilharmonie München",
+      "city": "München"
+    },
+    {
+      "date": "2026-05-30",
+      "time": "19:00",
+      "title": "Mussorgsky      Chatschaturjan      Bizet",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Modest Mussorgsky: Vorspiel zu »Chowanschtschina«",
+        "Aram Chatschaturjan: Klavierkonzert",
+        "Georges Bizet: »L’Arlésienne«-Suiten Nr. 1 & 2"
+      ],
+      "performers": [
+        "Alain Altinoglu",
+        "Giorgi Gigashvili"
+      ],
+      "conductor": "Alain Altinoglu",
+      "price": "Karten",
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/chatschaturjan-mussorgsky-bizet-2026-05-30-19",
+      "venue": "Isarphilharmonie München",
+      "city": "München"
+    }
+  ],
+  "total_events": 2,
+  "total_events_visible": 36,
+  "total_events_discovered": 36
 }

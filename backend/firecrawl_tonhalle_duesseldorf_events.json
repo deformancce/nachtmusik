@@ -2,17 +2,17 @@
   "venue": "Tonhalle Düsseldorf",
   "city": "Düsseldorf",
   "slug": "tonhalle_duesseldorf",
-  "source_url": "https://www.tonhalle.de/veranstaltungen/kalender?from=1778934644",
-  "scraped_at": "2026-05-17T09:19:04.085544Z",
+  "source_url": "https://www.tonhalle.de/veranstaltungen/kalender",
+  "scraped_at": "2026-05-17T12:55:09.967743Z",
   "engine": "firecrawl",
   "events": [
     {
       "date": "2026-05-17",
       "time": "15:00",
-      "title": "Frau Luna",
+      "title": "Café-KonzertFrau Luna",
       "venue_hall": "Rotunde/Foyer",
       "program": [
-        "Wiener Kaffeehausmusik: Various Pieces"
+        "Wiener Kaffeehausmusik"
       ],
       "performers": [
         "Tea Time Ensemble"
@@ -24,30 +24,9 @@
       "city": "Düsseldorf"
     },
     {
-      "date": "2026-05-18",
-      "time": "20:00",
-      "title": "Pretty Yende",
-      "venue_hall": "Tonhalle Düsseldorf",
-      "program": [
-        "Verdi: Various Arias",
-        "Bellini: Various Arias",
-        "Offenbach: Various Arias",
-        "Strauss: Various Arias"
-      ],
-      "performers": [
-        "Pretty Yende",
-        "Philharmonie Baden-Baden"
-      ],
-      "conductor": "Pablo Mielgo",
-      "price": null,
-      "detail_url": "https://www.tonhalle.de/veranstaltung/19079-abgesagt-pretty-yende",
-      "venue": "Tonhalle Düsseldorf",
-      "city": "Düsseldorf"
-    },
-    {
       "date": "2026-05-22",
       "time": "20:00",
-      "title": "Mendelssohn",
+      "title": "Vision String & Danish String QuartetMendelssohn",
       "venue_hall": "Mendelssohn-Saal",
       "program": [
         "Mendelssohn Bartholdy: Oktett für Streicher Es-Dur op. 20",
@@ -81,10 +60,10 @@
     {
       "date": "2026-05-30",
       "time": "20:00",
-      "title": "Melodic Lifetime",
+      "title": "feat. Markus StockhausenMelodic Lifetime",
       "venue_hall": "Trautvetter-Brückner-Saal",
       "program": [
-        "Stockhausen: Melodic Lifetime"
+        "Supernova – Neue und neueste Musik"
       ],
       "performers": [
         "Markus Stockhausen",
@@ -97,9 +76,32 @@
       "detail_url": "https://www.tonhalle.de/veranstaltung/supernova/17642-melodic-lifetime",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf"
+    },
+    {
+      "date": "2026-05-31",
+      "time": "16:30",
+      "title": "Schroeder geht ins Konzert",
+      "venue_hall": "Mendelssohn-Saal",
+      "program": [
+        "Dvořák: Slawischer Tanz C-Dur op. 46/1",
+        "Dvořák: Slawischer Tanz c-Moll op. 46/7",
+        "Spohr: Quartettkonzert op. 131 für zwei Violinen, Viola, Violoncello und Orchester (1. Satz)",
+        "Eichberg: Endorphin für Streichquartett und Streichorchester",
+        "Dvořák: Slawischer Tanz c-Moll op. 72/2",
+        "Dvořák: Slawischer Tanz C-Dur op. 72/7"
+      ],
+      "performers": [
+        "Düsseldorfer Symphoniker",
+        "vision string quartet"
+      ],
+      "conductor": "Alena Hron",
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/comedy-geht-ins-konzert/17327-schroeder-geht-ins-konzert",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 45,
+  "total_events_visible": 66,
   "total_events_discovered": 1
 }

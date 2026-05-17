@@ -2,37 +2,69 @@
   "venue": "Elbphilharmonie Hamburg",
   "city": "Hamburg",
   "slug": "elbphilharmonie_hamburg",
-  "source_url": "https://www.elbphilharmonie.de/de/programm/LHHH/TICKETS/",
-  "scraped_at": "2026-05-17T09:22:22.253489Z",
+  "source_url": "https://www.elbphilharmonie.de/de/programm/",
+  "scraped_at": "2026-05-17T12:58:23.907543Z",
   "engine": "firecrawl",
   "events": [
     {
       "date": "2026-05-17",
-      "time": "20:00",
-      "title": "Die Unmöglichen",
+      "time": "11:00",
+      "title": "Ensemble arabesques Hamburg / Niklas Liepe",
       "venue_hall": "Großer Saal",
       "program": [
-        "Plamper/Kamphausen: Die Unmöglichen"
+        "Beethoven: Violinkonzert",
+        "Mussorgsky: Bilder einer Ausstellung"
       ],
       "performers": [
-        "Devid Striesow",
-        "Meret Becker",
-        "Claudia Michelsen",
-        "Matthias Koeberlin",
-        "Ronald Zehrfeld",
-        "Thomas Loibl"
+        "Ensemble arabesques Hamburg",
+        "Niklas Liepe"
       ],
       "conductor": null,
-      "price": "ab € 57,35",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/die-unmoglichen/24391",
+      "price": "ab € 24",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/ensemble-arabesques-hamburg-niklas-liepe/27584",
       "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "duration_min": 85
+      "city": "Hamburg"
+    },
+    {
+      "date": "2026-05-17",
+      "time": "16:00",
+      "title": "NDR Elbphilharmonie Orchester / Pierre Bleuse",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Ives: Central Park in the Dark",
+        "Debussy: Images für Orchester – Internationales Musikfest Hamburg"
+      ],
+      "performers": [
+        "NDR Elbphilharmonie Orchester",
+        "Pierre Bleuse"
+      ],
+      "conductor": null,
+      "price": "ab € 32",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-pierre-bleuse/23385",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg"
+    },
+    {
+      "date": "2026-05-17",
+      "time": "19:30",
+      "title": "Lyric Suite for Sextet – Hommage á Chick Corea",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Corea",
+        "Riggi",
+        "König"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": "ab € 19",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/lyric-suite-for-sextet-hommage-a-chick-corea/27718",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg"
     },
     {
       "date": "2026-05-18",
       "time": "20:00",
-      "title": "Hochschule für Musik und Theater Hamburg",
+      "title": "Frühjahrskonzert",
       "venue_hall": "Kleiner Saal",
       "program": [],
       "performers": [
@@ -46,63 +78,25 @@
     },
     {
       "date": "2026-05-19",
-      "time": "20:00",
-      "title": "Hochschule für Musik und Theater Hamburg",
+      "time": "19:30",
+      "title": "Schumann Quartett",
       "venue_hall": "Kleiner Saal",
       "program": [
-        "Komponist: Werk mit Opus"
+        "Haydn: Streichquartett D-Dur",
+        "Henze: Streichquartett Nr. 5",
+        "Beethoven: Streichquartett F-Dur – Internationales Musikfest Hamburg"
       ],
       "performers": [
-        "Wen-Ting Ho: Oboe"
+        "Schumann Quartett"
       ],
       "conductor": null,
-      "price": "Eintritt frei",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/hochschule-fur-musik-und-theater-hamburg/28286",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg"
-    },
-    {
-      "date": "2026-05-20",
-      "time": "19:30",
-      "title": "Frühjahrskonzert",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Richard Strauss: Zueignung op. 10/1",
-        "Richard Strauss: Wiegenlied op. 41/1",
-        "Richard Strauss: Meinem Kinde op. 37/3",
-        "Richard Strauss: Morgen! op. 27/4",
-        "Gustav Mahler: Sinfonie Nr. 1 D-Dur"
-      ],
-      "performers": [
-        "Landesjugendorchester Hamburg",
-        "Ann-Beth Solvang"
-      ],
-      "conductor": "Johannes Witt",
-      "price": "ab € 20",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/landesjugendorchester-hamburg-ann-beth-solvang-johannes-witt/27407",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg"
-    },
-    {
-      "date": "2026-05-21",
-      "time": "20:00",
-      "title": "Steve Hackett",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Genesis: Nursery Cryme",
-        "Genesis: Wind And Wuthering"
-      ],
-      "performers": [
-        "Steve Hackett"
-      ],
-      "conductor": null,
-      "price": "ab € 26,60",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/steve-hackett/27438",
+      "price": "Ausverkauft",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/schumann-quartett/23440",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 12,
-  "total_events_discovered": 36
+  "total_events_visible": 8,
+  "total_events_discovered": 106
 }

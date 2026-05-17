@@ -3,7 +3,7 @@
   "city": "Bremen",
   "slug": "glocke_bremen",
   "source_url": "https://www.glocke.de/tickets-programm/",
-  "scraped_at": "2026-05-17T09:16:45.469135Z",
+  "scraped_at": "2026-05-17T12:53:28.966055Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -15,13 +15,13 @@
         "Händel: Feuerwerksmusik D-Dur HWV 351: 1. Ouvertüre",
         "Mendelssohn Bartholdy: Sinfonie Nr. 5 d-Moll op. 107 »Reformationssinfonie«: 2. Allegro Vivace",
         "Rachmaninow: Sinfonie Nr. 2 e-Moll op. 27: 3. Adagio",
-        "Dvořak: Sinfonie Nr. 8 G-Dur op. 88: 4. Allegro ma non troppo"
+        "Dvořák: Sinfonie Nr. 8 G-Dur op. 88: 4. Allegro ma non troppo"
       ],
       "performers": [
         "Ehemalige des Jugendsinfonieorchesters Bremen der Musikschule Bremen"
       ],
       "conductor": "Heiner Buhlmann",
-      "price": "15,00 €",
+      "price": "15,00 € Normal",
       "detail_url": "https://www.glocke.de/event/ehemalige-des-jugendsinfonieorchesters-bremen-der-musikschule-bremen/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen"
@@ -32,7 +32,9 @@
       "title": "Reiner Calmund »Ein runder Abend – mit Fußball & Freunden«",
       "venue_hall": "Kleiner Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Reiner Calmund"
+      ],
       "conductor": null,
       "price": "38,60 € Normal",
       "detail_url": "https://www.glocke.de/event/reiner-calmund-ein-runder-abend-mit-fussball-freunden/?back_btn=1",
@@ -71,10 +73,10 @@
       ],
       "performers": [
         "Liza Ferschtman",
+        "Benjamin Hochman",
         "Leah Amory",
         "Davin Mar",
-        "Carson Ling-Efird",
-        "Benjamin Hochman"
+        "Carson Ling-Efird"
       ],
       "conductor": "Liza Ferschtman",
       "price": "ab €31",
@@ -85,18 +87,18 @@
     {
       "date": "2026-05-20",
       "time": "20:00",
-      "title": "Marc-Uwe Kling: »Neues vom Känguru«",
+      "title": "Marc-Uwe Kling:\n»Neues vom Känguru«",
       "venue_hall": "Großer Saal",
       "program": [],
       "performers": [],
       "conductor": null,
-      "price": "39,75 € Normal - Nur noch Einzelplätze. / 32,05 € Ermäßigt - Nur noch Einzelplätze.",
+      "price": "39,75 € Normal - Nur noch Einzelplätze.\n32,05 € Ermäßigt - Nur noch Einzelplätze.",
       "detail_url": "https://www.glocke.de/event/marc-uwe-kling-neues-vom-kaenguru/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 16,
-  "total_events_discovered": 16
+  "total_events_visible": 14,
+  "total_events_discovered": 14
 }

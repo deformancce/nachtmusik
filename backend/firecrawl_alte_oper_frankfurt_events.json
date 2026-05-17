@@ -3,7 +3,7 @@
   "city": "Frankfurt",
   "slug": "alte_oper_frankfurt",
   "source_url": "https://www.alteoper.de/de/programm",
-  "scraped_at": "2026-05-17T09:21:18.403581Z",
+  "scraped_at": "2026-05-17T12:57:16.354755Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -28,38 +28,6 @@
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "duration_min": 75
-    },
-    {
-      "date": "2026-05-17",
-      "time": "16:00",
-      "title": "Musik Plus",
-      "venue_hall": "PRIF – Leibniz-Institut für Friedens- und Konfliktforschung",
-      "program": [
-        "Schostakowitsch: Streichquartett Nr. 7"
-      ],
-      "performers": [
-        "Kalliope Quartett"
-      ],
-      "conductor": null,
-      "price": "€10",
-      "detail_url": "https://www.alteoper.de/de/programm/musik-und-friedensforschung/18493",
-      "venue": "Alte Oper Frankfurt",
-      "city": "Frankfurt"
-    },
-    {
-      "date": "2026-05-17",
-      "time": "18:00",
-      "title": "Hereinspaziert",
-      "venue_hall": "Albert Mangelsdorff Foyer",
-      "program": [],
-      "performers": [
-        "Yulianna Avdeeva"
-      ],
-      "conductor": null,
-      "price": "EURO 39,- (Endpreis) (Konzerteinführung + Konzert)",
-      "detail_url": "https://www.alteoper.de/de/programm/hereinspaziert-gewandhausorchester/18421",
-      "venue": "Alte Oper Frankfurt",
-      "city": "Frankfurt"
     },
     {
       "date": "2026-05-17",
@@ -105,9 +73,50 @@
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "duration_min": 165
+    },
+    {
+      "date": "2026-05-23",
+      "time": "20:00",
+      "title": "Europas größte Bee Gees Tribute Show",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Bee Gees: Greatest Hits Tribute"
+      ],
+      "performers": [
+        "MainCourse"
+      ],
+      "conductor": null,
+      "price": "Ab 84,50 €",
+      "detail_url": "https://www.alteoper.de/de/programm/bee-gees-by-maincourse/18750",
+      "venue": "Alte Oper Frankfurt",
+      "city": "Frankfurt",
+      "duration_min": 140
+    },
+    {
+      "date": "2026-05-26",
+      "time": "19:00",
+      "title": "Miles Davis 100",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Miles Ahead",
+        "Porgy and Bess",
+        "Sketches of Spain"
+      ],
+      "performers": [
+        "hr-Bigband",
+        "Miho Hazama",
+        "Arve Henriksen",
+        "Paolo Fresu",
+        "Axel Schlosser"
+      ],
+      "conductor": "Miho Hazama",
+      "price": "Ab 50,00 €",
+      "detail_url": "https://www.alteoper.de/de/programm/miles-davis-100/18438",
+      "venue": "Alte Oper Frankfurt",
+      "city": "Frankfurt"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 19,
+  "total_events_visible": 10,
   "total_events_discovered": 97
 }
