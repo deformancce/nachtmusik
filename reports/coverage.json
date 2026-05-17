@@ -1,225 +1,221 @@
 {
-  "generated_at": "2026-05-17 13:13 UTC",
+  "generated_at": "2026-05-17 13:38 UTC",
   "venues": [
     {
       "slug": "alte_oper_frankfurt",
       "venue": "Alte Oper Frankfurt",
       "extracted": 5,
-      "visible": 10,
-      "discovered_loose": 97,
-      "discovered_strict": null,
+      "visible": 20,
+      "discovered_loose": 20,
+      "discovered_strict": 20,
       "reference_total": null,
-      "program_rate": 1.0,
-      "noise_ratio_loose": 9.7,
-      "noise_ratio_strict": null,
+      "program_rate": 0.6,
+      "noise_ratio_loose": 1.0,
+      "noise_ratio_strict": 1.0,
       "flags": [
-        "HIGH_MAP_NOISE×10"
+        "MISSING_PROGRAM"
       ],
       "error": null,
-      "scraped_at": "2026-05-17T12:57:16.354755Z"
+      "scraped_at": "2026-05-17T13:28:40.155902Z"
     },
     {
       "slug": "berliner_philharmonie",
       "venue": "Berliner Philharmonie",
       "extracted": 5,
       "visible": 5,
-      "discovered_loose": 1588,
-      "discovered_strict": null,
+      "discovered_loose": 5,
+      "discovered_strict": 5,
       "reference_total": 329,
-      "program_rate": 0.6,
-      "noise_ratio_loose": 317.6,
-      "noise_ratio_strict": null,
+      "program_rate": 1.0,
+      "noise_ratio_loose": 1.0,
+      "noise_ratio_strict": 0.015197568389057751,
       "flags": [
-        "MISSING_PROGRAM",
-        "MAP_OVERCOUNT(1588)"
+        "STRICT_vs_LEGACY±98%"
       ],
       "error": null,
-      "scraped_at": "2026-05-17T12:52:50.688284Z"
+      "scraped_at": "2026-05-17T13:23:13.980413Z"
     },
     {
       "slug": "elbphilharmonie_hamburg",
       "venue": "Elbphilharmonie Hamburg",
       "extracted": 5,
-      "visible": 8,
-      "discovered_loose": 106,
-      "discovered_strict": null,
+      "visible": 10,
+      "discovered_loose": 10,
+      "discovered_strict": 10,
       "reference_total": null,
       "program_rate": 0.8,
-      "noise_ratio_loose": 13.25,
-      "noise_ratio_strict": null,
+      "noise_ratio_loose": 1.0,
+      "noise_ratio_strict": 1.0,
       "flags": [
-        "MISSING_PROGRAM",
-        "HIGH_MAP_NOISE×13"
+        "MISSING_PROGRAM"
       ],
       "error": null,
-      "scraped_at": "2026-05-17T12:58:23.907543Z"
+      "scraped_at": "2026-05-17T13:29:37.080955Z"
     },
     {
       "slug": "festspielhaus_baden_baden",
       "venue": "Festspielhaus Baden-Baden",
       "extracted": 5,
-      "visible": 23,
-      "discovered_loose": 23,
-      "discovered_strict": null,
+      "visible": 39,
+      "discovered_loose": 39,
+      "discovered_strict": 39,
       "reference_total": null,
-      "program_rate": 0.4,
+      "program_rate": 0.6,
       "noise_ratio_loose": 1.0,
-      "noise_ratio_strict": null,
+      "noise_ratio_strict": 1.0,
       "flags": [
         "MISSING_PROGRAM"
       ],
       "error": null,
-      "scraped_at": "2026-05-17T12:51:00.702834Z"
+      "scraped_at": "2026-05-17T13:21:45.351472Z"
     },
     {
       "slug": "gewandhaus_leipzig",
       "venue": "Gewandhaus Leipzig",
       "extracted": 5,
       "visible": 5,
-      "discovered_loose": 710,
-      "discovered_strict": null,
+      "discovered_loose": 5,
+      "discovered_strict": 5,
       "reference_total": 366,
       "program_rate": 0.6,
-      "noise_ratio_loose": 142.0,
-      "noise_ratio_strict": null,
+      "noise_ratio_loose": 1.0,
+      "noise_ratio_strict": 0.01366120218579235,
       "flags": [
         "MISSING_PROGRAM",
-        "MAP_OVERCOUNT(710)"
+        "STRICT_vs_LEGACY±98%"
       ],
       "error": null,
-      "scraped_at": "2026-05-17T13:01:14.622011Z"
+      "scraped_at": "2026-05-17T13:32:10.604918Z"
     },
     {
       "slug": "glocke_bremen",
       "venue": "Glocke Bremen",
       "extracted": 5,
-      "visible": 14,
-      "discovered_loose": 14,
-      "discovered_strict": null,
+      "visible": 12,
+      "discovered_loose": 12,
+      "discovered_strict": 12,
       "reference_total": null,
-      "program_rate": 0.6,
+      "program_rate": 0.8,
       "noise_ratio_loose": 1.0,
-      "noise_ratio_strict": null,
+      "noise_ratio_strict": 1.0,
       "flags": [
         "MISSING_PROGRAM"
       ],
       "error": null,
-      "scraped_at": "2026-05-17T12:53:28.966055Z"
+      "scraped_at": "2026-05-17T13:23:51.977883Z"
     },
     {
       "slug": "isarphilharmonie_muenchen",
       "venue": "Isarphilharmonie München",
-      "extracted": 2,
-      "visible": 36,
-      "discovered_loose": 36,
-      "discovered_strict": null,
+      "extracted": 5,
+      "visible": 30,
+      "discovered_loose": 30,
+      "discovered_strict": 30,
       "reference_total": null,
       "program_rate": 1.0,
       "noise_ratio_loose": 1.0,
-      "noise_ratio_strict": null,
+      "noise_ratio_strict": 1.0,
       "flags": [],
       "error": null,
-      "scraped_at": "2026-05-17T13:02:26.308762Z"
+      "scraped_at": "2026-05-17T13:33:34.233505Z"
     },
     {
       "slug": "koelner_philharmonie",
       "venue": "Kölner Philharmonie",
       "extracted": 5,
-      "visible": 479,
-      "discovered_loose": 4056,
-      "discovered_strict": null,
+      "visible": 50,
+      "discovered_loose": 50,
+      "discovered_strict": 50,
       "reference_total": null,
       "program_rate": 1.0,
-      "noise_ratio_loose": 8.467640918580376,
-      "noise_ratio_strict": null,
-      "flags": [
-        "MAP_OVERCOUNT(4056)"
-      ],
+      "noise_ratio_loose": 1.0,
+      "noise_ratio_strict": 1.0,
+      "flags": [],
       "error": null,
-      "scraped_at": "2026-05-17T12:59:09.552790Z"
+      "scraped_at": "2026-05-17T13:30:17.449715Z"
     },
     {
       "slug": "konzerthaus_berlin",
       "venue": "Konzerthaus Berlin",
       "extracted": 5,
-      "visible": 30,
-      "discovered_loose": 750,
-      "discovered_strict": null,
+      "visible": 49,
+      "discovered_loose": 49,
+      "discovered_strict": 49,
       "reference_total": null,
       "program_rate": 1.0,
-      "noise_ratio_loose": 25.0,
-      "noise_ratio_strict": null,
-      "flags": [
-        "MAP_OVERCOUNT(750)"
-      ],
+      "noise_ratio_loose": 1.0,
+      "noise_ratio_strict": 1.0,
+      "flags": [],
       "error": null,
-      "scraped_at": "2026-05-17T12:51:48.065063Z"
+      "scraped_at": "2026-05-17T13:22:26.938055Z"
     },
     {
       "slug": "konzerthaus_dortmund",
       "venue": "Konzerthaus Dortmund",
-      "extracted": 1,
-      "visible": 40,
-      "discovered_loose": 95,
-      "discovered_strict": null,
+      "extracted": 5,
+      "visible": 17,
+      "discovered_loose": 17,
+      "discovered_strict": 17,
       "reference_total": null,
-      "program_rate": 1.0,
-      "noise_ratio_loose": 2.375,
-      "noise_ratio_strict": null,
-      "flags": [],
+      "program_rate": 0.6,
+      "noise_ratio_loose": 1.0,
+      "noise_ratio_strict": 1.0,
+      "flags": [
+        "MISSING_PROGRAM"
+      ],
       "error": null,
-      "scraped_at": "2026-05-17T12:54:29.939815Z"
+      "scraped_at": "2026-05-17T13:24:57.269242Z"
     },
     {
       "slug": "liederhalle_stuttgart",
       "venue": "Liederhalle Stuttgart",
       "extracted": 5,
-      "visible": 15,
-      "discovered_loose": 15,
-      "discovered_strict": null,
+      "visible": 17,
+      "discovered_loose": 17,
+      "discovered_strict": 17,
       "reference_total": null,
       "program_rate": 0.4,
       "noise_ratio_loose": 1.0,
-      "noise_ratio_strict": null,
+      "noise_ratio_strict": 1.0,
       "flags": [
         "MISSING_PROGRAM"
       ],
       "error": null,
-      "scraped_at": "2026-05-17T13:03:38.032708Z"
+      "scraped_at": "2026-05-17T13:34:58.407866Z"
     },
     {
       "slug": "philharmonie_essen",
       "venue": "Philharmonie Essen",
       "extracted": 5,
-      "visible": 12,
-      "discovered_loose": 4,
-      "discovered_strict": null,
+      "visible": 18,
+      "discovered_loose": 18,
+      "discovered_strict": 18,
       "reference_total": null,
-      "program_rate": 0.4,
-      "noise_ratio_loose": 0.3333333333333333,
-      "noise_ratio_strict": null,
+      "program_rate": 0.6,
+      "noise_ratio_loose": 1.0,
+      "noise_ratio_strict": 1.0,
       "flags": [
         "MISSING_PROGRAM"
       ],
       "error": null,
-      "scraped_at": "2026-05-17T12:56:24.319472Z"
+      "scraped_at": "2026-05-17T13:27:34.246944Z"
     },
     {
       "slug": "tonhalle_duesseldorf",
       "venue": "Tonhalle Düsseldorf",
       "extracted": 5,
-      "visible": 66,
-      "discovered_loose": 1,
-      "discovered_strict": null,
+      "visible": 21,
+      "discovered_loose": 21,
+      "discovered_strict": 21,
       "reference_total": null,
       "program_rate": 0.8,
-      "noise_ratio_loose": 0.015151515151515152,
-      "noise_ratio_strict": null,
+      "noise_ratio_loose": 1.0,
+      "noise_ratio_strict": 1.0,
       "flags": [
         "MISSING_PROGRAM"
       ],
       "error": null,
-      "scraped_at": "2026-05-17T12:55:09.967743Z"
+      "scraped_at": "2026-05-17T13:26:21.596627Z"
     }
   ]
 }

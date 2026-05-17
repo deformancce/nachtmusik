@@ -1,6 +1,6 @@
 # Concert scrape coverage report
 
-Generated: 2026-05-17 13:13 UTC
+Generated: 2026-05-17 13:38 UTC
 
 Columns:
 - **ext**: events in JSON (smoke limit usually 5)
@@ -12,19 +12,19 @@ Columns:
 
 | Venue | ext | vis | map↓ | map✓ | ref | prog | flags |
 |-------|-----|-----|------|------|-----|------|-------|
-| Alte Oper Frankfurt | 5 | 10 | 97 | — | — | 100% | HIGH_MAP_NOISE×10 |
-| Berliner Philharmonie | 5 | 5 | 1588 | — | 329 | 60% | MISSING_PROGRAM, MAP_OVERCOUNT(1588) |
-| Elbphilharmonie Hamburg | 5 | 8 | 106 | — | — | 80% | MISSING_PROGRAM, HIGH_MAP_NOISE×13 |
-| Festspielhaus Baden-Baden | 5 | 23 | 23 | — | — | 40% | MISSING_PROGRAM |
-| Gewandhaus Leipzig | 5 | 5 | 710 | — | 366 | 60% | MISSING_PROGRAM, MAP_OVERCOUNT(710) |
-| Glocke Bremen | 5 | 14 | 14 | — | — | 60% | MISSING_PROGRAM |
-| Isarphilharmonie München | 2 | 36 | 36 | — | — | 100% | — |
-| Konzerthaus Berlin | 5 | 30 | 750 | — | — | 100% | MAP_OVERCOUNT(750) |
-| Konzerthaus Dortmund | 1 | 40 | 95 | — | — | 100% | — |
-| Kölner Philharmonie | 5 | 479 | 4056 | — | — | 100% | MAP_OVERCOUNT(4056) |
-| Liederhalle Stuttgart | 5 | 15 | 15 | — | — | 40% | MISSING_PROGRAM |
-| Philharmonie Essen | 5 | 12 | 4 | — | — | 40% | MISSING_PROGRAM |
-| Tonhalle Düsseldorf | 5 | 66 | 1 | — | — | 80% | MISSING_PROGRAM |
+| Alte Oper Frankfurt | 5 | 20 | 20 | 20 | — | 60% | MISSING_PROGRAM |
+| Berliner Philharmonie | 5 | 5 | 5 | 5 | 329 | 100% | STRICT_vs_LEGACY±98% |
+| Elbphilharmonie Hamburg | 5 | 10 | 10 | 10 | — | 80% | MISSING_PROGRAM |
+| Festspielhaus Baden-Baden | 5 | 39 | 39 | 39 | — | 60% | MISSING_PROGRAM |
+| Gewandhaus Leipzig | 5 | 5 | 5 | 5 | 366 | 60% | MISSING_PROGRAM, STRICT_vs_LEGACY±98% |
+| Glocke Bremen | 5 | 12 | 12 | 12 | — | 80% | MISSING_PROGRAM |
+| Isarphilharmonie München | 5 | 30 | 30 | 30 | — | 100% | — |
+| Konzerthaus Berlin | 5 | 49 | 49 | 49 | — | 100% | — |
+| Konzerthaus Dortmund | 5 | 17 | 17 | 17 | — | 60% | MISSING_PROGRAM |
+| Kölner Philharmonie | 5 | 50 | 50 | 50 | — | 100% | — |
+| Liederhalle Stuttgart | 5 | 17 | 17 | 17 | — | 40% | MISSING_PROGRAM |
+| Philharmonie Essen | 5 | 18 | 18 | 18 | — | 60% | MISSING_PROGRAM |
+| Tonhalle Düsseldorf | 5 | 21 | 21 | 21 | — | 80% | MISSING_PROGRAM |
 
 ## Notes
 
