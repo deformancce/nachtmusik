@@ -3,7 +3,7 @@
   "city": "Hamburg",
   "slug": "elbphilharmonie_hamburg",
   "source_url": "https://www.elbphilharmonie.de/de/programm/",
-  "scraped_at": "2026-05-17T17:52:21.724851Z",
+  "scraped_at": "2026-05-17T18:59:56.822613Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -62,27 +62,43 @@
       "city": "Hamburg"
     },
     {
-      "date": "2026-05-20",
+      "date": "2026-05-18",
       "time": "20:00",
-      "title": "Huelgas Ensemble / Paul Van Nevel",
-      "venue_hall": "Großer Saal",
+      "title": "Hochschule für Musik und Theater Hamburg",
+      "venue_hall": "Kleiner Saal",
       "program": [
-        "Memento mori – Werke von Orlando di Lasso, Guillaume Dufay, Giovanni Gabrieli u.a. / Internationales Musikfest Hamburg"
+        "Prüfungskonzert"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": "Eintritt frei",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/hochschule-fur-musik-und-theater-hamburg/28283",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg"
+    },
+    {
+      "date": "2026-05-19",
+      "time": "19:30",
+      "title": "Schumann Quartett",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Haydn: Streichquartett D-Dur",
+        "Henze: Streichquartett Nr. 5",
+        "Beethoven: Streichquartett F-Dur – Internationales Musikfest Hamburg"
       ],
       "performers": [
-        "Huelgas Ensemble",
-        "Paul Van Nevel"
+        "Schumann Quartett"
       ],
       "conductor": null,
-      "price": "ab € 13",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/huelgas-ensemble-paul-van-nevel/27532",
+      "price": "Ausverkauft",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/schumann-quartett/23440",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg"
     }
   ],
-  "total_events": 4,
-  "total_events_visible": 8,
-  "total_events_discovered": 8,
-  "total_events_discovered_strict": 8,
+  "total_events": 5,
+  "total_events_visible": 11,
+  "total_events_discovered": 11,
+  "total_events_discovered_strict": 11,
   "source": "firecrawl_listing"
 }

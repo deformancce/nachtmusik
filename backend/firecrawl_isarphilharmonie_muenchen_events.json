@@ -3,78 +3,33 @@
   "city": "München",
   "slug": "isarphilharmonie_muenchen",
   "source_url": "https://www.mphil.de/kalender",
-  "scraped_at": "2026-05-17T17:56:33.785669Z",
+  "scraped_at": "2026-05-17T19:00:28.036132Z",
   "engine": "firecrawl",
   "events": [
     {
-      "date": "2026-05-19",
-      "time": "19:30",
-      "title": "Holzbläserklang mit „Stich“, Filmmusik von Howard Shore und Howard Hanson",
-      "venue_hall": "Isarphilharmonie",
-      "program": [],
-      "performers": [],
-      "conductor": "Lahav Shani",
-      "price": null,
-      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/musikbearbeitungen-2026-05-19-19-30-00",
-      "venue": "Isarphilharmonie München",
-      "city": "München"
-    },
-    {
-      "date": "2026-05-20",
-      "time": "19:30",
-      "title": "Adams, Schumann, Tschaikowsky",
-      "venue_hall": "Isarphilharmonie",
-      "program": [],
-      "performers": [],
-      "conductor": "Lahav Shani",
-      "price": null,
-      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/schumann-adams-tschaikowsky-2026-05-20-19-30-00",
-      "venue": "Isarphilharmonie München",
-      "city": "München"
-    },
-    {
-      "date": "2026-05-21",
-      "time": "19:30",
-      "title": "Beethoven, Prokofjew, Brahms",
-      "venue_hall": "Isarphilharmonie",
-      "program": [],
-      "performers": [],
-      "conductor": "Lahav Shani",
-      "price": null,
-      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/brahms-beethoven-prokofjew-2026-05-21-19-30-00",
-      "venue": "Isarphilharmonie München",
-      "city": "München"
-    },
-    {
-      "date": "2026-05-22",
-      "time": "19:30",
-      "title": "Debussy, Beethoven, Bartók",
-      "venue_hall": "Isarphilharmonie",
-      "program": [],
-      "performers": [],
-      "conductor": "Lahav Shani",
-      "price": null,
-      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/debussy-beethoven-bartok-2026-05-22-19-30-00",
-      "venue": "Isarphilharmonie München",
-      "city": "München"
-    },
-    {
       "date": "2026-05-23",
-      "time": "19:30",
-      "title": "Mozart, Tschaikowsky",
+      "time": "19:00",
+      "title": "Sibelius \u0014 Prokofjew \u0014 Vaughan Williams",
       "venue_hall": "Isarphilharmonie",
-      "program": [],
-      "performers": [],
-      "conductor": "Lahav Shani",
-      "price": null,
-      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/tschaikowsky-mozart-2026-05-23-19-30-00",
+      "program": [
+        "Jean Sibelius: \"Finlandia\"",
+        "Sergej Prokofjew: 3. Klavierkonzert",
+        "Ralph Vaughan Williams: 2. Symphonie \"A London Symphony\""
+      ],
+      "performers": [
+        "Tarmo Peltokoski",
+        "Behzod Abduraimov"
+      ],
+      "conductor": "Tarmo Peltokoski",
+      "price": "Derzeit ausverkauft",
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/sibelius-prokofjew-vaughan-williams-2026-05-23-19",
       "venue": "Isarphilharmonie München",
       "city": "München"
     }
   ],
-  "total_events": 5,
-  "total_events_visible": 26,
-  "total_events_discovered": 26,
-  "total_events_discovered_strict": 26,
+  "total_events": 1,
+  "total_events_visible": 3,
+  "total_events_discovered": 3,
+  "total_events_discovered_strict": 3,
   "source": "firecrawl_listing"
 }
