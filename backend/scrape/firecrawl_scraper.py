@@ -128,6 +128,24 @@ def _extract_markdown(result) -> str:
     return md or ""
 
 
+def _extract_html(result) -> str:
+    """Pull raw HTML out of a Firecrawl response (best effort).
+
+    Firecrawl renders the page via Playwright before returning, so this HTML
+    has the full post-JS DOM — JSON-LD blocks that the server injects on load
+    are visible here even when a direct requests.get() gets 403.
+    """
+    if hasattr(result, "model_dump"):
+        result = result.model_dump()
+    if not isinstance(result, dict):
+        return ""
+    html = (result.get("html")
+            or result.get("rawHtml")
+            or (result.get("data") or {}).get("html")
+            or (result.get("data") or {}).get("rawHtml"))
+    return html or ""
+
+
 # ── Scroll actions (for infinite-scroll / lazy-load listing pages) ────────────
 
 def _scroll_actions(n: int = 12, amount: int = 3000, wait_ms: int = 700) -> list[dict]:
@@ -319,14 +337,17 @@ def _check_hallucination(events: list[dict], venue: dict) -> str | None:
 def _scrape_listing(app, venue: dict, max_events: int) -> dict:
     """
     Scrape the listing page with scroll actions.
-    Returns the raw Firecrawl extraction dict or {}.
+    Returns the raw Firecrawl extraction dict, augmented with `_raw_html`
+    (string) — used downstream for the JSON-LD post-pass — or {}.
     Also persists the raw markdown to backend/raw/<slug>/ for reprocessing.
     """
     slug = _slug(venue["name"])
     prompt = _build_listing_prompt(venue, max_events)
     schema = EventList.model_json_schema()
     json_fmt = {"type": "json", "schema": schema, "prompt": prompt}
-    formats = [json_fmt, "markdown"]
+    # html is requested alongside json/markdown — Firecrawl charges by the
+    # most expensive format (json), so the extra html costs 0 credits.
+    formats = [json_fmt, "markdown", "html"]
     actions = _venue_actions(slug)
 
     last_err: Exception | None = None
@@ -339,7 +360,12 @@ def _scrape_listing(app, venue: dict, max_events: int) -> dict:
                 raw_store.save_markdown(slug, venue["url"], md)
             except Exception as exc:
                 print(f"    [warn] could not save raw markdown: {exc}", flush=True)
-        return _normalise(result)
+        extracted = _normalise(result) or {}
+        html = _extract_html(result)
+        if html:
+            extracted = dict(extracted)
+            extracted["_raw_html"] = html
+        return extracted
 
     # Try with scroll actions first, then without (some sites reject action requests)
     for with_actions in (True, False):
@@ -348,7 +374,7 @@ def _scrape_listing(app, venue: dict, max_events: int) -> dict:
             extra["actions"] = actions
         try:
             extracted = _attempt(extra)
-            if extracted.get("events"):
+            if extracted.get("events") or extracted.get("_raw_html"):
                 return extracted
         except TypeError as e:
             # unexpected kwarg (e.g. SDK doesn't accept headers) — retry without it
@@ -356,7 +382,7 @@ def _scrape_listing(app, venue: dict, max_events: int) -> dict:
                 extra.pop("headers", None)
                 try:
                     extracted = _attempt(extra)
-                    if extracted.get("events"):
+                    if extracted.get("events") or extracted.get("_raw_html"):
                         return extracted
                 except Exception as e2:
                     last_err = e2
@@ -517,12 +543,34 @@ def _scrape_one(
     # Ask for more than max_events so the post-filter for past events doesn't
     # leave us empty when the listing starts with an archive (e.g. Isarphilharmonie
     # lists from Sept 2025 chronologically — first 5 would all be past).
+    listing: dict = {}
     if events_raw is None:
         listing_target = max(max_events * 4, 20)
         print(f"    phase 1a: listing scrape (firecrawl, target={listing_target}) ...", flush=True)
-        listing = _scrape_listing(app, venue, listing_target)
+        listing = _scrape_listing(app, venue, listing_target) or {}
         events_raw = listing.get("events") if isinstance(listing, dict) else None
         total_visible = listing.get("total_events_visible") if isinstance(listing, dict) else None
+
+    # ── Phase 0b: JSON-LD from Firecrawl-rendered HTML ──
+    # Firecrawl bypasses the datacenter-IP block that Phase 0 (direct HTTP) hits.
+    # If the rendered HTML carries JSON-LD Event nodes, prefer those — they're
+    # deterministic, complete, and avoid LLM hallucination.
+    if source != "jsonld" and isinstance(listing, dict) and listing.get("_raw_html"):
+        ld_events = jsonld_scout.extract_from_html(
+            listing["_raw_html"], url, verbose=True, log_prefix="jsonld-fc"
+        )
+        if ld_events:
+            ld_future = [e for e in ld_events if _is_future(e.get("date"))]
+            print(
+                f"    JSON-LD (firecrawl-html): {len(ld_events)} events "
+                f"({len(ld_future)} upcoming)",
+                flush=True,
+            )
+            if ld_future:
+                ld_future.sort(key=lambda e: (e.get("date") or "9999"))
+                events_raw = ld_future
+                total_visible = len(ld_future)
+                source = "jsonld_firecrawl_html"
 
     if not events_raw:
         payload["error"] = "no events extracted from listing"

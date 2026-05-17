@@ -147,28 +147,25 @@ def _ld_to_event(ld: dict, base_url: str) -> Optional[dict]:
     }
 
 
-def scout(url: str, timeout: int = 10, verbose: bool = True) -> Optional[list[dict]]:
-    """Try to extract Event objects from a page's JSON-LD blocks.
+def extract_from_html(
+    html: str, base_url: str, verbose: bool = True, log_prefix: str = "jsonld"
+) -> Optional[list[dict]]:
+    """Parse Event objects out of any <script type='application/ld+json'> blocks
+    in the given HTML string.
 
     Returns:
-      - list of event dicts (possibly empty after dedup) if JSON-LD with
-        Event objects was found
-      - None if the page has no JSON-LD Events (caller falls back to Firecrawl)
+      - list of event dicts (after dedup) when JSON-LD Event nodes were found
+      - None when no usable Event objects exist (caller decides what to do)
     """
     def _log(msg: str) -> None:
         if verbose:
-            print(f"    [jsonld] {msg}", flush=True)
+            print(f"    [{log_prefix}] {msg}", flush=True)
 
-    try:
-        r = requests.get(url, headers=_HEADERS, timeout=timeout)
-    except Exception as exc:
-        _log(f"fetch error: {type(exc).__name__}: {exc}")
-        return None
-    if r.status_code != 200:
-        _log(f"HTTP {r.status_code} — skipping")
+    if not html:
+        _log("empty HTML — skipping")
         return None
 
-    soup = BeautifulSoup(r.text, "html.parser")
+    soup = BeautifulSoup(html, "html.parser")
     scripts = soup.find_all("script", type="application/ld+json")
     if not scripts:
         _log("no <script type='application/ld+json'> blocks")
@@ -193,7 +190,7 @@ def scout(url: str, timeout: int = 10, verbose: bool = True) -> Optional[list[di
     events: list[dict] = []
     seen: set[tuple] = set()
     for raw in raw_events:
-        ev = _ld_to_event(raw, url)
+        ev = _ld_to_event(raw, base_url)
         if not ev:
             continue
         key = (ev.get("detail_url"), ev.get("date"), ev.get("title"))
@@ -203,3 +200,28 @@ def scout(url: str, timeout: int = 10, verbose: bool = True) -> Optional[list[di
         events.append(ev)
     _log(f"parsed {len(events)} unique events from JSON-LD")
     return events
+
+
+def scout(url: str, timeout: int = 10, verbose: bool = True) -> Optional[list[dict]]:
+    """Try to extract Event objects via a direct HTTP request (free pre-pass).
+
+    Returns:
+      - list of event dicts (possibly empty after dedup) if JSON-LD with
+        Event objects was found
+      - None if the page can't be fetched or has no JSON-LD Events
+        (caller falls back to Firecrawl)
+    """
+    def _log(msg: str) -> None:
+        if verbose:
+            print(f"    [jsonld] {msg}", flush=True)
+
+    try:
+        r = requests.get(url, headers=_HEADERS, timeout=timeout)
+    except Exception as exc:
+        _log(f"fetch error: {type(exc).__name__}: {exc}")
+        return None
+    if r.status_code != 200:
+        _log(f"HTTP {r.status_code} — skipping")
+        return None
+
+    return extract_from_html(r.text, url, verbose=verbose)
