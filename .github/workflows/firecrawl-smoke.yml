@@ -45,7 +45,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install --quiet firecrawl-py pydantic
+        run: pip install --quiet firecrawl-py pydantic requests beautifulsoup4
 
       - name: Run Firecrawl scraper
         env:
@@ -73,6 +73,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add backend/firecrawl_*_events.json 2>/dev/null || true
+          git add backend/raw/ 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0

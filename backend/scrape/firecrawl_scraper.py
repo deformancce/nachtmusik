@@ -36,6 +36,7 @@ BASE = Path(__file__).parent.parent
 sys.path.insert(0, str(BASE.parent))
 from backend.venues_germany import get_venues_by_tier
 from backend.scrape.url_filters import filter_event_urls
+from backend.scrape import jsonld_scout, raw_store
 
 
 # ── Pydantic schemas ──────────────────────────────────────────────────────────
@@ -115,6 +116,16 @@ def _normalise(result) -> dict:
         or result.get("data")
         or {}
     )
+
+
+def _extract_markdown(result) -> str:
+    """Pull raw markdown out of a Firecrawl response (best effort)."""
+    if hasattr(result, "model_dump"):
+        result = result.model_dump()
+    if not isinstance(result, dict):
+        return ""
+    md = result.get("markdown") or (result.get("data") or {}).get("markdown")
+    return md or ""
 
 
 # ── Scroll actions (for infinite-scroll / lazy-load listing pages) ────────────
@@ -299,13 +310,26 @@ def _scrape_listing(app, venue: dict, max_events: int) -> dict:
     """
     Scrape the listing page with scroll actions.
     Returns the raw Firecrawl extraction dict or {}.
+    Also persists the raw markdown to backend/raw/<slug>/ for reprocessing.
     """
+    slug = _slug(venue["name"])
     prompt = _build_listing_prompt(venue, max_events)
     schema = EventList.model_json_schema()
     json_fmt = {"type": "json", "schema": schema, "prompt": prompt}
-    actions = _venue_actions(_slug(venue["name"]))
+    formats = [json_fmt, "markdown"]
+    actions = _venue_actions(slug)
 
     last_err: Exception | None = None
+
+    def _attempt(extra: dict) -> dict:
+        result = app.scrape(venue["url"], formats=formats, **extra)
+        md = _extract_markdown(result)
+        if md:
+            try:
+                raw_store.save_markdown(slug, venue["url"], md)
+            except Exception as exc:
+                print(f"    [warn] could not save raw markdown: {exc}", flush=True)
+        return _normalise(result)
 
     # Try with scroll actions first, then without (some sites reject action requests)
     for with_actions in (True, False):
@@ -313,8 +337,7 @@ def _scrape_listing(app, venue: dict, max_events: int) -> dict:
         if with_actions:
             extra["actions"] = actions
         try:
-            result = app.scrape(venue["url"], formats=[json_fmt], **extra)
-            extracted = _normalise(result)
+            extracted = _attempt(extra)
             if extracted.get("events"):
                 return extracted
         except TypeError as e:
@@ -322,8 +345,7 @@ def _scrape_listing(app, venue: dict, max_events: int) -> dict:
             if "headers" in str(e):
                 extra.pop("headers", None)
                 try:
-                    result = app.scrape(venue["url"], formats=[json_fmt], **extra)
-                    extracted = _normalise(result)
+                    extracted = _attempt(extra)
                     if extracted.get("events"):
                         return extracted
                 except Exception as e2:
@@ -451,17 +473,40 @@ def _scrape_one(
         "engine": "firecrawl",
     }
 
-    # ── Phase 1a: Listing (date-sorted, top-N) ──
-    print(f"    phase 1a: listing scrape ...", flush=True)
-    listing = _scrape_listing(app, venue, max_events)
-    events_raw = listing.get("events") if isinstance(listing, dict) else None
-    total_visible = listing.get("total_events_visible")
+    events_raw: list[dict] | None = None
+    total_visible: int | None = None
+    source: str = "firecrawl_listing"
+
+    # ── Phase 0: JSON-LD scout (free, deterministic) ──
+    print(f"    phase 0: JSON-LD scout ...", flush=True)
+    scout_events = jsonld_scout.scout(url)
+    if scout_events:
+        future = [e for e in scout_events if _is_future(e.get("date"))]
+        print(
+            f"    JSON-LD: {len(scout_events)} events ({len(future)} upcoming)",
+            flush=True,
+        )
+        if future:
+            future.sort(key=lambda e: (e.get("date") or "9999"))
+            events_raw = future
+            total_visible = len(future)
+            source = "jsonld"
+    else:
+        print(f"    JSON-LD: no Event objects found", flush=True)
+
+    # ── Phase 1a: Firecrawl listing fallback ──
+    if events_raw is None:
+        print(f"    phase 1a: listing scrape (firecrawl) ...", flush=True)
+        listing = _scrape_listing(app, venue, max_events)
+        events_raw = listing.get("events") if isinstance(listing, dict) else None
+        total_visible = listing.get("total_events_visible") if isinstance(listing, dict) else None
 
     if not events_raw:
         payload["error"] = "no events extracted from listing"
         payload["events"] = []
         payload["total_events"] = 0
         payload["total_events_discovered"] = 0
+        payload["source"] = source
         return payload
 
     # Filter past events (prompt guard isn't always reliable)
@@ -522,6 +567,7 @@ def _scrape_one(
     # Loose count (legacy field name — often inflated by map()).
     payload["total_events_discovered"] = total_discovered_loose
     payload["total_events_discovered_strict"] = total_discovered_strict
+    payload["source"] = source
     return payload
 
 
