@@ -3,7 +3,7 @@
   "city": "Leipzig",
   "slug": "gewandhaus_leipzig",
   "source_url": "https://www.gewandhausorchester.de/",
-  "scraped_at": "2026-05-17T14:25:02.241224Z",
+  "scraped_at": "2026-05-17T15:13:17.039918Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -12,7 +12,7 @@
       "title": "Regina - Oper in drei Akten",
       "venue_hall": "Opernhaus",
       "program": [
-        "Albert Lortzing: Regina - Oper in drei Akten"
+        "Lortzing: Regina - Oper in drei Akten"
       ],
       "performers": [
         "Gewandhausorchester"
@@ -34,8 +34,7 @@
         "Mieczysław Weinberg: Quintett für Klavier, zwei Violinen, Viola und Violoncello f-Moll op. 18"
       ],
       "performers": [
-        "Quatuor Danel",
-        "Marc-André Hamelin"
+        "Quatuor Danel (Marc Danel, Gilles Millet, Vlad Bogdanas, Yovan Markovitch), Marc-André Hamelin"
       ],
       "conductor": null,
       "price": "24/20 EUR",
@@ -55,43 +54,11 @@
       "detail_url": "https://www.gewandhausorchester.de/veranstaltung/element-of-crime-9804/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig"
-    },
-    {
-      "date": "2026-05-18",
-      "time": "19:30",
-      "title": "Gastspiel des Gewandhausorchesters in Wien",
-      "venue_hall": "Musikverein Wien",
-      "program": [
-        "Sergej Rachmaninoff: 2. Konzert für Klavier und Orchester c-Moll op. 18",
-        "Dmitri Schostakowitsch: 10. Sinfonie e-Moll op. 93"
-      ],
-      "performers": [
-        "Gewandhausorchester",
-        "Andris Nelsons",
-        "Yulianna Avdeeva"
-      ],
-      "conductor": "Andris Nelsons",
-      "price": null,
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/gastspiel-in-wien-9426/",
-      "venue": "Gewandhaus Leipzig",
-      "city": "Leipzig"
-    },
-    {
-      "date": "2026-05-18",
-      "time": "20:00",
-      "title": "Konzerthaus Tour 2026",
-      "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": "74/68,50/63/57,50 EUR",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/element-of-crime-9805/",
-      "venue": "Gewandhaus Leipzig",
-      "city": "Leipzig"
     }
   ],
-  "total_events": 5,
-  "total_events_visible": 5,
-  "total_events_discovered": 5,
-  "total_events_discovered_strict": 5
+  "total_events": 3,
+  "total_events_visible": 3,
+  "total_events_discovered": 3,
+  "total_events_discovered_strict": 3,
+  "source": "firecrawl_listing"
 }

@@ -3,16 +3,16 @@
   "city": "Baden-Baden",
   "slug": "festspielhaus_baden_baden",
   "source_url": "https://www.festspielhaus.de/programm/",
-  "scraped_at": "2026-05-17T13:21:45.351472Z",
+  "scraped_at": "2026-05-17T15:00:29.467108Z",
   "engine": "firecrawl",
   "events": [
     {
-      "date": "2026-05-17",
-      "time": "16:00",
-      "title": "Pfingstfestspiele Baden-Baden",
+      "date": "2026-05-21",
+      "time": "19:00",
+      "title": "Die Pfingstfestspiele Baden-Baden",
       "venue_hall": "Festspielhaus Baden-Baden",
       "program": [
-        "Strauss: Der Rosenkavalier"
+        "Strauss: Der Rosenkavalier Op. 59, TrV 227"
       ],
       "performers": [
         "Julia Kleiter",
@@ -21,21 +21,8 @@
         "SWR Symphonieorchester"
       ],
       "conductor": "François-Xavier Roth",
-      "price": "ab 33 €",
-      "detail_url": "https://www.festspielhaus.de/festivals/presence/",
-      "venue": "Festspielhaus Baden-Baden",
-      "city": "Baden-Baden"
-    },
-    {
-      "date": "2026-05-21",
-      "time": "19:00",
-      "title": "Richard Strauss: Der Rosenkavalier",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
-      "conductor": "François-Xavier Roth",
       "price": "29 €",
-      "detail_url": null,
+      "detail_url": "https://www.festspielhaus.de/festivals/presence/",
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden"
     },
@@ -43,7 +30,7 @@
       "date": "2026-05-22",
       "time": "21:00",
       "title": "Ich atmet' einen linden Duft",
-      "venue_hall": null,
+      "venue_hall": "Weinbrennersaal, Kurhaus Baden-Baden",
       "program": [
         "Gustav Mahler: Lieder"
       ],
@@ -58,7 +45,7 @@
       "date": "2026-05-23",
       "time": "18:00",
       "title": "Late Night",
-      "venue_hall": null,
+      "venue_hall": "Weinbrennersaal, Kurhaus Baden-Baden",
       "program": [],
       "performers": [
         "Libor Šíma & Friends"
@@ -73,9 +60,11 @@
       "date": "2026-05-24",
       "time": "16:00",
       "title": "Von Versailles nach Wien",
-      "venue_hall": null,
+      "venue_hall": "Weinbrennersaal, Kurhaus Baden-Baden",
       "program": [
-        "Lully, Mozart & Haydn"
+        "Lully: Title",
+        "Mozart: Title",
+        "Haydn: Title"
       ],
       "performers": [],
       "conductor": null,
@@ -83,10 +72,24 @@
       "detail_url": null,
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden"
+    },
+    {
+      "date": "2026-05-28",
+      "time": "19:30",
+      "title": "Richard Strauss: Der Rosenkavalier",
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [],
+      "performers": [],
+      "conductor": "François-Xavier Roth",
+      "price": "ab 40.20 €",
+      "detail_url": null,
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 39,
-  "total_events_discovered": 39,
-  "total_events_discovered_strict": 39
+  "total_events_visible": 45,
+  "total_events_discovered": 45,
+  "total_events_discovered_strict": 45,
+  "source": "firecrawl_listing"
 }

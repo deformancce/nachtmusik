@@ -3,14 +3,14 @@
   "city": "Berlin",
   "slug": "berliner_philharmonie",
   "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-  "scraped_at": "2026-05-17T14:24:27.239112Z",
+  "scraped_at": "2026-05-17T15:02:52.205884Z",
   "engine": "firecrawl",
   "events": [
     {
       "date": "2026-05-20",
       "time": "13:00",
       "title": "Lunchkonzert",
-      "venue_hall": "Großer Saal",
+      "venue_hall": "Foyer Großer Saal",
       "program": [
         "Johannes Brahms: Wie Melodien op. 105 Nr. 1",
         "Johannes Brahms: Sonate für Violine und Klavier Nr. 2 A-Dur op. 100",
@@ -35,6 +35,7 @@
         "Gustav Mahler: Symphonie Nr. 3 d-Moll"
       ],
       "performers": [
+        "Yannick Nézet-Séguin",
         "Joyce DiDonato",
         "Damen des Rundfunkchors Berlin",
         "Knaben des Staats- und Domchors Berlin"
@@ -54,6 +55,7 @@
         "Gustav Mahler: Symphonie Nr. 3 d-Moll"
       ],
       "performers": [
+        "Yannick Nézet-Séguin",
         "Joyce DiDonato",
         "Damen des Rundfunkchors Berlin",
         "Knaben des Staats- und Domchors Berlin"
@@ -73,6 +75,7 @@
         "Gustav Mahler: Symphonie Nr. 3 d-Moll"
       ],
       "performers": [
+        "Yannick Nézet-Séguin",
         "Joyce DiDonato",
         "Damen des Rundfunkchors Berlin",
         "Knaben des Staats- und Domchors Berlin"
@@ -87,7 +90,7 @@
       "date": "2026-05-27",
       "time": "13:00",
       "title": "Lunchkonzert",
-      "venue_hall": "Großer Saal",
+      "venue_hall": "Foyer Großer Saal",
       "program": [
         "Wolfgang Amadeus Mozart: Andante mit fünf Variationen für Klavier zu vier Händen G-Dur KV 501",
         "Wolfgang Amadeus Mozart: Sonate für Klavier zu vier Händen C-Dur KV 521",
@@ -105,7 +108,8 @@
     }
   ],
   "total_events": 5,
-  "total_events_visible": 11,
-  "total_events_discovered": 11,
-  "total_events_discovered_strict": 11
+  "total_events_visible": 9,
+  "total_events_discovered": 9,
+  "total_events_discovered_strict": 9,
+  "source": "firecrawl_listing"
 }

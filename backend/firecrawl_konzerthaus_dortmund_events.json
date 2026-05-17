@@ -3,13 +3,13 @@
   "city": "Dortmund",
   "slug": "konzerthaus_dortmund",
   "source_url": "https://www.konzerthaus-dortmund.de/de/programm/",
-  "scraped_at": "2026-05-17T13:24:57.269242Z",
+  "scraped_at": "2026-05-17T15:05:11.912706Z",
   "engine": "firecrawl",
   "events": [
     {
       "date": "2026-05-17",
       "time": "16:00",
-      "title": "Constantinos Carydis & WDR Sinfonieorchester",
+      "title": "Orchesterkonzert: Constantinos Carydis & WDR Sinfonieorchester",
       "venue_hall": null,
       "program": [
         "Periklis Koukos: Prooimion Rhapsodie über Odysseus für großes Orchester",
@@ -22,8 +22,8 @@
         "Yoav Levanon"
       ],
       "conductor": "Constantinos Carydis",
-      "price": "19 € – 89 €",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/17-05-2026-constantinos-carydis-wdr-sinfonieorchester/platzwahl/",
+      "price": "Online nicht buchbar",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/17-05-2026-constantinos-carydis-wdr-sinfonieorchester/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund"
     },
@@ -31,16 +31,19 @@
       "date": "2026-05-18",
       "time": "18:30",
       "title": "Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
-      "venue_hall": "Konzerthaus Dortmund",
-      "program": [],
-      "performers": [
-        "Michael Stegemann"
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Komponist: Werk mit Opus"
       ],
-      "conductor": null,
+      "performers": [
+        "Ensemble Name"
+      ],
+      "conductor": "Conductor Name",
       "price": "8 €",
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-05-2026-kopfnoten-eine-kleine-geschichte-der-epochen-und-stile/platzwahl/",
       "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund"
+      "city": "Dortmund",
+      "duration_min": 90
     },
     {
       "date": "2026-05-19",
@@ -88,18 +91,24 @@
       "date": "2026-05-21",
       "time": "19:30",
       "title": "Überraschungskonzert – Der Joker",
-      "venue_hall": "Hauptsaal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Komponist: Werk Titel mit opus"
+      ],
+      "performers": [
+        "Joker Ensemble"
+      ],
+      "conductor": "Dirigent Name",
       "price": "25 €",
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/21-05-2026-ueberraschungskonzert-der-joker/platzwahl/",
       "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund"
+      "city": "Dortmund",
+      "duration_min": 120
     }
   ],
   "total_events": 5,
-  "total_events_visible": 17,
-  "total_events_discovered": 17,
-  "total_events_discovered_strict": 17
+  "total_events_visible": 62,
+  "total_events_discovered": 62,
+  "total_events_discovered_strict": 62,
+  "source": "firecrawl_listing"
 }

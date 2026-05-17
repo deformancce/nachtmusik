@@ -3,7 +3,7 @@
   "city": "Stuttgart",
   "slug": "liederhalle_stuttgart",
   "source_url": "https://liederhalle.de/eventkalender",
-  "scraped_at": "2026-05-17T13:34:58.407866Z",
+  "scraped_at": "2026-05-17T15:15:12.118584Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -90,7 +90,8 @@
     }
   ],
   "total_events": 5,
-  "total_events_visible": 17,
-  "total_events_discovered": 17,
-  "total_events_discovered_strict": 17
+  "total_events_visible": 25,
+  "total_events_discovered": 25,
+  "total_events_discovered_strict": 25,
+  "source": "firecrawl_listing"
 }

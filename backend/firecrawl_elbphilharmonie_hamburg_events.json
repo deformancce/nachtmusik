@@ -3,7 +3,7 @@
   "city": "Hamburg",
   "slug": "elbphilharmonie_hamburg",
   "source_url": "https://www.elbphilharmonie.de/de/programm/",
-  "scraped_at": "2026-05-17T13:29:37.080955Z",
+  "scraped_at": "2026-05-17T15:10:28.596638Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -27,7 +27,7 @@
     },
     {
       "date": "2026-05-17",
-      "time": "16:30",
+      "time": "16:00",
       "title": "NDR Elbphilharmonie Orchester / Pierre Bleuse",
       "venue_hall": "Großer Saal",
       "program": [
@@ -39,7 +39,7 @@
         "Pierre Bleuse"
       ],
       "conductor": null,
-      "price": "ab € 32",
+      "price": "ab € 12",
       "detail_url": "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-pierre-bleuse/23385",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg"
@@ -62,37 +62,43 @@
       "city": "Hamburg"
     },
     {
-      "date": "2026-05-20",
-      "time": "14:00",
-      "title": "Westermann Summit 2026",
+      "date": "2026-05-18",
+      "time": "20:00",
+      "title": "Hochschule für Musik und Theater Hamburg",
       "venue_hall": "Kleiner Saal",
       "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/westermann-summit-2026/28420",
+      "performers": [
+        "Yi-Wen Chen"
+      ],
+      "conductor": "Prof. Burkhard Kehring",
+      "price": "Eintritt frei",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/hochschule-fur-musik-und-theater-hamburg/28283",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg"
     },
     {
-      "date": "2026-05-20",
-      "time": "20:00",
-      "title": "Huelgas Ensemble / Paul Van Nevel",
-      "venue_hall": "Großer Saal",
+      "date": "2026-05-19",
+      "time": "19:30",
+      "title": "Schumann Quartett",
+      "venue_hall": "Kleiner Saal",
       "program": [
-        "\"Memento mori\" – Werke von Orlando di Lasso, Guillaume Dufay, Giovanni Gabrieli u.a.",
-        "Internationales Musikfest Hamburg"
+        "Haydn: Streichquartett D-Dur",
+        "Henze: Streichquartett Nr. 5",
+        "Beethoven: Streichquartett F-Dur – Internationales Musikfest Hamburg"
       ],
-      "performers": [],
+      "performers": [
+        "Schumann Quartett"
+      ],
       "conductor": null,
-      "price": "ab € 13",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/huelgas-ensemble-paul-van-nevel/27532",
+      "price": "Tickets",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/ticket/schumann-quartett/23440",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 10,
-  "total_events_discovered": 10,
-  "total_events_discovered_strict": 10
+  "total_events_visible": 11,
+  "total_events_discovered": 11,
+  "total_events_discovered_strict": 11,
+  "source": "firecrawl_listing"
 }
