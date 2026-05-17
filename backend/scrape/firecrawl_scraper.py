@@ -174,6 +174,116 @@ def _build_detail_prompt(venue: dict) -> str:
 _DE_HEADERS = {"Accept-Language": "de-DE,de;q=0.9,en;q=0.5"}
 
 
+# ── Per-venue overrides ───────────────────────────────────────────────────────
+# Sites with cookie walls, click-to-load buttons or heavy SPAs need bespoke
+# action sequences. Keys are venue slugs; values override _scroll_actions().
+# Reasonable defaults are used for any slug not listed here.
+def _click_load_more(times: int, selectors: list[str], wait_ms: int = 1500) -> list[dict]:
+    """Try each selector once per round, scrolling between rounds."""
+    actions: list[dict] = []
+    for _ in range(times):
+        actions.append({"type": "scroll", "direction": "down", "amount": 3000})
+        actions.append({"type": "wait", "milliseconds": 500})
+        for sel in selectors:
+            actions.append({"type": "click", "selector": sel})
+            actions.append({"type": "wait", "milliseconds": wait_ms})
+    return actions
+
+
+def _bp_actions() -> list[dict]:
+    # Cookie wall (CMP) then heavy scroll on the SPA infinite-scroll calendar.
+    return [
+        {"type": "wait", "milliseconds": 2500},
+        {"type": "click", "selector": "button[aria-label*='akzeptieren' i]"},
+        {"type": "click", "selector": "button:has-text('Alle akzeptieren')"},
+        {"type": "click", "selector": "button:has-text('Akzeptieren')"},
+        {"type": "click", "selector": "#onetrust-accept-btn-handler"},
+        {"type": "wait", "milliseconds": 1500},
+        *_scroll_actions(n=25, amount=4000, wait_ms=1200),
+    ]
+
+
+def _gewandhaus_actions() -> list[dict]:
+    # Homepage shows 5 teasers; "Weitere Veranstaltungen laden" button loads more.
+    # Two selector variants per round (button + link) are usually enough.
+    selectors = [
+        "button:has-text('Weitere Veranstaltungen')",
+        "a:has-text('Weitere Veranstaltungen')",
+    ]
+    return [
+        {"type": "wait", "milliseconds": 1500},
+        {"type": "click", "selector": "button:has-text('Akzeptieren')"},
+        {"type": "wait", "milliseconds": 1000},
+        *_click_load_more(times=12, selectors=selectors, wait_ms=1500),
+    ]
+
+
+VENUE_OVERRIDES: dict[str, dict] = {
+    "berliner_philharmonie": {
+        "actions": _bp_actions,
+        "wait_for_listing_count": 20,
+    },
+    "gewandhaus_leipzig": {
+        "actions": _gewandhaus_actions,
+        "wait_for_listing_count": 20,
+    },
+}
+
+
+def _venue_actions(slug: str) -> list[dict]:
+    override = VENUE_OVERRIDES.get(slug)
+    if override and callable(override.get("actions")):
+        return override["actions"]()
+    return _scroll_actions()
+
+
+# ── Hallucination guard ───────────────────────────────────────────────────────
+# Some sites refuse to render for headless browsers (BP was returning 5 fake
+# English-titled concerts with round €5-step prices). Detect obvious LLM
+# fabrications BEFORE we overwrite a good JSON with garbage.
+
+_ENGLISH_TELLS = (
+    "'s ",                 # "Beethoven's Ninth"
+    " symphony",
+    " concerto",
+    " requiem ",
+    " the nutcracker",
+    " christmas ",
+    " easter ",
+)
+
+_GERMAN_TELLS = ("symphonie", "sinfonie", "konzert", "messe", "oper",
+                 "kammerkonzert", "philharmoniker", "abend", "uhr")
+
+
+def _check_hallucination(events: list[dict], venue: dict) -> str | None:
+    """Return a reason string if events look fabricated, else None.
+
+    Heuristics target the specific failure mode we've seen: a German venue
+    returning a handful of english-titled, round-priced, evenly-spaced events.
+    """
+    if not events:
+        return None
+
+    titles = " ".join((e.get("title") or "").lower() for e in events)
+    english_hits = sum(1 for t in _ENGLISH_TELLS if t in titles)
+    german_hits = sum(1 for t in _GERMAN_TELLS if t in titles)
+    if english_hits >= 2 and german_hits == 0:
+        return f"english titles on a German venue ({english_hits} tells, 0 German)"
+
+    # Round-€5 "ab €NN" prices for every event = templated fabrication
+    prices = [(e.get("price") or "").strip() for e in events]
+    ab_round = sum(
+        1 for p in prices
+        if re.fullmatch(r"ab\s*€\s*\d{2,3}", p)
+        and int(re.search(r"\d+", p).group()) % 5 == 0
+    )
+    if len(events) >= 4 and ab_round >= len(events) - 1:
+        return f"{ab_round}/{len(events)} prices are 'ab €N0' (round-5) — templated"
+
+    return None
+
+
 def _scrape_listing(app, venue: dict, max_events: int) -> dict:
     """
     Scrape the listing page with scroll actions.
@@ -182,7 +292,7 @@ def _scrape_listing(app, venue: dict, max_events: int) -> dict:
     prompt = _build_listing_prompt(venue, max_events)
     schema = EventList.model_json_schema()
     json_fmt = {"type": "json", "schema": schema, "prompt": prompt}
-    actions = _scroll_actions()
+    actions = _venue_actions(_slug(venue["name"]))
 
     last_err: Exception | None = None
 
@@ -368,6 +478,17 @@ def _scrape_one(
 
     print(f"    listing: {len(events)} upcoming events (total_visible={total_visible})", flush=True)
 
+    # Hallucination guard — refuse to save fabricated output
+    halluc = _check_hallucination(events, venue)
+    if halluc:
+        print(f"    HALLUCINATION_SUSPECTED: {halluc}", flush=True)
+        payload["error"] = f"hallucination suspected: {halluc}"
+        payload["events"] = []
+        payload["total_events"] = 0
+        payload["total_events_visible"] = total_visible
+        payload["total_events_discovered"] = 0
+        return payload
+
     # ── Phase 1b: Full discovery via map() (1 credit; optional) ──
     loose_urls: list[str] = []
     strict_urls: list[str] = []
@@ -443,13 +564,18 @@ def main(
     for venue in venues:
         result = _scrape_one(app, venue, max_events, enrich=enrich, skip_map=skip_map)
         out_path = BASE / f"firecrawl_{result['slug']}_events.json"
-        out_path.write_text(json.dumps(result, ensure_ascii=False, indent=2))
 
         if result.get("error"):
             n_fail += 1
             print(f"    FAIL: {result['error']}")
+            # Don't overwrite a previously-good JSON with an error payload.
+            if out_path.exists():
+                print(f"    (keeping existing {out_path.name} untouched)")
+            else:
+                out_path.write_text(json.dumps(result, ensure_ascii=False, indent=2))
         else:
             n_ok += 1
+            out_path.write_text(json.dumps(result, ensure_ascii=False, indent=2))
             disc_loose = result.get("total_events_discovered")
             disc_strict = result.get("total_events_discovered_strict")
             disc = disc_strict if disc_strict is not None else disc_loose

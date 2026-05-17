@@ -19,7 +19,7 @@ VENUES_GERMANY: List[dict] = [
     {"name": "Konzerthaus Berlin", "city": "Berlin",
      "url": "https://www.konzerthaus.de/de/programm", "tier": 1},
     {"name": "Berliner Philharmonie", "city": "Berlin",
-     "url": "https://www.berliner-philharmoniker.de/konzerte", "tier": 1},
+     "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/", "tier": 1},
     {"name": "Glocke Bremen", "city": "Bremen",
      "url": "https://www.glocke.de/tickets-programm/", "tier": 1},
     {"name": "Konzerthaus Dortmund", "city": "Dortmund",
