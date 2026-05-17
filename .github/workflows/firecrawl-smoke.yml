@@ -27,6 +27,14 @@ on:
         description: "Set to 'true' to detail-scrape map() URLs as NEW events (cost: up to max_events*3 extra credits/venue)"
         required: false
         default: "false"
+      discover_mode:
+        description: "DISCOVERY mode: light schema → find ALL events, enrich N random (recommended for full coverage)"
+        required: false
+        default: "false"
+      enrich_count:
+        description: "Discovery mode: how many random events per venue get full program data (default 10)"
+        required: false
+        default: "10"
 
 permissions:
   contents: write
@@ -60,6 +68,8 @@ jobs:
           SKIP_ENRICH: ${{ github.event.inputs.skip_enrich }}
           SKIP_MAP: ${{ github.event.inputs.skip_map }}
           EXPAND_VIA_MAP: ${{ github.event.inputs.expand_via_map }}
+          DISCOVER_MODE: ${{ github.event.inputs.discover_mode }}
+          ENRICH_COUNT: ${{ github.event.inputs.enrich_count }}
         run: |
           ARGS=(--max-events "${MAX_EVENTS:-5}")
           if [ -n "$SLUGS" ]; then
@@ -73,6 +83,9 @@ jobs:
           fi
           if [ "${EXPAND_VIA_MAP}" = "true" ]; then
             ARGS+=(--expand-via-map)
+          fi
+          if [ "${DISCOVER_MODE}" = "true" ]; then
+            ARGS+=(--discover-mode --enrich-count "${ENRICH_COUNT:-10}")
           fi
           python3 -m backend.scrape.firecrawl_scraper "${ARGS[@]}"
 

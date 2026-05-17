@@ -62,6 +62,26 @@ class Event(BaseModel):
     detail_url: Optional[str] = Field(None, description="Absolute URL of the event detail page")
 
 
+class EventStub(BaseModel):
+    """Minimal event schema for discovery mode — only fields we can
+    reliably extract from a listing page without context bloat. This
+    schema is ~5× smaller than `Event`, which lets the LLM return many
+    more events per scrape (~100-200 vs. ~30)."""
+    date: str = Field(..., description="ISO date YYYY-MM-DD")
+    time: Optional[str] = Field(None, description="HH:MM in 24-hour format if visible")
+    title: str = Field(..., description="Concert title (not the ticket button)")
+    detail_url: Optional[str] = Field(None, description="Absolute URL of the event detail page")
+    venue_hall: Optional[str] = Field(None, description="Hall name if visible (e.g. 'Großer Saal')")
+
+
+class EventStubList(BaseModel):
+    total_events_visible: Optional[int] = Field(
+        None,
+        description="Total number of upcoming concerts on this fully-scrolled page.",
+    )
+    events: list[EventStub]
+
+
 class EventList(BaseModel):
     total_events_visible: Optional[int] = Field(
         None,
@@ -192,6 +212,34 @@ def _build_listing_prompt(venue: dict, max_events: int) -> str:
         "convert that exactly to YYYY-MM-DD. Do NOT guess or infer dates from URL slugs.\n"
         "- Skip non-concert entries: theater, dance, lectures, navigation items, season-pass upsells.\n"
         "- detail_url must be an absolute URL (start with https://). If you cannot find one, use null."
+    )
+
+
+def _build_stub_listing_prompt(venue: dict) -> str:
+    """Discovery-mode prompt: find ALL events on the listing page with minimal
+    fields (date, title, URL, hall). Designed for maximum recall — the LLM can
+    return 100+ events per scrape because each entry is tiny (no program/performers/
+    conductor/price)."""
+    today = _today()
+    return (
+        f"This is the concert listing page of {venue['name']} in {venue['city']}, Germany.\n"
+        f"Today's date is {today}.\n\n"
+        "TASK: Find EVERY upcoming concert on this fully-scrolled page and "
+        "return ALL of them. There may be 50, 100, 200+ events — return as "
+        "many as you can find. Do NOT cap or summarize.\n\n"
+        f"Skip events with date < {today} (past concerts).\n"
+        "Skip canceled events (German 'Abgesagt:' / English 'Cancelled:').\n"
+        f"Only events physically AT {venue['name']} in {venue['city']} — skip "
+        "guest tours to other cities ('Gastkonzert') and cross-promotion of other venues.\n"
+        "Skip non-concert entries: theater plays, ballet, lectures, navigation items, season-pass upsells.\n\n"
+        "For each event return ONLY these fields:\n"
+        "  date (YYYY-MM-DD, REQUIRED, convert from German format like 'Sa. 23.05.2026' exactly)\n"
+        "  time (HH:MM 24h, optional)\n"
+        "  title (REQUIRED — the concert name, NOT a ticket button)\n"
+        "  detail_url (absolute URL of the event's own page, starting with https://)\n"
+        "  venue_hall (e.g. 'Großer Saal', optional)\n\n"
+        "Do NOT include program, performers, conductor, or price — those will be "
+        "fetched separately. Focus on RECALL: every distinct upcoming concert."
     )
 
 
@@ -481,16 +529,16 @@ def _check_hallucination(events: list[dict], venue: dict) -> str | None:
     return None
 
 
-def _scrape_listing(app, venue: dict, max_events: int) -> dict:
+def _scrape_listing_with_schema(
+    app, venue: dict, schema: dict, prompt: str
+) -> dict:
     """
-    Scrape the listing page with scroll actions.
-    Returns the raw Firecrawl extraction dict, augmented with `_raw_html`
-    (string) — used downstream for the JSON-LD post-pass — or {}.
-    Also persists the raw markdown to backend/raw/<slug>/ for reprocessing.
+    Scrape the listing page with scroll actions, extracting per the given
+    schema/prompt. Returns the raw Firecrawl extraction dict, augmented
+    with `_raw_html` (string) for downstream JSON-LD post-pass — or {}.
+    Also persists raw markdown to backend/raw/<slug>/.
     """
     slug = _slug(venue["name"])
-    prompt = _build_listing_prompt(venue, max_events)
-    schema = EventList.model_json_schema()
     json_fmt = {"type": "json", "schema": schema, "prompt": prompt}
     # html is requested alongside json/markdown — Firecrawl charges by the
     # most expensive format (json), so the extra html costs 0 credits.
@@ -538,6 +586,27 @@ def _scrape_listing(app, venue: dict, max_events: int) -> dict:
             print(f"    [warn] listing scrape ({'with' if with_actions else 'without'} scroll): {e}")
 
     return {}
+
+
+def _scrape_listing(app, venue: dict, max_events: int) -> dict:
+    """Full-schema listing scrape: returns events with date+title+program+performers+...
+    Used when the goal is to get full data for a small number of events."""
+    return _scrape_listing_with_schema(
+        app, venue,
+        schema=EventList.model_json_schema(),
+        prompt=_build_listing_prompt(venue, max_events),
+    )
+
+
+def _scrape_listing_stub(app, venue: dict) -> dict:
+    """Stub-schema listing scrape: returns events with ONLY date+title+url+hall.
+    Used for discovery mode — the LLM can return 100-200 events in one scrape
+    because each event is ~5× smaller than the full schema."""
+    return _scrape_listing_with_schema(
+        app, venue,
+        schema=EventStubList.model_json_schema(),
+        prompt=_build_stub_listing_prompt(venue),
+    )
 
 
 # ── Phase 1b: Site-wide discovery via map() ───────────────────────────────────
@@ -756,6 +825,151 @@ def _expand_via_map(
     return new_events, stats
 
 
+def _scrape_one_discover(
+    app,
+    venue: dict,
+    enrich_count: int = 10,
+) -> dict:
+    """
+    Discovery mode: get as many events as possible from the listing (light
+    schema), then fully enrich `enrich_count` random ones with program data.
+
+    Cost per venue: 1 listing scrape + enrich_count detail scrapes
+    (~11 credits at default enrich_count=10).
+
+    Returns the same payload shape as _scrape_one.
+    """
+    import random
+    slug = _slug(venue["name"])
+    url = venue["url"]
+    print(f"\n  [{slug}] {venue['name']} ({url}) — DISCOVERY mode", flush=True)
+
+    payload: dict = {
+        "venue": venue["name"],
+        "city": venue["city"],
+        "slug": slug,
+        "source_url": url,
+        "scraped_at": datetime.utcnow().isoformat() + "Z",
+        "engine": "firecrawl",
+        "mode": "discover",
+    }
+
+    # ── Phase 0: JSON-LD scout (free) ──
+    print(f"    phase 0: JSON-LD scout ...", flush=True)
+    scout_events = jsonld_scout.scout(url)
+    events_raw: list[dict] = []
+    total_visible: int | None = None
+    source = "firecrawl_listing_stub"
+    if scout_events:
+        future = [e for e in scout_events if _is_future(e.get("date"))]
+        if future:
+            print(f"    JSON-LD: {len(future)} upcoming events found", flush=True)
+            events_raw = future
+            total_visible = len(future)
+            source = "jsonld"
+
+    # ── Phase 1: Stub listing scrape (1 credit, light schema) ──
+    if not events_raw:
+        print(f"    phase 1: stub listing scrape (find ALL events) ...", flush=True)
+        listing = _scrape_listing_stub(app, venue) or {}
+        events_raw = listing.get("events") or []
+        total_visible = listing.get("total_events_visible") or len(events_raw)
+        # Phase 0b: JSON-LD from Firecrawl-rendered HTML, if listing returned little
+        if isinstance(listing, dict) and listing.get("_raw_html"):
+            ld_events = jsonld_scout.extract_from_html(
+                listing["_raw_html"], url, verbose=True, log_prefix="jsonld-fc"
+            )
+            if ld_events:
+                ld_future = [e for e in ld_events if _is_future(e.get("date"))]
+                if len(ld_future) > len(events_raw):
+                    print(
+                        f"    JSON-LD (firecrawl-html): {len(ld_future)} upcoming events "
+                        f"(prefer over {len(events_raw)} from listing LLM)",
+                        flush=True,
+                    )
+                    events_raw = ld_future
+                    total_visible = len(ld_future)
+                    source = "jsonld_firecrawl_html"
+
+    if not events_raw:
+        payload["error"] = "no events extracted from listing"
+        payload["events"] = []
+        payload["total_events"] = 0
+        payload["total_events_discovered"] = 0
+        payload["source"] = source
+        return payload
+
+    # Filter past + canceled events
+    events: list[dict] = []
+    for e in events_raw:
+        if not isinstance(e, dict):
+            continue
+        if not _is_future(e.get("date")):
+            continue
+        title = (e.get("title") or "").strip()
+        if _is_canceled(title) or not title:
+            continue
+        ev = {
+            "date": e.get("date"),
+            "time": e.get("time"),
+            "title": title,
+            "venue_hall": e.get("venue_hall"),
+            "program": [],
+            "performers": [],
+            "conductor": None,
+            "price": None,
+            "detail_url": e.get("detail_url"),
+            "venue": venue["name"],
+            "city": venue["city"],
+        }
+        events.append(ev)
+
+    events.sort(key=lambda e: (e.get("date") or "9999", e.get("time") or ""))
+    print(f"    discovered {len(events)} future events (total_visible={total_visible})", flush=True)
+
+    # ── Phase 2: Random enrichment ──
+    enrichable = [i for i, e in enumerate(events) if _is_valid_url(e.get("detail_url"))]
+    if enrichable and enrich_count > 0:
+        # Pick `enrich_count` random indices (or all if fewer).
+        k = min(enrich_count, len(enrichable))
+        chosen = sorted(random.sample(enrichable, k))
+        print(
+            f"    phase 2: enriching {k} random events of {len(enrichable)} "
+            f"with valid URLs ...",
+            flush=True,
+        )
+        for n, idx in enumerate(chosen, start=1):
+            ev = events[idx]
+            print(f"    [{n}/{k}] {ev['title'][:55]} ({ev.get('date','?')})", flush=True)
+            detail = _scrape_one_detail(app, ev["detail_url"], venue)
+            if not detail:
+                continue
+            if detail.get("program"):
+                ev["program"] = detail["program"]
+            if detail.get("performers"):
+                ev["performers"] = detail["performers"]
+            if detail.get("conductor"):
+                ev["conductor"] = detail["conductor"]
+            if detail.get("price"):
+                ev["price"] = detail["price"]
+            if detail.get("venue_hall") and not ev.get("venue_hall"):
+                ev["venue_hall"] = detail["venue_hall"]
+            if detail.get("duration_min"):
+                ev["duration_min"] = detail["duration_min"]
+            if detail.get("time") and not ev.get("time"):
+                ev["time"] = detail["time"]
+    else:
+        print(f"    phase 2: skipped (no valid URLs to enrich)", flush=True)
+
+    payload["events"] = events
+    payload["total_events"] = len(events)
+    payload["total_events_visible"] = total_visible
+    payload["total_events_discovered"] = len(events)
+    payload["total_events_enriched"] = sum(1 for e in events if e.get("program"))
+    payload["source"] = source
+    return payload
+
+
 def _scrape_one(
     app,
     venue: dict,
@@ -944,6 +1158,8 @@ def main(
     enrich: bool,
     skip_map: bool = False,
     expand_via_map: bool = False,
+    discover_mode: bool = False,
+    enrich_count: int = 10,
 ) -> None:
     api_key = os.getenv("FIRECRAWL_API_KEY")
     if not api_key:
@@ -975,25 +1191,31 @@ def main(
         print("No venues matched the filter.", file=sys.stderr)
         sys.exit(1)
 
-    if expand_via_map:
-        map_note = "expand-via-map"
-    elif skip_map:
-        map_note = "no map"
+    if discover_mode:
+        mode = f"DISCOVER (stub listing + {enrich_count} random enrichments per venue)"
     else:
-        map_note = "map (stats only)"
-    mode = (
-        f"full (listing + {map_note} + detail pages)"
-        if enrich
-        else f"listing only (--skip-enrich, {map_note})"
-    )
+        if expand_via_map:
+            map_note = "expand-via-map"
+        elif skip_map:
+            map_note = "no map"
+        else:
+            map_note = "map (stats only)"
+        mode = (
+            f"full (listing + {map_note} + detail pages)"
+            if enrich
+            else f"listing only (--skip-enrich, {map_note})"
+        )
     print(f"\nFire crawl scraping {len(venues)} Tier-1 venue(s), max {max_events} events. Mode: {mode}\n")
 
     n_ok = n_fail = 0
     for venue in venues:
-        result = _scrape_one(
-            app, venue, max_events, enrich=enrich,
-            skip_map=skip_map, expand_via_map=expand_via_map,
-        )
+        if discover_mode:
+            result = _scrape_one_discover(app, venue, enrich_count=enrich_count)
+        else:
+            result = _scrape_one(
+                app, venue, max_events, enrich=enrich,
+                skip_map=skip_map, expand_via_map=expand_via_map,
+            )
         out_path = BASE / f"firecrawl_{result['slug']}_events.json"
 
         if result.get("error"):
@@ -1044,10 +1266,28 @@ if __name__ == "__main__":
             "Cost per venue: 1 map + up to (max_events × 3) detail scrapes."
         ),
     )
+    parser.add_argument(
+        "--discover-mode",
+        action="store_true",
+        help=(
+            "DISCOVERY mode: use a light schema (date+title+URL only) to find "
+            "ALL events on the listing in ONE scrape (100-200 events possible), "
+            "then enrich --enrich-count random ones with full program data. "
+            "Coverage > depth. Cost: 1 + enrich_count credits/venue."
+        ),
+    )
+    parser.add_argument(
+        "--enrich-count",
+        type=int,
+        default=10,
+        help="Discovery mode: number of random events to fully enrich (default 10).",
+    )
     args = parser.parse_args()
     main(
         args.only, args.max_events,
         enrich=not args.skip_enrich,
         skip_map=args.skip_map,
         expand_via_map=args.expand_via_map,
+        discover_mode=args.discover_mode,
+        enrich_count=args.enrich_count,
     )
