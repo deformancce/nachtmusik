@@ -131,22 +131,32 @@ _EXCLUDE_RE = re.compile(
 )
 
 
-def _filter_event_urls(links: list[str], base_url: str) -> list[str]:
-    """Keep only URLs that look like event detail pages on the same domain."""
+def _filter_event_urls(links, base_url: str) -> list[str]:
+    """Keep only URLs that look like event detail pages on the same domain.
+    Accepts strings, dicts {url,...}, or LinkResult objects with .url attribute."""
     domain = urlparse(base_url).netloc
     seen: set[str] = set()
     out: list[str] = []
-    for link in links:
-        if not link or link in seen:
+    for link in links or []:
+        # Normalise to a URL string
+        if isinstance(link, str):
+            url = link
+        elif hasattr(link, "url"):
+            url = link.url
+        elif isinstance(link, dict):
+            url = link.get("url") or link.get("href") or ""
+        else:
             continue
-        seen.add(link)
-        parsed = urlparse(link)
+        if not url or url in seen:
+            continue
+        seen.add(url)
+        parsed = urlparse(url)
         if parsed.netloc and parsed.netloc != domain:
             continue
-        if _EXCLUDE_RE.search(link):
+        if _EXCLUDE_RE.search(url):
             continue
-        if _EVENT_PATH_RE.search(link):
-            out.append(link)
+        if _EVENT_PATH_RE.search(url):
+            out.append(url)
     return out
 
 
@@ -204,6 +214,9 @@ def _build_detail_prompt(venue: dict) -> str:
     )
 
 
+_DE_HEADERS = {"Accept-Language": "de-DE,de;q=0.9,en;q=0.5"}
+
+
 def _scrape_listing(app, venue: dict, max_events: int) -> dict:
     """
     Scrape the listing page with scroll actions.
@@ -218,14 +231,25 @@ def _scrape_listing(app, venue: dict, max_events: int) -> dict:
 
     # Try with scroll actions first, then without (some sites reject action requests)
     for with_actions in (True, False):
-        extra = {"actions": actions} if with_actions else {}
+        extra: dict = {"headers": _DE_HEADERS}
+        if with_actions:
+            extra["actions"] = actions
         try:
             result = app.scrape(venue["url"], formats=[json_fmt], **extra)
             extracted = _normalise(result)
             if extracted.get("events"):
                 return extracted
-        except TypeError:
-            pass  # unexpected kwarg — try next
+        except TypeError as e:
+            # unexpected kwarg (e.g. SDK doesn't accept headers) — retry without it
+            if "headers" in str(e):
+                extra.pop("headers", None)
+                try:
+                    result = app.scrape(venue["url"], formats=[json_fmt], **extra)
+                    extracted = _normalise(result)
+                    if extracted.get("events"):
+                        return extracted
+                except Exception as e2:
+                    last_err = e2
         except Exception as e:
             last_err = e
             print(f"    [warn] listing scrape ({'with' if with_actions else 'without'} scroll): {e}")
@@ -265,7 +289,10 @@ def _scrape_one_detail(app, detail_url: str, venue: dict) -> dict:
     schema = EventDetail.model_json_schema()
     json_fmt = {"type": "json", "schema": schema, "prompt": prompt}
     try:
-        result = app.scrape(detail_url, formats=[json_fmt])
+        try:
+            result = app.scrape(detail_url, formats=[json_fmt], headers=_DE_HEADERS)
+        except TypeError:
+            result = app.scrape(detail_url, formats=[json_fmt])
         return _normalise(result)
     except Exception as e:
         print(f"    [warn] detail scrape failed ({detail_url[:60]}): {e}", flush=True)
