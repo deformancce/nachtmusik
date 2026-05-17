@@ -3,7 +3,7 @@
   "city": "Stuttgart",
   "slug": "liederhalle_stuttgart",
   "source_url": "https://liederhalle.de/eventkalender",
-  "scraped_at": "2026-05-17T07:56:09.187214Z",
+  "scraped_at": "2026-05-17T08:11:45.544210Z",
   "engine": "firecrawl",
   "_strategy": "scrape v2 formats-list",
   "events": [
@@ -15,6 +15,7 @@
       "program": [],
       "performers": [],
       "conductor": null,
+      "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/cornamusa-world-of-pipe-rock-and-irish-dance",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart"
@@ -27,6 +28,7 @@
       "program": [],
       "performers": [],
       "conductor": null,
+      "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/jubilaeumskonzert-75-jahre-orchester-stuttgarter-musikfreunde",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart"
@@ -39,6 +41,7 @@
       "program": [],
       "performers": [],
       "conductor": null,
+      "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/tim-bendzko-alles-nur-nicht-zurueck",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart"
@@ -51,6 +54,7 @@
       "program": [],
       "performers": [],
       "conductor": null,
+      "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/homin-choir",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart"
@@ -63,10 +67,12 @@
       "program": [],
       "performers": [],
       "conductor": null,
+      "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart"
     }
   ],
-  "total_events": 5
+  "total_events": 5,
+  "total_events_visible": 9
 }

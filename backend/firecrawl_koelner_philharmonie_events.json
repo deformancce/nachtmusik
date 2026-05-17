@@ -3,7 +3,7 @@
   "city": "Köln",
   "slug": "koelner_philharmonie",
   "source_url": "https://www.koelner-philharmonie.de/de/konzerte",
-  "scraped_at": "2026-05-17T07:55:27.899941Z",
+  "scraped_at": "2026-05-17T08:10:56.544041Z",
   "engine": "firecrawl",
   "_strategy": "scrape v2 formats-list",
   "events": [
@@ -15,6 +15,7 @@
       "program": [],
       "performers": [],
       "conductor": null,
+      "price": null,
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/ford-sinfonieorchester/4740",
       "venue": "Kölner Philharmonie",
       "city": "Köln"
@@ -24,9 +25,12 @@
       "time": "16:00",
       "title": "Rising Stars: Álfheiður Erla Guðmundsdóttir & Kunal Lahiry",
       "venue_hall": null,
-      "program": [],
+      "program": [
+        "Migrations"
+      ],
       "performers": [],
       "conductor": null,
+      "price": null,
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/rising-stars-alfheiur-erla-gumundsdottir-kunal-lahiry/4708",
       "venue": "Kölner Philharmonie",
       "city": "Köln"
@@ -39,6 +43,7 @@
       "program": [],
       "performers": [],
       "conductor": null,
+      "price": null,
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/aurel-dawidiuk/4603",
       "venue": "Kölner Philharmonie",
       "city": "Köln"
@@ -49,14 +54,11 @@
       "title": "Jörg Widmann | Isabelle Faust | Jean-Guihen Queyras | Pierre-Laurent Aimard",
       "venue_hall": null,
       "program": [
-        "Composer: Quatuor pour la fin du Temps"
+        "Quatuor pour la fin du Temps"
       ],
-      "performers": [
-        "Isabelle Faust",
-        "Jean-Guihen Queyras",
-        "Pierre-Laurent Aimard"
-      ],
+      "performers": [],
       "conductor": null,
+      "price": null,
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/jorg-widmann-isabelle-faust-jean-guihen-queyras-pierre-laurent-aimard/4649",
       "venue": "Kölner Philharmonie",
       "city": "Köln"
@@ -78,10 +80,12 @@
         "Carola Kärcher"
       ],
       "conductor": null,
+      "price": null,
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/klassik-mal-anders-heute-schon-gelacht/4872",
       "venue": "Kölner Philharmonie",
       "city": "Köln"
     }
   ],
-  "total_events": 5
+  "total_events": 5,
+  "total_events_visible": 10
 }

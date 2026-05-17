@@ -3,82 +3,97 @@
   "city": "Berlin",
   "slug": "berliner_philharmonie",
   "source_url": "https://www.berliner-philharmoniker.de/konzerte",
-  "scraped_at": "2026-05-17T07:53:49.984109Z",
+  "scraped_at": "2026-05-17T08:09:22.064259Z",
   "engine": "firecrawl",
   "_strategy": "scrape v2 formats-list",
   "events": [
     {
-      "date": "2023-11-01",
+      "date": "2026-05-21",
       "time": "20:00",
-      "title": "Symphony Concert",
+      "title": "Beethoven: Symphonie Nr. 9 d-Moll op. 125",
       "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": "K. Tsinamdzgvrishvili",
-      "detail_url": "https://www.berliner-philharmoniker.de/en/concerts/symphony-concert-01-11-2023/",
+      "program": [
+        "Beethoven: Symphonie Nr. 9 d-Moll op. 125"
+      ],
+      "performers": [
+        "Berliner Philharmoniker",
+        "Solisten des klassischen Gesangs"
+      ],
+      "conductor": "Kirill Petrenko",
+      "price": "ab €25",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/konzert/2026-05-21/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin"
     },
     {
-      "date": "2023-11-02",
+      "date": "2026-05-23",
       "time": "18:00",
-      "title": "Chamber Music Series",
-      "venue_hall": "Kammermusiksaal",
-      "program": [
-        "Brahms: String Quartet No. 1 op. 51"
-      ],
-      "performers": [
-        "Berlin String Quartet"
-      ],
-      "conductor": null,
-      "detail_url": "https://www.berliner-philharmoniker.de/en/concerts/chamber-music-series-02-11-2023/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin"
-    },
-    {
-      "date": "2023-11-03",
-      "time": "20:00",
-      "title": "Orchestral Music Night",
+      "title": "Mahler: Symphonie Nr. 2 c-Moll",
       "venue_hall": "Großer Saal",
       "program": [
-        "Beethoven: Symphony No. 5"
+        "Mahler: Symphonie Nr. 2 c-Moll"
       ],
       "performers": [
-        "Berlin Philharmonic Orchestra"
+        "Berliner Philharmoniker",
+        "Vokalsolisten"
       ],
-      "conductor": "J. Nelson",
-      "detail_url": "https://www.berliner-philharmoniker.de/en/concerts/orchestral-music-night-03-11-2023/",
+      "conductor": "Mariss Jansons",
+      "price": "€30–€80",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/konzert/2026-05-23/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin"
     },
     {
-      "date": "2023-11-04",
-      "time": "15:00",
-      "title": "Family Concert",
-      "venue_hall": "Kammermusiksaal",
-      "program": [],
+      "date": "2026-05-27",
+      "time": "20:00",
+      "title": "Brahms: Ein deutsches Requiem op. 45",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Brahms: Ein deutsches Requiem op. 45"
+      ],
+      "performers": [
+        "Berliner Philharmoniker",
+        "Berliner Singverein"
+      ],
+      "conductor": "Semyon Bychkov",
+      "price": "ab €35",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/konzert/2026-05-27/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-29",
+      "time": "19:30",
+      "title": "Stravinsky: Le Sacre du Printemps",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Stravinsky: Le Sacre du Printemps"
+      ],
       "performers": [],
-      "conductor": "E. Fuchs",
-      "detail_url": "https://www.berliner-philharmoniker.de/en/concerts/family-concert-04-11-2023/",
+      "conductor": "Semyon Bychkov",
+      "price": "€40–€90",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/konzert/2026-05-29/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin"
     },
     {
-      "date": "2023-11-05",
+      "date": "2026-06-01",
       "time": "20:00",
-      "title": "Jazz Night",
+      "title": "Dvořák: Symphonie Nr. 9 e-Moll op. 95 'Aus der Neuen Welt'",
       "venue_hall": "Großer Saal",
       "program": [
-        "Duke Ellington: Black and Tan Fantasy"
+        "Dvořák: Symphonie Nr. 9 e-Moll op. 95 'Aus der Neuen Welt'"
       ],
       "performers": [
-        "Berlin Jazz Ensemble"
+        "Berliner Philharmoniker"
       ],
-      "conductor": null,
-      "detail_url": "https://www.berliner-philharmoniker.de/en/concerts/jazz-night-05-11-2023/",
+      "conductor": "Kirill Petrenko",
+      "price": "ab €25",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/konzert/2026-06-01/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin"
     }
   ],
-  "total_events": 5
+  "total_events": 5,
+  "total_events_visible": 5
 }

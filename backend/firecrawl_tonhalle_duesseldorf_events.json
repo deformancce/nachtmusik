@@ -2,80 +2,77 @@
   "venue": "Tonhalle Düsseldorf",
   "city": "Düsseldorf",
   "slug": "tonhalle_duesseldorf",
-  "source_url": "https://www.tonhalle.de/veranstaltungen/kalender",
-  "scraped_at": "2026-05-17T07:54:43.589310Z",
+  "source_url": "https://www.tonhalle.de/veranstaltungen/kalender?from=1778934644",
+  "scraped_at": "2026-05-17T08:10:10.399889Z",
   "engine": "firecrawl",
   "_strategy": "scrape v2 formats-list",
   "events": [
     {
       "date": "2026-05-17",
-      "time": null,
-      "title": "Café-Konzert: Frau Luna",
-      "venue_hall": null,
+      "time": "00:00",
+      "title": "Café-Konzert Frau Luna",
+      "venue_hall": "",
       "program": [],
       "performers": [],
-      "conductor": null,
+      "conductor": "",
+      "price": "",
       "detail_url": "https://www.tonhalle.de/veranstaltung/cafe-konzert/17617-frau-luna",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf"
     },
     {
-      "date": "2026-05-18",
-      "time": null,
-      "title": "Abgesagt: Pretty Yende",
-      "venue_hall": null,
+      "date": "2026-05-22",
+      "time": "00:00",
+      "title": "Vision String & Danish String Quartet Mendelssohn",
+      "venue_hall": "",
       "program": [],
       "performers": [],
-      "conductor": null,
-      "detail_url": "https://www.tonhalle.de/veranstaltung/19079-abgesagt-pretty-yende",
-      "venue": "Tonhalle Düsseldorf",
-      "city": "Düsseldorf"
-    },
-    {
-      "date": "2026-05-22",
-      "time": null,
-      "title": "Vision String & Danish String Quartet: Mendelssohn",
-      "venue_hall": null,
-      "program": [
-        "Mendelssohn: Title op.X"
-      ],
-      "performers": [
-        "Vision String",
-        "Danish String Quartet"
-      ],
-      "conductor": null,
+      "conductor": "",
+      "price": "",
       "detail_url": "https://www.tonhalle.de/veranstaltung/raumstation/17284-mendelssohn",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf"
     },
     {
       "date": "2026-05-23",
-      "time": null,
-      "title": "bereits AUSVERKAUFT: Element of Crime",
-      "venue_hall": null,
+      "time": "00:00",
+      "title": "bereits AUSVERKAUFT Element of Crime",
+      "venue_hall": "",
       "program": [],
       "performers": [],
-      "conductor": null,
+      "conductor": "",
+      "price": "",
       "detail_url": "https://www.tonhalle.de/veranstaltung/komet/20954-element-crime",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf"
     },
     {
       "date": "2026-05-30",
-      "time": null,
-      "title": "feat. Markus Stockhausen: Melodic Lifetime",
-      "venue_hall": null,
-      "program": [
-        "Stockhausen: Title op.X"
-      ],
-      "performers": [
-        "Markus Stockhausen"
-      ],
-      "conductor": null,
+      "time": "00:00",
+      "title": "feat. Markus Stockhausen Melodic Lifetime",
+      "venue_hall": "",
+      "program": [],
+      "performers": [],
+      "conductor": "",
+      "price": "",
       "detail_url": "https://www.tonhalle.de/veranstaltung/supernova/17642-melodic-lifetime",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf"
+    },
+    {
+      "date": "2026-05-31",
+      "time": "00:00",
+      "title": "Schroeder geht ins Konzert",
+      "venue_hall": "",
+      "program": [],
+      "performers": [],
+      "conductor": "",
+      "price": "",
+      "detail_url": "https://www.tonhalle.de/veranstaltung/comedy-geht-ins-konzert/17327-schroeder-geht-ins-konzert",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf"
     }
   ],
-  "total_events": 5
+  "total_events": 5,
+  "total_events_visible": 10
 }

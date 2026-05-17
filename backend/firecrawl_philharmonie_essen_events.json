@@ -2,86 +2,83 @@
   "venue": "Philharmonie Essen",
   "city": "Essen",
   "slug": "philharmonie_essen",
-  "source_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/",
-  "scraped_at": "2026-05-17T07:54:54.194397Z",
+  "source_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen?scheduleScrollTo=2026-06-06-p3271",
+  "scraped_at": "2026-05-17T08:10:27.002569Z",
   "engine": "firecrawl",
   "_strategy": "scrape v2 formats-list",
   "events": [
     {
-      "date": "2026-05-22",
-      "time": "19:00",
-      "title": "Takeover! by Miki und Eva Briegel (JULI)",
-      "venue_hall": "Alfried Krupp Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/takeover-by-miki-und-eva-briegel-juli-151425/3177/",
-      "venue": "Philharmonie Essen",
-      "city": "Essen"
-    },
-    {
-      "date": "2026-05-23",
-      "time": "19:00",
-      "title": "Takeover! by Miki und Eva Briegel (JULI)",
-      "venue_hall": "Alfried Krupp Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/takeover-by-miki-und-eva-briegel-juli-151425/3178/",
-      "venue": "Philharmonie Essen",
-      "city": "Essen"
-    },
-    {
-      "date": "2026-05-24",
-      "time": "18:00",
-      "title": "Die Prinzen Symphonisch",
-      "venue_hall": "Alfried Krupp Saal",
-      "program": [
-        "Gustav Mahler: Symphony No. 1"
-      ],
-      "performers": [
-        "Die Prinzen"
-      ],
-      "conductor": null,
-      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/die-prinzen-symphonisch-157996/3335/",
-      "venue": "Philharmonie Essen",
-      "city": "Essen"
-    },
-    {
-      "date": "2026-05-26",
+      "date": "2026-06-01",
       "time": "20:00",
-      "title": "Joana Mallwitz & Konzerthausorchester Berlin",
+      "title": "Chilly Gonzales",
       "venue_hall": "Alfried Krupp Saal",
-      "program": [
-        "Gustav Mahler: Symphony No. 5",
-        "Ludwig van Beethoven: Piano Concerto No. 5 "
-      ],
-      "performers": [
-        "Konzerthausorchester Berlin"
-      ],
-      "conductor": "Joana Mallwitz",
-      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/joana-mallwitzkonzerthausorchester-berlin-154813/2711/",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €35",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/chilly-gonzales-161019/3649/",
       "venue": "Philharmonie Essen",
       "city": "Essen"
     },
     {
-      "date": "2026-05-27",
+      "date": "2026-06-03",
       "time": "19:00",
-      "title": "Gautier Capuçon & Sächsische Staatskapelle Dresden",
-      "venue_hall": "Alfried Krupp Saal",
+      "title": "Ensemble Wien-Berlin Mozart Serenade",
+      "venue_hall": "NATIONAL-BANK Pavillon",
       "program": [
-        "Camille Saint-Saëns: Cello Concerto",
-        "Claude Debussy: Suite Bergamasque"
+        "Dvorák: Serenade für Streichorchester E-Dur op. 22",
+        "Mozart: Serenade Nr. 13 für Blasorchester in B-Dur K. 361"
       ],
-      "performers": [
-        "Gautier Capuçon",
-        "Sächsische Staatskapelle Dresden"
-      ],
+      "performers": [],
       "conductor": null,
-      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/gautier-capuconsaechsische-staatskapelle-dresden-149566/3226/",
+      "price": null,
+      "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/ensemble-wien-berlinmozart-serenade-154355/3052/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen"
+    },
+    {
+      "date": "2026-06-06",
+      "time": "19:00",
+      "title": "Spielzeitpräsentationen der Essener Philharmoniker und der Philharmonie Essen",
+      "venue_hall": "Alfried Krupp Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "Eintritt frei",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/spielzeitpraesentationen-der-essener-philharmoniker-und-der-philharmonie-essen-153000/2694/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen"
+    },
+    {
+      "date": "2026-06-07",
+      "time": "11:00",
+      "title": "Junge Elite Beethoven Trio",
+      "venue_hall": "NATIONAL-BANK Pavillon",
+      "program": [
+        "Beethoven: Klaviertrio Nr. 7 B-Dur op. 97 \"Archduke\"",
+        "Paganini: Caprice No. 24"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": "€12",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/junge-elitebeethoven-trio-150000/3230/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen"
+    },
+    {
+      "date": "2026-06-10",
+      "time": "15:00",
+      "title": "Sommerkonzert für Senior*innen",
+      "venue_hall": "NATIONAL-BANK Pavillon",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "Eintritt frei",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/sommerkonzert-fuer-seniorinnen-153983/3265/",
       "venue": "Philharmonie Essen",
       "city": "Essen"
     }
   ],
-  "total_events": 5
+  "total_events": 5,
+  "total_events_visible": 24
 }

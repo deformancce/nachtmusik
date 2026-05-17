@@ -2,8 +2,8 @@
   "venue": "Gewandhaus Leipzig",
   "city": "Leipzig",
   "slug": "gewandhaus_leipzig",
-  "source_url": "https://www.gewandhausorchester.de/spielplan/",
-  "scraped_at": "2026-05-17T07:55:39.317700Z",
+  "source_url": "https://www.gewandhausorchester.de/",
+  "scraped_at": "2026-05-17T08:11:06.577367Z",
   "engine": "firecrawl",
   "_strategy": "scrape v2 formats-list",
   "events": [
@@ -12,14 +12,10 @@
       "time": "17:00",
       "title": "Regina - Oper in drei Akten",
       "venue_hall": "Opernhaus",
-      "program": [
-        "Albert Lortzing: Regina - Oper in drei Akten"
-      ],
-      "performers": [
-        "Gewandhausorchester",
-        "Constantin Trinks"
-      ],
+      "program": [],
+      "performers": [],
       "conductor": "Constantin Trinks",
+      "price": "88/78/63/48/39/18 EUR",
       "detail_url": "https://www.gewandhausorchester.de/veranstaltung/regina-9590/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig"
@@ -35,10 +31,14 @@
         "Mieczysław Weinberg: Quintett für Klavier, zwei Violinen, Viola und Violoncello f-Moll op. 18"
       ],
       "performers": [
-        "Quatuor Danel",
+        "Marc Danel",
+        "Gilles Millet",
+        "Vlad Bogdanas",
+        "Yovan Markovitch",
         "Marc-André Hamelin"
       ],
       "conductor": "",
+      "price": "24/20 EUR",
       "detail_url": "https://www.gewandhausorchester.de/veranstaltung/quartettgesellschaft-kammermusik-9375/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig"
@@ -46,27 +46,50 @@
     {
       "date": "2026-05-17",
       "time": "19:00",
-      "title": "Konzerthaus Tour 2026",
+      "title": "Element of Crime",
       "venue_hall": "Großer Saal",
       "program": [],
       "performers": [],
       "conductor": "",
+      "price": "74/68,50/63/57,50 EUR",
       "detail_url": "https://www.gewandhausorchester.de/veranstaltung/element-of-crime-9804/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig"
+    },
+    {
+      "date": "2026-05-17",
+      "time": "19:00",
+      "title": "Gastspiel des Gewandhausorchesters in Frankfurt",
+      "venue_hall": "Alte Oper",
+      "program": [
+        "Sergej Rachmaninoff: 2. Konzert für Klavier und Orchester c-Moll op. 18",
+        "Dmitri Schostakowitsch: 10. Sinfonie e-Moll op. 93"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Andris Nelsons",
+        "Yulianna Avdeeva"
+      ],
+      "conductor": "Andris Nelsons",
+      "price": "",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/gastspiel-in-frankfurt-9425/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig"
     },
     {
       "date": "2026-05-18",
       "time": "20:00",
-      "title": "Konzerthaus Tour 2026",
+      "title": "Element of Crime",
       "venue_hall": "Großer Saal",
       "program": [],
       "performers": [],
       "conductor": "",
+      "price": "74/68,50/63/57,50 EUR",
       "detail_url": "https://www.gewandhausorchester.de/veranstaltung/element-of-crime-9805/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig"
     }
   ],
-  "total_events": 4
+  "total_events": 5,
+  "total_events_visible": 5
 }

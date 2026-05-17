@@ -3,14 +3,14 @@
   "city": "Dortmund",
   "slug": "konzerthaus_dortmund",
   "source_url": "https://www.konzerthaus-dortmund.de/de/programm/",
-  "scraped_at": "2026-05-17T07:54:11.123506Z",
+  "scraped_at": "2026-05-17T08:09:47.817275Z",
   "engine": "firecrawl",
   "_strategy": "scrape v2 formats-list",
   "events": [
     {
       "date": "2026-05-17",
       "time": "16:00",
-      "title": "Orchesterkonzert - Constantinos Carydis & WDR Sinfonieorchester",
+      "title": "Orchesterkonzert",
       "venue_hall": null,
       "program": [
         "Periklis Koukos: Prooimion Rhapsodie über Odysseus für großes Orchester",
@@ -23,21 +23,21 @@
         "Yoav Levanon"
       ],
       "conductor": "Constantinos Carydis",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/17-05-2026-constantinos-carydis-wdr-sinfonieorchester/platzwahl/",
+      "price": "19 € – 89 €",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/17-05-2026-constantinos-carydis-wdr-sinfonieorchester/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund"
     },
     {
       "date": "2026-05-18",
       "time": "18:30",
-      "title": "Musik & Dialog - Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
+      "title": "Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
       "venue_hall": null,
       "program": [],
-      "performers": [
-        "Michael Stegemann"
-      ],
-      "conductor": null,
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-05-2026-kopfnoten-eine-kleine-geschichte-der-epochen-und-stile/platzwahl/",
+      "performers": [],
+      "conductor": "Michael Stegemann",
+      "price": "8 €",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-05-2026-kopfnoten-eine-kleine-geschichte-der-epochen-und-stile/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund"
     },
@@ -53,11 +53,11 @@
       ],
       "performers": [
         "Dortmunder Philharmoniker",
-        "Patrick Lange",
         "Sergei Nakariakov"
       ],
       "conductor": "Patrick Lange",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/19-05-2026-7-philharmonisches-konzert/platzwahl/",
+      "price": "19 € – 49 €",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/19-05-2026-7-philharmonisches-konzert/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund"
     },
@@ -73,11 +73,11 @@
       ],
       "performers": [
         "Dortmunder Philharmoniker",
-        "Patrick Lange",
         "Sergei Nakariakov"
       ],
       "conductor": "Patrick Lange",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/20-05-2026-7-philharmonisches-konzert/platzwahl/",
+      "price": "19 € – 49 €",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/20-05-2026-7-philharmonisches-konzert/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund"
     },
@@ -89,10 +89,12 @@
       "program": [],
       "performers": [],
       "conductor": null,
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/21-05-2026-ueberraschungskonzert-der-joker/platzwahl/",
+      "price": "25 €",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/21-05-2026-ueberraschungskonzert-der-joker/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund"
     }
   ],
-  "total_events": 5
+  "total_events": 5,
+  "total_events_visible": 81
 }

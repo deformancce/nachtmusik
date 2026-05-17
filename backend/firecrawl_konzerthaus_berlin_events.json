@@ -2,8 +2,8 @@
   "venue": "Konzerthaus Berlin",
   "city": "Berlin",
   "slug": "konzerthaus_berlin",
-  "source_url": "https://www.konzerthaus.de/de/programm",
-  "scraped_at": "2026-05-17T07:53:06.863404Z",
+  "source_url": "https://www.konzerthaus.de/de/programm/16-05-2026",
+  "scraped_at": "2026-05-17T08:09:00.830053Z",
   "engine": "firecrawl",
   "_strategy": "scrape v2 formats-list",
   "events": [
@@ -19,9 +19,10 @@
         "Franz Liszt: Variationen über einen Basso continuo aus der Kantate „Weinen, Klagen, Sorgen, Zagen“ von Johann Sebastian Bach"
       ],
       "performers": [
-        "Elisabeth Brauß"
+        "Elisabeth Brauß  Klavier"
       ],
       "conductor": null,
+      "price": null,
       "detail_url": "https://www.konzerthaus.de/de/programm/espresso-konzert/11719",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin"
@@ -31,11 +32,10 @@
       "time": "19:30",
       "title": "Berliner Operngruppe",
       "venue_hall": "Großer Saal",
-      "program": [
-        "Alberto Franchetti: Fior d’Alpe"
-      ],
+      "program": [],
       "performers": [],
       "conductor": null,
+      "price": null,
       "detail_url": "https://www.konzerthaus.de/de/programm/berliner-operngruppe/12411",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin"
@@ -51,14 +51,28 @@
         "Johannes Brahms: Klavierquintett f-Moll op. 34"
       ],
       "performers": [
-        "Liza Ferschtman",
-        "Benjamin Hochman",
-        "Leah Amory",
-        "Davin Mar",
-        "Carson Ling-Efird"
+        "Liza Ferschtman  Violine",
+        "Leah Amory  Violine",
+        "Davin Mar  Viola",
+        "Carson Ling-Efird  Violoncello",
+        "Benjamin Hochman  Klavier"
       ],
       "conductor": null,
+      "price": null,
       "detail_url": "https://www.konzerthaus.de/de/programm/beethovens-geistertrio-und-brahms-klavierquintett/12412",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-20",
+      "time": "20:00",
+      "title": "Herz über Kopf: Mahlers Fünfte",
+      "venue_hall": "Werner-Otto-Saal",
+      "program": [],
+      "performers": [],
+      "conductor": "Steven Sloane",
+      "price": null,
+      "detail_url": "https://www.konzerthaus.de/de/programm/herz-uber-kopf-mahlers-funfte/11720",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin"
     },
@@ -82,30 +96,15 @@
         "Igor Strawinsky: „Der Feuervogel“ - Ballettmusik, bearbeitet von Guido Agosti"
       ],
       "performers": [
-        "Irina Lankova"
+        "Irina Lankova  Klavier"
       ],
       "conductor": null,
+      "price": null,
       "detail_url": "https://www.konzerthaus.de/de/programm/irina-lankova/12373",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin"
-    },
-    {
-      "date": "2026-05-21",
-      "time": "18:30",
-      "title": "8ZEHN30 – Kurzkonzert",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Gustav Mahler: Sinfonie Nr. 5 cis-Moll"
-      ],
-      "performers": [
-        "Konzerthausorchester Berlin",
-        "Joana Mallwitz"
-      ],
-      "conductor": "Joana Mallwitz",
-      "detail_url": "https://www.konzerthaus.de/de/programm/8zehn30-kurzkonzert/11531",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin"
     }
   ],
-  "total_events": 5
+  "total_events": 5,
+  "total_events_visible": 39
 }

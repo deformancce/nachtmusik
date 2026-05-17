@@ -3,20 +3,19 @@
   "city": "Baden-Baden",
   "slug": "festspielhaus_baden_baden",
   "source_url": "https://www.festspielhaus.de/programm/",
-  "scraped_at": "2026-05-17T07:52:48.822534Z",
+  "scraped_at": "2026-05-17T08:08:54.503043Z",
   "engine": "firecrawl",
   "_strategy": "scrape v2 formats-list",
   "events": [
     {
       "date": "2026-05-17",
       "time": "16:00",
-      "title": "Pfingstfestspiele",
-      "venue_hall": "Festspielhaus Baden-Baden",
+      "title": "SWR Symphonieorchester",
+      "venue_hall": "",
       "program": [],
-      "performers": [
-        "SWR Symphonieorchester"
-      ],
-      "conductor": null,
+      "performers": [],
+      "conductor": "",
+      "price": "ab 33 €",
       "detail_url": "https://www.festspielhaus.de/festivals/presence/",
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden"
@@ -25,13 +24,12 @@
       "date": "2026-05-21",
       "time": "19:00",
       "title": "Richard Strauss: Der Rosenkavalier",
-      "venue_hall": "Festspielhaus Baden-Baden",
-      "program": [
-        "Richard Strauss: Der Rosenkavalier"
-      ],
+      "venue_hall": "",
+      "program": [],
       "performers": [],
       "conductor": "François-Xavier Roth",
-      "detail_url": null,
+      "price": "29 €",
+      "detail_url": "",
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden"
     },
@@ -39,13 +37,14 @@
       "date": "2026-05-22",
       "time": "21:00",
       "title": "Ich atmet' einen linden Duft",
-      "venue_hall": "Festspielhaus Baden-Baden",
+      "venue_hall": "Weinbrennersaal, Kurhaus Baden-Baden",
       "program": [
-        "Gustav Mahler: Lieder"
+        "Mahler: Lieder"
       ],
       "performers": [],
-      "conductor": null,
-      "detail_url": null,
+      "conductor": "",
+      "price": "45 €",
+      "detail_url": "",
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden"
     },
@@ -53,13 +52,14 @@
       "date": "2026-05-23",
       "time": "18:00",
       "title": "Late Night",
-      "venue_hall": "Festspielhaus Baden-Baden",
+      "venue_hall": "Weinbrennersaal, Kurhaus Baden-Baden",
       "program": [],
       "performers": [
         "Libor Šíma & Friends"
       ],
-      "conductor": null,
-      "detail_url": null,
+      "conductor": "",
+      "price": "ab 25 €",
+      "detail_url": "",
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden"
     },
@@ -67,18 +67,20 @@
       "date": "2026-05-24",
       "time": "16:00",
       "title": "Von Versailles nach Wien",
-      "venue_hall": "Festspielhaus Baden-Baden",
+      "venue_hall": "",
       "program": [
-        "Lully: Titel",
-        "Mozart: Titel",
-        "Haydn: Titel"
+        "Lully",
+        "Mozart",
+        "Haydn"
       ],
       "performers": [],
-      "conductor": null,
-      "detail_url": null,
+      "conductor": "",
+      "price": "ab 33 €",
+      "detail_url": "",
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden"
     }
   ],
-  "total_events": 5
+  "total_events": 5,
+  "total_events_visible": 16
 }
