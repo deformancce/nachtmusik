@@ -3,9 +3,8 @@
   "city": "Stuttgart",
   "slug": "liederhalle_stuttgart",
   "source_url": "https://liederhalle.de/eventkalender",
-  "scraped_at": "2026-05-17T08:11:45.544210Z",
+  "scraped_at": "2026-05-17T08:41:16.201578Z",
   "engine": "firecrawl",
-  "_strategy": "scrape v2 formats-list",
   "events": [
     {
       "date": "2026-05-17",
@@ -13,7 +12,9 @@
       "title": "Cornamusa - World of Pipe Rock and Irish Dance",
       "venue_hall": "Beethoven-Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Cornamusa Scheler & Bähring GbR"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/cornamusa-world-of-pipe-rock-and-irish-dance",
@@ -25,9 +26,16 @@
       "time": "19:00",
       "title": "Jubiläumskonzert - 75 Jahre Orchester Stuttgarter Musikfreunde",
       "venue_hall": "Mozart-Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Weber: Freischütz Ouvertüre",
+        "Mozart: Violinkonzert Nr. 3 in G-Dur",
+        "Dvořák: Sinfonie Nr. 9 (Aus der neuen Welt)"
+      ],
+      "performers": [
+        "Christine Busch",
+        "Orchester Stuttgarter Musikfreunde (OSM) e.V."
+      ],
+      "conductor": "Klaus Kulling",
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/jubilaeumskonzert-75-jahre-orchester-stuttgarter-musikfreunde",
       "venue": "Liederhalle Stuttgart",
@@ -39,7 +47,9 @@
       "title": "Tim Bendzko: Alles, nur nicht zurück",
       "venue_hall": "Hegel-Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Tim Bendzko"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/tim-bendzko-alles-nur-nicht-zurueck",
@@ -52,7 +62,9 @@
       "title": "Homin Choir",
       "venue_hall": "Mozart-Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Homin Choir"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/homin-choir",
@@ -64,15 +76,20 @@
       "time": "19:00",
       "title": "SWR Symphonieorchester: Dans la cuisine du chef",
       "venue_hall": "Hegel-Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Haydn: Sinfonie Nr. 101 D-Dur ('Die Uhr')"
+      ],
+      "performers": [
+        "SWR Symphonieorchester"
+      ],
+      "conductor": "François-Xavier Roth",
+      "price": "Freier Eintritt, Reservierung erforderlich",
       "detail_url": "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 9
+  "total_events_visible": 18,
+  "total_events_discovered": 18
 }

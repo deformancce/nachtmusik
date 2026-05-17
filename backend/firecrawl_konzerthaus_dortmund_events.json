@@ -3,14 +3,13 @@
   "city": "Dortmund",
   "slug": "konzerthaus_dortmund",
   "source_url": "https://www.konzerthaus-dortmund.de/de/programm/",
-  "scraped_at": "2026-05-17T08:09:47.817275Z",
+  "scraped_at": "2026-05-17T08:31:13.977800Z",
   "engine": "firecrawl",
-  "_strategy": "scrape v2 formats-list",
   "events": [
     {
       "date": "2026-05-17",
       "time": "16:00",
-      "title": "Orchesterkonzert",
+      "title": "Orchesterkonzert: Constantinos Carydis & WDR Sinfonieorchester",
       "venue_hall": null,
       "program": [
         "Periklis Koukos: Prooimion Rhapsodie über Odysseus für großes Orchester",
@@ -24,27 +23,32 @@
       ],
       "conductor": "Constantinos Carydis",
       "price": "19 € – 89 €",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/17-05-2026-constantinos-carydis-wdr-sinfonieorchester/",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/17-05-2026-constantinos-carydis-wdr-sinfonieorchester/platzwahl/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund"
     },
     {
       "date": "2026-05-18",
       "time": "18:30",
-      "title": "Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
-      "conductor": "Michael Stegemann",
+      "title": "Musik & Dialog: Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Brahms: Symphonie Nr. 1 c-Moll op. 68"
+      ],
+      "performers": [
+        "Dortmunder Philharmoniker"
+      ],
+      "conductor": "Martin K. Schmitt",
       "price": "8 €",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-05-2026-kopfnoten-eine-kleine-geschichte-der-epochen-und-stile/",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-05-2026-kopfnoten-eine-kleine-geschichte-der-epochen-und-stile/platzwahl/",
       "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund"
+      "city": "Dortmund",
+      "duration_min": 90
     },
     {
       "date": "2026-05-19",
       "time": "19:30",
-      "title": "7. Philharmonisches Konzert",
+      "title": "Orchesterkonzert: 7. Philharmonisches Konzert",
       "venue_hall": null,
       "program": [
         "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum Schauspielmusik op. 61 (Auszüge)",
@@ -53,18 +57,19 @@
       ],
       "performers": [
         "Dortmunder Philharmoniker",
+        "Patrick Lange",
         "Sergei Nakariakov"
       ],
       "conductor": "Patrick Lange",
       "price": "19 € – 49 €",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/19-05-2026-7-philharmonisches-konzert/",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/19-05-2026-7-philharmonisches-konzert/platzwahl/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund"
     },
     {
       "date": "2026-05-20",
       "time": "19:30",
-      "title": "7. Philharmonisches Konzert",
+      "title": "Orchesterkonzert: 7. Philharmonisches Konzert",
       "venue_hall": null,
       "program": [
         "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum Schauspielmusik op. 61 (Auszüge)",
@@ -73,11 +78,12 @@
       ],
       "performers": [
         "Dortmunder Philharmoniker",
+        "Patrick Lange",
         "Sergei Nakariakov"
       ],
       "conductor": "Patrick Lange",
       "price": "19 € – 49 €",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/20-05-2026-7-philharmonisches-konzert/",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/20-05-2026-7-philharmonisches-konzert/platzwahl/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund"
     },
@@ -85,16 +91,22 @@
       "date": "2026-05-21",
       "time": "19:30",
       "title": "Überraschungskonzert – Der Joker",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Komponist Lastname: Werk Titel mit opus"
+      ],
+      "performers": [
+        "Ensemble Dortmund"
+      ],
+      "conductor": "Dirigent Name",
       "price": "25 €",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/21-05-2026-ueberraschungskonzert-der-joker/",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/21-05-2026-ueberraschungskonzert-der-joker/platzwahl/",
       "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund"
+      "city": "Dortmund",
+      "duration_min": 90
     }
   ],
   "total_events": 5,
-  "total_events_visible": 81
+  "total_events_visible": 45,
+  "total_events_discovered": 45
 }

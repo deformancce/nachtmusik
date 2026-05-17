@@ -3,9 +3,8 @@
   "city": "Essen",
   "slug": "philharmonie_essen",
   "source_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen?scheduleScrollTo=2026-06-06-p3271",
-  "scraped_at": "2026-05-17T08:10:27.002569Z",
+  "scraped_at": "2026-05-17T08:34:04.256029Z",
   "engine": "firecrawl",
-  "_strategy": "scrape v2 formats-list",
   "events": [
     {
       "date": "2026-06-01",
@@ -13,21 +12,26 @@
       "title": "Chilly Gonzales",
       "venue_hall": "Alfried Krupp Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Chilly Gonzales"
+      ],
       "conductor": null,
       "price": "ab €35",
       "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/chilly-gonzales-161019/3649/",
       "venue": "Philharmonie Essen",
-      "city": "Essen"
+      "city": "Essen",
+      "duration_min": 120
     },
     {
       "date": "2026-06-03",
       "time": "19:00",
-      "title": "Ensemble Wien-Berlin Mozart Serenade",
+      "title": "Ensemble Wien-Berlin: Mozart Serenade",
       "venue_hall": "NATIONAL-BANK Pavillon",
       "program": [
-        "Dvorák: Serenade für Streichorchester E-Dur op. 22",
-        "Mozart: Serenade Nr. 13 für Blasorchester in B-Dur K. 361"
+        "Antonín Dvorák: Title",
+        "Luciano Berio: Title",
+        "Vinko Globokar: Title",
+        "Wolfgang Amadeus Mozart: Title"
       ],
       "performers": [],
       "conductor": null,
@@ -39,46 +43,57 @@
     {
       "date": "2026-06-06",
       "time": "19:00",
-      "title": "Spielzeitpräsentationen der Essener Philharmoniker und der Philharmonie Essen",
+      "title": "Spielzeit­präsentationen der Essener Philharmoniker",
       "venue_hall": "Alfried Krupp Saal",
       "program": [],
       "performers": [],
       "conductor": null,
       "price": "Eintritt frei",
-      "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/spielzeitpraesentationen-der-essener-philharmoniker-und-der-philharmonie-essen-153000/2694/",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/spielzeitpraesentationen-der-essener-philharmoniker-154844/3271/",
       "venue": "Philharmonie Essen",
       "city": "Essen"
     },
     {
       "date": "2026-06-07",
       "time": "11:00",
-      "title": "Junge Elite Beethoven Trio",
+      "title": "Junge Elite: Beethoven Trio",
       "venue_hall": "NATIONAL-BANK Pavillon",
       "program": [
-        "Beethoven: Klaviertrio Nr. 7 B-Dur op. 97 \"Archduke\"",
-        "Paganini: Caprice No. 24"
+        "Franz Waxman: Title",
+        "Ludwig van Beethoven: Title",
+        "Niccolo Paganini: Title",
+        "Oskar Böhme: Title",
+        "Pjotr I. Tschaikowsky: Title",
+        "Robert Schumann: Title"
       ],
       "performers": [],
       "conductor": null,
-      "price": "€12",
+      "price": "ab €12",
       "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/junge-elitebeethoven-trio-150000/3230/",
       "venue": "Philharmonie Essen",
       "city": "Essen"
     },
     {
       "date": "2026-06-10",
-      "time": "15:00",
-      "title": "Sommerkonzert für Senior*innen",
-      "venue_hall": "NATIONAL-BANK Pavillon",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": "Eintritt frei",
-      "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/sommerkonzert-fuer-seniorinnen-153983/3265/",
+      "time": "19:00",
+      "title": "Happy Hour - Romantische Sinfonie",
+      "venue_hall": "Alfried Krupp Saal",
+      "program": [
+        "Mendelssohn Bartholdy: Ouvertüre zu \"Ruy Blas\", op. 95",
+        "Mendelssohn Bartholdy: Sinfonie Nr. 3 a-Moll, op. 56 \"Schottische\""
+      ],
+      "performers": [
+        "WDR Sinfonieorchester"
+      ],
+      "conductor": "Maxim Emelyanychev",
+      "price": "ab €19",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/happy-hour-romantische-sinfonie-149216/3267/",
       "venue": "Philharmonie Essen",
-      "city": "Essen"
+      "city": "Essen",
+      "duration_min": 60
     }
   ],
   "total_events": 5,
-  "total_events_visible": 24
+  "total_events_visible": 26,
+  "total_events_discovered": 26
 }

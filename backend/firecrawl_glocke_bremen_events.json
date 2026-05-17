@@ -3,32 +3,60 @@
   "city": "Bremen",
   "slug": "glocke_bremen",
   "source_url": "https://www.glocke.de/tickets-programm/",
-  "scraped_at": "2026-05-17T08:09:37.072073Z",
+  "scraped_at": "2026-05-17T08:30:04.551507Z",
   "engine": "firecrawl",
-  "_strategy": "scrape v2 formats-list",
   "events": [
     {
       "date": "2026-05-17",
       "time": "11:00",
       "title": "Ehemalige des Jugendsinfonieorchesters Bremen der Musikschule Bremen",
       "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Händel: Feuerwerksmusik D-Dur HWV 351: 1. Ouvertüre",
+        "Mendelssohn Bartholdy: Sinfonie Nr. 5 d-Moll op. 107 »Reformationssinfonie«: 2. Allegro Vivace",
+        "Rachmaninow: Sinfonie Nr. 2 e-Moll op. 27: 3. Adagio",
+        "Dvořák: Sinfonie Nr. 8 G-Dur op. 88: 4. Allegro ma non troppo"
+      ],
+      "performers": [
+        "Ehemalige des Jugendsinfonieorchesters Bremen der Musikschule Bremen"
+      ],
+      "conductor": "Heiner Buhlmann",
+      "price": "€15,00 Normal / €5,00 Ermäßigt",
       "detail_url": "https://www.glocke.de/event/ehemalige-des-jugendsinfonieorchesters-bremen-der-musikschule-bremen/?back_btn=1",
+      "venue": "Glocke Bremen",
+      "city": "Bremen"
+    },
+    {
+      "date": "2026-05-17",
+      "time": "19:00",
+      "title": "Reiner Calmund »Ein runder Abend – mit Fußball & Freunden«",
+      "venue_hall": "Kleiner Saal",
+      "program": [],
+      "performers": [
+        "Reiner Calmund"
+      ],
+      "conductor": null,
+      "price": "38,60 € Normal",
+      "detail_url": "https://www.glocke.de/event/reiner-calmund-ein-runder-abend-mit-fussball-freunden/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen"
     },
     {
       "date": "2026-05-19",
       "time": "20:00",
-      "title": "Jan Lisiecki – \"Tanz auf den Tasten\" 5. Meisterkonzert",
+      "title": "Jan Lisiecki »Tanz auf den Tasten« 5. Meisterkonzert",
       "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
+      "program": [
+        "Franz Schubert: 16 Deutsche Tänze D 783",
+        "Béla Bartók: Rumänische Volkstänze Sz 56",
+        "Frédéric Chopin: Grande valse brillante Es-Dur op. 18",
+        "Johannes Brahms: Walzer As-Dur op. 39/15"
+      ],
+      "performers": [
+        "Jan Lisiecki"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "ab €28,20 (Normal) bis €66,70",
       "detail_url": "https://www.glocke.de/event/jan-lisiecki-tanz-auf-den-tasten-5-meisterkonzert/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen"
@@ -36,12 +64,22 @@
     {
       "date": "2026-05-20",
       "time": "19:00",
-      "title": "\"Curtis on Tour\" 8. Philharmonisches Kammerkonzert",
+      "title": "»Curtis on Tour« 8. Philharmonisches Kammerkonzert",
       "venue_hall": "Kleiner Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Martinů: Drei Madrigale",
+        "Beethoven: Klaviertrio D-Dur op. 70/1 (»Geistertrio«)",
+        "Brahms: Klavierquintett f-Moll op. 34"
+      ],
+      "performers": [
+        "Liza Ferschtman",
+        "Leah Amory",
+        "Davin Mar",
+        "Carson Ling-Efird",
+        "Benjamin Hochman"
+      ],
+      "conductor": "Liza Ferschtman",
+      "price": "47,00 € Normal",
       "detail_url": "https://www.glocke.de/event/curtis-on-tour-8-philharmonisches-kammerkonzert/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen"
@@ -49,30 +87,20 @@
     {
       "date": "2026-05-20",
       "time": "20:00",
-      "title": "Marc-Uwe Kling: \"Neues vom Känguru\"",
+      "title": "Marc-Uwe Kling: »Neues vom Känguru«",
       "venue_hall": "Großer Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Marc-Uwe Kling"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "39,75 € Normal - Nur noch Einzelplätze. 32,05 € Ermäßigt - Nur noch Einzelplätze.",
       "detail_url": "https://www.glocke.de/event/marc-uwe-kling-neues-vom-kaenguru/?back_btn=1",
-      "venue": "Glocke Bremen",
-      "city": "Bremen"
-    },
-    {
-      "date": "2026-05-23",
-      "time": "19:30",
-      "title": "Dennis Alexander Volk – \"Storytelling Piano\"",
-      "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.glocke.de/event/dennis-alexander-volk-storytelling-piano/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 14
+  "total_events_visible": 11,
+  "total_events_discovered": 11
 }

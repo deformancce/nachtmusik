@@ -3,76 +3,108 @@
   "city": "Düsseldorf",
   "slug": "tonhalle_duesseldorf",
   "source_url": "https://www.tonhalle.de/veranstaltungen/kalender?from=1778934644",
-  "scraped_at": "2026-05-17T08:10:10.399889Z",
+  "scraped_at": "2026-05-17T08:32:54.565980Z",
   "engine": "firecrawl",
-  "_strategy": "scrape v2 formats-list",
   "events": [
     {
       "date": "2026-05-17",
-      "time": "00:00",
+      "time": "19:00",
       "title": "Café-Konzert Frau Luna",
-      "venue_hall": "",
-      "program": [],
-      "performers": [],
-      "conductor": "",
-      "price": "",
+      "venue_hall": "Rotunde/Foyer",
+      "program": [
+        "Wiener Kaffeehausmusik: Various Works"
+      ],
+      "performers": [
+        "Tea Time Ensemble"
+      ],
+      "conductor": null,
+      "price": "Ausverkauft!",
       "detail_url": "https://www.tonhalle.de/veranstaltung/cafe-konzert/17617-frau-luna",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf"
     },
     {
       "date": "2026-05-22",
-      "time": "00:00",
-      "title": "Vision String & Danish String Quartet Mendelssohn",
-      "venue_hall": "",
-      "program": [],
-      "performers": [],
-      "conductor": "",
-      "price": "",
+      "time": "19:30",
+      "title": "Mendelssohn",
+      "venue_hall": "Mendelssohn-Saal",
+      "program": [
+        "Mendelssohn Bartholdy: Oktett für Streicher Es-Dur op. 20",
+        "Folksongs und Eigenkompositionen der Ensembles"
+      ],
+      "performers": [
+        "vision string quartet",
+        "Danish String Quartet"
+      ],
+      "conductor": null,
+      "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/raumstation/17284-mendelssohn",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf"
     },
     {
       "date": "2026-05-23",
-      "time": "00:00",
-      "title": "bereits AUSVERKAUFT Element of Crime",
-      "venue_hall": "",
+      "time": "20:00",
+      "title": "Element of Crime",
+      "venue_hall": "Mendelssohn-Saal",
       "program": [],
-      "performers": [],
-      "conductor": "",
-      "price": "",
+      "performers": [
+        "Element of Crime"
+      ],
+      "conductor": null,
+      "price": "bereits AUSVERKAUFT",
       "detail_url": "https://www.tonhalle.de/veranstaltung/komet/20954-element-crime",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf"
     },
     {
       "date": "2026-05-30",
-      "time": "00:00",
-      "title": "feat. Markus Stockhausen Melodic Lifetime",
-      "venue_hall": "",
-      "program": [],
-      "performers": [],
-      "conductor": "",
-      "price": "",
+      "time": "19:30",
+      "title": "Melodic Lifetime",
+      "venue_hall": "Trautvetter-Brückner-Saal",
+      "program": [
+        "Markus Stockhausen: Trompete",
+        "Tomasz Kowalczyk: Klavier",
+        "Felix Behrendt: Kontrabass",
+        "Bodek Janke: Schlagzeug"
+      ],
+      "performers": [
+        "Tomasz Kowalczyk",
+        "Felix Behrendt",
+        "Bodek Janke",
+        "Markus Stockhausen"
+      ],
+      "conductor": null,
+      "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/supernova/17642-melodic-lifetime",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf"
     },
     {
       "date": "2026-05-31",
-      "time": "00:00",
+      "time": "16:00",
       "title": "Schroeder geht ins Konzert",
-      "venue_hall": "",
-      "program": [],
-      "performers": [],
-      "conductor": "",
-      "price": "",
+      "venue_hall": "Mendelssohn-Saal",
+      "program": [
+        "Dvořák: Slawischer Tanz C-Dur op. 46/1",
+        "Dvořák: Slawischer Tanz c-Moll op. 46/7",
+        "Spohr: Quartettkonzert op. 131 für zwei Violinen, Viola, Violoncello und Orchester (1. Satz)",
+        "Eichberg: Endorphin für Streichquartett und Streichorchester",
+        "Dvořák: Slawischer Tanz c-Moll op. 72/2",
+        "Dvořák: Slawischer Tanz C-Dur op. 72/7"
+      ],
+      "performers": [
+        "Düsseldorfer Symphoniker",
+        "vision string quartet"
+      ],
+      "conductor": "Alena Hron",
+      "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/comedy-geht-ins-konzert/17327-schroeder-geht-ins-konzert",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 10
+  "total_events_visible": 45,
+  "total_events_discovered": 45
 }

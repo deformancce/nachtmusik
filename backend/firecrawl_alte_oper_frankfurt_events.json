@@ -3,18 +3,19 @@
   "city": "Frankfurt",
   "slug": "alte_oper_frankfurt",
   "source_url": "https://www.alteoper.de/de/programm",
-  "scraped_at": "2026-05-17T08:10:40.617464Z",
+  "scraped_at": "2026-05-17T08:35:29.393834Z",
   "engine": "firecrawl",
-  "_strategy": "scrape v2 formats-list",
   "events": [
     {
       "date": "2026-05-17",
       "time": "11:00",
       "title": "Haydn, Jahreszeiten",
       "venue_hall": "Großer Saal",
-      "program": [],
+      "program": [
+        "Haydn: Jahreszeiten"
+      ],
       "performers": [],
-      "conductor": "",
+      "conductor": "Thomas Guggeis",
       "price": "ab 53,00 €",
       "detail_url": "https://www.alteoper.de/de/programm/haydn-jahreszeiten/18465",
       "venue": "Alte Oper Frankfurt",
@@ -23,15 +24,51 @@
     {
       "date": "2026-05-17",
       "time": "15:00",
-      "title": "Hana Chang, Violine",
+      "title": "Debüt",
       "venue_hall": "Mozart Saal",
-      "program": [],
-      "performers": [
-        "Hana Chang"
+      "program": [
+        "Mozart: Violinsonate B-Dur KV 454",
+        "Takemitsu: Distance de fée",
+        "Franck: Violinsonate A-Dur",
+        "Schostakowitsch: Klaviertrio Nr. 1 c-Moll op. 8"
       ],
-      "conductor": "",
+      "performers": [
+        "Hana Chang",
+        "Boris Kusnezow",
+        "Benjamin Kruithof"
+      ],
+      "conductor": null,
       "price": "21,00 €",
       "detail_url": "https://www.alteoper.de/de/programm/hana-chang-violine/18391",
+      "venue": "Alte Oper Frankfurt",
+      "city": "Frankfurt",
+      "duration_min": 75
+    },
+    {
+      "date": "2026-05-17",
+      "time": "16:00",
+      "title": "Musik Plus",
+      "venue_hall": "PRIF – Leibniz-Institut für Friedens- und Konfliktforschung",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.alteoper.de/de/programm/musik-und-friedensforschung/18493",
+      "venue": "Alte Oper Frankfurt",
+      "city": "Frankfurt"
+    },
+    {
+      "date": "2026-05-17",
+      "time": "18:00",
+      "title": "Hereinspaziert",
+      "venue_hall": "Albert Mangelsdorff Foyer",
+      "program": [],
+      "performers": [
+        "Yulianna Avdeeva"
+      ],
+      "conductor": null,
+      "price": "zzt. keine Tickets erhältlich.",
+      "detail_url": "https://www.alteoper.de/de/programm/hereinspaziert-gewandhausorchester/18421",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt"
     },
@@ -40,41 +77,23 @@
       "time": "19:00",
       "title": "Gewandhausorchester",
       "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": "",
+      "program": [
+        "Rachmaninow: Klavierkonzert Nr. 2 c-Moll op. 18",
+        "Schostakowitsch: Sinfonie Nr. 10 e-Moll op. 93"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Yulianna Avdeeva"
+      ],
+      "conductor": "Andris Nelsons",
       "price": "ab 88,00 €",
       "detail_url": "https://www.alteoper.de/de/programm/gewandhausorchester/18352",
       "venue": "Alte Oper Frankfurt",
-      "city": "Frankfurt"
-    },
-    {
-      "date": "2026-05-18",
-      "time": "20:00",
-      "title": "Haydn, Jahreszeiten",
-      "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": "",
-      "price": "ab 44,00 €",
-      "detail_url": "https://www.alteoper.de/de/programm/haydn-jahreszeiten/18466",
-      "venue": "Alte Oper Frankfurt",
-      "city": "Frankfurt"
-    },
-    {
-      "date": "2026-05-23",
-      "time": "20:00",
-      "title": "Bee Gees by MainCourse",
-      "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": "",
-      "price": "ab 84,50 €",
-      "detail_url": "https://www.alteoper.de/de/programm/bee-gees-by-maincourse/18750",
-      "venue": "Alte Oper Frankfurt",
-      "city": "Frankfurt"
+      "city": "Frankfurt",
+      "duration_min": 135
     }
   ],
   "total_events": 5,
-  "total_events_visible": 12
+  "total_events_visible": 10,
+  "total_events_discovered": 10
 }

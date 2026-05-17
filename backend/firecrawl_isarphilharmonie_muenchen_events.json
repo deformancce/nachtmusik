@@ -3,76 +3,91 @@
   "city": "München",
   "slug": "isarphilharmonie_muenchen",
   "source_url": "https://www.mphil.de/kalender",
-  "scraped_at": "2026-05-17T08:11:23.171227Z",
+  "scraped_at": "2026-05-17T08:40:14.862294Z",
   "engine": "firecrawl",
-  "_strategy": "scrape v2 formats-list",
   "events": [
     {
-      "date": "2026-05-01",
+      "date": "2026-05-23",
       "time": "19:30",
-      "title": "Mozart      Schubert      Mahler",
+      "title": "Sibelius & Prokofjew",
       "venue_hall": "Isarphilharmonie",
-      "program": [],
-      "performers": [],
-      "conductor": "Lahav Shani",
-      "price": "Details",
-      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/mahler-schubert-mozart-2026-05-01-19-3",
+      "program": [
+        "Jean Sibelius: »Finlandia«",
+        "Sergej Prokofjew: 3. Klavierkonzert",
+        "Ralph Vaughan Williams: 2. Symphonie »A London Symphony«"
+      ],
+      "performers": [
+        "Tarmo Peltokoski",
+        "Behzod Abduraimov"
+      ],
+      "conductor": "Tarmo Peltokoski",
+      "price": "ab €25",
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/sibelius-prokofjew-vaughan-williams-2026-05-23-19",
       "venue": "Isarphilharmonie München",
       "city": "München"
     },
     {
-      "date": "2026-05-02",
-      "time": "19:30",
-      "title": "Mozart      Beethoven      Mahler",
+      "date": "2026-05-24",
+      "time": "11:00",
+      "title": "Sibelius & Prokofjew",
       "venue_hall": "Isarphilharmonie",
-      "program": [],
-      "performers": [],
-      "conductor": "Lahav Shani",
-      "price": "Details",
-      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/mahler-beethoven-mozart-2026-05-02-19-3",
-      "venue": "Isarphilharmonie München",
-      "city": "München"
-    },
-    {
-      "date": "2026-05-05",
-      "time": "17:00",
-      "title": "Mozart      Beethoven      Mahler",
-      "venue_hall": "Seoul Arts Center",
-      "program": [],
-      "performers": [],
-      "conductor": "Lahav Shani",
-      "price": "Details",
-      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/mahler-beethoven-mozart-2026-05-05-17",
-      "venue": "Isarphilharmonie München",
-      "city": "München"
-    },
-    {
-      "date": "2026-05-06",
-      "time": "19:30",
-      "title": "Beethoven      Prokofjew      Brahms",
-      "venue_hall": "Seoul Arts Center",
-      "program": [],
-      "performers": [],
-      "conductor": "Lahav Shani",
-      "price": "Details",
-      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/brahms-beethoven-prokofjew-2026-05-06-19-3",
+      "program": [
+        "Jean Sibelius: »Finlandia«",
+        "Sergej Prokofjew: 3. Klavierkonzert",
+        "Ralph Vaughan Williams: 2. Symphonie »A London Symphony«"
+      ],
+      "performers": [
+        "Tarmo Peltokoski",
+        "Behzod Abduraimov"
+      ],
+      "conductor": "Tarmo Peltokoski",
+      "price": "ab €25",
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/sibelius-prokofjew-vaughan-williams-2026-05-24-11",
       "venue": "Isarphilharmonie München",
       "city": "München"
     },
     {
       "date": "2026-05-29",
       "time": "19:30",
-      "title": "Mussorgsky      Chatschaturjan      Bizet",
+      "title": "Mussorgsky & Chatschaturjan",
       "venue_hall": "Isarphilharmonie",
-      "program": [],
-      "performers": [],
+      "program": [
+        "Modest Mussorgsky: Vorspiel zu »Chowanschtschina«",
+        "Aram Chatschaturjan: Klavierkonzert",
+        "Georges Bizet: »L’Arlésienne«-Suiten Nr. 1 & 2"
+      ],
+      "performers": [
+        "Alain Altinoglu",
+        "Giorgi Gigashvili"
+      ],
       "conductor": "Alain Altinoglu",
-      "price": "Details",
-      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/chatschaturjan-mussorgsky-bizet-2026-05-29-19-3",
+      "price": "ab €25",
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/chatschaturjan-mussorgsky-bizet-2026-05-29",
+      "venue": "Isarphilharmonie München",
+      "city": "München"
+    },
+    {
+      "date": "2026-05-30",
+      "time": "19:00",
+      "title": "Mussorgsky & Chatschaturjan",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Modest Mussorgsky: Vorspiel zu »Chowanschtschina«",
+        "Aram Chatschaturjan: Klavierkonzert",
+        "Georges Bizet: »L’Arlésienne«-Suiten Nr. 1 & 2"
+      ],
+      "performers": [
+        "Alain Altinoglu",
+        "Giorgi Gigashvili"
+      ],
+      "conductor": "Alain Altinoglu",
+      "price": "ab €25",
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/chatschaturjan-mussorgsky-bizet-2026-05-30-19",
       "venue": "Isarphilharmonie München",
       "city": "München"
     }
   ],
-  "total_events": 5,
-  "total_events_visible": 43
+  "total_events": 4,
+  "total_events_visible": 78,
+  "total_events_discovered": 78
 }

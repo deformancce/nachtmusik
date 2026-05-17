@@ -3,89 +3,149 @@
   "city": "Köln",
   "slug": "koelner_philharmonie",
   "source_url": "https://www.koelner-philharmonie.de/de/konzerte",
-  "scraped_at": "2026-05-17T08:10:56.544041Z",
+  "scraped_at": "2026-05-17T08:37:24.961587Z",
   "engine": "firecrawl",
-  "_strategy": "scrape v2 formats-list",
   "events": [
     {
       "date": "2026-05-17",
       "time": "11:00",
       "title": "Ford-Sinfonieorchester",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Händel: Ouvertüre zur \"Feuerwerksmusik\"",
+        "Dvořák: Nr. 1 C-Dur op. 46,1 aus: Slawische Tänze. I. Reihe op. 46 B 83 für Orchester",
+        "Falla: Danza española Nr. 1 aus: La vida breve Lyrisches Drama in zwei Akten und vier Bildern. Text von Carlos Fernández-Shaw",
+        "Janáček: Nr. 1 Starodávný (Der Altertümliche I) aus: Lašské tance (Lachische Tänze) JW VI/17 für Orchester",
+        "Borodin: Polowetzer Tänze aus: Knjaz' Igor' (Fürst Igor) (1869–70, 1874–87)",
+        "Gershwin: Ouvertüre aus: Funny Face Musical Comedy für Soli und Orchester. Libretto von Ira Gershwin",
+        "Prokofjew: Tanz der Ritter aus: Romeo und Julia op. 64 Ballett in vier Akten und einem Epilog",
+        "Fauré: Pavane fis-Moll op. 50 für Orchester und Chor ad libitum",
+        "Rachmaninow: I. Non Allegro – Lento – Tempo primo aus: Symphonic Dances op. 45 für Orchester",
+        "Márquez: Danzón 2 für Orchester"
+      ],
+      "performers": [
+        "Ford-Sinfonieorchester",
+        "Steffen Müller-Gabriel"
+      ],
+      "conductor": "Steffen Müller-Gabriel",
+      "price": "€12,- bis 38,-",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/ford-sinfonieorchester/4740",
       "venue": "Kölner Philharmonie",
-      "city": "Köln"
+      "city": "Köln",
+      "duration_min": 120
     },
     {
       "date": "2026-05-17",
       "time": "16:00",
       "title": "Rising Stars: Álfheiður Erla Guðmundsdóttir & Kunal Lahiry",
-      "venue_hall": null,
+      "venue_hall": "Kölner Philharmonie",
       "program": [
-        "Migrations"
+        "Olivier Messiaen: I. Pourquoi?. aus: Trois Mélodies",
+        "Samuel Barber: The Crucifixion aus: Hermit Songs op. 29",
+        "Judith Weir: II. White Eggs in the Bush. aus: The Voice of Desire",
+        "Tinnitus: Blur",
+        "Ukrainisches Volkslied: A Duckling Swims in the Tisza (Plywe katscha po Tyssyni)",
+        "Joseph Haydn: The Wanderer Hob. XXVIa:32. aus: Sechs englische Kanzonetten Hob. XXVIa:31–36",
+        "Nico Muhly: »Sá ég svani«",
+        "Claude Debussy: Apparition (»La lune s’attristait«)",
+        "María Huld Markan Sigfúsdóttir: Náðarstef",
+        "Errollyn Wallen: North. The Seven Mountains",
+        "Sergej Rachmaninow: Son (Traum) op. 8,5. aus: 6 Lieder op. 8",
+        "Felix Mendelssohn Bartholdy: Andres Maienlied (»Die Schwalbe fliegt«) op. 8,8",
+        "Palestinensisches Volkslied: Hadi Ya Bahar",
+        "Philip Glass: Etude Nr. 9 aus: Etudes",
+        "Shawn E. Okpebholo: Oh Freedom",
+        "Jean Sibelius: Norden op. 90,1. aus: Sechs Lieder op. 90"
       ],
-      "performers": [],
+      "performers": [
+        "Álfheiður Erla Guðmundsdóttir",
+        "Kunal Lahiry"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "€ 34,-",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/rising-stars-alfheiur-erla-gumundsdottir-kunal-lahiry/4708",
       "venue": "Kölner Philharmonie",
-      "city": "Köln"
+      "city": "Köln",
+      "duration_min": 60
     },
     {
       "date": "2026-05-18",
       "time": "20:00",
       "title": "Aurel Dawidiuk",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Bach: Toccata und Fuge für Orgel d-Moll BWV 565",
+        "Szathmáry: B-A-C-H »Hommage à...« für große Orgel",
+        "Liszt: Präludium und Fuge über den Namen B-A-C-H S 260/2",
+        "Tournemire/Duruflé: Improvisation sur le Te Deum aus: Cinq Improvisations für Orgel",
+        "Bach/Duruflé: »Ertöt uns durch dein Güte« Choral aus der Kantate »Jesus nahm zu sich die Zwölfe« BWV 22 Transkription für Orgel von Maurice Duruflé",
+        "Franck: Choral Nr. 3 a-Moll FWV 40 aus: Trois Chorals FWV 38–40 für große Orgel mit obligatem Pedal",
+        "Bach/Duruflé: »Jesu bleibet meine Freude« Choral aus der Kantate »Herz und Mund und Tat und Leben« BWV 147 Transkription für Orgel von Maurice Duruflé",
+        "Tournemire/Duruflé: Choral-Improvisation sur le Victimae paschali aus: Cinq Improvisations für Orgel. Transkription von Maurice Duruflé"
+      ],
+      "performers": [
+        "Aurel Dawidiuk"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "€ 34,-",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/aurel-dawidiuk/4603",
       "venue": "Kölner Philharmonie",
-      "city": "Köln"
+      "city": "Köln",
+      "duration_min": 95
     },
     {
       "date": "2026-05-19",
       "time": "20:00",
-      "title": "Jörg Widmann | Isabelle Faust | Jean-Guihen Queyras | Pierre-Laurent Aimard",
-      "venue_hall": null,
+      "title": "Jörg Widmann \\| Isabelle Faust \\| Jean-Guihen Queyras \\| Pierre-Laurent Aimard",
+      "venue_hall": "Kölner Philharmonie",
       "program": [
-        "Quatuor pour la fin du Temps"
+        "Boulez: Douze Notations",
+        "Ravel: Sonata für Violine und Violoncello (»Le Tombeau de Debussy«)",
+        "Berg: Vier Stücke für Klarinette und Klavier op. 5",
+        "Messiaen: Quatuor pour la fin du Temps"
       ],
-      "performers": [],
+      "performers": [
+        "Jörg Widmann",
+        "Isabelle Faust",
+        "Jean-Guihen Queyras",
+        "Pierre-Laurent Aimard"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "€ 34,-",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/jorg-widmann-isabelle-faust-jean-guihen-queyras-pierre-laurent-aimard/4649",
       "venue": "Kölner Philharmonie",
-      "city": "Köln"
+      "city": "Köln",
+      "duration_min": 105
     },
     {
       "date": "2026-05-21",
       "time": "19:00",
       "title": "Klassik mal anders: Heute schon gelacht?",
-      "venue_hall": null,
-      "program": [],
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Haydn: Sinfonia concertante B-Dur Hob. I:105",
+        "Milhaud: Le bœuf sur le toit op. 58a",
+        "Strauss: Till Eulenspiegels lustige Streiche op. 28 TrV 171"
+      ],
       "performers": [
         "Slava Chestiglazov",
         "Ulrich Witteler",
-        "Augusto Velio Palumbo",
         "Manuel Bilz",
+        "Augusto Velio Palumbo",
         "WDR Sinfonieorchester",
         "Oscar Jockel",
         "Johannes Büchs",
         "Carola Kärcher"
       ],
-      "conductor": null,
-      "price": null,
+      "conductor": "Oscar Jockel",
+      "price": "€ 20,-",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/klassik-mal-anders-heute-schon-gelacht/4872",
       "venue": "Kölner Philharmonie",
-      "city": "Köln"
+      "city": "Köln",
+      "duration_min": 90
     }
   ],
   "total_events": 5,
-  "total_events_visible": 10
+  "total_events_visible": 45,
+  "total_events_discovered": 45
 }

@@ -3,9 +3,8 @@
   "city": "Berlin",
   "slug": "konzerthaus_berlin",
   "source_url": "https://www.konzerthaus.de/de/programm/16-05-2026",
-  "scraped_at": "2026-05-17T08:09:00.830053Z",
+  "scraped_at": "2026-05-17T08:27:58.159682Z",
   "engine": "firecrawl",
-  "_strategy": "scrape v2 formats-list",
   "events": [
     {
       "date": "2026-05-18",
@@ -19,7 +18,7 @@
         "Franz Liszt: Variationen über einen Basso continuo aus der Kantate „Weinen, Klagen, Sorgen, Zagen“ von Johann Sebastian Bach"
       ],
       "performers": [
-        "Elisabeth Brauß  Klavier"
+        "Elisabeth Brauß"
       ],
       "conductor": null,
       "price": null,
@@ -32,10 +31,22 @@
       "time": "19:30",
       "title": "Berliner Operngruppe",
       "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Franchetti: Fior d’Alpe - Oper in drei Akten (DEA)"
+      ],
+      "performers": [
+        "Chor der Berliner Operngruppe",
+        "Orchester der Berliner Operngruppe",
+        "María Belén Rivarola",
+        "Eduardo Niave",
+        "Krešimir Stražanac",
+        "Irakli Pkhaladze",
+        "Sandra Laagus",
+        "Hanseong Yun",
+        "Tabatha McFadyen"
+      ],
+      "conductor": "Felix Krieger",
+      "price": "65/ 50/ 35 EUR zzgl. VVG / Erm. 50/ 35/ 25 EUR zzgl. VVG",
       "detail_url": "https://www.konzerthaus.de/de/programm/berliner-operngruppe/12411",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin"
@@ -51,11 +62,9 @@
         "Johannes Brahms: Klavierquintett f-Moll op. 34"
       ],
       "performers": [
-        "Liza Ferschtman  Violine",
-        "Leah Amory  Violine",
-        "Davin Mar  Viola",
-        "Carson Ling-Efird  Violoncello",
-        "Benjamin Hochman  Klavier"
+        "Liza Ferschtman",
+        "Benjamin Hochman",
+        "Künstlerinnen des Curtis Institute of Music"
       ],
       "conductor": null,
       "price": null,
@@ -68,10 +77,16 @@
       "time": "20:00",
       "title": "Herz über Kopf: Mahlers Fünfte",
       "venue_hall": "Werner-Otto-Saal",
-      "program": [],
-      "performers": [],
-      "conductor": "Steven Sloane",
-      "price": null,
+      "program": [
+        "Mahler: Symphonie Nr. 5"
+      ],
+      "performers": [
+        "Charly Hübner",
+        "Anne Lenk",
+        "Steven Sloane"
+      ],
+      "conductor": "Charly Hübner",
+      "price": "Ausverkauft",
       "detail_url": "https://www.konzerthaus.de/de/programm/herz-uber-kopf-mahlers-funfte/11720",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin"
@@ -84,7 +99,7 @@
       "program": [
         "Sergej Rachmaninow: Prélude E-Dur op. 3 Nr. 3",
         "Sergej Rachmaninow: Etude-Tableau C-Dur op. 33 Nr. 2",
-        "Sergej Rachmaninow: Prélude Es-Dur op. 23 Nr. 6",
+        "Sergej Rachmaninow: Prélude Es-Durl op. 23 Nr. 6",
         "Sergej Rachmaninow: Prélude gis-Moll op. 32 Nr. 12",
         "Sergej Rachmaninow: Prélude D-Dur op. 23 Nr. 4",
         "Alexander Skrjabin: Etüde dis-Moll op. 8 Nr.12",
@@ -96,7 +111,7 @@
         "Igor Strawinsky: „Der Feuervogel“ - Ballettmusik, bearbeitet von Guido Agosti"
       ],
       "performers": [
-        "Irina Lankova  Klavier"
+        "Irina Lankova"
       ],
       "conductor": null,
       "price": null,
@@ -106,5 +121,6 @@
     }
   ],
   "total_events": 5,
-  "total_events_visible": 39
+  "total_events_visible": 43,
+  "total_events_discovered": 43
 }
