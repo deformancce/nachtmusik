@@ -1,0 +1,11 @@
+{
+  "venue": "Isarphilharmonie München",
+  "city": "München",
+  "slug": "isarphilharmonie_muenchen",
+  "source_url": "https://www.mphil.de/kalender",
+  "scraped_at": "2026-05-17T07:47:37.589842Z",
+  "engine": "firecrawl",
+  "error": "no events extracted (last error: FirecrawlClient.extract() takes from 1 to 2 positional arguments but 3 were given)",
+  "events": [],
+  "total_events": 0
+}

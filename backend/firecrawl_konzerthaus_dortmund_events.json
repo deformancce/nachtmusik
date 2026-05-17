@@ -1,0 +1,11 @@
+{
+  "venue": "Konzerthaus Dortmund",
+  "city": "Dortmund",
+  "slug": "konzerthaus_dortmund",
+  "source_url": "https://www.konzerthaus-dortmund.de/de/programm/",
+  "scraped_at": "2026-05-17T07:47:37.575416Z",
+  "engine": "firecrawl",
+  "error": "no events extracted (last error: FirecrawlClient.extract() takes from 1 to 2 positional arguments but 3 were given)",
+  "events": [],
+  "total_events": 0
+}

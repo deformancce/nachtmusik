@@ -1,0 +1,11 @@
+{
+  "venue": "Elbphilharmonie Hamburg",
+  "city": "Hamburg",
+  "slug": "elbphilharmonie_hamburg",
+  "source_url": "https://www.elbphilharmonie.de/de/programm/",
+  "scraped_at": "2026-05-17T07:47:37.583468Z",
+  "engine": "firecrawl",
+  "error": "no events extracted (last error: FirecrawlClient.extract() takes from 1 to 2 positional arguments but 3 were given)",
+  "events": [],
+  "total_events": 0
+}

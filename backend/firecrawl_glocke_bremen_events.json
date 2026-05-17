@@ -1,0 +1,11 @@
+{
+  "venue": "Glocke Bremen",
+  "city": "Bremen",
+  "slug": "glocke_bremen",
+  "source_url": "https://www.glocke.de/tickets-programm/",
+  "scraped_at": "2026-05-17T07:47:37.573805Z",
+  "engine": "firecrawl",
+  "error": "no events extracted (last error: FirecrawlClient.extract() takes from 1 to 2 positional arguments but 3 were given)",
+  "events": [],
+  "total_events": 0
+}

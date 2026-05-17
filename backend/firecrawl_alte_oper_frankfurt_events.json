@@ -1,0 +1,11 @@
+{
+  "venue": "Alte Oper Frankfurt",
+  "city": "Frankfurt",
+  "slug": "alte_oper_frankfurt",
+  "source_url": "https://www.alteoper.de/de/programm",
+  "scraped_at": "2026-05-17T07:47:37.581072Z",
+  "engine": "firecrawl",
+  "error": "no events extracted (last error: FirecrawlClient.extract() takes from 1 to 2 positional arguments but 3 were given)",
+  "events": [],
+  "total_events": 0
+}
