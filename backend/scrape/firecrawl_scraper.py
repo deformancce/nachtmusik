@@ -228,39 +228,107 @@ def _click_load_more(times: int, selectors: list[str], wait_ms: int = 1500) -> l
 _FIRECRAWL_MAX_ACTIONS = 50  # Hard limit enforced by the Firecrawl API.
 
 
-def _bp_actions() -> list[dict]:
-    # Cookie wall (CMP) then heavy scroll on the SPA infinite-scroll calendar.
-    # Budget: 2 cookie clicks + 2 waits + 22 scrolls + 22 waits = 48 ≤ 50.
+# ── Universal cookie + load-more JS ──────────────────────────────────────────
+# Firecrawl's `click` action is fail-fast: a missing selector kills the whole
+# action sequence ("Error in action N: Element not found"). Sites are also
+# inconsistent — cookie banners come and go, button text changes. One robust
+# executeJavascript action is more reliable than 40+ brittle clicks.
+#
+# The script:
+#  1. Dismisses any visible cookie/consent banner by clicking the first button
+#     whose text matches accept-keywords. Never throws when none is found.
+#  2. Loops up to N times: scroll-to-bottom, look for a load-more button,
+#     click it, wait, count events. Stop when no more progress.
+#  3. Returns a short summary string that Firecrawl surfaces in logs.
+_COOKIE_AND_LOAD_MORE_JS_TPL = r"""
+async () => {
+  const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+  const log = [];
+
+  // (1) Dismiss cookie / consent banner (best-effort, never throws)
+  const cookieRe = /^(alle\s+akzeptieren|akzeptieren|alle\s+cookies\s+akzeptieren|einverstanden|zustimmen|alles\s+erlauben|alle\s+aktivieren|accept(?:\s+all)?|agree|got\s+it)$/i;
+  let cookieClicked = false;
+  for (const el of document.querySelectorAll('button, a, [role="button"], input[type="button"]')) {
+    const t = (el.textContent || el.value || '').trim();
+    if (!t || t.length > 60) continue;
+    if (cookieRe.test(t)) {
+      try {
+        el.click();
+        cookieClicked = true;
+        log.push('cookie:' + t);
+        break;
+      } catch (e) {}
+    }
+  }
+  if (!cookieClicked) log.push('cookie:none');
+  await sleep(800);
+
+  // (2) Repeatedly click any visible load-more button, scrolling between
+  const loadMoreRe = /weitere\s+veranstaltungen|weitere\s+(termine|konzerte)|mehr\s+(laden|anzeigen|veranstaltungen)|nächste\s+seite|load\s+more|show\s+more|more\s+events/i;
+  const MAX_ROUNDS = __MAX_ROUNDS__;
+  let lastHeight = 0;
+  let rounds = 0;
+  let buttonClicks = 0;
+  for (let i = 0; i < MAX_ROUNDS; i++) {
+    window.scrollTo(0, document.body.scrollHeight);
+    await sleep(700);
+    let clicked = null;
+    for (const el of document.querySelectorAll('a, button, [role="button"]')) {
+      if (el.offsetParent === null) continue;  // not visible
+      const t = (el.textContent || '').trim();
+      if (!t || t.length > 80) continue;
+      if (loadMoreRe.test(t)) {
+        try {
+          el.scrollIntoView({block: 'center'});
+          el.click();
+          clicked = t;
+          buttonClicks++;
+          break;
+        } catch (e) {}
+      }
+    }
+    if (clicked) {
+      await sleep(1500);
+    } else {
+      // No load-more button: keep scrolling for infinite-scroll pages until
+      // page height stops growing.
+      await sleep(600);
+      const h = document.body.scrollHeight;
+      if (h === lastHeight) break;
+      lastHeight = h;
+    }
+    rounds = i + 1;
+  }
+  log.push('rounds:' + rounds);
+  log.push('clicks:' + buttonClicks);
+  log.push('height:' + document.body.scrollHeight);
+  return log.join(' | ');
+}
+"""
+
+
+def _cookie_and_load_more_actions(max_rounds: int = 25, settle_ms: int = 1500) -> list[dict]:
+    """3-action sequence: initial wait, JS cookie+load-more loop, final settle.
+    Replaces brittle click-selector chains with one fail-safe executeJavascript."""
+    script = _COOKIE_AND_LOAD_MORE_JS_TPL.replace("__MAX_ROUNDS__", str(max_rounds))
     return [
-        {"type": "wait", "milliseconds": 2500},
-        {"type": "click", "selector": "#onetrust-accept-btn-handler"},
-        {"type": "click", "selector": "button:has-text('Alle akzeptieren')"},
-        {"type": "wait", "milliseconds": 1500},
-        *_scroll_actions(n=22, amount=4000, wait_ms=1200),
+        {"type": "wait", "milliseconds": 2000},
+        {"type": "executeJavascript", "script": script},
+        {"type": "wait", "milliseconds": settle_ms},
     ]
+
+
+def _bp_actions() -> list[dict]:
+    # SPA infinite-scroll calendar; previously failed on Firecrawl's brittle
+    # selector clicks ("Error in action 1: Element not found"). JS handles
+    # OneTrust + infinite scroll robustly.
+    return _cookie_and_load_more_actions(max_rounds=30, settle_ms=2000)
 
 
 def _gewandhaus_actions() -> list[dict]:
-    # Homepage shows 5 teasers; "Weitere Veranstaltungen laden" button loads more.
-    # Earlier 11-round version regressed from 5 → 3 events (aggressive clicks
-    # on non-matching selectors destabilised the page). Lean version: scroll,
-    # accept cookies, then click-load 5 rounds with scroll in between.
-    # Budget: 2 + 5 × (1 scroll + 1 wait + 2 clicks + 2 waits) = 32 ≤ 50.
-    selectors = [
-        "button:has-text('Weitere Veranstaltungen')",
-        "a:has-text('Weitere Veranstaltungen')",
-    ]
-    actions: list[dict] = [
-        {"type": "wait", "milliseconds": 1500},
-        {"type": "click", "selector": "button:has-text('Akzeptieren')"},
-    ]
-    for _ in range(5):
-        actions.append({"type": "scroll", "direction": "down", "amount": 2500})
-        actions.append({"type": "wait", "milliseconds": 800})
-        for sel in selectors:
-            actions.append({"type": "click", "selector": sel})
-            actions.append({"type": "wait", "milliseconds": 1200})
-    return actions
+    # Homepage shows 5 teasers; "Weitere Veranstaltungen laden" loads more.
+    # The old dedicated scraper does up to 60 clicks per category.
+    return _cookie_and_load_more_actions(max_rounds=30, settle_ms=2000)
 
 
 VENUE_OVERRIDES: dict[str, dict] = {
