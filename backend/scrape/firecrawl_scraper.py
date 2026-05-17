@@ -190,32 +190,38 @@ def _click_load_more(times: int, selectors: list[str], wait_ms: int = 1500) -> l
     return actions
 
 
+_FIRECRAWL_MAX_ACTIONS = 50  # Hard limit enforced by the Firecrawl API.
+
+
 def _bp_actions() -> list[dict]:
     # Cookie wall (CMP) then heavy scroll on the SPA infinite-scroll calendar.
+    # Budget: 2 cookie clicks + 2 waits + 22 scrolls + 22 waits = 48 ≤ 50.
     return [
         {"type": "wait", "milliseconds": 2500},
-        {"type": "click", "selector": "button[aria-label*='akzeptieren' i]"},
-        {"type": "click", "selector": "button:has-text('Alle akzeptieren')"},
-        {"type": "click", "selector": "button:has-text('Akzeptieren')"},
         {"type": "click", "selector": "#onetrust-accept-btn-handler"},
+        {"type": "click", "selector": "button:has-text('Alle akzeptieren')"},
         {"type": "wait", "milliseconds": 1500},
-        *_scroll_actions(n=25, amount=4000, wait_ms=1200),
+        *_scroll_actions(n=22, amount=4000, wait_ms=1200),
     ]
 
 
 def _gewandhaus_actions() -> list[dict]:
     # Homepage shows 5 teasers; "Weitere Veranstaltungen laden" button loads more.
-    # Two selector variants per round (button + link) are usually enough.
+    # Budget: 1 wait + 1 cookie click + 1 wait + 11 rounds × 4 = 47 ≤ 50.
     selectors = [
         "button:has-text('Weitere Veranstaltungen')",
         "a:has-text('Weitere Veranstaltungen')",
     ]
-    return [
+    actions = [
         {"type": "wait", "milliseconds": 1500},
         {"type": "click", "selector": "button:has-text('Akzeptieren')"},
         {"type": "wait", "milliseconds": 1000},
-        *_click_load_more(times=12, selectors=selectors, wait_ms=1500),
     ]
+    for _ in range(11):
+        for sel in selectors:
+            actions.append({"type": "click", "selector": sel})
+            actions.append({"type": "wait", "milliseconds": 1500})
+    return actions
 
 
 VENUE_OVERRIDES: dict[str, dict] = {
@@ -233,8 +239,13 @@ VENUE_OVERRIDES: dict[str, dict] = {
 def _venue_actions(slug: str) -> list[dict]:
     override = VENUE_OVERRIDES.get(slug)
     if override and callable(override.get("actions")):
-        return override["actions"]()
-    return _scroll_actions()
+        actions = override["actions"]()
+    else:
+        actions = _scroll_actions()
+    # Firecrawl rejects requests with > 50 actions outright.
+    if len(actions) > _FIRECRAWL_MAX_ACTIONS:
+        actions = actions[:_FIRECRAWL_MAX_ACTIONS]
+    return actions
 
 
 # ── Hallucination guard ───────────────────────────────────────────────────────
