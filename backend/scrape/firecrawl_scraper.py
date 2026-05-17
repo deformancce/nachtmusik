@@ -35,6 +35,7 @@ from pydantic import BaseModel, Field
 BASE = Path(__file__).parent.parent
 sys.path.insert(0, str(BASE.parent))
 from backend.venues_germany import get_venues_by_tier
+from backend.scrape.url_filters import filter_event_urls
 
 
 # ── Pydantic schemas ──────────────────────────────────────────────────────────
@@ -114,50 +115,6 @@ def _normalise(result) -> dict:
         or result.get("data")
         or {}
     )
-
-
-_EVENT_PATH_RE = re.compile(
-    r"/(veranstaltung|veranstaltungen|event|events|konzert|konzerte"
-    r"|concert|concerts|programm|spielplan|kalender|detail|show"
-    r"|vorstellung|aufführung)/[^/?#]+",
-    re.IGNORECASE,
-)
-_EXCLUDE_RE = re.compile(
-    r"\.(pdf|jpg|jpeg|png|gif|css|js|ico|mp4|mp3|xml|zip|svg)(\?|$)"
-    r"|/(login|register|account|suche|search|sitemap|impressum"
-    r"|datenschutz|agb|newsletter|presse|press|media|shop|sponsor"
-    r"|kontakt|contact|ueber|about|team|jobs|karriere)(/|$)",
-    re.IGNORECASE,
-)
-
-
-def _filter_event_urls(links, base_url: str) -> list[str]:
-    """Keep only URLs that look like event detail pages on the same domain.
-    Accepts strings, dicts {url,...}, or LinkResult objects with .url attribute."""
-    domain = urlparse(base_url).netloc
-    seen: set[str] = set()
-    out: list[str] = []
-    for link in links or []:
-        # Normalise to a URL string
-        if isinstance(link, str):
-            url = link
-        elif hasattr(link, "url"):
-            url = link.url
-        elif isinstance(link, dict):
-            url = link.get("url") or link.get("href") or ""
-        else:
-            continue
-        if not url or url in seen:
-            continue
-        seen.add(url)
-        parsed = urlparse(url)
-        if parsed.netloc and parsed.netloc != domain:
-            continue
-        if _EXCLUDE_RE.search(url):
-            continue
-        if _EVENT_PATH_RE.search(url):
-            out.append(url)
-    return out
 
 
 # ── Scroll actions (for infinite-scroll / lazy-load listing pages) ────────────
@@ -259,11 +216,12 @@ def _scrape_listing(app, venue: dict, max_events: int) -> dict:
 
 # ── Phase 1b: Site-wide discovery via map() ───────────────────────────────────
 
-def _discover_all_event_urls(app, venue: dict) -> list[str]:
+def _discover_all_event_urls(app, venue: dict) -> tuple[list[str], list[str]]:
     """
-    Use Firecrawl map() to discover ALL event-detail URLs on the venue site.
-    Falls back to empty list on failure (non-fatal).
+    Use Firecrawl map() to discover event-detail URLs on the venue site.
+    Returns (loose_urls, strict_urls). Non-fatal on failure.
     """
+    slug = _slug(venue["name"])
     try:
         result = app.map(venue["url"])
         if hasattr(result, "links"):
@@ -272,13 +230,17 @@ def _discover_all_event_urls(app, venue: dict) -> list[str]:
             links = result.get("links") or []
         else:
             links = []
-        urls = _filter_event_urls(links, venue["url"])
-        if urls:
-            print(f"    [map] {len(urls)} event URLs discovered", flush=True)
-        return urls
+        loose = filter_event_urls(links, venue["url"], strict=False)
+        strict = filter_event_urls(links, venue["url"], venue_slug=slug, strict=True)
+        if loose or strict:
+            print(
+                f"    [map] discovered URLs: loose={len(loose)} strict={len(strict)}",
+                flush=True,
+            )
+        return loose, strict
     except Exception as e:
         print(f"    [map] failed (non-fatal): {e}", flush=True)
-        return []
+        return [], []
 
 
 # ── Phase 2: Enrich event detail pages ───────────────────────────────────────
@@ -347,7 +309,14 @@ def _is_future(event_date: str | None) -> bool:
         return True
 
 
-def _scrape_one(app, venue: dict, max_events: int, enrich: bool = True) -> dict:
+def _scrape_one(
+    app,
+    venue: dict,
+    max_events: int,
+    enrich: bool = True,
+    *,
+    skip_map: bool = False,
+) -> dict:
     slug = _slug(venue["name"])
     url = venue["url"]
     print(f"\n  [{slug}] {venue['name']} ({url})", flush=True)
@@ -399,10 +368,16 @@ def _scrape_one(app, venue: dict, max_events: int, enrich: bool = True) -> dict:
 
     print(f"    listing: {len(events)} upcoming events (total_visible={total_visible})", flush=True)
 
-    # ── Phase 1b: Full discovery via map() ──
-    print(f"    phase 1b: site map for total event count ...", flush=True)
-    all_event_urls = _discover_all_event_urls(app, venue)
-    total_discovered = len(all_event_urls) if all_event_urls else total_visible
+    # ── Phase 1b: Full discovery via map() (1 credit; optional) ──
+    loose_urls: list[str] = []
+    strict_urls: list[str] = []
+    if skip_map:
+        print(f"    phase 1b: skipped (--skip-map)", flush=True)
+    else:
+        print(f"    phase 1b: site map for URL counts ...", flush=True)
+        loose_urls, strict_urls = _discover_all_event_urls(app, venue)
+    total_discovered_loose = len(loose_urls) if loose_urls else total_visible
+    total_discovered_strict = len(strict_urls) if strict_urls else total_visible
 
     # ── Phase 2: Enrich with detail pages ──
     if enrich and events:
@@ -412,13 +387,20 @@ def _scrape_one(app, venue: dict, max_events: int, enrich: bool = True) -> dict:
     payload["events"] = events
     payload["total_events"] = len(events)
     payload["total_events_visible"] = total_visible
-    payload["total_events_discovered"] = total_discovered
+    # Loose count (legacy field name — often inflated by map()).
+    payload["total_events_discovered"] = total_discovered_loose
+    payload["total_events_discovered_strict"] = total_discovered_strict
     return payload
 
 
 # ── CLI entry point ───────────────────────────────────────────────────────────
 
-def main(slugs_filter: list[str] | None, max_events: int, enrich: bool) -> None:
+def main(
+    slugs_filter: list[str] | None,
+    max_events: int,
+    enrich: bool,
+    skip_map: bool = False,
+) -> None:
     api_key = os.getenv("FIRECRAWL_API_KEY")
     if not api_key:
         print("ERROR: FIRECRAWL_API_KEY not set in environment.", file=sys.stderr)
@@ -449,12 +431,17 @@ def main(slugs_filter: list[str] | None, max_events: int, enrich: bool) -> None:
         print("No venues matched the filter.", file=sys.stderr)
         sys.exit(1)
 
-    mode = "full (listing + map + detail pages)" if enrich else "listing only (--skip-enrich)"
+    map_note = "no map" if skip_map else "map"
+    mode = (
+        f"full (listing + {map_note} + detail pages)"
+        if enrich
+        else f"listing only (--skip-enrich, {map_note})"
+    )
     print(f"\nFire crawl scraping {len(venues)} Tier-1 venue(s), max {max_events} events. Mode: {mode}\n")
 
     n_ok = n_fail = 0
     for venue in venues:
-        result = _scrape_one(app, venue, max_events, enrich=enrich)
+        result = _scrape_one(app, venue, max_events, enrich=enrich, skip_map=skip_map)
         out_path = BASE / f"firecrawl_{result['slug']}_events.json"
         out_path.write_text(json.dumps(result, ensure_ascii=False, indent=2))
 
@@ -463,12 +450,16 @@ def main(slugs_filter: list[str] | None, max_events: int, enrich: bool) -> None:
             print(f"    FAIL: {result['error']}")
         else:
             n_ok += 1
-            disc = result.get("total_events_discovered") or result.get("total_events_visible") or "?"
+            disc_loose = result.get("total_events_discovered")
+            disc_strict = result.get("total_events_discovered_strict")
+            disc = disc_strict if disc_strict is not None else disc_loose
+            if disc_strict is not None and disc_loose is not None and disc_loose != disc_strict:
+                disc = f"{disc_strict} strict ({disc_loose} loose)"
             prog = sum(1 for e in result["events"] if e.get("program"))
             print(
                 f"    OK: {result['total_events']} events enriched "
                 f"({prog}/{result['total_events']} with program), "
-                f"{disc} total discovered → {out_path.name}"
+                f"discovered={disc} → {out_path.name}"
             )
 
     print(f"\nDone. ok={n_ok}  fail={n_fail}")
@@ -482,5 +473,10 @@ if __name__ == "__main__":
                         help="Events to enrich with full data (default 5)")
     parser.add_argument("--skip-enrich", action="store_true",
                         help="Skip detail-page enrichment (listing only, fewer credits)")
+    parser.add_argument(
+        "--skip-map",
+        action="store_true",
+        help="Skip Firecrawl map() (saves 1 credit/venue; no discovered URL counts)",
+    )
     args = parser.parse_args()
-    main(args.only, args.max_events, enrich=not args.skip_enrich)
+    main(args.only, args.max_events, enrich=not args.skip_enrich, skip_map=args.skip_map)

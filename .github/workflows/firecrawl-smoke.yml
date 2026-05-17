@@ -19,6 +19,10 @@ on:
         description: "Set to 'true' to skip detail-page enrichment (listing only, ~13 credits)"
         required: false
         default: "false"
+      skip_map:
+        description: "Set to 'true' to skip map() discovery (saves 1 credit/venue; recommended)"
+        required: false
+        default: "true"
 
 permissions:
   contents: write
@@ -50,6 +54,7 @@ jobs:
           MAX_EVENTS: ${{ github.event.inputs.max_events }}
           SLUGS: ${{ github.event.inputs.slugs }}
           SKIP_ENRICH: ${{ github.event.inputs.skip_enrich }}
+          SKIP_MAP: ${{ github.event.inputs.skip_map }}
         run: |
           ARGS=(--max-events "${MAX_EVENTS:-5}")
           if [ -n "$SLUGS" ]; then
@@ -57,6 +62,9 @@ jobs:
           fi
           if [ "${SKIP_ENRICH}" = "true" ]; then
             ARGS+=(--skip-enrich)
+          fi
+          if [ "${SKIP_MAP}" = "true" ]; then
+            ARGS+=(--skip-map)
           fi
           python3 -m backend.scrape.firecrawl_scraper "${ARGS[@]}"
 
