@@ -45,10 +45,18 @@ class Event(BaseModel):
         description="Soloists and ensemble names. Do NOT include the conductor here.",
     )
     conductor: Optional[str] = None
+    price: Optional[str] = Field(
+        None,
+        description="Ticket price as shown on the page, e.g. 'ab €25', '€25–€85', '€15 / erm. €8'",
+    )
     detail_url: Optional[str] = Field(None, description="Absolute URL of the event detail page")
 
 
 class EventList(BaseModel):
+    total_events_visible: Optional[int] = Field(
+        None,
+        description="Total number of upcoming concerts visible on this listing page, including any beyond the 5 returned in 'events'.",
+    )
     events: list[Event]
 
 
@@ -61,20 +69,36 @@ def _slug(name: str) -> str:
 
 
 def _build_prompt(venue: dict, max_events: int) -> str:
+    today = datetime.utcnow().strftime("%Y-%m-%d")
     return (
-        f"This is the concert listing page of {venue['name']} in {venue['city']}, Germany. "
-        f"Extract the next {max_events} upcoming concerts at this venue. "
-        "For each concert, fill in: date (YYYY-MM-DD), start time (HH:MM, 24h), "
-        "title, hall, program (works as 'Composer: Title op.X'), performers "
-        "(soloists + ensembles, NOT the conductor), conductor (separate field), "
-        "and the absolute URL of the event detail page. "
-        "Important: only include events that take place AT THIS VENUE — skip "
-        "guest tours of the resident orchestra to other cities and skip events "
-        "labeled as cross-promotion at other venues. "
-        "If program or performers are not visible on the listing, leave the "
-        "arrays empty rather than inventing data. "
-        "Skip anything that is clearly not a music concert (theater, dance, "
-        "lectures, tickets-only entries, navigation items)."
+        f"This is the concert listing page of {venue['name']} in {venue['city']}, Germany.\n"
+        f"Today's date is {today}. Only consider events on or after this date — IGNORE any "
+        "past/archived events. If a date field is missing or older than today, skip that entry.\n\n"
+        "TASK in two steps:\n"
+        f"1. Count ALL upcoming concerts visible on this page (could be 10, 30, 100+). "
+        "Put the total into 'total_events_visible'.\n"
+        f"2. From those, return the next {max_events} concerts (chronologically nearest from today) "
+        "with COMPLETE data in the 'events' array.\n\n"
+        "For each of those events, populate ALL these fields if the page shows them:\n"
+        "  - date (YYYY-MM-DD), time (HH:MM 24h)\n"
+        "  - title (the concert/programme name — NOT a ticket button or generic label like 'Konzert')\n"
+        "  - venue_hall (e.g. 'Großer Saal', 'Mozart-Saal', 'Isarphilharmonie')\n"
+        "  - program: list of works as 'Composer Lastname: Full Work Title with opus' "
+        "(e.g. 'Brahms: Symphonie Nr. 1 c-Moll op. 68')\n"
+        "  - performers: soloists + orchestra/ensemble names. Do NOT put the conductor here.\n"
+        "  - conductor: name only, no role suffix\n"
+        "  - price: ticket price exactly as shown ('ab €25', '€25–€85', '€15 / erm. €8'). "
+        "If only a range is on the listing, use that.\n"
+        "  - detail_url: absolute URL of the event's own detail page on this venue's site\n\n"
+        "STRICT RULES:\n"
+        f"- Only include events AT {venue['name']} in {venue['city']}. Skip guest tours of the resident "
+        "orchestra to other cities, and skip cross-promotion of other venues.\n"
+        "- NEVER invent program or performer entries. If the listing page does not show them, "
+        "leave those arrays EMPTY. Do not guess based on the title alone — a title like "
+        "'Die Prinzen Symphonisch' is a pop crossover, not a Mahler symphony.\n"
+        "- Skip non-music entries: theater, dance, lectures, masterclasses, family workshops, "
+        "navigation links, season-pass entries.\n"
+        "- Skip events that are clearly tickets-only listings without a real concert title."
     )
 
 
@@ -148,10 +172,12 @@ def _scrape_one(app, venue: dict, max_events: int) -> dict:
             break
 
     events_raw = extracted.get("events") if isinstance(extracted, dict) else None
+    total_visible = extracted.get("total_events_visible") if isinstance(extracted, dict) else None
     if not events_raw:
         payload["error"] = f"no events extracted (last error: {last_err})" if last_err else "no events extracted"
         payload["events"] = []
         payload["total_events"] = 0
+        payload["total_events_visible"] = total_visible
         return payload
 
     events: list[dict] = []
@@ -166,6 +192,7 @@ def _scrape_one(app, venue: dict, max_events: int) -> dict:
             "program": e.get("program") or [],
             "performers": e.get("performers") or [],
             "conductor": e.get("conductor"),
+            "price": e.get("price"),
             "detail_url": e.get("detail_url"),
             "venue": venue["name"],
             "city": venue["city"],
@@ -173,6 +200,7 @@ def _scrape_one(app, venue: dict, max_events: int) -> dict:
 
     payload["events"] = events
     payload["total_events"] = len(events)
+    payload["total_events_visible"] = total_visible
     return payload
 
 
@@ -221,7 +249,9 @@ def main(slugs_filter: list[str] | None, max_events: int) -> None:
             print(f"    FAIL: {result['error']}")
         else:
             n_ok += 1
-            print(f"    OK: {result['total_events']} events -> {out_path.name}")
+            tv = result.get("total_events_visible")
+            tv_str = f" (of {tv} visible)" if tv else ""
+            print(f"    OK: {result['total_events']} events{tv_str} -> {out_path.name}")
 
     print(f"\nDone. ok={n_ok}  fail={n_fail}")
 

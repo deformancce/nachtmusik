@@ -12,10 +12,12 @@ from typing import List
 
 VENUES_GERMANY: List[dict] = [
     # Tier 1 — the 13 prioritised concert halls
+    # URLs are user-curated deep-links to upcoming-events views. Some bake in a date
+    # filter (Konzerthaus Berlin, Tonhalle Düsseldorf, Essen) — revisit periodically.
     {"name": "Festspielhaus Baden-Baden", "city": "Baden-Baden",
      "url": "https://www.festspielhaus.de/programm/", "tier": 1},
     {"name": "Konzerthaus Berlin", "city": "Berlin",
-     "url": "https://www.konzerthaus.de/de/programm", "tier": 1},
+     "url": "https://www.konzerthaus.de/de/programm/16-05-2026", "tier": 1},
     {"name": "Berliner Philharmonie", "city": "Berlin",
      "url": "https://www.berliner-philharmoniker.de/konzerte", "tier": 1},
     {"name": "Glocke Bremen", "city": "Bremen",
@@ -23,17 +25,17 @@ VENUES_GERMANY: List[dict] = [
     {"name": "Konzerthaus Dortmund", "city": "Dortmund",
      "url": "https://www.konzerthaus-dortmund.de/de/programm/", "tier": 1},
     {"name": "Tonhalle Düsseldorf", "city": "Düsseldorf",
-     "url": "https://www.tonhalle.de/veranstaltungen/kalender", "tier": 1},
+     "url": "https://www.tonhalle.de/veranstaltungen/kalender?from=1778934644", "tier": 1},
     {"name": "Philharmonie Essen", "city": "Essen",
-     "url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/", "tier": 1},
+     "url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen?scheduleScrollTo=2026-06-06-p3271", "tier": 1},
     {"name": "Alte Oper Frankfurt", "city": "Frankfurt",
      "url": "https://www.alteoper.de/de/programm", "tier": 1},
     {"name": "Elbphilharmonie Hamburg", "city": "Hamburg",
-     "url": "https://www.elbphilharmonie.de/de/programm/", "tier": 1},
+     "url": "https://www.elbphilharmonie.de/de/programm/LHHH/TICKETS/", "tier": 1},
     {"name": "Kölner Philharmonie", "city": "Köln",
      "url": "https://www.koelner-philharmonie.de/de/konzerte", "tier": 1},
     {"name": "Gewandhaus Leipzig", "city": "Leipzig",
-     "url": "https://www.gewandhausorchester.de/spielplan/", "tier": 1},
+     "url": "https://www.gewandhausorchester.de/", "tier": 1},
     {"name": "Isarphilharmonie München", "city": "München",
      "url": "https://www.mphil.de/kalender", "tier": 1},
     {"name": "Liederhalle Stuttgart", "city": "Stuttgart",
