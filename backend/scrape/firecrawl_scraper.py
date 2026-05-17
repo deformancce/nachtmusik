@@ -587,6 +587,18 @@ def _scrape_one_detail(app, detail_url: str, venue: dict) -> dict:
         return {}
 
 
+def _is_valid_url(url) -> bool:
+    """True if `url` is a usable HTTP(S) URL — not None, '', 'null', or junk.
+    The LLM occasionally returns the literal string 'null' instead of JSON null;
+    passing that to Firecrawl wastes a credit on a guaranteed 400 response."""
+    if not isinstance(url, str):
+        return False
+    u = url.strip().lower()
+    if u in ("", "null", "none", "n/a", "undefined"):
+        return False
+    return u.startswith(("http://", "https://"))
+
+
 def _enrich_events(app, events: list[dict], venue: dict) -> list[dict]:
     """
     For each event that has a detail_url but no program, scrape the detail
@@ -596,7 +608,7 @@ def _enrich_events(app, events: list[dict], venue: dict) -> list[dict]:
     enriched = []
     for i, ev in enumerate(events):
         detail_url = ev.get("detail_url")
-        needs_enrich = not ev.get("program") and detail_url
+        needs_enrich = not ev.get("program") and _is_valid_url(detail_url)
         if needs_enrich:
             print(f"    [{i+1}/{len(events)}] enriching: {ev.get('title','')[:55]}", flush=True)
             detail = _scrape_one_detail(app, detail_url, venue)
@@ -692,7 +704,10 @@ def _scrape_one(
     # lists from Sept 2025 chronologically — first 5 would all be past).
     listing: dict = {}
     if events_raw is None:
-        listing_target = max(max_events * 4, 20)
+        # Cap target at 60 — asking the LLM for 160+ events confuses it on
+        # smaller listings (BP returned 24 instead of 63 in one observed run).
+        # max_events*2 + 10 buffer for filtered-out past/canceled events.
+        listing_target = min(max(max_events * 2 + 10, 20), 60)
         print(f"    phase 1a: listing scrape (firecrawl, target={listing_target}) ...", flush=True)
         listing = _scrape_listing(app, venue, listing_target) or {}
         events_raw = listing.get("events") if isinstance(listing, dict) else None
