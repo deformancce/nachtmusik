@@ -3,7 +3,7 @@
   "city": "Leipzig",
   "slug": "gewandhaus_leipzig",
   "source_url": "https://www.gewandhausorchester.de/",
-  "scraped_at": "2026-05-17T17:55:46.269836Z",
+  "scraped_at": "2026-05-17T18:25:13.873682Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -27,7 +27,7 @@
     {
       "date": "2026-05-17",
       "time": "18:00",
-      "title": "Kammermusik - Fokus: Tacheles",
+      "title": "Fokus: 'Tacheles' – Jahr der jüdischen Kultur in Sachsen 2026",
       "venue_hall": "Mendelssohn-Saal",
       "program": [
         "Dmitri Schostakowitsch: Quintett für Klavier, zwei Violinen, Viola und Violoncello g-Moll op. 57",
@@ -52,28 +52,8 @@
       "program": [],
       "performers": [],
       "conductor": null,
-      "price": "74/68,50/63/57,50 EUR (inkl. VVK-Gebühr)",
+      "price": "74/68,50/63/57,50 EUR",
       "detail_url": "https://www.gewandhausorchester.de/veranstaltung/element-of-crime-9804/",
-      "venue": "Gewandhaus Leipzig",
-      "city": "Leipzig"
-    },
-    {
-      "date": "2026-05-18",
-      "time": "19:30",
-      "title": "Gastspiel des Gewandhausorchesters in Wien",
-      "venue_hall": "Musikverein Wien",
-      "program": [
-        "Sergej Rachmaninoff: 2. Konzert für Klavier und Orchester c-Moll op. 18",
-        "Dmitri Schostakowitsch: 10. Sinfonie e-Moll op. 93"
-      ],
-      "performers": [
-        "Gewandhausorchester",
-        "Andris Nelsons",
-        "Yulianna Avdeeva"
-      ],
-      "conductor": "Andris Nelsons",
-      "price": "Preise: 74/68,50/63/57,50 EUR (inkl. VVK-Gebühr)",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/gastspiel-in-wien-9426/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig"
     },
@@ -85,15 +65,15 @@
       "program": [],
       "performers": [],
       "conductor": null,
-      "price": "74/68,50/63/57,50 EUR (inkl. VVK-Gebühr)",
+      "price": "74/68,50/63/57,50 EUR",
       "detail_url": "https://www.gewandhausorchester.de/veranstaltung/element-of-crime-9805/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig"
     }
   ],
-  "total_events": 5,
-  "total_events_visible": 5,
-  "total_events_discovered": 5,
-  "total_events_discovered_strict": 5,
+  "total_events": 4,
+  "total_events_visible": 4,
+  "total_events_discovered": 4,
+  "total_events_discovered_strict": 4,
   "source": "firecrawl_listing"
 }

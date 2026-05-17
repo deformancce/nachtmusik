@@ -3,7 +3,7 @@
   "city": "Berlin",
   "slug": "berliner_philharmonie",
   "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-  "scraped_at": "2026-05-17T17:42:34.562115Z",
+  "scraped_at": "2026-05-17T18:24:31.045350Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -12,8 +12,8 @@
       "title": "Lunchkonzert",
       "venue_hall": "Foyer Großer Saal",
       "program": [
-        "Johannes Brahms: Wie Melodien op. 105 Nr. 1",
-        "Johannes Brahms: Sonate für Violine und Klavier Nr. 2 A-Dur op. 100",
+        "Johannes Brahms: Wie Melodien op. 105 Nr. 1 (Bearbeitung für Viola und Klavier von Martin Stegner)",
+        "Johannes Brahms: Sonate für Violine und Klavier Nr. 2 A-Dur op. 100 (Bearbeitung für Viola und Klavier von Martin Stegner)",
         "Astor Piazzolla: Le Grand Tango für Violoncello und Klavier"
       ],
       "performers": [
@@ -35,6 +35,7 @@
         "Gustav Mahler: Symphonie Nr. 3 d-Moll"
       ],
       "performers": [
+        "Yannick Nézet-Séguin",
         "Joyce DiDonato",
         "Damen des Rundfunkchors Berlin",
         "Knaben des Staats- und Domchors Berlin"
@@ -54,6 +55,7 @@
         "Gustav Mahler: Symphonie Nr. 3 d-Moll"
       ],
       "performers": [
+        "Yannick Nézet-Séguin",
         "Joyce DiDonato",
         "Damen des Rundfunkchors Berlin",
         "Knaben des Staats- und Domchors Berlin"
@@ -73,6 +75,7 @@
         "Gustav Mahler: Symphonie Nr. 3 d-Moll"
       ],
       "performers": [
+        "Yannick Nézet-Séguin",
         "Joyce DiDonato",
         "Damen des Rundfunkchors Berlin",
         "Knaben des Staats- und Domchors Berlin"
@@ -105,8 +108,8 @@
     }
   ],
   "total_events": 5,
-  "total_events_visible": 13,
-  "total_events_discovered": 13,
-  "total_events_discovered_strict": 13,
+  "total_events_visible": 20,
+  "total_events_discovered": 20,
+  "total_events_discovered_strict": 20,
   "source": "firecrawl_listing"
 }
