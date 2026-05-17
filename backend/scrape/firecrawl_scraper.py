@@ -145,13 +145,19 @@ def _build_listing_prompt(venue: dict, max_events: int) -> str:
     today = _today()
     return (
         f"This is the concert listing page of {venue['name']} in {venue['city']}, Germany.\n"
-        f"Today's date is {today}. ONLY consider events strictly on or after {today} — "
-        "skip any event with a date before today.\n\n"
+        f"Today's date is {today}.\n\n"
+        "IMPORTANT — the page may contain a long archive of past events shown\n"
+        f"FIRST in chronological order (older months at the top). You MUST scan\n"
+        f"forward past every entry dated before {today} and only START extracting\n"
+        f"once you reach an event dated on or after {today}.\n"
+        f"Skip any event with date < {today}, even if it appears at the top.\n"
+        "Also skip canceled events (German 'Abgesagt:' / English 'Cancelled:') —\n"
+        "do not return them at all.\n\n"
         "TASK (two parts):\n"
-        f"1. Count ALL upcoming concerts visible on this fully-scrolled page. "
-        "Write the total into 'total_events_visible'.\n"
-        f"2. Return the next {max_events} upcoming concerts (sorted by date, nearest first) "
-        "in the 'events' array with COMPLETE data.\n\n"
+        f"1. Count ALL upcoming concerts (date >= {today}) on this fully-scrolled\n"
+        "   page. Write the total into 'total_events_visible'.\n"
+        f"2. Return the next {max_events} upcoming concerts (sorted by date,\n"
+        "   nearest future first) in the 'events' array with COMPLETE data.\n\n"
         "For each event fill ALL visible fields:\n"
         "  date (YYYY-MM-DD), time (HH:MM 24h), title (concert name, NOT a ticket button),\n"
         "  venue_hall (e.g. 'Großer Saal'), program (list of 'Composer: Title op.X'),\n"
@@ -218,20 +224,24 @@ def _bp_actions() -> list[dict]:
 
 def _gewandhaus_actions() -> list[dict]:
     # Homepage shows 5 teasers; "Weitere Veranstaltungen laden" button loads more.
-    # Budget: 1 wait + 1 cookie click + 1 wait + 11 rounds × 4 = 47 ≤ 50.
+    # Earlier 11-round version regressed from 5 → 3 events (aggressive clicks
+    # on non-matching selectors destabilised the page). Lean version: scroll,
+    # accept cookies, then click-load 5 rounds with scroll in between.
+    # Budget: 2 + 5 × (1 scroll + 1 wait + 2 clicks + 2 waits) = 32 ≤ 50.
     selectors = [
         "button:has-text('Weitere Veranstaltungen')",
         "a:has-text('Weitere Veranstaltungen')",
     ]
-    actions = [
+    actions: list[dict] = [
         {"type": "wait", "milliseconds": 1500},
         {"type": "click", "selector": "button:has-text('Akzeptieren')"},
-        {"type": "wait", "milliseconds": 1000},
     ]
-    for _ in range(11):
+    for _ in range(5):
+        actions.append({"type": "scroll", "direction": "down", "amount": 2500})
+        actions.append({"type": "wait", "milliseconds": 800})
         for sel in selectors:
             actions.append({"type": "click", "selector": sel})
-            actions.append({"type": "wait", "milliseconds": 1500})
+            actions.append({"type": "wait", "milliseconds": 1200})
     return actions
 
 
@@ -452,6 +462,15 @@ def _is_future(event_date: str | None) -> bool:
         return True
 
 
+_CANCELED_PREFIXES = ("abgesagt:", "abgesagt ", "abgesagt-",
+                      "cancelled:", "canceled:", "entfällt:", "entfällt ")
+
+
+def _is_canceled(title: str) -> bool:
+    t = (title or "").strip().lower()
+    return any(t.startswith(p) for p in _CANCELED_PREFIXES)
+
+
 def _scrape_one(
     app,
     venue: dict,
@@ -495,9 +514,13 @@ def _scrape_one(
         print(f"    JSON-LD: no Event objects found", flush=True)
 
     # ── Phase 1a: Firecrawl listing fallback ──
+    # Ask for more than max_events so the post-filter for past events doesn't
+    # leave us empty when the listing starts with an archive (e.g. Isarphilharmonie
+    # lists from Sept 2025 chronologically — first 5 would all be past).
     if events_raw is None:
-        print(f"    phase 1a: listing scrape (firecrawl) ...", flush=True)
-        listing = _scrape_listing(app, venue, max_events)
+        listing_target = max(max_events * 4, 20)
+        print(f"    phase 1a: listing scrape (firecrawl, target={listing_target}) ...", flush=True)
+        listing = _scrape_listing(app, venue, listing_target)
         events_raw = listing.get("events") if isinstance(listing, dict) else None
         total_visible = listing.get("total_events_visible") if isinstance(listing, dict) else None
 
@@ -509,17 +532,20 @@ def _scrape_one(
         payload["source"] = source
         return payload
 
-    # Filter past events (prompt guard isn't always reliable)
+    # Filter past + canceled events (prompt guard isn't always reliable)
     events: list[dict] = []
     for e in events_raw:
         if not isinstance(e, dict):
             continue
         if not _is_future(e.get("date")):
             continue
+        title = (e.get("title") or "").strip()
+        if _is_canceled(title):
+            continue
         ev = {
             "date": e.get("date"),
             "time": e.get("time"),
-            "title": (e.get("title") or "").strip(),
+            "title": title,
             "venue_hall": e.get("venue_hall"),
             "program": e.get("program") or [],
             "performers": e.get("performers") or [],
