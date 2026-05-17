@@ -3,8 +3,9 @@
   "city": "Frankfurt",
   "slug": "alte_oper_frankfurt",
   "source_url": "https://www.alteoper.de/de/programm",
-  "scraped_at": "2026-05-17T19:28:06.406983Z",
+  "scraped_at": "2026-05-17T20:30:52.248690Z",
   "engine": "firecrawl",
+  "mode": "discover",
   "events": [
     {
       "date": "2026-05-18",
@@ -12,30 +13,34 @@
       "title": "Haydn, Jahreszeiten",
       "venue_hall": "Großer Saal",
       "program": [
-        "Haydn: Jahreszeiten"
+        "Haydn: Die Jahreszeiten Hob. XXI:3"
       ],
       "performers": [
-        "Thomas Guggeis"
+        "Frankfurter Opern- und Museumsorchester",
+        "Cäcilienchor Frankfurt",
+        "Figuralchor Frankfurt",
+        "Frankfurter Kantorei",
+        "Frankfurter Singakademie",
+        "Karolina Bengtsson",
+        "Magnus Dietrich",
+        "David Steffens"
       ],
-      "conductor": null,
-      "price": "ab 44,00 €",
+      "conductor": "Thomas Guggeis",
+      "price": "ab €44,00",
       "detail_url": "https://www.alteoper.de/de/programm/haydn-jahreszeiten/18466",
       "venue": "Alte Oper Frankfurt",
-      "city": "Frankfurt"
+      "city": "Frankfurt",
+      "duration_min": 165
     },
     {
       "date": "2026-05-23",
       "time": "20:00",
       "title": "Bee Gees by MainCourse",
       "venue_hall": "Großer Saal",
-      "program": [
-        "Bee Gees: Tribute Show"
-      ],
-      "performers": [
-        "MainCourse"
-      ],
+      "program": [],
+      "performers": [],
       "conductor": null,
-      "price": "ab 84,50 €",
+      "price": null,
       "detail_url": "https://www.alteoper.de/de/programm/bee-gees-by-maincourse/18750",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt"
@@ -46,16 +51,22 @@
       "title": "Annettes DaschSalon",
       "venue_hall": "Mozart Saal",
       "program": [
-        "Unknown: Salon im Diesseits"
+        "Wolfgang Amadeus Mozart: Various Works"
       ],
       "performers": [
-        "Annettes DaschSalon"
+        "Annette Dasch",
+        "Katrin Dasch",
+        "Ulrich Naudé",
+        "Wolfgang Stefan Schwaiger",
+        "Tina Drole",
+        "Dota Kehr"
       ],
       "conductor": null,
-      "price": "ab 16,00 €",
+      "price": "ab €16,00",
       "detail_url": "https://www.alteoper.de/de/programm/annettes-daschsalon/18436",
       "venue": "Alte Oper Frankfurt",
-      "city": "Frankfurt"
+      "city": "Frankfurt",
+      "duration_min": 105
     },
     {
       "date": "2026-05-26",
@@ -63,13 +74,19 @@
       "title": "Miles Davis 100",
       "venue_hall": "Großer Saal",
       "program": [
-        "Miles Davis: Unknown"
+        "Davis: Miles Ahead",
+        "Davis: Porgy and Bess",
+        "Davis: Sketches of Spain"
       ],
       "performers": [
-        "Unknown"
+        "hr-Bigband",
+        "Miho Hazama",
+        "Arve Henriksen",
+        "Paolo Fresu",
+        "Axel Schlosser"
       ],
-      "conductor": null,
-      "price": "ab 50,00 €",
+      "conductor": "Miho Hazama",
+      "price": "ab €50,00",
       "detail_url": "https://www.alteoper.de/de/programm/miles-davis-100/18438",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt"
@@ -80,13 +97,19 @@
       "title": "Steve Hackett",
       "venue_hall": "Großer Saal",
       "program": [
-        "Unknown: Best of Genesis & Solo Gems"
+        "Genesis: Greatest Hits",
+        "Steve Hackett: Solo Highlights"
       ],
       "performers": [
-        "Steve Hackett"
+        "Steve Hackett",
+        "Lalle Larsson",
+        "Felix Lehrmann",
+        "Jonas Reingold",
+        "Nad Sylvan",
+        "Rob Townsend"
       ],
       "conductor": null,
-      "price": "EURO 56,45 | 67,90 | 73,70 | 79,40 (Endpreise)",
+      "price": "€56,45 | 67,90 | 73,70 | 79,40 (Endpreise)",
       "detail_url": "https://www.alteoper.de/de/programm/steve-hackett/18732",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt"
@@ -96,14 +119,10 @@
       "time": "20:00",
       "title": "Orchesterfest: Sächsische Staatskapelle Dresden",
       "venue_hall": "Großer Saal",
-      "program": [
-        "Unknown: Orchesterfest"
-      ],
-      "performers": [
-        "Sächsische Staatskapelle Dresden"
-      ],
+      "program": [],
+      "performers": [],
       "conductor": null,
-      "price": "ab 40,00 €",
+      "price": null,
       "detail_url": "https://www.alteoper.de/de/programm/orchesterfest-sachsische-staatskapelle-dresden/18344",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt"
@@ -113,14 +132,12 @@
       "time": "20:00",
       "title": "Ten Tenors",
       "venue_hall": "Großer Saal",
-      "program": [
-        "Unknown: Time of your Life Tour"
-      ],
+      "program": [],
       "performers": [
         "The Ten Tenors"
       ],
       "conductor": null,
-      "price": "ab 56,80 €",
+      "price": "ab €56,80",
       "detail_url": "https://www.alteoper.de/de/programm/ten-tenors/18350",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt"
@@ -131,13 +148,18 @@
       "title": "Alexander Malofeev, Klavier",
       "venue_hall": "Mozart Saal",
       "program": [
-        "Unknown: Unknown"
+        "Schubert: Drei Klavierstücke D 946",
+        "Grieg: Aus Holbergs Zeit – Suite im alten Stil op. 40",
+        "Sibelius: 5 Stücke für Klavier op. 75 \"Die Bäume\"",
+        "Skrjabin: Valse op. 38",
+        "Lourié: 5 Préludes fragiles op. 1",
+        "Rachmaninow: Sonate Nr. 2 b-moll op. 36"
       ],
       "performers": [
         "Alexander Malofeev"
       ],
       "conductor": null,
-      "price": "ab 28,00 €",
+      "price": "ab €28,00",
       "detail_url": "https://www.alteoper.de/de/programm/alexander-malofeev-klavier/18360",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt"
@@ -147,14 +169,10 @@
       "time": "20:00",
       "title": "Orchestra of the 18th Century",
       "venue_hall": "Großer Saal",
-      "program": [
-        "Unknown: Unknown"
-      ],
-      "performers": [
-        "Orchestra of the 18th Century"
-      ],
+      "program": [],
+      "performers": [],
       "conductor": null,
-      "price": "ab 36,00 €",
+      "price": null,
       "detail_url": "https://www.alteoper.de/de/programm/orchestra-of-the-18th-century/18485",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt"
@@ -164,34 +182,51 @@
       "time": "11:00",
       "title": "Frankfurter Opern- und Museumsorchester",
       "venue_hall": "Großer Saal",
-      "program": [
-        "Unknown: Wiedersehen mit einem Freund"
-      ],
-      "performers": [
-        "Frankfurter Opern- und Museumsorchester"
-      ],
+      "program": [],
+      "performers": [],
       "conductor": null,
-      "price": "ab 35,00 €",
+      "price": null,
       "detail_url": "https://www.alteoper.de/de/programm/frankfurter-opern-und-museumsorchester/18467",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt"
     },
     {
       "date": "2026-06-07",
-      "time": "14:00",
-      "title": "Pegasus - Klangforscher",
+      "time": "11:00",
+      "title": "Tempo",
       "venue_hall": "Mozart Saal",
-      "program": [
-        "Unknown: Familienkonzert ab 6 Jahren"
-      ],
-      "performers": [
-        "Tempo"
-      ],
+      "program": [],
+      "performers": [],
       "conductor": null,
-      "price": "16,00 €",
-      "detail_url": "https://www.alteoper.de/de/programm/tempo/18600",
+      "price": null,
+      "detail_url": "https://www.alteoper.de/de/programm/tempo/18599",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt"
+    },
+    {
+      "date": "2026-06-07",
+      "time": "14:00",
+      "title": "Tempo",
+      "venue_hall": "Mozart Saal",
+      "program": [
+        "Beethoven: Various Works",
+        "Brahms: Various Works",
+        "Monteverdi: Various Works"
+      ],
+      "performers": [
+        "Oorkaan",
+        "Michela Zanoni",
+        "Michele Mazzini",
+        "Robbrecht Van Cauwenberghe",
+        "Veysel Dzhesur",
+        "Valentine Blangé"
+      ],
+      "conductor": null,
+      "price": "€ 16,00",
+      "detail_url": "https://www.alteoper.de/de/programm/tempo/18600",
+      "venue": "Alte Oper Frankfurt",
+      "city": "Frankfurt",
+      "duration_min": 50
     },
     {
       "date": "2026-06-07",
@@ -199,12 +234,20 @@
       "title": "Verdi, Requiem",
       "venue_hall": "Großer Saal",
       "program": [
-        "Verdi: Requiem"
+        "Verdi: Messa da Requiem"
       ],
       "performers": [
-        "Unknown"
+        "Sinfonieorchester des Collegium Musicum der Goethe-Universität Frankfurt",
+        "Betsy Horne",
+        "Bettina Ranch",
+        "J. Warren Mitchel",
+        "Stephan Bootz",
+        "Chor des Collegium Musicum der Goethe-Universität Frankfurt",
+        "Frankfurter Singakademie",
+        "Konzertchor Köln",
+        "Chor der Universität Vilnius 'Pro Musica', Litauen"
       ],
-      "conductor": null,
+      "conductor": "Jan Schumacher",
       "price": "ab 23,00 €",
       "detail_url": "https://www.alteoper.de/de/programm/verdi-requiem/18817",
       "venue": "Alte Oper Frankfurt",
@@ -215,14 +258,10 @@
       "time": "20:00",
       "title": "Frankfurter Opern- und Museumsorchester",
       "venue_hall": "Großer Saal",
-      "program": [
-        "Unknown: Wiedersehen mit einem Freund"
-      ],
-      "performers": [
-        "Frankfurter Opern- und Museumsorchester"
-      ],
+      "program": [],
+      "performers": [],
       "conductor": null,
-      "price": "ab 35,00 €",
+      "price": null,
       "detail_url": "https://www.alteoper.de/de/programm/frankfurter-opern-und-museumsorchester/18468",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt"
@@ -232,14 +271,10 @@
       "time": "19:00",
       "title": "hr-Sinfonieorchester",
       "venue_hall": "Großer Saal",
-      "program": [
-        "Brahms: 4"
-      ],
-      "performers": [
-        "hr-Sinfonieorchester"
-      ],
+      "program": [],
+      "performers": [],
       "conductor": null,
-      "price": "21,00 €",
+      "price": null,
       "detail_url": "https://www.alteoper.de/de/programm/hr-sinfonieorchester/18582",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt"
@@ -249,14 +284,10 @@
       "time": "20:00",
       "title": "Ensemble Modern",
       "venue_hall": "Mozart Saal",
-      "program": [
-        "Unknown: Unknown"
-      ],
-      "performers": [
-        "Ensemble Modern"
-      ],
+      "program": [],
+      "performers": [],
       "conductor": null,
-      "price": "ab 29,00 €",
+      "price": null,
       "detail_url": "https://www.alteoper.de/de/programm/ensemble-modern/18380",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt"
@@ -267,21 +298,23 @@
       "title": "hr-Sinfonieorchester",
       "venue_hall": "Großer Saal",
       "program": [
-        "Brahms: 4"
+        "Bartok: Violinkonzert Nr. 2",
+        "Brahms: Sinfonie Nr. 4 e-Moll op. 98"
       ],
       "performers": [
-        "hr-Sinfonieorchester"
+        "hr-Sinfonieorchester",
+        "Vilde Frang"
       ],
-      "conductor": null,
-      "price": "Ticket kaufen",
-      "detail_url": "https://www.hr-sinfonieorchester.de/konzerte/konzerte-25-26/brahms-4,grosse-reihe-brahms-4-100.html",
+      "conductor": "Alain Altinoglu",
+      "price": null,
+      "detail_url": "https://www.alteoper.de/de/programm/hr-sinfonieorchester/18583",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt"
     }
   ],
-  "total_events": 16,
-  "total_events_visible": 22,
-  "total_events_discovered": 22,
-  "total_events_discovered_strict": 22,
-  "source": "firecrawl_listing"
+  "total_events": 17,
+  "total_events_visible": 20,
+  "total_events_discovered": 17,
+  "total_events_enriched": 8,
+  "source": "firecrawl_listing_stub"
 }
