@@ -656,6 +656,106 @@ def _is_canceled(title: str) -> bool:
     return any(t.startswith(p) for p in _CANCELED_PREFIXES)
 
 
+def _detail_to_event(detail: dict, url: str, venue: dict) -> dict | None:
+    """Build a full event dict from a detail-page scrape result.
+    Returns None if the detail is unusable (missing date/title)."""
+    if not isinstance(detail, dict):
+        return None
+    title = (detail.get("title") or "").strip()
+    date = detail.get("date")
+    if not title or not date:
+        return None
+    ev: dict = {
+        "date": date,
+        "time": detail.get("time"),
+        "title": title,
+        "venue_hall": detail.get("venue_hall"),
+        "program": detail.get("program") or [],
+        "performers": detail.get("performers") or [],
+        "conductor": detail.get("conductor"),
+        "price": detail.get("price"),
+        "detail_url": url,
+        "venue": venue["name"],
+        "city": venue["city"],
+    }
+    if detail.get("duration_min"):
+        ev["duration_min"] = detail["duration_min"]
+    return ev
+
+
+def _expand_via_map(
+    app,
+    venue: dict,
+    listing_events: list[dict],
+    target: int,
+) -> tuple[list[dict], dict]:
+    """
+    Use Firecrawl map() to discover event URLs NOT already in `listing_events`,
+    detail-scrape each one, and return the NEW future events.
+
+    Stops scraping when `target` total events would be reached
+    (i.e. len(listing_events) + len(new_events) >= target) or when the map
+    budget is exhausted.
+
+    Returns:
+      (new_events, stats) where new_events is the list to APPEND to listing_events.
+    """
+    stats = {"map_urls": 0, "new_urls": 0, "scraped": 0, "past": 0, "invalid": 0, "canceled": 0}
+    needed = target - len(listing_events)
+    if needed <= 0:
+        return [], stats
+
+    loose_urls, strict_urls = _discover_all_event_urls(app, venue)
+    map_urls = strict_urls if strict_urls else loose_urls
+    stats["map_urls"] = len(map_urls)
+    if not map_urls:
+        print(f"    [map-expand] map() returned no event URLs", flush=True)
+        return [], stats
+
+    known = {e.get("detail_url") for e in listing_events if e.get("detail_url")}
+    new_urls = [u for u in map_urls if u and u not in known]
+    stats["new_urls"] = len(new_urls)
+    print(
+        f"    [map-expand] {len(map_urls)} event URLs from map "
+        f"({len(new_urls)} new beyond listing); need {needed} more events",
+        flush=True,
+    )
+    if not new_urls:
+        return [], stats
+
+    # Budget: allow up to 3× overhead for past/invalid scrapes.
+    budget = min(len(new_urls), needed * 3)
+    new_events: list[dict] = []
+    for i, url in enumerate(new_urls[:budget], start=1):
+        if len(new_events) >= needed:
+            break
+        if not _is_valid_url(url):
+            stats["invalid"] += 1
+            continue
+        stats["scraped"] += 1
+        print(f"    [map-expand {i}/{budget}] {url[:75]}", flush=True)
+        detail = _scrape_one_detail(app, url, venue)
+        ev = _detail_to_event(detail, url, venue)
+        if ev is None:
+            stats["invalid"] += 1
+            continue
+        if not _is_future(ev["date"]):
+            stats["past"] += 1
+            continue
+        if _is_canceled(ev["title"]):
+            stats["canceled"] += 1
+            continue
+        new_events.append(ev)
+
+    print(
+        f"    [map-expand] result: +{len(new_events)} new events "
+        f"(scraped={stats['scraped']} past={stats['past']} "
+        f"invalid={stats['invalid']} canceled={stats['canceled']})",
+        flush=True,
+    )
+    return new_events, stats
+
+
 def _scrape_one(
     app,
     venue: dict,
@@ -663,6 +763,7 @@ def _scrape_one(
     enrich: bool = True,
     *,
     skip_map: bool = False,
+    expand_via_map: bool = False,
 ) -> dict:
     slug = _slug(venue["name"])
     url = venue["url"]
@@ -781,21 +882,47 @@ def _scrape_one(
         payload["total_events_discovered"] = 0
         return payload
 
-    # ── Phase 1b: Full discovery via map() (1 credit; optional) ──
-    loose_urls: list[str] = []
-    strict_urls: list[str] = []
-    if skip_map:
-        print(f"    phase 1b: skipped (--skip-map)", flush=True)
-    else:
+    # ── Phase 1c: Expand via map() — detail-scrape URLs beyond the listing ──
+    # When --expand-via-map is set, run map() to discover ALL event URLs on the
+    # domain. For URLs NOT already in the listing, detail-scrape each one to
+    # add as a new event. This is how we get from ~30 listing events to
+    # max_events (e.g. 100-200) — listing alone can't reach season depth.
+    map_stats: dict = {}
+    new_from_map: list[dict] = []
+    total_discovered_loose: int | None = total_visible
+    total_discovered_strict: int | None = total_visible
+    if expand_via_map and source not in ("jsonld", "jsonld_firecrawl_html"):
+        # Only expand when listing was the source (JSON-LD is already complete).
+        new_from_map, map_stats = _expand_via_map(app, venue, events, max_events)
+        total_discovered_loose = map_stats.get("map_urls") or total_visible
+        total_discovered_strict = map_stats.get("map_urls") or total_visible
+    elif not skip_map:
+        # Legacy stats-only path (no detail scraping).
         print(f"    phase 1b: site map for URL counts ...", flush=True)
         loose_urls, strict_urls = _discover_all_event_urls(app, venue)
-    total_discovered_loose = len(loose_urls) if loose_urls else total_visible
-    total_discovered_strict = len(strict_urls) if strict_urls else total_visible
+        total_discovered_loose = len(loose_urls) if loose_urls else total_visible
+        total_discovered_strict = len(strict_urls) if strict_urls else total_visible
+    else:
+        print(f"    phase 1b: skipped (--skip-map)", flush=True)
 
-    # ── Phase 2: Enrich with detail pages ──
+    # ── Phase 2: Enrich listing events with detail pages ──
+    # Note: map-discovered events (new_from_map) are already fully populated
+    # from detail scrapes, so they don't need enrichment here.
     if enrich and events:
-        print(f"    phase 2: enriching {len(events)} events with detail pages ...", flush=True)
+        print(f"    phase 2: enriching {len(events)} listing events with detail pages ...", flush=True)
         events = _enrich_events(app, events, venue)
+
+    # Merge listing + map-discovered, dedupe by detail_url, sort by date.
+    if new_from_map:
+        seen_urls = {e.get("detail_url") for e in events if e.get("detail_url")}
+        for ev in new_from_map:
+            if ev.get("detail_url") in seen_urls:
+                continue
+            events.append(ev)
+            seen_urls.add(ev.get("detail_url"))
+        events.sort(key=lambda e: (e.get("date") or "9999", e.get("time") or ""))
+        events = events[:max_events]
+        print(f"    merged: {len(events)} total events after map-expand", flush=True)
 
     payload["events"] = events
     payload["total_events"] = len(events)
@@ -804,6 +931,8 @@ def _scrape_one(
     payload["total_events_discovered"] = total_discovered_loose
     payload["total_events_discovered_strict"] = total_discovered_strict
     payload["source"] = source
+    if map_stats:
+        payload["map_expand_stats"] = map_stats
     return payload
 
 
@@ -814,6 +943,7 @@ def main(
     max_events: int,
     enrich: bool,
     skip_map: bool = False,
+    expand_via_map: bool = False,
 ) -> None:
     api_key = os.getenv("FIRECRAWL_API_KEY")
     if not api_key:
@@ -845,7 +975,12 @@ def main(
         print("No venues matched the filter.", file=sys.stderr)
         sys.exit(1)
 
-    map_note = "no map" if skip_map else "map"
+    if expand_via_map:
+        map_note = "expand-via-map"
+    elif skip_map:
+        map_note = "no map"
+    else:
+        map_note = "map (stats only)"
     mode = (
         f"full (listing + {map_note} + detail pages)"
         if enrich
@@ -855,7 +990,10 @@ def main(
 
     n_ok = n_fail = 0
     for venue in venues:
-        result = _scrape_one(app, venue, max_events, enrich=enrich, skip_map=skip_map)
+        result = _scrape_one(
+            app, venue, max_events, enrich=enrich,
+            skip_map=skip_map, expand_via_map=expand_via_map,
+        )
         out_path = BASE / f"firecrawl_{result['slug']}_events.json"
 
         if result.get("error"):
@@ -897,5 +1035,19 @@ if __name__ == "__main__":
         action="store_true",
         help="Skip Firecrawl map() (saves 1 credit/venue; no discovered URL counts)",
     )
+    parser.add_argument(
+        "--expand-via-map",
+        action="store_true",
+        help=(
+            "After listing+enrichment, use map() to find more event URLs and "
+            "detail-scrape each one as a NEW event until --max-events is reached. "
+            "Cost per venue: 1 map + up to (max_events × 3) detail scrapes."
+        ),
+    )
     args = parser.parse_args()
-    main(args.only, args.max_events, enrich=not args.skip_enrich, skip_map=args.skip_map)
+    main(
+        args.only, args.max_events,
+        enrich=not args.skip_enrich,
+        skip_map=args.skip_map,
+        expand_via_map=args.expand_via_map,
+    )
