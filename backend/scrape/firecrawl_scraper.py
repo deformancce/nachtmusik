@@ -95,22 +95,29 @@ def _scrape_one(app, venue: dict, max_events: int) -> dict:
         "engine": "firecrawl",
     }
 
-    # The Firecrawl Python SDK has shifted method names across versions.
-    # Try the current API shapes in order; whichever works wins.
+    # Firecrawl Python SDK v2 renamed scrape_url → scrape and reshaped its
+    # extract() signature. Try the modern patterns first; fall back to legacy.
     extracted: dict = {}
     last_err: Exception | None = None
+    json_fmt = {"type": "json", "schema": schema, "prompt": prompt}
     attempts = (
-        ("scrape_url json_options", lambda: app.scrape_url(
-            url, formats=["json"],
-            json_options={"schema": schema, "prompt": prompt})),
-        ("scrape_url extract", lambda: app.scrape_url(
+        # v2 SDK: scrape() with formats=[{type: 'json', ...}]
+        ("scrape v2 formats-list", lambda: app.scrape(
+            url, formats=[json_fmt])),
+        ("scrape v2 formats-list+markdown", lambda: app.scrape(
+            url, formats=["markdown", json_fmt])),
+        # v2 SDK: scrape() with formats=["json"] and json_options
+        ("scrape v2 json_options", lambda: app.scrape(
+            url, formats=["json"], json_options={"schema": schema, "prompt": prompt})),
+        # v2 SDK: extract() with kwargs only
+        ("extract v2 kwargs", lambda: app.extract(
+            urls=[url], schema=schema, prompt=prompt)),
+        ("extract v2 positional+kwargs", lambda: app.extract(
+            [url], schema=schema, prompt=prompt)),
+        # v1 legacy
+        ("scrape_url legacy", lambda: app.scrape_url(
             url, formats=["extract"],
             extract={"schema": schema, "prompt": prompt})),
-        ("scrape_url params", lambda: app.scrape_url(
-            url, params={"formats": ["extract"],
-                          "extract": {"schema": schema, "prompt": prompt}})),
-        ("extract method", lambda: app.extract(
-            [url], {"schema": schema, "prompt": prompt})),
     )
 
     for label, fn in attempts:
@@ -176,13 +183,24 @@ def main(slugs_filter: list[str] | None, max_events: int) -> None:
         sys.exit(1)
 
     try:
-        from firecrawl import FirecrawlApp
+        import firecrawl as _fc_module
     except ImportError:
         print("ERROR: firecrawl-py not installed. Run: pip install firecrawl-py",
               file=sys.stderr)
         sys.exit(1)
 
-    app = FirecrawlApp(api_key=api_key)
+    # Prefer the v2 class name, fall back to the legacy alias.
+    ClientCls = getattr(_fc_module, "Firecrawl", None) or getattr(_fc_module, "FirecrawlApp", None)
+    if ClientCls is None:
+        print("ERROR: neither Firecrawl nor FirecrawlApp found in firecrawl package",
+              file=sys.stderr)
+        sys.exit(1)
+
+    app = ClientCls(api_key=api_key)
+    print(f"firecrawl-py version: {getattr(_fc_module, '__version__', 'unknown')}")
+    print(f"Client class: {ClientCls.__name__}")
+    methods = sorted(m for m in dir(app) if not m.startswith("_") and callable(getattr(app, m, None)))
+    print(f"Client methods: {methods}\n")
     venues = get_venues_by_tier(1)
     if slugs_filter:
         venues = [v for v in venues if _slug(v["name"]) in slugs_filter]
