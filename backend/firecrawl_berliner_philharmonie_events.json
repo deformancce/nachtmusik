@@ -3,7 +3,7 @@
   "city": "Berlin",
   "slug": "berliner_philharmonie",
   "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-  "scraped_at": "2026-05-17T19:06:41.026335Z",
+  "scraped_at": "2026-05-17T19:16:48.239336Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -35,7 +35,6 @@
         "Gustav Mahler: Symphonie Nr. 3 d-Moll"
       ],
       "performers": [
-        "Yannick Nézet-Séguin",
         "Joyce DiDonato",
         "Damen des Rundfunkchors Berlin",
         "Knaben des Staats- und Domchors Berlin"
@@ -55,7 +54,6 @@
         "Gustav Mahler: Symphonie Nr. 3 d-Moll"
       ],
       "performers": [
-        "Yannick Nézet-Séguin",
         "Joyce DiDonato",
         "Damen des Rundfunkchors Berlin",
         "Knaben des Staats- und Domchors Berlin"
@@ -75,7 +73,6 @@
         "Gustav Mahler: Symphonie Nr. 3 d-Moll"
       ],
       "performers": [
-        "Yannick Nézet-Séguin",
         "Joyce DiDonato",
         "Damen des Rundfunkchors Berlin",
         "Knaben des Staats- und Domchors Berlin"
@@ -105,11 +102,238 @@
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56563/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin"
+    },
+    {
+      "date": "2026-05-28",
+      "time": "20:00",
+      "title": "Berliner Philharmoniker",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Ludwig van Beethoven: Coriolan-Ouvertüre c-Moll op. 62",
+        "Ludwig van Beethoven: Konzert für Klavier und Orchester Nr. 5 Es-Dur op. 73",
+        "Dmitri Schostakowitsch: Symphonie Nr. 5 d-Moll op. 47"
+      ],
+      "performers": [
+        "Víkingur Ólafsson"
+      ],
+      "conductor": "Semyon Bychkov",
+      "price": "Ausverkauft",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-28",
+      "time": "20:00",
+      "title": "Diskurs in der Philharmonie",
+      "venue_hall": "Kammermusiksaal Oberes Foyer",
+      "program": [],
+      "performers": [
+        "Joschka Fischer",
+        "Rieke Havertz"
+      ],
+      "conductor": null,
+      "price": "Eintritt frei",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56433/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin",
+      "duration_min": 90
+    },
+    {
+      "date": "2026-05-29",
+      "time": "20:00",
+      "title": "Berliner Philharmoniker",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Ludwig van Beethoven: Coriolan-Ouvertüre c-Moll op. 62",
+        "Ludwig van Beethoven: Konzert für Klavier und Orchester Nr. 5 Es-Dur op. 73",
+        "Dmitri Schostakowitsch: Symphonie Nr. 5 d-Moll op. 47"
+      ],
+      "performers": [
+        "Víkingur Ólafsson"
+      ],
+      "conductor": "Semyon Bychkov",
+      "price": "Ausverkauft",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-30",
+      "time": "19:00",
+      "title": "Berliner Philharmoniker",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Ludwig van Beethoven: Coriolan-Ouvertüre c-Moll op. 62",
+        "Ludwig van Beethoven: Konzert für Klavier und Orchester Nr. 5 Es-Dur op. 73",
+        "Dmitri Schostakowitsch: Symphonie Nr. 5 d-Moll op. 47"
+      ],
+      "performers": [
+        "Víkingur Ólafsson"
+      ],
+      "conductor": "Semyon Bychkov",
+      "price": "Ausverkauft",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-06-02",
+      "time": "20:00",
+      "title": "Ensemble Wien-Berlin:",
+      "venue_hall": "Kammermusiksaal",
+      "program": [
+        "Wolfgang Amadeus Mozart: Serenade c-Moll KV 388 »Nacht Musique«",
+        "Luciano Berio: Opus Number Zoo (Fassung für Bläserquintett)",
+        "Vinko Globokar: Augustin, dober je vin",
+        "Joachim Raff: Sinfonietta op. 188"
+      ],
+      "performers": [
+        "Karl-Heinz Schütz",
+        "Jonathan Kelly",
+        "Gerald Pachinger",
+        "Richard Galler",
+        "Stefan Dohr",
+        "Jelka Weber",
+        "Christoph Hartmann",
+        "Andraž Golob",
+        "Václav Vonášek",
+        "Paula Ernesaks"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56416/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-06-03",
+      "time": "13:00",
+      "title": "Lunchkonzert",
+      "venue_hall": "Foyer Großer Saal",
+      "program": [
+        "Franz Schubert: Willkommen und Abschied D 767",
+        "Franz Schubert: Die Gebüsche D 646",
+        "Franz Schubert: Lachen und Weinen D 777",
+        "Franz Schubert: Die Männer sind méchant D 866 Nr. 3",
+        "Franz Schubert: Licht und Liebe D 352",
+        "Franz Schubert: An die Musik D 547",
+        "Franz Schubert: Nachtviolen D 752",
+        "Franz Schubert: Über Wildemann D 884",
+        "Franz Schubert: Suleika II D 717",
+        "Franz Schubert: Der Hochzeitsbraten D 930"
+      ],
+      "performers": [
+        "Studierende der hmt Rostock"
+      ],
+      "conductor": null,
+      "price": "Eintritt frei",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56564/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-06-04",
+      "time": "20:00",
+      "title": "Berliner Philharmoniker",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Vítězslava Kaprálová: Suite rustica op. 19",
+        "Josef Suk: Fantasie für Violine und Orchester g-Moll op. 24",
+        "Bohuslav Martinů: Symphonie Nr. 1"
+      ],
+      "performers": [
+        "Julia Fischer"
+      ],
+      "conductor": "Jakub Hrůša",
+      "price": null,
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56434/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-06-05",
+      "time": "20:00",
+      "title": "Berliner Philharmoniker",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Vítězslava Kaprálová: Suite rustica op. 19",
+        "Josef Suk: Fantasie für Violine und Orchester g-Moll op. 24",
+        "Bohuslav Martinů: Symphonie Nr. 1"
+      ],
+      "performers": [
+        "Julia Fischer"
+      ],
+      "conductor": "Jakub Hrůša",
+      "price": null,
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56434/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-06-06",
+      "time": "19:00",
+      "title": "Berliner Philharmoniker",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Vítězslava Kaprálová: Suite rustica op. 19",
+        "Josef Suk: Fantasie für Violine und Orchester g-Moll op. 24",
+        "Bohuslav Martinů: Symphonie Nr. 1"
+      ],
+      "performers": [
+        "Julia Fischer"
+      ],
+      "conductor": "Jakub Hrůša",
+      "price": null,
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56434/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-06-07",
+      "time": "11:00",
+      "title": "Orgelmatinee",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Richard Strauss: Festliches Präludium op. 61 (Bearbeitung für Orgel und großes Blechbläserensemble von Richard Gowers)",
+        "Wolfgang Amadeus Mozart: Fantasie für eine Orgelwalze f-Moll KV 608",
+        "Johann Sebastian Bach: Chromatische Fantasie und Fuge d-Moll BWV 903 (Bearbeitung für Orgel von Max Reger)",
+        "Miloslav Kabeláč: Symphonie Nr. 3 für Orgel, Blechbläser und Pauke op. 33"
+      ],
+      "performers": [
+        "Richard Gowers",
+        "Blechbläserensemble der Berliner Philharmoniker"
+      ],
+      "conductor": "Jakub Hrůša",
+      "price": null,
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56436/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-06-07",
+      "time": "11:30",
+      "title": "Mitmachkonzert: »Juchhe!«",
+      "venue_hall": "Oberes Foyer Kammermusiksaal / Einführungsbereich",
+      "program": [],
+      "performers": [
+        "Mitglieder der Berliner Philharmoniker",
+        "Carley Josephine Marholin",
+        "Giordan Cruz",
+        "Sarah Jeanne Babits",
+        "Julia Schnittger"
+      ],
+      "conductor": null,
+      "price": "Ausverkauft",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56435/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin",
+      "duration_min": 45
     }
   ],
-  "total_events": 5,
-  "total_events_visible": 63,
-  "total_events_discovered": 63,
-  "total_events_discovered_strict": 63,
+  "total_events": 16,
+  "total_events_visible": 24,
+  "total_events_discovered": 24,
+  "total_events_discovered_strict": 24,
   "source": "firecrawl_listing"
 }

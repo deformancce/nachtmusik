@@ -3,7 +3,7 @@
   "city": "Bremen",
   "slug": "glocke_bremen",
   "source_url": "https://www.glocke.de/tickets-programm/",
-  "scraped_at": "2026-05-17T17:43:29.849157Z",
+  "scraped_at": "2026-05-17T19:18:13.932030Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -21,7 +21,7 @@
         "Ehemalige des Jugendsinfonieorchesters Bremen der Musikschule Bremen"
       ],
       "conductor": "Heiner Buhlmann",
-      "price": "15,00 € Normal",
+      "price": "15,00 € Normal, 5,00 € Ermäßigt",
       "detail_url": "https://www.glocke.de/event/ehemalige-des-jugendsinfonieorchesters-bremen-der-musikschule-bremen/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen"
@@ -29,12 +29,10 @@
     {
       "date": "2026-05-17",
       "time": "19:00",
-      "title": "Reiner Calmund »Ein runder Abend – mit Fußball & Freunden«",
+      "title": "Reiner Calmund – Ein runder Abend – mit Fußball & Freunden",
       "venue_hall": "Kleiner Saal",
       "program": [],
-      "performers": [
-        "Reiner Calmund"
-      ],
+      "performers": [],
       "conductor": null,
       "price": "38,60 € Normal",
       "detail_url": "https://www.glocke.de/event/reiner-calmund-ein-runder-abend-mit-fussball-freunden/?back_btn=1",
@@ -44,23 +42,19 @@
     {
       "date": "2026-05-19",
       "time": "20:00",
-      "title": "Jan Lisiecki »Tanz auf den Tasten« 5. Meisterkonzert",
+      "title": "Jan Lisiecki – Tanz auf den Tasten 5. Meisterkonzert",
       "venue_hall": "Großer Saal",
       "program": [
         "Schubert: 16 Deutsche Tänze D 783",
         "Bartók: Rumänische Volkstänze Sz 56",
         "Chopin: Grande valse brillante Es-Dur op. 18",
-        "Brahms: Walzer As-Dur op. 39/15",
-        "Brahms: weitere Werke",
-        "Chopin: weitere Werke",
-        "Ginastera: weitere Werke",
-        "Piazzolla: weitere Werke"
+        "Brahms: Walzer As-Dur op. 39/15"
       ],
       "performers": [
         "Jan Lisiecki"
       ],
       "conductor": null,
-      "price": "ab €28,20",
+      "price": "ab €20",
       "detail_url": "https://www.glocke.de/event/jan-lisiecki-tanz-auf-den-tasten-5-meisterkonzert/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen"
@@ -71,9 +65,9 @@
       "title": "»Curtis on Tour« 8. Philharmonisches Kammerkonzert",
       "venue_hall": "Kleiner Saal",
       "program": [
-        "Bohuslav Martinů: Drei Madrigale",
-        "Ludwig van Beethoven: Klaviertrio D-Dur op. 70/1 (»Geistertrio«)",
-        "Johannes Brahms: Klavierquintett f-Moll op. 34"
+        "Martinů: Drei Madrigale",
+        "Beethoven: Klaviertrio D-Dur op. 70/1 (»Geistertrio«)",
+        "Brahms: Klavierquintett f-Moll op. 34"
       ],
       "performers": [
         "Leah Amory",
@@ -83,7 +77,7 @@
         "Benjamin Hochman"
       ],
       "conductor": "Liza Ferschtman",
-      "price": "47,00 € Normal; 35,00 € Ermäßigt; 41,00 € Normal; 31,00 € Ermäßigt; 31,00 € Normal; 25,00 € Ermäßigt",
+      "price": "47,00 € Normal, 35,00 € Ermäßigt, 41,00 € Normal, 31,00 € Ermäßigt, 31,00 € Normal, 25,00 € Ermäßigt",
       "detail_url": "https://www.glocke.de/event/curtis-on-tour-8-philharmonisches-kammerkonzert/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen"
@@ -104,11 +98,98 @@
       "detail_url": "https://www.glocke.de/event/marc-uwe-kling-neues-vom-kaenguru/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen"
+    },
+    {
+      "date": "2026-05-23",
+      "time": "19:30",
+      "title": "Dennis Alexander Volk – Storytelling Piano",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [
+        "Dennis Alexander Volk"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.glocke.de/event/dennis-alexander-volk-storytelling-piano/?back_btn=1",
+      "venue": "Glocke Bremen",
+      "city": "Bremen",
+      "duration_min": 120
+    },
+    {
+      "date": "2026-05-24",
+      "time": "17:00",
+      "title": "Philharmonie der Solisten – Vivaldi – Die vier Jahreszeiten",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Vivaldi: Die vier Jahreszeiten op. 8/1-4",
+        "Mozart: Werke",
+        "Bach: Werke",
+        "Brahms: Werke"
+      ],
+      "performers": [
+        "Philharmonie der Solisten"
+      ],
+      "conductor": "Vladik Otaryan",
+      "price": "56,35 € Normal, 45,35 € Schüler/Studierende, 45,35 € Schwerbehinderung",
+      "detail_url": "https://www.glocke.de/event/philharmonie-der-solisten-vivaldi-die-vier-jahreszeiten-7/?back_btn=1",
+      "venue": "Glocke Bremen",
+      "city": "Bremen"
+    },
+    {
+      "date": "2026-05-25",
+      "time": "18:00",
+      "title": "Olegg Vynnyk – Live 2026",
+      "venue_hall": "Kleiner Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.glocke.de/event/olegg-vynnyk-live-2026/?back_btn=1",
+      "venue": "Glocke Bremen",
+      "city": "Bremen"
+    },
+    {
+      "date": "2026-05-27",
+      "time": "19:30",
+      "title": "Die Deutsche Kammerphilharmonie Bremen – Haupt­sache Tschai­kowsky 5. Premieren-Abonne­ment­konzert",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Tschaikowsky: Klavierkonzert Nr. 1 b-Moll op. 23",
+        "Tschaikowsky: Sinfonie Nr. 3 D-Dur op. 29 (»Polnische«)"
+      ],
+      "performers": [
+        "Fabian Müller",
+        "Die Deutsche Kammerphilharmonie Bremen"
+      ],
+      "conductor": "Jérémie Rhorer",
+      "price": null,
+      "detail_url": "https://www.glocke.de/event/die-deutsche-kammerphilharmonie-bremen-hauptsache-tschaikowsky-5-premieren-abonnementkonzert/?back_btn=1",
+      "venue": "Glocke Bremen",
+      "city": "Bremen"
+    },
+    {
+      "date": "2026-05-29",
+      "time": "19:30",
+      "title": "Die Deutsche Kammerphilharmonie Bremen – Haupt­sache Tschai­kowsky 3. Highlight-Abonnementkonzert",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Brahms: Klavierkonzert Nr. 2 B-Dur op. 83",
+        "Tschaikowsky: Sinfonie Nr. 4 f-Moll op. 36"
+      ],
+      "performers": [
+        "Fabian Müller",
+        "Die Deutsche Kammerphilharmonie Bremen"
+      ],
+      "conductor": "Jérémie Rhorer",
+      "price": null,
+      "detail_url": "https://www.glocke.de/event/die-deutsche-kammerphilharmonie-bremen-hauptsache-tschaikowsky-3-highlight-abonnementkonzert/?back_btn=1",
+      "venue": "Glocke Bremen",
+      "city": "Bremen"
     }
   ],
-  "total_events": 5,
-  "total_events_visible": 16,
-  "total_events_discovered": 16,
-  "total_events_discovered_strict": 16,
+  "total_events": 10,
+  "total_events_visible": 10,
+  "total_events_discovered": 10,
+  "total_events_discovered_strict": 10,
   "source": "firecrawl_listing"
 }

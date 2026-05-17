@@ -3,119 +3,68 @@
   "city": "Köln",
   "slug": "koelner_philharmonie",
   "source_url": "https://www.koelner-philharmonie.de/de/konzerte",
-  "scraped_at": "2026-05-17T17:52:59.820606Z",
+  "scraped_at": "2026-05-17T19:29:09.301040Z",
   "engine": "firecrawl",
   "events": [
     {
       "date": "2026-05-17",
       "time": "11:00",
       "title": "Ford-Sinfonieorchester",
-      "venue_hall": "Kölner Philharmonie",
+      "venue_hall": null,
       "program": [
-        "Händel: Ouvertüre zur \"Feuerwerksmusik\"",
-        "Dvořák: Nr. 1 C-Dur op. 46,1 aus: Slawische Tänze. I. Reihe op. 46 B 83 für Orchester",
-        "Falla: Danza española Nr. 1 aus: La vida breve",
-        "Janáček: Nr. 1 Starodávný (Der Altertümliche I) aus: Lašské tance (Lachische Tänze) JW VI/17 für Orchester",
-        "Borodin: Polowetzer Tänze aus: Knjaz' Igor' (Fürst Igor) (1869–70, 1874–87)",
-        "Gershwin: Ouvertüre aus: Funny Face",
-        "Prokofjew: Tanz der Ritter aus: Romeo und Julia op. 64",
-        "Fauré: Pavane fis-Moll op. 50 für Orchester und Chor ad libitum",
-        "Rachmaninow: I. Non Allegro – Lento – Tempo primo aus: Symphonic Dances op. 45 für Orchester",
-        "Márquez: Danzón 2 für Orchester"
+        "Ford-Sinfonieorchester: Jubiläumskonzert – 90 Jahre"
       ],
-      "performers": [
-        "Ford-Sinfonieorchester",
-        "Steffen Müller-Gabriel"
-      ],
-      "conductor": "Steffen Müller-Gabriel",
-      "price": "null",
+      "performers": [],
+      "conductor": null,
+      "price": null,
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/ford-sinfonieorchester/4740",
       "venue": "Kölner Philharmonie",
-      "city": "Köln",
-      "duration_min": 120
+      "city": "Köln"
     },
     {
       "date": "2026-05-17",
       "time": "16:00",
       "title": "Rising Stars: Álfheiður Erla Guðmundsdóttir & Kunal Lahiry",
-      "venue_hall": "Kölner Philharmonie",
+      "venue_hall": null,
       "program": [
-        "Olivier Messiaen: Pourquoi? aus: Trois Mélodies",
-        "Samuel Barber: The Crucifixion aus: Hermit Songs op. 29",
-        "Judith Weir: White Eggs in the Bush aus: The Voice of Desire",
-        "Tinnitus: Blur",
-        "Ukrainisches Volkslied: A Duckling Swims in the Tisza (Plywe katscha po Tyssyni)",
-        "Joseph Haydn: The Wanderer Hob. XXVIa:32 aus: Sechs englische Kanzonetten Hob. XXVIa:31–36",
-        "Nico Muhly: Sá ég svani für Sopran und Klavier",
-        "Claude Debussy: Apparition für Singstimme und Klavier",
-        "María Huld Markan Sigfúsdóttir: Náðarstef für Sopran und Klavier",
-        "Errollyn Wallen: North. The Seven Mountains für Singstimme und Klavier",
-        "Sergej Rachmaninow: Son (Traum) op. 8,5 aus: 6 Lieder op. 8 für Singstimme und Klavier",
-        "Felix Mendelssohn Bartholdy: Andres Maienlied (Die Schwalbe fliegt) op. 8,8",
-        "Palestinensisches Volkslied: Hadi Ya Bahar",
-        "Philip Glass: Etude Nr. 9 aus: Etudes",
-        "Shawn E. Okpebholo: Oh Freedom",
-        "Jean Sibelius: Norden op. 90,1 aus: Sechs Lieder op. 90"
+        "Migrations"
       ],
-      "performers": [
-        "Álfheiður Erla Guðmundsdóttir",
-        "Kunal Lahiry"
-      ],
+      "performers": [],
       "conductor": null,
-      "price": "null",
+      "price": null,
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/rising-stars-alfheiur-erla-gumundsdottir-kunal-lahiry/4708",
       "venue": "Kölner Philharmonie",
-      "city": "Köln",
-      "duration_min": 60
+      "city": "Köln"
     },
     {
       "date": "2026-05-18",
       "time": "20:00",
       "title": "Aurel Dawidiuk",
-      "venue_hall": "Kölner Philharmonie",
+      "venue_hall": null,
       "program": [
-        "Bach: Toccata und Fuge für Orgel d-Moll BWV 565",
-        "Szathmáry: B-A-C-H »Hommage à...« für große Orgel",
-        "Liszt: Präludium und Fuge über den Namen B-A-C-H S 260/2 Zweite Fassung für Orgel",
-        "Tournemire/Duruflé: Improvisation sur le Te Deum aus: Cinq Improvisations für Orgel. Transkription von Maurice Duruflé",
-        "Bach/Duruflé: »Ertöt uns durch dein Güte« Choral aus der Kantate »Jesus nahm zu sich die Zwölfe« BWV 22 Transkription für Orgel von Maurice Duruflé",
-        "Franck: Choral Nr. 3 a-Moll FWV 40 aus: Trois Chorals FWV 38–40 für große Orgel mit obligatem Pedal",
-        "Bach/Duruflé: »Jesu bleibet meine Freude« Choral aus der Kantate »Herz und Mund und Tat und Leben« BWV 147 Transkription für Orgel von Maurice Duruflé",
-        "Tournemire/Duruflé: Choral-Improvisation sur le Victimae paschali aus: Cinq Improvisations für Orgel. Transkription von Maurice Duruflé"
+        "Orgel Plus.."
       ],
-      "performers": [
-        "Aurel Dawidiuk"
-      ],
+      "performers": [],
       "conductor": null,
-      "price": "null",
+      "price": null,
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/aurel-dawidiuk/4603",
       "venue": "Kölner Philharmonie",
-      "city": "Köln",
-      "duration_min": 95
+      "city": "Köln"
     },
     {
       "date": "2026-05-19",
       "time": "20:00",
       "title": "Jörg Widmann | Isabelle Faust | Jean-Guihen Queyras | Pierre-Laurent Aimard",
-      "venue_hall": "Kölner Philharmonie",
+      "venue_hall": null,
       "program": [
-        "Boulez: Douze Notations",
-        "Ravel: Sonate für Violine und Violoncello (»Le Tombeau de Debussy«)",
-        "Berg: Vier Stücke für Klarinette und Klavier op. 5",
-        "Messiaen: Quatuor pour la fin du Temps"
+        "Quatuor pour la fin du Temps"
       ],
-      "performers": [
-        "Jörg Widmann",
-        "Isabelle Faust",
-        "Jean-Guihen Queyras",
-        "Pierre-Laurent Aimard"
-      ],
+      "performers": [],
       "conductor": null,
-      "price": "null",
+      "price": null,
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/jorg-widmann-isabelle-faust-jean-guihen-queyras-pierre-laurent-aimard/4649",
       "venue": "Kölner Philharmonie",
-      "city": "Köln",
-      "duration_min": 105
+      "city": "Köln"
     },
     {
       "date": "2026-05-21",
@@ -133,21 +82,377 @@
         "Augusto Velio Palumbo",
         "Manuel Bilz",
         "WDR Sinfonieorchester",
-        "Oscar Jockel",
-        "Johannes Büchs",
         "Carola Kärcher"
       ],
       "conductor": "Oscar Jockel",
-      "price": "null",
+      "price": "€ 20,-",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/klassik-mal-anders-heute-schon-gelacht/4872",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
       "duration_min": 90
+    },
+    {
+      "date": "2026-05-22",
+      "time": "20:00",
+      "title": "Lucia Cadotsch AKI",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [],
+      "performers": [
+        "Lucia Cadotsch",
+        "Jozef Dumoulin",
+        "Phil Donkin",
+        "James Maddren"
+      ],
+      "conductor": null,
+      "price": "€ 34,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/lucia-cadotsch-aki/4651",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 80
+    },
+    {
+      "date": "2026-05-23",
+      "time": "15:00",
+      "title": "singOUT Köln 2026",
+      "venue_hall": null,
+      "program": [
+        "Das 1000 Stimmen Mass-Choir Gospelkonzert"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/singout-koln-2026/9097",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln"
+    },
+    {
+      "date": "2026-05-23",
+      "time": "20:00",
+      "title": "singOUT Köln 2026",
+      "venue_hall": null,
+      "program": [
+        "Das 1000 Stimmen Mass-Choir Gospelkonzert"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/singout-koln-2026/9090",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln"
+    },
+    {
+      "date": "2026-05-24",
+      "time": "20:00",
+      "title": "Steve Hackett",
+      "venue_hall": null,
+      "program": [
+        "Best of Genesis & Solo Gems 2026 Tour"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/steve-hackett/9100",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln"
+    },
+    {
+      "date": "2026-05-25",
+      "time": "20:00",
+      "title": "Die Prinzen",
+      "venue_hall": null,
+      "program": [
+        "Symphonica 2026"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/die-prinzen/5007",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln"
+    },
+    {
+      "date": "2026-05-28",
+      "time": "12:00",
+      "title": "PhilharmonieLunch",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [],
+      "performers": [
+        "Gürzenich-Orchester Köln"
+      ],
+      "conductor": "Andrés Orozco-Estrada",
+      "price": "Eintritt frei",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonielunch/4931",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 30
+    },
+    {
+      "date": "2026-05-29",
+      "time": "20:00",
+      "title": "Marie Jacquot – Sommernachtsträume",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Henry Purcell: Suite aus »The Fairy Queen« Z 629",
+        "Kristine Tjøgersen: Wolpertinger",
+        "Felix Mendelssohn Bartholdy: Musik zu »Ein Sommernachtstraum« op. 61"
+      ],
+      "performers": [
+        "Kathrin Zukowski",
+        "Susan Zarrabi",
+        "Damen des NDR Vokalensembles",
+        "Damen des WDR Rundfunkchores",
+        "WDR Sinfonieorchester",
+        "Marie Jacquot",
+        "Jens Harzer"
+      ],
+      "conductor": "Marie Jacquot",
+      "price": "€ 24,- bis 67,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/marie-jacquot-sommernachtstraume/4873",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 135
+    },
+    {
+      "date": "2026-05-30",
+      "time": "20:00",
+      "title": "Marie Jacquot – Sommernachtsträume",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Purcell: Suite aus “The Fairy Queen” Z 629",
+        "Kristine Tjøgersen: Wolpertinger",
+        "Mendelssohn Bartholdy: Musik zu “Ein Sommernachtstraum” op. 61"
+      ],
+      "performers": [
+        "Kathrin Zukowski",
+        "Susan Zarrabi",
+        "Damen des NDR Vokalensembles",
+        "Damen des WDR Rundfunkchores",
+        "WDR Sinfonieorchester",
+        "Marie Jacquot",
+        "Jens Harzer"
+      ],
+      "conductor": "Marie Jacquot",
+      "price": "€ 24,- bis 67,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/marie-jacquot-sommernachtstraume/4874",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 135
+    },
+    {
+      "date": "2026-05-31",
+      "time": "11:00",
+      "title": "Kölner Kantorei",
+      "venue_hall": null,
+      "program": [
+        "Johann Sebastian Bach: Messe h-Moll BWV 232"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/kolner-kantorei/4799",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln"
+    },
+    {
+      "date": "2026-05-31",
+      "time": "16:00",
+      "title": "Kölner Kammerorchester",
+      "venue_hall": null,
+      "program": [
+        "Frühlingsrausch"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/kolner-kammerorchester/4894",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln"
+    },
+    {
+      "date": "2026-06-01",
+      "time": "20:00",
+      "title": "La Nuit d’Afrique – From Sahel to Rhine",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "La Nuit d’Afrique - From Sahel to Rhine"
+      ],
+      "performers": [
+        "Babaa Maal",
+        "Wolfgang Niedecken",
+        "Bakane Seck",
+        "Mike Herting",
+        "Élida Almeida",
+        "Marcus Schinkel",
+        "Pape Samory Seck",
+        "Melane Mosaic Project"
+      ],
+      "conductor": null,
+      "price": "€ 34,40 bis 69,60",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/la-nuit-dafrique-from-sahel-to-rhine/9167",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln"
+    },
+    {
+      "date": "2026-06-02",
+      "time": "20:00",
+      "title": "Anne-Sophie Mutter",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "André Previn: Violinkonzert Nr. 2 mit zwei Cembalo-Interludien",
+        "Wolfgang Amadeus Mozart: Konzert für Violine und Orchester Nr. 1 B-Dur KV 207",
+        "Aftab Darvishi: Likoo für Solo-Violine",
+        "Wolfgang Amadeus Mozart: Konzert für Violine und Orchester Nr. 5 A-Dur KV 219"
+      ],
+      "performers": [
+        "Anne-Sophie Mutter",
+        "Berliner Barock Solisten"
+      ],
+      "conductor": null,
+      "price": "€ 38,- bis 175,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/anne-sophie-mutter/4786",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln"
+    },
+    {
+      "date": "2026-06-03",
+      "time": "20:00",
+      "title": "Jazzchor der Uni Bonn | Second Circle",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "A Human Heart – Ein Menschenleben in Musik"
+      ],
+      "performers": [
+        "Jazzchor der Universität Bonn",
+        "Jazzchor Second Circle"
+      ],
+      "conductor": "Jan-Hendrik Herrmann",
+      "price": "€30,- bis 44,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/jazzchor-der-uni-bonn-second-circle/4761",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 135
+    },
+    {
+      "date": "2026-06-04",
+      "time": "15:30",
+      "title": "Richard Wagner: Götterdämmerung",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Wagner: Götterdämmerung WWV 86D"
+      ],
+      "performers": [
+        "Young Woo Kim",
+        "Johannes Kammler",
+        "Daniel Schmutzhard",
+        "Patrick Zielke",
+        "Åsa Jäger",
+        "Sophia Brommer",
+        "Olivia Vermeulen",
+        "Jasmin Etminan",
+        "Marie Luise Dreßen",
+        "Valentina Farcas",
+        "Ania Vegry",
+        "Ida Aldrian",
+        "Eva Vogel",
+        "Dresdner Festspielchor der Richard-Wagner-Akademie",
+        "Chor der KlangVerwaltung",
+        "Dresdner Festspielorchester",
+        "Concerto Köln"
+      ],
+      "conductor": "Kent Nagano",
+      "price": "€ 43,- bis 148,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/richard-wagner-gotterdammerung/4731",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 150
+    },
+    {
+      "date": "2026-06-05",
+      "time": "19:00",
+      "title": "WDR Happy Hour – Beethoven!",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Mozart: Serenade D-Dur KV 250 (248b) \"Haffner-Serenade\""
+      ],
+      "performers": [
+        "José Maria Blumenschein",
+        "WDR Sinfonieorchester"
+      ],
+      "conductor": "Reinhard Goebel",
+      "price": "€12,- bis 21,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/wdr-happy-hour-beethoven/4875",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 75
+    },
+    {
+      "date": "2026-06-06",
+      "time": "20:00",
+      "title": "The Constellation Choir & Orchestra | Sir John Eliot Gardiner",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Bach: \"Christ lag in Todes Banden\" BWV 4",
+        "Schein: Was betrübst du dich, meine Seele",
+        "Bach: \"Ich hatte viel Bekümmernis\" BWV 21",
+        "Schütz: \"Selig sind die Toten\" SWV 391",
+        "Bach: \"Gottes Zeit ist die allerbeste Zeit\" BWV 106",
+        "Schein: Ich freue mich im Herren",
+        "Bach: \"Wachet auf, ruft uns die Stimme\" BWV 140"
+      ],
+      "performers": [
+        "The Constellation Choir & Orchestra"
+      ],
+      "conductor": "Sir John Eliot Gardiner",
+      "price": "€ 35,- bis 94,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/the-constellation-choir-orchestra-sir-john-eliot-gardiner/4736",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 120
+    },
+    {
+      "date": "2026-06-07",
+      "time": "20:00",
+      "title": "Louis Tomlinson",
+      "venue_hall": "Bürgerzentrum Nippes – Altenberger Hof",
+      "program": [
+        "N/A"
+      ],
+      "performers": [
+        "Duo SeidenStrasse",
+        "Chanyuan Zhao",
+        "Benjamin Leuschner"
+      ],
+      "conductor": null,
+      "price": "€ 4,- Baby unter 2 Jahren; € 8,- Erwachsener / Kind ab 2 Jahren",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/louis-tomlinson/9550",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 45
+    },
+    {
+      "date": "2026-06-08",
+      "time": "20:00",
+      "title": "Eine Nacht der Musicals",
+      "venue_hall": "Bürgerzentrum Nippes – Altenberger Hof",
+      "program": [
+        "Duo SeidenStrasse: Blüten, Gräser & Sonnenstäubchen"
+      ],
+      "performers": [
+        "Duo SeidenStrasse",
+        "Chanyuan Zhao",
+        "Benjamin Leuschner"
+      ],
+      "conductor": null,
+      "price": "€ 8,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/eine-nacht-der-musicals/9551",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 45
     }
   ],
-  "total_events": 5,
-  "total_events_visible": 95,
-  "total_events_discovered": 95,
-  "total_events_discovered_strict": 95,
+  "total_events": 23,
+  "total_events_visible": 29,
+  "total_events_discovered": 29,
+  "total_events_discovered_strict": 29,
   "source": "firecrawl_listing"
 }

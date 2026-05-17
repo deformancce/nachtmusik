@@ -3,7 +3,7 @@
   "city": "Berlin",
   "slug": "konzerthaus_berlin",
   "source_url": "https://www.konzerthaus.de/de/programm",
-  "scraped_at": "2026-05-17T17:41:27.981793Z",
+  "scraped_at": "2026-05-17T19:14:13.836004Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -21,7 +21,7 @@
         "Elisabeth Brauß"
       ],
       "conductor": null,
-      "price": "Tickets",
+      "price": null,
       "detail_url": "https://www.konzerthaus.de/de/programm/espresso-konzert/11719",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin"
@@ -36,7 +36,7 @@
       ],
       "performers": [],
       "conductor": null,
-      "price": "Tickets",
+      "price": null,
       "detail_url": "https://www.konzerthaus.de/de/programm/berliner-operngruppe/12411",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin"
@@ -54,12 +54,10 @@
       "performers": [
         "Liza Ferschtman",
         "Benjamin Hochman",
-        "Leah Amory",
-        "Davin Mar",
-        "Carson Ling-Efird"
+        "Künstlerinnen des Curtis Institute of Music"
       ],
       "conductor": null,
-      "price": "Tickets",
+      "price": null,
       "detail_url": "https://www.konzerthaus.de/de/programm/beethovens-geistertrio-und-brahms-klavierquintett/12412",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin"
@@ -107,15 +105,220 @@
         "Irina Lankova"
       ],
       "conductor": null,
-      "price": "Tickets",
+      "price": "Tickets available",
       "detail_url": "https://www.konzerthaus.de/de/programm/irina-lankova/12373",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-21",
+      "time": "18:30",
+      "title": "8ZEHN30 – Kurzkonzert",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Gustav Mahler: Sinfonie Nr. 5 cis-Moll"
+      ],
+      "performers": [
+        "Konzerthausorchester Berlin",
+        "Joana Mallwitz"
+      ],
+      "conductor": "Joana Mallwitz",
+      "price": "Ausverkauft",
+      "detail_url": "https://www.konzerthaus.de/de/programm/8zehn30-kurzkonzert/11531",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-22",
+      "time": "20:00",
+      "title": "Konzerthausorchester Berlin, Joana Mallwitz",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Ludwig van Beethoven: Konzert für Klavier und Orchester Nr. 3 c-Moll op. 37",
+        "Gustav Mahler: Sinfonie Nr. 5 cis-Moll"
+      ],
+      "performers": [
+        "Joana Mallwitz",
+        "Alice Sara Ott"
+      ],
+      "conductor": "Joana Mallwitz",
+      "price": "Ausverkauft",
+      "detail_url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-berlin-joana-mallwitz/11532",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-22",
+      "time": "20:00",
+      "title": "2 x hören",
+      "venue_hall": "Werner-Otto-Saal",
+      "program": [
+        "Olga Neuwirth: „in the realms of the unreal“ für Streichquartett"
+      ],
+      "performers": [
+        "Ensemble Resonanz"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.konzerthaus.de/de/programm/2-x-horen/11722",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-23",
+      "time": "19:00",
+      "title": "Konzerthausorchester Berlin, Joana Mallwitz",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Ludwig van Beethoven: Konzert für Klavier und Orchester Nr. 3 c-Moll op. 37",
+        "Gustav Mahler: Sinfonie Nr. 5 cis-Moll"
+      ],
+      "performers": [
+        "Joana Mallwitz",
+        "Alice Sara Ott"
+      ],
+      "conductor": "Joana Mallwitz",
+      "price": "Ausverkauft",
+      "detail_url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-berlin-joana-mallwitz/11533",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-24",
+      "time": "11:00",
+      "title": "Kammermusikmatinee des Konzerthausorchesters",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Dobrinka Tabakova: „Highland Pastorale“ für Streichquartett",
+        "August Friedrich Klughardt: „Schilflieder“ - Fünf Fantasiestücke für Oboe, Viola und Klavier op. 28",
+        "Ludwig van Beethoven: Sinfonie Nr. 6 F-Dur op. 68 („Pastorale“), bearbeitet für Streichsextett von Michael Gotthard Fischer"
+      ],
+      "performers": [
+        "Teresa Kammerer",
+        "Linda Fichtner",
+        "Felix Korinth",
+        "Katja Plagens",
+        "Alexander Kahl",
+        "Viola Bayer",
+        "Nadine Resatsch",
+        "Anna Kirichenko"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.konzerthaus.de/de/programm/kammermusikmatinee-des-konzerthausorchesters/11534",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-25",
+      "time": "11:00",
+      "title": "Orgel-Matinee am Pfingstmontag",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Bach: Pièce d’Orgue G-Dur BWV 572",
+        "Buxtehude: Passacaglia in d BuxWV 161",
+        "Grigny: Hymnus „Veni creator“",
+        "Bach: Sonate für Orgel G-Dur BWV 530",
+        "Bach: Präludium und Fuge für Orgel G-Dur BWV 541"
+      ],
+      "performers": [
+        "Bine Katrine Bryndorf"
+      ],
+      "conductor": null,
+      "price": "15 Euro",
+      "detail_url": "https://www.konzerthaus.de/de/programm/orgel-matinee-am-pfingstmontag/11723",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-25",
+      "time": "19:00",
+      "title": "Berlin Asian Music Festival (BAMF) Drei Abende. Vier Länder. Eine gemeinsame Klangsprache.",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Yun: Work Title",
+        "Park: Work Title",
+        "Kim: Work Title",
+        "Noh: Work Title",
+        "Kim: Work Title"
+      ],
+      "performers": [
+        "Khukh Tenger (Mongolei)",
+        "Sorichum",
+        "Quarticolo",
+        "NUNC Akademie"
+      ],
+      "conductor": null,
+      "price": "12 / 17 EUR zzgl. VVG/ Studenten 8 EUR zzgl. VVG",
+      "detail_url": "https://www.konzerthaus.de/de/programm/berlin-asian-music-festival-bamf-drei-abende-vier-lander-eine-gemeinsame-klangsprache/12720",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin",
+      "duration_min": 90
+    },
+    {
+      "date": "2026-05-27",
+      "time": "19:00",
+      "title": "Berlin Asian Music Festival (BAMF) Drei Abende. Vier Länder. Eine gemeinsame Klangsprache.",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Daeseong Kim: Werktitel",
+        "Kyungshin Im: Werktitel",
+        "Junehee Lim: Werktitel",
+        "Sunlak Noh: Werktitel"
+      ],
+      "performers": [
+        "4 Jit",
+        "Ensemble NUNC"
+      ],
+      "conductor": null,
+      "price": "12 / 17 EUR zzgl. VVG / Studenten 8 EUR zzgl. VVG",
+      "detail_url": "https://www.konzerthaus.de/de/programm/berlin-asian-music-festival-bamf-drei-abende-vier-lander-eine-gemeinsame-klangsprache/12721",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-27",
+      "time": "20:00",
+      "title": "Dresdner Residenz Orchester",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Vivaldi: Le quattro stagioni – Vier Konzerte für Violine, Streicher und Basso continuo op. 8 Nr. 1–4",
+        "Beethoven: Sinfonie Nr. 5 c-Moll op. 67"
+      ],
+      "performers": [
+        "Dresdner Residenz Orchester",
+        "Elias David Moncado",
+        "Igor Malinovsky"
+      ],
+      "conductor": "Elias David Moncado",
+      "price": "44/52/63 EUR",
+      "detail_url": "https://www.konzerthaus.de/de/programm/dresdner-residenz-orchester/12385",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-27",
+      "time": "20:00",
+      "title": "Konzerthausorchester Gastspiel Hamburg",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Beethoven: Konzert für Klavier und Orchester Nr. 3 c-Moll op. 37",
+        "Mahler: Sinfonie Nr. 5 cis-Moll"
+      ],
+      "performers": [
+        "Joana Mallwitz",
+        "Alice Sara Ott"
+      ],
+      "conductor": "Joana Mallwitz",
+      "price": null,
+      "detail_url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-gastspiel-hamburg/12955",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin"
     }
   ],
-  "total_events": 5,
-  "total_events_visible": 49,
-  "total_events_discovered": 49,
-  "total_events_discovered_strict": 49,
+  "total_events": 15,
+  "total_events_visible": 14,
+  "total_events_discovered": 14,
+  "total_events_discovered_strict": 14,
   "source": "firecrawl_listing"
 }

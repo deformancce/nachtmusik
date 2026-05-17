@@ -3,7 +3,7 @@
   "city": "Stuttgart",
   "slug": "liederhalle_stuttgart",
   "source_url": "https://liederhalle.de/eventkalender",
-  "scraped_at": "2026-05-17T17:58:11.250762Z",
+  "scraped_at": "2026-05-17T19:34:03.960715Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -46,9 +46,7 @@
       "time": "20:00",
       "title": "Tim Bendzko: Alles, nur nicht zurück",
       "venue_hall": "Hegel-Saal",
-      "program": [
-        "Bendzko: Alles, nur nicht zurück"
-      ],
+      "program": [],
       "performers": [
         "Tim Bendzko"
       ],
@@ -79,7 +77,7 @@
       "title": "SWR Symphonieorchester: Dans la cuisine du chef",
       "venue_hall": "Hegel-Saal",
       "program": [
-        "Haydn: Sinfonie Nr. 101 D-Dur (\"Die Uhr\")"
+        "Haydn: Sinfonie Nr. 101 D-Dur ('Die Uhr')"
       ],
       "performers": [
         "SWR Symphonieorchester"
@@ -89,11 +87,237 @@
       "detail_url": "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart"
+    },
+    {
+      "date": "2026-05-20",
+      "time": "19:30",
+      "title": "Chopin Preisträger",
+      "venue_hall": "Beethoven-Saal",
+      "program": [
+        "Schumann: Klavierstücke „Waldszenen“ op. 82",
+        "Chopin: Polonaise Nr. 2 op. 71",
+        "Chopin: Ballade Nr. 4 op. 52",
+        "Chopin: Sonate Nr. 3 op. 58",
+        "Schubert: Impromptu D 935 op. 142/1"
+      ],
+      "performers": [
+        "Maurizio Pollini",
+        "Martha Argerich",
+        "Krystian Zimerman",
+        "Seong-Jin Cho",
+        "Bruce Liu"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/chopin-preistraeger",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart"
+    },
+    {
+      "date": "2026-05-20",
+      "time": "19:30",
+      "title": "Staatsorchester Stuttgart: 7. Kammerkonzert - Film ab!",
+      "venue_hall": "Mozart-Saal",
+      "program": [
+        "Rota: Trio für Klarinette, Violoncello und Klavier",
+        "Vaughan Williams: Phantasy Quintet für Streichquintett",
+        "Korngold: Klavierquintett E-Dur op. 15"
+      ],
+      "performers": [
+        "Staatsorchester Stuttgart"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/staatsorchester-stuttgart-7-kammerkonzert-film-ab",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart"
+    },
+    {
+      "date": "2026-05-21",
+      "time": "19:30",
+      "title": "Mariani Klavierquartett",
+      "venue_hall": "Mozart-Saal",
+      "program": [
+        "Bridge: Fantasie (Klavierquartett) fis-Moll",
+        "Mozart: Klavierquartett g-Moll KV 478",
+        "Fauré: Klavierquartett g-Moll op. 45"
+      ],
+      "performers": [
+        "Mariani Klavierquartett"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/mariani-klavierquartett",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart"
+    },
+    {
+      "date": "2026-05-21",
+      "time": "19:30",
+      "title": "Bee Gees by Maincourse: Europas größte Bee Gees Tribute Show",
+      "venue_hall": "Beethoven-Saal",
+      "program": [],
+      "performers": [
+        "MainCourse"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/bee-gees-by-maincourse-europas-groesste-bee-gees-tribute-show-0",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart"
+    },
+    {
+      "date": "2026-05-22",
+      "time": "20:30",
+      "title": "Ibrahim Selim Ile Bu Gece",
+      "venue_hall": "Mozart-Saal",
+      "program": [],
+      "performers": [
+        "Ibrahim Selim"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/ibrahim-selim-ile-bu-gece",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart"
+    },
+    {
+      "date": "2026-05-23",
+      "time": "20:00",
+      "title": "ORSOphilharmonic: Soundtracks",
+      "venue_hall": "Hegel-Saal",
+      "program": [],
+      "performers": [
+        "ORSOphilharmonic"
+      ],
+      "conductor": "Wolfgang Roese",
+      "price": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/orsophilharmonic-soundtracks-0",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart"
+    },
+    {
+      "date": "2026-05-23",
+      "time": "20:00",
+      "title": "The Umbilical Brothers: The Best of The Worst of The Best",
+      "venue_hall": "Mozart-Saal",
+      "program": [],
+      "performers": [
+        "The Umbilical Brothers"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/the-umbilical-brothers-the-best-of-the-worst-of-the-best",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart"
+    },
+    {
+      "date": "2026-05-23",
+      "time": "20:00",
+      "title": "Alexander Stevens & Jacqueline Belle: True Crime - Toxic Love",
+      "venue_hall": "Beethoven-Saal",
+      "program": [],
+      "performers": [
+        "Jacqueline Belle",
+        "Dr. Alexander Stevens"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/alexander-stevens-jacqueline-belle-true-crime-toxic-love",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart"
+    },
+    {
+      "date": "2026-05-24",
+      "time": "17:00",
+      "title": "Die Deutschen Podcast - Tour, aber anders!",
+      "venue_hall": "Beethoven-Saal",
+      "program": [],
+      "performers": [
+        "Nizar",
+        "Shayan GbR"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/die-deutschen-podcast-tour-aber-anders",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart"
+    },
+    {
+      "date": "2026-05-25",
+      "time": "20:00",
+      "title": "Mabel Matiz",
+      "venue_hall": "Beethoven-Saal",
+      "program": [],
+      "performers": [
+        "Mabel Matiz"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/mabel-matiz",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart"
+    },
+    {
+      "date": "2026-05-26",
+      "time": "20:00",
+      "title": "Steve Hackett: Best of Genesis & Solo Gems 2026 Tour",
+      "venue_hall": "Beethoven-Saal",
+      "program": [],
+      "performers": [
+        "Steve Hackett",
+        "Lalle Larsson",
+        "Felix Lehrmann",
+        "Jonas Reingold",
+        "Nad Sylvan",
+        "Rob Townsend"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/steve-hackett-best-of-genesis-solo-gems-2026-tour",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart"
+    },
+    {
+      "date": "2026-05-27",
+      "time": "19:30",
+      "title": "Pretty Woman - Das Musical",
+      "venue_hall": "Hegel-Saal",
+      "program": [
+        "Bryan Adams: Pretty Woman - Das Musical"
+      ],
+      "performers": [
+        "Limelight Live Entertainment GmbH"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/pretty-woman-das-musical",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart"
+    },
+    {
+      "date": "2026-05-27",
+      "time": "20:00",
+      "title": "Utopia Orchestra: Teodor Currentzis",
+      "venue_hall": "Beethoven-Saal",
+      "program": [
+        "Berg: Konzert für Violine und Orchester „Dem Andenken eines Engels“",
+        "Mahler: Symphonie Nr. 1 D-Dur „Der Titan“"
+      ],
+      "performers": [
+        "Utopia Orchestra",
+        "Vilde Frang, Violine"
+      ],
+      "conductor": "Teodor Currentzis",
+      "price": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/utopia-orchestra-teodor-currentzis",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart"
     }
   ],
-  "total_events": 5,
-  "total_events_visible": 20,
-  "total_events_discovered": 20,
-  "total_events_discovered_strict": 20,
+  "total_events": 18,
+  "total_events_visible": 27,
+  "total_events_discovered": 27,
+  "total_events_discovered_strict": 27,
   "source": "firecrawl_listing"
 }

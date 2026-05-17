@@ -3,21 +3,18 @@
   "city": "Düsseldorf",
   "slug": "tonhalle_duesseldorf",
   "source_url": "https://www.tonhalle.de/veranstaltungen/kalender",
-  "scraped_at": "2026-05-17T17:47:45.280194Z",
+  "scraped_at": "2026-05-17T19:24:00.962706Z",
   "engine": "firecrawl",
   "events": [
     {
       "date": "2026-05-22",
-      "time": "20:00",
+      "time": null,
       "title": "Mendelssohn",
-      "venue_hall": "Mendelssohn-Saal",
+      "venue_hall": null,
       "program": [
-        "Mendelssohn Bartholdy: Oktett für Streicher Es-Dur op. 20"
+        "Vision String & Danish String Quartet: Mendelssohn"
       ],
-      "performers": [
-        "vision string quartet",
-        "Danish String Quartet"
-      ],
+      "performers": [],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/raumstation/17284-mendelssohn",
@@ -41,11 +38,11 @@
     },
     {
       "date": "2026-05-30",
-      "time": "20:00",
+      "time": null,
       "title": "Melodic Lifetime",
       "venue_hall": null,
       "program": [
-        "Markus Stockhausen: Supernova"
+        "feat. Markus Stockhausen: Melodic Lifetime"
       ],
       "performers": [],
       "conductor": null,
@@ -56,7 +53,7 @@
     },
     {
       "date": "2026-05-31",
-      "time": "20:00",
+      "time": "16:30",
       "title": "Schroeder geht ins Konzert",
       "venue_hall": "Mendelssohn-Saal",
       "program": [
@@ -69,8 +66,7 @@
       ],
       "performers": [
         "Düsseldorfer Symphoniker",
-        "vision string quartet",
-        "Florian Schroeder"
+        "vision string quartet"
       ],
       "conductor": "Alena Hron",
       "price": null,
@@ -80,33 +76,227 @@
     },
     {
       "date": "2026-06-01",
-      "time": "20:00",
+      "time": null,
       "title": "Bruce Liu",
-      "venue_hall": "Mendelssohn-Saal",
+      "venue_hall": null,
       "program": [
-        "Ligeti: Fanfares / Étude Nr. 4 (Études pour piano, premier livre)",
-        "Beethoven: Sonate Nr. 14 cis-Moll op. 27/2 «Mondscheinsonate»",
-        "Chopin: Deux Nocturnes op. 27",
-        "Ravel: Alborada del gracioso (Miroirs Nr. 4)",
-        "Debussy: Rêverie",
-        "Beethoven: Sonate C-Dur op. 53 \"Waldstein-Sonate\"",
-        "Mompou: Glossa sobre „Au clair de la lune“",
-        "Mompou: Fantasia sobre „Au clair de la lune“",
-        "Liszt: Rhapsodie espagnole S 254"
+        "Sommerträume: Bruce Liu"
       ],
-      "performers": [
-        "Bruce Liu"
-      ],
+      "performers": [],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/piano-solo/17583-bruce-liu",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf"
+    },
+    {
+      "date": "2026-06-04",
+      "time": null,
+      "title": "Anne-Sophie Mutter",
+      "venue_hall": null,
+      "program": [
+        "Liebeserklärungen: Anne-Sophie Mutter"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/faszination-klassik/17576-anne-sophie-mutter",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf"
+    },
+    {
+      "date": "2026-06-06",
+      "time": null,
+      "title": "Christoph & Julian Prégardien",
+      "venue_hall": null,
+      "program": [
+        "Eröffnungskonzert Schumannfest: Christoph & Julian Prégardien"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/schumannfest/19438-christoph-julian-pregardien",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf"
+    },
+    {
+      "date": "2026-06-07",
+      "time": "11:00",
+      "title": "Das symphonische Palais",
+      "venue_hall": "Palais Wittgenstein",
+      "program": [
+        "Jolivet: Sonatine für Oboe und Fagott",
+        "Saint-Saëns: Sonate G-Dur op. 168 für Fagott und Klavier",
+        "Poulenc: Sonate S 185 für Oboe und Klavier",
+        "Poulenc: Trio für Oboe, Fagott und Klavier",
+        "Françaix: Trio für Oboe, Fagott und Klavier",
+        "Brod: Trio op. 5 Nr. 1 für Oboe, Fagott und Klavier"
+      ],
+      "performers": [
+        "Fernando José Martínez Zavala",
+        "Martin Kevenhörster",
+        "Julia Golkhovaya"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/das-symphonische-palais/18194-das-symphonische-palais",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf"
+    },
+    {
+      "date": "2026-06-07",
+      "time": null,
+      "title": "Ravel",
+      "venue_hall": null,
+      "program": [
+        "JSO der Tonhalle: Ravel"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/big-bang-junge-tonhalle/17621-ravel",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf"
+    },
+    {
+      "date": "2026-06-07",
+      "time": "19:00",
+      "title": "Gewandhaus-Quartett",
+      "venue_hall": "Palais Wittgenstein",
+      "program": [
+        "Beethoven: Streichquartett c-Moll op. 18/4",
+        "Beethoven: Streichquartett Es-Dur op. 74 \"Harfen-Quartett\"",
+        "Schumann: Klavierquintett Es-Dur op. 44"
+      ],
+      "performers": [
+        "Gewandhaus-Quartett",
+        "Charlotte SteppesKlavier"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/schumannfest/20065-gewandhaus-quartett",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf"
+    },
+    {
+      "date": "2026-06-08",
+      "time": "11:00",
+      "title": "Junior-Sternzeichen: Der Berg ruft",
+      "venue_hall": "Trautvetter-Brückner-Saal",
+      "program": [
+        "Strauss: Eine Alpensinfonie op. 64"
+      ],
+      "performers": [
+        "Düsseldorfer Symphoniker"
+      ],
+      "conductor": "Alexandre Bloch",
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/junior-sternzeichen/21524-junior-sternzeichen-der-berg-ruft",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf"
+    },
+    {
+      "date": "2026-06-28",
+      "time": "19:00",
+      "title": "Eleanor & Gus",
+      "venue_hall": "Jazz-Schmiede",
+      "program": [
+        "Trenet: Selected Songs",
+        "Coward: Selected Songs",
+        "Mitchell: Selected Songs"
+      ],
+      "performers": [
+        "Eleanor Grant (Gesang, Kontrabass)",
+        "Gus McQuade (Gitarre)"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/schumannfest/20076-eleanor-gus",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf"
+    },
+    {
+      "date": "2026-07-01",
+      "time": "18:00",
+      "title": "Ultraschall - Konzert für Schwangere und ihre Babys im Bauch",
+      "venue_hall": "Rotunde/Foyer",
+      "program": [
+        "Indisches Quartett: Virtuose klassische indische Musik"
+      ],
+      "performers": [
+        "Ivano Onavi",
+        "Anushaant Nayinai Wijayan",
+        "Simon Tressin",
+        "Lisa Föll"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/ultraschall/17705-ultraschall-konzert-fuer-schwangere-und-ihre-babys-im-bauch",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf"
+    },
+    {
+      "date": "2026-07-01",
+      "time": "09:00",
+      "title": "Sterntaler - für 2-4 Jahre",
+      "venue_hall": "Trautvetter-Brückner-Saal",
+      "program": [
+        "Ulrich Kisters: Klavier, Gitarre, Akkordeon und Arrangements",
+        "Musiker*innen der Düsseldorfer Symphoniker: N/A",
+        "Lorna Bowden: Konzept & Regie"
+      ],
+      "performers": [
+        "Mira Wickert",
+        "Ulrich Kisters",
+        "Musiker*innen der Düsseldorfer Symphoniker",
+        "Lorna Bowden"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/sterntaler/21590-sterntaler-fuer-kitas-fuer-2-4-jahre",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf"
+    },
+    {
+      "date": "2026-07-02",
+      "time": "16:00",
+      "title": "Plutino - für 4-6 Jahre",
+      "venue_hall": "Rotunde/Foyer",
+      "program": [
+        "Komponist: Werk mit Opus oder Katalognotierung"
+      ],
+      "performers": [
+        "Youssef Laktina: Percussion und Spiel",
+        "Musiker*innen der Düsseldorfer Symphoniker"
+      ],
+      "conductor": "Katrin Sedlbauer",
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/plutino/21602-plutino-fuer-4-6-jahre",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf"
+    },
+    {
+      "date": "2026-07-17",
+      "time": "11:00",
+      "title": "Junior-Sternzeichen: Frühlingserwachen",
+      "venue_hall": "Trautvetter-Brückner-Saal",
+      "program": [
+        "Strawinsky: Le sacre du printemps"
+      ],
+      "performers": [
+        "Düsseldorfer Symphoniker",
+        "Samira Memarzadeh"
+      ],
+      "conductor": "Alpesh Chauhan",
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/junior-sternzeichen/21523-junior-sternzeichen-fruehlingserwachen",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf"
     }
   ],
-  "total_events": 5,
-  "total_events_visible": 33,
-  "total_events_discovered": 33,
-  "total_events_discovered_strict": 33,
+  "total_events": 16,
+  "total_events_visible": 42,
+  "total_events_discovered": 42,
+  "total_events_discovered_strict": 42,
   "source": "firecrawl_listing"
 }

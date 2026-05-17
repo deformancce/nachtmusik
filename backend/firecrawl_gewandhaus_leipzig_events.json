@@ -3,7 +3,7 @@
   "city": "Leipzig",
   "slug": "gewandhaus_leipzig",
   "source_url": "https://www.gewandhausorchester.de/",
-  "scraped_at": "2026-05-17T18:25:13.873682Z",
+  "scraped_at": "2026-05-17T19:33:14.888697Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -16,7 +16,8 @@
       ],
       "performers": [
         "Gewandhausorchester",
-        "Constantin Trinks"
+        "Constantin Trinks Musikalische Leitung",
+        "Bernd Mottl Inszenierung"
       ],
       "conductor": "Constantin Trinks",
       "price": "88/78/63/48/39/18 EUR",
@@ -27,7 +28,7 @@
     {
       "date": "2026-05-17",
       "time": "18:00",
-      "title": "Fokus: 'Tacheles' – Jahr der jüdischen Kultur in Sachsen 2026",
+      "title": "Fokus: \"Tacheles\" – Jahr der jüdischen Kultur in Sachsen 2026",
       "venue_hall": "Mendelssohn-Saal",
       "program": [
         "Dmitri Schostakowitsch: Quintett für Klavier, zwei Violinen, Viola und Violoncello g-Moll op. 57",
@@ -36,7 +37,7 @@
       ],
       "performers": [
         "Quatuor Danel",
-        "Marc-André Hamelin"
+        "Marc-André Hamelin Klavier"
       ],
       "conductor": null,
       "price": "24/20 EUR",
@@ -47,33 +48,22 @@
     {
       "date": "2026-05-17",
       "time": "19:00",
-      "title": "Element of Crime",
+      "title": "Konzerthaus Tour 2026",
       "venue_hall": "Großer Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Element of Crime"
+      ],
       "conductor": null,
-      "price": "74/68,50/63/57,50 EUR",
+      "price": "74/68,50/63/57,50 EUR (inkl. VVK-Gebühr)",
       "detail_url": "https://www.gewandhausorchester.de/veranstaltung/element-of-crime-9804/",
-      "venue": "Gewandhaus Leipzig",
-      "city": "Leipzig"
-    },
-    {
-      "date": "2026-05-18",
-      "time": "20:00",
-      "title": "Element of Crime",
-      "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": "74/68,50/63/57,50 EUR",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/element-of-crime-9805/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig"
     }
   ],
-  "total_events": 4,
-  "total_events_visible": 4,
-  "total_events_discovered": 4,
-  "total_events_discovered_strict": 4,
+  "total_events": 3,
+  "total_events_visible": 3,
+  "total_events_discovered": 3,
+  "total_events_discovered_strict": 3,
   "source": "firecrawl_listing"
 }
