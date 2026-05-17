@@ -183,9 +183,13 @@ def _build_listing_prompt(venue: dict, max_events: int) -> str:
         "  detail_url (absolute URL of the event's own page on this venue's website).\n\n"
         "RULES:\n"
         f"- Only events physically AT {venue['name']} in {venue['city']}. "
-        "Skip guest tours to other cities and cross-promotion of other venues.\n"
-        "- NEVER invent program/performer data. If not shown on the listing, leave arrays EMPTY.\n"
+        "Skip any event labeled 'Gastkonzert' (guest tour) or showing a different city/venue "
+        "as location. Cross-promotion of other venues must also be skipped.\n"
+        "- NEVER invent dates, URLs, program works, or performer names. Only use what is "
+        "explicitly written on the page. If a field is not shown, leave it null/empty.\n"
         "  A title like 'Die Prinzen Symphonisch' is a pop show — do NOT invent a Mahler symphony.\n"
+        "- If the page shows the date only as a day-of-week + German date (e.g. 'Sa. 23.05.2026'), "
+        "convert that exactly to YYYY-MM-DD. Do NOT guess or infer dates from URL slugs.\n"
         "- Skip non-concert entries: theater, dance, lectures, navigation items, season-pass upsells.\n"
         "- detail_url must be an absolute URL (start with https://). If you cannot find one, use null."
     )
@@ -331,14 +335,89 @@ def _gewandhaus_actions() -> list[dict]:
     return _cookie_and_load_more_actions(max_rounds=30, settle_ms=2000)
 
 
+# mphil.de calendar renders all events from Sept 2025 → future (13k+ line markdown).
+# Clicking the current-month tab narrows the page to ~2 months of events and
+# prevents LLM date-confusion / hallucination caused by the huge archive.
+_MPHIL_MONTH_NAV_JS = r"""
+async () => {
+  const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+  const log = [];
+
+  // (1) Dismiss cookie banner
+  const cookieRe = /^(alle\s+akzeptieren|akzeptieren|alle\s+cookies\s+akzeptieren|einverstanden|zustimmen|alles\s+erlauben|alle\s+aktivieren|accept(?:\s+all)?|agree|got\s+it)$/i;
+  for (const el of document.querySelectorAll('button, a, [role="button"], input[type="button"]')) {
+    const t = (el.textContent || el.value || '').trim();
+    if (!t || t.length > 60) continue;
+    if (cookieRe.test(t)) {
+      try { el.click(); log.push('cookie:' + t); break; } catch (e) {}
+    }
+  }
+  await sleep(900);
+
+  // (2) Click the current-month navigation tab (German month name + year).
+  // mphil.de renders "Mai 2026", "Juni 2026", … as clickable month tabs.
+  const DE_MONTHS = ['Januar','Februar','März','April','Mai','Juni','Juli',
+                     'August','September','Oktober','November','Dezember'];
+  const now = new Date();
+  const target = DE_MONTHS[now.getMonth()] + ' ' + now.getFullYear();  // nbsp variant
+  const target2 = DE_MONTHS[now.getMonth()] + ' ' + now.getFullYear();      // regular space
+  let monthClicked = false;
+  for (const el of document.querySelectorAll('a, button, li, span, [role="tab"], [role="option"]')) {
+    const t = (el.textContent || '').trim();
+    if (t === target || t === target2 || t.replace(/\s+/g,' ') === target2) {
+      try {
+        el.scrollIntoView({block: 'center'});
+        el.click();
+        monthClicked = true;
+        log.push('month:' + t);
+        break;
+      } catch (e) {}
+    }
+  }
+  if (!monthClicked) log.push('month:not-found');
+  await sleep(1200);
+
+  // (3) Scroll to load any lazy content within the month view
+  let lastH = 0;
+  for (let i = 0; i < 8; i++) {
+    window.scrollTo(0, document.body.scrollHeight);
+    await sleep(500);
+    const h = document.body.scrollHeight;
+    if (h === lastH) break;
+    lastH = h;
+  }
+  log.push('height:' + document.body.scrollHeight);
+  return log.join(' | ');
+}
+"""
+
+
+def _isarphi_actions() -> list[dict]:
+    # mphil.de shows the full archive (13k+ lines). Click the current month tab
+    # first to reduce the page to only upcoming events and avoid LLM confusion.
+    return [
+        {"type": "wait", "milliseconds": 2000},
+        {"type": "executeJavascript", "script": _MPHIL_MONTH_NAV_JS},
+        {"type": "wait", "milliseconds": 1500},
+    ]
+
+
 VENUE_OVERRIDES: dict[str, dict] = {
     "berliner_philharmonie": {
         "actions": _bp_actions,
         "wait_for_listing_count": 20,
     },
+    "elbphilharmonie_hamburg": {
+        # Heavy cookie wall ("Alle akzeptieren") blocks all content without JS dismissal.
+        "actions": lambda: _cookie_and_load_more_actions(max_rounds=20, settle_ms=2000),
+    },
     "gewandhaus_leipzig": {
         "actions": _gewandhaus_actions,
         "wait_for_listing_count": 20,
+    },
+    "isarphilharmonie_muenchen": {
+        # mphil.de calendar is 13k+ lines; navigate to current month to avoid hallucination.
+        "actions": _isarphi_actions,
     },
 }
 
