@@ -1,0 +1,71 @@
+name: Firecrawl smoke (Tier-1)
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch to scrape from and commit to"
+        required: false
+        default: "main"
+      max_events:
+        description: "Events per venue (default 5)"
+        required: false
+        default: "5"
+      slugs:
+        description: "Optional space-separated slug filter (default: all Tier-1)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: firecrawl-smoke
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || 'main' }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install --quiet firecrawl-py pydantic
+
+      - name: Run Firecrawl scraper
+        env:
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          PYTHONUNBUFFERED: "1"
+          MAX_EVENTS: ${{ github.event.inputs.max_events }}
+          SLUGS: ${{ github.event.inputs.slugs }}
+        run: |
+          ARGS=(--max-events "${MAX_EVENTS:-5}")
+          if [ -n "$SLUGS" ]; then
+            ARGS+=(--only $SLUGS)
+          fi
+          python3 -m backend.scrape.firecrawl_scraper "${ARGS[@]}"
+
+      - name: Commit and push results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backend/firecrawl_*_events.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Firecrawl smoke results"
+          BRANCH="${{ github.event.inputs.branch || 'main' }}"
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin "$BRANCH" || true
+            if git push origin "HEAD:$BRANCH"; then exit 0; fi
+            sleep $((i * 3))
+          done
+          exit 1
