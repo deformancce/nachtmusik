@@ -3,7 +3,7 @@
   "city": "Berlin",
   "slug": "konzerthaus_berlin",
   "source_url": "https://www.konzerthaus.de/de/programm",
-  "scraped_at": "2026-05-17T15:01:27.750742Z",
+  "scraped_at": "2026-05-17T17:41:27.981793Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -18,10 +18,10 @@
         "Franz Liszt: Variationen über einen Basso continuo aus der Kantate „Weinen, Klagen, Sorgen, Zagen“ von Johann Sebastian Bach"
       ],
       "performers": [
-        "Elisabeth Brauß - Klavier"
+        "Elisabeth Brauß"
       ],
       "conductor": null,
-      "price": null,
+      "price": "Tickets",
       "detail_url": "https://www.konzerthaus.de/de/programm/espresso-konzert/11719",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin"
@@ -36,7 +36,7 @@
       ],
       "performers": [],
       "conductor": null,
-      "price": null,
+      "price": "Tickets",
       "detail_url": "https://www.konzerthaus.de/de/programm/berliner-operngruppe/12411",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin"
@@ -52,14 +52,14 @@
         "Johannes Brahms: Klavierquintett f-Moll op. 34"
       ],
       "performers": [
-        "Liza Ferschtman - Violine",
-        "Leah Amory - Violine",
-        "Davin Mar - Viola",
-        "Carson Ling-Efird - Violoncello",
-        "Benjamin Hochman - Klavier"
+        "Liza Ferschtman",
+        "Benjamin Hochman",
+        "Leah Amory",
+        "Davin Mar",
+        "Carson Ling-Efird"
       ],
       "conductor": null,
-      "price": null,
+      "price": "Tickets",
       "detail_url": "https://www.konzerthaus.de/de/programm/beethovens-geistertrio-und-brahms-klavierquintett/12412",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin"
@@ -81,7 +81,8 @@
       "price": "Ausverkauft",
       "detail_url": "https://www.konzerthaus.de/de/programm/herz-uber-kopf-mahlers-funfte/11720",
       "venue": "Konzerthaus Berlin",
-      "city": "Berlin"
+      "city": "Berlin",
+      "duration_min": 120
     },
     {
       "date": "2026-05-20",
@@ -91,7 +92,7 @@
       "program": [
         "Sergej Rachmaninow: Prélude E-Dur op. 3 Nr. 3",
         "Sergej Rachmaninow: Etude-Tableau C-Dur op. 33 Nr. 2",
-        "Sergej Rachmaninow: Prélude Es-Dur op. 23 Nr. 6",
+        "Sergej Rachmaninow: Prélude Es-Durl op. 23 Nr. 6",
         "Sergej Rachmaninow: Prélude gis-Moll op. 32 Nr. 12",
         "Sergej Rachmaninow: Prélude D-Dur op. 23 Nr. 4",
         "Alexander Skrjabin: Etüde dis-Moll op. 8 Nr.12",
@@ -103,18 +104,18 @@
         "Igor Strawinsky: „Der Feuervogel“ - Ballettmusik, bearbeitet von Guido Agosti"
       ],
       "performers": [
-        "Irina Lankova - Klavier"
+        "Irina Lankova"
       ],
       "conductor": null,
-      "price": null,
+      "price": "Tickets",
       "detail_url": "https://www.konzerthaus.de/de/programm/irina-lankova/12373",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 6,
-  "total_events_discovered": 6,
-  "total_events_discovered_strict": 6,
+  "total_events_visible": 49,
+  "total_events_discovered": 49,
+  "total_events_discovered_strict": 49,
   "source": "firecrawl_listing"
 }

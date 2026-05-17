@@ -3,29 +3,9 @@
   "city": "Frankfurt",
   "slug": "alte_oper_frankfurt",
   "source_url": "https://www.alteoper.de/de/programm",
-  "scraped_at": "2026-05-17T15:08:56.377997Z",
+  "scraped_at": "2026-05-17T17:50:42.735871Z",
   "engine": "firecrawl",
   "events": [
-    {
-      "date": "2026-05-17",
-      "time": "19:00",
-      "title": "Gewandhausorchester",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Rachmaninoff: Klavierkonzert Nr. 2 c-Moll op. 18",
-        "Schostakowitsch: Sinfonie Nr. 10 e-Moll op. 93"
-      ],
-      "performers": [
-        "Gewandhausorchester",
-        "Yulianna Avdeeva"
-      ],
-      "conductor": "Andris Nelsons",
-      "price": "Ab 88,00 €",
-      "detail_url": "https://www.alteoper.de/de/programm/gewandhausorchester/18352",
-      "venue": "Alte Oper Frankfurt",
-      "city": "Frankfurt",
-      "duration_min": 135
-    },
     {
       "date": "2026-05-18",
       "time": "20:00",
@@ -35,6 +15,7 @@
         "Haydn: Die Jahreszeiten Hob. XXI:3"
       ],
       "performers": [
+        "Thomas Guggeis",
         "Frankfurter Opern- und Museumsorchester",
         "Cäcilienchor Frankfurt",
         "Figuralchor Frankfurt",
@@ -44,8 +25,8 @@
         "Magnus Dietrich",
         "David Steffens"
       ],
-      "conductor": "Spielt mehr Haydn!",
-      "price": "Ab 44,00 €",
+      "conductor": "Thomas Guggeis",
+      "price": "ab €44,00",
       "detail_url": "https://www.alteoper.de/de/programm/haydn-jahreszeiten/18466",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
@@ -56,14 +37,12 @@
       "time": "20:00",
       "title": "Bee Gees by MainCourse",
       "venue_hall": "Großer Saal",
-      "program": [
-        "Bee Gees: Greatest Hits"
-      ],
+      "program": [],
       "performers": [
         "MainCourse"
       ],
       "conductor": null,
-      "price": "Ab 84,50 €",
+      "price": "ab €84,50",
       "detail_url": "https://www.alteoper.de/de/programm/bee-gees-by-maincourse/18750",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
@@ -74,9 +53,7 @@
       "time": "17:00",
       "title": "Annettes DaschSalon",
       "venue_hall": "Mozart Saal",
-      "program": [
-        "Schubert: Das irdische Leben"
-      ],
+      "program": [],
       "performers": [
         "Annette Dasch",
         "Katrin Dasch",
@@ -86,7 +63,7 @@
         "Dota Kehr"
       ],
       "conductor": null,
-      "price": "Ab 16,00 €",
+      "price": "ab €16,00",
       "detail_url": "https://www.alteoper.de/de/programm/annettes-daschsalon/18436",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
@@ -98,26 +75,50 @@
       "title": "Miles Davis 100",
       "venue_hall": "Großer Saal",
       "program": [
-        "Davis: Miles Ahead",
-        "Davis: Porgy and Bess",
-        "Davis: Sketches of Spain"
+        "Miles Davis: Miles Ahead",
+        "Miles Davis: Porgy and Bess",
+        "Miles Davis: Sketches of Spain"
       ],
       "performers": [
         "hr-Bigband",
+        "Miho Hazama",
         "Arve Henriksen",
         "Paolo Fresu",
         "Axel Schlosser"
       ],
       "conductor": "Miho Hazama",
-      "price": "Ab 50,00 €",
+      "price": "ab €50,00",
       "detail_url": "https://www.alteoper.de/de/programm/miles-davis-100/18438",
+      "venue": "Alte Oper Frankfurt",
+      "city": "Frankfurt"
+    },
+    {
+      "date": "2026-05-27",
+      "time": "20:00",
+      "title": "Steve Hackett",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Genesis: Greatest Hits",
+        "Steve Hackett: Solo Highlights"
+      ],
+      "performers": [
+        "Steve Hackett",
+        "Lalle Larsson",
+        "Felix Lehrmann",
+        "Jonas Reingold",
+        "Nad Sylvan",
+        "Rob Townsend"
+      ],
+      "conductor": null,
+      "price": "EURO 56,45 | 67,90 | 73,70 | 79,40",
+      "detail_url": "https://www.alteoper.de/de/programm/steve-hackett/18732",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 15,
-  "total_events_discovered": 15,
-  "total_events_discovered_strict": 15,
+  "total_events_visible": 20,
+  "total_events_discovered": 20,
+  "total_events_discovered_strict": 20,
   "source": "firecrawl_listing"
 }

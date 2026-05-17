@@ -3,7 +3,7 @@
   "city": "Essen",
   "slug": "philharmonie_essen",
   "source_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/",
-  "scraped_at": "2026-05-17T15:08:09.912113Z",
+  "scraped_at": "2026-05-17T17:49:38.310819Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -13,12 +13,12 @@
       "venue_hall": "Alfried Krupp Saal",
       "program": [],
       "performers": [
-        "Eva Briegel",
+        "Eva Briegel (JULI)",
         "Mihalj Kekenj",
         "Takeover!Ensemble"
       ],
       "conductor": "Mihalj Kekenj",
-      "price": "ab €40",
+      "price": "40,00 €",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/takeover-by-miki-und-eva-briegel-juli-151425/3177/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
@@ -29,16 +29,14 @@
       "time": "19:00",
       "title": "Takeover! by Miki und Eva Briegel (JULI)",
       "venue_hall": "Alfried Krupp Saal",
-      "program": [
-        "Not available"
-      ],
+      "program": [],
       "performers": [
-        "Eva Briegel",
+        "Eva Briegel (JULI)",
         "Mihalj Kekenj",
         "Takeover!Ensemble"
       ],
-      "conductor": null,
-      "price": "ab €40",
+      "conductor": "Mihalj Kekenj",
+      "price": "40,00 €",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/takeover-by-miki-und-eva-briegel-juli-151425/3178/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
@@ -49,28 +47,28 @@
       "time": "18:00",
       "title": "Die Prinzen Symphonisch",
       "venue_hall": "Alfried Krupp Saal",
-      "program": [
-        "Various: All Hits with a large orchestra"
+      "program": [],
+      "performers": [
+        "Die Prinzen"
       ],
-      "performers": [],
       "conductor": null,
-      "price": "ab €89.90",
+      "price": "89,90 €",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/die-prinzen-symphonisch-157996/3335/",
       "venue": "Philharmonie Essen",
-      "city": "Essen"
+      "city": "Essen",
+      "duration_min": 120
     },
     {
       "date": "2026-05-26",
       "time": "20:00",
-      "title": "Joana Mallwitz \\\\ Konzerthausorchester Berlin",
+      "title": "Joana Mallwitz / Konzerthausorchester Berlin",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
-        "Gustav Mahler: Symphony No. 1",
-        "Ludwig van Beethoven: Piano Concerto No. 5"
+        "Gustav Mahler: Symphony No. 1"
       ],
       "performers": [],
-      "conductor": null,
-      "price": "ab €97.90",
+      "conductor": "Joana Mallwitz",
+      "price": "97,90 €",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/joana-mallwitzkonzerthausorchester-berlin-154813/2711/",
       "venue": "Philharmonie Essen",
       "city": "Essen"
@@ -78,24 +76,26 @@
     {
       "date": "2026-05-27",
       "time": "19:00",
-      "title": "Gautier Capuçon \\\\ Sächsische Staatskapelle Dresden",
+      "title": "Gautier Capuçon / Sächs­ische Staats­kapelle Dresden",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
         "Camille Saint-Saëns: Cello Concerto No. 1",
-        "Claude Debussy: La Mer",
-        "Richard Wagner: Prelude to Die Meistersinger von Nürnberg"
+        "Claude Debussy: Nocturnes",
+        "Richard Wagner: Siegfried Idyll"
       ],
-      "performers": [],
-      "conductor": null,
-      "price": "ab €105",
+      "performers": [
+        "Gautier Capuçon"
+      ],
+      "conductor": "Gustavo Gimeno",
+      "price": "105,00 €",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/gautier-capuconsaechsische-staatskapelle-dresden-149566/3226/",
       "venue": "Philharmonie Essen",
       "city": "Essen"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 36,
-  "total_events_discovered": 36,
-  "total_events_discovered_strict": 36,
+  "total_events_visible": 11,
+  "total_events_discovered": 11,
+  "total_events_discovered_strict": 11,
   "source": "firecrawl_listing"
 }

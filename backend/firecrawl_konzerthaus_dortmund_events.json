@@ -3,17 +3,18 @@
   "city": "Dortmund",
   "slug": "konzerthaus_dortmund",
   "source_url": "https://www.konzerthaus-dortmund.de/de/programm/",
-  "scraped_at": "2026-05-17T15:05:11.912706Z",
+  "scraped_at": "2026-05-17T17:44:58.440035Z",
   "engine": "firecrawl",
   "events": [
     {
       "date": "2026-05-17",
       "time": "16:00",
-      "title": "Orchesterkonzert: Constantinos Carydis & WDR Sinfonieorchester",
-      "venue_hall": null,
+      "title": "Orchesterkonzert",
+      "venue_hall": "null",
       "program": [
         "Periklis Koukos: Prooimion Rhapsodie über Odysseus für großes Orchester",
         "Franz Liszt: Konzert für Klavier und Orchester Nr. 1 Es-Dur",
+        "Minas Borboudakis: Kátharsis für Klavier solo (Zugabe)",
         "Dmitri Schostakowitsch: Sinfonie Nr. 5 d-moll op. 47"
       ],
       "performers": [
@@ -22,7 +23,7 @@
         "Yoav Levanon"
       ],
       "conductor": "Constantinos Carydis",
-      "price": "Online nicht buchbar",
+      "price": "null",
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/17-05-2026-constantinos-carydis-wdr-sinfonieorchester/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund"
@@ -30,17 +31,17 @@
     {
       "date": "2026-05-18",
       "time": "18:30",
-      "title": "Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
-      "venue_hall": "Großer Saal",
+      "title": "Musik & Dialog",
+      "venue_hall": "null",
       "program": [
-        "Komponist: Werk mit Opus"
+        "Michael Stegemann: Kopfnoten – Eine kleine Geschichte der Epochen und Stile"
       ],
       "performers": [
-        "Ensemble Name"
+        "Michael Stegemann"
       ],
-      "conductor": "Conductor Name",
+      "conductor": "null",
       "price": "8 €",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-05-2026-kopfnoten-eine-kleine-geschichte-der-epochen-und-stile/platzwahl/",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-05-2026-kopfnoten-eine-kleine-geschichte-der-epochen-und-stile/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "duration_min": 90
@@ -49,7 +50,7 @@
       "date": "2026-05-19",
       "time": "19:30",
       "title": "7. Philharmonisches Konzert",
-      "venue_hall": null,
+      "venue_hall": "null",
       "program": [
         "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum Schauspielmusik op. 61 (Auszüge)",
         "Jörg Widmann: ad absurdum Konzertstück für Trompete und kleines Orchester",
@@ -62,7 +63,7 @@
       ],
       "conductor": "Patrick Lange",
       "price": "19 € – 49 €",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/19-05-2026-7-philharmonisches-konzert/platzwahl/",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/19-05-2026-7-philharmonisches-konzert/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund"
     },
@@ -70,7 +71,7 @@
       "date": "2026-05-20",
       "time": "19:30",
       "title": "7. Philharmonisches Konzert",
-      "venue_hall": null,
+      "venue_hall": "null",
       "program": [
         "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum Schauspielmusik op. 61 (Auszüge)",
         "Jörg Widmann: ad absurdum Konzertstück für Trompete und kleines Orchester",
@@ -83,7 +84,7 @@
       ],
       "conductor": "Patrick Lange",
       "price": "19 € – 49 €",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/20-05-2026-7-philharmonisches-konzert/platzwahl/",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/20-05-2026-7-philharmonisches-konzert/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund"
     },
@@ -91,24 +92,28 @@
       "date": "2026-05-21",
       "time": "19:30",
       "title": "Überraschungskonzert – Der Joker",
-      "venue_hall": "Großer Saal",
+      "venue_hall": "null",
       "program": [
-        "Komponist: Werk Titel mit opus"
+        "Brahms: Symphonie Nr. 1 c-Moll op. 68"
       ],
       "performers": [
-        "Joker Ensemble"
+        "Víkingur Ólafsson",
+        "Omer Klein",
+        "Abel Selaocoe",
+        "Bantu Ensemble",
+        "Aris Quartett"
       ],
-      "conductor": "Dirigent Name",
+      "conductor": "null",
       "price": "25 €",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/21-05-2026-ueberraschungskonzert-der-joker/platzwahl/",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/21-05-2026-ueberraschungskonzert-der-joker/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
-      "duration_min": 120
+      "duration_min": 85
     }
   ],
   "total_events": 5,
-  "total_events_visible": 62,
-  "total_events_discovered": 62,
-  "total_events_discovered_strict": 62,
+  "total_events_visible": 20,
+  "total_events_discovered": 20,
+  "total_events_discovered_strict": 20,
   "source": "firecrawl_listing"
 }

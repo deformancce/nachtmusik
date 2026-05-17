@@ -3,7 +3,7 @@
   "city": "Berlin",
   "slug": "berliner_philharmonie",
   "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-  "scraped_at": "2026-05-17T15:02:52.205884Z",
+  "scraped_at": "2026-05-17T17:42:34.562115Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -14,7 +14,7 @@
       "program": [
         "Johannes Brahms: Wie Melodien op. 105 Nr. 1",
         "Johannes Brahms: Sonate für Violine und Klavier Nr. 2 A-Dur op. 100",
-        "Astor Piazzolla: Le Grand Tango"
+        "Astor Piazzolla: Le Grand Tango für Violoncello und Klavier"
       ],
       "performers": [
         "Martin Stegner",
@@ -35,7 +35,6 @@
         "Gustav Mahler: Symphonie Nr. 3 d-Moll"
       ],
       "performers": [
-        "Yannick Nézet-Séguin",
         "Joyce DiDonato",
         "Damen des Rundfunkchors Berlin",
         "Knaben des Staats- und Domchors Berlin"
@@ -55,7 +54,6 @@
         "Gustav Mahler: Symphonie Nr. 3 d-Moll"
       ],
       "performers": [
-        "Yannick Nézet-Séguin",
         "Joyce DiDonato",
         "Damen des Rundfunkchors Berlin",
         "Knaben des Staats- und Domchors Berlin"
@@ -75,7 +73,6 @@
         "Gustav Mahler: Symphonie Nr. 3 d-Moll"
       ],
       "performers": [
-        "Yannick Nézet-Séguin",
         "Joyce DiDonato",
         "Damen des Rundfunkchors Berlin",
         "Knaben des Staats- und Domchors Berlin"
@@ -108,8 +105,8 @@
     }
   ],
   "total_events": 5,
-  "total_events_visible": 9,
-  "total_events_discovered": 9,
-  "total_events_discovered_strict": 9,
+  "total_events_visible": 13,
+  "total_events_discovered": 13,
+  "total_events_discovered_strict": 13,
   "source": "firecrawl_listing"
 }

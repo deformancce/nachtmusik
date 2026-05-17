@@ -3,7 +3,7 @@
   "city": "Köln",
   "slug": "koelner_philharmonie",
   "source_url": "https://www.koelner-philharmonie.de/de/konzerte",
-  "scraped_at": "2026-05-17T15:11:06.632272Z",
+  "scraped_at": "2026-05-17T17:52:59.820606Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -13,10 +13,10 @@
       "venue_hall": "Kölner Philharmonie",
       "program": [
         "Händel: Ouvertüre zur \"Feuerwerksmusik\"",
-        "Dvořak: Nr. 1 C-Dur op. 46,1 aus: Slawische Tänze. I. Reihe op. 46 B 83 für Orchester",
+        "Dvořák: Nr. 1 C-Dur op. 46,1 aus: Slawische Tänze. I. Reihe op. 46 B 83 für Orchester",
         "Falla: Danza española Nr. 1 aus: La vida breve",
         "Janáček: Nr. 1 Starodávný (Der Altertümliche I) aus: Lašské tance (Lachische Tänze) JW VI/17 für Orchester",
-        "Borodin: Polowetzer Tänze aus: Knjaz' Igor' (Fürst Igor)",
+        "Borodin: Polowetzer Tänze aus: Knjaz' Igor' (Fürst Igor) (1869–70, 1874–87)",
         "Gershwin: Ouvertüre aus: Funny Face",
         "Prokofjew: Tanz der Ritter aus: Romeo und Julia op. 64",
         "Fauré: Pavane fis-Moll op. 50 für Orchester und Chor ad libitum",
@@ -28,7 +28,7 @@
         "Steffen Müller-Gabriel"
       ],
       "conductor": "Steffen Müller-Gabriel",
-      "price": "€ 12,- bis 38,-",
+      "price": "null",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/ford-sinfonieorchester/4740",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
@@ -40,29 +40,29 @@
       "title": "Rising Stars: Álfheiður Erla Guðmundsdóttir & Kunal Lahiry",
       "venue_hall": "Kölner Philharmonie",
       "program": [
-        "Olivier Messiaen: Trois Mélodies I. Pourquoi?",
-        "Samuel Barber: Hermit Songs op. 29 The Crucifixion",
-        "Judith Weir: The Voice of Desire II. White Eggs in the Bush",
+        "Olivier Messiaen: Pourquoi? aus: Trois Mélodies",
+        "Samuel Barber: The Crucifixion aus: Hermit Songs op. 29",
+        "Judith Weir: White Eggs in the Bush aus: The Voice of Desire",
         "Tinnitus: Blur",
-        "Ukrainisches Volkslied: A Duckling Swims in the Tisza",
-        "Joseph Haydn: Sechs englische Kanzonetten Hob. XXVIa:32 The Wanderer",
-        "Nico Muhly: Sá ég svani",
-        "Claude Debussy: Apparition (La lune s’attristait)",
-        "María Huld Markan Sigfúsdóttir: Náðarstef",
-        "Errollyn Wallen: North. The Seven Mountains",
-        "Sergej Rachmaninow: 6 Lieder op. 8 Son (Traum) op. 8,5",
-        "Felix Mendelssohn Bartholdy: op. 8,8 Andres Maienlied",
+        "Ukrainisches Volkslied: A Duckling Swims in the Tisza (Plywe katscha po Tyssyni)",
+        "Joseph Haydn: The Wanderer Hob. XXVIa:32 aus: Sechs englische Kanzonetten Hob. XXVIa:31–36",
+        "Nico Muhly: Sá ég svani für Sopran und Klavier",
+        "Claude Debussy: Apparition für Singstimme und Klavier",
+        "María Huld Markan Sigfúsdóttir: Náðarstef für Sopran und Klavier",
+        "Errollyn Wallen: North. The Seven Mountains für Singstimme und Klavier",
+        "Sergej Rachmaninow: Son (Traum) op. 8,5 aus: 6 Lieder op. 8 für Singstimme und Klavier",
+        "Felix Mendelssohn Bartholdy: Andres Maienlied (Die Schwalbe fliegt) op. 8,8",
         "Palestinensisches Volkslied: Hadi Ya Bahar",
-        "Philip Glass: Etude Nr. 9",
+        "Philip Glass: Etude Nr. 9 aus: Etudes",
         "Shawn E. Okpebholo: Oh Freedom",
-        "Jean Sibelius: Sechs Lieder op. 90,1 Norden op. 90,1"
+        "Jean Sibelius: Norden op. 90,1 aus: Sechs Lieder op. 90"
       ],
       "performers": [
         "Álfheiður Erla Guðmundsdóttir",
         "Kunal Lahiry"
       ],
       "conductor": null,
-      "price": "€ 34,-",
+      "price": "null",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/rising-stars-alfheiur-erla-gumundsdottir-kunal-lahiry/4708",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
@@ -87,7 +87,7 @@
         "Aurel Dawidiuk"
       ],
       "conductor": null,
-      "price": "€ 34,-",
+      "price": "null",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/aurel-dawidiuk/4603",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
@@ -99,10 +99,10 @@
       "title": "Jörg Widmann | Isabelle Faust | Jean-Guihen Queyras | Pierre-Laurent Aimard",
       "venue_hall": "Kölner Philharmonie",
       "program": [
-        "Boulez: Douze Notations für Klavier",
-        "Ravel: Sonate für Violine und Violoncello (Le Tombeau de Debussy)",
+        "Boulez: Douze Notations",
+        "Ravel: Sonate für Violine und Violoncello (»Le Tombeau de Debussy«)",
         "Berg: Vier Stücke für Klarinette und Klavier op. 5",
-        "Messiaen: Quatuor pour la fin du Temps für Violine, Klarinette, Violoncello und Klavier"
+        "Messiaen: Quatuor pour la fin du Temps"
       ],
       "performers": [
         "Jörg Widmann",
@@ -111,7 +111,7 @@
         "Pierre-Laurent Aimard"
       ],
       "conductor": null,
-      "price": "€ 34,-",
+      "price": "null",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/jorg-widmann-isabelle-faust-jean-guihen-queyras-pierre-laurent-aimard/4649",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
@@ -123,7 +123,7 @@
       "title": "Klassik mal anders: Heute schon gelacht?",
       "venue_hall": "Kölner Philharmonie",
       "program": [
-        "Haydn: Sinfonia concertante B-Dur Hob. I:105*",
+        "Haydn: Sinfonia concertante B-Dur Hob. I:105",
         "Milhaud: Le bœuf sur le toit op. 58a",
         "Strauss: Till Eulenspiegels lustige Streiche op. 28 TrV 171"
       ],
@@ -138,7 +138,7 @@
         "Carola Kärcher"
       ],
       "conductor": "Oscar Jockel",
-      "price": "€ 20,-",
+      "price": "null",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/klassik-mal-anders-heute-schon-gelacht/4872",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
@@ -146,8 +146,8 @@
     }
   ],
   "total_events": 5,
-  "total_events_visible": 40,
-  "total_events_discovered": 40,
-  "total_events_discovered_strict": 40,
+  "total_events_visible": 95,
+  "total_events_discovered": 95,
+  "total_events_discovered_strict": 95,
   "source": "firecrawl_listing"
 }

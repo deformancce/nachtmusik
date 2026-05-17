@@ -3,7 +3,7 @@
   "city": "Bremen",
   "slug": "glocke_bremen",
   "source_url": "https://www.glocke.de/tickets-programm/",
-  "scraped_at": "2026-05-17T15:03:59.116094Z",
+  "scraped_at": "2026-05-17T17:43:29.849157Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -21,7 +21,7 @@
         "Ehemalige des Jugendsinfonieorchesters Bremen der Musikschule Bremen"
       ],
       "conductor": "Heiner Buhlmann",
-      "price": "15,00 € Normal, 5,00 € Ermäßigt",
+      "price": "15,00 € Normal",
       "detail_url": "https://www.glocke.de/event/ehemalige-des-jugendsinfonieorchesters-bremen-der-musikschule-bremen/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen"
@@ -32,7 +32,9 @@
       "title": "Reiner Calmund »Ein runder Abend – mit Fußball & Freunden«",
       "venue_hall": "Kleiner Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Reiner Calmund"
+      ],
       "conductor": null,
       "price": "38,60 € Normal",
       "detail_url": "https://www.glocke.de/event/reiner-calmund-ein-runder-abend-mit-fussball-freunden/?back_btn=1",
@@ -48,13 +50,17 @@
         "Schubert: 16 Deutsche Tänze D 783",
         "Bartók: Rumänische Volkstänze Sz 56",
         "Chopin: Grande valse brillante Es-Dur op. 18",
-        "Brahms: Walzer As-Dur op. 39/15"
+        "Brahms: Walzer As-Dur op. 39/15",
+        "Brahms: weitere Werke",
+        "Chopin: weitere Werke",
+        "Ginastera: weitere Werke",
+        "Piazzolla: weitere Werke"
       ],
       "performers": [
         "Jan Lisiecki"
       ],
       "conductor": null,
-      "price": "ab €28.20",
+      "price": "ab €28,20",
       "detail_url": "https://www.glocke.de/event/jan-lisiecki-tanz-auf-den-tasten-5-meisterkonzert/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen"
@@ -65,19 +71,19 @@
       "title": "»Curtis on Tour« 8. Philharmonisches Kammerkonzert",
       "venue_hall": "Kleiner Saal",
       "program": [
-        "Martinů: Drei Madrigale",
-        "Beethoven: Klaviertrio D-Dur op. 70/1 (»Geistertrio«)",
-        "Brahms: Klavierquintett f-Moll op. 34"
+        "Bohuslav Martinů: Drei Madrigale",
+        "Ludwig van Beethoven: Klaviertrio D-Dur op. 70/1 (»Geistertrio«)",
+        "Johannes Brahms: Klavierquintett f-Moll op. 34"
       ],
       "performers": [
-        "Liza Ferschtman",
-        "Benjamin Hochman",
         "Leah Amory",
         "Davin Mar",
-        "Carson Ling-Efird"
+        "Carson Ling-Efird",
+        "Liza Ferschtman",
+        "Benjamin Hochman"
       ],
       "conductor": "Liza Ferschtman",
-      "price": "€31,00 – €47,00",
+      "price": "47,00 € Normal; 35,00 € Ermäßigt; 41,00 € Normal; 31,00 € Ermäßigt; 31,00 € Normal; 25,00 € Ermäßigt",
       "detail_url": "https://www.glocke.de/event/curtis-on-tour-8-philharmonisches-kammerkonzert/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen"
@@ -87,8 +93,12 @@
       "time": "20:00",
       "title": "Marc-Uwe Kling: »Neues vom Känguru«",
       "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
+      "program": [
+        "Kling: Neues vom Känguru"
+      ],
+      "performers": [
+        "Marc-Uwe Kling"
+      ],
       "conductor": null,
       "price": "39,75 € Normal - Nur noch Einzelplätze.",
       "detail_url": "https://www.glocke.de/event/marc-uwe-kling-neues-vom-kaenguru/?back_btn=1",
@@ -97,8 +107,8 @@
     }
   ],
   "total_events": 5,
-  "total_events_visible": 12,
-  "total_events_discovered": 12,
-  "total_events_discovered_strict": 12,
+  "total_events_visible": 16,
+  "total_events_discovered": 16,
+  "total_events_discovered_strict": 16,
   "source": "firecrawl_listing"
 }

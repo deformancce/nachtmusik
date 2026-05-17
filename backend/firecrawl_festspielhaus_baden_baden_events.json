@@ -3,16 +3,16 @@
   "city": "Baden-Baden",
   "slug": "festspielhaus_baden_baden",
   "source_url": "https://www.festspielhaus.de/programm/",
-  "scraped_at": "2026-05-17T15:00:29.467108Z",
+  "scraped_at": "2026-05-17T17:40:28.129279Z",
   "engine": "firecrawl",
   "events": [
     {
       "date": "2026-05-21",
       "time": "19:00",
-      "title": "Die Pfingstfestspiele Baden-Baden",
+      "title": "Pfingstfestspiele",
       "venue_hall": "Festspielhaus Baden-Baden",
       "program": [
-        "Strauss: Der Rosenkavalier Op. 59, TrV 227"
+        "Richard Strauss: Der Rosenkavalier, Op. 59, TrV 227"
       ],
       "performers": [
         "Julia Kleiter",
@@ -32,7 +32,7 @@
       "title": "Ich atmet' einen linden Duft",
       "venue_hall": "Weinbrennersaal, Kurhaus Baden-Baden",
       "program": [
-        "Gustav Mahler: Lieder"
+        "Gustav Mahler: Ich atmet' einen linden Duft"
       ],
       "performers": [],
       "conductor": null,
@@ -62,9 +62,7 @@
       "title": "Von Versailles nach Wien",
       "venue_hall": "Weinbrennersaal, Kurhaus Baden-Baden",
       "program": [
-        "Lully: Title",
-        "Mozart: Title",
-        "Haydn: Title"
+        "Lully: Suite; Mozart: Symphony; Haydn: Concerto"
       ],
       "performers": [],
       "conductor": null,
@@ -88,8 +86,8 @@
     }
   ],
   "total_events": 5,
-  "total_events_visible": 45,
-  "total_events_discovered": 45,
-  "total_events_discovered_strict": 45,
+  "total_events_visible": 41,
+  "total_events_discovered": 41,
+  "total_events_discovered_strict": 41,
   "source": "firecrawl_listing"
 }

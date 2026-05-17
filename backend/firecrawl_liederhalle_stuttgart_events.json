@@ -3,7 +3,7 @@
   "city": "Stuttgart",
   "slug": "liederhalle_stuttgart",
   "source_url": "https://liederhalle.de/eventkalender",
-  "scraped_at": "2026-05-17T15:15:12.118584Z",
+  "scraped_at": "2026-05-17T17:58:11.250762Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -46,7 +46,9 @@
       "time": "20:00",
       "title": "Tim Bendzko: Alles, nur nicht zurück",
       "venue_hall": "Hegel-Saal",
-      "program": [],
+      "program": [
+        "Bendzko: Alles, nur nicht zurück"
+      ],
       "performers": [
         "Tim Bendzko"
       ],
@@ -77,21 +79,21 @@
       "title": "SWR Symphonieorchester: Dans la cuisine du chef",
       "venue_hall": "Hegel-Saal",
       "program": [
-        "Haydn: Sinfonie Nr. 101 D-Dur (Die Uhr)"
+        "Haydn: Sinfonie Nr. 101 D-Dur (\"Die Uhr\")"
       ],
       "performers": [
         "SWR Symphonieorchester"
       ],
       "conductor": "François-Xavier Roth",
-      "price": "Freier Eintritt",
+      "price": "Freier Eintritt, Reservierung erforderlich",
       "detail_url": "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 25,
-  "total_events_discovered": 25,
-  "total_events_discovered_strict": 25,
+  "total_events_visible": 20,
+  "total_events_discovered": 20,
+  "total_events_discovered_strict": 20,
   "source": "firecrawl_listing"
 }
