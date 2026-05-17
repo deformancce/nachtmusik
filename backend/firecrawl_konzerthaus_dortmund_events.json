@@ -3,9 +3,96 @@
   "city": "Dortmund",
   "slug": "konzerthaus_dortmund",
   "source_url": "https://www.konzerthaus-dortmund.de/de/programm/",
-  "scraped_at": "2026-05-17T07:47:37.575416Z",
+  "scraped_at": "2026-05-17T07:54:11.123506Z",
   "engine": "firecrawl",
-  "error": "no events extracted (last error: FirecrawlClient.extract() takes from 1 to 2 positional arguments but 3 were given)",
-  "events": [],
-  "total_events": 0
+  "_strategy": "scrape v2 formats-list",
+  "events": [
+    {
+      "date": "2026-05-17",
+      "time": "16:00",
+      "title": "Orchesterkonzert - Constantinos Carydis & WDR Sinfonieorchester",
+      "venue_hall": null,
+      "program": [
+        "Periklis Koukos: Prooimion Rhapsodie über Odysseus für großes Orchester",
+        "Franz Liszt: Konzert für Klavier und Orchester Nr. 1 Es-Dur",
+        "Dmitri Schostakowitsch: Sinfonie Nr. 5 d-moll op. 47"
+      ],
+      "performers": [
+        "WDR Sinfonieorchester",
+        "Constantinos Carydis",
+        "Yoav Levanon"
+      ],
+      "conductor": "Constantinos Carydis",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/17-05-2026-constantinos-carydis-wdr-sinfonieorchester/platzwahl/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund"
+    },
+    {
+      "date": "2026-05-18",
+      "time": "18:30",
+      "title": "Musik & Dialog - Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "Michael Stegemann"
+      ],
+      "conductor": null,
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-05-2026-kopfnoten-eine-kleine-geschichte-der-epochen-und-stile/platzwahl/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund"
+    },
+    {
+      "date": "2026-05-19",
+      "time": "19:30",
+      "title": "7. Philharmonisches Konzert",
+      "venue_hall": null,
+      "program": [
+        "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum Schauspielmusik op. 61 (Auszüge)",
+        "Jörg Widmann: ad absurdum Konzertstück für Trompete und kleines Orchester",
+        "Ludwig van Beethoven: Sinfonie Nr. 4 B-Dur op. 60"
+      ],
+      "performers": [
+        "Dortmunder Philharmoniker",
+        "Patrick Lange",
+        "Sergei Nakariakov"
+      ],
+      "conductor": "Patrick Lange",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/19-05-2026-7-philharmonisches-konzert/platzwahl/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund"
+    },
+    {
+      "date": "2026-05-20",
+      "time": "19:30",
+      "title": "7. Philharmonisches Konzert",
+      "venue_hall": null,
+      "program": [
+        "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum Schauspielmusik op. 61 (Auszüge)",
+        "Jörg Widmann: ad absurdum Konzertstück für Trompete und kleines Orchester",
+        "Ludwig van Beethoven: Sinfonie Nr. 4 B-Dur op. 60"
+      ],
+      "performers": [
+        "Dortmunder Philharmoniker",
+        "Patrick Lange",
+        "Sergei Nakariakov"
+      ],
+      "conductor": "Patrick Lange",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/20-05-2026-7-philharmonisches-konzert/platzwahl/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund"
+    },
+    {
+      "date": "2026-05-21",
+      "time": "19:30",
+      "title": "Überraschungskonzert – Der Joker",
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/21-05-2026-ueberraschungskonzert-der-joker/platzwahl/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund"
+    }
+  ],
+  "total_events": 5
 }

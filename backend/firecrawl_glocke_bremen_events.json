@@ -3,9 +3,70 @@
   "city": "Bremen",
   "slug": "glocke_bremen",
   "source_url": "https://www.glocke.de/tickets-programm/",
-  "scraped_at": "2026-05-17T07:47:37.573805Z",
+  "scraped_at": "2026-05-17T07:53:59.353832Z",
   "engine": "firecrawl",
-  "error": "no events extracted (last error: FirecrawlClient.extract() takes from 1 to 2 positional arguments but 3 were given)",
-  "events": [],
-  "total_events": 0
+  "_strategy": "scrape v2 formats-list",
+  "events": [
+    {
+      "date": "2023-05-17",
+      "time": "11:00",
+      "title": "Ehemalige des Jugendsinfonieorchesters Bremen der Musikschule Bremen",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "detail_url": "https://www.glocke.de/event/ehemalige-des-jugendsinfonieorchesters-bremen-der-musikschule-bremen/?back_btn=1",
+      "venue": "Glocke Bremen",
+      "city": "Bremen"
+    },
+    {
+      "date": "2023-05-17",
+      "time": "19:00",
+      "title": "Jan Lisiecki – Tanz auf den Tasten 5. Meisterkonzert",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "detail_url": "https://www.glocke.de/event/jan-lisiecki-tanz-auf-den-tasten-5-meisterkonzert/?back_btn=1",
+      "venue": "Glocke Bremen",
+      "city": "Bremen"
+    },
+    {
+      "date": "2023-05-20",
+      "time": "20:00",
+      "title": "Dennis Alexander Volk – Storytelling Piano",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "detail_url": "https://www.glocke.de/event/dennis-alexander-volk-storytelling-piano/?back_btn=1",
+      "venue": "Glocke Bremen",
+      "city": "Bremen"
+    },
+    {
+      "date": "2023-05-24",
+      "time": "17:00",
+      "title": "Philharmonie der Solisten – Vivaldi – Die vier Jahreszeiten",
+      "venue_hall": "Kleiner Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "detail_url": "https://www.glocke.de/event/philharmonie-der-solisten-vivaldi-die-vier-jahreszeiten-7/?back_btn=1",
+      "venue": "Glocke Bremen",
+      "city": "Bremen"
+    },
+    {
+      "date": "2023-05-25",
+      "time": "18:00",
+      "title": "Olegg Vynnyk – Live 2026",
+      "venue_hall": "Kleiner Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "detail_url": "https://www.glocke.de/event/olegg-vynnyk-live-2026/?back_btn=1",
+      "venue": "Glocke Bremen",
+      "city": "Bremen"
+    }
+  ],
+  "total_events": 5
 }

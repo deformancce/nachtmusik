@@ -3,9 +3,82 @@
   "city": "Berlin",
   "slug": "berliner_philharmonie",
   "source_url": "https://www.berliner-philharmoniker.de/konzerte",
-  "scraped_at": "2026-05-17T07:47:37.572002Z",
+  "scraped_at": "2026-05-17T07:53:49.984109Z",
   "engine": "firecrawl",
-  "error": "no events extracted (last error: FirecrawlClient.extract() takes from 1 to 2 positional arguments but 3 were given)",
-  "events": [],
-  "total_events": 0
+  "_strategy": "scrape v2 formats-list",
+  "events": [
+    {
+      "date": "2023-11-01",
+      "time": "20:00",
+      "title": "Symphony Concert",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [],
+      "conductor": "K. Tsinamdzgvrishvili",
+      "detail_url": "https://www.berliner-philharmoniker.de/en/concerts/symphony-concert-01-11-2023/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
+      "date": "2023-11-02",
+      "time": "18:00",
+      "title": "Chamber Music Series",
+      "venue_hall": "Kammermusiksaal",
+      "program": [
+        "Brahms: String Quartet No. 1 op. 51"
+      ],
+      "performers": [
+        "Berlin String Quartet"
+      ],
+      "conductor": null,
+      "detail_url": "https://www.berliner-philharmoniker.de/en/concerts/chamber-music-series-02-11-2023/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
+      "date": "2023-11-03",
+      "time": "20:00",
+      "title": "Orchestral Music Night",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Beethoven: Symphony No. 5"
+      ],
+      "performers": [
+        "Berlin Philharmonic Orchestra"
+      ],
+      "conductor": "J. Nelson",
+      "detail_url": "https://www.berliner-philharmoniker.de/en/concerts/orchestral-music-night-03-11-2023/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
+      "date": "2023-11-04",
+      "time": "15:00",
+      "title": "Family Concert",
+      "venue_hall": "Kammermusiksaal",
+      "program": [],
+      "performers": [],
+      "conductor": "E. Fuchs",
+      "detail_url": "https://www.berliner-philharmoniker.de/en/concerts/family-concert-04-11-2023/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
+      "date": "2023-11-05",
+      "time": "20:00",
+      "title": "Jazz Night",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Duke Ellington: Black and Tan Fantasy"
+      ],
+      "performers": [
+        "Berlin Jazz Ensemble"
+      ],
+      "conductor": null,
+      "detail_url": "https://www.berliner-philharmoniker.de/en/concerts/jazz-night-05-11-2023/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    }
+  ],
+  "total_events": 5
 }

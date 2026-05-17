@@ -3,9 +3,101 @@
   "city": "München",
   "slug": "isarphilharmonie_muenchen",
   "source_url": "https://www.mphil.de/kalender",
-  "scraped_at": "2026-05-17T07:47:37.589842Z",
+  "scraped_at": "2026-05-17T07:55:49.515157Z",
   "engine": "firecrawl",
-  "error": "no events extracted (last error: FirecrawlClient.extract() takes from 1 to 2 positional arguments but 3 were given)",
-  "events": [],
-  "total_events": 0
+  "_strategy": "scrape v2 formats-list",
+  "events": [
+    {
+      "date": "2025-09-09",
+      "time": "19:30",
+      "title": "Elgar Schubert Wagner",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Edward Elgar: Cellokonzert",
+        "Franz Schubert: 7. Symphonie »Unvollendete«",
+        "Richard Wagner: Vorspiel und »Isoldes Liebestod« aus »Tristan und Isolde«"
+      ],
+      "performers": [
+        "Violoncello Sol Gabetta"
+      ],
+      "conductor": "Lahav Shani",
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/wagner-elgar-schubert-2025-09-09-19-3",
+      "venue": "Isarphilharmonie München",
+      "city": "München"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "19:30",
+      "title": "Elgar Schubert Wagner",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Edward Elgar: Cellokonzert",
+        "Franz Schubert: 7. Symphonie »Unvollendete«",
+        "Richard Wagner: Vorspiel und »Isoldes Liebestod« aus »Tristan und Isolde«"
+      ],
+      "performers": [
+        "Violoncello Sol Gabetta"
+      ],
+      "conductor": "Lahav Shani",
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/wagner-elgar-schubert-2025-09-10-19-3",
+      "venue": "Isarphilharmonie München",
+      "city": "München"
+    },
+    {
+      "date": "2025-09-27",
+      "time": "19:30",
+      "title": "Grieg Prokofjew Dvořák",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Edvard Grieg: »Peer Gynt«-Suite Nr. 1",
+        "Sergej Prokofjew: 3. Klavierkonzert",
+        "Antonín Dvořák: 8. Symphonie"
+      ],
+      "performers": [
+        "Klavier Gabriela Montero"
+      ],
+      "conductor": "Dalia Stasevska",
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/prokofjew-dvorak-grieg-2025-09-27-19",
+      "venue": "Isarphilharmonie München",
+      "city": "München"
+    },
+    {
+      "date": "2025-09-28",
+      "time": "11:00",
+      "title": "Grieg Prokofjew Dvořák",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Edvard Grieg: »Peer Gynt«-Suite Nr. 1",
+        "Sergej Prokofjew: 3. Klavierkonzert",
+        "Antonín Dvořák: 8. Symphonie"
+      ],
+      "performers": [
+        "Klavier Gabriela Montero"
+      ],
+      "conductor": "Dalia Stasevska",
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/prokofjew-dvorak-grieg-2025-09-28-11",
+      "venue": "Isarphilharmonie München",
+      "city": "München"
+    },
+    {
+      "date": "2025-10-08",
+      "time": "19:30",
+      "title": "Bruneau-Boulmier Berlioz Debussy",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Rodolphe Bruneau-Boulmier: »Caída libre« (Uraufführung, Auftragswerk der Münchner Philharmoniker)",
+        "Hector Berlioz: »Les Nuits d’été\"",
+        "Claude Debussy: »La Mer\"",
+        "Hector Berlioz: »Le Corsaire\""
+      ],
+      "performers": [
+        "Mezzosopran Marianne Crebassa"
+      ],
+      "conductor": "Kent Nagano",
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/berlioz-debussy-bruneau-boulmier-2025-10-08-19-3",
+      "venue": "Isarphilharmonie München",
+      "city": "München"
+    }
+  ],
+  "total_events": 5
 }

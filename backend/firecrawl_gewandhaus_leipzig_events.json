@@ -3,9 +3,70 @@
   "city": "Leipzig",
   "slug": "gewandhaus_leipzig",
   "source_url": "https://www.gewandhausorchester.de/spielplan/",
-  "scraped_at": "2026-05-17T07:47:37.587641Z",
+  "scraped_at": "2026-05-17T07:55:39.317700Z",
   "engine": "firecrawl",
-  "error": "no events extracted (last error: FirecrawlClient.extract() takes from 1 to 2 positional arguments but 3 were given)",
-  "events": [],
-  "total_events": 0
+  "_strategy": "scrape v2 formats-list",
+  "events": [
+    {
+      "date": "2026-05-17",
+      "time": "17:00",
+      "title": "Regina - Oper in drei Akten",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Albert Lortzing: Regina - Oper in drei Akten"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Constantin Trinks"
+      ],
+      "conductor": "Constantin Trinks",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/regina-9590/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig"
+    },
+    {
+      "date": "2026-05-17",
+      "time": "18:00",
+      "title": "Fokus: \"Tacheles\" – Jahr der jüdischen Kultur in Sachsen 2026",
+      "venue_hall": "Mendelssohn-Saal",
+      "program": [
+        "Dmitri Schostakowitsch: Quintett für Klavier, zwei Violinen, Viola und Violoncello g-Moll op. 57",
+        "Alfred Schnittke: Quintett für Klavier, zwei Violinen, Viola und Violoncello",
+        "Mieczysław Weinberg: Quintett für Klavier, zwei Violinen, Viola und Violoncello f-Moll op. 18"
+      ],
+      "performers": [
+        "Quatuor Danel",
+        "Marc-André Hamelin"
+      ],
+      "conductor": "",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/quartettgesellschaft-kammermusik-9375/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig"
+    },
+    {
+      "date": "2026-05-17",
+      "time": "19:00",
+      "title": "Konzerthaus Tour 2026",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [],
+      "conductor": "",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/element-of-crime-9804/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig"
+    },
+    {
+      "date": "2026-05-18",
+      "time": "20:00",
+      "title": "Konzerthaus Tour 2026",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [],
+      "conductor": "",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/element-of-crime-9805/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig"
+    }
+  ],
+  "total_events": 4
 }

@@ -3,9 +3,85 @@
   "city": "Köln",
   "slug": "koelner_philharmonie",
   "source_url": "https://www.koelner-philharmonie.de/de/konzerte",
-  "scraped_at": "2026-05-17T07:47:37.585559Z",
+  "scraped_at": "2026-05-17T07:55:27.899941Z",
   "engine": "firecrawl",
-  "error": "no events extracted (last error: FirecrawlClient.extract() takes from 1 to 2 positional arguments but 3 were given)",
-  "events": [],
-  "total_events": 0
+  "_strategy": "scrape v2 formats-list",
+  "events": [
+    {
+      "date": "2026-05-17",
+      "time": "11:00",
+      "title": "Ford-Sinfonieorchester",
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/ford-sinfonieorchester/4740",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln"
+    },
+    {
+      "date": "2026-05-17",
+      "time": "16:00",
+      "title": "Rising Stars: Álfheiður Erla Guðmundsdóttir & Kunal Lahiry",
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/rising-stars-alfheiur-erla-gumundsdottir-kunal-lahiry/4708",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln"
+    },
+    {
+      "date": "2026-05-18",
+      "time": "20:00",
+      "title": "Aurel Dawidiuk",
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/aurel-dawidiuk/4603",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln"
+    },
+    {
+      "date": "2026-05-19",
+      "time": "20:00",
+      "title": "Jörg Widmann | Isabelle Faust | Jean-Guihen Queyras | Pierre-Laurent Aimard",
+      "venue_hall": null,
+      "program": [
+        "Composer: Quatuor pour la fin du Temps"
+      ],
+      "performers": [
+        "Isabelle Faust",
+        "Jean-Guihen Queyras",
+        "Pierre-Laurent Aimard"
+      ],
+      "conductor": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/jorg-widmann-isabelle-faust-jean-guihen-queyras-pierre-laurent-aimard/4649",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln"
+    },
+    {
+      "date": "2026-05-21",
+      "time": "19:00",
+      "title": "Klassik mal anders: Heute schon gelacht?",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "Slava Chestiglazov",
+        "Ulrich Witteler",
+        "Augusto Velio Palumbo",
+        "Manuel Bilz",
+        "WDR Sinfonieorchester",
+        "Oscar Jockel",
+        "Johannes Büchs",
+        "Carola Kärcher"
+      ],
+      "conductor": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/klassik-mal-anders-heute-schon-gelacht/4872",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln"
+    }
+  ],
+  "total_events": 5
 }

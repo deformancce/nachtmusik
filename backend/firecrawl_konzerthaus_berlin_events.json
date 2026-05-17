@@ -3,9 +3,109 @@
   "city": "Berlin",
   "slug": "konzerthaus_berlin",
   "source_url": "https://www.konzerthaus.de/de/programm",
-  "scraped_at": "2026-05-17T07:47:37.570163Z",
+  "scraped_at": "2026-05-17T07:53:06.863404Z",
   "engine": "firecrawl",
-  "error": "no events extracted (last error: FirecrawlClient.extract() takes from 1 to 2 positional arguments but 3 were given)",
-  "events": [],
-  "total_events": 0
+  "_strategy": "scrape v2 formats-list",
+  "events": [
+    {
+      "date": "2026-05-18",
+      "time": "14:00",
+      "title": "Espresso-Konzert",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Béla Bartók: 14 Bagatellen op. 6 Sz 38 (Auszüge)",
+        "Robert Schumann: „Arabeske“ C-Dur op. 18",
+        "Wolfgang Amadeus Mozart: Klaviersonate a-Moll KV 310",
+        "Franz Liszt: Variationen über einen Basso continuo aus der Kantate „Weinen, Klagen, Sorgen, Zagen“ von Johann Sebastian Bach"
+      ],
+      "performers": [
+        "Elisabeth Brauß"
+      ],
+      "conductor": null,
+      "detail_url": "https://www.konzerthaus.de/de/programm/espresso-konzert/11719",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-19",
+      "time": "19:30",
+      "title": "Berliner Operngruppe",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Alberto Franchetti: Fior d’Alpe"
+      ],
+      "performers": [],
+      "conductor": null,
+      "detail_url": "https://www.konzerthaus.de/de/programm/berliner-operngruppe/12411",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-19",
+      "time": "20:00",
+      "title": "Beethovens „Geistertrio“ und Brahms Klavierquintett",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Bohuslav Martinů: Drei Madrigale für Violine und Viola",
+        "Ludwig van Beethoven: Klaviertrio D-Dur op. 70 Nr. 1 („Geistertrio“)",
+        "Johannes Brahms: Klavierquintett f-Moll op. 34"
+      ],
+      "performers": [
+        "Liza Ferschtman",
+        "Benjamin Hochman",
+        "Leah Amory",
+        "Davin Mar",
+        "Carson Ling-Efird"
+      ],
+      "conductor": null,
+      "detail_url": "https://www.konzerthaus.de/de/programm/beethovens-geistertrio-und-brahms-klavierquintett/12412",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-20",
+      "time": "20:00",
+      "title": "Irina Lankova",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Sergej Rachmaninow: Prélude E-Dur op. 3 Nr. 3",
+        "Sergej Rachmaninow: Etude-Tableau C-Dur op. 33 Nr. 2",
+        "Sergej Rachmaninow: Prélude Es-Dur op. 23 Nr. 6",
+        "Sergej Rachmaninow: Prélude gis-Moll op. 32 Nr. 12",
+        "Sergej Rachmaninow: Prélude D-Dur op. 23 Nr. 4",
+        "Alexander Skrjabin: Etüde dis-Moll op. 8 Nr.12",
+        "Alexander Skrjabin: Zwei Poèmes op. 32",
+        "Alexander Skrjabin: Sonate Nr. 4 Fis-dur op. 30",
+        "Fryderyk Chopin: Romance aus dem Konzert für Klavier und Orchester e-Moll op. 11, bearbeitet von Mili Alexejewitsch Balakirew",
+        "Christoph Willibald Gluck: Melodien aus der Oper „Orphée et Euridice“, bearbeitet von Giovanni Sgambati",
+        "Wolfgang Amadeus Mozart: Fantasie d-Moll KV 397",
+        "Igor Strawinsky: „Der Feuervogel“ - Ballettmusik, bearbeitet von Guido Agosti"
+      ],
+      "performers": [
+        "Irina Lankova"
+      ],
+      "conductor": null,
+      "detail_url": "https://www.konzerthaus.de/de/programm/irina-lankova/12373",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-21",
+      "time": "18:30",
+      "title": "8ZEHN30 – Kurzkonzert",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Gustav Mahler: Sinfonie Nr. 5 cis-Moll"
+      ],
+      "performers": [
+        "Konzerthausorchester Berlin",
+        "Joana Mallwitz"
+      ],
+      "conductor": "Joana Mallwitz",
+      "detail_url": "https://www.konzerthaus.de/de/programm/8zehn30-kurzkonzert/11531",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin"
+    }
+  ],
+  "total_events": 5
 }

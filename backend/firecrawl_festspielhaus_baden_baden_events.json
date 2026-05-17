@@ -3,9 +3,82 @@
   "city": "Baden-Baden",
   "slug": "festspielhaus_baden_baden",
   "source_url": "https://www.festspielhaus.de/programm/",
-  "scraped_at": "2026-05-17T07:47:37.568006Z",
+  "scraped_at": "2026-05-17T07:52:48.822534Z",
   "engine": "firecrawl",
-  "error": "no events extracted (last error: FirecrawlClient.extract() takes from 1 to 2 positional arguments but 3 were given)",
-  "events": [],
-  "total_events": 0
+  "_strategy": "scrape v2 formats-list",
+  "events": [
+    {
+      "date": "2026-05-17",
+      "time": "16:00",
+      "title": "Pfingstfestspiele",
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [],
+      "performers": [
+        "SWR Symphonieorchester"
+      ],
+      "conductor": null,
+      "detail_url": "https://www.festspielhaus.de/festivals/presence/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden"
+    },
+    {
+      "date": "2026-05-21",
+      "time": "19:00",
+      "title": "Richard Strauss: Der Rosenkavalier",
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Richard Strauss: Der Rosenkavalier"
+      ],
+      "performers": [],
+      "conductor": "François-Xavier Roth",
+      "detail_url": null,
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden"
+    },
+    {
+      "date": "2026-05-22",
+      "time": "21:00",
+      "title": "Ich atmet' einen linden Duft",
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Gustav Mahler: Lieder"
+      ],
+      "performers": [],
+      "conductor": null,
+      "detail_url": null,
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden"
+    },
+    {
+      "date": "2026-05-23",
+      "time": "18:00",
+      "title": "Late Night",
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [],
+      "performers": [
+        "Libor Šíma & Friends"
+      ],
+      "conductor": null,
+      "detail_url": null,
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden"
+    },
+    {
+      "date": "2026-05-24",
+      "time": "16:00",
+      "title": "Von Versailles nach Wien",
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Lully: Titel",
+        "Mozart: Titel",
+        "Haydn: Titel"
+      ],
+      "performers": [],
+      "conductor": null,
+      "detail_url": null,
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden"
+    }
+  ],
+  "total_events": 5
 }

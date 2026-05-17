@@ -3,9 +3,95 @@
   "city": "Hamburg",
   "slug": "elbphilharmonie_hamburg",
   "source_url": "https://www.elbphilharmonie.de/de/programm/",
-  "scraped_at": "2026-05-17T07:47:37.583468Z",
+  "scraped_at": "2026-05-17T07:55:16.897489Z",
   "engine": "firecrawl",
-  "error": "no events extracted (last error: FirecrawlClient.extract() takes from 1 to 2 positional arguments but 3 were given)",
-  "events": [],
-  "total_events": 0
+  "_strategy": "scrape v2 formats-list",
+  "events": [
+    {
+      "date": "2026-05-17",
+      "time": "11:00",
+      "title": "Ensemble arabesques Hamburg / Niklas Liepe",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Beethoven: Violinkonzert",
+        "Mussorgsky: Bilder einer Ausstellung"
+      ],
+      "performers": [
+        "Ensemble arabesques Hamburg",
+        "Niklas Liepe"
+      ],
+      "conductor": null,
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/ensemble-arabesques-hamburg-niklas-liepe/27584",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg"
+    },
+    {
+      "date": "2026-05-17",
+      "time": "16:00",
+      "title": "NDR Elbphilharmonie Orchester / Pierre Bleuse",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Ives: Central Park in the Dark",
+        "Debussy: Images für Orchester"
+      ],
+      "performers": [
+        "NDR Elbphilharmonie Orchester"
+      ],
+      "conductor": "Pierre Bleuse",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-pierre-bleuse/23385",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg"
+    },
+    {
+      "date": "2026-05-17",
+      "time": "19:30",
+      "title": "Lyric Suite for Sextet – Hommage á Chick Corea",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Corea",
+        "Riggi",
+        "König"
+      ],
+      "performers": [],
+      "conductor": null,
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/lyric-suite-for-sextet-hommage-a-chick-corea/27718",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg"
+    },
+    {
+      "date": "2026-05-19",
+      "time": "19:30",
+      "title": "Schumann Quartett",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Haydn: Streichquartett D-Dur",
+        "Henze: Streichquartett Nr. 5",
+        "Beethoven: Streichquartett F-Dur"
+      ],
+      "performers": [
+        "Schumann Quartett"
+      ],
+      "conductor": null,
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/schumann-quartett/23440",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg"
+    },
+    {
+      "date": "2026-05-20",
+      "time": "20:00",
+      "title": "Huelgas Ensemble / Paul Van Nevel",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Memento mori – Werke von Orlando di Lasso, Guillaume Dufay, Giovanni Gabrieli u.a."
+      ],
+      "performers": [
+        "Huelgas Ensemble"
+      ],
+      "conductor": "Paul Van Nevel",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/huelgas-ensemble-paul-van-nevel/27532",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg"
+    }
+  ],
+  "total_events": 5
 }

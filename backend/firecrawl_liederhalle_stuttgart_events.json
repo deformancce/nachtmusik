@@ -3,9 +3,70 @@
   "city": "Stuttgart",
   "slug": "liederhalle_stuttgart",
   "source_url": "https://liederhalle.de/eventkalender",
-  "scraped_at": "2026-05-17T07:47:37.591886Z",
+  "scraped_at": "2026-05-17T07:56:09.187214Z",
   "engine": "firecrawl",
-  "error": "no events extracted (last error: FirecrawlClient.extract() takes from 1 to 2 positional arguments but 3 were given)",
-  "events": [],
-  "total_events": 0
+  "_strategy": "scrape v2 formats-list",
+  "events": [
+    {
+      "date": "2026-05-17",
+      "time": "18:00",
+      "title": "Cornamusa - World of Pipe Rock and Irish Dance",
+      "venue_hall": "Beethoven-Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/cornamusa-world-of-pipe-rock-and-irish-dance",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart"
+    },
+    {
+      "date": "2026-05-17",
+      "time": "19:00",
+      "title": "Jubiläumskonzert - 75 Jahre Orchester Stuttgarter Musikfreunde",
+      "venue_hall": "Mozart-Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/jubilaeumskonzert-75-jahre-orchester-stuttgarter-musikfreunde",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart"
+    },
+    {
+      "date": "2026-05-17",
+      "time": "20:00",
+      "title": "Tim Bendzko: Alles, nur nicht zurück",
+      "venue_hall": "Hegel-Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/tim-bendzko-alles-nur-nicht-zurueck",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart"
+    },
+    {
+      "date": "2026-05-18",
+      "time": "19:00",
+      "title": "Homin Choir",
+      "venue_hall": "Mozart-Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/homin-choir",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart"
+    },
+    {
+      "date": "2026-05-20",
+      "time": "19:00",
+      "title": "SWR Symphonieorchester: Dans la cuisine du chef",
+      "venue_hall": "Hegel-Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart"
+    }
+  ],
+  "total_events": 5
 }
