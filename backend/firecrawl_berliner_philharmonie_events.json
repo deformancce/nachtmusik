@@ -3,7 +3,7 @@
   "city": "Berlin",
   "slug": "berliner_philharmonie",
   "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-  "scraped_at": "2026-05-17T18:24:31.045350Z",
+  "scraped_at": "2026-05-17T19:06:41.026335Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -108,8 +108,8 @@
     }
   ],
   "total_events": 5,
-  "total_events_visible": 20,
-  "total_events_discovered": 20,
-  "total_events_discovered_strict": 20,
+  "total_events_visible": 63,
+  "total_events_discovered": 63,
+  "total_events_discovered_strict": 63,
   "source": "firecrawl_listing"
 }
