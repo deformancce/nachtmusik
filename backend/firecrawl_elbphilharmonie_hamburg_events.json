@@ -3,7 +3,7 @@
   "city": "Hamburg",
   "slug": "elbphilharmonie_hamburg",
   "source_url": "https://www.elbphilharmonie.de/de/programm/LHHH/TICKETS/",
-  "scraped_at": "2026-05-17T08:36:27.279311Z",
+  "scraped_at": "2026-05-17T09:22:22.253489Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -12,7 +12,7 @@
       "title": "Die Unmöglichen",
       "venue_hall": "Großer Saal",
       "program": [
-        "Plamper / Kamphausen: Die Unmöglichen"
+        "Plamper/Kamphausen: Die Unmöglichen"
       ],
       "performers": [
         "Devid Striesow",
@@ -23,7 +23,7 @@
         "Thomas Loibl"
       ],
       "conductor": null,
-      "price": "ab €57,35",
+      "price": "ab € 57,35",
       "detail_url": "https://www.elbphilharmonie.de/de/programm/die-unmoglichen/24391",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
@@ -53,7 +53,7 @@
         "Komponist: Werk mit Opus"
       ],
       "performers": [
-        "Wen-Ting Ho"
+        "Wen-Ting Ho: Oboe"
       ],
       "conductor": null,
       "price": "Eintritt frei",
@@ -78,36 +78,31 @@
         "Ann-Beth Solvang"
       ],
       "conductor": "Johannes Witt",
-      "price": "ab €20",
+      "price": "ab € 20",
       "detail_url": "https://www.elbphilharmonie.de/de/programm/landesjugendorchester-hamburg-ann-beth-solvang-johannes-witt/27407",
       "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "duration_min": 90
+      "city": "Hamburg"
     },
     {
       "date": "2026-05-21",
-      "time": "18:00",
-      "title": "Les Hommes du Swing",
-      "venue_hall": "Studio E",
+      "time": "20:00",
+      "title": "Steve Hackett",
+      "venue_hall": "Großer Saal",
       "program": [
-        "No specific works listed"
+        "Genesis: Nursery Cryme",
+        "Genesis: Wind And Wuthering"
       ],
       "performers": [
-        "Les Hommes Du Swing",
-        "Jordan Rodin",
-        "Axel Burkhardt",
-        "Patrick Farrant",
-        "Benjamin Boitrelle"
+        "Steve Hackett"
       ],
       "conductor": null,
-      "price": "Eintritt frei",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/les-hommes-du-swing/27744",
+      "price": "ab € 26,60",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/steve-hackett/27438",
       "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "duration_min": 60
+      "city": "Hamburg"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 11,
-  "total_events_discovered": 11
+  "total_events_visible": 12,
+  "total_events_discovered": 36
 }

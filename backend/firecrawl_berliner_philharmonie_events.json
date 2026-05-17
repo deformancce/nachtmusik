@@ -3,96 +3,10 @@
   "city": "Berlin",
   "slug": "berliner_philharmonie",
   "source_url": "https://www.berliner-philharmoniker.de/konzerte",
-  "scraped_at": "2026-05-17T08:28:51.917341Z",
+  "scraped_at": "2026-05-17T09:16:17.496979Z",
   "engine": "firecrawl",
-  "events": [
-    {
-      "date": "2026-06-01",
-      "time": "20:00",
-      "title": "Symphony Concert: Mahler's Fifth Symphony",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Mahler: Symphony No. 5"
-      ],
-      "performers": [
-        "Berliner Philharmoniker"
-      ],
-      "conductor": "Kirill Petrenko",
-      "price": "ab €25",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/2026-06-01-mahlers-fifth-symphony/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin"
-    },
-    {
-      "date": "2026-06-05",
-      "time": "20:00",
-      "title": "Chamber Music: Beethoven Series",
-      "venue_hall": "Kammermusiksaal",
-      "program": [
-        "Beethoven: String Quartet No. 14, Op. 131",
-        "Beethoven: Piano Trio in B-flat major, Op. 99"
-      ],
-      "performers": [
-        "Beethoven Ensemble Berlin"
-      ],
-      "conductor": null,
-      "price": "€20 – €60",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/2026-06-05-beethoven-series/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin"
-    },
-    {
-      "date": "2026-06-10",
-      "time": "19:00",
-      "title": "Orchestral Concert: Brahms' First Piano Concerto",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Brahms: Piano Concerto No. 1",
-        "Beethoven: Symphony No. 7"
-      ],
-      "performers": [
-        "Berliner Philharmoniker",
-        "Yuja Wang (piano)"
-      ],
-      "conductor": "Thomas Adès",
-      "price": "€30 – €80",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/2026-06-10-brahms-first-piano-concerto/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin"
-    },
-    {
-      "date": "2026-06-15",
-      "time": "20:00",
-      "title": "Masterworks: Mozart Requiem",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Mozart: Requiem"
-      ],
-      "performers": [
-        "Berliner Philharmoniker",
-        "Chorus"
-      ],
-      "conductor": "Simon Rattle",
-      "price": "ab €35",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/2026-06-15-mozart-requiem/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin"
-    },
-    {
-      "date": "2026-06-20",
-      "time": "19:30",
-      "title": "New Music: Contemporary Composers",
-      "venue_hall": "Kammermusiksaal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": "€15 – €45",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/2026-06-20-new-music/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin"
-    }
-  ],
-  "total_events": 5,
-  "total_events_visible": 5,
-  "total_events_discovered": 5
+  "error": "no events extracted from listing",
+  "events": [],
+  "total_events": 0,
+  "total_events_discovered": 0
 }

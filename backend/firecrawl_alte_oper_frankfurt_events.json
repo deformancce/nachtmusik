@@ -3,24 +3,9 @@
   "city": "Frankfurt",
   "slug": "alte_oper_frankfurt",
   "source_url": "https://www.alteoper.de/de/programm",
-  "scraped_at": "2026-05-17T08:35:29.393834Z",
+  "scraped_at": "2026-05-17T09:21:18.403581Z",
   "engine": "firecrawl",
   "events": [
-    {
-      "date": "2026-05-17",
-      "time": "11:00",
-      "title": "Haydn, Jahreszeiten",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Haydn: Jahreszeiten"
-      ],
-      "performers": [],
-      "conductor": "Thomas Guggeis",
-      "price": "ab 53,00 €",
-      "detail_url": "https://www.alteoper.de/de/programm/haydn-jahreszeiten/18465",
-      "venue": "Alte Oper Frankfurt",
-      "city": "Frankfurt"
-    },
     {
       "date": "2026-05-17",
       "time": "15:00",
@@ -49,10 +34,14 @@
       "time": "16:00",
       "title": "Musik Plus",
       "venue_hall": "PRIF – Leibniz-Institut für Friedens- und Konfliktforschung",
-      "program": [],
-      "performers": [],
+      "program": [
+        "Schostakowitsch: Streichquartett Nr. 7"
+      ],
+      "performers": [
+        "Kalliope Quartett"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "€10",
       "detail_url": "https://www.alteoper.de/de/programm/musik-und-friedensforschung/18493",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt"
@@ -67,7 +56,7 @@
         "Yulianna Avdeeva"
       ],
       "conductor": null,
-      "price": "zzt. keine Tickets erhältlich.",
+      "price": "EURO 39,- (Endpreis) (Konzerteinführung + Konzert)",
       "detail_url": "https://www.alteoper.de/de/programm/hereinspaziert-gewandhausorchester/18421",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt"
@@ -86,14 +75,39 @@
         "Yulianna Avdeeva"
       ],
       "conductor": "Andris Nelsons",
-      "price": "ab 88,00 €",
+      "price": "Ab 88,00 €",
       "detail_url": "https://www.alteoper.de/de/programm/gewandhausorchester/18352",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "duration_min": 135
+    },
+    {
+      "date": "2026-05-18",
+      "time": "20:00",
+      "title": "Haydn, Jahreszeiten",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Haydn: Die Jahreszeiten Hob. XXI:3"
+      ],
+      "performers": [
+        "Frankfurter Opern- und Museumsorchester",
+        "Cäcilienchor Frankfurt",
+        "Figuralchor Frankfurt",
+        "Frankfurter Kantorei",
+        "Frankfurter Singakademie",
+        "Karolina Bengtsson",
+        "Magnus Dietrich",
+        "David Steffens"
+      ],
+      "conductor": "Thomas Guggeis",
+      "price": "Ab 44,00 €",
+      "detail_url": "https://www.alteoper.de/de/programm/haydn-jahreszeiten/18466",
+      "venue": "Alte Oper Frankfurt",
+      "city": "Frankfurt",
+      "duration_min": 165
     }
   ],
   "total_events": 5,
-  "total_events_visible": 10,
-  "total_events_discovered": 10
+  "total_events_visible": 19,
+  "total_events_discovered": 97
 }

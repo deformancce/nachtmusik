@@ -3,16 +3,16 @@
   "city": "Baden-Baden",
   "slug": "festspielhaus_baden_baden",
   "source_url": "https://www.festspielhaus.de/programm/",
-  "scraped_at": "2026-05-17T08:22:38.760019Z",
+  "scraped_at": "2026-05-17T09:14:46.509217Z",
   "engine": "firecrawl",
   "events": [
     {
       "date": "2026-05-17",
       "time": "16:00",
-      "title": "Die Pfingstfestspiele Baden-Baden",
+      "title": "Pfingstfestspiele",
       "venue_hall": "Festspielhaus Baden-Baden",
       "program": [
-        "Richard Strauss: Der Rosenkavalier"
+        "Strauss: Der Rosenkavalier"
       ],
       "performers": [
         "Julia Kleiter",
@@ -45,7 +45,7 @@
       "title": "Ich atmet' einen linden Duft",
       "venue_hall": "Festspielhaus Baden-Baden",
       "program": [
-        "Gustav Mahler: Lieder"
+        "Gustav Mahler: Lieder von Gustav Mahler"
       ],
       "performers": [],
       "conductor": null,
@@ -74,7 +74,9 @@
       "time": "16:00",
       "title": "Von Versailles nach Wien",
       "venue_hall": "Festspielhaus Baden-Baden",
-      "program": [],
+      "program": [
+        "Lully: Un concert; Mozart: Eine Sinfonie; Haydn: Eine Sinfonie"
+      ],
       "performers": [],
       "conductor": null,
       "price": "ab €33",
@@ -84,6 +86,6 @@
     }
   ],
   "total_events": 5,
-  "total_events_visible": 26,
-  "total_events_discovered": 26
+  "total_events_visible": 25,
+  "total_events_discovered": 25
 }

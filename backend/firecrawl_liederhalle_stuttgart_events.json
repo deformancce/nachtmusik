@@ -3,7 +3,7 @@
   "city": "Stuttgart",
   "slug": "liederhalle_stuttgart",
   "source_url": "https://liederhalle.de/eventkalender",
-  "scraped_at": "2026-05-17T08:41:16.201578Z",
+  "scraped_at": "2026-05-17T09:26:41.321641Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -12,9 +12,7 @@
       "title": "Cornamusa - World of Pipe Rock and Irish Dance",
       "venue_hall": "Beethoven-Saal",
       "program": [],
-      "performers": [
-        "Cornamusa Scheler & Bähring GbR"
-      ],
+      "performers": [],
       "conductor": null,
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/cornamusa-world-of-pipe-rock-and-irish-dance",
@@ -90,6 +88,6 @@
     }
   ],
   "total_events": 5,
-  "total_events_visible": 18,
-  "total_events_discovered": 18
+  "total_events_visible": 15,
+  "total_events_discovered": 15
 }

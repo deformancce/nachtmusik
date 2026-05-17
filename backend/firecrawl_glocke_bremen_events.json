@@ -3,7 +3,7 @@
   "city": "Bremen",
   "slug": "glocke_bremen",
   "source_url": "https://www.glocke.de/tickets-programm/",
-  "scraped_at": "2026-05-17T08:30:04.551507Z",
+  "scraped_at": "2026-05-17T09:16:45.469135Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -15,13 +15,13 @@
         "Händel: Feuerwerksmusik D-Dur HWV 351: 1. Ouvertüre",
         "Mendelssohn Bartholdy: Sinfonie Nr. 5 d-Moll op. 107 »Reformationssinfonie«: 2. Allegro Vivace",
         "Rachmaninow: Sinfonie Nr. 2 e-Moll op. 27: 3. Adagio",
-        "Dvořák: Sinfonie Nr. 8 G-Dur op. 88: 4. Allegro ma non troppo"
+        "Dvořak: Sinfonie Nr. 8 G-Dur op. 88: 4. Allegro ma non troppo"
       ],
       "performers": [
         "Ehemalige des Jugendsinfonieorchesters Bremen der Musikschule Bremen"
       ],
       "conductor": "Heiner Buhlmann",
-      "price": "€15,00 Normal / €5,00 Ermäßigt",
+      "price": "15,00 €",
       "detail_url": "https://www.glocke.de/event/ehemalige-des-jugendsinfonieorchesters-bremen-der-musikschule-bremen/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen"
@@ -32,9 +32,7 @@
       "title": "Reiner Calmund »Ein runder Abend – mit Fußball & Freunden«",
       "venue_hall": "Kleiner Saal",
       "program": [],
-      "performers": [
-        "Reiner Calmund"
-      ],
+      "performers": [],
       "conductor": null,
       "price": "38,60 € Normal",
       "detail_url": "https://www.glocke.de/event/reiner-calmund-ein-runder-abend-mit-fussball-freunden/?back_btn=1",
@@ -56,7 +54,7 @@
         "Jan Lisiecki"
       ],
       "conductor": null,
-      "price": "ab €28,20 (Normal) bis €66,70",
+      "price": "ab €28,20",
       "detail_url": "https://www.glocke.de/event/jan-lisiecki-tanz-auf-den-tasten-5-meisterkonzert/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen"
@@ -79,7 +77,7 @@
         "Benjamin Hochman"
       ],
       "conductor": "Liza Ferschtman",
-      "price": "47,00 € Normal",
+      "price": "ab €31",
       "detail_url": "https://www.glocke.de/event/curtis-on-tour-8-philharmonisches-kammerkonzert/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen"
@@ -90,17 +88,15 @@
       "title": "Marc-Uwe Kling: »Neues vom Känguru«",
       "venue_hall": "Großer Saal",
       "program": [],
-      "performers": [
-        "Marc-Uwe Kling"
-      ],
+      "performers": [],
       "conductor": null,
-      "price": "39,75 € Normal - Nur noch Einzelplätze. 32,05 € Ermäßigt - Nur noch Einzelplätze.",
+      "price": "39,75 € Normal - Nur noch Einzelplätze. / 32,05 € Ermäßigt - Nur noch Einzelplätze.",
       "detail_url": "https://www.glocke.de/event/marc-uwe-kling-neues-vom-kaenguru/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 11,
-  "total_events_discovered": 11
+  "total_events_visible": 16,
+  "total_events_discovered": 16
 }

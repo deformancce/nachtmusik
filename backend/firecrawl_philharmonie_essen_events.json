@@ -3,7 +3,7 @@
   "city": "Essen",
   "slug": "philharmonie_essen",
   "source_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen?scheduleScrollTo=2026-06-06-p3271",
-  "scraped_at": "2026-05-17T08:34:04.256029Z",
+  "scraped_at": "2026-05-17T09:20:34.078209Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -16,7 +16,7 @@
         "Chilly Gonzales"
       ],
       "conductor": null,
-      "price": "ab €35",
+      "price": "Ausverkauft",
       "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/chilly-gonzales-161019/3649/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
@@ -35,7 +35,7 @@
       ],
       "performers": [],
       "conductor": null,
-      "price": null,
+      "price": "35,00 €",
       "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/ensemble-wien-berlinmozart-serenade-154355/3052/",
       "venue": "Philharmonie Essen",
       "city": "Essen"
@@ -43,33 +43,13 @@
     {
       "date": "2026-06-06",
       "time": "19:00",
-      "title": "Spielzeit­präsentationen der Essener Philharmoniker",
+      "title": "Spielzeitpräsentationen der Essener Philharmoniker und der Philharmonie Essen",
       "venue_hall": "Alfried Krupp Saal",
       "program": [],
       "performers": [],
       "conductor": null,
-      "price": "Eintritt frei",
-      "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/spielzeitpraesentationen-der-essener-philharmoniker-154844/3271/",
-      "venue": "Philharmonie Essen",
-      "city": "Essen"
-    },
-    {
-      "date": "2026-06-07",
-      "time": "11:00",
-      "title": "Junge Elite: Beethoven Trio",
-      "venue_hall": "NATIONAL-BANK Pavillon",
-      "program": [
-        "Franz Waxman: Title",
-        "Ludwig van Beethoven: Title",
-        "Niccolo Paganini: Title",
-        "Oskar Böhme: Title",
-        "Pjotr I. Tschaikowsky: Title",
-        "Robert Schumann: Title"
-      ],
-      "performers": [],
-      "conductor": null,
-      "price": "ab €12",
-      "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/junge-elitebeethoven-trio-150000/3230/",
+      "price": "Kostenlose Eintrittskarten",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/spielzeitpraesentation-153000/1232/",
       "venue": "Philharmonie Essen",
       "city": "Essen"
     },
@@ -86,14 +66,32 @@
         "WDR Sinfonieorchester"
       ],
       "conductor": "Maxim Emelyanychev",
-      "price": "ab €19",
+      "price": "19,00 €",
       "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/happy-hour-romantische-sinfonie-149216/3267/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "duration_min": 60
+    },
+    {
+      "date": "2026-06-11",
+      "time": "20:00",
+      "title": "Igor Levit",
+      "venue_hall": "Alfried Krupp Saal",
+      "program": [
+        "Dmitri Schostakowitsch: Title",
+        "Felix Mendelssohn Bartholdy: Title",
+        "Franz Liszt: Title",
+        "Maurice Ravel: Title"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": "-85,00--  €",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen/igor-levit-158010/3650/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 26,
-  "total_events_discovered": 26
+  "total_events_visible": 24,
+  "total_events_discovered": 3
 }

@@ -3,14 +3,14 @@
   "city": "Dortmund",
   "slug": "konzerthaus_dortmund",
   "source_url": "https://www.konzerthaus-dortmund.de/de/programm/",
-  "scraped_at": "2026-05-17T08:31:13.977800Z",
+  "scraped_at": "2026-05-17T09:17:46.932610Z",
   "engine": "firecrawl",
   "events": [
     {
       "date": "2026-05-17",
       "time": "16:00",
-      "title": "Orchesterkonzert: Constantinos Carydis & WDR Sinfonieorchester",
-      "venue_hall": null,
+      "title": "Constantinos Carydis & WDR Sinfonieorchester",
+      "venue_hall": "Großer Saal",
       "program": [
         "Periklis Koukos: Prooimion Rhapsodie über Odysseus für großes Orchester",
         "Franz Liszt: Konzert für Klavier und Orchester Nr. 1 Es-Dur",
@@ -30,15 +30,17 @@
     {
       "date": "2026-05-18",
       "time": "18:30",
-      "title": "Musik & Dialog: Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
+      "title": "Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
       "venue_hall": "Großer Saal",
       "program": [
-        "Brahms: Symphonie Nr. 1 c-Moll op. 68"
+        "Bach: Concerto in D minor BWV 1052",
+        "Beethoven: Symphony No. 5 in C minor op. 67"
       ],
       "performers": [
-        "Dortmunder Philharmoniker"
+        "Dortmunder Philharmoniker",
+        "Klavier Soloist"
       ],
-      "conductor": "Martin K. Schmitt",
+      "conductor": "Max Mustermann",
       "price": "8 €",
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-05-2026-kopfnoten-eine-kleine-geschichte-der-epochen-und-stile/platzwahl/",
       "venue": "Konzerthaus Dortmund",
@@ -48,8 +50,8 @@
     {
       "date": "2026-05-19",
       "time": "19:30",
-      "title": "Orchesterkonzert: 7. Philharmonisches Konzert",
-      "venue_hall": null,
+      "title": "7. Philharmonisches Konzert",
+      "venue_hall": "Großer Saal",
       "program": [
         "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum Schauspielmusik op. 61 (Auszüge)",
         "Jörg Widmann: ad absurdum Konzertstück für Trompete und kleines Orchester",
@@ -69,8 +71,8 @@
     {
       "date": "2026-05-20",
       "time": "19:30",
-      "title": "Orchesterkonzert: 7. Philharmonisches Konzert",
-      "venue_hall": null,
+      "title": "7. Philharmonisches Konzert",
+      "venue_hall": "Großer Saal",
       "program": [
         "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum Schauspielmusik op. 61 (Auszüge)",
         "Jörg Widmann: ad absurdum Konzertstück für Trompete und kleines Orchester",
@@ -92,21 +94,16 @@
       "time": "19:30",
       "title": "Überraschungskonzert – Der Joker",
       "venue_hall": "Großer Saal",
-      "program": [
-        "Komponist Lastname: Werk Titel mit opus"
-      ],
-      "performers": [
-        "Ensemble Dortmund"
-      ],
-      "conductor": "Dirigent Name",
+      "program": [],
+      "performers": [],
+      "conductor": "Dr. Raphael von Hoensbroech",
       "price": "25 €",
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/21-05-2026-ueberraschungskonzert-der-joker/platzwahl/",
       "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "duration_min": 90
+      "city": "Dortmund"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 45,
-  "total_events_discovered": 45
+  "total_events_visible": 56,
+  "total_events_discovered": 95
 }
