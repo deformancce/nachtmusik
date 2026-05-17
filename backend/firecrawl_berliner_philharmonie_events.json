@@ -2,97 +2,110 @@
   "venue": "Berliner Philharmonie",
   "city": "Berlin",
   "slug": "berliner_philharmonie",
-  "source_url": "https://www.berliner-philharmoniker.de/konzerte",
-  "scraped_at": "2026-05-17T13:23:13.980413Z",
+  "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
+  "scraped_at": "2026-05-17T14:24:27.239112Z",
   "engine": "firecrawl",
   "events": [
     {
-      "date": "2026-05-17",
-      "time": "19:30",
-      "title": "Beethoven's Ninth Symphony",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Beethoven: Symphony No. 9 in D minor, Op. 125"
-      ],
-      "performers": [
-        "Berliner Philharmoniker",
-        "Martha Argerich",
-        "Kurt Masur"
-      ],
-      "conductor": "Kurt Masur",
-      "price": "ab €30",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/2026-05-17/beethovens-neunte-symphonie/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin"
-    },
-    {
       "date": "2026-05-20",
-      "time": "20:00",
-      "title": "Mozart Requiem",
-      "venue_hall": "Kleiner Saal",
+      "time": "13:00",
+      "title": "Lunchkonzert",
+      "venue_hall": "Großer Saal",
       "program": [
-        "Mozart: Requiem in D minor, K. 626"
+        "Johannes Brahms: Wie Melodien op. 105 Nr. 1",
+        "Johannes Brahms: Sonate für Violine und Klavier Nr. 2 A-Dur op. 100",
+        "Astor Piazzolla: Le Grand Tango"
       ],
-      "performers": [],
-      "conductor": "Simon Rattle",
-      "price": "ab €25",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/2026-05-20/mozarts-requiem/",
+      "performers": [
+        "Martin Stegner",
+        "Tomoko Takahashi"
+      ],
+      "conductor": null,
+      "price": "Eintritt frei",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56562/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin"
     },
     {
-      "date": "2026-05-25",
+      "date": "2026-05-21",
+      "time": "20:00",
+      "title": "Berliner Philharmoniker",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Gustav Mahler: Symphonie Nr. 3 d-Moll"
+      ],
+      "performers": [
+        "Joyce DiDonato",
+        "Damen des Rundfunkchors Berlin",
+        "Knaben des Staats- und Domchors Berlin"
+      ],
+      "conductor": "Yannick Nézet-Séguin",
+      "price": "Ausverkauft",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56431/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-22",
+      "time": "20:00",
+      "title": "Berliner Philharmoniker",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Gustav Mahler: Symphonie Nr. 3 d-Moll"
+      ],
+      "performers": [
+        "Joyce DiDonato",
+        "Damen des Rundfunkchors Berlin",
+        "Knaben des Staats- und Domchors Berlin"
+      ],
+      "conductor": "Yannick Nézet-Séguin",
+      "price": "Ausverkauft",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56431/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-23",
       "time": "19:00",
-      "title": "Tchaikovsky: The Nutcracker",
+      "title": "Berliner Philharmoniker",
       "venue_hall": "Großer Saal",
       "program": [
-        "Tchaikovsky: The Nutcracker, Op. 71"
+        "Gustav Mahler: Symphonie Nr. 3 d-Moll"
       ],
       "performers": [
-        "Berliner Philharmoniker",
-        "Ballett der Deutschen Oper"
+        "Joyce DiDonato",
+        "Damen des Rundfunkchors Berlin",
+        "Knaben des Staats- und Domchors Berlin"
       ],
-      "conductor": "Kirill Petrenko",
-      "price": "ab €45",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/2026-05-25/tchaikovsky-the-nutcracker/",
+      "conductor": "Yannick Nézet-Séguin",
+      "price": "Ausverkauft",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56431/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin"
     },
     {
-      "date": "2026-06-01",
-      "time": "19:30",
-      "title": "Rachmaninoff: Symphony No. 2",
+      "date": "2026-05-27",
+      "time": "13:00",
+      "title": "Lunchkonzert",
       "venue_hall": "Großer Saal",
       "program": [
-        "Rachmaninoff: Symphony No. 2 in E minor, Op. 27"
+        "Wolfgang Amadeus Mozart: Andante mit fünf Variationen für Klavier zu vier Händen G-Dur KV 501",
+        "Wolfgang Amadeus Mozart: Sonate für Klavier zu vier Händen C-Dur KV 521",
+        "Franz Schubert: Fantasie für Klavier zu vier Händen f-Moll D 940"
       ],
       "performers": [
-        "Berliner Philharmoniker"
+        "Roberto Issoglio",
+        "Michela Sara De Nuccio"
       ],
-      "conductor": "Andris Nelsons",
-      "price": "ab €40",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/2026-06-01/rachmaninoff-symphony-no-2/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin"
-    },
-    {
-      "date": "2026-06-05",
-      "time": "20:00",
-      "title": "Messiaen: Turangalîla-Symphonie",
-      "venue_hall": "Kleiner Saal",
-      "program": [
-        "Messiaen: Turangalîla-Symphonie"
-      ],
-      "performers": [],
-      "conductor": "François-Xavier Roth",
-      "price": "ab €35",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/2026-06-05/messiaen-turangalila-symphonie/",
+      "conductor": null,
+      "price": "Eintritt frei",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56563/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 5,
-  "total_events_discovered": 5,
-  "total_events_discovered_strict": 5
+  "total_events_visible": 11,
+  "total_events_discovered": 11,
+  "total_events_discovered_strict": 11
 }

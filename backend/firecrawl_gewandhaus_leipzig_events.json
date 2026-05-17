@@ -3,7 +3,7 @@
   "city": "Leipzig",
   "slug": "gewandhaus_leipzig",
   "source_url": "https://www.gewandhausorchester.de/",
-  "scraped_at": "2026-05-17T13:59:59.468588Z",
+  "scraped_at": "2026-05-17T14:25:02.241224Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -12,11 +12,10 @@
       "title": "Regina - Oper in drei Akten",
       "venue_hall": "Opernhaus",
       "program": [
-        "Lortzing: Regina - Oper in drei Akten"
+        "Albert Lortzing: Regina - Oper in drei Akten"
       ],
       "performers": [
-        "Gewandhausorchester",
-        "Constantin Trinks"
+        "Gewandhausorchester"
       ],
       "conductor": "Constantin Trinks",
       "price": "88/78/63/48/39/18 EUR",
