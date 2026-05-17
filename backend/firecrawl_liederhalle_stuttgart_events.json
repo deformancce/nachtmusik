@@ -3,7 +3,7 @@
   "city": "Stuttgart",
   "slug": "liederhalle_stuttgart",
   "source_url": "https://liederhalle.de/eventkalender",
-  "scraped_at": "2026-05-17T13:03:38.032708Z",
+  "scraped_at": "2026-05-17T13:34:58.407866Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -29,7 +29,7 @@
       "program": [
         "Weber: Freischütz Ouvertüre",
         "Mozart: Violinkonzert Nr. 3 in G-Dur",
-        "Dvořak: Sinfonie Nr. 9 (Aus der neuen Welt)"
+        "Dvořák: Sinfonie Nr. 9 (Aus der neuen Welt)"
       ],
       "performers": [
         "Christine Busch",
@@ -77,7 +77,7 @@
       "title": "SWR Symphonieorchester: Dans la cuisine du chef",
       "venue_hall": "Hegel-Saal",
       "program": [
-        "Haydn: Sinfonie Nr. 101 D-Dur (\"Die Uhr\")"
+        "Haydn: Sinfonie Nr. 101 D-Dur (Die Uhr)"
       ],
       "performers": [
         "SWR Symphonieorchester"
@@ -90,6 +90,7 @@
     }
   ],
   "total_events": 5,
-  "total_events_visible": 15,
-  "total_events_discovered": 15
+  "total_events_visible": 17,
+  "total_events_discovered": 17,
+  "total_events_discovered_strict": 17
 }

@@ -3,33 +3,93 @@
   "city": "München",
   "slug": "isarphilharmonie_muenchen",
   "source_url": "https://www.mphil.de/kalender",
-  "scraped_at": "2026-05-17T13:02:26.308762Z",
+  "scraped_at": "2026-05-17T13:33:34.233505Z",
   "engine": "firecrawl",
   "events": [
     {
-      "date": "2026-05-29",
+      "date": "2026-05-17",
       "time": "19:30",
-      "title": "Mussorgsky      Chatschaturjan      Bizet",
+      "title": "Elgar - Schubert - Wagner",
       "venue_hall": "Isarphilharmonie",
       "program": [
-        "Modest Mussorgsky: Vorspiel zu »Chowanschtschina«",
-        "Aram Chatschaturjan: Klavierkonzert",
-        "Georges Bizet: »L’Arlésienne«-Suiten Nr. 1 & 2"
+        "Edward Elgar: Cellokonzert",
+        "Franz Schubert: 7. Symphonie »Unvollendete«",
+        "Richard Wagner: Vorspiel und »Isoldes Liebestod« aus »Tristan und Isolde«"
       ],
       "performers": [
-        "Alain Altinoglu",
-        "Giorgi Gigashvili"
+        "Dirigent: Lahav Shani",
+        "Violoncello: Sol Gabetta"
       ],
-      "conductor": "Alain Altinoglu",
-      "price": "Derzeit ausverkauft",
-      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/chatschaturjan-mussorgsky-bizet-2026-05-29-19-3",
+      "conductor": "Lahav Shani",
+      "price": "null",
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/wagner-elgar-schubert-2026-05-17-19-3",
       "venue": "Isarphilharmonie München",
       "city": "München"
     },
     {
-      "date": "2026-05-30",
+      "date": "2026-05-20",
+      "time": "19:30",
+      "title": "Mendelssohn Bartholdy - Mozart - Zemlinsky",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Felix Mendelssohn Bartholdy: Ouvertüre zu »Ein Sommernachtstraum«",
+        "Wolfgang Amadeus Mozart: Klavierkonzert Es-Dur KV 482",
+        "Alexander Zemlinsky: »Die Seejungfrau«"
+      ],
+      "performers": [
+        "Dirigent: Ryan Bancroft",
+        "Klavier: Emanuel Ax"
+      ],
+      "conductor": "Ryan Bancroft",
+      "price": "null",
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/zemlinsky-mozart-mendelssohn-bartholdy-2026-05-20-19-30-00",
+      "venue": "Isarphilharmonie München",
+      "city": "München"
+    },
+    {
+      "date": "2026-05-23",
       "time": "19:00",
-      "title": "Mussorgsky      Chatschaturjan      Bizet",
+      "title": "Sibelius - Prokofjew - Vaughan Williams",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Jean Sibelius: »Finlandia«",
+        "Sergej Prokofjew: 3. Klavierkonzert",
+        "Ralph Vaughan Williams: 2. Symphonie »A London Symphony«"
+      ],
+      "performers": [
+        "Dirigent: Tarmo Peltokoski",
+        "Klavier: Behzod Abduraimov"
+      ],
+      "conductor": "Tarmo Peltokoski",
+      "price": "Derzeit ausverkauft",
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/sibelius-prokofjew-vaughan-williams-2026-05-23-19",
+      "venue": "Isarphilharmonie München",
+      "city": "München"
+    },
+    {
+      "date": "2026-05-24",
+      "time": "11:00",
+      "title": "Sibelius - Prokofjew - Vaughan Williams",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Jean Sibelius: »Finlandia«",
+        "Sergej Prokofjew: 3. Klavierkonzert",
+        "Ralph Vaughan Williams: 2. Symphonie »A London Symphony«"
+      ],
+      "performers": [
+        "Dirigent: Tarmo Peltokoski",
+        "Klavier: Behzod Abduraimov"
+      ],
+      "conductor": "Tarmo Peltokoski",
+      "price": "Derzeit ausverkauft",
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/sibelius-prokofjew-vaughan-williams-2026-05-24-11",
+      "venue": "Isarphilharmonie München",
+      "city": "München"
+    },
+    {
+      "date": "2026-05-29",
+      "time": "19:30",
+      "title": "Mussorgsky - Chatschaturjan - Bizet",
       "venue_hall": "Isarphilharmonie",
       "program": [
         "Modest Mussorgsky: Vorspiel zu »Chowanschtschina«",
@@ -37,17 +97,18 @@
         "Georges Bizet: »L’Arlésienne«-Suiten Nr. 1 & 2"
       ],
       "performers": [
-        "Alain Altinoglu",
-        "Giorgi Gigashvili"
+        "Dirigent: Alain Altinoglu",
+        "Klavier: Giorgi Gigashvili"
       ],
       "conductor": "Alain Altinoglu",
-      "price": "Karten",
-      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/chatschaturjan-mussorgsky-bizet-2026-05-30-19",
+      "price": "null",
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/chatschaturjan-mussorgsky-bizet-2026-05-29-19",
       "venue": "Isarphilharmonie München",
       "city": "München"
     }
   ],
-  "total_events": 2,
-  "total_events_visible": 36,
-  "total_events_discovered": 36
+  "total_events": 5,
+  "total_events_visible": 30,
+  "total_events_discovered": 30,
+  "total_events_discovered_strict": 30
 }

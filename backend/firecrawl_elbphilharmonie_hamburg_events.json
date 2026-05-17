@@ -3,7 +3,7 @@
   "city": "Hamburg",
   "slug": "elbphilharmonie_hamburg",
   "source_url": "https://www.elbphilharmonie.de/de/programm/",
-  "scraped_at": "2026-05-17T12:58:23.907543Z",
+  "scraped_at": "2026-05-17T13:29:37.080955Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -27,7 +27,7 @@
     },
     {
       "date": "2026-05-17",
-      "time": "16:00",
+      "time": "16:30",
       "title": "NDR Elbphilharmonie Orchester / Pierre Bleuse",
       "venue_hall": "Großer Saal",
       "program": [
@@ -62,41 +62,37 @@
       "city": "Hamburg"
     },
     {
-      "date": "2026-05-18",
-      "time": "20:00",
-      "title": "Frühjahrskonzert",
+      "date": "2026-05-20",
+      "time": "14:00",
+      "title": "Westermann Summit 2026",
       "venue_hall": "Kleiner Saal",
       "program": [],
-      "performers": [
-        "Yi-Wen Chen"
-      ],
-      "conductor": "Prof. Burkhard Kehring",
-      "price": "Eintritt frei",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/hochschule-fur-musik-und-theater-hamburg/28283",
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/westermann-summit-2026/28420",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg"
     },
     {
-      "date": "2026-05-19",
-      "time": "19:30",
-      "title": "Schumann Quartett",
-      "venue_hall": "Kleiner Saal",
+      "date": "2026-05-20",
+      "time": "20:00",
+      "title": "Huelgas Ensemble / Paul Van Nevel",
+      "venue_hall": "Großer Saal",
       "program": [
-        "Haydn: Streichquartett D-Dur",
-        "Henze: Streichquartett Nr. 5",
-        "Beethoven: Streichquartett F-Dur – Internationales Musikfest Hamburg"
+        "\"Memento mori\" – Werke von Orlando di Lasso, Guillaume Dufay, Giovanni Gabrieli u.a.",
+        "Internationales Musikfest Hamburg"
       ],
-      "performers": [
-        "Schumann Quartett"
-      ],
+      "performers": [],
       "conductor": null,
-      "price": "Ausverkauft",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/schumann-quartett/23440",
+      "price": "ab € 13",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/huelgas-ensemble-paul-van-nevel/27532",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 8,
-  "total_events_discovered": 106
+  "total_events_visible": 10,
+  "total_events_discovered": 10,
+  "total_events_discovered_strict": 10
 }

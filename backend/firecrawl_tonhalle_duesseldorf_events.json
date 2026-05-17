@@ -3,38 +3,42 @@
   "city": "Düsseldorf",
   "slug": "tonhalle_duesseldorf",
   "source_url": "https://www.tonhalle.de/veranstaltungen/kalender",
-  "scraped_at": "2026-05-17T12:55:09.967743Z",
+  "scraped_at": "2026-05-17T13:26:21.596627Z",
   "engine": "firecrawl",
   "events": [
     {
-      "date": "2026-05-17",
-      "time": "15:00",
-      "title": "Café-KonzertFrau Luna",
-      "venue_hall": "Rotunde/Foyer",
+      "date": "2026-05-18",
+      "time": "19:30",
+      "title": "Abgesagt: Pretty Yende",
+      "venue_hall": "Tonhalle Düsseldorf",
       "program": [
-        "Wiener Kaffeehausmusik"
+        "Verdi: Arien",
+        "Bellini: Arien",
+        "Offenbach: Arien",
+        "Strauss: Arien"
       ],
       "performers": [
-        "Tea Time Ensemble"
+        "Pretty Yende",
+        "Philharmonie Baden-Baden"
       ],
-      "conductor": null,
-      "price": "Ausverkauft!",
-      "detail_url": "https://www.tonhalle.de/veranstaltung/cafe-konzert/17617-frau-luna",
+      "conductor": "Pablo Mielgo",
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/19079-abgesagt-pretty-yende",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf"
     },
     {
       "date": "2026-05-22",
       "time": "20:00",
-      "title": "Vision String & Danish String QuartetMendelssohn",
-      "venue_hall": "Mendelssohn-Saal",
+      "title": "Mendelssohn",
+      "venue_hall": "Großer Saal",
       "program": [
-        "Mendelssohn Bartholdy: Oktett für Streicher Es-Dur op. 20",
-        "Folksongs und Eigenkompositionen der Ensembles"
+        "Mendelssohn Bartholdy: Oktett für Streicher Es-Dur op. 20"
       ],
       "performers": [
         "Vision String Quartet",
-        "Danish String Quartet"
+        "Danish String Quartet",
+        "Folksongs und Eigenkompositionen der Ensembles"
       ],
       "conductor": null,
       "price": null,
@@ -46,7 +50,7 @@
       "date": "2026-05-23",
       "time": "20:00",
       "title": "Element of Crime",
-      "venue_hall": "Mendelssohn-Saal",
+      "venue_hall": "Großer Saal",
       "program": [],
       "performers": [
         "Element of Crime"
@@ -60,10 +64,10 @@
     {
       "date": "2026-05-30",
       "time": "20:00",
-      "title": "feat. Markus StockhausenMelodic Lifetime",
-      "venue_hall": "Trautvetter-Brückner-Saal",
+      "title": "Melodic Lifetime",
+      "venue_hall": "Großer Saal",
       "program": [
-        "Supernova – Neue und neueste Musik"
+        "Stockhausen: Melodic Lifetime"
       ],
       "performers": [
         "Markus Stockhausen",
@@ -79,9 +83,9 @@
     },
     {
       "date": "2026-05-31",
-      "time": "16:30",
+      "time": "20:00",
       "title": "Schroeder geht ins Konzert",
-      "venue_hall": "Mendelssohn-Saal",
+      "venue_hall": "Großer Saal",
       "program": [
         "Dvořák: Slawischer Tanz C-Dur op. 46/1",
         "Dvořák: Slawischer Tanz c-Moll op. 46/7",
@@ -92,7 +96,8 @@
       ],
       "performers": [
         "Düsseldorfer Symphoniker",
-        "vision string quartet"
+        "vision string quartet",
+        "Florian Schroeder"
       ],
       "conductor": "Alena Hron",
       "price": null,
@@ -102,6 +107,7 @@
     }
   ],
   "total_events": 5,
-  "total_events_visible": 66,
-  "total_events_discovered": 1
+  "total_events_visible": 21,
+  "total_events_discovered": 21,
+  "total_events_discovered_strict": 21
 }

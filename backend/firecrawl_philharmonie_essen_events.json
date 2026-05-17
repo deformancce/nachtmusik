@@ -3,7 +3,7 @@
   "city": "Essen",
   "slug": "philharmonie_essen",
   "source_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/",
-  "scraped_at": "2026-05-17T12:56:24.319472Z",
+  "scraped_at": "2026-05-17T13:27:34.246944Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -18,7 +18,7 @@
         "Takeover!Ensemble"
       ],
       "conductor": "Mihalj Kekenj",
-      "price": "ab €40",
+      "price": "50,00€ / 40,00€",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/takeover-by-miki-und-eva-briegel-juli-151425/3177/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
@@ -31,12 +31,12 @@
       "venue_hall": "Alfried Krupp Saal",
       "program": [],
       "performers": [
-        "Eva Briegel",
+        "Eva Briegel (JULI)",
         "Mihalj Kekenj",
         "Takeover!Ensemble"
       ],
       "conductor": "Mihalj Kekenj",
-      "price": "ab €40",
+      "price": "50,00€ / 40,00€",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/takeover-by-miki-und-eva-briegel-juli-151425/3178/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
@@ -47,29 +47,28 @@
       "time": "18:00",
       "title": "Die Prinzen Symphonisch",
       "venue_hall": "Alfried Krupp Saal",
-      "program": [],
-      "performers": [
-        "Die Prinzen"
+      "program": [
+        "Various Artists: All Hits with Large Orchestra"
       ],
+      "performers": [],
       "conductor": null,
-      "price": "ab €89,90",
+      "price": "109,90€ - 89,90€",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/die-prinzen-symphonisch-157996/3335/",
       "venue": "Philharmonie Essen",
-      "city": "Essen",
-      "duration_min": 120
+      "city": "Essen"
     },
     {
       "date": "2026-05-26",
       "time": "20:00",
-      "title": "Joana Mallwitz \u0005 Konzerthausorchester Berlin",
+      "title": "Joana Mallwitz \u0002 Konzerthausorchester Berlin",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
-        "Gustav Mahler: Symphony No. 1",
-        "Ludwig van Beethoven: Violin Concerto"
+        "Gustav Mahler: Selected Works",
+        "Ludwig van Beethoven: Selected Works"
       ],
       "performers": [],
       "conductor": null,
-      "price": "ab €71,50",
+      "price": "108,90€ - 71,50€",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/joana-mallwitzkonzerthausorchester-berlin-154813/2711/",
       "venue": "Philharmonie Essen",
       "city": "Essen"
@@ -77,22 +76,23 @@
     {
       "date": "2026-05-27",
       "time": "19:00",
-      "title": "Gautier Capuçon \u0005 Sächsische Staatskapelle Dresden",
+      "title": "Gautier Capuçon \u0002 Sächsische Staatskapelle Dresden",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
-        "Camille Saint-Saëns: Cello Concerto No. 1",
-        "Claude Debussy: La Mer",
-        "Richard Wagner: Siegfried Idyll"
+        "Camille Saint-Saëns: Selected Works",
+        "Claude Debussy: Selected Works",
+        "Richard Wagner: Selected Works"
       ],
       "performers": [],
       "conductor": null,
-      "price": "ab €45,00",
+      "price": "105,00€ - 45,00€",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/gautier-capuconsaechsische-staatskapelle-dresden-149566/3226/",
       "venue": "Philharmonie Essen",
       "city": "Essen"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 12,
-  "total_events_discovered": 4
+  "total_events_visible": 18,
+  "total_events_discovered": 18,
+  "total_events_discovered_strict": 18
 }

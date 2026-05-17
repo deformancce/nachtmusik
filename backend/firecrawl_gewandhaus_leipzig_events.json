@@ -3,7 +3,7 @@
   "city": "Leipzig",
   "slug": "gewandhaus_leipzig",
   "source_url": "https://www.gewandhausorchester.de/",
-  "scraped_at": "2026-05-17T13:01:14.622011Z",
+  "scraped_at": "2026-05-17T13:32:10.604918Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -49,11 +49,9 @@
       "title": "Element of Crime",
       "venue_hall": "Großer Saal",
       "program": [],
-      "performers": [
-        "Element of Crime"
-      ],
+      "performers": [],
       "conductor": null,
-      "price": "74/68,50/63/57,50 EUR (inkl. VVK-Gebühr)",
+      "price": "74/68,50/63/57,50 EUR",
       "detail_url": "https://www.gewandhausorchester.de/veranstaltung/element-of-crime-9804/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig"
@@ -86,7 +84,7 @@
       "program": [],
       "performers": [],
       "conductor": null,
-      "price": "74/68,50/63/57,50 EUR (inkl. VVK-Gebühr)",
+      "price": "74/68,50/63/57,50 EUR",
       "detail_url": "https://www.gewandhausorchester.de/veranstaltung/element-of-crime-9805/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig"
@@ -94,5 +92,6 @@
   ],
   "total_events": 5,
   "total_events_visible": 5,
-  "total_events_discovered": 710
+  "total_events_discovered": 5,
+  "total_events_discovered_strict": 5
 }

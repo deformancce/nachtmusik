@@ -3,89 +3,96 @@
   "city": "Berlin",
   "slug": "berliner_philharmonie",
   "source_url": "https://www.berliner-philharmoniker.de/konzerte",
-  "scraped_at": "2026-05-17T12:52:50.688284Z",
+  "scraped_at": "2026-05-17T13:23:13.980413Z",
   "engine": "firecrawl",
   "events": [
     {
+      "date": "2026-05-17",
+      "time": "19:30",
+      "title": "Beethoven's Ninth Symphony",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Beethoven: Symphony No. 9 in D minor, Op. 125"
+      ],
+      "performers": [
+        "Berliner Philharmoniker",
+        "Martha Argerich",
+        "Kurt Masur"
+      ],
+      "conductor": "Kurt Masur",
+      "price": "ab €30",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/2026-05-17/beethovens-neunte-symphonie/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
       "date": "2026-05-20",
       "time": "20:00",
-      "title": "Filmporträt: Die Wiener Philharmoniker - Ein ganz normaler Tag",
-      "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": "ab €25",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/filmportraet-wiener-philharmoniker/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin"
-    },
-    {
-      "date": "2026-05-21",
-      "time": "19:30",
-      "title": "Berliner Philharmoniker spielen Beethoven",
-      "venue_hall": "Großer Saal",
+      "title": "Mozart Requiem",
+      "venue_hall": "Kleiner Saal",
       "program": [
-        "Beethoven: Sinfonie Nr. 9"
+        "Mozart: Requiem in D minor, K. 626"
       ],
       "performers": [],
-      "conductor": "Kirill Petrenko",
-      "price": "ab €35",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/berliner-philharmoniker-spielen-beethoven/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin"
-    },
-    {
-      "date": "2026-05-22",
-      "time": "20:00",
-      "title": "Konzert für Klavier und Orchester",
-      "venue_hall": "Kleine Philharmonie",
-      "program": [
-        "Beethoven: Klavierkonzert Nr. 5"
-      ],
-      "performers": [
-        "Yuja Wang"
-      ],
-      "conductor": "Hannu Lintu",
-      "price": "ab €30",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/konzert-fuer-klavier-und-orchester/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin"
-    },
-    {
-      "date": "2026-05-23",
-      "time": "19:30",
-      "title": "Klassik im Park - Open Air Konzert",
-      "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [
-        "Berliner Philharmoniker Festspielorchester"
-      ],
-      "conductor": null,
-      "price": "ab €40",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/klassik-im-park/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin"
-    },
-    {
-      "date": "2026-05-29",
-      "time": "20:00",
-      "title": "Mozart und Haydn",
-      "venue_hall": "Kleine Philharmonie",
-      "program": [
-        "Mozart: Symphonie Nr. 41",
-        "Haydn: Sinfonie Nr. 104"
-      ],
-      "performers": [
-        "Orchester der Berliner Philharmoniker"
-      ],
       "conductor": "Simon Rattle",
+      "price": "ab €25",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/2026-05-20/mozarts-requiem/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-05-25",
+      "time": "19:00",
+      "title": "Tchaikovsky: The Nutcracker",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Tchaikovsky: The Nutcracker, Op. 71"
+      ],
+      "performers": [
+        "Berliner Philharmoniker",
+        "Ballett der Deutschen Oper"
+      ],
+      "conductor": "Kirill Petrenko",
       "price": "ab €45",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/mozart-und-haydn/",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/2026-05-25/tchaikovsky-the-nutcracker/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-06-01",
+      "time": "19:30",
+      "title": "Rachmaninoff: Symphony No. 2",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Rachmaninoff: Symphony No. 2 in E minor, Op. 27"
+      ],
+      "performers": [
+        "Berliner Philharmoniker"
+      ],
+      "conductor": "Andris Nelsons",
+      "price": "ab €40",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/2026-06-01/rachmaninoff-symphony-no-2/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin"
+    },
+    {
+      "date": "2026-06-05",
+      "time": "20:00",
+      "title": "Messiaen: Turangalîla-Symphonie",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Messiaen: Turangalîla-Symphonie"
+      ],
+      "performers": [],
+      "conductor": "François-Xavier Roth",
+      "price": "ab €35",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/2026-06-05/messiaen-turangalila-symphonie/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin"
     }
   ],
   "total_events": 5,
   "total_events_visible": 5,
-  "total_events_discovered": 1588
+  "total_events_discovered": 5,
+  "total_events_discovered_strict": 5
 }

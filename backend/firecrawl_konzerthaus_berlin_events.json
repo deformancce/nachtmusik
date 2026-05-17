@@ -3,7 +3,7 @@
   "city": "Berlin",
   "slug": "konzerthaus_berlin",
   "source_url": "https://www.konzerthaus.de/de/programm",
-  "scraped_at": "2026-05-17T12:51:48.065063Z",
+  "scraped_at": "2026-05-17T13:22:26.938055Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -21,7 +21,7 @@
         "Elisabeth Brauß"
       ],
       "conductor": null,
-      "price": null,
+      "price": "Tickets",
       "detail_url": "https://www.konzerthaus.de/de/programm/espresso-konzert/11719",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin"
@@ -36,7 +36,7 @@
       ],
       "performers": [],
       "conductor": null,
-      "price": null,
+      "price": "Tickets",
       "detail_url": "https://www.konzerthaus.de/de/programm/berliner-operngruppe/12411",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin"
@@ -54,12 +54,10 @@
       "performers": [
         "Liza Ferschtman",
         "Benjamin Hochman",
-        "Leah Amory",
-        "Davin Mar",
-        "Carson Ling-Efird"
+        "Künstlerinnen des Curtis Institute of Music"
       ],
       "conductor": null,
-      "price": null,
+      "price": "Tickets",
       "detail_url": "https://www.konzerthaus.de/de/programm/beethovens-geistertrio-und-brahms-klavierquintett/12412",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin"
@@ -70,17 +68,19 @@
       "title": "Herz über Kopf: Mahlers Fünfte",
       "venue_hall": "Werner-Otto-Saal",
       "program": [
-        "Mahler: Sinfonie Nr. 5"
+        "Mahler: Symphonie Nr. 5"
       ],
       "performers": [
         "Charly Hübner",
-        "Anne Lenk"
+        "Anne Lenk",
+        "Steven Sloane"
       ],
       "conductor": "Steven Sloane",
       "price": "Ausverkauft",
       "detail_url": "https://www.konzerthaus.de/de/programm/herz-uber-kopf-mahlers-funfte/11720",
       "venue": "Konzerthaus Berlin",
-      "city": "Berlin"
+      "city": "Berlin",
+      "duration_min": 120
     },
     {
       "date": "2026-05-20",
@@ -94,10 +94,7 @@
         "Sergej Rachmaninow: Prélude gis-Moll op. 32 Nr. 12",
         "Sergej Rachmaninow: Prélude D-Dur op. 23 Nr. 4",
         "Alexander Skrjabin: Etüde dis-Moll op. 8 Nr.12",
-        "Alexander Skrjabin: Zwei Poèmes op. 32",
-        "Alexander Skrjabin: Sonate Nr. 4 Fis-dur op. 30",
         "Fryderyk Chopin: Romance aus dem Konzert für Klavier und Orchester e-Moll op. 11, bearbeitet von Mili Alexejewitsch Balakirew",
-        "Christoph Willibald Gluck: Melodien aus der Oper „Orphée et Euridice“, bearbeitet von Giovanni Sgambati",
         "Wolfgang Amadeus Mozart: Fantasie d-Moll KV 397",
         "Igor Strawinsky: „Der Feuervogel“ - Ballettmusik, bearbeitet von Guido Agosti"
       ],
@@ -105,13 +102,14 @@
         "Irina Lankova"
       ],
       "conductor": null,
-      "price": null,
+      "price": "Tickets",
       "detail_url": "https://www.konzerthaus.de/de/programm/irina-lankova/12373",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin"
     }
   ],
   "total_events": 5,
-  "total_events_visible": 30,
-  "total_events_discovered": 750
+  "total_events_visible": 49,
+  "total_events_discovered": 49,
+  "total_events_discovered_strict": 49
 }
