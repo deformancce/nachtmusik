@@ -85,7 +85,7 @@ VENUE_STRICT_PATTERNS: dict[str, re.Pattern[str]] = {
         re.I,
     ),
     "festspielhaus_baden_baden": re.compile(
-        r"festspielhaus\.de/.+/(?:veranstaltung|event|konzert)[^/?#]+",
+        r"festspielhaus\.de/veranstaltungen/[^/?#]+",
         re.I,
     ),
     "liederhalle_stuttgart": re.compile(

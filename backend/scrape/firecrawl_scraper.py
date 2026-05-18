@@ -466,6 +466,13 @@ VENUE_OVERRIDES: dict[str, dict] = {
         # Heavy cookie wall ("Alle akzeptieren") blocks all content without JS dismissal.
         "actions": lambda: _cookie_and_load_more_actions(max_rounds=20, settle_ms=2000),
     },
+    "festspielhaus_baden_baden": {
+        # /programm/ uses pure infinite scroll (no load-more button). User reports
+        # scrolling manually reaches events through April 2027 (~200 events).
+        # Default _scroll_actions(n=12) stops at ~34 events. Use generic JS loop
+        # which scrolls until page height stops growing.
+        "actions": lambda: _cookie_and_load_more_actions(max_rounds=40, settle_ms=2000),
+    },
     "gewandhaus_leipzig": {
         "actions": _gewandhaus_actions,
         "wait_for_listing_count": 20,
