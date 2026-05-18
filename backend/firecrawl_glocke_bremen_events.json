@@ -3,7 +3,7 @@
   "city": "Bremen",
   "slug": "glocke_bremen",
   "source_url": "https://www.glocke.de/tickets-programm/",
-  "scraped_at": "2026-05-18T05:38:59.275228Z",
+  "scraped_at": "2026-05-18T12:08:16.354654Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -16,13 +16,13 @@
         "Bartók: Rumänische Volkstänze Sz 56",
         "Chopin: Grande valse brillante Es-Dur op. 18",
         "Brahms: Walzer As-Dur op. 39/15",
-        "Weitere Werke von Brahms, Chopin, Ginastera, Piazzolla und anderen"
+        "weitere Werke von Johannes Brahms, Frédéric Chopin, Alberto Ginastera, Astor Piazzolla und anderen"
       ],
       "performers": [
         "Jan Lisiecki"
       ],
       "conductor": null,
-      "price": "ab €28,20",
+      "price": "ab €20",
       "detail_url": "https://www.glocke.de/event/jan-lisiecki-tanz-auf-den-tasten-5-meisterkonzert/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen",
@@ -39,14 +39,14 @@
         "Brahms: Klavierquintett f-Moll op. 34"
       ],
       "performers": [
+        "Liza Ferschtman",
+        "Benjamin Hochman",
         "Leah Amory",
         "Davin Mar",
-        "Carson Ling-Efird",
-        "Liza Ferschtman",
-        "Benjamin Hochman"
+        "Carson Ling-Efird"
       ],
       "conductor": "Liza Ferschtman",
-      "price": "47,00 € Normal",
+      "price": "€31–€47",
       "detail_url": "https://www.glocke.de/event/curtis-on-tour-8-philharmonisches-kammerkonzert/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen",
@@ -57,12 +57,14 @@
       "time": "20:00",
       "title": "Marc-Uwe Kling: »Neues vom Känguru«",
       "venue_hall": "Großer Saal",
-      "program": [],
+      "program": [
+        "Kling: Die Känguru-Rebellion"
+      ],
       "performers": [
         "Marc-Uwe Kling"
       ],
       "conductor": null,
-      "price": "39,75 € Normal - Nur noch Einzelplätze.",
+      "price": "39,75 € Normal - Nur noch Einzelplätze.\n32,05 € Ermäßigt - Nur noch Einzelplätze.",
       "detail_url": "https://www.glocke.de/event/marc-uwe-kling-neues-vom-kaenguru/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen",
@@ -91,16 +93,16 @@
       "title": "Philharmonie der Solisten »Vivaldi – Die vier Jahreszeiten«",
       "venue_hall": "Kleiner Saal",
       "program": [
-        "Vivaldi: »Die vier Jahreszeiten« op. 8/1-4",
-        "Mozart: Works",
-        "Bach: Works",
-        "Brahms: Works"
+        "Vivaldi: Die vier Jahreszeiten op. 8/1-4",
+        "Mozart: Werke von Wolfgang Amadeus Mozart",
+        "Bach: Werke von Johann Sebastian Bach",
+        "Brahms: Werke von Johannes Brahms"
       ],
       "performers": [
         "Philharmonie der Solisten"
       ],
       "conductor": "Vladik Otaryan",
-      "price": "56,35 € Normal",
+      "price": "56,35 € Normal, 45,35 € Schüler/Studierende, 45,35 € Schwerbehinderung",
       "detail_url": "https://www.glocke.de/event/philharmonie-der-solisten-vivaldi-die-vier-jahreszeiten-7/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen",
@@ -125,7 +127,7 @@
     {
       "date": "2026-05-27",
       "time": "19:30",
-      "title": "Die Deutsche Kammerphilharmonie Bremen »Haupt­sache Tschai­kowsky« 5. Premieren-Abonne­ment­konzert",
+      "title": "Die Deutsche Kammerphilharmonie Bremen »Haupt­sache Tschai­kowsky« 5. Premieren-Abonnementkonzert",
       "venue_hall": "Großer Saal",
       "program": [
         "Tschaikowsky: Klavierkonzert Nr. 1 b-Moll op. 23",
@@ -164,20 +166,6 @@
     },
     {
       "date": "2026-05-30",
-      "time": "14:00",
-      "title": "Besucherführung",
-      "venue_hall": "Foyer",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.glocke.de/event/besucherfuehrung-37/?back_btn=1",
-      "venue": "Glocke Bremen",
-      "city": "Bremen",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-30",
       "time": "20:00",
       "title": "»Flying Sound – Klang. Emotion. Präzision« mit Tigran Maytesian und Daniel Blumenthal",
       "venue_hall": "Kleiner Saal",
@@ -200,7 +188,7 @@
         "Daniel Blumenthal"
       ],
       "conductor": null,
-      "price": "ab 29,00 €",
+      "price": "59,00 € Normal, 47,00 € Ermäßigt, 49,00 € Normal, 39,00 € Ermäßigt, 39,00 € Normal, 31,00 € Ermäßigt, 29,00 € Normal, 23,00 € Ermäßigt",
       "detail_url": "https://www.glocke.de/event/flying-sound-klang-emotion-praezision-mit-tigran-maytesian-und-daniel-blumenthal/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen",
@@ -212,9 +200,9 @@
       "title": "Bremer Kaffeehaus-Orchester »Frisch aufgeblüht« Frühlingskonzert",
       "venue_hall": "Kleiner Saal",
       "program": [
-        "Verdi: Engaging Melody",
-        "Mozart: Engaging Melody",
-        "Ravel: Engaging Melody"
+        "Verdi: Selected Works",
+        "Mozart: Selected Works",
+        "Ravel: Selected Works"
       ],
       "performers": [
         "Klaus Fischer",
@@ -224,7 +212,7 @@
         "Anselm Hauke"
       ],
       "conductor": null,
-      "price": "€36,00 Normal, €26,00 Ermäßigt; €30,00 Normal, €20,00 Ermäßigt; €24,00 Normal, €13,00 Ermäßigt",
+      "price": "36,00 € Normal, 26,00 € Ermäßigt, 30,00 € Normal, 20,00 € Ermäßigt, 24,00 € Normal, 13,00 € Ermäßigt",
       "detail_url": "https://www.glocke.de/event/bremer-kaffeehaus-orchester-frisch-aufgeblueht-fruehlingskonzert/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen",
@@ -245,7 +233,7 @@
         "Delyana Lazarova"
       ],
       "conductor": "Delyana Lazarova",
-      "price": "€21,00 – €62,00",
+      "price": "€21,00 Normal",
       "detail_url": "https://www.glocke.de/event/bremer-philharmoniker-time-to-shine-11-philharmonisches-konzert-2/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen",
@@ -265,7 +253,7 @@
         "Bremer Philharmoniker"
       ],
       "conductor": "Delyana Lazarova",
-      "price": "€21,00 – €62,00",
+      "price": "62,00 € Normal",
       "detail_url": "https://www.glocke.de/event/bremer-philharmoniker-time-to-shine-11-philharmonisches-konzert/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen",
@@ -297,19 +285,17 @@
       "title": "»Luciano - 3 Tenöre feiern eine Legende«",
       "venue_hall": "Kleiner Saal",
       "program": [
-        "Verdi: Various Arien",
-        "Puccini: Various Arien",
-        "Donizetti: Various Arien"
+        "Verdi: Selected Arias",
+        "Puccini: Selected Arias",
+        "Donizetti: Selected Arias"
       ],
       "performers": [
         "Johannes Groß",
         "Oscar Marin",
-        "Ricardo Marinello",
-        "Claudia Hirschfeld",
-        "Thomas Gerres"
+        "Ricardo Marinello"
       ],
       "conductor": "Claudia Hirschfeld",
-      "price": "49,00 € Normal",
+      "price": "ab €44",
       "detail_url": "https://www.glocke.de/event/luciano-3-tenoere-feiern-eine-legende/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen",
@@ -321,13 +307,7 @@
       "title": "Flamenco - Rosas Negras",
       "venue_hall": "Kleiner Saal",
       "program": [
-        "Manuel Reina: Tanz",
-        "Blanca Nieves: Tanz",
-        "Celedonio Garrido: Gesang",
-        "Javi Castrillon: Gesang",
-        "Gilberto Torres: Gitarre und E-Gitarre",
-        "Josel: Gitarre und E-Bass",
-        "Antonio »El Pumuki«: Perkussion"
+        "Reina: Flamenco Performance"
       ],
       "performers": [
         "Manuel Reina",
@@ -339,7 +319,7 @@
         "Antonio »El Pumuki«"
       ],
       "conductor": null,
-      "price": "49,00 € Normal, 39,00 € Ermäßigt, 39,00 € Normal, 29,00 € Ermäßigt, 29,00 € Normal, 19,00 € Ermäßigt",
+      "price": "49,00 € Normal, 39,00 € Ermäßigt, 29,00 € Normal, 19,00 € Ermäßigt",
       "detail_url": "https://www.glocke.de/event/flamenco-rosas-negras-2/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen",
@@ -402,7 +382,7 @@
         "Bremer Philharmoniker"
       ],
       "conductor": "Katharina Wincor",
-      "price": "22,00 € Normal",
+      "price": "22,00 € Normal\n17,50 € Ermäßigt\n10,50 € für junge Leute bis einschließlich 27 Jahre",
       "detail_url": "https://www.glocke.de/event/bremer-philharmoniker-its-magic-5nachsechs-afterwork-konzert/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen",
@@ -425,17 +405,18 @@
       "is_classical": true
     }
   ],
-  "total_events": 20,
-  "total_events_visible": 39,
-  "total_events_discovered": 39,
-  "total_events_discovered_strict": 39,
+  "total_events": 19,
+  "total_events_visible": 60,
+  "total_events_discovered": 20,
+  "total_events_discovered_strict": 20,
   "source": "firecrawl_listing",
   "map_expand_stats": {
     "map_urls": 0,
-    "new_urls": 0,
-    "scraped": 0,
+    "html_urls": 20,
+    "new_urls": 1,
+    "scraped": 1,
     "past": 0,
-    "invalid": 0,
+    "invalid": 1,
     "canceled": 0
   }
 }

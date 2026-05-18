@@ -3,7 +3,7 @@
   "city": "Berlin",
   "slug": "konzerthaus_berlin",
   "source_url": "https://www.konzerthaus.de/de/programm",
-  "scraped_at": "2026-05-18T05:13:15.604669Z",
+  "scraped_at": "2026-05-18T11:20:54.121268Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -21,7 +21,7 @@
         "Elisabeth Brauß"
       ],
       "conductor": null,
-      "price": "Tickets",
+      "price": null,
       "detail_url": "https://www.konzerthaus.de/de/programm/espresso-konzert/11719",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -37,7 +37,7 @@
       ],
       "performers": [],
       "conductor": null,
-      "price": "Tickets",
+      "price": null,
       "detail_url": "https://www.konzerthaus.de/de/programm/berliner-operngruppe/12411",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -56,10 +56,12 @@
       "performers": [
         "Liza Ferschtman",
         "Benjamin Hochman",
-        "Künstlerinnen des Curtis Institute of Music"
+        "Leah Amory",
+        "Davin Mar",
+        "Carson Ling-Efird"
       ],
       "conductor": null,
-      "price": "Tickets",
+      "price": null,
       "detail_url": "https://www.konzerthaus.de/de/programm/beethovens-geistertrio-und-brahms-klavierquintett/12412",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -71,7 +73,7 @@
       "title": "Herz über Kopf: Mahlers Fünfte",
       "venue_hall": "Werner-Otto-Saal",
       "program": [
-        "Mahler: Symphonie Nr. 5"
+        "Mahler: Sinfonie Nr. 5"
       ],
       "performers": [
         "Charly Hübner",
@@ -93,7 +95,7 @@
       "program": [
         "Sergej Rachmaninow: Prélude E-Dur op. 3 Nr. 3",
         "Sergej Rachmaninow: Etude-Tableau C-Dur op. 33 Nr. 2",
-        "Sergej Rachmaninow: Prélude Es-Durl op. 23 Nr. 6",
+        "Sergej Rachmaninow: Prélude Es-Dur op. 23 Nr. 6",
         "Sergej Rachmaninow: Prélude gis-Moll op. 32 Nr. 12",
         "Sergej Rachmaninow: Prélude D-Dur op. 23 Nr. 4",
         "Alexander Skrjabin: Etüde dis-Moll op. 8 Nr.12",
@@ -108,7 +110,7 @@
         "Irina Lankova"
       ],
       "conductor": null,
-      "price": "Tickets",
+      "price": null,
       "detail_url": "https://www.konzerthaus.de/de/programm/irina-lankova/12373",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -134,7 +136,7 @@
       "is_classical": true
     },
     {
-      "date": "2026-05-21",
+      "date": "2026-05-22",
       "time": "20:00",
       "title": "Konzerthausorchester Berlin, Joana Mallwitz",
       "venue_hall": "Großer Saal",
@@ -170,8 +172,8 @@
         "Martin Egidi",
         "Christian Jost"
       ],
-      "conductor": null,
-      "price": "Tickets",
+      "conductor": "Christian Jost",
+      "price": null,
       "detail_url": "https://www.konzerthaus.de/de/programm/2-x-horen/11722",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -185,7 +187,7 @@
       "program": [],
       "performers": [],
       "conductor": null,
-      "price": "Tickets",
+      "price": "3 Euro zzgl. Webgebühr (begrenzte Teilnehmerzahl) zzgl. Systemgebühr",
       "detail_url": "https://www.konzerthaus.de/de/programm/fuhrung-durch-das-konzerthaus-berlin/12011",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -234,7 +236,7 @@
         "Anna Kirichenko"
       ],
       "conductor": null,
-      "price": "Tickets",
+      "price": null,
       "detail_url": "https://www.konzerthaus.de/de/programm/kammermusikmatinee-des-konzerthausorchesters/11534",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -250,7 +252,7 @@
       ],
       "performers": [],
       "conductor": null,
-      "price": "Tickets",
+      "price": null,
       "detail_url": "https://www.konzerthaus.de/de/programm/berliner-singakademie/12330",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -272,7 +274,7 @@
         "Bine Katrine Bryndorf"
       ],
       "conductor": null,
-      "price": "Tickets",
+      "price": "15 Euro",
       "detail_url": "https://www.konzerthaus.de/de/programm/orgel-matinee-am-pfingstmontag/11723",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -297,7 +299,7 @@
         "NUNC Akademie"
       ],
       "conductor": null,
-      "price": "Tickets",
+      "price": "12 / 17 EUR zzgl. VVG/ Studenten 8 EUR zzgl. VVG",
       "detail_url": "https://www.konzerthaus.de/de/programm/berlin-asian-music-festival-bamf-drei-abende-vier-lander-eine-gemeinsame-klangsprache/12720",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -338,13 +340,14 @@
         "Bryce Dessner: „Aheym“ für Streichquartett"
       ],
       "performers": [
+        "Quatuor Zaïde",
         "Charlotte Maclet",
         "Leslie Boulin Raulet",
         "Céline Tison",
         "Juliette Salmona"
       ],
       "conductor": null,
-      "price": "Tickets",
+      "price": null,
       "detail_url": "https://www.konzerthaus.de/de/programm/quatuor-zaide/11535",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -356,17 +359,17 @@
       "title": "Berlin Asian Music Festival (BAMF)\\ Drei Abende. Vier Länder. Eine gemeinsame Klangsprache.",
       "venue_hall": "Kleiner Saal",
       "program": [
-        "Daeseong Kim: Atem & Arirang",
-        "Kyungshin Im: Atem & Arirang",
-        "Junehee Lim: Atem & Arirang",
-        "Sunlak Noh: Atem & Arirang"
+        "Kim: Werk von Daeseong Kim",
+        "Im: Werk von Kyungshin Im",
+        "Lim: Werk von Junehee Lim",
+        "Noh: Werk von Sunlak Noh"
       ],
       "performers": [
         "4 Jit",
         "Ensemble NUNC"
       ],
       "conductor": null,
-      "price": "Tickets",
+      "price": "12 / 17 EUR zzgl. VVG/ Studenten 8 EUR zzgl. VVG",
       "detail_url": "https://www.konzerthaus.de/de/programm/berlin-asian-music-festival-bamf-drei-abende-vier-lander-eine-gemeinsame-klangsprache/12721",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -378,110 +381,21 @@
       "title": "Dresdner Residenz Orchester",
       "venue_hall": "Großer Saal",
       "program": [
-        "Vivaldi: Le quattro stagioni (Die vier Jahreszeiten) – Vier Konzerte für Violine, Streicher und Basso continuo op. 8 Nr. 1–4",
-        "Beethoven: Sinfonie Nr. 5 c-Moll op. 67"
+        "Beethovens 5. Sinfonie & Vivaldi – Die vier Jahreszeiten"
       ],
-      "performers": [
-        "Dresdner Residenz Orchester",
-        "Elias David Moncado",
-        "Igor Malinovsky"
-      ],
-      "conductor": "Igor Malinovsky",
-      "price": "Tickets",
+      "performers": [],
+      "conductor": null,
+      "price": null,
       "detail_url": "https://www.konzerthaus.de/de/programm/dresdner-residenz-orchester/12385",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
       "is_classical": true
     },
     {
-      "date": "2026-05-28",
-      "time": "19:00",
-      "title": "Berlin Asian Music Festival (BAMF)\\ Drei Abende. Vier Länder. Eine gemeinsame Klangsprache.",
-      "venue_hall": "Kleiner Saal",
-      "program": [
-        "Choi: Untitled Work",
-        "Park: Untitled Work",
-        "Kim: Untitled Work"
-      ],
-      "performers": [
-        "Sanare",
-        "Ensemble NUNC",
-        "Gitarre: Jeonghyun Kim"
-      ],
-      "conductor": null,
-      "price": "Tickets",
-      "detail_url": "https://www.konzerthaus.de/de/programm/berlin-asian-music-festival-bamf-drei-abende-vier-lander-eine-gemeinsame-klangsprache/12722",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin",
-      "duration_min": 90,
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-28",
-      "time": "20:00",
-      "title": "Deutsch-Romantisches Orchester, Marina Quasha",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Franz Krommer: Konzert für zwei Klarinetten und Orchester Es-Dur op. 35",
-        "Gustav Mahler: Sinfonie Nr. 4 G-Dur für Orchester und Sopran"
-      ],
-      "performers": [
-        "Deutsch-Romantisches Orchester",
-        "Marina Quasha",
-        "Wenzel Fuchs",
-        "Matic Kuder",
-        "Christiane Karg"
-      ],
-      "conductor": "Marina Quasha",
-      "price": "Tickets",
-      "detail_url": "https://www.konzerthaus.de/de/programm/deutsch-romantisches-orchester-marina-quasha/12703",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-29",
-      "time": "19:00",
-      "title": "C. Bechstein Klavierabend",
-      "venue_hall": "Kleiner Saal",
-      "program": [
-        "Mendelssohn Bartholdy: Sechs „Lieder ohne Worte“ für Klavier op. 19",
-        "Schumann: Novellette fis-Moll op. 21 Nr. 8",
-        "Brahms: Vier Klavierstücke op. 119",
-        "Brahms: Zwei Rhapsodien op. 79",
-        "Lysenko: „Rêverie“ für Klavier Op. 13",
-        "Lysenko: Rhapsodie über ukrainische Volksthemen op. 18 Nr. 2 („Dumka-Shumka\")"
-      ],
-      "performers": [
-        "Dmytro Choni"
-      ],
-      "conductor": null,
-      "price": "Tickets",
-      "detail_url": "https://www.konzerthaus.de/de/programm/c-bechstein-klavierabend/11929",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-30",
-      "time": "13:00",
-      "title": "Führung durch das Konzerthaus Berlin",
-      "venue_hall": "Konzerthaus Berlin",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": "Ausverkauft",
-      "detail_url": "https://www.konzerthaus.de/de/programm/fuhrung-durch-das-konzerthaus-berlin/12012",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin",
-      "duration_min": 75,
-      "is_classical": true
-    },
-    {
       "date": "2026-05-30",
       "time": "16:00",
       "title": "GALA-KONZERT – 25 Jahre Internationalen Musikakademie",
-      "venue_hall": "Kleiner Saal",
+      "venue_hall": "Großer Saal",
       "program": [
         "David Popper: Ungarische Rhapsodie op. 68",
         "Muzio Clementi: Sonate op. 40 Nr. 2 h-Moll, Molto Adagio e sostenuto, Allegro con fuoco e con espressione",
@@ -490,7 +404,7 @@
         "Edward Elgar: Cellokonzert e-Moll op. 85, 1. Satz Adagio - Moderato",
         "Edward Elgar: Cellokonzert e-Moll op. 85, 4. Satz",
         "Clara Schumann: Scherzo Nr. 2 c-Moll op.14, Con fuoco",
-        "Cécile Chaminade: Six Pièces Romantiques op. 55 für Klavier vierhändig, I. Primavera, II. La chaise à porteurs, V. Danse hindoue",
+        "Cécile Chaminade: Six Pièces Romantiques op. 55 für Klavier vierhändig, I.Primavera, II. La chaise à porteurs, V. Danse hindoue",
         "Frédéric Chopin: Étude Cis-moll op. 25, Nr. 1",
         "Claude Debussy: Estampes pour piano, III. Jardins sous la pluie",
         "Antonio Vivaldi: Sonate VII in a-Moll RV 44, 2. Largo, 3. Allegro poco",
@@ -500,127 +414,60 @@
         "Henryk Wieniawski: Faust Fantasie op. 20"
       ],
       "performers": [
-        "Ferdinand Lepinat: Violoncello",
-        "Alkistis Milioni: Klavier",
-        "Xunliang Fan: Klavier",
-        "David Grünewälder: Horn",
-        "Andrey Tsvetkov: Klavier",
-        "Maddox Marsollek: Klavier",
-        "Elli Seiffert: Violoncello",
-        "Anna Braun: Violoncello",
-        "Mirjam Scholl: Klavier",
-        "Kaja Kasubaite: Klavier",
-        "Raphael Türk: Klavier",
-        "Philipp Schmidt: Violoncello",
-        "Lillian Marilley: Violine",
-        "Alina Jingchen Zhou: Violoncello",
-        "Emmy Gu: Violine"
+        "Ferdinand Lepinat",
+        "Alkistis Milioni",
+        "Xunliang Fan",
+        "David Grünewälder",
+        "Andrey Tsvetkov",
+        "Maddox Marsollek",
+        "Elli Seiffert",
+        "Anna Braun",
+        "Mirjam Scholl",
+        "Kaja Kasubaite",
+        "Raphael Türk",
+        "Philipp Schmidt",
+        "Lillian Marilley",
+        "Alina Jingchen Zhou",
+        "Emmy Gu"
       ],
       "conductor": null,
-      "price": "Tickets",
+      "price": "20 EUR zzgl. VVG/ Schüler, Studenten 10 EUR zzgl. VVG",
       "detail_url": "https://www.konzerthaus.de/de/programm/gala-konzert-25-jahre-internationalen-musikakademie/12723",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
       "is_classical": true
     },
     {
-      "date": "2026-05-31",
-      "time": "16:00",
-      "title": "Festveranstaltung Orden Pour le mérite für Wissenschaften und Künste",
-      "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [
-        "Wolf Biermann",
-        "Antje Boetius",
-        "Georges Didi-Huberman",
-        "Michael Grätzel",
-        "Christoph Markschies",
-        "Péter Nádas",
-        "Sarah Stroumsa",
-        "Uğur Şahin"
-      ],
-      "conductor": null,
-      "price": "Tickets",
-      "detail_url": "https://www.konzerthaus.de/de/programm/festveranstaltung-orden-pour-le-merite-fur-wissenschaften-und-kunste/12697",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-02",
+      "date": "2026-06-18",
       "time": "20:00",
-      "title": "Rezital Elisabeth Leonskaja",
-      "venue_hall": "Großer Saal",
+      "title": "Bryce Dessners Universum",
+      "venue_hall": "Werner-Otto-Saal",
       "program": [
-        "Johannes Brahms: Sonate C-Dur op. 1",
-        "Johannes Brahms: Sonate fis-Moll op. 2",
-        "Johannes Brahms: Sonate f-Moll op. 5"
+        "Dessner: Title of Work"
       ],
       "performers": [
-        "Elisabeth Leonskaja"
+        "Bryce Dessner",
+        "Dorothee Kalbhenn"
       ],
       "conductor": null,
-      "price": "Tickets",
-      "detail_url": "https://www.konzerthaus.de/de/programm/rezital-elisabeth-leonskaja/11725",
+      "price": "22 Euro",
+      "detail_url": "https://www.konzerthaus.de/de/programm/bryce-dessners-universum/11850",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-03",
-      "time": "14:00",
-      "title": "Espresso-Konzert",
-      "venue_hall": "Kleiner Saal",
-      "program": [
-        "Britten: Lieder",
-        "Eisler: Lieder",
-        "Korngold: Lieder",
-        "Mahler: Lieder",
-        "Schönberg: Lieder",
-        "Schönthal: Lieder",
-        "Weill: Lieder"
-      ],
-      "performers": [
-        "Valerie Eickhoff",
-        "Elenora Pertz"
-      ],
-      "conductor": null,
-      "price": "Tickets",
-      "detail_url": "https://www.konzerthaus.de/de/programm/espresso-konzert/11726",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-04",
-      "time": "13:00",
-      "title": "Führung durch das Konzerthaus Berlin",
-      "venue_hall": "Konzerthaus Berlin",
-      "program": [
-        "N/A"
-      ],
-      "performers": [
-        "N/A"
-      ],
-      "conductor": null,
-      "price": "Tickets",
-      "detail_url": "https://www.konzerthaus.de/de/programm/fuhrung-durch-das-konzerthaus-berlin/12014",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin",
-      "duration_min": 75,
       "is_classical": true
     }
   ],
-  "total_events": 27,
-  "total_events_visible": 60,
+  "total_events": 20,
+  "total_events_visible": 58,
   "total_events_discovered": 680,
   "total_events_discovered_strict": 680,
   "source": "firecrawl_listing",
   "map_expand_stats": {
     "map_urls": 680,
-    "new_urls": 653,
-    "scraped": 69,
-    "past": 67,
+    "html_urls": 0,
+    "new_urls": 661,
+    "scraped": 393,
+    "past": 390,
     "invalid": 2,
     "canceled": 0
   }
