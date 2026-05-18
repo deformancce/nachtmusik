@@ -32,6 +32,7 @@ from typing import Optional
 from urllib.parse import urlparse, urljoin
 
 from pydantic import BaseModel, Field
+import requests
 
 BASE = Path(__file__).parent.parent
 sys.path.insert(0, str(BASE.parent))
@@ -512,12 +513,14 @@ VENUE_OVERRIDES: dict[str, dict] = {
         # Season runs through ~May 2027 (~120 events).
         "actions": lambda: _cookie_and_load_more_actions(max_rounds=30, settle_ms=2500),
         "listing_target": 120,
+        "force_url_expand": True,
     },
     "glocke_bremen": {
         # Paginated listing (/page/2/, /page/3/ …): the JS loop clicks the
         # "Weiter" button to load the next batch inline until no more appear.
         # map() + HTML-anchor fallback pick up remaining event links.
         "actions": lambda: _cookie_and_load_more_actions(max_rounds=20, settle_ms=2000),
+        "force_url_expand": True,
     },
     "konzerthaus_dortmund": {
         # Full season on a single infinite-scroll page (last event July 2027).
@@ -525,6 +528,7 @@ VENUE_OVERRIDES: dict[str, dict] = {
         # LLM extracts the whole season in one pass.
         "actions": lambda: _cookie_and_load_more_actions(max_rounds=40, settle_ms=2000),
         "listing_target": 150,
+        "force_url_expand": True,
     },
     "elbphilharmonie_hamburg": {
         # Heavy cookie wall ("Alle akzeptieren") blocks all content without JS dismissal.
@@ -726,6 +730,72 @@ def _extract_event_urls_from_html(html: str, venue: dict) -> list[str]:
     return out
 
 
+def _discover_glocke_paginated_urls(venue: dict, max_pages: int = 20) -> list[str]:
+    """Discover Glocke Bremen event URLs from its WordPress pagination.
+
+    The listing is not true infinite scroll; "Weiter" maps to
+    /tickets-programm/page/2/, /page/3/, ... . Fetching those HTML pages is
+    deterministic and avoids spending Firecrawl credits just to find anchors.
+    """
+    slug = _slug(venue["name"])
+    base = "https://www.glocke.de/tickets-programm/"
+    seen: set[str] = set()
+    out: list[str] = []
+    empty_pages = 0
+    for page in range(1, max_pages + 1):
+        page_url = base if page == 1 else f"{base}page/{page}/"
+        try:
+            resp = requests.get(page_url, headers=_DE_HEADERS, timeout=20)
+            if resp.status_code >= 400:
+                break
+        except requests.RequestException as exc:
+            print(f"    [glocke-pages] failed page {page}: {exc}", flush=True)
+            break
+
+        page_urls = _extract_event_urls_from_html(resp.text, venue)
+        new_count = 0
+        for url in page_urls:
+            clean = url.split("?", 1)[0].split("#", 1)[0]
+            if clean in seen:
+                continue
+            if not is_strict_event_url(clean, venue["url"], slug):
+                continue
+            seen.add(clean)
+            out.append(clean)
+            new_count += 1
+
+        print(f"    [glocke-pages] page {page}: +{new_count} URLs", flush=True)
+        if new_count == 0:
+            empty_pages += 1
+            if empty_pages >= 2:
+                break
+        else:
+            empty_pages = 0
+    return out
+
+
+def _discover_preferred_event_urls(venue: dict, html_fallback: str | None) -> list[str]:
+    """Venue-specific URL discovery that should outrank broad site map() results."""
+    slug = _slug(venue["name"])
+    urls: list[str] = []
+    if html_fallback:
+        urls.extend(_extract_event_urls_from_html(html_fallback, venue))
+    if slug == "glocke_bremen":
+        urls.extend(_discover_glocke_paginated_urls(venue))
+
+    seen: set[str] = set()
+    deduped: list[str] = []
+    for url in urls:
+        clean = url.split("?", 1)[0].split("#", 1)[0]
+        if clean in seen:
+            continue
+        if not is_strict_event_url(clean, venue["url"], slug):
+            continue
+        seen.add(clean)
+        deduped.append(clean)
+    return deduped
+
+
 def _discover_all_event_urls(app, venue: dict) -> tuple[list[str], list[str]]:
     """
     Use Firecrawl map() to discover event-detail URLs on the venue site.
@@ -916,34 +986,49 @@ def _expand_via_map(
       (new_events, stats) where new_events is the list to APPEND to listing_events.
     """
     stats = {
-        "map_urls": 0, "html_urls": 0, "new_urls": 0,
+        "preferred_urls": 0, "map_urls": 0, "html_urls": 0, "new_urls": 0,
         "scraped": 0, "past": 0, "beyond_horizon": 0, "invalid": 0, "canceled": 0,
     }
     needed = target - len(listing_events)
     if needed <= 0:
         return [], stats
 
+    preferred_urls = _discover_preferred_event_urls(venue, html_fallback)
+    stats["preferred_urls"] = len(preferred_urls)
+    if preferred_urls:
+        print(f"    [map-expand] preferred discovery: {len(preferred_urls)} URLs", flush=True)
+
     loose_urls, strict_urls = _discover_all_event_urls(app, venue)
-    map_urls = strict_urls if strict_urls else loose_urls
+    map_urls = strict_urls or loose_urls
     stats["map_urls"] = len(map_urls)
-    if not map_urls and html_fallback:
-        html_urls = _extract_event_urls_from_html(html_fallback, venue)
-        stats["html_urls"] = len(html_urls)
-        if html_urls:
-            print(
-                f"    [map-expand] map() empty — mined {len(html_urls)} URLs from listing HTML",
-                flush=True,
-            )
-            map_urls = html_urls
-    if not map_urls:
-        print(f"    [map-expand] no event URLs discovered (map + html)", flush=True)
+    html_urls = _extract_event_urls_from_html(html_fallback or "", venue)
+    stats["html_urls"] = len(html_urls)
+
+    # Preferred/listing URLs first: they are the venue's visible programme order.
+    # map() often sees archives, categories or overly broad URL families.
+    discovered_urls: list[str] = []
+    seen_discovered: set[str] = set()
+    for source_urls in (preferred_urls, strict_urls, html_urls, loose_urls):
+        for url in source_urls or []:
+            clean = url.split("?", 1)[0].split("#", 1)[0]
+            if clean in seen_discovered:
+                continue
+            seen_discovered.add(clean)
+            discovered_urls.append(clean)
+
+    if not discovered_urls:
+        print(f"    [map-expand] no event URLs discovered (preferred + map + html)", flush=True)
         return [], stats
 
-    known = {e.get("detail_url") for e in listing_events if e.get("detail_url")}
-    new_urls = [u for u in map_urls if u and u not in known]
+    known = {
+        str(e.get("detail_url")).split("?", 1)[0].split("#", 1)[0]
+        for e in listing_events
+        if e.get("detail_url")
+    }
+    new_urls = [u for u in discovered_urls if u and u not in known]
     stats["new_urls"] = len(new_urls)
     print(
-        f"    [map-expand] {len(map_urls)} event URLs from map "
+        f"    [map-expand] {len(discovered_urls)} event URLs discovered "
         f"({len(new_urls)} new beyond listing); need {needed} more events",
         flush=True,
     )
@@ -1295,7 +1380,9 @@ def _scrape_one(
     new_from_map: list[dict] = []
     total_discovered_loose: int | None = total_visible
     total_discovered_strict: int | None = total_visible
-    if expand_via_map and source not in ("jsonld", "jsonld_firecrawl_html"):
+    venue_override = VENUE_OVERRIDES.get(_slug(venue["name"]), {})
+    should_expand_urls = expand_via_map or bool(venue_override.get("force_url_expand"))
+    if should_expand_urls and source not in ("jsonld", "jsonld_firecrawl_html"):
         # Only expand when listing was the source (JSON-LD is already complete).
         listing_html = listing.get("_raw_html") if isinstance(listing, dict) else None
         new_from_map, map_stats = _expand_via_map(
@@ -1303,10 +1390,16 @@ def _scrape_one(
             html_fallback=listing_html, horizon_date=horizon_date,
         )
         total_discovered_loose = (
-            map_stats.get("map_urls") or map_stats.get("html_urls") or total_visible
+            map_stats.get("preferred_urls")
+            or map_stats.get("map_urls")
+            or map_stats.get("html_urls")
+            or total_visible
         )
         total_discovered_strict = (
-            map_stats.get("map_urls") or map_stats.get("html_urls") or total_visible
+            map_stats.get("preferred_urls")
+            or map_stats.get("map_urls")
+            or map_stats.get("html_urls")
+            or total_visible
         )
     elif not skip_map:
         # Legacy stats-only path (no detail scraping).
