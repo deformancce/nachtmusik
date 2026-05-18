@@ -3,7 +3,8 @@
   "city": "Stuttgart",
   "slug": "liederhalle_stuttgart",
   "source_url": "https://liederhalle.de/eventkalender",
-  "scraped_at": "2026-05-18T06:34:41.338826Z",
+  "scraped_at": "2026-05-18T15:29:30.922154Z",
+  "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
     {
@@ -47,7 +48,7 @@
       "venue_hall": "Beethoven-Saal",
       "program": [
         "Schumann: Klavierstücke „Waldszenen“ op. 82",
-        "Chopin: Poloaise Nr. 2 op. 71",
+        "Chopin: Polonaise Nr. 2 op. 71",
         "Chopin: Ballade Nr. 4 op. 52",
         "Chopin: Sonate Nr. 3 op. 58",
         "Schubert: Impromptu D 935 op. 142/1"
@@ -128,7 +129,10 @@
       "title": "Ibrahim Selim Ile Bu Gece",
       "venue_hall": "Mozart-Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Ibrahim Selim",
+        "Sahmeran Entertainment BV"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/ibrahim-selim-ile-bu-gece",
@@ -193,7 +197,7 @@
       "program": [],
       "performers": [
         "Nizar",
-        "Shayan GbR"
+        "Shayan"
       ],
       "conductor": null,
       "price": null,
@@ -224,7 +228,7 @@
       "title": "Steve Hackett: Best of Genesis & Solo Gems 2026 Tour",
       "venue_hall": "Beethoven-Saal",
       "program": [
-        "Genesis: Greatest Hits",
+        "Hackett: Genesis‘ Greatest Hits",
         "Hackett: Solo Highlights"
       ],
       "performers": [
@@ -324,15 +328,20 @@
     }
   ],
   "total_events": 18,
-  "total_events_visible": 40,
-  "total_events_discovered": 40,
-  "total_events_discovered_strict": 40,
+  "total_events_visible": 26,
+  "total_events_discovered": 18,
+  "total_events_discovered_strict": 18,
   "source": "firecrawl_listing",
+  "latest_event_date": "2026-05-29",
+  "covers_horizon": false,
   "map_expand_stats": {
+    "preferred_urls": 18,
     "map_urls": 0,
+    "html_urls": 18,
     "new_urls": 0,
     "scraped": 0,
     "past": 0,
+    "beyond_horizon": 0,
     "invalid": 0,
     "canceled": 0
   }

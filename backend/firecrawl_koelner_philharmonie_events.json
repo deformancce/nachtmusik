@@ -3,33 +3,61 @@
   "city": "Köln",
   "slug": "koelner_philharmonie",
   "source_url": "https://www.koelner-philharmonie.de/de/konzerte",
-  "scraped_at": "2026-05-18T06:04:18.801346Z",
+  "scraped_at": "2026-05-18T14:51:46.067485Z",
+  "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
     {
       "date": "2026-05-18",
-      "time": "20:00",
-      "title": "Aurel Dawidiuk",
+      "time": "10:00",
+      "title": "SingPauseKöln",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [],
+      "performers": [
+        "Singpause Köln"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/singpausekoln/9596",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 60,
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-18",
+      "time": "12:15",
+      "title": "SingPauseKöln",
       "venue_hall": "Kölner Philharmonie",
       "program": [
-        "Bach: Toccata und Fuge für Orgel d-Moll BWV 565",
-        "Zsigmond Szathmáry: B-A-C-H »Hommage à...« für große Orgel",
-        "Franz Liszt: Präludium und Fuge über den Namen B-A-C-H S 260/2 Zweite Fassung für Orgel",
-        "Charles Tournemire / Maurice Duruflé: Improvisation sur le Te Deum aus: Cinq Improvisations für Orgel. Transkription von Maurice Duruflé",
-        "Bach / Maurice Duruflé: »Ertöt uns durch dein Güte« Choral aus der Kantate »Jesus nahm zu sich die Zwölfe« BWV 22 Transkription für Orgel von Maurice Duruflé",
-        "César Franck: Choral Nr. 3 a-Moll FWV 40 aus: Trois Chorals FWV 38–40 für große Orgel mit obligatem Pedal",
-        "Bach / Maurice Duruflé: »Jesu bleibet meine Freude« Choral aus der Kantate »Herz und Mund und Tat und Leben« BWV 147 Transkription für Orgel von Maurice Duruflé",
-        "Charles Tournemire / Maurice Duruflé: Choral-Improvisation sur le Victimae paschali aus: Cinq Improvisations für Orgel. Transkription von Maurice Duruflé"
+        "Singpause Köln"
+      ],
+      "performers": [
+        "SingPauseKöln e.V."
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/singpausekoln/9597",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-18",
+      "time": "20:00",
+      "title": "Aurel Dawidiuk",
+      "venue_hall": null,
+      "program": [
+        "Orgel Plus..."
       ],
       "performers": [
         "Aurel Dawidiuk"
       ],
       "conductor": null,
-      "price": "€ 34,-",
+      "price": null,
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/aurel-dawidiuk/4603",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
-      "duration_min": 95,
       "is_classical": true
     },
     {
@@ -38,12 +66,13 @@
       "title": "Jörg Widmann | Isabelle Faust | Jean-Guihen Queyras | Pierre-Laurent Aimard",
       "venue_hall": null,
       "program": [
-        "Widmann: Quatuor pour la fin du Temps"
+        "Quatuor pour la fin du Temps"
       ],
       "performers": [
         "Isabelle Faust",
         "Jean-Guihen Queyras",
-        "Pierre-Laurent Aimard"
+        "Pierre-Laurent Aimard",
+        "Jörg Widmann"
       ],
       "conductor": null,
       "price": null,
@@ -73,7 +102,7 @@
         "Carola Kärcher"
       ],
       "conductor": "Oscar Jockel",
-      "price": "€ 20,-",
+      "price": "€20",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/klassik-mal-anders-heute-schon-gelacht/4872",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
@@ -107,7 +136,9 @@
       "time": "15:00",
       "title": "singOUT Köln 2026",
       "venue_hall": "Kölner Philharmonie",
-      "program": [],
+      "program": [
+        "singOUT Köln 2026"
+      ],
       "performers": [
         "Lerato Shadare",
         "Ron Lyles",
@@ -121,7 +152,6 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/singout-koln-2026/9097",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
-      "duration_min": 120,
       "is_classical": true
     },
     {
@@ -129,7 +159,9 @@
       "time": "20:00",
       "title": "singOUT Köln 2026",
       "venue_hall": "Kölner Philharmonie",
-      "program": [],
+      "program": [
+        "singOUT Köln 2026"
+      ],
       "performers": [
         "Lerato Shadare",
         "Ron Lyles",
@@ -190,23 +222,37 @@
       "is_classical": false
     },
     {
+      "date": "2026-05-27",
+      "time": "10:30",
+      "title": "SingPauseKöln",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Singpause Köln"
+      ],
+      "performers": [
+        "SingPauseKöln e.V."
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/singpausekoln/9598",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "is_classical": true
+    },
+    {
       "date": "2026-05-28",
       "time": "12:00",
       "title": "PhilharmonieLunch",
-      "venue_hall": "Kölner Philharmonie",
+      "venue_hall": null,
       "program": [
-        "Mendelssohn Bartholdy: Auszüge aus: Musik zu »Ein Sommernachtstraum« op. 61"
+        "WDR Sinfonieorchester"
       ],
-      "performers": [
-        "WDR Sinfonieorchester",
-        "Marie Jacquot"
-      ],
-      "conductor": "Marie Jacquot",
+      "performers": [],
+      "conductor": null,
       "price": "Eintritt frei",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonielunch/4930",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
-      "duration_min": 30,
       "is_classical": true
     },
     {
@@ -215,16 +261,18 @@
       "title": "Marie Jacquot – Sommernachtsträume",
       "venue_hall": "Kölner Philharmonie",
       "program": [
-        "Purcell: Suite aus The Fairy Queen Z 629",
+        "Purcell: Suite aus „The Fairy Queen“ Z 629",
         "Kristine Tjøgersen: Wolpertinger",
-        "Mendelssohn Bartholdy: Musik zu Ein Sommernachtstraum op. 61"
+        "Mendelssohn Bartholdy: Musik zu „Ein Sommernachtstraum“ op. 61"
       ],
       "performers": [
         "Kathrin Zukowski",
         "Susan Zarrabi",
         "Damen des NDR Vokalensembles",
         "Damen des WDR Rundfunkchores",
-        "WDR Sinfonieorchester"
+        "WDR Sinfonieorchester",
+        "Marie Jacquot",
+        "Jens Harzer"
       ],
       "conductor": "Marie Jacquot",
       "price": "€ 24,- bis 67,-",
@@ -240,37 +288,861 @@
       "title": "Marie Jacquot – Sommernachtsträume",
       "venue_hall": "Kölner Philharmonie",
       "program": [
-        "Henry Purcell: Suite aus 'The Fairy Queen' Z 629",
-        "Kristine Tjøgersen: Wolpertinger",
-        "Felix Mendelssohn Bartholdy: Musik zu 'Ein Sommernachtstraum' op. 61"
+        "Purcell: Suite aus »The Fairy Queen« Z 629",
+        "Tjøgersen: Wolpertinger",
+        "Mendelssohn: Musik zu »Ein Sommernachtstraum« op. 61"
       ],
       "performers": [
         "Kathrin Zukowski",
         "Susan Zarrabi",
         "Damen des NDR Vokalensembles",
         "Damen des WDR Rundfunkchores",
-        "WDR Sinfonieorchester"
+        "WDR Sinfonieorchester",
+        "Marie Jacquot",
+        "Jens Harzer"
       ],
       "conductor": "Marie Jacquot",
-      "price": "€24,- bis 67,-",
+      "price": "€ 24,- bis 67,-",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/marie-jacquot-sommernachtstraume/4874",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
       "duration_min": 135,
       "is_classical": true
+    },
+    {
+      "date": "2026-05-31",
+      "time": "11:00",
+      "title": "Kölner Kantorei",
+      "venue_hall": null,
+      "program": [
+        "Johann Sebastian Bach: Messe h-Moll BWV 232"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/kolner-kantorei/4799",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-31",
+      "time": "16:00",
+      "title": "Kölner Kammerorchester",
+      "venue_hall": null,
+      "program": [
+        "Frühlingsrausch"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/kolner-kammerorchester/4894",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-31",
+      "time": "20:00",
+      "title": "Mahlers 5. Sinfonie | Beethovens 3. Klavierkonzert",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Beethoven: Konzert für Klavier und Orchester Nr. 3 c-Moll op. 37",
+        "Mahler: Sinfonie Nr. 5 cis-Moll"
+      ],
+      "performers": [
+        "Alice Sara Ott",
+        "Konzerthausorchester Berlin"
+      ],
+      "conductor": "Joana Mallwitz",
+      "price": "€ 20,- bis 80,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/mahlers-5-sinfonie-beethovens-3-klavierkonzert/4765",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 150,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-01",
+      "time": "20:00",
+      "title": "La Nuit d’Afrique – From Sahel to Rhine",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "La Nuit d’Afrique - From Sahel to Rhine"
+      ],
+      "performers": [
+        "Baaba Maal",
+        "Wolfgang Niedecken",
+        "Bakane Seck",
+        "Mike Herting",
+        "Élida Almeida",
+        "Marcus Schinkel",
+        "Pape Samory Seck",
+        "Melane Mosaic Project"
+      ],
+      "conductor": "Wolfgang Niedecken",
+      "price": "€34,40 bis 69,60",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/la-nuit-dafrique-from-sahel-to-rhine/9167",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-02",
+      "time": "20:00",
+      "title": "Anne-Sophie Mutter",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "André Previn: Violinkonzert Nr. 2 mit zwei Cembalo-Interludien",
+        "Wolfgang Amadeus Mozart: Konzert für Violine und Orchester Nr. 1 B-Dur KV 207",
+        "Aftab Darvishi: Likoo für Solo-Violine",
+        "Wolfgang Amadeus Mozart: Konzert für Violine und Orchester Nr. 5 A-Dur KV 219"
+      ],
+      "performers": [
+        "Anne-Sophie Mutter",
+        "Berliner Barock Solisten"
+      ],
+      "conductor": null,
+      "price": "€ 38,- bis 175,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/anne-sophie-mutter/4786",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-03",
+      "time": "20:00",
+      "title": "Jazzchor der Uni Bonn | Second Circle",
+      "venue_hall": null,
+      "program": [
+        "»A Human Heart« – Ein Menschenleben in Musik"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/jazzchor-der-uni-bonn-second-circle/4761",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-04",
+      "time": "16:00",
+      "title": "Richard Wagner: Götterdämmerung",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Richard Wagner: Götterdämmerung WWV 86D"
+      ],
+      "performers": [
+        "Young Woo Kim (Siegfried)",
+        "Johannes Kammler (Gunther)",
+        "Daniel Schmutzhard (Alberich)",
+        "Patrick Zielke (Hagen)",
+        "Åsa Jäger (Brünnhilde)",
+        "Sophia Brommer (Gutrune)",
+        "Olivia Vermeulen (Waltraute)",
+        "Jasmin Etminan (Erste Norn)",
+        "Marie Luise Dreßen (Zweite Norn)",
+        "Valentina Farcas (Dritte Norn)",
+        "Ania Vegry (Woglinde)",
+        "Ida Aldrian (Wellgunde)",
+        "Eva Vogel (Floßhilde)",
+        "Dresdner Festspielchor der Richard-Wagner-Akademie",
+        "Chor der KlangVerwaltung",
+        "Dresdner Festspielorchester",
+        "Concerto Köln"
+      ],
+      "conductor": "Kent Nagano",
+      "price": "€ 43,- bis 148,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/richard-wagner-gotterdammerung/4731",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 100,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-05",
+      "time": "19:00",
+      "title": "WDR Happy Hour – Mozart",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Mozart: Haffner-Serenade KV 250 (248b)"
+      ],
+      "performers": [
+        "José Maria Blumenschein",
+        "WDR Sinfonieorchester"
+      ],
+      "conductor": "Reinhard Goebel",
+      "price": "€ 12,- bis 21,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/wdr-happy-hour-mozart/4875",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 75,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-06",
+      "time": "20:00",
+      "title": "\"HEROES\" – Alexander Scheer singt David Bowie",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "\"HEROES\" – Alexander Scheer singt David Bowie"
+      ],
+      "performers": [
+        "Alexander Scheer",
+        "Fee Aviv Dubois",
+        "Steve Patuta",
+        "Fabian Leu",
+        "Steffen Kieslich"
+      ],
+      "conductor": null,
+      "price": "€ 61,65 bis 82,05",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/heroes-alexander-scheer-singt-david-bowie/9150",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-07",
+      "time": "11:00",
+      "title": "Jugendchor St. Stephan",
+      "venue_hall": null,
+      "program": [
+        "Singen macht glücklich – Sommerkonzert 2026"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/jugendchor-st-stephan/4888",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-07",
+      "time": "20:00",
+      "title": "Jan Lisiecki | Rotterdams Philharmonisch Orkest | Lahav Shani",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Grieg: Konzert für Klavier und Orchester a-Moll op. 16",
+        "Brahms: Sinfonie Nr. 2 D-Dur op. 73"
+      ],
+      "performers": [
+        "Jan Lisiecki",
+        "Rotterdams Philharmonisch Orkest"
+      ],
+      "conductor": "Lahav Shani",
+      "price": "€ 30,- bis 148,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/jan-lisiecki-rotterdams-philharmonisch-orkest-lahav-shani/9512",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-08",
+      "time": "20:00",
+      "title": "Belcea Quartet",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Mozart: Streichquartett C-Dur KV 465 (\"6. Haydn-Quartett\", \"Dissonanzen-Quartett\")",
+        "Brett Dean: String Quartet No. 4 \"A Little Book of Prayers\" für Streichquartett (Deutsche Erstaufführung Kompositionsauftrag von KölnMusik, Cité de la Musique-Philharmonie de Paris, String Quartet Biennale Amsterdam, Wiener Konzerthaus und Ukaria Cultural Centre)",
+        "Beethoven: Streichquartett F-Dur op. 135"
+      ],
+      "performers": [
+        "Belcea Quartet",
+        "Corina Belcea",
+        "Suyeon Kang",
+        "Krzysztof Chorzelski",
+        "Antoine Lederlin"
+      ],
+      "conductor": null,
+      "price": "€ 34,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/belcea-quartet/4711",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 90,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-09",
+      "time": "20:00",
+      "title": "Julian Prégardien | Kristian Bezuidenhout",
+      "venue_hall": null,
+      "program": [
+        "»Die schöne Müllerin«"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/julian-pregardien-kristian-bezuidenhout/4725",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-10",
+      "time": "20:00",
+      "title": "Singen mit Klasse!",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Karimé: King kommt noch"
+      ],
+      "performers": [
+        "12 Kölner Grundschulklassen",
+        "Gürzenich-Orchester Köln",
+        "Mariano Chiacchiarini",
+        "Ruth Dobernecker",
+        "Maike Hiller",
+        "Johanna Risse",
+        "Clara Siegmund",
+        "Payam Yazdani",
+        "Natalija Stanković",
+        "Georgios Kolios"
+      ],
+      "conductor": "Ruth Dobernecker",
+      "price": "Mit Anmeldung",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/singen-mit-klasse/4824",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 60,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-11",
+      "time": "10:30",
+      "title": "PhilharmonieVeedel Pänz",
+      "venue_hall": "Bürgerzentrum Chorweiler",
+      "program": [
+        "Linos Piano Trio: »Tanz, tanz, tanz!«"
+      ],
+      "performers": [
+        "Linos Piano Trio",
+        "Konrad Elias-Trostmann",
+        "Vladimir Waltham",
+        "Prach Boondiskulchok",
+        "Marius Ledwig",
+        "Marieke Bröckers"
+      ],
+      "conductor": null,
+      "price": "€ 3,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonieveedel-panz/5068",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 45,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-12",
+      "time": "10:30",
+      "title": "PhilharmonieVeedel Pänz",
+      "venue_hall": "Bürgerzentrum Nippes, Altenberger Hof",
+      "program": [
+        "Linos Piano Trio: Tanz, tanz, tanz!"
+      ],
+      "performers": [
+        "Linos Piano Trio",
+        "Konrad Elias-Trostmann",
+        "Vladimir Waltham",
+        "Prach Boondiskulchok",
+        "Marius Ledwig",
+        "Marieke Bröckers"
+      ],
+      "conductor": null,
+      "price": "€ 4,- bis 8,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonieveedel-panz/5069",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 45,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-12",
+      "time": "16:00",
+      "title": "PhilharmonieVeedel Pänz",
+      "venue_hall": "Bürgerzentrum Nippes, Altenberger Hof",
+      "program": [
+        "Linos Piano Trio: Tanz, tanz, tanz!"
+      ],
+      "performers": [
+        "Linos Piano Trio",
+        "Konrad Elias-Trostmann",
+        "Vladimir Waltham",
+        "Prach Boondiskulchok",
+        "Marius Ledwig",
+        "Marieke Bröckers"
+      ],
+      "conductor": null,
+      "price": "€ 4,- bis 8,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonieveedel-panz/5070",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 45,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-12",
+      "time": "20:00",
+      "title": "Geist der Romantik – Beethoven & Mendelssohn",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Mendelssohn Bartholdy: Ouvertüre c-Moll zu \"Ruy Blas\" op. 95",
+        "Beethoven: Konzert für Klavier und Orchester Nr. 5 Es-Dur op. 73",
+        "Mendelssohn Bartholdy: Sinfonie Nr. 3 a-Moll op. 56 (\"Schottische\")"
+      ],
+      "performers": [
+        "Alexander Melnikov",
+        "WDR Sinfonieorchester"
+      ],
+      "conductor": "Maxim Emelyanychev",
+      "price": "€ 14,- bis 67,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/geist-der-romantik-beethoven-mendelssohn/4877",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 90,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "11:00",
+      "title": "PhilharmonieVeedel Pänz",
+      "venue_hall": "Bürgerzentrum Ehrenfeld (BüzE)",
+      "program": [
+        "Linos Piano Trio: \"Tanz, tanz, tanz!\""
+      ],
+      "performers": [
+        "Linos Piano Trio",
+        "Konrad Elias-Trostmann",
+        "Vladimir Waltham",
+        "Prach Boondiskulchok",
+        "Marius Ledwig",
+        "Marieke Bröckers"
+      ],
+      "conductor": null,
+      "price": "€4,- bis 8,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonieveedel-panz/5071",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 45,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "15:00",
+      "title": "PhilharmonieVeedel Pänz",
+      "venue_hall": "Bürgerzentrum Ehrenfeld (BüzE)",
+      "program": [
+        "– Tanz, tanz, tanz!"
+      ],
+      "performers": [
+        "Linos Piano Trio",
+        "Konrad Elias-Trostmann",
+        "Vladimir Waltham",
+        "Prach Boondiskulchok",
+        "Marius Ledwig",
+        "Marieke Bröckers"
+      ],
+      "conductor": null,
+      "price": "€4,- bis 8,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonieveedel-panz/5072",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 45,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "20:00",
+      "title": "The Constellation Choir & Orchestra | Sir John Eliot Gardiner",
+      "venue_hall": null,
+      "program": [
+        "Bach: Kantaten"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/the-constellation-choir-orchestra-sir-john-eliot-gardiner/4736",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-14",
+      "time": "11:00",
+      "title": "Nacht",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Dukas: Ouvertüre zum 3. Akt aus: Ariane et Barbe-Bleu",
+        "Debussy: Nuages. Modéré aus: Nocturnes L 91",
+        "Debussy: Fêtes. Animé et très rythmé aus: Nocturnes L 91",
+        "Bartók: A kékszakállú herceg vára (Herzog Blaubarts Burg) Sz 48 op. 11"
+      ],
+      "performers": [
+        "Victoria Karkacheva",
+        "Ryan McKinny",
+        "Gürzenich-Orchester Köln"
+      ],
+      "conductor": "Susanna Mälkki",
+      "price": "€ 12,- bis 60,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/nacht/4971",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-14",
+      "time": "11:00",
+      "title": "PhilharmonieVeedel Pänz",
+      "venue_hall": "COMEDIA Theater",
+      "program": [
+        "N/A"
+      ],
+      "performers": [
+        "Linos Piano Trio",
+        "Konrad Elias-Trostmann",
+        "Vladimir Waltham",
+        "Prach Boondiskulchok",
+        "Marius Ledwig",
+        "Marieke Bröckers"
+      ],
+      "conductor": null,
+      "price": "€ 4,- bis 8,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonieveedel-panz/5073",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 45,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-14",
+      "time": "14:00",
+      "title": "PhilharmonieVeedel Pänz",
+      "venue_hall": "COMEDIA Theater",
+      "program": [
+        "N/A"
+      ],
+      "performers": [
+        "Linos Piano Trio",
+        "Konrad Elias-Trostmann",
+        "Vladimir Waltham",
+        "Prach Boondiskulchok",
+        "Marius Ledwig"
+      ],
+      "conductor": "N/A",
+      "price": "€4,- bis 8,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonieveedel-panz/5074",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 45,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-14",
+      "time": "16:00",
+      "title": "Rising Stars: Trio Concept",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Boulanger: D’un soir triste",
+        "Boulanger: D’un matin de printemps",
+        "Casella: Siciliana e burlesca op. 23b",
+        "Thomas: Save Pepe",
+        "Ravel: Klaviertrio a-Moll"
+      ],
+      "performers": [
+        "Trio Concept",
+        "Edoardo Grieco",
+        "Francesco Massimino",
+        "Lorenzo Nguyen"
+      ],
+      "conductor": null,
+      "price": "€ 34,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/rising-stars-trio-concept/4707",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 70,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-14",
+      "time": "20:00",
+      "title": "Alexei Ogrintchouk | Jérôme Fruchart | Hans Eijsackers",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Haydn: Trio für Flöte, Violoncello und Klavier G-Dur Hob. XV:15",
+        "Glinka: Trio pathétique für Klavier, Klarinette und Fagott. Bearbeitung für Klavier, Oboe und Violoncello von Alexei Ogrintchouk",
+        "Beethoven: Trio für Klavier, Klarinette (oder Violine) und Violoncello B-Dur op. 11 (»Gassenhauertrio\")"
+      ],
+      "performers": [
+        "Alexei Ogrintchouk",
+        "Jérôme Fruchart",
+        "Hans Eijsackers"
+      ],
+      "conductor": null,
+      "price": "€ 34,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/alexei-ogrintchouk-jerome-fruchart-hans-eijsackers/4801",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-15",
+      "time": "20:00",
+      "title": "Nacht",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Dukas: Ouvertüre zum 3. Akt aus: Ariane et Barbe-Bleu",
+        "Debussy: Nuages. Modéré aus: Nocturnes L 91",
+        "Debussy: Fêtes. Animé et très rythmé aus: Nocturnes L 91",
+        "Bartók: A kékszakállú herceg vára (Herzog Blaubarts Burg) Sz 48 op. 11"
+      ],
+      "performers": [
+        "Victoria Karkacheva",
+        "Ryan McKinny",
+        "Gürzenich-Orchester Köln"
+      ],
+      "conductor": "Susanna Mälkki",
+      "price": "€ 12,- bis 60,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/nacht/4972",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-16",
+      "time": "10:30",
+      "title": "PhilharmonieVeedel Pänz",
+      "venue_hall": "Bürgerhaus Kalk",
+      "program": [
+        "Komponist: Tanz, tanz, tanz!"
+      ],
+      "performers": [
+        "Linos Piano Trio",
+        "Konrad Elias-Trostmann",
+        "Vladimir Waltham",
+        "Prach Boondiskulchok",
+        "Marius Ledwig",
+        "Marieke Bröckers"
+      ],
+      "conductor": null,
+      "price": "€ 4,- bis 8,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonieveedel-panz/5075",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 45,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-16",
+      "time": "15:00",
+      "title": "PhilharmonieVeedel Pänz",
+      "venue_hall": "Bürgerhaus Kalk",
+      "program": [
+        "Tanz, tanz, tanz!"
+      ],
+      "performers": [
+        "Linos Piano Trio",
+        "Konrad Elias-Trostmann",
+        "Vladimir Waltham",
+        "Prach Boondiskulchok",
+        "Marius Ledwig",
+        "Marieke Bröckers"
+      ],
+      "conductor": null,
+      "price": "€ 4,- bis 8,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonieveedel-panz/5076",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 45,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-16",
+      "time": "20:00",
+      "title": "Gürzenich-Orchester Köln: »Bock auf Klassik?!«",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Dukas: Ouvertüre zum 3. Akt aus: Ariane et Barbe-Bleu",
+        "Debussy: Nuages. Modéré aus: Nocturnes L 91",
+        "Debussy: Fêtes. Animé et très rythmé aus: Nocturnes L 91",
+        "Bartók: A kékszakállú herceg vára (Herzog Blaubarts Burg) Sz 48 op. 11"
+      ],
+      "performers": [
+        "Victoria Karkacheva",
+        "Ryan McKinny",
+        "Gürzenich-Orchester Köln"
+      ],
+      "conductor": "Susanna Mälkki",
+      "price": null,
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/gurzenich-orchester-koln-bock-auf-klassik/4973",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-19",
+      "time": "20:00",
+      "title": "Musik der Zeit #HOTPINK",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Strawinsky: Variations. Aldous Huxley in memoriam für Orchester",
+        "Kryeziu: Timestamps – everything leaves a Trace für Orchester",
+        "Strawinsky: Agon Ballett für zwölf Tänzer",
+        "Paxton: Tunes to Live With für Jazz Voice, Big Band und Sinfonieorchester"
+      ],
+      "performers": [
+        "Sofia Jernberg",
+        "WDR Big Band",
+        "WDR Sinfonieorchester"
+      ],
+      "conductor": "Jonathan Stockhammer",
+      "price": "€ 33,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/musik-der-zeit-hotpink/4879",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-20",
+      "time": "20:00",
+      "title": "Stadtgeklimper & Friends",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Stadtgeklimper & Friends"
+      ],
+      "performers": [
+        "Thelonious Herrmann \"Stadtgeklimper\""
+      ],
+      "conductor": null,
+      "price": "€ 28,- bis 36,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/stadtgeklimper-friends/4763",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-21",
+      "time": "11:00",
+      "title": "Kölner Bürgerorchester",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Strauß: Ouvertüre aus: Der Zigeunerbaron",
+        "Schubert: Allegro moderato",
+        "Prokofjew: Marsch aus: Die Liebe zu den drei Orangen op. 33a",
+        "Tschaikowsky: Suite aus \"Der Schwanensee\" op. 20 CS 12 Auswahl",
+        "Tschaikowsky: Suite aus \"Der Nussknacker\" op. 71 Auswahl",
+        "Dvořák: Nr. 8 g-Moll op. 46,8 aus: Slawische Tänze. I. Reihe op. 46 B 83 für Orchester",
+        "Brahms: Nr. 20 e-Moll. Poco allegretto aus: Ungarische Tänze WoO 1 für Klavier zu vier Händen",
+        "Lumbye: Kjöbenhavns Jernbane-Damp-Galop (Kopenhagener Einbahndampf-Galopp)"
+      ],
+      "performers": [
+        "Kölner Bürgerorchester",
+        "Gürzenich-Orchester Köln",
+        "Mariano Chiacchiarini"
+      ],
+      "conductor": "Mariano Chiacchiarini",
+      "price": "€12,- bis 31,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/kolner-burgerorchester/4974",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-21",
+      "time": "16:00",
+      "title": "Deutz-Chor Köln",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Best Of Musical"
+      ],
+      "performers": [
+        "Milica Jovanović",
+        "Martin Markert",
+        "Frauenchor Belcanta Bonn",
+        "Kammerchor Collegium Cantandi",
+        "DEUTZ-Frauen-After-Work-Chor",
+        "DEUTZ-Chor Köln",
+        "Nordwestdeutsche Philharmonie"
+      ],
+      "conductor": "Heinz Walter Florin",
+      "price": "€42,- bis 59,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/deutz-chor-koln/4880",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-21",
+      "time": "20:00",
+      "title": "Håkan Hardenberger | Mahler Chamber Orchestra | Daniel Harding",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Haydn: Sinfonie B-Dur Hob. I:85 (\"La Reine\")",
+        "Haydn: Konzert für Trompete (Clarino) und Orchester Es-Dur Hob. VIIe:1",
+        "Hummel: Konzert für Trompete und Orchester E-Dur s49/WoO 1",
+        "Beethoven: Sinfonie Nr. 4 B-Dur op. 60"
+      ],
+      "performers": [
+        "Håkan Hardenberger",
+        "Mahler Chamber Orchestra"
+      ],
+      "conductor": "Daniel Harding",
+      "price": "€ 12,- bis 79,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/hakan-hardenberger-mahler-chamber-orchestra-daniel-harding/4735",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-22",
+      "time": "20:00",
+      "title": "Barbara Kozelj | Ensemble Musikfabrik | Bas Wiegers",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Henze: Apollo et Hyazinthus",
+        "Neuwirth: quasare/pulsare II",
+        "Henze: Sonate für sechs Spieler",
+        "Kühr: Ohne Antwort",
+        "Henze: El Rey de Harlem (1979)"
+      ],
+      "performers": [
+        "Barbara Kozelj",
+        "Benjamin Kobler",
+        "Ensemble Musikfabrik"
+      ],
+      "conductor": "Bas Wiegers",
+      "price": "€ 34,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/barbara-kozelj-ensemble-musikfabrik-bas-wiegers/4848",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "duration_min": 120,
+      "is_classical": true
     }
   ],
-  "total_events": 11,
-  "total_events_visible": 87,
-  "total_events_discovered": 4055,
-  "total_events_discovered_strict": 4055,
+  "total_events": 50,
+  "total_events_visible": 93,
+  "total_events_discovered": 50,
+  "total_events_discovered_strict": 50,
   "source": "firecrawl_listing",
+  "latest_event_date": "2026-06-22",
+  "covers_horizon": false,
   "map_expand_stats": {
+    "preferred_urls": 50,
     "map_urls": 4055,
-    "new_urls": 4044,
-    "scraped": 117,
-    "past": 117,
-    "invalid": 0,
+    "html_urls": 50,
+    "new_urls": 4029,
+    "scraped": 90,
+    "past": 62,
+    "beyond_horizon": 0,
+    "invalid": 8,
     "canceled": 0
   }
 }

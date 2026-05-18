@@ -3,7 +3,8 @@
   "city": "Essen",
   "slug": "philharmonie_essen",
   "source_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/",
-  "scraped_at": "2026-05-18T05:46:45.045056Z",
+  "scraped_at": "2026-05-18T14:40:27.327089Z",
+  "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
     {
@@ -14,9 +15,10 @@
       "program": [],
       "performers": [
         "Eva Briegel (JULI)",
-        "Mihalj Kekenj"
+        "Mihalj Kekenj",
+        "Takeover!Ensemble"
       ],
-      "conductor": null,
+      "conductor": "Mihalj Kekenj",
       "price": "ab €40",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/takeover-by-miki-und-eva-briegel-juli-151425/3177/",
       "venue": "Philharmonie Essen",
@@ -35,7 +37,7 @@
         "Mihalj Kekenj",
         "Takeover!Ensemble"
       ],
-      "conductor": "Mihalj Kekenj",
+      "conductor": null,
       "price": "ab €40",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/takeover-by-miki-und-eva-briegel-juli-151425/3178/",
       "venue": "Philharmonie Essen",
@@ -49,11 +51,13 @@
       "title": "Die Prinzen Symphonisch",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
-        "Semmel Concerts Entertainment GmbH: Alle Hits - mit großem Orchester"
+        "Various: Alle Hits - mit großem Orchester"
       ],
-      "performers": [],
+      "performers": [
+        "Die Prinzen"
+      ],
       "conductor": null,
-      "price": "€89,90",
+      "price": "ab €89.90",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/die-prinzen-symphonisch-157996/3335/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
@@ -62,14 +66,18 @@
     {
       "date": "2026-05-26",
       "time": "20:00",
-      "title": "Joana Mallwitz \\\\ Konzerthausorchester Berlin",
+      "title": "Joana Mallwitz \u0006 Konzerthausorchester Berlin",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
-        "Werke von Gustav Mahler, Ludwig van Beethoven"
+        "Gustav Mahler: Various works",
+        "Ludwig van Beethoven: Various works"
       ],
-      "performers": [],
-      "conductor": null,
-      "price": "ab €97,90",
+      "performers": [
+        "Joana Mallwitz",
+        "Konzerthausorchester Berlin"
+      ],
+      "conductor": "Joana Mallwitz",
+      "price": "ab €71.50",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/joana-mallwitzkonzerthausorchester-berlin-154813/2711/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
@@ -77,14 +85,57 @@
     },
     {
       "date": "2026-05-27",
+      "time": "09:30",
+      "title": "Hör mal, wie das klingt",
+      "venue_hall": "NATIONAL-BANK Pavillon",
+      "program": [],
+      "performers": [
+        "Veronika Aluffi",
+        "Friederike Imhorst",
+        "Judith Nayda",
+        "Ursula Henkys"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/hoer-mal-wie-das-klingt-iv-157092/3326/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 45,
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-27",
+      "time": "09:30",
+      "title": "Hör mal, wie das klingt",
+      "venue_hall": "NATIONAL-BANK Pavillon",
+      "program": [],
+      "performers": [
+        "Veronika Aluffi (Violine)",
+        "Friederike Imhorst (Viola)",
+        "Judith Nayda (Violoncello)",
+        "Ursula Henkys (Moderation, Singspiele)"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/hoer-mal-wie-das-klingt-iv-157092/3327/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 45,
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-27",
       "time": "19:00",
-      "title": "Gautier Capuçon \\\\ Sächs­ische Staats­kapelle Dresden",
+      "title": "Gautier Capuçon \u0006 Sächsische Staatskapelle Dresden",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
-        "Werke von Camille Saint-Saëns, Claude Debussy, Richard Wagner"
+        "Camille Saint-Saëns: Various works",
+        "Claude Debussy: Various works",
+        "Richard Wagner: Various works"
       ],
       "performers": [
-        "Gautier Capuçon"
+        "Gautier Capuçon",
+        "Sächsische Staatskapelle Dresden"
       ],
       "conductor": null,
       "price": "ab €45",
@@ -95,29 +146,120 @@
     },
     {
       "date": "2026-05-30",
+      "time": "17:30",
+      "title": "TIKWAH - Festival jüdischer Musik",
+      "venue_hall": "Philharmonie Essen",
+      "program": [],
+      "performers": [
+        "Daniel Hope",
+        "Shai Hoffmann",
+        "Nadine Migesel",
+        "Schüler*innen des Trialog-Projekts"
+      ],
+      "conductor": "Anja Renczikowski",
+      "price": "Eintritt frei",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/panel-160260/4132/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 60,
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-30",
       "time": "19:00",
       "title": "TIKWAH - Festival jüdischer Musik",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
-        "Daniel Hope \\\\ Berlin 1938 - das Schick­sals­jahr"
+        "Hanns Eisler: Work Title",
+        "Erwin Schuloff: Work Title",
+        "Kurt Weill: Work Title",
+        "Mischa Spoliansky: Work Title",
+        "Cole Porter: Work Title",
+        "Maurice Ravel: Work Title",
+        "Georg Kreisler: Work Title"
       ],
       "performers": [
-        "Daniel Hope"
+        "Daniel Hope",
+        "Thomas Hampson",
+        "Horst Maria Merz",
+        "Andy Findon",
+        "Noel Langley",
+        "Joscho Stephan",
+        "James Scannell",
+        "Nicola Mosca",
+        "Stéphane Logerot",
+        "Alexander Ponet",
+        "Jacques Ammon"
       ],
       "conductor": null,
-      "price": "nicht verfügbar",
+      "price": "ab €50",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/daniel-hopeberlin-1938-das-schicksalsjahr-148924/3227/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "duration_min": 150,
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-31",
+      "time": "15:00",
+      "title": "Von Tieren und Temperamenten",
+      "venue_hall": "NATIONAL-BANK Pavillon",
+      "program": [
+        "Kritikos: Jedem Tier sein Element für Flöte, Klarinette, Violoncello, Tuba, Harfe und Schlagwerk"
+      ],
+      "performers": [
+        "Celina Holz",
+        "Tristan von den Driesch",
+        "Alexander Kritikos",
+        "Anja Rapp",
+        "Juan Antonio García Díaz",
+        "Stefan Kellner",
+        "Julia Schulenburg",
+        "Sebastian Pilgrim"
+      ],
+      "conductor": null,
+      "price": "Ausverkauft",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/von-tieren-und-temperamenten-154359/3328/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 45,
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-31",
+      "time": "15:00",
+      "title": "Von Tieren und Temperamenten",
+      "venue_hall": "NATIONAL-BANK Pavillon",
+      "program": [
+        "Unbekannter Komponist: Jedem Tier sein Element für Flöte, Klarinette, Violoncello, Tuba, Harfe und Schlagwerk (Uraufführung, Auftragswerk der Philharmonie Essen)"
+      ],
+      "performers": [
+        "Celina Holz",
+        "Tristan von den Driesch",
+        "Alexander Kritikos",
+        "Anja Rapp",
+        "Juan Antonio García Díaz",
+        "Stefan Kellner",
+        "Julia Schulenburg",
+        "Sebastian Pilgrim"
+      ],
+      "conductor": null,
+      "price": "Ausverkauft",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/von-tieren-und-temperamenten-154359/3329/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 45,
       "is_classical": true
     },
     {
       "date": "2026-05-31",
       "time": "19:00",
-      "title": "Mendelssohn „Ein Sommer­nachts­traum“",
+      "title": "Mendelssohn \u0006 Ein Sommernachtsraum",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
-        "Werke von Felix Mendelssohn Bartholdy, Henry Purcell, Kristine Tjøgersen"
+        "Felix Mendelssohn Bartholdy: Various works",
+        "Henry Purcell: Various works",
+        "Kristine Tjøgersen: Various works"
       ],
       "performers": [],
       "conductor": null,
@@ -126,18 +268,388 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "is_classical": true
+    },
+    {
+      "date": "2026-06-01",
+      "time": "20:00",
+      "title": "Chilly Gonzales",
+      "venue_hall": "Alfried Krupp Saal",
+      "program": [],
+      "performers": [
+        "Chilly Gonzales"
+      ],
+      "conductor": null,
+      "price": "null",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/chilly-gonzales-161019/3649/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-03",
+      "time": "19:00",
+      "title": "Ensemble Wien-Berlin \u0006 Mozart Serenade",
+      "venue_hall": "NATIONAL-BANK Pavillon",
+      "program": [
+        "Antonín Dvorák: Various works",
+        "Luciano Berio: Various works",
+        "Vinko Globokar: Various works",
+        "Wolfgang Amadeus Mozart: Various works"
+      ],
+      "performers": [
+        "Ensemble Wien-Berlin"
+      ],
+      "conductor": null,
+      "price": "ab €35",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/ensemble-wien-berlinmozart-serenade-154355/3052/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-06",
+      "time": "08:00",
+      "title": "Orgelfahrt nach Groningen \"Auf den Spuren von Arp Schnitger\"",
+      "venue_hall": "Philharmonie Essen",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €599,00",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/orgelfahrt-nach-groningenauf-den-spuren-von-arp-sc-154844/3272/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-06",
+      "time": "19:00",
+      "title": "Orgelfahrt nach Groningen \u0006 \"Auf den Spuren von Arp Schnitger\"",
+      "venue_hall": "Alfried Krupp Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €599",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/orgelfahrt-nach-groningenauf-den-spuren-von-arp-sc-154844/3271/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-07",
+      "time": "11:00",
+      "title": "Junge Elite \u0006 Beethoven Trio",
+      "venue_hall": "NATIONAL-BANK Pavillon",
+      "program": [
+        "Franz Waxman: Various works",
+        "Ludwig van Beethoven: Various works",
+        "Niccolo Paganini: Various works",
+        "Oskar Böhme: Various works",
+        "Pjotr I. Tschaikowsky: Various works",
+        "Robert Schumann: Various works"
+      ],
+      "performers": [
+        "Beethoven Trio"
+      ],
+      "conductor": null,
+      "price": "ab €12",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/junge-elitebeethoven-trio-150000/3230/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-10",
+      "time": "10:00",
+      "title": "Sommerkonzert für Senior*innen",
+      "venue_hall": "NATIONAL-BANK Pavillon",
+      "program": [],
+      "performers": [
+        "Musethica Ensemble"
+      ],
+      "conductor": "Anja Renczikowski",
+      "price": "null",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/sommerkonzert-fuer-seniorinnen-153983/3265/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 60,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-10",
+      "time": "15:00",
+      "title": "Sommer­konzert für Senior*innen",
+      "venue_hall": "NATIONAL-BANK Pavillon",
+      "program": [],
+      "performers": [
+        "Musethica Ensemble"
+      ],
+      "conductor": "Anja Renczikowski",
+      "price": "Ausverkauft",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/sommerkonzert-fuer-seniorinnen-153983/3266/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 60,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-11",
+      "time": "20:00",
+      "title": "Igor Levit",
+      "venue_hall": "Alfried Krupp Saal",
+      "program": [
+        "Dmitri Schostakowitsch: Various works",
+        "Felix Mendelssohn Bartholdy: Various works",
+        "Franz Liszt: Various works",
+        "Maurice Ravel: Various works"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €85",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/igor-levit-158010/3650/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-12",
+      "time": "15:00",
+      "title": "Happy Hour - Roman­tische Sinfonie",
+      "venue_hall": "NATIONAL-BANK Pavillon",
+      "program": [
+        "Mendelssohn Bartholdy: Ouvertüre zu \"Ruy Blas\" op. 95",
+        "Mendelssohn Bartholdy: Sinfonie Nr. 3 a-Moll op. 56 \"Schottische\""
+      ],
+      "performers": [
+        "WDR Sinfonieorchester"
+      ],
+      "conductor": "Maxim Emelyanychev",
+      "price": "null",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/happy-hour-romantische-sinfonie-149216/3267/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 60,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-14",
+      "time": "16:00",
+      "title": "Nils Landgren \"Posaune für Alle\"",
+      "venue_hall": "Alfried Krupp Saal",
+      "program": [
+        "Carla Köllner: Uraufführung"
+      ],
+      "performers": [
+        "Nils Landgren",
+        "100 Posaunist*innen aus Essen und Umgebung"
+      ],
+      "conductor": "Carla Köllner",
+      "price": "€12,00",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/nils-landgrenposaune-fuer-alle-148400/3268/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 60,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-19",
+      "time": "10:30",
+      "title": "WDR Musik-Battle Interaktives Schulkonzert I",
+      "venue_hall": "Philharmonie Essen",
+      "program": [],
+      "performers": [
+        "Mitglieder des WDR Funkhausorchesters"
+      ],
+      "conductor": "Dayner Tayfun-Díaz",
+      "price": null,
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/wdr-musik-battleinteraktives-schulkonzert-i-163174/4121/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 60,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-19",
+      "time": "12:15",
+      "title": "WDR Musik-Battle  Interaktives Schulkonzert II",
+      "venue_hall": "NATIONAL-BANK Pavillon",
+      "program": [],
+      "performers": [
+        "Mitglieder des WDR Funkhausorchesters"
+      ],
+      "conductor": "Dayner Tayfun-Díaz",
+      "price": null,
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/wdr-musik-battleinteraktives-schulkonzert-ii-168361/4122/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 60,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-20",
+      "time": "19:00",
+      "title": "Maxim Emelyanychev: Mozart am Clavier",
+      "venue_hall": "Alfried Krupp Saal",
+      "program": [
+        "Mozart: Fantasie c-Moll, KV 475",
+        "Mozart: Sonate Nr. 14 c-Moll, KV 457",
+        "Mozart: Sonate Nr. 16 C-Dur, KV 545 \"Sonata facile\"",
+        "Mozart: Rondo Nr. 3 a-Moll, KV 511",
+        "Mozart: Sonate Nr. 18 D-Dur, KV 576"
+      ],
+      "performers": [
+        "Maxim Emelyanychev"
+      ],
+      "conductor": null,
+      "price": "35,00 €",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/maxim-emelyanychevmozart-am-clavier-153095/3234/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-22",
+      "time": "20:00",
+      "title": "Park Sounds 1",
+      "venue_hall": "Stadtgarten",
+      "program": [],
+      "performers": [
+        "Institut für Computermusik und Elektronische Medien (ICEM)",
+        "Studierende der Folkwang Universität der Künste"
+      ],
+      "conductor": null,
+      "price": "Eintritt frei",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/park-sounds-1-156026/3235/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-23",
+      "time": "20:00",
+      "title": "Park Sounds 2",
+      "venue_hall": "Stadtgarten",
+      "program": [],
+      "performers": [
+        "Institut für Computermusik und elektronische Medien (ICEM) der Folkwang Universität der Künste"
+      ],
+      "conductor": null,
+      "price": "Eintritt frei",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/park-sounds-2-156029/3236/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-24",
+      "time": "20:00",
+      "title": "Park Sounds 3",
+      "venue_hall": "Stadtgarten",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "Eintritt frei",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/park-sounds-3-156032/3237/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-25",
+      "time": "20:00",
+      "title": "Park Sounds 4",
+      "venue_hall": "Stadtgarten",
+      "program": [],
+      "performers": [
+        "ICEM (Institut für Computermusik und elektronische Medien) der Folkwang Universität der Künste"
+      ],
+      "conductor": null,
+      "price": "Eintritt frei",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/park-sounds-4-156035/3238/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-26",
+      "time": "20:00",
+      "title": "Park Sounds 5",
+      "venue_hall": "Stadtgarten",
+      "program": [],
+      "performers": [
+        "Institut für Computermusik und Elektronische Medien (ICEM) der Folkwang Universität der Künste"
+      ],
+      "conductor": null,
+      "price": "Eintritt frei",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/park-sounds-5-156038/3239/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-27",
+      "time": "19:00",
+      "title": "Ein Abend mit Anna Netrebko",
+      "venue_hall": "Alfried Krupp Saal",
+      "program": [
+        "Dvorák: Lied an den Mond",
+        "Cilea: Arie Adriana Lecouvreur aus \"Adriana Lecouvreur\"",
+        "Rimski-Korsakow: \"Zvonche zhavoronka penye\", op. 43 Nr. 1",
+        "Rimski-Korsakow: \"Velikiy tschar! Sprosi menya sto raz!\" Arie Schneeflöckchen aus \"Schneeflöckchen\"",
+        "Strauss: \"Ständchen\", op. 17 Nr. 2",
+        "Strauss: \"Morgen\", op. 27 Nr. 4",
+        "Strauss: \"Cäcilie\", op. 27 Nr. 2",
+        "Rachmaninow: Prélude cis-Moll, op. 3 Nr. 2",
+        "Rachmaninow: \"Zdes hhorosho\" (Wie schön dieser Platz), op. 21 Nr. 7",
+        "Rachmaninow: \"Ne poj, krasavica, pri mne\" (Sing nicht für mich, du schöne Magd), op. 4 Nr. 4",
+        "Delibes: \"Dôme épais le jasmin\" (Blumenduett) aus \"Lakmé\"",
+        "Tschaikowsky: Duett aus \"Pique Dame\"",
+        "Tschaikowsky: \"Zabyt' tak skoro\" (So schnell vergessen)",
+        "Tschaikowsky: \"Noc'\" (Nacht), op. 60 Nr. 9",
+        "Tschaikowsky: \"O ditja\" (O Kind), op. 63 Nr. 6",
+        "Tschaikowsky: \"Weil' ich, wie einstmals allein\", op. 73 Nr. 6",
+        "Tschaikowsky: Valse sentimentale, op. 51 Nr. 6",
+        "Leoncavallo: \"Stridono lassù\" Arie Nedda aus \"Pagliacci\"",
+        "Bellini: Rondo brillante - Variationen über ein Thema von \"I Capuleit e i Monetcchi\" (bearbeitet von Pavel Nebolsin für Klavier)",
+        "Offenbach: \"Belle nuit\" Barkarole Niklaus/Giulietta aus \"Hoffmanns Erzählungen\"",
+        "Arditi: \"Il bacio\" (Der Kuss) - Koloraturwalzer"
+      ],
+      "performers": [
+        "Anna Netrebko",
+        "Elena Maximova",
+        "Kurt Mittelfellner",
+        "Pavel Nebolsin"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/ein-abend-mit-anna-netrebko-150063/3241/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "duration_min": 120,
+      "is_classical": true
     }
   ],
-  "total_events": 7,
-  "total_events_visible": 10,
-  "total_events_discovered": 10,
-  "total_events_discovered_strict": 10,
+  "total_events": 31,
+  "total_events_visible": 16,
+  "total_events_discovered": 31,
+  "total_events_discovered_strict": 31,
   "source": "firecrawl_listing",
+  "latest_event_date": "2026-06-27",
+  "covers_horizon": false,
   "map_expand_stats": {
+    "preferred_urls": 31,
     "map_urls": 0,
-    "new_urls": 0,
-    "scraped": 0,
+    "html_urls": 31,
+    "new_urls": 17,
+    "scraped": 17,
     "past": 0,
+    "beyond_horizon": 0,
     "invalid": 0,
     "canceled": 0
   }
