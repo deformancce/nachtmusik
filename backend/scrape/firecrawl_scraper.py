@@ -822,6 +822,8 @@ def _scrape_listing_stub(app, venue: dict) -> dict:
 _HREF_RE = re.compile(r'href=["\']([^"\']+)["\']', re.IGNORECASE)
 _URL_RE = re.compile(r"https?://[^\s\"'<>)\]]+")
 _MARKDOWN_LINK_RE = re.compile(r"\]\(([^)]+)\)")
+_ISO_DATE_RE = re.compile(r"\b(20\d{2})-(\d{2})-(\d{2})\b")
+_DE_DATE_RE = re.compile(r"\b(\d{1,2})\.(\d{1,2})\.(20\d{2})\b")
 
 
 def _extract_event_urls_from_html(html: str, venue: dict) -> list[str]:
@@ -1054,6 +1056,133 @@ def _discover_preferred_event_urls(app, venue: dict, html_fallback: str | None) 
         seen.add(clean)
         deduped.append(clean)
     return deduped
+
+
+def _unix_start_of_day(day: date) -> int:
+    return int(datetime(day.year, day.month, day.day).timestamp())
+
+
+def _probe_candidate_urls(venue: dict, horizon_date: str) -> list[str]:
+    """Generate cheap discovery candidates for hard calendar sites."""
+    slug = _slug(venue["name"])
+    today = _today_date()
+    horizon = _parse_iso_date(horizon_date) or today
+    urls: list[str] = [venue["url"]]
+
+    if slug == "tonhalle_duesseldorf":
+        base = "https://www.tonhalle.de/veranstaltungen/kalender"
+        urls.extend([base, f"{base}?from=1778934644"])
+        urls.extend(f"{base}?from={_unix_start_of_day(month)}" for month in _iter_month_starts(today, horizon))
+    elif slug == "philharmonie_essen":
+        urls.append("https://www.theater-essen.de/programm/kalender/")
+        for month in _iter_month_starts(today, horizon):
+            urls.append(f"https://www.theater-essen.de/programm/kalender/{month:%Y-%m}/philharmonie-essen")
+            urls.append(
+                "https://www.theater-essen.de/programm/kalender/"
+                f"{month:%Y-%m}/philharmonie-essen?scheduleScrollTo={month:%Y-%m}-01"
+            )
+    elif slug == "liederhalle_stuttgart":
+        base = "https://liederhalle.de/eventkalender"
+        urls.extend(
+            f"{base}?tx_bbevents_events%5Barguments%5D%5BcurrentPage%5D={page}"
+            for page in range(2, 13)
+        )
+
+    seen: set[str] = set()
+    deduped: list[str] = []
+    for url in urls:
+        if url in seen:
+            continue
+        seen.add(url)
+        deduped.append(url)
+    return deduped
+
+
+def _extract_dates_from_text(text: str, horizon_date: str) -> list[str]:
+    today = _today_date()
+    horizon = _parse_iso_date(horizon_date) or today
+    out: set[str] = set()
+    for year, month, day in _ISO_DATE_RE.findall(text or ""):
+        try:
+            parsed = date(int(year), int(month), int(day))
+        except ValueError:
+            continue
+        if today <= parsed <= horizon:
+            out.add(parsed.isoformat())
+    for day, month, year in _DE_DATE_RE.findall(text or ""):
+        try:
+            parsed = date(int(year), int(month), int(day))
+        except ValueError:
+            continue
+        if today <= parsed <= horizon:
+            out.add(parsed.isoformat())
+    return sorted(out)
+
+
+def _probe_one_url(app, venue: dict, probe_url: str, horizon_date: str) -> dict:
+    slug = _slug(venue["name"])
+    formats = ["markdown", "html"]
+    result = None
+    error = None
+    try:
+        result = app.scrape(
+            probe_url,
+            formats=formats,
+            headers=_DE_HEADERS,
+            actions=_venue_actions(slug),
+        )
+    except TypeError:
+        try:
+            result = app.scrape(probe_url, formats=formats, actions=_venue_actions(slug))
+        except Exception as exc:
+            error = str(exc)
+    except Exception as exc:
+        error = str(exc)
+
+    html = _extract_html(result) if result is not None else ""
+    md = _extract_markdown(result) if result is not None else ""
+    text = "\n".join([html, md])
+    urls = _extract_event_urls_from_html(text, venue)
+    dates = _extract_dates_from_text(text, horizon_date)
+    return {
+        "url": probe_url,
+        "error": error,
+        "raw_lines": len(text.splitlines()),
+        "event_urls": len(urls),
+        "unique_event_urls": len({u.split('?', 1)[0].split('#', 1)[0] for u in urls}),
+        "first_date_seen": dates[0] if dates else None,
+        "last_date_seen": dates[-1] if dates else None,
+        "sample_urls": urls[:8],
+    }
+
+
+def _probe_discovery(app, venue: dict, horizon_date: str) -> dict:
+    slug = _slug(venue["name"])
+    print(f"\n  [probe:{slug}] {venue['name']}", flush=True)
+    probes: list[dict] = []
+    for probe_url in _probe_candidate_urls(venue, horizon_date):
+        print(f"    probe: {probe_url}", flush=True)
+        probe = _probe_one_url(app, venue, probe_url, horizon_date)
+        print(
+            f"      urls={probe['unique_event_urls']} "
+            f"lines={probe['raw_lines']} "
+            f"dates={probe['first_date_seen']}..{probe['last_date_seen']}",
+            flush=True,
+        )
+        probes.append(probe)
+
+    best = max(probes, key=lambda p: (p.get("unique_event_urls") or 0, p.get("raw_lines") or 0), default={})
+    return {
+        "venue": venue["name"],
+        "city": venue["city"],
+        "slug": slug,
+        "scraped_at": datetime.utcnow().isoformat() + "Z",
+        "scrape_horizon_date": horizon_date,
+        "best_url": best.get("url"),
+        "best_event_urls": best.get("unique_event_urls", 0),
+        "best_last_date_seen": best.get("last_date_seen"),
+        "probes": probes,
+    }
 
 
 def _discover_all_event_urls(app, venue: dict) -> tuple[list[str], list[str]]:
@@ -1721,6 +1850,7 @@ def main(
     skip_map: bool = False,
     expand_via_map: bool = False,
     discover_mode: bool = False,
+    probe_discovery: bool = False,
     enrich_count: int = 10,
     horizon_months: int = 6,
 ) -> None:
@@ -1756,7 +1886,9 @@ def main(
         print("No venues matched the filter.", file=sys.stderr)
         sys.exit(1)
 
-    if discover_mode:
+    if probe_discovery:
+        mode = "PROBE discovery (render candidate listing URLs, no event JSON overwrite)"
+    elif discover_mode:
         mode = f"DISCOVER (stub listing + {enrich_count} random enrichments per venue)"
     else:
         if expand_via_map:
@@ -1776,7 +1908,12 @@ def main(
     )
 
     n_ok = n_fail = 0
+    probe_results: list[dict] = []
     for venue in venues:
+        if probe_discovery:
+            probe_results.append(_probe_discovery(app, venue, horizon_date))
+            n_ok += 1
+            continue
         if discover_mode:
             result = _scrape_one_discover(app, venue, enrich_count=enrich_count)
         else:
@@ -1808,6 +1945,19 @@ def main(
                 f"({prog}/{result['total_events']} with program), "
                 f"discovered={disc} → {out_path.name}"
             )
+
+    if probe_discovery:
+        out_dir = BASE / "probes"
+        out_dir.mkdir(parents=True, exist_ok=True)
+        ts = datetime.utcnow().strftime("%Y-%m-%dT%H-%M-%SZ")
+        out_path = out_dir / f"firecrawl_probe_{ts}.json"
+        payload = {
+            "scraped_at": datetime.utcnow().isoformat() + "Z",
+            "scrape_horizon_date": horizon_date,
+            "results": probe_results,
+        }
+        out_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2))
+        print(f"\nProbe report written: {out_path}")
 
     print(f"\nDone. ok={n_ok}  fail={n_fail}")
 
@@ -1845,6 +1995,15 @@ if __name__ == "__main__":
         ),
     )
     parser.add_argument(
+        "--probe-discovery",
+        action="store_true",
+        help=(
+            "Render candidate listing URLs and report URL/date coverage only. "
+            "Writes backend/probes/firecrawl_probe_*.json and does not overwrite "
+            "backend/firecrawl_*_events.json."
+        ),
+    )
+    parser.add_argument(
         "--enrich-count",
         type=int,
         default=10,
@@ -1866,6 +2025,7 @@ if __name__ == "__main__":
         skip_map=args.skip_map,
         expand_via_map=args.expand_via_map,
         discover_mode=args.discover_mode,
+        probe_discovery=args.probe_discovery,
         enrich_count=args.enrich_count,
         horizon_months=args.horizon_months,
     )
