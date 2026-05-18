@@ -503,6 +503,95 @@ def _isarphi_actions() -> list[dict]:
     ]
 
 
+_LIEDERHALLE_KLASSIK_JS = r"""
+async () => {
+  const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+  const log = [];
+
+  const cookieRe = /^(alle\s+akzeptieren|akzeptieren|alle\s+cookies\s+akzeptieren|einverstanden|zustimmen|alles\s+erlauben|alle\s+aktivieren|accept(?:\s+all)?|agree|got\s+it)$/i;
+  for (const el of document.querySelectorAll('button, a, [role="button"], input[type="button"]')) {
+    const t = (el.textContent || el.value || '').trim();
+    if (!t || t.length > 60) continue;
+    if (cookieRe.test(t)) {
+      try { el.click(); log.push('cookie:' + t); break; } catch (e) {}
+    }
+  }
+  await sleep(900);
+
+  const klassikRe = /klassik\s*\/\s*kultur/i;
+  let filterClicked = false;
+
+  // Open any category dropdown/filter control that mentions Klassik/Kultur.
+  for (const el of document.querySelectorAll('button, a, [role="button"], [role="combobox"], .select, .dropdown, label')) {
+    const t = (el.textContent || '').replace(/\s+/g, ' ').trim();
+    if (klassikRe.test(t) || /kategorie|genre|filter/i.test(t)) {
+      try {
+        el.scrollIntoView({block: 'center'});
+        el.click();
+        log.push('filter-open:' + t.slice(0, 40));
+        await sleep(700);
+        break;
+      } catch (e) {}
+    }
+  }
+
+  // Click the actual option if it is rendered in a dropdown/list.
+  for (const el of document.querySelectorAll('a, button, label, li, [role="option"], [role="menuitem"], [role="checkbox"]')) {
+    const t = (el.textContent || '').replace(/\s+/g, ' ').trim();
+    if (klassikRe.test(t)) {
+      try {
+        el.scrollIntoView({block: 'center'});
+        el.click();
+        filterClicked = true;
+        log.push('klassik:' + t.slice(0, 40));
+        await sleep(1400);
+        break;
+      } catch (e) {}
+    }
+  }
+  if (!filterClicked) log.push('klassik:not-found');
+
+  const loadMoreRe = /mehr\s+(laden|anzeigen|veranstaltungen|events)|weitere\s+(veranstaltungen|events)|show\s+more|load\s+more/i;
+  let lastHeight = 0;
+  let clicks = 0;
+  let rounds = 0;
+  for (let i = 0; i < 45; i++) {
+    window.scrollTo(0, document.body.scrollHeight);
+    await sleep(800);
+    for (const el of document.querySelectorAll('a, button, [role="button"]')) {
+      if (el.offsetParent === null) continue;
+      const t = (el.textContent || '').replace(/\s+/g, ' ').trim();
+      if (loadMoreRe.test(t)) {
+        try {
+          el.scrollIntoView({block: 'center'});
+          el.click();
+          clicks++;
+          await sleep(1200);
+          break;
+        } catch (e) {}
+      }
+    }
+    const h = document.body.scrollHeight;
+    rounds = i + 1;
+    if (h === lastHeight) break;
+    lastHeight = h;
+  }
+  log.push('rounds:' + rounds);
+  log.push('clicks:' + clicks);
+  log.push('height:' + document.body.scrollHeight);
+  return log.join(' | ');
+}
+"""
+
+
+def _liederhalle_actions() -> list[dict]:
+    return [
+        {"type": "wait", "milliseconds": 2000},
+        {"type": "executeJavascript", "script": _LIEDERHALLE_KLASSIK_JS},
+        {"type": "wait", "milliseconds": 2500},
+    ]
+
+
 VENUE_OVERRIDES: dict[str, dict] = {
     "berliner_philharmonie": {
         "actions": _bp_actions,
@@ -573,9 +662,8 @@ VENUE_OVERRIDES: dict[str, dict] = {
         "force_url_expand": True,
     },
     "liederhalle_stuttgart": {
-        # Event calendar lazy-loads while scrolling. Filtering by "Klassik und Kultur"
-        # can happen later; for now classify after extraction.
-        "actions": lambda: _cookie_and_load_more_actions(max_rounds=35, settle_ms=2500),
+        # Filter "Klassik / Kultur", then scroll/click "Mehr laden" to the end.
+        "actions": _liederhalle_actions,
         "listing_target": 120,
         "force_url_expand": True,
     },
