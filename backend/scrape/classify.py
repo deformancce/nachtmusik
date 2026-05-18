@@ -89,7 +89,7 @@ _NON_CLASSICAL_ARTISTS = (
     "anastacia", "tim bendzko", "rea garvey", "tina dico",
     "olegg vynnyk", "mabel matiz", "louis tomlinson",
     "steve hackett", "element of crime", "rea garvey",
-    "ibrahim selim", "bee gees", "naturally 7",
+    "ibrahim selim", "bee gees", "naturally 7", "dionne warwick",
     "die prinzen", "max raabe",  # actually max raabe is borderline cabaret
     "the constellation choir",  # not classical
     # Comedy / cabaret / spoken word

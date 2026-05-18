@@ -35,7 +35,7 @@ from pydantic import BaseModel, Field
 BASE = Path(__file__).parent.parent
 sys.path.insert(0, str(BASE.parent))
 from backend.venues_germany import get_venues_by_tier
-from backend.scrape.url_filters import filter_event_urls
+from backend.scrape.url_filters import filter_event_urls, is_strict_event_url
 from backend.scrape import jsonld_scout, raw_store
 from backend.scrape.classify import is_classical_event
 
@@ -212,7 +212,9 @@ def _build_listing_prompt(venue: dict, max_events: int) -> str:
         "- If the page shows the date only as a day-of-week + German date (e.g. 'Sa. 23.05.2026'), "
         "convert that exactly to YYYY-MM-DD. Do NOT guess or infer dates from URL slugs.\n"
         "- Skip non-concert entries: theater, dance, lectures, navigation items, season-pass upsells.\n"
-        "- detail_url must be an absolute URL (start with https://). If you cannot find one, use null."
+        "- detail_url must be an absolute URL (start with https://). Look at the href "
+        "attribute of links like 'Programmdetails', 'Mehr', 'Details', or the event-title "
+        "anchor — those point at the event's own page. If no such anchor exists, use null."
     )
 
 
@@ -472,6 +474,10 @@ VENUE_OVERRIDES: dict[str, dict] = {
         # Default _scroll_actions(n=12) stops at ~34 events. Use generic JS loop
         # which scrolls until page height stops growing.
         "actions": lambda: _cookie_and_load_more_actions(max_rounds=40, settle_ms=2000),
+        # All events live on /programm/ (map() returns 0 /veranstaltungen/ URLs),
+        # so the listing LLM has to extract everything in one pass. Default cap of
+        # 60 lost half the events — raise so we capture the full season.
+        "listing_target": 150,
     },
     "gewandhaus_leipzig": {
         "actions": _gewandhaus_actions,
@@ -625,6 +631,39 @@ def _scrape_listing_stub(app, venue: dict) -> dict:
 
 # ── Phase 1b: Site-wide discovery via map() ───────────────────────────────────
 
+_HREF_RE = re.compile(r'href=["\']([^"\']+)["\']', re.IGNORECASE)
+
+
+def _extract_event_urls_from_html(html: str, venue: dict) -> list[str]:
+    """Mine the rendered HTML for venue-strict event-detail URLs.
+
+    Some venues (festspielhaus.de) build event tiles client-side without
+    populating sitemap.xml, so Firecrawl's map() endpoint returns nothing.
+    But the rendered DOM does carry `<a href="/veranstaltungen/...">` anchors —
+    we can lift detail URLs straight from there.
+    """
+    if not html:
+        return []
+    slug = _slug(venue["name"])
+    base_url = venue["url"]
+    seen: set[str] = set()
+    out: list[str] = []
+    for match in _HREF_RE.finditer(html):
+        raw = match.group(1).strip()
+        if not raw or raw.startswith(("javascript:", "mailto:", "tel:", "#")):
+            continue
+        absolute = urljoin(base_url, raw)
+        # Strip query/fragment for dedupe — same event with ?date=... is the same page.
+        clean = absolute.split("?", 1)[0].split("#", 1)[0]
+        if clean in seen:
+            continue
+        if not is_strict_event_url(absolute, base_url, slug):
+            continue
+        seen.add(clean)
+        out.append(absolute)
+    return out
+
+
 def _discover_all_event_urls(app, venue: dict) -> tuple[list[str], list[str]]:
     """
     Use Firecrawl map() to discover event-detail URLs on the venue site.
@@ -771,6 +810,8 @@ def _expand_via_map(
     venue: dict,
     listing_events: list[dict],
     target: int,
+    *,
+    html_fallback: str | None = None,
 ) -> tuple[list[dict], dict]:
     """
     Use Firecrawl map() to discover event URLs NOT already in `listing_events`,
@@ -780,10 +821,16 @@ def _expand_via_map(
     (i.e. len(listing_events) + len(new_events) >= target) or when the map
     budget is exhausted.
 
+    When map() yields nothing and `html_fallback` is provided, we mine the
+    rendered listing HTML for venue-strict detail-page anchors instead.
+
     Returns:
       (new_events, stats) where new_events is the list to APPEND to listing_events.
     """
-    stats = {"map_urls": 0, "new_urls": 0, "scraped": 0, "past": 0, "invalid": 0, "canceled": 0}
+    stats = {
+        "map_urls": 0, "html_urls": 0, "new_urls": 0,
+        "scraped": 0, "past": 0, "invalid": 0, "canceled": 0,
+    }
     needed = target - len(listing_events)
     if needed <= 0:
         return [], stats
@@ -791,8 +838,17 @@ def _expand_via_map(
     loose_urls, strict_urls = _discover_all_event_urls(app, venue)
     map_urls = strict_urls if strict_urls else loose_urls
     stats["map_urls"] = len(map_urls)
+    if not map_urls and html_fallback:
+        html_urls = _extract_event_urls_from_html(html_fallback, venue)
+        stats["html_urls"] = len(html_urls)
+        if html_urls:
+            print(
+                f"    [map-expand] map() empty — mined {len(html_urls)} URLs from listing HTML",
+                flush=True,
+            )
+            map_urls = html_urls
     if not map_urls:
-        print(f"    [map-expand] map() returned no event URLs", flush=True)
+        print(f"    [map-expand] no event URLs discovered (map + html)", flush=True)
         return [], stats
 
     known = {e.get("detail_url") for e in listing_events if e.get("detail_url")}
@@ -1048,10 +1104,14 @@ def _scrape_one(
     # lists from Sept 2025 chronologically — first 5 would all be past).
     listing: dict = {}
     if events_raw is None:
-        # Cap target at 60 — asking the LLM for 160+ events confuses it on
+        # Default cap 60 — asking the LLM for 160+ events confuses it on
         # smaller listings (BP returned 24 instead of 63 in one observed run).
         # max_events*2 + 10 buffer for filtered-out past/canceled events.
-        listing_target = min(max(max_events * 2 + 10, 20), 60)
+        # Some venues have all events on the listing page (no map() coverage),
+        # so they need a higher cap — set via VENUE_OVERRIDES.listing_target.
+        venue_override = VENUE_OVERRIDES.get(_slug(venue["name"]), {})
+        target_cap = venue_override.get("listing_target", 60)
+        listing_target = min(max(max_events * 2 + 10, 20), target_cap)
         print(f"    phase 1a: listing scrape (firecrawl, target={listing_target}) ...", flush=True)
         listing = _scrape_listing(app, venue, listing_target) or {}
         events_raw = listing.get("events") if isinstance(listing, dict) else None
@@ -1136,9 +1196,16 @@ def _scrape_one(
     total_discovered_strict: int | None = total_visible
     if expand_via_map and source not in ("jsonld", "jsonld_firecrawl_html"):
         # Only expand when listing was the source (JSON-LD is already complete).
-        new_from_map, map_stats = _expand_via_map(app, venue, events, max_events)
-        total_discovered_loose = map_stats.get("map_urls") or total_visible
-        total_discovered_strict = map_stats.get("map_urls") or total_visible
+        listing_html = listing.get("_raw_html") if isinstance(listing, dict) else None
+        new_from_map, map_stats = _expand_via_map(
+            app, venue, events, max_events, html_fallback=listing_html,
+        )
+        total_discovered_loose = (
+            map_stats.get("map_urls") or map_stats.get("html_urls") or total_visible
+        )
+        total_discovered_strict = (
+            map_stats.get("map_urls") or map_stats.get("html_urls") or total_visible
+        )
     elif not skip_map:
         # Legacy stats-only path (no detail scraping).
         print(f"    phase 1b: site map for URL counts ...", flush=True)
