@@ -37,6 +37,7 @@ sys.path.insert(0, str(BASE.parent))
 from backend.venues_germany import get_venues_by_tier
 from backend.scrape.url_filters import filter_event_urls
 from backend.scrape import jsonld_scout, raw_store
+from backend.scrape.classify import is_classical_event
 
 
 # ── Pydantic schemas ──────────────────────────────────────────────────────────
@@ -978,6 +979,10 @@ def _scrape_one_discover(
     else:
         print(f"    phase 2: skipped (no valid URLs to enrich)", flush=True)
 
+    # Classify each event as classical (or jazz/opera/lieder) vs pop/musical/etc.
+    for ev in events:
+        ev["is_classical"] = is_classical_event(ev)
+
     payload["events"] = events
     payload["total_events"] = len(events)
     payload["total_events_visible"] = total_visible
@@ -1154,6 +1159,10 @@ def _scrape_one(
         events.sort(key=lambda e: (e.get("date") or "9999", e.get("time") or ""))
         events = events[:max_events]
         print(f"    merged: {len(events)} total events after map-expand", flush=True)
+
+    # Classify each event as classical (or jazz/opera/lieder) vs pop/musical/etc.
+    for ev in events:
+        ev["is_classical"] = is_classical_event(ev)
 
     payload["events"] = events
     payload["total_events"] = len(events)
