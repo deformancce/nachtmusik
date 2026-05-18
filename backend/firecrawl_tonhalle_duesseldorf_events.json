@@ -3,20 +3,20 @@
   "city": "Düsseldorf",
   "slug": "tonhalle_duesseldorf",
   "source_url": "https://www.tonhalle.de/veranstaltungen/kalender",
-  "scraped_at": "2026-05-18T16:18:05.348756Z",
+  "scraped_at": "2026-05-18T17:40:15.464488Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
     {
       "date": "2026-05-22",
-      "time": "00:00",
+      "time": null,
       "title": "Mendelssohn",
-      "venue_hall": "Mendelssohn-Saal",
+      "venue_hall": null,
       "program": [
-        "Mendelssohn Bartholdy: Oktett für Streicher Es-Dur op. 20"
+        "Mendelssohn: Concerto in E minor op. 64"
       ],
       "performers": [
-        "vision string quartet",
+        "Vision String",
         "Danish String Quartet"
       ],
       "conductor": null,
@@ -28,7 +28,7 @@
     },
     {
       "date": "2026-05-23",
-      "time": "00:00",
+      "time": "20:00",
       "title": "Element of Crime",
       "venue_hall": "Mendelssohn-Saal",
       "program": [],
@@ -36,7 +36,7 @@
         "Element of Crime"
       ],
       "conductor": null,
-      "price": "bereits AUSVERKAUFT",
+      "price": "Tickets ausverkauft",
       "detail_url": "https://www.tonhalle.de/veranstaltung/komet/20954-element-crime",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
@@ -44,11 +44,11 @@
     },
     {
       "date": "2026-05-30",
-      "time": "00:00",
+      "time": null,
       "title": "Melodic Lifetime",
       "venue_hall": null,
       "program": [
-        "Markus Stockhausen: Supernova"
+        "Stockhausen: Piece feat. Markus"
       ],
       "performers": [],
       "conductor": null,
@@ -60,7 +60,7 @@
     },
     {
       "date": "2026-05-31",
-      "time": "00:00",
+      "time": "16:30",
       "title": "Schroeder geht ins Konzert",
       "venue_hall": "Mendelssohn-Saal",
       "program": [
@@ -85,11 +85,11 @@
     },
     {
       "date": "2026-06-01",
-      "time": "00:00",
+      "time": null,
       "title": "Bruce Liu",
       "venue_hall": null,
       "program": [
-        "Bruce Liu: Sommerträume"
+        "Liu: Piano Solo"
       ],
       "performers": [],
       "conductor": null,
@@ -101,14 +101,20 @@
     },
     {
       "date": "2026-06-04",
-      "time": "00:00",
+      "time": "20:00",
       "title": "Anne-Sophie Mutter",
-      "venue_hall": null,
+      "venue_hall": "Mendelssohn-Saal",
       "program": [
-        "Anne-Sophie Mutter: Liebeserklärungen"
+        "Mozart: Violinkonzert Nr. 2 mit zwei Cembalo-Interludien",
+        "Mozart: Konzert für Violine und Orchester Nr. 1 B-Dur KV 207",
+        "Darvishi: Likoo",
+        "Mozart: Konzert für Violine und Orchester Nr. 5 A-Dur KV 219"
       ],
-      "performers": [],
-      "conductor": null,
+      "performers": [
+        "Anne-Sophie Mutter",
+        "Berliner Barock Solisten"
+      ],
+      "conductor": "André Previn",
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/faszination-klassik/17576-anne-sophie-mutter",
       "venue": "Tonhalle Düsseldorf",
@@ -117,13 +123,13 @@
     },
     {
       "date": "2026-06-06",
-      "time": "00:00",
+      "time": "20:00",
       "title": "Christoph & Julian Prégardien",
       "venue_hall": "Mendelssohn-Saal",
       "program": [
-        "Schumann: Sämtliche Lieder nach Heinrich Heine (ohne »Dichterliebe«)",
+        "Robert Schumann: Sämtliche Lieder nach Heinrich Heine (ohne »Dichterliebe«)",
         "Clara Schumann: Sämtliche Lieder nach Heinrich Heine",
-        "Schubert: Ausgewählte Lieder und Duette"
+        "Franz Schubert: Ausgewählte Lieder und Duette"
       ],
       "performers": [
         "Christoph Prégardien",
@@ -139,7 +145,7 @@
     },
     {
       "date": "2026-06-07",
-      "time": "00:00",
+      "time": "11:00",
       "title": "Das symphonische Palais",
       "venue_hall": "Palais Wittgenstein",
       "program": [
@@ -164,14 +170,22 @@
     },
     {
       "date": "2026-06-07",
-      "time": "00:00",
+      "time": "11:00",
       "title": "Ravel",
-      "venue_hall": null,
+      "venue_hall": "Mendelssohn-Saal",
       "program": [
-        "JSO der Tonhalle: Big Bang Junge Tonhalle"
+        "Schumann: Ouvertüre zu Goethes \"Hermann und Dorothea\" op. 136",
+        "Willeitner: Konzert für Streichquartett und Orchester",
+        "Franck: Les Eolides / Symphonische Dichtung M 43",
+        "Debussy: Prélude à l'après-midi d'un faune",
+        "Bonis: Salomé (aus »Trois femmes de legende«)",
+        "Ravel: La Valse"
       ],
-      "performers": [],
-      "conductor": null,
+      "performers": [
+        "Jugendsinfonieorchester (JSO) der Tonhalle Düsseldorf",
+        "vision string quartet"
+      ],
+      "conductor": "Jascha von der Goltz",
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/big-bang-junge-tonhalle/17621-ravel",
       "venue": "Tonhalle Düsseldorf",
@@ -184,13 +198,13 @@
       "title": "Gewandhaus-Quartett",
       "venue_hall": "Palais Wittgenstein",
       "program": [
-        "Beethoven: Streichquartett c-Moll op. 18/4",
-        "Beethoven: Streichquartett Es-Dur op. 74 \"Harfen-Quartett\"",
-        "Schumann: Klavierquintett Es-Dur op. 44"
+        "Ludwig van Beethoven: Streichquartett c-Moll op. 18/4",
+        "Ludwig van Beethoven: Streichquartett Es-Dur op. 74 \"Harfen-Quartett\"",
+        "Robert Schumann: Klavierquintett Es-Dur op. 44"
       ],
       "performers": [
         "Gewandhaus-Quartett",
-        "Charlotte Steppes Klavier"
+        "Charlotte Steppes (Klavier)"
       ],
       "conductor": null,
       "price": null,
@@ -198,38 +212,24 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "is_classical": true
-    },
-    {
-      "date": "2026-06-08",
-      "time": "00:00",
-      "title": "Führung durch das Schumann-Haus",
-      "venue_hall": "Schumann-Haus",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.tonhalle.de/veranstaltung/schumannfest/20066-fuehrung-durch-das-schumann-haus",
-      "venue": "Tonhalle Düsseldorf",
-      "city": "Düsseldorf",
-      "is_classical": true
     }
   ],
-  "total_events": 11,
-  "total_events_visible": 10,
+  "total_events": 10,
+  "total_events_visible": 9,
   "total_events_discovered": 11,
   "total_events_discovered_strict": 11,
   "source": "firecrawl_listing",
-  "latest_event_date": "2026-06-08",
+  "latest_event_date": "2026-06-07",
   "covers_horizon": false,
   "map_expand_stats": {
     "preferred_urls": 11,
     "map_urls": 0,
     "html_urls": 11,
-    "new_urls": 1,
-    "scraped": 1,
+    "new_urls": 2,
+    "scraped": 2,
     "past": 0,
     "beyond_horizon": 0,
-    "invalid": 0,
+    "invalid": 1,
     "canceled": 0
   }
 }
