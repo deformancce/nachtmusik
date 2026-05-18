@@ -35,6 +35,10 @@ on:
         description: "Discovery mode: how many random events per venue get full program data (default 10)"
         required: false
         default: "10"
+      horizon_months:
+        description: "Scrape through month-end N months from today (default 6)"
+        required: false
+        default: "6"
 
 permissions:
   contents: write
@@ -70,8 +74,9 @@ jobs:
           EXPAND_VIA_MAP: ${{ github.event.inputs.expand_via_map }}
           DISCOVER_MODE: ${{ github.event.inputs.discover_mode }}
           ENRICH_COUNT: ${{ github.event.inputs.enrich_count }}
+          HORIZON_MONTHS: ${{ github.event.inputs.horizon_months }}
         run: |
-          ARGS=(--max-events "${MAX_EVENTS:-5}")
+          ARGS=(--max-events "${MAX_EVENTS:-5}" --horizon-months "${HORIZON_MONTHS:-6}")
           if [ -n "$SLUGS" ]; then
             ARGS+=(--only $SLUGS)
           fi

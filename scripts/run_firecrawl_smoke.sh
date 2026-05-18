@@ -22,7 +22,7 @@ fi
 
 pip3 install -q firecrawl-py pydantic 2>/dev/null || true
 
-ARGS=(--max-events 5)
+ARGS=(--max-events 5 --horizon-months "${SCRAPE_HORIZON_MONTHS:-6}")
 if [[ $# -gt 0 ]]; then
   ARGS+=(--only "$@")
 fi

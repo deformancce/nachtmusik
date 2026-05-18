@@ -46,6 +46,9 @@ class VenueCoverage:
     with_program: int
     with_date: int
     with_detail_url: int
+    scrape_horizon_date: str | None
+    latest_event_date: str | None
+    covers_horizon: bool | None
     flags: list[str] = field(default_factory=list)
 
     @property
@@ -104,6 +107,23 @@ def _analyze_file(path: Path) -> VenueCoverage:
     with_program = sum(1 for e in events if isinstance(e, dict) and e.get("program"))
     with_date = sum(1 for e in events if isinstance(e, dict) and e.get("date"))
     with_detail = sum(1 for e in events if isinstance(e, dict) and e.get("detail_url"))
+    latest_event_date = data.get("latest_event_date")
+    if not isinstance(latest_event_date, str):
+        dates = sorted(
+            e.get("date") for e in events
+            if isinstance(e, dict) and isinstance(e.get("date"), str)
+        )
+        latest_event_date = dates[-1] if dates else None
+
+    scrape_horizon_date = data.get("scrape_horizon_date")
+    if not isinstance(scrape_horizon_date, str):
+        scrape_horizon_date = None
+    covers_horizon = data.get("covers_horizon")
+    if not isinstance(covers_horizon, bool):
+        covers_horizon = (
+            bool(latest_event_date and scrape_horizon_date and latest_event_date >= scrape_horizon_date)
+            if scrape_horizon_date else None
+        )
 
     loose = data.get("total_events_discovered")
     strict = data.get("total_events_discovered_strict")
@@ -119,6 +139,8 @@ def _analyze_file(path: Path) -> VenueCoverage:
         flags.append("MISSING_PROGRAM")
     if with_date < extracted:
         flags.append("MISSING_DATE")
+    if covers_horizon is False:
+        flags.append("SHORT_HORIZON")
 
     cov = VenueCoverage(
         slug=slug,
@@ -135,6 +157,9 @@ def _analyze_file(path: Path) -> VenueCoverage:
         with_program=with_program,
         with_date=with_date,
         with_detail_url=with_detail,
+        scrape_horizon_date=scrape_horizon_date,
+        latest_event_date=latest_event_date,
+        covers_horizon=covers_horizon,
         flags=flags,
     )
 
@@ -165,6 +190,13 @@ def _fmt_pct(rate: float | None) -> str:
     return f"{rate * 100:.0f}%"
 
 
+def _fmt_horizon(row: VenueCoverage) -> str:
+    if not row.scrape_horizon_date:
+        return "—"
+    marker = "✓" if row.covers_horizon else "!"
+    return f"{marker} {row.scrape_horizon_date}"
+
+
 def build_markdown(rows: list[VenueCoverage], generated_at: str) -> str:
     lines = [
         "# Concert scrape coverage report",
@@ -178,9 +210,11 @@ def build_markdown(rows: list[VenueCoverage], generated_at: str) -> str:
         "- **map✓**: `total_events_discovered_strict` (detail-page patterns)",
         "- **ref**: legacy custom scraper total (if available)",
         "- **prog**: share of extracted events with non-empty program",
+        "- **last**: latest event date in JSON",
+        "- **hzn**: configured scrape horizon; ✓ means latest event reaches it",
         "",
-        "| Venue | ext | vis | map↓ | map✓ | ref | prog | flags |",
-        "|-------|-----|-----|------|------|-----|------|-------|",
+        "| Venue | ext | vis | map↓ | map✓ | ref | prog | last | hzn | flags |",
+        "|-------|-----|-----|------|------|-----|------|------|-----|-------|",
     ]
 
     for r in sorted(rows, key=lambda x: x.venue.lower()):
@@ -188,7 +222,8 @@ def build_markdown(rows: list[VenueCoverage], generated_at: str) -> str:
         lines.append(
             f"| {r.venue} | {r.extracted} | {_fmt_int(r.visible)} | "
             f"{_fmt_int(r.discovered_loose)} | {_fmt_int(r.discovered_strict)} | "
-            f"{_fmt_int(r.reference_total)} | {_fmt_pct(r.program_rate)} | {flag_s} |"
+            f"{_fmt_int(r.reference_total)} | {_fmt_pct(r.program_rate)} | "
+            f"{r.latest_event_date or '—'} | {_fmt_horizon(r)} | {flag_s} |"
         )
 
     lines.extend([
@@ -201,6 +236,7 @@ def build_markdown(rows: list[VenueCoverage], generated_at: str) -> str:
         "Use `--skip-map` to save 1 credit/venue.",
         "- Discovery over-count usually comes from broad `/konzerte/` / `/programm/` "
         "paths in site-wide `map()`, not from listing extraction.",
+        "- **SHORT_HORIZON**: latest event in the JSON is before the configured scrape horizon.",
         "",
     ])
     return "\n".join(lines)
@@ -219,6 +255,9 @@ def build_json(rows: list[VenueCoverage], generated_at: str) -> dict:
                 "discovered_strict": r.discovered_strict,
                 "reference_total": r.reference_total,
                 "program_rate": r.program_rate,
+                "latest_event_date": r.latest_event_date,
+                "scrape_horizon_date": r.scrape_horizon_date,
+                "covers_horizon": r.covers_horizon,
                 "noise_ratio_loose": r.noise_ratio_loose,
                 "noise_ratio_strict": r.noise_ratio_strict,
                 "flags": r.flags,

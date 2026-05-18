@@ -24,6 +24,7 @@ import json
 import os
 import re
 import sys
+import calendar
 import time
 from datetime import datetime, date
 from pathlib import Path
@@ -123,6 +124,43 @@ def _today() -> str:
     return datetime.utcnow().strftime("%Y-%m-%d")
 
 
+def _today_date() -> date:
+    return datetime.utcnow().date()
+
+
+def _end_of_month_after_months(start: date, months: int) -> date:
+    month_index = start.month - 1 + max(months, 0)
+    year = start.year + month_index // 12
+    month = month_index % 12 + 1
+    last_day = calendar.monthrange(year, month)[1]
+    return date(year, month, last_day)
+
+
+def _scrape_horizon_date(months: int | None = None) -> str:
+    if months is None:
+        try:
+            months = int(os.getenv("SCRAPE_HORIZON_MONTHS", "6"))
+        except ValueError:
+            months = 6
+    return _end_of_month_after_months(_today_date(), months).isoformat()
+
+
+def _env_int(name: str, default: int) -> int:
+    try:
+        return int(os.getenv(name, str(default)))
+    except ValueError:
+        return default
+
+
+def _parse_iso_date(value: str | None) -> date | None:
+    if not value:
+        return None
+    try:
+        return date.fromisoformat(value)
+    except ValueError:
+        return None
+
+
 def _normalise(result) -> dict:
     """Flatten a Firecrawl response into a plain dict."""
     if hasattr(result, "model_dump"):
@@ -182,20 +220,22 @@ def _scroll_actions(n: int = 12, amount: int = 3000, wait_ms: int = 700) -> list
 
 def _build_listing_prompt(venue: dict, max_events: int) -> str:
     today = _today()
+    horizon = _scrape_horizon_date()
     return (
         f"This is the concert listing page of {venue['name']} in {venue['city']}, Germany.\n"
-        f"Today's date is {today}.\n\n"
+        f"Today's date is {today}. The scrape horizon is {horizon}.\n\n"
         "IMPORTANT — the page may contain a long archive of past events shown\n"
         f"FIRST in chronological order (older months at the top). You MUST scan\n"
         f"forward past every entry dated before {today} and only START extracting\n"
         f"once you reach an event dated on or after {today}.\n"
         f"Skip any event with date < {today}, even if it appears at the top.\n"
+        f"Stop at the scrape horizon: skip any event with date > {horizon}.\n"
         "Also skip canceled events (German 'Abgesagt:' / English 'Cancelled:') —\n"
         "do not return them at all.\n\n"
         "TASK (two parts):\n"
-        f"1. Count ALL upcoming concerts (date >= {today}) on this fully-scrolled\n"
+        f"1. Count ALL upcoming concerts from {today} through {horizon} on this fully-scrolled\n"
         "   page. Write the total into 'total_events_visible'.\n"
-        f"2. Return the next {max_events} upcoming concerts (sorted by date,\n"
+        f"2. Return the next {max_events} upcoming concerts in that date window (sorted by date,\n"
         "   nearest future first) in the 'events' array with COMPLETE data.\n\n"
         "For each event fill ALL visible fields:\n"
         "  date (YYYY-MM-DD), time (HH:MM 24h), title (concert name, NOT a ticket button),\n"
@@ -224,13 +264,15 @@ def _build_stub_listing_prompt(venue: dict) -> str:
     return 100+ events per scrape because each entry is tiny (no program/performers/
     conductor/price)."""
     today = _today()
+    horizon = _scrape_horizon_date()
     return (
         f"This is the concert listing page of {venue['name']} in {venue['city']}, Germany.\n"
-        f"Today's date is {today}.\n\n"
-        "TASK: Find EVERY upcoming concert on this fully-scrolled page and "
+        f"Today's date is {today}. The scrape horizon is {horizon}.\n\n"
+        "TASK: Find EVERY upcoming concert in the scrape window on this fully-scrolled page and "
         "return ALL of them. There may be 50, 100, 200+ events — return as "
         "many as you can find. Do NOT cap or summarize.\n\n"
         f"Skip events with date < {today} (past concerts).\n"
+        f"Skip events with date > {horizon} (beyond the scrape horizon).\n"
         "Skip canceled events (German 'Abgesagt:' / English 'Cancelled:').\n"
         f"Only events physically AT {venue['name']} in {venue['city']} — skip "
         "guest tours to other cities ('Gastkonzert') and cross-promotion of other venues.\n"
@@ -248,9 +290,10 @@ def _build_stub_listing_prompt(venue: dict) -> str:
 
 def _build_detail_prompt(venue: dict) -> str:
     today = _today()
+    horizon = _scrape_horizon_date()
     return (
         f"This is an event detail page for a concert at {venue['name']} in {venue['city']}, Germany.\n"
-        f"Today is {today}.\n"
+        f"Today is {today}. The scrape horizon is {horizon}.\n"
         "Extract ALL of the following from the page:\n"
         "  title, date (YYYY-MM-DD), time (HH:MM 24h), venue_hall (e.g. 'Großer Saal'),\n"
         "  program (list of 'Composer Lastname: Full Work Title with opus', e.g. "
@@ -782,10 +825,35 @@ def _enrich_events(app, events: list[dict], venue: dict) -> list[dict]:
 def _is_future(event_date: str | None) -> bool:
     if not event_date:
         return True  # keep events with missing dates (can't filter)
-    try:
-        return event_date >= _today()
-    except Exception:
+    parsed = _parse_iso_date(event_date)
+    if parsed is None:
         return True
+    return parsed >= _today_date()
+
+
+def _is_within_scrape_window(event_date: str | None, horizon_date: str | None = None) -> bool:
+    if not event_date:
+        return True  # keep events with missing dates until detail/coverage can diagnose them
+    parsed = _parse_iso_date(event_date)
+    horizon = _parse_iso_date(horizon_date or _scrape_horizon_date())
+    if parsed is None or horizon is None:
+        return True
+    return _today_date() <= parsed <= horizon
+
+
+def _latest_event_date(events: list[dict]) -> str | None:
+    dates = sorted(
+        e.get("date") for e in events
+        if isinstance(e, dict) and _parse_iso_date(e.get("date"))
+    )
+    return dates[-1] if dates else None
+
+
+def _add_coverage_fields(payload: dict, events: list[dict], horizon_date: str) -> None:
+    latest = _latest_event_date(events)
+    payload["scrape_horizon_date"] = horizon_date
+    payload["latest_event_date"] = latest
+    payload["covers_horizon"] = bool(latest and latest >= horizon_date)
 
 
 _CANCELED_PREFIXES = ("abgesagt:", "abgesagt ", "abgesagt-",
@@ -831,6 +899,7 @@ def _expand_via_map(
     target: int,
     *,
     html_fallback: str | None = None,
+    horizon_date: str | None = None,
 ) -> tuple[list[dict], dict]:
     """
     Use Firecrawl map() to discover event URLs NOT already in `listing_events`,
@@ -848,7 +917,7 @@ def _expand_via_map(
     """
     stats = {
         "map_urls": 0, "html_urls": 0, "new_urls": 0,
-        "scraped": 0, "past": 0, "invalid": 0, "canceled": 0,
+        "scraped": 0, "past": 0, "beyond_horizon": 0, "invalid": 0, "canceled": 0,
     }
     needed = target - len(listing_events)
     if needed <= 0:
@@ -900,6 +969,9 @@ def _expand_via_map(
         if not _is_future(ev["date"]):
             stats["past"] += 1
             continue
+        if not _is_within_scrape_window(ev["date"], horizon_date):
+            stats["beyond_horizon"] += 1
+            continue
         if _is_canceled(ev["title"]):
             stats["canceled"] += 1
             continue
@@ -918,6 +990,7 @@ def _expand_via_map(
     print(
         f"    [map-expand] result: +{len(new_events)} new events "
         f"(scraped={stats['scraped']} past={stats['past']} "
+        f"beyond_horizon={stats['beyond_horizon']} "
         f"invalid={stats['invalid']} canceled={stats['canceled']} "
         f"suspicious_date={stats.get('suspicious_date', 0)})",
         flush=True,
@@ -942,6 +1015,7 @@ def _scrape_one_discover(
     import random
     slug = _slug(venue["name"])
     url = venue["url"]
+    horizon_date = _scrape_horizon_date()
     print(f"\n  [{slug}] {venue['name']} ({url}) — DISCOVERY mode", flush=True)
 
     payload: dict = {
@@ -950,6 +1024,7 @@ def _scrape_one_discover(
         "slug": slug,
         "source_url": url,
         "scraped_at": datetime.utcnow().isoformat() + "Z",
+        "scrape_horizon_date": horizon_date,
         "engine": "firecrawl",
         "mode": "discover",
     }
@@ -961,9 +1036,9 @@ def _scrape_one_discover(
     total_visible: int | None = None
     source = "firecrawl_listing_stub"
     if scout_events:
-        future = [e for e in scout_events if _is_future(e.get("date"))]
+        future = [e for e in scout_events if _is_within_scrape_window(e.get("date"), horizon_date)]
         if future:
-            print(f"    JSON-LD: {len(future)} upcoming events found", flush=True)
+            print(f"    JSON-LD: {len(future)} events within horizon found", flush=True)
             events_raw = future
             total_visible = len(future)
             source = "jsonld"
@@ -980,7 +1055,7 @@ def _scrape_one_discover(
                 listing["_raw_html"], url, verbose=True, log_prefix="jsonld-fc"
             )
             if ld_events:
-                ld_future = [e for e in ld_events if _is_future(e.get("date"))]
+                ld_future = [e for e in ld_events if _is_within_scrape_window(e.get("date"), horizon_date)]
                 if len(ld_future) > len(events_raw):
                     print(
                         f"    JSON-LD (firecrawl-html): {len(ld_future)} upcoming events "
@@ -997,6 +1072,7 @@ def _scrape_one_discover(
         payload["total_events"] = 0
         payload["total_events_discovered"] = 0
         payload["source"] = source
+        _add_coverage_fields(payload, [], horizon_date)
         return payload
 
     # Filter past + canceled events
@@ -1004,7 +1080,7 @@ def _scrape_one_discover(
     for e in events_raw:
         if not isinstance(e, dict):
             continue
-        if not _is_future(e.get("date")):
+        if not _is_within_scrape_window(e.get("date"), horizon_date):
             continue
         title = (e.get("title") or "").strip()
         if _is_canceled(title) or not title:
@@ -1071,6 +1147,7 @@ def _scrape_one_discover(
     payload["total_events_discovered"] = len(events)
     payload["total_events_enriched"] = sum(1 for e in events if e.get("program"))
     payload["source"] = source
+    _add_coverage_fields(payload, events, horizon_date)
     return payload
 
 
@@ -1085,6 +1162,7 @@ def _scrape_one(
 ) -> dict:
     slug = _slug(venue["name"])
     url = venue["url"]
+    horizon_date = _scrape_horizon_date()
     print(f"\n  [{slug}] {venue['name']} ({url})", flush=True)
 
     payload: dict = {
@@ -1093,6 +1171,7 @@ def _scrape_one(
         "slug": slug,
         "source_url": url,
         "scraped_at": datetime.utcnow().isoformat() + "Z",
+        "scrape_horizon_date": horizon_date,
         "engine": "firecrawl",
     }
 
@@ -1104,9 +1183,9 @@ def _scrape_one(
     print(f"    phase 0: JSON-LD scout ...", flush=True)
     scout_events = jsonld_scout.scout(url)
     if scout_events:
-        future = [e for e in scout_events if _is_future(e.get("date"))]
+        future = [e for e in scout_events if _is_within_scrape_window(e.get("date"), horizon_date)]
         print(
-            f"    JSON-LD: {len(scout_events)} events ({len(future)} upcoming)",
+            f"    JSON-LD: {len(scout_events)} events ({len(future)} within horizon)",
             flush=True,
         )
         if future:
@@ -1145,10 +1224,10 @@ def _scrape_one(
             listing["_raw_html"], url, verbose=True, log_prefix="jsonld-fc"
         )
         if ld_events:
-            ld_future = [e for e in ld_events if _is_future(e.get("date"))]
+            ld_future = [e for e in ld_events if _is_within_scrape_window(e.get("date"), horizon_date)]
             print(
                 f"    JSON-LD (firecrawl-html): {len(ld_events)} events "
-                f"({len(ld_future)} upcoming)",
+                f"({len(ld_future)} within horizon)",
                 flush=True,
             )
             if ld_future:
@@ -1163,6 +1242,7 @@ def _scrape_one(
         payload["total_events"] = 0
         payload["total_events_discovered"] = 0
         payload["source"] = source
+        _add_coverage_fields(payload, [], horizon_date)
         return payload
 
     # Filter past + canceled events (prompt guard isn't always reliable)
@@ -1170,7 +1250,7 @@ def _scrape_one(
     for e in events_raw:
         if not isinstance(e, dict):
             continue
-        if not _is_future(e.get("date")):
+        if not _is_within_scrape_window(e.get("date"), horizon_date):
             continue
         title = (e.get("title") or "").strip()
         if _is_canceled(title):
@@ -1189,6 +1269,7 @@ def _scrape_one(
             "city": venue["city"],
         }
         events.append(ev)
+    events.sort(key=lambda e: (e.get("date") or "9999", e.get("time") or ""))
     events = events[:max_events]
 
     print(f"    listing: {len(events)} upcoming events (total_visible={total_visible})", flush=True)
@@ -1202,6 +1283,7 @@ def _scrape_one(
         payload["total_events"] = 0
         payload["total_events_visible"] = total_visible
         payload["total_events_discovered"] = 0
+        _add_coverage_fields(payload, [], horizon_date)
         return payload
 
     # ── Phase 1c: Expand via map() — detail-scrape URLs beyond the listing ──
@@ -1217,7 +1299,8 @@ def _scrape_one(
         # Only expand when listing was the source (JSON-LD is already complete).
         listing_html = listing.get("_raw_html") if isinstance(listing, dict) else None
         new_from_map, map_stats = _expand_via_map(
-            app, venue, events, max_events, html_fallback=listing_html,
+            app, venue, events, max_events,
+            html_fallback=listing_html, horizon_date=horizon_date,
         )
         total_discovered_loose = (
             map_stats.get("map_urls") or map_stats.get("html_urls") or total_visible
@@ -1240,6 +1323,7 @@ def _scrape_one(
     if enrich and events:
         print(f"    phase 2: enriching {len(events)} listing events with detail pages ...", flush=True)
         events = _enrich_events(app, events, venue)
+        events = [e for e in events if _is_within_scrape_window(e.get("date"), horizon_date)]
 
     # Merge listing + map-discovered, dedupe by detail_url, sort by date.
     if new_from_map:
@@ -1264,6 +1348,7 @@ def _scrape_one(
     payload["total_events_discovered"] = total_discovered_loose
     payload["total_events_discovered_strict"] = total_discovered_strict
     payload["source"] = source
+    _add_coverage_fields(payload, events, horizon_date)
     if map_stats:
         payload["map_expand_stats"] = map_stats
     return payload
@@ -1279,7 +1364,10 @@ def main(
     expand_via_map: bool = False,
     discover_mode: bool = False,
     enrich_count: int = 10,
+    horizon_months: int = 6,
 ) -> None:
+    os.environ["SCRAPE_HORIZON_MONTHS"] = str(horizon_months)
+    horizon_date = _scrape_horizon_date(horizon_months)
     api_key = os.getenv("FIRECRAWL_API_KEY")
     if not api_key:
         print("ERROR: FIRECRAWL_API_KEY not set in environment.", file=sys.stderr)
@@ -1324,7 +1412,10 @@ def main(
             if enrich
             else f"listing only (--skip-enrich, {map_note})"
         )
-    print(f"\nFire crawl scraping {len(venues)} Tier-0 venue(s), max {max_events} events. Mode: {mode}\n")
+    print(
+        f"\nFire crawl scraping {len(venues)} Tier-0 venue(s), "
+        f"max {max_events} events, horizon {horizon_date}. Mode: {mode}\n"
+    )
 
     n_ok = n_fail = 0
     for venue in venues:
@@ -1401,6 +1492,15 @@ if __name__ == "__main__":
         default=10,
         help="Discovery mode: number of random events to fully enrich (default 10).",
     )
+    parser.add_argument(
+        "--horizon-months",
+        type=int,
+        default=_env_int("SCRAPE_HORIZON_MONTHS", 6),
+        help=(
+            "Scrape through the end of the month N months from today "
+            "(default: 6, or SCRAPE_HORIZON_MONTHS)."
+        ),
+    )
     args = parser.parse_args()
     main(
         args.only, args.max_events,
@@ -1409,4 +1509,5 @@ if __name__ == "__main__":
         expand_via_map=args.expand_via_map,
         discover_mode=args.discover_mode,
         enrich_count=args.enrich_count,
+        horizon_months=args.horizon_months,
     )
