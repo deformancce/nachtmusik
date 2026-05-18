@@ -2,7 +2,8 @@
 Curated list of German concert halls and opera houses for op.us.
 
 Tiers:
-  - 1: the 13 prioritised concert halls (active scraping)
+  - 0: the 13 prioritised concert halls (active scraping)
+  - 1: next national-demand venues (planned)
   - 2: major opera houses and other concert halls (planned)
   - 3: smaller theaters and specialty venues (planned)
 
@@ -11,35 +12,35 @@ URLs point at calendar / programme pages.
 from typing import List
 
 VENUES_GERMANY: List[dict] = [
-    # Tier 1 — the 13 prioritised concert halls
+    # Tier 0 — the 13 prioritised concert halls
     # URLs are user-curated deep-links to upcoming-events views. Some bake in a date
     # filter (Konzerthaus Berlin, Tonhalle Düsseldorf, Essen) — revisit periodically.
     {"name": "Festspielhaus Baden-Baden", "city": "Baden-Baden",
-     "url": "https://www.festspielhaus.de/programm/", "tier": 1},
+     "url": "https://www.festspielhaus.de/programm/", "tier": 0},
     {"name": "Konzerthaus Berlin", "city": "Berlin",
-     "url": "https://www.konzerthaus.de/de/programm", "tier": 1},
+     "url": "https://www.konzerthaus.de/de/programm", "tier": 0},
     {"name": "Berliner Philharmonie", "city": "Berlin",
-     "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/", "tier": 1},
+     "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/", "tier": 0},
     {"name": "Glocke Bremen", "city": "Bremen",
-     "url": "https://www.glocke.de/tickets-programm/", "tier": 1},
+     "url": "https://www.glocke.de/tickets-programm/", "tier": 0},
     {"name": "Konzerthaus Dortmund", "city": "Dortmund",
-     "url": "https://www.konzerthaus-dortmund.de/de/programm/", "tier": 1},
+     "url": "https://www.konzerthaus-dortmund.de/de/programm/", "tier": 0},
     {"name": "Tonhalle Düsseldorf", "city": "Düsseldorf",
-     "url": "https://www.tonhalle.de/veranstaltungen/kalender", "tier": 1},
+     "url": "https://www.tonhalle.de/veranstaltungen/kalender", "tier": 0},
     {"name": "Philharmonie Essen", "city": "Essen",
-     "url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/", "tier": 1},
+     "url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/", "tier": 0},
     {"name": "Alte Oper Frankfurt", "city": "Frankfurt",
-     "url": "https://www.alteoper.de/de/programm", "tier": 1},
+     "url": "https://www.alteoper.de/de/programm", "tier": 0},
     {"name": "Elbphilharmonie Hamburg", "city": "Hamburg",
-     "url": "https://www.elbphilharmonie.de/de/programm/", "tier": 1},
+     "url": "https://www.elbphilharmonie.de/de/programm/", "tier": 0},
     {"name": "Kölner Philharmonie", "city": "Köln",
-     "url": "https://www.koelner-philharmonie.de/de/konzerte", "tier": 1},
+     "url": "https://www.koelner-philharmonie.de/de/konzerte", "tier": 0},
     {"name": "Gewandhaus Leipzig", "city": "Leipzig",
-     "url": "https://www.gewandhausorchester.de/", "tier": 1},
+     "url": "https://www.gewandhausorchester.de/", "tier": 0},
     {"name": "Isarphilharmonie München", "city": "München",
-     "url": "https://www.mphil.de/kalender", "tier": 1},
+     "url": "https://www.mphil.de/kalender", "tier": 0},
     {"name": "Liederhalle Stuttgart", "city": "Stuttgart",
-     "url": "https://liederhalle.de/eventkalender", "tier": 1},
+     "url": "https://liederhalle.de/eventkalender", "tier": 0},
 
     # Tier 2 — other major houses (opera + remaining concert halls)
     {"name": "Herkulessaal München", "city": "München",

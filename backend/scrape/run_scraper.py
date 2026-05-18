@@ -1,5 +1,5 @@
 """
-Venue scraper runner — Step 3 of the Tier-1 onboarding pipeline.
+Venue scraper runner — Step 3 of the Tier-0 onboarding pipeline.
 
 Loads a per-venue config from backend/scrape/configs/<slug>.py, runs crawl4ai
 to extract events, validates them, and writes backend/<slug>_events.json.
@@ -7,7 +7,7 @@ to extract events, validates them, and writes backend/<slug>_events.json.
 Usage:
     python3 -m backend.scrape.run_scraper konzerthaus_berlin
     python3 -m backend.scrape.run_scraper konzerthaus_berlin --dry-run
-    python3 -m backend.scrape.run_scraper --all-tier 1
+    python3 -m backend.scrape.run_scraper --all-tier 0
 
 Set ANTHROPIC_API_KEY in your environment.
 """

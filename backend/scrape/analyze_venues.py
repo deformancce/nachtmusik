@@ -1,7 +1,7 @@
 """
-Site Analyzer — Step 1 of the Tier-1 onboarding pipeline.
+Site Analyzer — Step 1 of the Tier-0 onboarding pipeline.
 
-For each Tier-1 venue in venues_germany.py, this script:
+For each Tier-0 venue in venues_germany.py, this script:
   1. Fetches the listing page and probes for structured sources (JSON-LD, iCal, RSS)
   2. Renders the page with crawl4ai + asks Claude to produce a VenueConfig JSON
   3. Validates the config by extracting 5 sample events
@@ -10,7 +10,7 @@ For each Tier-1 venue in venues_germany.py, this script:
 Usage:
     python3 -m backend.scrape.analyze_venues
     python3 -m backend.scrape.analyze_venues --only konzerthaus_berlin
-    python3 -m backend.scrape.analyze_venues --tier 1
+    python3 -m backend.scrape.analyze_venues --tier 0
 
 Set ANTHROPIC_API_KEY in your environment before running.
 """

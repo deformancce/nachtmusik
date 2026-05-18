@@ -1,4 +1,4 @@
-name: Firecrawl scrape (Tier-1)
+name: Firecrawl scrape (Tier-0)
 
 on:
   workflow_dispatch:
@@ -12,7 +12,7 @@ on:
         required: false
         default: "5"
       slugs:
-        description: "Optional space-separated slug filter (default: all Tier-1)"
+        description: "Optional space-separated slug filter (default: all Tier-0)"
         required: false
         default: ""
       skip_enrich:

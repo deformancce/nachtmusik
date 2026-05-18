@@ -1,4 +1,4 @@
-name: Scrape all Tier-1 venues
+name: Scrape all Tier-0 venues
 
 on:
   workflow_dispatch:
@@ -37,7 +37,7 @@ jobs:
           pip install --quiet crawl4ai pydantic anthropic fastapi beautifulsoup4 lxml
           python3 -m playwright install --with-deps chromium
 
-      - name: Scrape each Tier-1 venue and commit after each
+      - name: Scrape each Tier-0 venue and commit after each
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           PYTHONUNBUFFERED: "1"
@@ -55,14 +55,14 @@ jobs:
             ARG=()
           fi
 
-          # Collect tier-1 slugs that have a config
+          # Collect tier-0 slugs that have a config
           SLUGS=$(python3 -c "
           import re, pathlib
           from backend.venues_germany import get_venues_by_tier
           base = pathlib.Path('backend/scrape/configs')
           UMLAUTS = str.maketrans({'ü':'ue', 'ö':'oe', 'ä':'ae', 'ß':'ss',
                                    'Ü':'ue', 'Ö':'oe', 'Ä':'ae'})
-          for v in get_venues_by_tier(1):
+          for v in get_venues_by_tier(0):
               name = v['name'].translate(UMLAUTS).lower()
               slug = re.sub(r'[^a-z0-9]+', '_', name).strip('_')
               if (base / f'{slug}.py').exists():

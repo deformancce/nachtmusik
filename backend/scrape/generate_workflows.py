@@ -2,7 +2,7 @@
 Workflow generator — generates .github/workflows/scrape-<slug>.yml for each
 config in backend/scrape/configs/.
 
-Also generates scrape-all-tier1.yml that runs all Tier-1 venues sequentially.
+Also generates scrape-all-tier1.yml that runs all Tier-0 venues sequentially.
 
 Usage:
     python3 -m backend.scrape.generate_workflows
@@ -94,7 +94,7 @@ jobs:
 """
 
 _ALL_TIER1_TEMPLATE = """\
-name: Scrape all Tier-1 venues
+name: Scrape all Tier-0 venues
 
 on:
   workflow_dispatch:
@@ -129,11 +129,11 @@ jobs:
           pip install --quiet crawl4ai pydantic anthropic fastapi
           python3 -m playwright install --with-deps chromium
 
-      - name: Run all Tier-1 scrapers
+      - name: Run all Tier-0 scrapers
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           PYTHONUNBUFFERED: "1"
-        run: python3 -m backend.scrape.run_scraper --all-tier 1
+        run: python3 -m backend.scrape.run_scraper --all-tier 0
 
       - name: Commit and push results
         run: |
@@ -144,7 +144,7 @@ jobs:
             echo "No changes to commit."
             exit 0
           fi
-          git commit -m "Refresh Tier-1 events (manual scrape run)"
+          git commit -m "Refresh Tier-0 events (manual scrape run)"
           BRANCH="${GITHUB_REF_NAME:-main}"
           for i in 1 2 3; do
             git pull --rebase --autostash origin "$BRANCH" || true
@@ -184,7 +184,7 @@ def main(only: list[str] | None, force: bool) -> None:
         generate_workflow(slug, name, force)
         slugs.append(slug)
 
-    # Generate the all-tier-1 workflow
+    # Generate the all-tier-0 workflow
     all_out = WORKFLOWS_DIR / "scrape-all-tier1.yml"
     if not all_out.exists() or force:
         all_out.write_text(_ALL_TIER1_TEMPLATE)

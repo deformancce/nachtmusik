@@ -1,6 +1,6 @@
-name: Analyze Tier-1 venue sites
+name: Analyze Tier-0 venue sites
 
-# Runs analyze_venues.py for all Tier-1 venues (or a specific subset).
+# Runs analyze_venues.py for all Tier-0 venues (or a specific subset).
 # Uses crawl4ai + Claude to derive CSS selectors and writes:
 #   - backend/scrape/venue_site_structures.json
 #   - backend/scrape/configs/<slug>.py for each analyzed venue
@@ -14,7 +14,7 @@ on:
         required: false
         default: "main"
       slugs:
-        description: "Space-separated venue slugs (empty = all Tier 1)"
+        description: "Space-separated venue slugs (empty = all Tier 0)"
         required: false
         default: ""
       force_configs:
@@ -55,7 +55,7 @@ jobs:
           if [ -n "${{ github.event.inputs.slugs }}" ]; then
             python3 -m backend.scrape.analyze_venues --only ${{ github.event.inputs.slugs }}
           else
-            python3 -m backend.scrape.analyze_venues --tier 1
+            python3 -m backend.scrape.analyze_venues --tier 0
           fi
 
       - name: Regenerate configs from analysis results

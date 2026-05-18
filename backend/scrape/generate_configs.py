@@ -1,5 +1,5 @@
 """
-Config generator — Step 2 of the Tier-1 onboarding pipeline.
+Config generator — Step 2 of the Tier-0 onboarding pipeline.
 
 Reads venue_site_structures.json and writes a Python config file per venue
 into backend/scrape/configs/<slug>.py.

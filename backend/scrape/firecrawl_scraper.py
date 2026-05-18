@@ -1,5 +1,5 @@
 """
-Firecrawl-based scraper for Tier-1 concert venues.
+Firecrawl-based scraper for Tier-0 concert venues.
 
 Two-phase approach per venue:
   Phase 1 — Discovery: map() the site to find ALL event URLs (1 credit).
@@ -9,7 +9,7 @@ Two-phase approach per venue:
              (program, performers, conductor, price). (N credits, default 5)
 
 Total credits per venue: ~7 (1 map + 1 listing + 5 details)
-Total for all 13 Tier-1 venues: ~91 credits/run
+Total for all 13 Tier-0 venues: ~91 credits/run
 
 Usage:
     FIRECRAWL_API_KEY=fc-... python3 -m backend.scrape.firecrawl_scraper
@@ -1302,7 +1302,7 @@ def main(
     print(f"firecrawl-py version: {getattr(_fc_module, '__version__', 'unknown')}")
     print(f"Client class: {ClientCls.__name__}")
 
-    venues = get_venues_by_tier(1)
+    venues = get_venues_by_tier(0)
     if slugs_filter:
         venues = [v for v in venues if _slug(v["name"]) in slugs_filter]
 
@@ -1324,7 +1324,7 @@ def main(
             if enrich
             else f"listing only (--skip-enrich, {map_note})"
         )
-    print(f"\nFire crawl scraping {len(venues)} Tier-1 venue(s), max {max_events} events. Mode: {mode}\n")
+    print(f"\nFire crawl scraping {len(venues)} Tier-0 venue(s), max {max_events} events. Mode: {mode}\n")
 
     n_ok = n_fail = 0
     for venue in venues:
