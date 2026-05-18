@@ -824,6 +824,7 @@ _URL_RE = re.compile(r"https?://[^\s\"'<>)\]]+")
 _MARKDOWN_LINK_RE = re.compile(r"\]\(([^)]+)\)")
 _ISO_DATE_RE = re.compile(r"\b(20\d{2})-(\d{2})-(\d{2})\b")
 _DE_DATE_RE = re.compile(r"\b(\d{1,2})\.(\d{1,2})\.(20\d{2})\b")
+_TIME_RE = re.compile(r"(?:Uhrzeit\s*)?([0-2]?\d:[0-5]\d)\s*Uhr\b")
 
 
 def _extract_event_urls_from_html(html: str, venue: dict) -> list[str]:
@@ -857,6 +858,84 @@ def _extract_event_urls_from_html(html: str, venue: dict) -> list[str]:
             continue
         seen.add(clean)
         out.append(absolute)
+    return out
+
+
+def _plain_markdown_text(value: str | None) -> str | None:
+    if not value:
+        return None
+    value = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", value)
+    value = re.sub(r"\s+", " ", value).strip(" -")
+    return value or None
+
+
+def _parse_de_date(value: str | None) -> str | None:
+    match = _DE_DATE_RE.search(value or "")
+    if not match:
+        return None
+    day, month, year = match.groups()
+    try:
+        return date(int(year), int(month), int(day)).isoformat()
+    except ValueError:
+        return None
+
+
+def _extract_liederhalle_listing_events(
+    rendered: str,
+    venue: dict,
+    horizon_date: str,
+) -> list[dict]:
+    """Parse Liederhalle event cards from Firecrawl markdown.
+
+    TYPO3 renders stable markdown cards with headings and fields:
+    "### Title", "Datum...", "Uhrzeit...", "Saal / Raum[...]".
+    Parsing that locally is cheaper and more reliable than asking the LLM
+    to infer dates for every URL-only discovery result.
+    """
+    if not rendered:
+        return []
+
+    out: list[dict] = []
+    seen: set[str] = set()
+    for raw_block in re.split(r"(?m)^###\s+", rendered)[1:]:
+        lines = raw_block.splitlines()
+        title = _plain_markdown_text(lines[0] if lines else None)
+        if not title or _is_canceled(title):
+            continue
+
+        block = "\n".join(lines)
+        event_urls = _extract_event_urls_from_html(block, venue)
+        detail_url = _clean_url(event_urls[0]) if event_urls else ""
+        if not detail_url or detail_url in seen:
+            continue
+
+        event_date = _parse_de_date(block)
+        if not event_date or not _is_within_scrape_window(event_date, horizon_date):
+            continue
+
+        time_match = _TIME_RE.search(block)
+        hall_match = re.search(r"Saal\s*/\s*Raum\s*\[([^\]]+)\]", block)
+        if not hall_match:
+            hall_match = re.search(r"Saal\s*/\s*Raum\s*([^\n\r]+)", block)
+
+        ev = {
+            "date": event_date,
+            "time": time_match.group(1) if time_match else None,
+            "title": title,
+            "venue_hall": _plain_markdown_text(hall_match.group(1)) if hall_match else None,
+            "program": [],
+            "performers": [],
+            "conductor": None,
+            "price": None,
+            "detail_url": detail_url,
+            "venue": venue["name"],
+            "city": venue["city"],
+            "discovery_source": "liederhalle_listing",
+            "discovered_only": True,
+        }
+        _mark_enrichment_status(ev)
+        seen.add(detail_url)
+        out.append(ev)
     return out
 
 
@@ -907,9 +986,9 @@ def _discover_glocke_paginated_urls(venue: dict, max_pages: int = 20) -> list[st
 def _discover_liederhalle_paginated_urls(
     app,
     venue: dict,
-    max_pages: int = 14,
+    max_pages: int = 18,
     horizon_date: str | None = None,
-) -> tuple[list[str], list[str]]:
+) -> tuple[list[str], list[str], list[dict]]:
     """Discover Liederhalle event URLs from its rendered TYPO3 pagination.
 
     The listing exposes links like
@@ -927,6 +1006,7 @@ def _discover_liederhalle_paginated_urls(
 
     best_urls: list[str] = []
     best_dates: list[str] = []
+    best_events: list[dict] = []
     for page in candidate_pages:
         if page == 1:
             page_url = base
@@ -947,9 +1027,11 @@ def _discover_liederhalle_paginated_urls(
 
         rendered = "\n".join([_extract_html(result), _extract_markdown(result)])
         page_urls_raw = _extract_event_urls_from_html(rendered, venue)
+        page_events = _extract_liederhalle_listing_events(rendered, venue, horizon)
         seen: set[str] = set()
         page_urls: list[str] = []
-        for url in page_urls_raw:
+        url_source = [ev["detail_url"] for ev in page_events if ev.get("detail_url")] or page_urls_raw
+        for url in url_source:
             clean = url.split("?", 1)[0].split("#", 1)[0]
             if clean in seen:
                 continue
@@ -957,19 +1039,23 @@ def _discover_liederhalle_paginated_urls(
                 continue
             seen.add(clean)
             page_urls.append(clean)
-        page_dates = _extract_dates_from_text(rendered, horizon)
+        page_dates = sorted(
+            {ev["date"] for ev in page_events if isinstance(ev.get("date"), str)}
+        ) or _extract_dates_from_text(rendered, horizon)
 
         print(
             f"    [liederhalle-pages] page {page}: {len(page_urls)} URLs "
+            f"cards={len(page_events)} "
             f"dates={page_dates[0] if page_dates else None}..{page_dates[-1] if page_dates else None}",
             flush=True,
         )
         if len(page_urls) > len(best_urls):
             best_urls = page_urls
             best_dates = page_dates
+            best_events = page_events
         if page_dates and page_dates[-1] >= horizon:
             break
-    return best_urls, best_dates
+    return best_urls, best_dates, best_events
 
 
 def _iter_month_starts(start: date, end: date) -> list[date]:
@@ -1056,20 +1142,22 @@ def _discover_preferred_event_urls(
     venue: dict,
     html_fallback: str | None,
     horizon_date: str | None = None,
-) -> tuple[list[str], dict]:
+) -> tuple[list[str], dict, list[dict]]:
     """Venue-specific URL discovery that should outrank broad site map() results."""
     slug = _slug(venue["name"])
     urls: list[str] = []
+    event_stubs: list[dict] = []
     stats: dict = {"latest_date": None, "date_count": 0}
     if html_fallback:
         urls.extend(_extract_event_urls_from_html(html_fallback, venue))
     if slug == "glocke_bremen":
         urls.extend(_discover_glocke_paginated_urls(venue))
     elif slug == "liederhalle_stuttgart":
-        liederhalle_urls, liederhalle_dates = _discover_liederhalle_paginated_urls(
+        liederhalle_urls, liederhalle_dates, liederhalle_events = _discover_liederhalle_paginated_urls(
             app, venue, horizon_date=horizon_date
         )
         urls.extend(liederhalle_urls)
+        event_stubs.extend(liederhalle_events)
         if liederhalle_dates:
             stats["latest_date"] = liederhalle_dates[-1]
             stats["date_count"] = len(liederhalle_dates)
@@ -1086,7 +1174,17 @@ def _discover_preferred_event_urls(
             continue
         seen.add(clean)
         deduped.append(clean)
-    return deduped, stats
+
+    preferred_set = set(deduped)
+    seen_events: set[str] = set()
+    deduped_events: list[dict] = []
+    for ev in event_stubs:
+        clean = _clean_url(ev.get("detail_url"))
+        if not clean or clean not in preferred_set or clean in seen_events:
+            continue
+        seen_events.add(clean)
+        deduped_events.append(ev)
+    return deduped, stats, deduped_events
 
 
 def _unix_start_of_day(day: date) -> int:
@@ -1525,9 +1623,14 @@ def _expand_via_map(
         "latest_discovered_date": _latest_event_date(listing_events),
     }
 
-    preferred_urls, preferred_stats = _discover_preferred_event_urls(
+    preferred_urls, preferred_stats, preferred_events = _discover_preferred_event_urls(
         app, venue, html_fallback, horizon_date=horizon_date
     )
+    preferred_event_by_url = {
+        _clean_url(ev.get("detail_url")): ev
+        for ev in preferred_events
+        if _clean_url(ev.get("detail_url"))
+    }
     stats["preferred_urls"] = len(preferred_urls)
     if preferred_stats.get("latest_date"):
         stats["latest_discovered_date"] = max(
@@ -1578,7 +1681,16 @@ def _expand_via_map(
     if not new_urls:
         return [], stats
 
-    new_events = [_event_stub_from_url(url, venue, "url_discovery") for url in new_urls]
+    new_events = []
+    for url in new_urls:
+        clean = _clean_url(url)
+        if clean in preferred_event_by_url:
+            ev = dict(preferred_event_by_url[clean])
+            ev["discovery_source"] = ev.get("discovery_source") or "url_discovery"
+            _mark_enrichment_status(ev)
+        else:
+            ev = _event_stub_from_url(url, venue, "url_discovery")
+        new_events.append(ev)
     print(f"    [map-expand] result: +{len(new_events)} discovered stubs", flush=True)
     return new_events, stats
 
