@@ -3,23 +3,41 @@
   "city": "Dortmund",
   "slug": "konzerthaus_dortmund",
   "source_url": "https://www.konzerthaus-dortmund.de/de/programm/",
-  "scraped_at": "2026-05-18T12:11:48.558543Z",
+  "scraped_at": "2026-05-18T13:32:23.162611Z",
+  "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
     {
       "date": "2026-05-18",
-      "time": null,
-      "title": "Warsaw Village Band",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Traditional Polish: Various Folk Songs"
-      ],
+      "time": "18:00",
+      "title": "Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
+      "venue_hall": "Orchesterzentrum|NRW",
+      "program": [],
       "performers": [
-        "Warsaw Village Band"
+        "Michael Stegemann"
       ],
       "conductor": null,
-      "price": null,
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/23-09-2021-warsaw-village-band",
+      "price": "Keine Pause",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-05-2026-kopfnoten-eine-kleine-geschichte-der-epochen-und-stile/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-18",
+      "time": "18:30",
+      "title": "Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
+      "venue_hall": null,
+      "program": [
+        "Impressionismus: Eine kleine Geschichte der Epochen und Stile"
+      ],
+      "performers": [
+        "Michael Stegemann"
+      ],
+      "conductor": null,
+      "price": "8 €",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-05-2026-kopfnoten-eine-kleine-geschichte-der-epochen-und-stile/platzwahl/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "is_classical": true
@@ -30,245 +48,14 @@
       "title": "Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
       "venue_hall": "Orchesterzentrum|NRW",
       "program": [
-        "Debussy: La Mer",
-        "Ravel: Daphnis et Chloé Suite Nr. 2"
+        "Michael Stegemann: Kopfnoten – Eine kleine Geschichte der Epochen und Stile"
       ],
       "performers": [
         "Michael Stegemann"
       ],
       "conductor": null,
-      "price": "Tickets 8 €",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-05-2026-kopfnoten-eine-kleine-geschichte-der-epochen-und-stile/",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "18:30",
-      "title": "Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
-      "venue_hall": "Konzerthaus Dortmund",
-      "program": [
-        "Komponist Lastname: Volledige Titel zonder opus"
-      ],
-      "performers": [
-        "Performers names"
-      ],
-      "conductor": "Conductor name",
-      "price": "€15–€85",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/09-12-2025-oeffentliche-hausfuehrung",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "18:30",
-      "title": "Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Brahms: Symphonie Nr. 1 c-Moll op. 68"
-      ],
-      "performers": [
-        "Michael Stegemann"
-      ],
-      "conductor": null,
-      "price": "€5,00",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/01-12-2026-oeffentliche-hausfuehrung",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "18:30",
-      "title": "Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
-      "venue_hall": "Konzerthaus Dortmund",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/12-10-2026-oeffentliche-hausfuehrung",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "18:30",
-      "title": "Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
-      "venue_hall": "Konzerthaus Dortmund",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/08-04-2025-oeffentliche-hausfuehrung",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "18:30",
-      "title": "Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
-      "venue_hall": "Konzerthaus Dortmund",
-      "program": [
-        "Brahms: Symphonie Nr. 1 c-Moll op. 68"
-      ],
-      "performers": [
-        "Michael Stegemann"
-      ],
-      "conductor": null,
-      "price": "ab €25",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/01-04-2026-oeffentliche-hausfuehrung",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "18:30",
-      "title": "Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
-      "venue_hall": "Konzerthaus Dortmund",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/15-10-2025-oeffentliche-hausfuehrung",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "18:30",
-      "title": "Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
-      "venue_hall": "Konzerthaus Dortmund",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-02-2026-oeffentliche-hausfuehrung",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "18:30",
-      "title": "Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
-      "venue_hall": "Konzerthaus Dortmund",
-      "program": [],
-      "performers": [
-        "Barbara Hannigan",
-        "London Symphony Orchestra"
-      ],
-      "conductor": "Barbara Hannigan",
-      "price": null,
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/03-03-2023-konzerthaus-backstage-probeneinblick",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "18:30",
-      "title": "Kopfnoten – Eine kleine Geschichte der Epochen und Stile",
-      "venue_hall": "Konzerthaus Dortmund",
-      "program": [
-        "Wagner: Der Ring des Nibelungen – Szenische Neuproduktion (Auszüge)",
-        "Liszt: Paraphrasen über Themen aus »Tannhäuser« und »Der fliegende Holländer\"",
-        "Liszt: »Rienzi«-Paraphrasen"
-      ],
-      "performers": [
-        "Kay Metzger",
-        "Boris Bloch"
-      ],
-      "conductor": "Yannick Nézet-Séguin",
-      "price": null,
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/12-11-2025-huetet-das-gold",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "19:30",
-      "title": "Ballet Revolución",
-      "venue_hall": "Konzerthaus Dortmund",
-      "program": [
-        "Ballet Revolución: Auftritt mit Live-Band"
-      ],
-      "performers": [
-        "Ballet Revolución",
-        "Live-Band"
-      ],
-      "conductor": null,
-      "price": "ab €25",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/06-01-2023-ballet-revolucion",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "20:00",
-      "title": "Kopfnoten: Eine kleine Geschichte der Epochen und Stile",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Bach: Brandenburgisches Konzert Nr. 3 G-Dur BWV 1048",
-        "Beethoven: Symphonie Nr. 5 c-Moll op. 67"
-      ],
-      "performers": [
-        "Dortmunder Philharmoniker"
-      ],
-      "conductor": "Maximilian Ralston",
-      "price": "ab €8,00",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-05-2026-kopfnoten-eine-kleine-geschichte-der-epochen-und-stile/platzwahl",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "duration_min": 90,
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "20:00",
-      "title": "Tina Dico",
-      "venue_hall": "Konzerthaus Dortmund",
-      "program": [
-        "Tina Dico: Neueste Werke"
-      ],
-      "performers": [
-        "Tina Dico",
-        "Helgi Jónsson",
-        "Marianne Lewandowski",
-        "Kristian Kold",
-        "Dennis Ahlgren"
-      ],
-      "conductor": null,
-      "price": "ab €25",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/19-10-2023-tina-dico",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "duration_min": 75,
-      "is_classical": false
-    },
-    {
-      "date": "2026-05-18",
-      "time": "20:00",
-      "title": "Michael Wollny Trio",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Wollny: Selbstkompositionen"
-      ],
-      "performers": [
-        "Michael Wollny",
-        "Tim Lefebvre",
-        "Eric Schaefer"
-      ],
-      "conductor": null,
-      "price": "€15–€85",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/17-11-2022-michael-wollny-trio",
+      "price": "€8",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/08-06-2026-kopfnoten-eine-kleine-geschichte-der-epochen-und-stile/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "is_classical": true
@@ -279,8 +66,8 @@
       "title": "7. Philharmonisches Konzert",
       "venue_hall": null,
       "program": [
-        "Felix Mendelssohn Bartholdy: \"Ein Sommernachtstraum\" Schauspielmusik op. 61 (Auszüge)",
-        "Jörg Widmann: \"ad absurdum\" Konzertstück für Trompete und kleines Orchester",
+        "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum",
+        "Jörg Widmann: ad absurdum",
         "Ludwig van Beethoven: Sinfonie Nr. 4 B-Dur op. 60"
       ],
       "performers": [
@@ -289,10 +76,32 @@
         "Sergei Nakariakov"
       ],
       "conductor": "Patrick Lange",
-      "price": "Tickets 19 € – 49 €",
+      "price": "19 € – 49 €",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/19-05-2026-7-philharmonisches-konzert/platzwahl/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-19",
+      "time": "19:30",
+      "title": "7. Philharmonisches Konzert",
+      "venue_hall": "Konzerthaus Dortmund",
+      "program": [
+        "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum Schauspielmusik op. 61 (Auszüge)",
+        "Jörg Widmann: ad absurdum Konzertstück für Trompete und kleines Orchester",
+        "Ludwig van Beethoven: Sinfonie Nr. 4 B-Dur op. 60"
+      ],
+      "performers": [
+        "Dortmunder Philharmoniker",
+        "Sergei Nakariakov"
+      ],
+      "conductor": "Patrick Lange",
+      "price": "€27,00 – €49,00",
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/19-05-2026-7-philharmonisches-konzert/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
+      "duration_min": 115,
       "is_classical": true
     },
     {
@@ -301,8 +110,8 @@
       "title": "7. Philharmonisches Konzert",
       "venue_hall": null,
       "program": [
-        "Felix Mendelssohn Bartholdy: \"Ein Sommernachtstraum\" Schauspielmusik op. 61 (Auszüge)",
-        "Jörg Widmann: \"ad absurdum\" Konzertstück für Trompete und kleines Orchester",
+        "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum",
+        "Jörg Widmann: ad absurdum",
         "Ludwig van Beethoven: Sinfonie Nr. 4 B-Dur op. 60"
       ],
       "performers": [
@@ -311,8 +120,43 @@
         "Sergei Nakariakov"
       ],
       "conductor": "Patrick Lange",
-      "price": "Tickets 19 € – 49 €",
+      "price": "19 € – 49 €",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/20-05-2026-7-philharmonisches-konzert/platzwahl/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-20",
+      "time": "19:30",
+      "title": "7. Philharmonisches Konzert",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum Schauspielmusik op. 61 (Auszüge)",
+        "Jörg Widmann: ad absurdum Konzertstück für Trompete und kleines Orchester",
+        "Ludwig van Beethoven: Sinfonie Nr. 4 B-Dur op. 60"
+      ],
+      "performers": [
+        "Dortmunder Philharmoniker",
+        "Sergei Nakariakov"
+      ],
+      "conductor": "Patrick Lange",
+      "price": null,
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/20-05-2026-7-philharmonisches-konzert/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-21",
+      "time": "19:30",
+      "title": "Überraschungskonzert – Der Joker",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "25 €",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/21-05-2026-ueberraschungskonzert-der-joker/platzwahl/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "is_classical": true
@@ -331,29 +175,8 @@
         "Bantu Ensemble"
       ],
       "conductor": null,
-      "price": "Tickets 25 €",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/21-05-2026-ueberraschungskonzert-der-joker/",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-21",
-      "time": "19:30",
-      "title": "Überraschungskonzert – Der Joker",
-      "venue_hall": "Kleiner Saal",
-      "program": [],
-      "performers": [
-        "Víkingur Ólafsson",
-        "Omer Klein",
-        "Aris Quartett",
-        "Abel Selaocoe",
-        "Bantu Ensemble",
-        "Kammerorchester"
-      ],
-      "conductor": null,
       "price": "€25,00",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/21-05-2026-ueberraschungskonzert-der-joker",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/21-05-2026-ueberraschungskonzert-der-joker/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "is_classical": true
@@ -362,7 +185,27 @@
       "date": "2026-05-24",
       "time": "18:00",
       "title": "Festkonzert 2026 der Chorakademie",
-      "venue_hall": "Konzerthaus Dortmund",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Brahms: Ein deutsches Requiem op. 45"
+      ],
+      "performers": [
+        "Chorakademie am Konzerthaus Dortmund",
+        "Orchester der Stadt Dortmund"
+      ],
+      "conductor": "N. N.",
+      "price": "24 € – 43 €",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/24-05-2026-festkonzert-2026-der-chorakademie/platzwahl/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-24",
+      "time": "19:30",
+      "title": "Festkonzert 2026 der Chorakademie",
+      "venue_hall": "Großer Saal",
       "program": [],
       "performers": [
         "Kinderchor A der Chorakademie",
@@ -374,18 +217,18 @@
         "Jugendkonzertchor der Chorakademie"
       ],
       "conductor": null,
-      "price": "Tickets 24 € – 43 €",
+      "price": "€30,00 - €43,00",
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/24-05-2026-festkonzert-2026-der-chorakademie/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
-      "duration_min": 60,
+      "duration_min": 120,
       "is_classical": true
     },
     {
       "date": "2026-05-25",
       "time": "16:00",
       "title": "Festkonzert 2026 der Chorakademie",
-      "venue_hall": "Konzerthaus Dortmund",
+      "venue_hall": null,
       "program": [],
       "performers": [
         "Vorchor des Mädchenchors der Chorakademie",
@@ -402,7 +245,34 @@
         "Collegium Musicum der Chorakademie"
       ],
       "conductor": null,
-      "price": "Tickets 24 € – 43 €",
+      "price": "24 € – 43 €",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/25-05-2026-festkonzert-2026-der-chorakademie/platzwahl/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-25",
+      "time": "19:30",
+      "title": "Festkonzert 2026 der Chorakademie",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [
+        "Vorchor des Mädchenchors der Chorakademie",
+        "Nachwuchschor des Mädchenchors I der Chorakademie",
+        "Nachwuchschor des Mädchenchors II der Chorakademie",
+        "Mädchenkonzertchor der Chorakademie",
+        "Vorchor des Knabenchors der Chorakademie",
+        "Nachwuchschor des Knabenchors der Chorakademie",
+        "Knabenkonzertchor der Chorakademie",
+        "Stimmwechsler der Chorakademie",
+        "Jugendchor der Chorakademie",
+        "Jugendmädchenchor der Chorakademie",
+        "Frauenstimmen der Chorakademie",
+        "Collegium Musicum der Chorakademie"
+      ],
+      "conductor": null,
+      "price": null,
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/25-05-2026-festkonzert-2026-der-chorakademie/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
@@ -414,10 +284,16 @@
       "title": "Element of Crime",
       "venue_hall": "Konzerthaus Dortmund",
       "program": [
-        "Element of Crime: Classic Songs and Rare Treasures"
+        "Element of Crime: [specific works not provided in the text]"
       ],
       "performers": [
-        "Sven Regener, Rainer Theobald, Ekki Busch, Jakob Ilja, Markus Runzheimer, Richard Pappik, Tristan Brusch"
+        "Sven Regener",
+        "Rainer Theobald",
+        "Ekki Busch",
+        "Jakob Ilja",
+        "Markus Runzheimer",
+        "Richard Pappik",
+        "Tristan Brusch"
       ],
       "conductor": null,
       "price": "ausverkauft",
@@ -431,11 +307,32 @@
       "date": "2026-05-27",
       "time": "20:00",
       "title": "hr-Bigband – Miles Davis zum 100.",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Davis: All Blues",
+        "Davis: So What",
+        "Davis: In a Silent Way"
+      ],
+      "performers": [
+        "HR Bigband"
+      ],
+      "conductor": "Christoph Caskel",
+      "price": "26 € – 66 €",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/27-05-2026-hr-bigband-miles-davis-zum-100/platzwahl/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "duration_min": 90,
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-27",
+      "time": "20:00",
+      "title": "hr-Bigband – Miles Davis zum 100.",
       "venue_hall": "Konzerthaus Dortmund",
       "program": [
-        "Miles Davis: Miles Ahead",
-        "George Gershwin: Porgy and Bess",
-        "Miles Davis: Sketches of Spain"
+        "Davis: Miles Ahead",
+        "Gershwin: Porgy and Bess",
+        "Davis: Sketches of Spain"
       ],
       "performers": [
         "hr-Bigband",
@@ -445,27 +342,40 @@
         "Axel Schlosser"
       ],
       "conductor": "Miho Hazama",
-      "price": "Tickets 26 € – 66 €",
+      "price": "€66,00",
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/27-05-2026-hr-bigband-miles-davis-zum-100/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
-      "duration_min": 120,
+      "duration_min": 140,
       "is_classical": true
     },
     {
       "date": "2026-05-28",
       "time": "20:00",
       "title": "Naturally 7",
-      "venue_hall": "Konzerthaus Dortmund",
-      "program": [
-        "Naturally 7: Best of",
-        "Naturally 7: Closer Look"
-      ],
+      "venue_hall": "Großer Saal",
+      "program": [],
       "performers": [
         "Naturally 7"
       ],
       "conductor": null,
-      "price": "Tickets 21 € – 55 €",
+      "price": "21 € – 55 €",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/28-05-2026-naturally-7/platzwahl/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "is_classical": false
+    },
+    {
+      "date": "2026-05-28",
+      "time": "20:00",
+      "title": "Naturally 7",
+      "venue_hall": "Konzerthaus Dortmund",
+      "program": [],
+      "performers": [
+        "Naturally 7"
+      ],
+      "conductor": null,
+      "price": "€55,00 – €8,00",
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/28-05-2026-naturally-7/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
@@ -476,38 +386,34 @@
       "date": "2026-05-29",
       "time": "20:00",
       "title": "Naturally 7",
-      "venue_hall": "Konzerthaus Dortmund",
-      "program": [
-        "Naturally 7: Closer Look"
-      ],
+      "venue_hall": null,
+      "program": [],
       "performers": [
         "Naturally 7"
       ],
       "conductor": null,
-      "price": "Tickets 21 € – 55 €",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/29-05-2026-naturally-7/",
+      "price": "21 € – 55 €",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/29-05-2026-naturally-7/platzwahl/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
-      "duration_min": 135,
       "is_classical": false
     },
     {
       "date": "2026-05-29",
       "time": "20:00",
-      "title": "Mariza",
+      "title": "Naturally 7",
       "venue_hall": "Konzerthaus Dortmund",
-      "program": [
-        "Mariza: Fado Classic"
-      ],
+      "program": [],
       "performers": [
-        "Mariza"
+        "Naturally 7"
       ],
       "conductor": null,
-      "price": "ab €25",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/11-02-2022-mariza",
+      "price": "€55,00",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/29-05-2026-naturally-7/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
-      "is_classical": true
+      "duration_min": 135,
+      "is_classical": false
     },
     {
       "date": "2026-05-30",
@@ -516,9 +422,9 @@
       "venue_hall": null,
       "program": [
         "Béla Bartók: Sonate für zwei Klaviere und Schlagzeug Sz 110",
-        "George Gershwin: \"Rhapsody in Blue\"",
-        "Leonard Bernstein: Sinfonische Tänze aus \"West Side Story\"",
-        "John Adams: \"Short ride in a fast machine\""
+        "George Gershwin: Rhapsody in Blue",
+        "Leonard Bernstein: Sinfonische Tänze aus West Side Story",
+        "John Adams: Short ride in a fast machine"
       ],
       "performers": [
         "Arthur Jussen",
@@ -527,19 +433,44 @@
         "Emil Kuyumcuyan"
       ],
       "conductor": null,
-      "price": "Tickets 29 € – 79 €",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/30-05-2026-lucas-jussen-arthur-jussen/",
+      "price": "29 € – 79 €",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/30-05-2026-lucas-jussen-arthur-jussen/platzwahl/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "is_classical": true
     },
     {
+      "date": "2026-05-30",
+      "time": "19:30",
+      "title": "Lucas Jussen & Arthur Jussen",
+      "venue_hall": "Konzerthaus Dortmund",
+      "program": [
+        "Béla Bartók: Sonate für zwei Klaviere und Schlagzeug Sz 110",
+        "George Gershwin: Rhapsody in Blue",
+        "Leonard Bernstein: Sinfonische Tänze aus West Side Story",
+        "John Adams: Short ride in a fast machine"
+      ],
+      "performers": [
+        "Arthur Jussen",
+        "Lucas Jussen",
+        "Alexej Gerassimez",
+        "Emil Kuyumcuyan"
+      ],
+      "conductor": null,
+      "price": "€29–€79",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/30-05-2026-lucas-jussen-arthur-jussen/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "duration_min": 80,
+      "is_classical": true
+    },
+    {
       "date": "2026-05-31",
       "time": "18:00",
-      "title": "Klangbilder des Schicksals: Ginasteras virtuose Variationen & Tschaikowskys dramatische Fünfte",
+      "title": "Klangbilder des Schicksals",
       "venue_hall": null,
       "program": [
-        "Alberto Ginastera: Variaciones concertantes",
+        "Alberto Ginastera: Variationen concertantes",
         "Ernest Chausson: Poème für Violine und Orchester op. 25",
         "Peter Iljitsch Tschaikowsky: Sinfonie Nr. 5 e-moll op. 64"
       ],
@@ -550,19 +481,342 @@
         "Michael Shaham"
       ],
       "conductor": "Fabio Mechetti",
-      "price": "Tickets 17 €",
+      "price": "17 €",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/31-05-2026-klangbilder-des-schicksals-ginasteras-virtuose-variationen-tschaikowskys-dramatische-fuenfte/platzwahl/},{",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-31",
+      "time": "19:30",
+      "title": "Klangbilder des Schicksals",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Ginastera: Virtuose Variationen",
+        "Tschaikovsky: Dramatische Fünfte"
+      ],
+      "performers": [
+        "Folkwang Universität der Künste"
+      ],
+      "conductor": "Dr. Raphael von Hoensbroech",
+      "price": "€17,00",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/31-05-2026-klangbilder-des-schicksals-ginasteras-virtuose-variationen-tschaikowskys-dramatische-fuenfte/platzwahl/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-31",
+      "time": "19:30",
+      "title": "Klangbilder des Schicksals: Ginasteras virtuose Variationen & Tschaikowskys dramatische Fünfte",
+      "venue_hall": "Konzerthaus Dortmund",
+      "program": [
+        "Ginastera: Variaciones concertantes",
+        "Chausson: Poème für Violine und Orchester op. 25",
+        "Tschaikovsky: Sinfonie Nr. 5 e-moll op. 64"
+      ],
+      "performers": [
+        "OZM | Symphony",
+        "Önder Baloglu",
+        "Michael Shaham"
+      ],
+      "conductor": "Fabio Mechetti",
+      "price": null,
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/31-05-2026-klangbilder-des-schicksals-ginasteras-virtuose-variationen-tschaikowskys-dramatische-fuenfte/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "duration_min": 90,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-02",
+      "time": "19:30",
+      "title": "Jan Lisiecki",
+      "venue_hall": "Konzerthaus Dortmund",
+      "program": [
+        "Bohuslav Martinů: Drei Tschechische Tänze",
+        "Manuel de Falla: Danza española Nr. 1",
+        "Manuel de Falla: Danza española Nr. 2",
+        "Karol Szymanowski: Vier Polnische Tänze für Klavier op. 47",
+        "Franz Schubert: 16 Deutsche Tänze D 783",
+        "Béla Bartók: Rumänische Volkstänze Sz 56",
+        "Alberto Ginastera: Danzas Argentinas op. 2",
+        "Frédéric Chopin: Grande valse brillante Es-Dur op. 18",
+        "Johannes Brahms: Walzer Nr. 3 gis-moll aus 16 Walzer op. 39",
+        "Frédéric Chopin: Grande valse brillante As-Dur op. 34 Nr. 1",
+        "Frédéric Chopin: Grande valse brillante a-moll op. 34 Nr. 2",
+        "Johannes Brahms: Walzer Nr. 15 A-Dur aus 16 Walzer op. 39",
+        "Astor Piazzolla: Libertango",
+        "Manuel de Falla: Danza ritual del fuego",
+        "Frédéric Chopin: Polonaise Nr. 6 As-Dur op. 53"
+      ],
+      "performers": [
+        "Jan Lisiecki"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/02-06-2026-jan-lisiecki/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-02",
+      "time": "20:00",
+      "title": "Jan Lisiecki",
+      "venue_hall": null,
+      "program": [
+        "Bohuslav Martinů: Drei Tschechische Tänze",
+        "Manuel de Falla: Danza española Nr. 1",
+        "Manuel de Falla: Danza española Nr. 2",
+        "Karol Szymanowski: Vier Polnische Tänze für Klavier op. 47",
+        "Franz Schubert: 16 Deutsche Tänze D 783",
+        "Béla Bartók: Rumänische Volkstänze Sz 56",
+        "Alberto Ginastera: Danzas Argentinas op. 2",
+        "Frédéric Chopin: Grande valse brillante Es-Dur op. 18",
+        "Johannes Brahms: Walzer Nr. 3 gis-moll aus 16 Walzer op. 39",
+        "Frédéric Chopin: Grande valse brillante As-Dur op. 34 Nr. 1",
+        "Frédéric Chopin: Grande valse brillante a-moll op. 34 Nr. 2",
+        "Johannes Brahms: Walzer Nr. 15 A-Dur aus 16 Walzer op. 39",
+        "Astor Piazzolla: Libertango",
+        "Manuel de Falla: Danza ritual del fuego",
+        "Frédéric Chopin: Polonaise Nr. 6 As-Dur op. 53 (Héroïque)"
+      ],
+      "performers": [
+        "Jan Lisiecki"
+      ],
+      "conductor": null,
+      "price": "29 € – 79 €",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/02-06-2026-jan-lisiecki/platzwahl/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-03",
+      "time": "19:30",
+      "title": "Orchesterkonzert",
+      "venue_hall": null,
+      "program": [
+        "André Previn: Konzert für Violine und Steichorchester Nr. 2 (mit zwei Cembalo-Zwischenspielen)",
+        "Wolfgang Amadeus Mozart: Konzert für Violine und Orchester Nr. 1 B-Dur KV 207",
+        "Aftab Darvishi: Likoo für Violine solo",
+        "Wolfgang Amadeus Mozart: Konzert für Violine und Orchester Nr. 5 A-Dur KV 219"
+      ],
+      "performers": [
+        "Berliner Barock Solisten",
+        "Anne-Sophie Mutter"
+      ],
+      "conductor": "Anne-Sophie Mutter",
+      "price": "29 € – 149 €",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/03-06-2026-anne-sophie-mutter-berliner-barock-solisten/platzwahl/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-03",
+      "time": "19:30",
+      "title": "Anne-Sophie Mutter & Berliner Barock Solisten",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "André Previn: Konzert für Violine und Steichorchester Nr. 2 (mit zwei Cembalo-Zwischenspielen)",
+        "Wolfgang Amadeus Mozart: Konzert für Violine und Orchester Nr. 1 B-Dur KV 207",
+        "Aftab Darvishi: »Likoo« für Violine solo",
+        "Wolfgang Amadeus Mozart: Konzert für Violine und Orchester Nr. 5 A-Dur KV 219"
+      ],
+      "performers": [
+        "Anne-Sophie Mutter",
+        "Berliner Barock Solisten"
+      ],
+      "conductor": "Anne-Sophie Mutter",
+      "price": "ab €25",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/03-06-2026-anne-sophie-mutter-berliner-barock-solisten/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-04",
+      "time": "20:00",
+      "title": "Jubiäums-Konzert Dortmund Musik",
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "Eintritt frei",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/12-06-2026-jubilaeumskonzert-dortmund-musik/platzwahl/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-05",
+      "time": "18:00",
+      "title": "Junge Wilde – Lea Desandre",
+      "venue_hall": "Konzerthaus Dortmund",
+      "program": [
+        "Debussy: Pagodes aus Estampes",
+        "Debussy: Chansons de Bilitis für Gesang und Klavier",
+        "Schubert: Liebesbotschaft aus Schwanengesang D 957",
+        "Schubert: Ständchen aus Schwanengesang D 957",
+        "Schubert: Gretchen am Spinnrade D 118",
+        "Schubert: Die Götter Griechenlands D 677",
+        "Schubert: Auf dem Wasser zu singen D 774",
+        "Duparc: L’invitation au voyage",
+        "Schubert: Impromptu Nr. 3 Ges-Dur aus Vier Impromptus D 899",
+        "Berlioz: Villanelle aus Les nuits d'été op. 7",
+        "Berlioz: Le spectre de la Rose aus Les nuits d'été op. 7",
+        "Berlioz: L’île inconnue aus Les nuits d'été op. 7"
+      ],
+      "performers": [
+        "Lea Desandre",
+        "Tanguy de Williencourt"
+      ],
+      "conductor": null,
+      "price": "ab €25",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/05-06-2026-junge-wilde-lea-desandre/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-05",
+      "time": "19:30",
+      "title": "Junge Wilde – Lea Desandre",
+      "venue_hall": "Konzerthaus Dortmund",
+      "program": [
+        "Beethoven: Konzert für Violine und Orchester D-Dur op. 61",
+        "Bach: Kantate BWV 51",
+        "Vivaldi: Concerto for Violin in A Minor RV 356"
+      ],
+      "performers": [
+        "Lea Desandre",
+        "Dortmunder Philharmoniker"
+      ],
+      "conductor": "Niko Müller",
+      "price": "€15,00 - €29,00",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/05-06-2026-junge-wilde-lea-desandre/platzwahl/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "duration_min": 90,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-07",
+      "time": "19:00",
+      "title": "Gaetano Donizetti: La favorite",
+      "venue_hall": "Konzerthaus Dortmund",
+      "program": [
+        "Gaetano Donizetti: »La favorite« Grand Opéra in vier Akten (konzertante Aufführung in französischer Sprache mit deutschen Übertiteln)"
+      ],
+      "performers": [
+        "Varduhi Abrahamyan Léonor de Gusman",
+        "Kang Wang Fernand",
+        "Germán Enrique Alcántara Alphonse XI",
+        "Bogdan Taloș Balthasar",
+        "Suzanne Jerosme Inès",
+        "Ángel Macías Don Gaspar",
+        "WDR Rundfunkchor",
+        "WDR Funkhausorchester"
+      ],
+      "conductor": "Antonino Fogliani",
+      "price": "€25–€65",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/07-06-2026-gaetano-donizetti-la-favorite/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-07",
+      "time": "20:00",
+      "title": "Gaetano Donizetti: La Favorite",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Donizetti: La Favorite"
+      ],
+      "performers": [
+        "Dortmunder Philharmoniker",
+        "Mirella Freni"
+      ],
+      "conductor": "Dr. Raphael von Hoensbroech",
+      "price": "€35,00 – €65,00",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/07-06-2026-gaetano-donizetti-la-favorite/platzwahl/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "duration_min": 150,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-09",
+      "time": "19:30",
+      "title": "8. Philharmonisches Konzert",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Maurice Ravel: »Ma mère l’oye« (»Mutter Gans«) Suite für Orchester",
+        "Takashi Yoshimatsu: Konzert für Fagott und Orchester »Unicorn circuit«",
+        "Wolfgang Amadeus Mozart: Sinfonie Nr. 41 C-Dur KV 551 »Jupiter«"
+      ],
+      "performers": [
+        "Dortmunder Philharmoniker",
+        "Sophie Dervaux",
+        "Nodoka Okisawa"
+      ],
+      "conductor": "Nodoka Okisawa",
+      "price": "€19,00 – €49,00",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/09-06-2026-8-philharmonisches-konzert/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-09",
+      "time": "20:00",
+      "title": "8. Philharmonisches Konzert",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Brahms: Symphonie Nr. 1 c-Moll op. 68"
+      ],
+      "performers": [
+        "Philharmonisches Orchester Dortmund"
+      ],
+      "conductor": "Gabriel Feltz",
+      "price": "€15–€85",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/09-06-2026-8-philharmonisches-konzert/platzwahl/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-10",
+      "time": "19:30",
+      "title": "8. Philharmonisches Konzert",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Maurice Ravel: »Ma mère l’oye« (»Mutter Gans«) Suite für Orchester",
+        "Takashi Yoshimatsu: Konzert für Fagott und Orchester »Unicorn circuit«",
+        "Wolfgang Amadeus Mozart: Sinfonie Nr. 41 C-Dur KV 551 »Jupiter«"
+      ],
+      "performers": [
+        "Dortmunder Philharmoniker",
+        "Sophie Dervaux"
+      ],
+      "conductor": "Nodoka Okisawa",
+      "price": "€19,00–€49,00",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/10-06-2026-8-philharmonisches-konzert/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "is_classical": true
     },
     {
       "date": "2026-06-12",
-      "time": "19:00",
+      "time": "11:00",
       "title": "Jubiläumskonzert Dortmund Musik",
       "venue_hall": "Konzerthaus Dortmund",
       "program": [
-        "Dortmunder Jugendorchester (DOJO): Festkonzert"
+        "Brahms: Symphonie Nr. 1 c-Moll op. 68"
       ],
       "performers": [
         "Dortmunder Jugendorchester (DOJO)",
@@ -570,317 +824,263 @@
       ],
       "conductor": "Achim Fiedler",
       "price": null,
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/12-06-2026-jubilaeumskonzert-dortmund-musik",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/12-06-2026-jubilaeumskonzert-dortmund-musik/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "is_classical": true
     },
     {
-      "date": "2026-06-12",
-      "time": "20:00",
-      "title": "Dekker",
+      "date": "2026-06-13",
+      "time": "11:00",
+      "title": "Wir sind Dortmund Musik!",
       "venue_hall": "Konzerthaus Dortmund",
-      "program": [
-        "Dekker: Slow Reveal: Chapter One",
-        "Dekker: I won't be your foe"
-      ],
+      "program": [],
       "performers": [
-        "Brookln Dekker",
-        "Stefan Wittich",
-        "Max Grüner"
+        "Orchester, Ensembles, Chöre & Bands von DORTMUND MUSIK"
       ],
       "conductor": null,
       "price": null,
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/12-06-2025-dekker",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/13-06-2026-wir-sind-dortmund-musik/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "is_classical": true
     },
     {
-      "date": "2026-09-12",
+      "date": "2026-06-17",
+      "time": "17:00",
+      "title": "Öffentliche Hausführung",
+      "venue_hall": "Konzerthaus Dortmund",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "€5",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/17-06-2026-oeffentliche-hausfuehrung/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-18",
       "time": "20:00",
-      "title": "Mulatu Astatke",
+      "title": "Pat Metheny – Side-Eye III+",
       "venue_hall": "Großer Saal",
       "program": [
-        "Astatke: Yekermo Sew",
-        "Astatke: Kulun",
-        "Astatke: Fareed's Mode"
+        "Metheny: Side-Eye III+ Repertoire"
       ],
       "performers": [
-        "Mulatu Astatke - Keyboard, Congas, Vibrafon",
-        "James Arben - Saxophon, Flöte",
-        "Byron Wallen - Trompete",
-        "Danny Keane - Violoncello",
-        "Neil Charles - Kontrabass",
-        "Alexander Hawkins - Klavier",
-        "Richard Olatunde Baker - Perkussion",
-        "Jon Scott - Schlagzeug"
+        "Pat Metheny",
+        "Chris Fishman",
+        "Jermaine Paul",
+        "Joe Dyson",
+        "Leonard Patton"
       ],
       "conductor": null,
-      "price": "ab €25",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/12-09-2025-mulatu-astatke",
+      "price": "€8,00–€94,00",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-06-2026-pat-metheny-side-eye-iii/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
-      "duration_min": 90,
       "is_classical": true
     },
     {
-      "date": "2026-10-12",
+      "date": "2026-09-10",
       "time": "19:30",
-      "title": "Stars on 88 Part II",
-      "venue_hall": "Großer Saal",
+      "title": "Wildes Holz",
+      "venue_hall": "Konzerthaus Dortmund",
       "program": [
-        "Wendt: Stars on 88 Part II"
+        "Wildes Holz: Diverse Werke"
       ],
       "performers": [
-        "Joja Wendt"
+        "Tobias Reisige",
+        "Johannes Behr",
+        "Markus Conrads"
       ],
       "conductor": null,
+      "price": "ab €23,50",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/10-09-2026-wildes-holz/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-10",
+      "time": "20:00",
+      "title": "Wildes Holz",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Brahms: Symphonie Nr. 1 c-Moll op. 68",
+        "Beethoven: Klavierkonzert Nr. 5 Es-Dur op. 73"
+      ],
+      "performers": [
+        "Wildes Holz"
+      ],
+      "conductor": "Max Mustermann",
       "price": "ab €25",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/12-10-2022-joja-wendt",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/10-09-2026-wildes-holz/platzwahl/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "duration_min": 120,
       "is_classical": true
     },
     {
-      "date": "2026-10-24",
+      "date": "2026-09-11",
       "time": "20:00",
-      "title": "Der Soundtrack meines Lebens",
-      "venue_hall": "Konzerthaus Dortmund",
+      "title": "Goran Bregoviç and His Wedding & Funeral Band",
+      "venue_hall": "Großer Saal",
       "program": [
-        "Wecker: Filmmusiken und Lieder aus 45 Jahren"
+        "Bregović: Sevdah",
+        "Bregović: Kolo",
+        "Bregović: Lullaby"
       ],
       "performers": [
-        "Konstantin Wecker"
+        "Goran Bregović",
+        "His Wedding & Funeral Band"
       ],
       "conductor": null,
-      "price": null,
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/24-10-2024-konstantin-wecker",
+      "price": "€28.00 – €75.00",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/11-09-2026-goran-bregovi-and-his-wedding-funeral-band/platzwahl/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
-      "duration_min": 135,
       "is_classical": true
     },
     {
-      "date": "2026-11-12",
+      "date": "2026-09-11",
       "time": "20:00",
-      "title": "Dittsche",
+      "title": "Goran Bregović and his Wedding & Funeral Band",
       "venue_hall": "Großer Saal",
       "program": [
-        "Olli Dittrich: Dittsche"
+        "Bregović: Ouzo & Banana"
       ],
       "performers": [
-        "Olli Dittrich"
+        "Goran Bregović",
+        "The Wedding and Funeral Band"
       ],
       "conductor": null,
-      "price": "ab €25",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/12-11-2025-dittsche",
+      "price": "ab €75",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/11-09-2026-goran-bregovi-and-his-wedding-funeral-band/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
-      "duration_min": 145,
+      "duration_min": 120,
       "is_classical": true
     },
     {
-      "date": "2026-12-06",
-      "time": "19:30",
-      "title": "Festliche Adventsgala",
-      "venue_hall": "Großer Saal",
+      "date": "2026-09-14",
+      "time": "18:00",
+      "title": "Kopfnoten – Eine musikalische Geschichte Amerikas",
+      "venue_hall": "Orchesterzentrum|NRW",
       "program": [],
       "performers": [
-        "Landesjugendchor NRW",
-        "Konzertchor Westfalica der Chorakademie",
-        "Combo des JugendJazzOrchester NRW"
+        "Michael Stegemann"
       ],
-      "conductor": "Nicolas Fink",
+      "conductor": null,
       "price": null,
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/06-12-2026-festliche-adventsgala",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/14-09-2026-kopfnoten-eine-musikalische-geschichte-amerikas/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "is_classical": true
     },
     {
-      "date": "2026-12-15",
+      "date": "2026-09-17",
+      "time": "20:00",
+      "title": "Daniel Barenboim & West-Eastern Divan Orchestra",
+      "venue_hall": "Konzerthaus Dortmund",
+      "program": [
+        "Franz Schubert: Sinfonie Nr. 7 h-moll D 759 »Unvollendete«",
+        "Richard Wagner: Vorspiel zu »Tristan und Isolde« WWV 90",
+        "Ludwig van Beethoven: Sinfonie Nr. 3 Es-Dur op. 55 »Eroica«"
+      ],
+      "performers": [
+        "West-Eastern Divan Orchestra"
+      ],
+      "conductor": "Daniel Barenboim",
+      "price": "€15–€85",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/17-09-2026-daniel-barenboim-west-eastern-divan-orchestra/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-18",
       "time": "19:30",
-      "title": "Adventskonzert Freiburger Barockorchester",
+      "title": "George Gershwin: Porgy and Bess",
       "venue_hall": "Großer Saal",
       "program": [
-        "Bach: Nun komm, der Heiden Heiland Kantate BWV 61",
-        "Bach: Christen, ätzet diesen Tag Kantate BWV 63",
-        "Bach: Gelobet seist du, Jesu Christ Kantate BWV 91",
-        "Praetorius: Angelus ad pastores ait",
-        "Bach: Gloria in excelsis Deo Kantate BWV 191"
+        "Gershwin: Porgy and Bess Oper in drei Akten (konzertante Aufführung in englischer Sprache mit deutschen Übertiteln)"
       ],
       "performers": [
-        "Dorothee Mields",
-        "Alexander Chance",
-        "Julian Prégardien",
-        "Markus Walser",
-        "Zürcher Sing-Akademie",
-        "Freiburger Barockorchester"
+        "Siyabulela Ntlale Porgy",
+        "Nonhlanhla Yende Bess",
+        "Conroy Scott Crown",
+        "Lukhanyo Moyake Sportin’ Life",
+        "Brittany Smith Clara",
+        "Siphamandla Moyake Serena",
+        "Lungelwa Mdekazi Maria",
+        "Cape Town Opera Chorus",
+        "Chineke! Orchestra"
       ],
-      "conductor": "Kristian Bezuidenhout",
-      "price": "ab €25",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/15-12-2023-adventskonzert-freiburger-barockorchester",
+      "conductor": "Enrique Mazzola",
+      "price": "€99,00",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-09-2026-george-gershwin-porgy-and-bess/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
-      "duration_min": 85,
+      "duration_min": 120,
       "is_classical": true
     },
     {
-      "date": "2026-12-18",
-      "time": "19:30",
-      "title": "Ballet Revolución",
-      "venue_hall": "Konzerthaus Dortmund",
-      "program": [],
-      "performers": [
-        "Ballet Revolución Live-Band"
-      ],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/08-01-2023-ballet-revolucion",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "is_classical": true
-    },
-    {
-      "date": "2027-02-25",
-      "time": "19:30",
-      "title": "Klavierabend Hélène Grimaud",
-      "venue_hall": "Konzerthaus Dortmund",
-      "program": [
-        "Beethoven: Sonate für Klavier Nr. 32 c-moll op. 111",
-        "Schubert: Sonate für Klavier B-Dur D 960"
-      ],
-      "performers": [
-        "Hélène Grimaud"
-      ],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/25-02-2027-klavierabend-helene-grimaud",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "is_classical": true
-    },
-    {
-      "date": "2027-04-09",
+      "date": "2026-09-18",
       "time": "20:00",
-      "title": "Luiza",
-      "venue_hall": "Konzerthaus Dortmund",
-      "program": [
-        "Luiza: Soleil Bleu"
-      ],
-      "performers": [
-        "Luiza"
-      ],
-      "conductor": null,
-      "price": "€39,00 – €8,00",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/09-04-2027-luiza",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "is_classical": true
-    },
-    {
-      "date": "2027-04-11",
-      "time": "19:30",
-      "title": "Klavierabend Georgijs Osokins",
+      "title": "George Gershwin: Porgy and Bess",
       "venue_hall": "Großer Saal",
       "program": [
-        "Domenico Scarlatti: Sonate d-moll K 213",
-        "Johann Sebastian Bach: Chaconne aus Partita für Violine solo Nr. 2 d-moll BWV 1004 (Fassung für Klavier von Ferruccio Busoni)",
-        "Sergej Rachmaninow: Prélude D-Dur op. 23 Nr. 4 aus 10 Préludes op. 23",
-        "Sergej Rachmaninow: Prélude gis-moll op. 32 Nr. 12",
-        "Alexander Skrjabin: »Caresse dansée« aus Deux Morceaux op. 57",
-        "Alexander Skrjabin: »En rêvant, avec une grande douceur« aus Deux Poèmes op. 71",
-        "Alexander Skrjabin: »Vers la flamme« Poème op. 72",
-        "Frédéric Chopin: Barcarolle Fis-Dur op. 60",
-        "Frédéric Chopin: Mazurka cis-moll aus Vier Mazurkas op. 30",
-        "Frédéric Chopin: Moderato aus Drei Mazurkas op. 50",
-        "Frédéric Chopin: »Souvenir de Paganini« Variationen A-Dur",
-        "Franz Liszt: ›Après une Lecture de Dante: Fantasia quasi Sonata‹ aus »Années de Pèlerinage, Deuxième année: Italie«"
+        "Gershwin: Porgy and Bess"
       ],
       "performers": [
-        "Georgijs Osokins"
+        "Orchester der Deutschen Oper am Rhein",
+        "Chor der Deutschen Oper am Rhein",
+        "Solisten der Deutschen Oper am Rhein"
+      ],
+      "conductor": "Ariel Zuckermann",
+      "price": "€20,00 – €99,00",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/18-09-2026-george-gershwin-porgy-and-bess/platzwahl/",
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "duration_min": 180,
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-19",
+      "time": "19:30",
+      "title": "Mindful Listening – Achtsam hören mit Pianist Nicolas Namoradze",
+      "venue_hall": "Main Hall",
+      "program": [
+        "Namoradze: Works specific to the concert"
+      ],
+      "performers": [
+        "Nicolas Namoradze"
       ],
       "conductor": null,
-      "price": null,
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/11-04-2027-klavierabend-georgijs-osokins",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "is_classical": true
-    },
-    {
-      "date": "2027-05-02",
-      "time": "11:00",
-      "title": "Young Artist Matinee",
-      "venue_hall": "Konzerthaus Dortmund",
-      "program": [
-        "Ligeti: »Concert Românesc«",
-        "Mozart: Konzert für Klarinette und Orchester A-Dur KV 622",
-        "Beethoven: Sinfonie Nr. 7 A-Dur op. 92"
-      ],
-      "performers": [
-        "Annelien van Wauwe",
-        "Jenaer Philharmonie"
-      ],
-      "conductor": "Simon Gaudenz",
-      "price": "€25–€50",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/02-05-2027-young-artist-matinee",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "is_classical": true
-    },
-    {
-      "date": "2027-05-21",
-      "time": "20:00",
-      "title": "Tristan Brusch",
-      "venue_hall": "Konzerthaus Dortmund",
-      "program": [
-        "Brusch: Album \"Am Anfang\""
-      ],
-      "performers": [
-        "Tristan Brusch"
-      ],
-      "conductor": null,
-      "price": "€14.00",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/21-05-2027-tristan-brusch",
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "is_classical": true
-    },
-    {
-      "date": "2027-05-27",
-      "time": "20:00",
-      "title": "Disco Inferno",
-      "venue_hall": "Konzerthaus Dortmund",
-      "program": [
-        "Songs from the Disco Era"
-      ],
-      "performers": [
-        "Neue Philharmonie Westfalen",
-        "Backing Vocals",
-        "Gesangssolistinnen & -solisten"
-      ],
-      "conductor": "Rasmus Baumann",
-      "price": "ab €25",
-      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/27-05-2027-disco-inferno",
+      "price": "€15–€85",
+      "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/19-09-2026-mindful-listening-achtsam-hoeren-mit-pianist-nicolas-namoradze/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "is_classical": true
     }
   ],
-  "total_events": 43,
-  "total_events_visible": 43,
-  "total_events_discovered": 82,
-  "total_events_discovered_strict": 82,
+  "total_events": 50,
+  "total_events_visible": 56,
+  "total_events_discovered": 386,
+  "total_events_discovered_strict": 386,
   "source": "firecrawl_listing",
+  "latest_event_date": "2026-09-19",
+  "covers_horizon": false,
   "map_expand_stats": {
+    "preferred_urls": 386,
     "map_urls": 82,
-    "html_urls": 0,
-    "new_urls": 82,
-    "scraped": 82,
-    "past": 30,
-    "invalid": 21,
+    "html_urls": 386,
+    "new_urls": 454,
+    "scraped": 39,
+    "past": 0,
+    "beyond_horizon": 0,
+    "invalid": 4,
     "canceled": 0
   }
 }
