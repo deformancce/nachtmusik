@@ -3,7 +3,7 @@
   "city": "Stuttgart",
   "slug": "liederhalle_stuttgart",
   "source_url": "https://liederhalle.de/eventkalender",
-  "scraped_at": "2026-05-18T17:45:01.632327Z",
+  "scraped_at": "2026-05-18T20:44:24.439726Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
@@ -21,6 +21,11 @@
       "detail_url": "https://liederhalle.de/veranstaltung/homin-choir",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -32,13 +37,18 @@
         "Haydn: Sinfonie Nr. 101 D-Dur ('Die Uhr')"
       ],
       "performers": [
-        "SWR Symphonieorchester"
+        "SWR"
       ],
       "conductor": "François-Xavier Roth",
       "price": "Freier Eintritt, Reservierung erforderlich",
       "detail_url": "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -65,6 +75,11 @@
       "detail_url": "https://liederhalle.de/veranstaltung/chopin-preistraeger",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -85,6 +100,11 @@
       "detail_url": "https://liederhalle.de/veranstaltung/staatsorchester-stuttgart-7-kammerkonzert-film-ab",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -105,6 +125,11 @@
       "detail_url": "https://liederhalle.de/veranstaltung/mariani-klavierquartett",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -121,6 +146,11 @@
       "detail_url": "https://liederhalle.de/veranstaltung/bee-gees-by-maincourse-europas-groesste-bee-gees-tribute-show-0",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": false
     },
     {
@@ -135,6 +165,10 @@
       "detail_url": "https://liederhalle.de/veranstaltung/ibrahim-selim-ile-bu-gece",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": false,
+      "enrichment_status": "stub",
       "is_classical": false
     },
     {
@@ -151,6 +185,11 @@
       "detail_url": "https://liederhalle.de/veranstaltung/orsophilharmonic-soundtracks-0",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -159,12 +198,18 @@
       "title": "The Umbilical Brothers: The Best of The Worst of The Best",
       "venue_hall": "Mozart-Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "The Umbilical Brothers"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/the-umbilical-brothers-the-best-of-the-worst-of-the-best",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": false
     },
     {
@@ -182,6 +227,11 @@
       "detail_url": "https://liederhalle.de/veranstaltung/alexander-stevens-jacqueline-belle-true-crime-toxic-love",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": false
     },
     {
@@ -199,6 +249,11 @@
       "detail_url": "https://liederhalle.de/veranstaltung/die-deutschen-podcast-tour-aber-anders",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": false
     },
     {
@@ -215,6 +270,11 @@
       "detail_url": "https://liederhalle.de/veranstaltung/mabel-matiz",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": false
     },
     {
@@ -239,6 +299,11 @@
       "detail_url": "https://liederhalle.de/veranstaltung/steve-hackett-best-of-genesis-solo-gems-2026-tour",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": false
     },
     {
@@ -253,6 +318,10 @@
       "detail_url": "https://liederhalle.de/veranstaltung/pretty-woman-das-musical",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": false,
+      "enrichment_status": "stub",
       "is_classical": false
     },
     {
@@ -273,6 +342,11 @@
       "detail_url": "https://liederhalle.de/veranstaltung/utopia-orchestra-teodor-currentzis",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -281,12 +355,18 @@
       "title": "Pretty Woman - Das Musical",
       "venue_hall": "Hegel-Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Limelight Live Entertainment GmbH"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/pretty-woman-das-musical-0",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": false
     },
     {
@@ -303,6 +383,11 @@
       "detail_url": "https://liederhalle.de/veranstaltung/element-of-crime-konzerthaustournee-2026",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": false
     },
     {
@@ -319,14 +404,21 @@
       "detail_url": "https://liederhalle.de/veranstaltung/pretty-woman-das-musical-1",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": false
     }
   ],
   "total_events": 18,
-  "total_events_visible": 35,
+  "total_events_visible": 19,
   "total_events_discovered": 18,
   "total_events_discovered_strict": 18,
+  "total_events_enriched": 16,
   "source": "firecrawl_listing",
+  "latest_discovered_event_date": "2026-05-29",
   "latest_event_date": "2026-05-29",
   "covers_horizon": false,
   "map_expand_stats": {
@@ -334,10 +426,6 @@
     "map_urls": 0,
     "html_urls": 18,
     "new_urls": 0,
-    "scraped": 0,
-    "past": 0,
-    "beyond_horizon": 0,
-    "invalid": 0,
-    "canceled": 0
+    "latest_discovered_date": "2026-05-29"
   }
 }
