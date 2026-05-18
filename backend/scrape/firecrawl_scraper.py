@@ -592,93 +592,6 @@ def _liederhalle_actions() -> list[dict]:
     ]
 
 
-_TONHALLE_CARD_JS = r"""
-async () => {
-  const sleep = (ms) => new Promise(r => setTimeout(r, ms));
-  const log = [];
-
-  const cookieRe = /^(alle\s+akzeptieren|akzeptieren|alle\s+cookies\s+akzeptieren|einverstanden|zustimmen|alles\s+erlauben|alle\s+aktivieren|accept(?:\s+all)?|agree|got\s+it)$/i;
-  for (const el of document.querySelectorAll('button, a, [role="button"], input[type="button"]')) {
-    const t = (el.textContent || el.value || '').trim();
-    if (!t || t.length > 60) continue;
-    if (cookieRe.test(t)) {
-      try { el.click(); log.push('cookie:' + t); break; } catch (e) {}
-    }
-  }
-  await sleep(900);
-
-  // Hide accessibility assistant overlays and make image-heavy cards text-first.
-  const style = document.createElement('style');
-  style.textContent = `
-    img, picture, video, canvas, [style*="background-image"] {
-      visibility: hidden !important;
-      opacity: 0 !important;
-    }
-    [class*="eye"], [id*="eye"], [class*="Eye"], [id*="Eye"],
-    [class*="able"], [id*="able"], [class*="Able"], [id*="Able"],
-    iframe[src*="eye"], iframe[src*="able"] {
-      display: none !important;
-      visibility: hidden !important;
-    }
-    a[href*="/veranstaltung/"] {
-      outline: 2px solid transparent !important;
-    }
-  `;
-  document.head.appendChild(style);
-  log.push('media:hidden');
-
-  // Close assistant panels/popovers if visible.
-  for (const el of document.querySelectorAll('button, a, [role="button"]')) {
-    const label = ((el.getAttribute('aria-label') || '') + ' ' + (el.textContent || '')).trim();
-    if (/schließen|close|ausblenden/i.test(label)) {
-      try { el.click(); log.push('closed:' + label.slice(0, 30)); await sleep(300); } catch (e) {}
-    }
-  }
-
-  const loadMoreRe = /mehr\s+(laden|anzeigen|veranstaltungen|events)|weitere\s+(veranstaltungen|events)|show\s+more|load\s+more/i;
-  let lastHeight = 0;
-  let clicks = 0;
-  let rounds = 0;
-  for (let i = 0; i < 55; i++) {
-    window.scrollTo(0, document.body.scrollHeight);
-    await sleep(900);
-    for (const el of document.querySelectorAll('a, button, [role="button"]')) {
-      if (el.offsetParent === null) continue;
-      const t = (el.textContent || '').replace(/\s+/g, ' ').trim();
-      if (loadMoreRe.test(t)) {
-        try {
-          el.scrollIntoView({block: 'center'});
-          el.click();
-          clicks++;
-          await sleep(1200);
-          break;
-        } catch (e) {}
-      }
-    }
-    const h = document.body.scrollHeight;
-    rounds = i + 1;
-    if (h === lastHeight) break;
-    lastHeight = h;
-  }
-
-  const eventLinks = Array.from(document.querySelectorAll('a[href*="/veranstaltung/"]')).length;
-  log.push('links:' + eventLinks);
-  log.push('rounds:' + rounds);
-  log.push('clicks:' + clicks);
-  log.push('height:' + document.body.scrollHeight);
-  return log.join(' | ');
-}
-"""
-
-
-def _tonhalle_actions() -> list[dict]:
-    return [
-        {"type": "wait", "milliseconds": 2000},
-        {"type": "executeJavascript", "script": _TONHALLE_CARD_JS},
-        {"type": "wait", "milliseconds": 2500},
-    ]
-
-
 VENUE_OVERRIDES: dict[str, dict] = {
     "berliner_philharmonie": {
         "actions": _bp_actions,
@@ -756,7 +669,9 @@ VENUE_OVERRIDES: dict[str, dict] = {
     },
     "tonhalle_duesseldorf": {
         # Month-grouped cards; details at /veranstaltung/<series>/<id>-<slug>.
-        "actions": _tonhalle_actions,
+        # Do not hide media here: that made the lazy grid stop after ~10 links.
+        # A plain scroll loop previously exposed 200+ anchors in the rendered DOM.
+        "actions": lambda: _cookie_and_load_more_actions(max_rounds=60, settle_ms=3000),
         "listing_target": 150,
         "force_url_expand": True,
     },
@@ -905,6 +820,8 @@ def _scrape_listing_stub(app, venue: dict) -> dict:
 # ── Phase 1b: Site-wide discovery via map() ───────────────────────────────────
 
 _HREF_RE = re.compile(r'href=["\']([^"\']+)["\']', re.IGNORECASE)
+_URL_RE = re.compile(r"https?://[^\s\"'<>)\]]+")
+_MARKDOWN_LINK_RE = re.compile(r"\]\(([^)]+)\)")
 
 
 def _extract_event_urls_from_html(html: str, venue: dict) -> list[str]:
@@ -921,8 +838,12 @@ def _extract_event_urls_from_html(html: str, venue: dict) -> list[str]:
     base_url = venue["url"]
     seen: set[str] = set()
     out: list[str] = []
-    for match in _HREF_RE.finditer(html):
-        raw = match.group(1).strip()
+    candidates: list[str] = []
+    candidates.extend(match.group(1).strip() for match in _HREF_RE.finditer(html))
+    candidates.extend(match.group(1).strip() for match in _MARKDOWN_LINK_RE.finditer(html))
+    candidates.extend(match.group(0).strip() for match in _URL_RE.finditer(html))
+
+    for raw in candidates:
         if not raw or raw.startswith(("javascript:", "mailto:", "tel:", "#")):
             continue
         absolute = urljoin(base_url, raw)
@@ -981,6 +902,55 @@ def _discover_glocke_paginated_urls(venue: dict, max_pages: int = 20) -> list[st
     return out
 
 
+def _discover_liederhalle_paginated_urls(venue: dict, max_pages: int = 12) -> list[str]:
+    """Discover Liederhalle event URLs from its TYPO3 pagination.
+
+    The listing exposes links like
+    ?tx_bbevents_events[arguments][currentPage]=2, but Firecrawl's scroll pass
+    often stays on page 1. Fetching the numbered pages directly is cheaper and
+    gives the URL expander a much wider pool of detail pages.
+    """
+    slug = _slug(venue["name"])
+    base = "https://liederhalle.de/eventkalender"
+    seen: set[str] = set()
+    out: list[str] = []
+    empty_pages = 0
+    for page in range(1, max_pages + 1):
+        if page == 1:
+            page_url = base
+        else:
+            page_url = f"{base}?tx_bbevents_events%5Barguments%5D%5BcurrentPage%5D={page}"
+        try:
+            resp = requests.get(page_url, headers=_DE_HEADERS, timeout=20)
+            if resp.status_code >= 400:
+                print(f"    [liederhalle-pages] page {page}: HTTP {resp.status_code}", flush=True)
+                break
+        except requests.RequestException as exc:
+            print(f"    [liederhalle-pages] failed page {page}: {exc}", flush=True)
+            break
+
+        page_urls = _extract_event_urls_from_html(resp.text, venue)
+        new_count = 0
+        for url in page_urls:
+            clean = url.split("?", 1)[0].split("#", 1)[0]
+            if clean in seen:
+                continue
+            if not is_strict_event_url(clean, venue["url"], slug):
+                continue
+            seen.add(clean)
+            out.append(clean)
+            new_count += 1
+
+        print(f"    [liederhalle-pages] page {page}: +{new_count} URLs", flush=True)
+        if new_count == 0:
+            empty_pages += 1
+            if empty_pages >= 2:
+                break
+        else:
+            empty_pages = 0
+    return out
+
+
 def _iter_month_starts(start: date, end: date) -> list[date]:
     months: list[date] = []
     cur = date(start.year, start.month, 1)
@@ -994,7 +964,11 @@ def _iter_month_starts(start: date, end: date) -> list[date]:
     return months
 
 
-def _discover_essen_monthly_urls(venue: dict, horizon_date: str | None = None) -> list[str]:
+def _discover_essen_monthly_urls(
+    app,
+    venue: dict,
+    horizon_date: str | None = None,
+) -> list[str]:
     """Discover Philharmonie Essen detail URLs by iterating monthly calendars.
 
     Essen's calendar exposes month-specific, venue-filtered URLs:
@@ -1011,16 +985,37 @@ def _discover_essen_monthly_urls(venue: dict, horizon_date: str | None = None) -
             "https://www.theater-essen.de/programm/kalender/"
             f"{month:%Y-%m}/philharmonie-essen"
         )
+        month_urls: list[str] = []
         try:
             resp = requests.get(page_url, headers=_DE_HEADERS, timeout=20)
-            if resp.status_code >= 400:
+            if resp.status_code < 400:
+                month_urls = _extract_event_urls_from_html(resp.text, venue)
+            else:
                 print(f"    [essen-months] {month:%Y-%m}: HTTP {resp.status_code}", flush=True)
-                continue
         except requests.RequestException as exc:
-            print(f"    [essen-months] failed {month:%Y-%m}: {exc}", flush=True)
-            continue
+            print(f"    [essen-months] requests failed {month:%Y-%m}: {exc}", flush=True)
 
-        month_urls = _extract_event_urls_from_html(resp.text, venue)
+        if not month_urls:
+            try:
+                result = app.scrape(
+                    page_url,
+                    formats=["markdown", "html"],
+                    headers=_DE_HEADERS,
+                    actions=_cookie_and_load_more_actions(max_rounds=10, settle_ms=1500),
+                )
+            except TypeError:
+                result = app.scrape(
+                    page_url,
+                    formats=["markdown", "html"],
+                    actions=_cookie_and_load_more_actions(max_rounds=10, settle_ms=1500),
+                )
+            except Exception as exc:
+                print(f"    [essen-months] render failed {month:%Y-%m}: {exc}", flush=True)
+                result = None
+            if result is not None:
+                rendered = "\n".join([_extract_html(result), _extract_markdown(result)])
+                month_urls = _extract_event_urls_from_html(rendered, venue)
+
         new_count = 0
         for url in month_urls:
             clean = url.split("?", 1)[0].split("#", 1)[0]
@@ -1035,7 +1030,7 @@ def _discover_essen_monthly_urls(venue: dict, horizon_date: str | None = None) -
     return out
 
 
-def _discover_preferred_event_urls(venue: dict, html_fallback: str | None) -> list[str]:
+def _discover_preferred_event_urls(app, venue: dict, html_fallback: str | None) -> list[str]:
     """Venue-specific URL discovery that should outrank broad site map() results."""
     slug = _slug(venue["name"])
     urls: list[str] = []
@@ -1043,8 +1038,10 @@ def _discover_preferred_event_urls(venue: dict, html_fallback: str | None) -> li
         urls.extend(_extract_event_urls_from_html(html_fallback, venue))
     if slug == "glocke_bremen":
         urls.extend(_discover_glocke_paginated_urls(venue))
+    elif slug == "liederhalle_stuttgart":
+        urls.extend(_discover_liederhalle_paginated_urls(venue))
     elif slug == "philharmonie_essen":
-        urls.extend(_discover_essen_monthly_urls(venue))
+        urls.extend(_discover_essen_monthly_urls(app, venue))
 
     seen: set[str] = set()
     deduped: list[str] = []
@@ -1259,7 +1256,7 @@ def _expand_via_map(
     if needed <= 0:
         return [], stats
 
-    preferred_urls = _discover_preferred_event_urls(venue, html_fallback)
+    preferred_urls = _discover_preferred_event_urls(app, venue, html_fallback)
     stats["preferred_urls"] = len(preferred_urls)
     if preferred_urls:
         print(f"    [map-expand] preferred discovery: {len(preferred_urls)} URLs", flush=True)
