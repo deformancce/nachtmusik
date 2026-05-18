@@ -904,13 +904,13 @@ def _discover_glocke_paginated_urls(venue: dict, max_pages: int = 20) -> list[st
     return out
 
 
-def _discover_liederhalle_paginated_urls(venue: dict, max_pages: int = 12) -> list[str]:
-    """Discover Liederhalle event URLs from its TYPO3 pagination.
+def _discover_liederhalle_paginated_urls(app, venue: dict, max_pages: int = 14) -> list[str]:
+    """Discover Liederhalle event URLs from its rendered TYPO3 pagination.
 
     The listing exposes links like
-    ?tx_bbevents_events[arguments][currentPage]=2, but Firecrawl's scroll pass
-    often stays on page 1. Fetching the numbered pages directly is cheaper and
-    gives the URL expander a much wider pool of detail pages.
+    ?tx_bbevents_events[arguments][currentPage]=2. Plain requests sees only a
+    shell, but Firecrawl-rendered page N includes all events through that page
+    (page 12 reached 117 URLs / Nov 2026 in the probe run).
     """
     slug = _slug(venue["name"])
     base = "https://liederhalle.de/eventkalender"
@@ -923,15 +923,20 @@ def _discover_liederhalle_paginated_urls(venue: dict, max_pages: int = 12) -> li
         else:
             page_url = f"{base}?tx_bbevents_events%5Barguments%5D%5BcurrentPage%5D={page}"
         try:
-            resp = requests.get(page_url, headers=_DE_HEADERS, timeout=20)
-            if resp.status_code >= 400:
-                print(f"    [liederhalle-pages] page {page}: HTTP {resp.status_code}", flush=True)
-                break
-        except requests.RequestException as exc:
+            result = app.scrape(
+                page_url,
+                formats=["markdown", "html"],
+                headers=_DE_HEADERS,
+                actions=_venue_actions(slug),
+            )
+        except TypeError:
+            result = app.scrape(page_url, formats=["markdown", "html"], actions=_venue_actions(slug))
+        except Exception as exc:
             print(f"    [liederhalle-pages] failed page {page}: {exc}", flush=True)
             break
 
-        page_urls = _extract_event_urls_from_html(resp.text, venue)
+        rendered = "\n".join([_extract_html(result), _extract_markdown(result)])
+        page_urls = _extract_event_urls_from_html(rendered, venue)
         new_count = 0
         for url in page_urls:
             clean = url.split("?", 1)[0].split("#", 1)[0]
@@ -1041,7 +1046,7 @@ def _discover_preferred_event_urls(app, venue: dict, html_fallback: str | None) 
     if slug == "glocke_bremen":
         urls.extend(_discover_glocke_paginated_urls(venue))
     elif slug == "liederhalle_stuttgart":
-        urls.extend(_discover_liederhalle_paginated_urls(venue))
+        urls.extend(_discover_liederhalle_paginated_urls(app, venue))
     elif slug == "philharmonie_essen":
         urls.extend(_discover_essen_monthly_urls(app, venue))
 
