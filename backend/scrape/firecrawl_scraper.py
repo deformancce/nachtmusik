@@ -464,6 +464,25 @@ VENUE_OVERRIDES: dict[str, dict] = {
         "actions": _bp_actions,
         "wait_for_listing_count": 20,
     },
+    "konzerthaus_berlin": {
+        # Infinite-scroll calendar: each scroll triggers a lazy XHR load.
+        # Season runs through ~May 2027 (~120 events).
+        "actions": lambda: _cookie_and_load_more_actions(max_rounds=30, settle_ms=2500),
+        "listing_target": 120,
+    },
+    "glocke_bremen": {
+        # Paginated listing (/page/2/, /page/3/ …): the JS loop clicks the
+        # "Weiter" button to load the next batch inline until no more appear.
+        # map() + HTML-anchor fallback pick up remaining event links.
+        "actions": lambda: _cookie_and_load_more_actions(max_rounds=20, settle_ms=2000),
+    },
+    "konzerthaus_dortmund": {
+        # Full season on a single infinite-scroll page (last event July 2027).
+        # No load-more button — pure scroll to end. High listing_target so the
+        # LLM extracts the whole season in one pass.
+        "actions": lambda: _cookie_and_load_more_actions(max_rounds=40, settle_ms=2000),
+        "listing_target": 150,
+    },
     "elbphilharmonie_hamburg": {
         # Heavy cookie wall ("Alle akzeptieren") blocks all content without JS dismissal.
         "actions": lambda: _cookie_and_load_more_actions(max_rounds=20, settle_ms=2000),
