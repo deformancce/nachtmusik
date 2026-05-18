@@ -3,32 +3,252 @@
   "city": "Hamburg",
   "slug": "elbphilharmonie_hamburg",
   "source_url": "https://www.elbphilharmonie.de/de/programm/",
-  "scraped_at": "2026-05-17T19:28:58.283162Z",
+  "scraped_at": "2026-05-18T06:01:54.700591Z",
   "engine": "firecrawl",
   "events": [
     {
-      "date": "2026-05-17",
-      "time": "11:00",
-      "title": "Ensemble arabesques Hamburg / Niklas Liepe",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Beethoven: Violinkonzert",
-        "Mussorgsky: Bilder einer Ausstellung"
-      ],
+      "date": "2026-05-18",
+      "time": "20:00",
+      "title": "Prüfungskonzert",
+      "venue_hall": "Kleiner Saal",
+      "program": [],
       "performers": [
-        "Ensemble arabesques Hamburg",
-        "Niklas Liepe"
+        "Hochschule für Musik und Theater Hamburg"
       ],
       "conductor": null,
-      "price": "ab € 24",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/ensemble-arabesques-hamburg-niklas-liepe/27584",
+      "price": "Eintritt frei",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/hochschule-fur-musik-und-theater-hamburg/28283",
       "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg"
+      "city": "Hamburg",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-19",
+      "time": "19:30",
+      "title": "Schumann Quartett",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Haydn: Streichquartett D-Dur",
+        "Henze: Streichquartett Nr. 5",
+        "Beethoven: Streichquartett F-Dur"
+      ],
+      "performers": [
+        "Schumann Quartett"
+      ],
+      "conductor": null,
+      "price": "Ausverkauft",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/schumann-quartett/23440",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-19",
+      "time": "20:00",
+      "title": "Marc-Uwe Kling »Neues vom Känguru«",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Kling: Neues vom Känguru"
+      ],
+      "performers": [
+        "Marc-Uwe Kling"
+      ],
+      "conductor": null,
+      "price": "Ausverkauft",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/marc-uwe-kling/24109",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "is_classical": false
+    },
+    {
+      "date": "2026-05-20",
+      "time": "14:00",
+      "title": "Westermann Summit 2026",
+      "venue_hall": "Kleiner Saal",
+      "program": [],
+      "performers": [
+        "Westermann Summit 2026"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/westermann-summit-2026/28420",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-20",
+      "time": "19:30",
+      "title": "Frühjahrskonzert",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Richard Strauss: Zueignung op. 10/1",
+        "Richard Strauss: Wiegenlied op. 41/1",
+        "Richard Strauss: Meinem Kinde op. 37/3",
+        "Richard Strauss: Morgen! op. 27/4",
+        "Gustav Mahler: Sinfonie Nr. 1 D-Dur"
+      ],
+      "performers": [
+        "Landesjugendorchester Hamburg",
+        "Ann-Beth Solvang"
+      ],
+      "conductor": "Johannes Witt",
+      "price": "ab € 20",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/landesjugendorchester-hamburg-ann-beth-solvang-johannes-witt/27407",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-20",
+      "time": "19:30",
+      "title": "»Hummelhirn«",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Holofernes: Lesung",
+        "Tschirner: Lesung"
+      ],
+      "performers": [
+        "Judith Holofernes",
+        "Nora Tschirner"
+      ],
+      "conductor": null,
+      "price": "Ausverkauft",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/hummelhirn/28199",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-20",
+      "time": "20:00",
+      "title": "»Memento mori«",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Werke von Orlando di Lasso",
+        "Guillaume Dufay",
+        "Giovanni Gabrieli u.a."
+      ],
+      "performers": [
+        "Huelgas Ensemble",
+        "Paul Van Nevel"
+      ],
+      "conductor": null,
+      "price": "ab € 13",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/huelgas-ensemble-paul-van-nevel/27532",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-21",
+      "time": "18:00",
+      "title": "Les Hommes du Swing",
+      "venue_hall": "Studio E",
+      "program": [],
+      "performers": [
+        "Jordan Rodin",
+        "Axel Burkhardt",
+        "Patrick Farrant",
+        "Benjamin Boitrelle"
+      ],
+      "conductor": null,
+      "price": "Eintritt frei",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/les-hommes-du-swing/27744",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 60,
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-21",
+      "time": "20:00",
+      "title": "NDR Elbphilharmonie Orchester",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Wagner: Siegfried-Idyll",
+        "Szymanowski: Violinkonzert Nr. 2",
+        "Henze: Sinfonie Nr. 7"
+      ],
+      "performers": [
+        "NDR Elbphilharmonie Orchester",
+        "Leonidas Kavakos",
+        "Matthias Pintscher"
+      ],
+      "conductor": null,
+      "price": "ab € 79",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-leonidas-kavakos-matthias-pintscher/23309",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-21",
+      "time": "20:00",
+      "title": "Steve Hackett »Best of Genesis & Solo Gems«",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Hackett: Nursery Cryme (1971)",
+        "Hackett: Wind And Wuthering (1977)"
+      ],
+      "performers": [
+        "Steve Hackett"
+      ],
+      "conductor": null,
+      "price": "Derzeit keine Tickets verfügbar",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/steve-hackett/27438",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "is_classical": false
+    },
+    {
+      "date": "2026-05-24",
+      "time": "20:00",
+      "title": "Götz Alsmann & Band",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [
+        "Götz Alsmann & Band"
+      ],
+      "conductor": null,
+      "price": "ab €32,65",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/LHHH/SHOW/KON",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-29",
+      "time": "20:00",
+      "title": "Arcadi Volodos / Klavierabend",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Chopin: Mazurken",
+        "Schubert: Sonaten"
+      ],
+      "performers": [
+        "Arcadi Volodos"
+      ],
+      "conductor": null,
+      "price": "ab € 74",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/SHOW/KLAV/EPGS",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "is_classical": true
     }
   ],
-  "total_events": 1,
-  "total_events_visible": 1,
-  "total_events_discovered": 1,
-  "total_events_discovered_strict": 1,
-  "source": "firecrawl_listing"
+  "total_events": 12,
+  "total_events_visible": 10,
+  "total_events_discovered": 2,
+  "total_events_discovered_strict": 2,
+  "source": "firecrawl_listing",
+  "map_expand_stats": {
+    "map_urls": 2,
+    "new_urls": 2,
+    "scraped": 2,
+    "past": 0,
+    "invalid": 0,
+    "canceled": 0
+  }
 }

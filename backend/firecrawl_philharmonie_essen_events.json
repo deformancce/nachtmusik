@@ -3,7 +3,7 @@
   "city": "Essen",
   "slug": "philharmonie_essen",
   "source_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/",
-  "scraped_at": "2026-05-17T19:26:48.655486Z",
+  "scraped_at": "2026-05-18T05:46:45.045056Z",
   "engine": "firecrawl",
   "events": [
     {
@@ -13,16 +13,16 @@
       "venue_hall": "Alfried Krupp Saal",
       "program": [],
       "performers": [
-        "Eva Briegel",
-        "Mihalj Kekenj",
-        "Takeover!Ensemble"
+        "Eva Briegel (JULI)",
+        "Mihalj Kekenj"
       ],
-      "conductor": "Mihalj Kekenj",
+      "conductor": null,
       "price": "ab €40",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/takeover-by-miki-und-eva-briegel-juli-151425/3177/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
-      "duration_min": 120
+      "duration_min": 120,
+      "is_classical": true
     },
     {
       "date": "2026-05-23",
@@ -40,7 +40,8 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/takeover-by-miki-und-eva-briegel-juli-151425/3178/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
-      "duration_min": 120
+      "duration_min": 120,
+      "is_classical": true
     },
     {
       "date": "2026-05-24",
@@ -48,40 +49,39 @@
       "title": "Die Prinzen Symphonisch",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
-        "Various: All Hits - with a large orchestra"
+        "Semmel Concerts Entertainment GmbH: Alle Hits - mit großem Orchester"
       ],
       "performers": [],
       "conductor": null,
-      "price": "ab €89",
+      "price": "€89,90",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/die-prinzen-symphonisch-157996/3335/",
       "venue": "Philharmonie Essen",
-      "city": "Essen"
+      "city": "Essen",
+      "is_classical": false
     },
     {
       "date": "2026-05-26",
       "time": "20:00",
-      "title": "Joana Mallwitz  Konzerthausorchester Berlin",
+      "title": "Joana Mallwitz \\\\ Konzerthausorchester Berlin",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
-        "Gustav Mahler: Symphony No. 5",
-        "Ludwig van Beethoven: Triple Concerto"
+        "Werke von Gustav Mahler, Ludwig van Beethoven"
       ],
       "performers": [],
-      "conductor": "Joana Mallwitz",
-      "price": "ab €86",
+      "conductor": null,
+      "price": "ab €97,90",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/joana-mallwitzkonzerthausorchester-berlin-154813/2711/",
       "venue": "Philharmonie Essen",
-      "city": "Essen"
+      "city": "Essen",
+      "is_classical": true
     },
     {
       "date": "2026-05-27",
       "time": "19:00",
-      "title": "Gautier Capuçon  Sächsische Staatskapelle Dresden",
+      "title": "Gautier Capuçon \\\\ Sächs­ische Staats­kapelle Dresden",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
-        "Camille Saint-Saëns: Cello Concerto No. 1",
-        "Claude Debussy: La Mer",
-        "Richard Wagner: Tristan und Isolde"
+        "Werke von Camille Saint-Saëns, Claude Debussy, Richard Wagner"
       ],
       "performers": [
         "Gautier Capuçon"
@@ -90,106 +90,55 @@
       "price": "ab €45",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/gautier-capuconsaechsische-staatskapelle-dresden-149566/3226/",
       "venue": "Philharmonie Essen",
-      "city": "Essen"
-    },
-    {
-      "date": "2026-05-30",
-      "time": "17:30",
-      "title": "Panel",
-      "venue_hall": "NATIONAL-BANK Pavillon",
-      "program": [],
-      "performers": [
-        "Daniel Hope",
-        "Shai Hoffmann",
-        "Nadine Migesel",
-        "Schüler*innen des Trialog-Projekts"
-      ],
-      "conductor": "Anja Renczikowski",
-      "price": "null",
-      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/panel-160260/4132/",
-      "venue": "Philharmonie Essen",
       "city": "Essen",
-      "duration_min": 60
+      "is_classical": true
     },
     {
       "date": "2026-05-30",
       "time": "19:00",
-      "title": "Daniel Hope  Berlin 1938 - das Schicksalsjahr",
+      "title": "TIKWAH - Festival jüdischer Musik",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
-        "Hanns Eisler: Work title",
-        "Erwin Schuloff: Work title",
-        "Kurt Weill: Work title",
-        "Mischa Spoliansky: Work title",
-        "Cole Porter: Work title",
-        "Maurice Ravel: Work title",
-        "Georg Kreisler: Work title"
+        "Daniel Hope \\\\ Berlin 1938 - das Schick­sals­jahr"
       ],
       "performers": [
-        "Daniel Hope",
-        "Thomas Hampson",
-        "Horst Maria Merz",
-        "Andy Findon",
-        "Noel Langley",
-        "Joscho Stephan",
-        "James Scannell",
-        "Nicola Mosca",
-        "Stéphane Logerot",
-        "Alexander Ponet",
-        "Jacques Ammon"
+        "Daniel Hope"
       ],
       "conductor": null,
-      "price": "null",
+      "price": "nicht verfügbar",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/daniel-hopeberlin-1938-das-schicksalsjahr-148924/3227/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
-      "duration_min": 150
-    },
-    {
-      "date": "2026-05-31",
-      "time": "15:00",
-      "title": "Von Tieren und Temperamenten",
-      "venue_hall": "NATIONAL-BANK Pavillon",
-      "program": [
-        "Uraufführung: Jedem Tier sein Element für Flöte, Klarinette, Violoncello, Tuba, Harfe und Schlagwerk"
-      ],
-      "performers": [
-        "Celina Holz",
-        "Tristan von den Driesch",
-        "Alexander Kritikos",
-        "Anja Rapp",
-        "Juan Antonio García Díaz",
-        "Stefan Kellner",
-        "Julia Schulenburg",
-        "Sebastian Pilgrim"
-      ],
-      "conductor": null,
-      "price": "null",
-      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/von-tieren-und-temperamenten-154359/3328/",
-      "venue": "Philharmonie Essen",
-      "city": "Essen",
-      "duration_min": 45
+      "is_classical": true
     },
     {
       "date": "2026-05-31",
       "time": "19:00",
-      "title": "Mendelssohn  \"Ein Sommernachtsraum\"",
+      "title": "Mendelssohn „Ein Sommer­nachts­traum“",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
-        "Felix Mendelssohn Bartholdy: Overture",
-        "Henry Purcell: Various Works"
+        "Werke von Felix Mendelssohn Bartholdy, Henry Purcell, Kristine Tjøgersen"
       ],
       "performers": [],
       "conductor": null,
       "price": "ab €35",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/mendelssohn-ein-sommernachtstraum-148326/3229/",
       "venue": "Philharmonie Essen",
-      "city": "Essen"
+      "city": "Essen",
+      "is_classical": true
     }
   ],
-  "total_events": 9,
-  "total_events_visible": 9,
-  "total_events_discovered": 9,
-  "total_events_discovered_strict": 9,
-  "source": "firecrawl_listing"
+  "total_events": 7,
+  "total_events_visible": 10,
+  "total_events_discovered": 10,
+  "total_events_discovered_strict": 10,
+  "source": "firecrawl_listing",
+  "map_expand_stats": {
+    "map_urls": 0,
+    "new_urls": 0,
+    "scraped": 0,
+    "past": 0,
+    "invalid": 0,
+    "canceled": 0
+  }
 }

@@ -3,59 +3,9 @@
   "city": "Stuttgart",
   "slug": "liederhalle_stuttgart",
   "source_url": "https://liederhalle.de/eventkalender",
-  "scraped_at": "2026-05-17T19:34:03.960715Z",
+  "scraped_at": "2026-05-18T06:34:41.338826Z",
   "engine": "firecrawl",
   "events": [
-    {
-      "date": "2026-05-17",
-      "time": "18:00",
-      "title": "Cornamusa - World of Pipe Rock and Irish Dance",
-      "venue_hall": "Beethoven-Saal",
-      "program": [],
-      "performers": [
-        "Cornamusa Scheler & Bähring GbR"
-      ],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://liederhalle.de/veranstaltung/cornamusa-world-of-pipe-rock-and-irish-dance",
-      "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart"
-    },
-    {
-      "date": "2026-05-17",
-      "time": "19:00",
-      "title": "Jubiläumskonzert - 75 Jahre Orchester Stuttgarter Musikfreunde",
-      "venue_hall": "Mozart-Saal",
-      "program": [
-        "Weber: Freischütz Ouvertüre",
-        "Mozart: Violinkonzert Nr. 3 in G-Dur",
-        "Dvořák: Sinfonie Nr. 9 (Aus der neuen Welt)"
-      ],
-      "performers": [
-        "Christine Busch",
-        "Orchester Stuttgarter Musikfreunde (OSM) e.V."
-      ],
-      "conductor": "Klaus Kulling",
-      "price": null,
-      "detail_url": "https://liederhalle.de/veranstaltung/jubilaeumskonzert-75-jahre-orchester-stuttgarter-musikfreunde",
-      "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart"
-    },
-    {
-      "date": "2026-05-17",
-      "time": "20:00",
-      "title": "Tim Bendzko: Alles, nur nicht zurück",
-      "venue_hall": "Hegel-Saal",
-      "program": [],
-      "performers": [
-        "Tim Bendzko"
-      ],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://liederhalle.de/veranstaltung/tim-bendzko-alles-nur-nicht-zurueck",
-      "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart"
-    },
     {
       "date": "2026-05-18",
       "time": "19:00",
@@ -69,7 +19,8 @@
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/homin-choir",
       "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart"
+      "city": "Stuttgart",
+      "is_classical": true
     },
     {
       "date": "2026-05-20",
@@ -77,7 +28,7 @@
       "title": "SWR Symphonieorchester: Dans la cuisine du chef",
       "venue_hall": "Hegel-Saal",
       "program": [
-        "Haydn: Sinfonie Nr. 101 D-Dur ('Die Uhr')"
+        "Haydn: Sinfonie Nr. 101 D-Dur (\"Die Uhr\")"
       ],
       "performers": [
         "SWR Symphonieorchester"
@@ -86,7 +37,8 @@
       "price": "Freier Eintritt, Reservierung erforderlich",
       "detail_url": "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
       "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart"
+      "city": "Stuttgart",
+      "is_classical": true
     },
     {
       "date": "2026-05-20",
@@ -95,7 +47,7 @@
       "venue_hall": "Beethoven-Saal",
       "program": [
         "Schumann: Klavierstücke „Waldszenen“ op. 82",
-        "Chopin: Polonaise Nr. 2 op. 71",
+        "Chopin: Poloaise Nr. 2 op. 71",
         "Chopin: Ballade Nr. 4 op. 52",
         "Chopin: Sonate Nr. 3 op. 58",
         "Schubert: Impromptu D 935 op. 142/1"
@@ -111,7 +63,8 @@
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/chopin-preistraeger",
       "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart"
+      "city": "Stuttgart",
+      "is_classical": true
     },
     {
       "date": "2026-05-20",
@@ -130,7 +83,8 @@
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/staatsorchester-stuttgart-7-kammerkonzert-film-ab",
       "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart"
+      "city": "Stuttgart",
+      "is_classical": true
     },
     {
       "date": "2026-05-21",
@@ -149,7 +103,8 @@
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/mariani-klavierquartett",
       "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart"
+      "city": "Stuttgart",
+      "is_classical": true
     },
     {
       "date": "2026-05-21",
@@ -164,7 +119,8 @@
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/bee-gees-by-maincourse-europas-groesste-bee-gees-tribute-show-0",
       "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart"
+      "city": "Stuttgart",
+      "is_classical": false
     },
     {
       "date": "2026-05-22",
@@ -172,14 +128,13 @@
       "title": "Ibrahim Selim Ile Bu Gece",
       "venue_hall": "Mozart-Saal",
       "program": [],
-      "performers": [
-        "Ibrahim Selim"
-      ],
+      "performers": [],
       "conductor": null,
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/ibrahim-selim-ile-bu-gece",
       "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart"
+      "city": "Stuttgart",
+      "is_classical": false
     },
     {
       "date": "2026-05-23",
@@ -194,7 +149,8 @@
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/orsophilharmonic-soundtracks-0",
       "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart"
+      "city": "Stuttgart",
+      "is_classical": true
     },
     {
       "date": "2026-05-23",
@@ -209,7 +165,8 @@
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/the-umbilical-brothers-the-best-of-the-worst-of-the-best",
       "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart"
+      "city": "Stuttgart",
+      "is_classical": false
     },
     {
       "date": "2026-05-23",
@@ -225,7 +182,8 @@
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/alexander-stevens-jacqueline-belle-true-crime-toxic-love",
       "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart"
+      "city": "Stuttgart",
+      "is_classical": false
     },
     {
       "date": "2026-05-24",
@@ -241,7 +199,8 @@
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/die-deutschen-podcast-tour-aber-anders",
       "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart"
+      "city": "Stuttgart",
+      "is_classical": false
     },
     {
       "date": "2026-05-25",
@@ -256,14 +215,18 @@
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/mabel-matiz",
       "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart"
+      "city": "Stuttgart",
+      "is_classical": false
     },
     {
       "date": "2026-05-26",
       "time": "20:00",
       "title": "Steve Hackett: Best of Genesis & Solo Gems 2026 Tour",
       "venue_hall": "Beethoven-Saal",
-      "program": [],
+      "program": [
+        "Genesis: Greatest Hits",
+        "Hackett: Solo Highlights"
+      ],
       "performers": [
         "Steve Hackett",
         "Lalle Larsson",
@@ -276,24 +239,22 @@
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/steve-hackett-best-of-genesis-solo-gems-2026-tour",
       "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart"
+      "city": "Stuttgart",
+      "is_classical": false
     },
     {
       "date": "2026-05-27",
       "time": "19:30",
       "title": "Pretty Woman - Das Musical",
       "venue_hall": "Hegel-Saal",
-      "program": [
-        "Bryan Adams: Pretty Woman - Das Musical"
-      ],
-      "performers": [
-        "Limelight Live Entertainment GmbH"
-      ],
+      "program": [],
+      "performers": [],
       "conductor": null,
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/pretty-woman-das-musical",
       "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart"
+      "city": "Stuttgart",
+      "is_classical": false
     },
     {
       "date": "2026-05-27",
@@ -312,12 +273,67 @@
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/utopia-orchestra-teodor-currentzis",
       "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart"
+      "city": "Stuttgart",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-28",
+      "time": "19:30",
+      "title": "Pretty Woman - Das Musical",
+      "venue_hall": "Hegel-Saal",
+      "program": [],
+      "performers": [
+        "Limelight Live Entertainment GmbH"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/pretty-woman-das-musical-0",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart",
+      "is_classical": false
+    },
+    {
+      "date": "2026-05-28",
+      "time": "20:00",
+      "title": "Element of Crime: Konzerthaustournee 2026",
+      "venue_hall": "Beethoven-Saal",
+      "program": [],
+      "performers": [
+        "Element of Crime"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/element-of-crime-konzerthaustournee-2026",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart",
+      "is_classical": false
+    },
+    {
+      "date": "2026-05-29",
+      "time": "19:30",
+      "title": "Pretty Woman - Das Musical",
+      "venue_hall": "Hegel-Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/pretty-woman-das-musical-1",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart",
+      "is_classical": false
     }
   ],
   "total_events": 18,
-  "total_events_visible": 27,
-  "total_events_discovered": 27,
-  "total_events_discovered_strict": 27,
-  "source": "firecrawl_listing"
+  "total_events_visible": 40,
+  "total_events_discovered": 40,
+  "total_events_discovered_strict": 40,
+  "source": "firecrawl_listing",
+  "map_expand_stats": {
+    "map_urls": 0,
+    "new_urls": 0,
+    "scraped": 0,
+    "past": 0,
+    "invalid": 0,
+    "canceled": 0
+  }
 }
