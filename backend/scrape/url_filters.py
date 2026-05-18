@@ -143,13 +143,24 @@ def is_loose_event_url(url: str, base_url: str) -> bool:
 
 
 def is_strict_event_url(url: str, base_url: str, venue_slug: str | None = None) -> bool:
-    if not is_loose_event_url(url, base_url):
+    if not url or not _same_domain(url, base_url):
         return False
-    if _NOISE_PATH_RE.search(urlparse(url).path):
+    if _EXCLUDE_RE.search(url):
+        return False
+    path = urlparse(url).path
+    if _LISTING_PATH_RE.search(path):
+        return False
+    if _NOISE_PATH_RE.search(path):
         return False
     pattern = VENUE_STRICT_PATTERNS.get(venue_slug or "")
     if pattern:
+        # Venue has an explicit URL pattern — trust it directly without requiring
+        # the generic loose keyword (/veranstaltung/, /konzert/ etc.) in the path.
+        # Alte Oper uses /de/programm/<slug>/<id> which has no such keyword.
         return bool(pattern.search(url))
+    # No venue-specific pattern: fall back to loose keyword requirement + generic shape
+    if not _EVENT_PATH_LOOSE_RE.search(url):
+        return False
     return _generic_strict_detail(url)
 
 

@@ -254,7 +254,13 @@ def _build_detail_prompt(venue: dict) -> str:
         "'Brahms: Symphonie Nr. 1 c-Moll op. 68'),\n"
         "  performers (soloists + ensemble names — NOT the conductor),\n"
         "  conductor (name only), price (e.g. 'ab €25', '€15–€85'), duration_min.\n"
-        "NEVER invent data. Only extract what is explicitly written on this page."
+        "NEVER invent data. Only extract what is explicitly written on this page.\n"
+        f"If no specific date is stated on this page, set date to null — never guess "
+        f"or use today's date ({today}) as a fallback. A null date is correct; a wrong "
+        f"date is not.\n"
+        f"If this page is a tour overview listing concerts at multiple venues (not solely "
+        f"at {venue['name']} in {venue['city']}), extract the data for the {venue['city']} "
+        f"performance only. If no {venue['city']} performance is listed, set date to null."
     )
 
 
@@ -814,12 +820,23 @@ def _expand_via_map(
         if _is_canceled(ev["title"]):
             stats["canceled"] += 1
             continue
+        # Guard: map-discovered pages sometimes have no visible date (tour overviews,
+        # festival landing pages) — prompt now instructs LLM to return null, which makes
+        # _detail_to_event return None above. Belt-and-suspenders: if date == today and
+        # title contains typical tour/overview keywords, skip rather than propagate noise.
+        _title_lower = (ev.get("title") or "").lower()
+        if ev["date"] == _today() and any(
+            kw in _title_lower for kw in ("tournee", " tour", "festival-tournee")
+        ):
+            stats["suspicious_date"] = stats.get("suspicious_date", 0) + 1
+            continue
         new_events.append(ev)
 
     print(
         f"    [map-expand] result: +{len(new_events)} new events "
         f"(scraped={stats['scraped']} past={stats['past']} "
-        f"invalid={stats['invalid']} canceled={stats['canceled']})",
+        f"invalid={stats['invalid']} canceled={stats['canceled']} "
+        f"suspicious_date={stats.get('suspicious_date', 0)})",
         flush=True,
     )
     return new_events, stats
