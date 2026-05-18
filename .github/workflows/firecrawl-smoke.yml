@@ -3,42 +3,14 @@ name: Firecrawl scrape (Tier-0)
 on:
   workflow_dispatch:
     inputs:
-      branch:
-        description: "Branch to scrape from and commit to"
-        required: false
-        default: "main"
       max_events:
-        description: "Events to fully enrich per venue (default 5)"
+        description: "Zahl: Events pro Venue vollständig anreichern"
         required: false
         default: "5"
       slugs:
-        description: "Optional space-separated slug filter (default: all Tier-0)"
+        description: "Slug(s): optional, mit Leerzeichen getrennt; leer = alle Tier-0"
         required: false
         default: ""
-      skip_enrich:
-        description: "Set to 'true' to skip detail-page enrichment (listing only, ~13 credits)"
-        required: false
-        default: "false"
-      skip_map:
-        description: "Set to 'true' to skip map() discovery (saves 1 credit/venue; recommended)"
-        required: false
-        default: "true"
-      expand_via_map:
-        description: "Set to 'true' to detail-scrape map() URLs as NEW events (cost: up to max_events*3 extra credits/venue)"
-        required: false
-        default: "false"
-      discover_mode:
-        description: "DISCOVERY mode: light schema → find ALL events, enrich N random (recommended for full coverage)"
-        required: false
-        default: "false"
-      enrich_count:
-        description: "Discovery mode: how many random events per venue get full program data (default 10)"
-        required: false
-        default: "10"
-      horizon_months:
-        description: "Scrape through month-end N months from today (default 6)"
-        required: false
-        default: "6"
 
 permissions:
   contents: write
@@ -53,8 +25,6 @@ jobs:
     timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.inputs.branch || 'main' }}
 
       - uses: actions/setup-python@v5
         with:
@@ -69,28 +39,10 @@ jobs:
           PYTHONUNBUFFERED: "1"
           MAX_EVENTS: ${{ github.event.inputs.max_events }}
           SLUGS: ${{ github.event.inputs.slugs }}
-          SKIP_ENRICH: ${{ github.event.inputs.skip_enrich }}
-          SKIP_MAP: ${{ github.event.inputs.skip_map }}
-          EXPAND_VIA_MAP: ${{ github.event.inputs.expand_via_map }}
-          DISCOVER_MODE: ${{ github.event.inputs.discover_mode }}
-          ENRICH_COUNT: ${{ github.event.inputs.enrich_count }}
-          HORIZON_MONTHS: ${{ github.event.inputs.horizon_months }}
         run: |
-          ARGS=(--max-events "${MAX_EVENTS:-5}" --horizon-months "${HORIZON_MONTHS:-6}")
+          ARGS=(--max-events "${MAX_EVENTS:-5}" --horizon-months 6 --skip-map)
           if [ -n "$SLUGS" ]; then
             ARGS+=(--only $SLUGS)
-          fi
-          if [ "${SKIP_ENRICH}" = "true" ]; then
-            ARGS+=(--skip-enrich)
-          fi
-          if [ "${SKIP_MAP}" = "true" ]; then
-            ARGS+=(--skip-map)
-          fi
-          if [ "${EXPAND_VIA_MAP}" = "true" ]; then
-            ARGS+=(--expand-via-map)
-          fi
-          if [ "${DISCOVER_MODE}" = "true" ]; then
-            ARGS+=(--discover-mode --enrich-count "${ENRICH_COUNT:-10}")
           fi
           python3 -m backend.scrape.firecrawl_scraper "${ARGS[@]}"
 
@@ -105,7 +57,7 @@ jobs:
             exit 0
           fi
           git commit -m "Firecrawl results ($(date -u '+%Y-%m-%d %H:%M UTC'))"
-          BRANCH="${{ github.event.inputs.branch || 'main' }}"
+          BRANCH="${GITHUB_REF_NAME:-main}"
           for i in 1 2 3; do
             git pull --rebase --autostash origin "$BRANCH" || true
             if git push origin "HEAD:$BRANCH"; then exit 0; fi
