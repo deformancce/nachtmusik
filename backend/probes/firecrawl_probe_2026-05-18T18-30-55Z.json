@@ -1,0 +1,610 @@
+{
+  "scraped_at": "2026-05-18T18:30:55.489375Z",
+  "scrape_horizon_date": "2026-11-30",
+  "results": [
+    {
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "slug": "tonhalle_duesseldorf",
+      "scraped_at": "2026-05-18T18:27:09.190857Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.tonhalle.de/veranstaltungen/kalender",
+      "best_event_urls": 12,
+      "best_last_date_seen": "2026-05-18",
+      "probes": [
+        {
+          "url": "https://www.tonhalle.de/veranstaltungen/kalender",
+          "error": null,
+          "raw_lines": 445,
+          "event_urls": 12,
+          "unique_event_urls": 12,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-05-18",
+          "sample_urls": [
+            "https://www.tonhalle.de/veranstaltung/raumstation/17284-mendelssohn",
+            "https://www.tonhalle.de/veranstaltung/komet/20954-element-crime",
+            "https://www.tonhalle.de/veranstaltung/supernova/17642-melodic-lifetime",
+            "https://www.tonhalle.de/veranstaltung/comedy-geht-ins-konzert/17327-schroeder-geht-ins-konzert",
+            "https://www.tonhalle.de/veranstaltung/piano-solo/17583-bruce-liu",
+            "https://www.tonhalle.de/veranstaltung/faszination-klassik/17576-anne-sophie-mutter",
+            "https://www.tonhalle.de/veranstaltung/schumannfest/19438-christoph-julian-pregardien",
+            "https://www.tonhalle.de/veranstaltung/das-symphonische-palais/18194-das-symphonische-palais"
+          ]
+        },
+        {
+          "url": "https://www.tonhalle.de/veranstaltungen/kalender?from=1778934644",
+          "error": null,
+          "raw_lines": 445,
+          "event_urls": 12,
+          "unique_event_urls": 12,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-05-18",
+          "sample_urls": [
+            "https://www.tonhalle.de/veranstaltung/raumstation/17284-mendelssohn",
+            "https://www.tonhalle.de/veranstaltung/komet/20954-element-crime",
+            "https://www.tonhalle.de/veranstaltung/supernova/17642-melodic-lifetime",
+            "https://www.tonhalle.de/veranstaltung/comedy-geht-ins-konzert/17327-schroeder-geht-ins-konzert",
+            "https://www.tonhalle.de/veranstaltung/piano-solo/17583-bruce-liu",
+            "https://www.tonhalle.de/veranstaltung/faszination-klassik/17576-anne-sophie-mutter",
+            "https://www.tonhalle.de/veranstaltung/schumannfest/19438-christoph-julian-pregardien",
+            "https://www.tonhalle.de/veranstaltung/das-symphonische-palais/18194-das-symphonische-palais"
+          ]
+        },
+        {
+          "url": "https://www.tonhalle.de/veranstaltungen/kalender?from=1777593600",
+          "error": null,
+          "raw_lines": 445,
+          "event_urls": 12,
+          "unique_event_urls": 12,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-05-18",
+          "sample_urls": [
+            "https://www.tonhalle.de/veranstaltung/raumstation/17284-mendelssohn",
+            "https://www.tonhalle.de/veranstaltung/komet/20954-element-crime",
+            "https://www.tonhalle.de/veranstaltung/supernova/17642-melodic-lifetime",
+            "https://www.tonhalle.de/veranstaltung/comedy-geht-ins-konzert/17327-schroeder-geht-ins-konzert",
+            "https://www.tonhalle.de/veranstaltung/piano-solo/17583-bruce-liu",
+            "https://www.tonhalle.de/veranstaltung/faszination-klassik/17576-anne-sophie-mutter",
+            "https://www.tonhalle.de/veranstaltung/schumannfest/19438-christoph-julian-pregardien",
+            "https://www.tonhalle.de/veranstaltung/das-symphonische-palais/18194-das-symphonische-palais"
+          ]
+        },
+        {
+          "url": "https://www.tonhalle.de/veranstaltungen/kalender?from=1780272000",
+          "error": null,
+          "raw_lines": 445,
+          "event_urls": 12,
+          "unique_event_urls": 12,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-05-18",
+          "sample_urls": [
+            "https://www.tonhalle.de/veranstaltung/raumstation/17284-mendelssohn",
+            "https://www.tonhalle.de/veranstaltung/komet/20954-element-crime",
+            "https://www.tonhalle.de/veranstaltung/supernova/17642-melodic-lifetime",
+            "https://www.tonhalle.de/veranstaltung/comedy-geht-ins-konzert/17327-schroeder-geht-ins-konzert",
+            "https://www.tonhalle.de/veranstaltung/piano-solo/17583-bruce-liu",
+            "https://www.tonhalle.de/veranstaltung/faszination-klassik/17576-anne-sophie-mutter",
+            "https://www.tonhalle.de/veranstaltung/schumannfest/19438-christoph-julian-pregardien",
+            "https://www.tonhalle.de/veranstaltung/das-symphonische-palais/18194-das-symphonische-palais"
+          ]
+        },
+        {
+          "url": "https://www.tonhalle.de/veranstaltungen/kalender?from=1782864000",
+          "error": null,
+          "raw_lines": 445,
+          "event_urls": 12,
+          "unique_event_urls": 12,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-05-18",
+          "sample_urls": [
+            "https://www.tonhalle.de/veranstaltung/raumstation/17284-mendelssohn",
+            "https://www.tonhalle.de/veranstaltung/komet/20954-element-crime",
+            "https://www.tonhalle.de/veranstaltung/supernova/17642-melodic-lifetime",
+            "https://www.tonhalle.de/veranstaltung/comedy-geht-ins-konzert/17327-schroeder-geht-ins-konzert",
+            "https://www.tonhalle.de/veranstaltung/piano-solo/17583-bruce-liu",
+            "https://www.tonhalle.de/veranstaltung/faszination-klassik/17576-anne-sophie-mutter",
+            "https://www.tonhalle.de/veranstaltung/schumannfest/19438-christoph-julian-pregardien",
+            "https://www.tonhalle.de/veranstaltung/das-symphonische-palais/18194-das-symphonische-palais"
+          ]
+        },
+        {
+          "url": "https://www.tonhalle.de/veranstaltungen/kalender?from=1785542400",
+          "error": null,
+          "raw_lines": 445,
+          "event_urls": 12,
+          "unique_event_urls": 12,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-05-18",
+          "sample_urls": [
+            "https://www.tonhalle.de/veranstaltung/raumstation/17284-mendelssohn",
+            "https://www.tonhalle.de/veranstaltung/komet/20954-element-crime",
+            "https://www.tonhalle.de/veranstaltung/supernova/17642-melodic-lifetime",
+            "https://www.tonhalle.de/veranstaltung/comedy-geht-ins-konzert/17327-schroeder-geht-ins-konzert",
+            "https://www.tonhalle.de/veranstaltung/piano-solo/17583-bruce-liu",
+            "https://www.tonhalle.de/veranstaltung/faszination-klassik/17576-anne-sophie-mutter",
+            "https://www.tonhalle.de/veranstaltung/schumannfest/19438-christoph-julian-pregardien",
+            "https://www.tonhalle.de/veranstaltung/das-symphonische-palais/18194-das-symphonische-palais"
+          ]
+        },
+        {
+          "url": "https://www.tonhalle.de/veranstaltungen/kalender?from=1788220800",
+          "error": null,
+          "raw_lines": 445,
+          "event_urls": 12,
+          "unique_event_urls": 12,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-05-18",
+          "sample_urls": [
+            "https://www.tonhalle.de/veranstaltung/raumstation/17284-mendelssohn",
+            "https://www.tonhalle.de/veranstaltung/komet/20954-element-crime",
+            "https://www.tonhalle.de/veranstaltung/supernova/17642-melodic-lifetime",
+            "https://www.tonhalle.de/veranstaltung/comedy-geht-ins-konzert/17327-schroeder-geht-ins-konzert",
+            "https://www.tonhalle.de/veranstaltung/piano-solo/17583-bruce-liu",
+            "https://www.tonhalle.de/veranstaltung/faszination-klassik/17576-anne-sophie-mutter",
+            "https://www.tonhalle.de/veranstaltung/schumannfest/19438-christoph-julian-pregardien",
+            "https://www.tonhalle.de/veranstaltung/das-symphonische-palais/18194-das-symphonische-palais"
+          ]
+        },
+        {
+          "url": "https://www.tonhalle.de/veranstaltungen/kalender?from=1790812800",
+          "error": null,
+          "raw_lines": 445,
+          "event_urls": 12,
+          "unique_event_urls": 12,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-05-18",
+          "sample_urls": [
+            "https://www.tonhalle.de/veranstaltung/raumstation/17284-mendelssohn",
+            "https://www.tonhalle.de/veranstaltung/komet/20954-element-crime",
+            "https://www.tonhalle.de/veranstaltung/supernova/17642-melodic-lifetime",
+            "https://www.tonhalle.de/veranstaltung/comedy-geht-ins-konzert/17327-schroeder-geht-ins-konzert",
+            "https://www.tonhalle.de/veranstaltung/piano-solo/17583-bruce-liu",
+            "https://www.tonhalle.de/veranstaltung/faszination-klassik/17576-anne-sophie-mutter",
+            "https://www.tonhalle.de/veranstaltung/schumannfest/19438-christoph-julian-pregardien",
+            "https://www.tonhalle.de/veranstaltung/das-symphonische-palais/18194-das-symphonische-palais"
+          ]
+        },
+        {
+          "url": "https://www.tonhalle.de/veranstaltungen/kalender?from=1793491200",
+          "error": null,
+          "raw_lines": 445,
+          "event_urls": 12,
+          "unique_event_urls": 12,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-05-18",
+          "sample_urls": [
+            "https://www.tonhalle.de/veranstaltung/raumstation/17284-mendelssohn",
+            "https://www.tonhalle.de/veranstaltung/komet/20954-element-crime",
+            "https://www.tonhalle.de/veranstaltung/supernova/17642-melodic-lifetime",
+            "https://www.tonhalle.de/veranstaltung/comedy-geht-ins-konzert/17327-schroeder-geht-ins-konzert",
+            "https://www.tonhalle.de/veranstaltung/piano-solo/17583-bruce-liu",
+            "https://www.tonhalle.de/veranstaltung/faszination-klassik/17576-anne-sophie-mutter",
+            "https://www.tonhalle.de/veranstaltung/schumannfest/19438-christoph-julian-pregardien",
+            "https://www.tonhalle.de/veranstaltung/das-symphonische-palais/18194-das-symphonische-palais"
+          ]
+        }
+      ]
+    },
+    {
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "slug": "philharmonie_essen",
+      "scraped_at": "2026-05-18T18:29:03.450936Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/",
+      "best_event_urls": 31,
+      "best_last_date_seen": "2026-11-30",
+      "probes": [
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/",
+          "error": null,
+          "raw_lines": 6993,
+          "event_urls": 31,
+          "unique_event_urls": 31,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": [
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/takeover-by-miki-und-eva-briegel-juli-151425/3177/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/takeover-by-miki-und-eva-briegel-juli-151425/3178/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/die-prinzen-symphonisch-157996/3335/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/joana-mallwitzkonzerthausorchester-berlin-154813/2711/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/hoer-mal-wie-das-klingt-iv-157092/3326/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/hoer-mal-wie-das-klingt-iv-157092/3327/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/gautier-capuconsaechsische-staatskapelle-dresden-149566/3226/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/panel-160260/4132/"
+          ]
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/",
+          "error": null,
+          "raw_lines": 15835,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-05/philharmonie-essen",
+          "error": null,
+          "raw_lines": 5414,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-05/philharmonie-essen?scheduleScrollTo=2026-05-01",
+          "error": null,
+          "raw_lines": 5414,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen",
+          "error": null,
+          "raw_lines": 5888,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen?scheduleScrollTo=2026-06-01",
+          "error": null,
+          "raw_lines": 5888,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-07/philharmonie-essen",
+          "error": null,
+          "raw_lines": 4814,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-07/philharmonie-essen?scheduleScrollTo=2026-07-01",
+          "error": null,
+          "raw_lines": 4814,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-08/philharmonie-essen",
+          "error": null,
+          "raw_lines": 4402,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-08/philharmonie-essen?scheduleScrollTo=2026-08-01",
+          "error": null,
+          "raw_lines": 4402,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-09/philharmonie-essen",
+          "error": null,
+          "raw_lines": 4402,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-09/philharmonie-essen?scheduleScrollTo=2026-09-01",
+          "error": null,
+          "raw_lines": 4402,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-10/philharmonie-essen",
+          "error": null,
+          "raw_lines": 4262,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-10/philharmonie-essen?scheduleScrollTo=2026-10-01",
+          "error": null,
+          "raw_lines": 4262,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-11/philharmonie-essen",
+          "error": null,
+          "raw_lines": 4695,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-11/philharmonie-essen?scheduleScrollTo=2026-11-01",
+          "error": null,
+          "raw_lines": 4695,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        }
+      ]
+    },
+    {
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart",
+      "slug": "liederhalle_stuttgart",
+      "scraped_at": "2026-05-18T18:30:55.489128Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://liederhalle.de/eventkalender?tx_bbevents_events%5Barguments%5D%5BcurrentPage%5D=12",
+      "best_event_urls": 117,
+      "best_last_date_seen": "2026-11-07",
+      "probes": [
+        {
+          "url": "https://liederhalle.de/eventkalender",
+          "error": null,
+          "raw_lines": 366,
+          "event_urls": 18,
+          "unique_event_urls": 18,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-05-29",
+          "sample_urls": [
+            "https://liederhalle.de/veranstaltung/homin-choir",
+            "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
+            "https://liederhalle.de/veranstaltung/chopin-preistraeger",
+            "https://liederhalle.de/veranstaltung/staatsorchester-stuttgart-7-kammerkonzert-film-ab",
+            "https://liederhalle.de/veranstaltung/mariani-klavierquartett",
+            "https://liederhalle.de/veranstaltung/bee-gees-by-maincourse-europas-groesste-bee-gees-tribute-show-0",
+            "https://liederhalle.de/veranstaltung/ibrahim-selim-ile-bu-gece",
+            "https://liederhalle.de/veranstaltung/orsophilharmonic-soundtracks-0"
+          ]
+        },
+        {
+          "url": "https://liederhalle.de/eventkalender?tx_bbevents_events%5Barguments%5D%5BcurrentPage%5D=2",
+          "error": null,
+          "raw_lines": 465,
+          "event_urls": 27,
+          "unique_event_urls": 27,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-05-31",
+          "sample_urls": [
+            "https://liederhalle.de/veranstaltung/homin-choir",
+            "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
+            "https://liederhalle.de/veranstaltung/chopin-preistraeger",
+            "https://liederhalle.de/veranstaltung/staatsorchester-stuttgart-7-kammerkonzert-film-ab",
+            "https://liederhalle.de/veranstaltung/mariani-klavierquartett",
+            "https://liederhalle.de/veranstaltung/bee-gees-by-maincourse-europas-groesste-bee-gees-tribute-show-0",
+            "https://liederhalle.de/veranstaltung/ibrahim-selim-ile-bu-gece",
+            "https://liederhalle.de/veranstaltung/orsophilharmonic-soundtracks-0"
+          ]
+        },
+        {
+          "url": "https://liederhalle.de/eventkalender?tx_bbevents_events%5Barguments%5D%5BcurrentPage%5D=3",
+          "error": null,
+          "raw_lines": 564,
+          "event_urls": 36,
+          "unique_event_urls": 36,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-06-06",
+          "sample_urls": [
+            "https://liederhalle.de/veranstaltung/homin-choir",
+            "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
+            "https://liederhalle.de/veranstaltung/chopin-preistraeger",
+            "https://liederhalle.de/veranstaltung/staatsorchester-stuttgart-7-kammerkonzert-film-ab",
+            "https://liederhalle.de/veranstaltung/mariani-klavierquartett",
+            "https://liederhalle.de/veranstaltung/bee-gees-by-maincourse-europas-groesste-bee-gees-tribute-show-0",
+            "https://liederhalle.de/veranstaltung/ibrahim-selim-ile-bu-gece",
+            "https://liederhalle.de/veranstaltung/orsophilharmonic-soundtracks-0"
+          ]
+        },
+        {
+          "url": "https://liederhalle.de/eventkalender?tx_bbevents_events%5Barguments%5D%5BcurrentPage%5D=4",
+          "error": null,
+          "raw_lines": 663,
+          "event_urls": 45,
+          "unique_event_urls": 45,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-06-14",
+          "sample_urls": [
+            "https://liederhalle.de/veranstaltung/homin-choir",
+            "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
+            "https://liederhalle.de/veranstaltung/chopin-preistraeger",
+            "https://liederhalle.de/veranstaltung/staatsorchester-stuttgart-7-kammerkonzert-film-ab",
+            "https://liederhalle.de/veranstaltung/mariani-klavierquartett",
+            "https://liederhalle.de/veranstaltung/bee-gees-by-maincourse-europas-groesste-bee-gees-tribute-show-0",
+            "https://liederhalle.de/veranstaltung/ibrahim-selim-ile-bu-gece",
+            "https://liederhalle.de/veranstaltung/orsophilharmonic-soundtracks-0"
+          ]
+        },
+        {
+          "url": "https://liederhalle.de/eventkalender?tx_bbevents_events%5Barguments%5D%5BcurrentPage%5D=5",
+          "error": null,
+          "raw_lines": 762,
+          "event_urls": 54,
+          "unique_event_urls": 54,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-06-27",
+          "sample_urls": [
+            "https://liederhalle.de/veranstaltung/homin-choir",
+            "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
+            "https://liederhalle.de/veranstaltung/chopin-preistraeger",
+            "https://liederhalle.de/veranstaltung/staatsorchester-stuttgart-7-kammerkonzert-film-ab",
+            "https://liederhalle.de/veranstaltung/mariani-klavierquartett",
+            "https://liederhalle.de/veranstaltung/bee-gees-by-maincourse-europas-groesste-bee-gees-tribute-show-0",
+            "https://liederhalle.de/veranstaltung/ibrahim-selim-ile-bu-gece",
+            "https://liederhalle.de/veranstaltung/orsophilharmonic-soundtracks-0"
+          ]
+        },
+        {
+          "url": "https://liederhalle.de/eventkalender?tx_bbevents_events%5Barguments%5D%5BcurrentPage%5D=6",
+          "error": null,
+          "raw_lines": 861,
+          "event_urls": 63,
+          "unique_event_urls": 63,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-07-12",
+          "sample_urls": [
+            "https://liederhalle.de/veranstaltung/homin-choir",
+            "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
+            "https://liederhalle.de/veranstaltung/chopin-preistraeger",
+            "https://liederhalle.de/veranstaltung/staatsorchester-stuttgart-7-kammerkonzert-film-ab",
+            "https://liederhalle.de/veranstaltung/mariani-klavierquartett",
+            "https://liederhalle.de/veranstaltung/bee-gees-by-maincourse-europas-groesste-bee-gees-tribute-show-0",
+            "https://liederhalle.de/veranstaltung/ibrahim-selim-ile-bu-gece",
+            "https://liederhalle.de/veranstaltung/orsophilharmonic-soundtracks-0"
+          ]
+        },
+        {
+          "url": "https://liederhalle.de/eventkalender?tx_bbevents_events%5Barguments%5D%5BcurrentPage%5D=7",
+          "error": null,
+          "raw_lines": 960,
+          "event_urls": 72,
+          "unique_event_urls": 72,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-07-26",
+          "sample_urls": [
+            "https://liederhalle.de/veranstaltung/homin-choir",
+            "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
+            "https://liederhalle.de/veranstaltung/chopin-preistraeger",
+            "https://liederhalle.de/veranstaltung/staatsorchester-stuttgart-7-kammerkonzert-film-ab",
+            "https://liederhalle.de/veranstaltung/mariani-klavierquartett",
+            "https://liederhalle.de/veranstaltung/bee-gees-by-maincourse-europas-groesste-bee-gees-tribute-show-0",
+            "https://liederhalle.de/veranstaltung/ibrahim-selim-ile-bu-gece",
+            "https://liederhalle.de/veranstaltung/orsophilharmonic-soundtracks-0"
+          ]
+        },
+        {
+          "url": "https://liederhalle.de/eventkalender?tx_bbevents_events%5Barguments%5D%5BcurrentPage%5D=8",
+          "error": null,
+          "raw_lines": 1059,
+          "event_urls": 81,
+          "unique_event_urls": 81,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-09-21",
+          "sample_urls": [
+            "https://liederhalle.de/veranstaltung/homin-choir",
+            "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
+            "https://liederhalle.de/veranstaltung/chopin-preistraeger",
+            "https://liederhalle.de/veranstaltung/staatsorchester-stuttgart-7-kammerkonzert-film-ab",
+            "https://liederhalle.de/veranstaltung/mariani-klavierquartett",
+            "https://liederhalle.de/veranstaltung/bee-gees-by-maincourse-europas-groesste-bee-gees-tribute-show-0",
+            "https://liederhalle.de/veranstaltung/ibrahim-selim-ile-bu-gece",
+            "https://liederhalle.de/veranstaltung/orsophilharmonic-soundtracks-0"
+          ]
+        },
+        {
+          "url": "https://liederhalle.de/eventkalender?tx_bbevents_events%5Barguments%5D%5BcurrentPage%5D=9",
+          "error": null,
+          "raw_lines": 1158,
+          "event_urls": 90,
+          "unique_event_urls": 90,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-10-10",
+          "sample_urls": [
+            "https://liederhalle.de/veranstaltung/homin-choir",
+            "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
+            "https://liederhalle.de/veranstaltung/chopin-preistraeger",
+            "https://liederhalle.de/veranstaltung/staatsorchester-stuttgart-7-kammerkonzert-film-ab",
+            "https://liederhalle.de/veranstaltung/mariani-klavierquartett",
+            "https://liederhalle.de/veranstaltung/bee-gees-by-maincourse-europas-groesste-bee-gees-tribute-show-0",
+            "https://liederhalle.de/veranstaltung/ibrahim-selim-ile-bu-gece",
+            "https://liederhalle.de/veranstaltung/orsophilharmonic-soundtracks-0"
+          ]
+        },
+        {
+          "url": "https://liederhalle.de/eventkalender?tx_bbevents_events%5Barguments%5D%5BcurrentPage%5D=10",
+          "error": null,
+          "raw_lines": 1257,
+          "event_urls": 99,
+          "unique_event_urls": 99,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-10-18",
+          "sample_urls": [
+            "https://liederhalle.de/veranstaltung/homin-choir",
+            "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
+            "https://liederhalle.de/veranstaltung/chopin-preistraeger",
+            "https://liederhalle.de/veranstaltung/staatsorchester-stuttgart-7-kammerkonzert-film-ab",
+            "https://liederhalle.de/veranstaltung/mariani-klavierquartett",
+            "https://liederhalle.de/veranstaltung/bee-gees-by-maincourse-europas-groesste-bee-gees-tribute-show-0",
+            "https://liederhalle.de/veranstaltung/ibrahim-selim-ile-bu-gece",
+            "https://liederhalle.de/veranstaltung/orsophilharmonic-soundtracks-0"
+          ]
+        },
+        {
+          "url": "https://liederhalle.de/eventkalender?tx_bbevents_events%5Barguments%5D%5BcurrentPage%5D=11",
+          "error": null,
+          "raw_lines": 1356,
+          "event_urls": 108,
+          "unique_event_urls": 108,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-10-27",
+          "sample_urls": [
+            "https://liederhalle.de/veranstaltung/homin-choir",
+            "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
+            "https://liederhalle.de/veranstaltung/chopin-preistraeger",
+            "https://liederhalle.de/veranstaltung/staatsorchester-stuttgart-7-kammerkonzert-film-ab",
+            "https://liederhalle.de/veranstaltung/mariani-klavierquartett",
+            "https://liederhalle.de/veranstaltung/bee-gees-by-maincourse-europas-groesste-bee-gees-tribute-show-0",
+            "https://liederhalle.de/veranstaltung/ibrahim-selim-ile-bu-gece",
+            "https://liederhalle.de/veranstaltung/orsophilharmonic-soundtracks-0"
+          ]
+        },
+        {
+          "url": "https://liederhalle.de/eventkalender?tx_bbevents_events%5Barguments%5D%5BcurrentPage%5D=12",
+          "error": null,
+          "raw_lines": 1455,
+          "event_urls": 117,
+          "unique_event_urls": 117,
+          "first_date_seen": "2026-05-18",
+          "last_date_seen": "2026-11-07",
+          "sample_urls": [
+            "https://liederhalle.de/veranstaltung/homin-choir",
+            "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
+            "https://liederhalle.de/veranstaltung/chopin-preistraeger",
+            "https://liederhalle.de/veranstaltung/staatsorchester-stuttgart-7-kammerkonzert-film-ab",
+            "https://liederhalle.de/veranstaltung/mariani-klavierquartett",
+            "https://liederhalle.de/veranstaltung/bee-gees-by-maincourse-europas-groesste-bee-gees-tribute-show-0",
+            "https://liederhalle.de/veranstaltung/ibrahim-selim-ile-bu-gece",
+            "https://liederhalle.de/veranstaltung/orsophilharmonic-soundtracks-0"
+          ]
+        }
+      ]
+    }
+  ]
+}
