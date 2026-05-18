@@ -806,6 +806,60 @@ def _discover_glocke_paginated_urls(venue: dict, max_pages: int = 20) -> list[st
     return out
 
 
+def _iter_month_starts(start: date, end: date) -> list[date]:
+    months: list[date] = []
+    cur = date(start.year, start.month, 1)
+    last = date(end.year, end.month, 1)
+    while cur <= last:
+        months.append(cur)
+        if cur.month == 12:
+            cur = date(cur.year + 1, 1, 1)
+        else:
+            cur = date(cur.year, cur.month + 1, 1)
+    return months
+
+
+def _discover_essen_monthly_urls(venue: dict, horizon_date: str | None = None) -> list[str]:
+    """Discover Philharmonie Essen detail URLs by iterating monthly calendars.
+
+    Essen's calendar exposes month-specific, venue-filtered URLs:
+    /programm/kalender/YYYY-MM/philharmonie-essen. Scrolling the generic
+    page navigates through those months, but fetching them directly is more
+    reliable and cheaper for URL discovery.
+    """
+    slug = _slug(venue["name"])
+    horizon = _parse_iso_date(horizon_date or _scrape_horizon_date()) or _today_date()
+    seen: set[str] = set()
+    out: list[str] = []
+    for month in _iter_month_starts(_today_date(), horizon):
+        page_url = (
+            "https://www.theater-essen.de/programm/kalender/"
+            f"{month:%Y-%m}/philharmonie-essen"
+        )
+        try:
+            resp = requests.get(page_url, headers=_DE_HEADERS, timeout=20)
+            if resp.status_code >= 400:
+                print(f"    [essen-months] {month:%Y-%m}: HTTP {resp.status_code}", flush=True)
+                continue
+        except requests.RequestException as exc:
+            print(f"    [essen-months] failed {month:%Y-%m}: {exc}", flush=True)
+            continue
+
+        month_urls = _extract_event_urls_from_html(resp.text, venue)
+        new_count = 0
+        for url in month_urls:
+            clean = url.split("?", 1)[0].split("#", 1)[0]
+            if clean in seen:
+                continue
+            if not is_strict_event_url(clean, venue["url"], slug):
+                continue
+            seen.add(clean)
+            out.append(clean)
+            new_count += 1
+        print(f"    [essen-months] {month:%Y-%m}: +{new_count} URLs", flush=True)
+    return out
+
+
 def _discover_preferred_event_urls(venue: dict, html_fallback: str | None) -> list[str]:
     """Venue-specific URL discovery that should outrank broad site map() results."""
     slug = _slug(venue["name"])
@@ -814,6 +868,8 @@ def _discover_preferred_event_urls(venue: dict, html_fallback: str | None) -> li
         urls.extend(_extract_event_urls_from_html(html_fallback, venue))
     if slug == "glocke_bremen":
         urls.extend(_discover_glocke_paginated_urls(venue))
+    elif slug == "philharmonie_essen":
+        urls.extend(_discover_essen_monthly_urls(venue))
 
     seen: set[str] = set()
     deduped: list[str] = []
