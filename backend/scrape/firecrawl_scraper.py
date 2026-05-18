@@ -884,7 +884,7 @@ def _discover_glocke_paginated_urls(venue: dict, max_pages: int = 20) -> list[st
 
         page_urls = _extract_event_urls_from_html(resp.text, venue)
         new_count = 0
-        for url in page_urls_raw:
+        for url in page_urls:
             clean = url.split("?", 1)[0].split("#", 1)[0]
             if clean in seen:
                 continue
@@ -949,7 +949,7 @@ def _discover_liederhalle_paginated_urls(
         page_urls_raw = _extract_event_urls_from_html(rendered, venue)
         seen: set[str] = set()
         page_urls: list[str] = []
-        for url in page_urls:
+        for url in page_urls_raw:
             clean = url.split("?", 1)[0].split("#", 1)[0]
             if clean in seen:
                 continue
