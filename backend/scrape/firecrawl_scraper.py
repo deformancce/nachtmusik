@@ -531,8 +531,11 @@ VENUE_OVERRIDES: dict[str, dict] = {
         "force_url_expand": True,
     },
     "elbphilharmonie_hamburg": {
-        # Heavy cookie wall ("Alle akzeptieren") blocks all content without JS dismissal.
-        "actions": lambda: _cookie_and_load_more_actions(max_rounds=20, settle_ms=2000),
+        # Infinite-scroll programme list; detail pages are /de/programm/<slug>/<id>.
+        # Detail text may be hidden behind "Mehr lesen", but the LLM sees the rendered page.
+        "actions": lambda: _cookie_and_load_more_actions(max_rounds=35, settle_ms=2500),
+        "listing_target": 120,
+        "force_url_expand": True,
     },
     "festspielhaus_baden_baden": {
         # /programm/ uses pure infinite scroll (no load-more button). User reports
@@ -550,8 +553,37 @@ VENUE_OVERRIDES: dict[str, dict] = {
         "wait_for_listing_count": 20,
     },
     "isarphilharmonie_muenchen": {
-        # mphil.de calendar is 13k+ lines; navigate to current month to avoid hallucination.
-        "actions": _isarphi_actions,
+        # Use Gasteig's room-filtered Isarphilharmonie listing. It shows a count
+        # and a "Mehr laden" button instead of the huge mphil.de archive.
+        "actions": lambda: _cookie_and_load_more_actions(max_rounds=35, settle_ms=2500),
+        "listing_target": 150,
+        "force_url_expand": True,
+    },
+    "koelner_philharmonie": {
+        # Events fade in while scrolling; HTML anchors are the best source.
+        "actions": lambda: _cookie_and_load_more_actions(max_rounds=35, settle_ms=2500),
+        "listing_target": 150,
+        "force_url_expand": True,
+    },
+    "philharmonie_essen": {
+        # Calendar starts around the current month; scrolling reaches later dates.
+        # Detail URLs live under /programm/kalender/philharmonie-essen/<slug>/<id>/.
+        "actions": lambda: _cookie_and_load_more_actions(max_rounds=35, settle_ms=2500),
+        "listing_target": 150,
+        "force_url_expand": True,
+    },
+    "liederhalle_stuttgart": {
+        # Event calendar lazy-loads while scrolling. Filtering by "Klassik und Kultur"
+        # can happen later; for now classify after extraction.
+        "actions": lambda: _cookie_and_load_more_actions(max_rounds=35, settle_ms=2500),
+        "listing_target": 120,
+        "force_url_expand": True,
+    },
+    "tonhalle_duesseldorf": {
+        # Month-grouped cards; details at /veranstaltung/<series>/<id>-<slug>.
+        "actions": lambda: _cookie_and_load_more_actions(max_rounds=35, settle_ms=2500),
+        "listing_target": 150,
+        "force_url_expand": True,
     },
 }
 
@@ -853,20 +885,23 @@ def _is_valid_url(url) -> bool:
     return u.startswith(("http://", "https://"))
 
 
-def _enrich_events(app, events: list[dict], venue: dict) -> list[dict]:
+def _enrich_events(app, events: list[dict], venue: dict, limit: int | None = None) -> list[dict]:
     """
     For each event that has a detail_url but no program, scrape the detail
     page to fill in program, performers, conductor (and overwrite price/hall
     if listing didn't have them).
     """
     enriched = []
+    enriched_count = 0
     for i, ev in enumerate(events):
         detail_url = ev.get("detail_url")
-        needs_enrich = not ev.get("program") and _is_valid_url(detail_url)
+        budget_left = limit is None or enriched_count < limit
+        needs_enrich = budget_left and not ev.get("program") and _is_valid_url(detail_url)
         if needs_enrich:
             print(f"    [{i+1}/{len(events)}] enriching: {ev.get('title','')[:55]}", flush=True)
             detail = _scrape_one_detail(app, detail_url, venue)
             if detail:
+                enriched_count += 1
                 # Merge: detail wins for program/performers/conductor; listing wins for date/time
                 if detail.get("program"):
                     ev["program"] = detail["program"]
@@ -1355,7 +1390,6 @@ def _scrape_one(
         }
         events.append(ev)
     events.sort(key=lambda e: (e.get("date") or "9999", e.get("time") or ""))
-    events = events[:max_events]
 
     print(f"    listing: {len(events)} upcoming events (total_visible={total_visible})", flush=True)
 
@@ -1414,8 +1448,12 @@ def _scrape_one(
     # Note: map-discovered events (new_from_map) are already fully populated
     # from detail scrapes, so they don't need enrichment here.
     if enrich and events:
-        print(f"    phase 2: enriching {len(events)} listing events with detail pages ...", flush=True)
-        events = _enrich_events(app, events, venue)
+        print(
+            f"    phase 2: enriching up to {max_events} listing events "
+            f"with detail pages ...",
+            flush=True,
+        )
+        events = _enrich_events(app, events, venue, limit=max_events)
         events = [e for e in events if _is_within_scrape_window(e.get("date"), horizon_date)]
 
     # Merge listing + map-discovered, dedupe by detail_url, sort by date.
@@ -1427,7 +1465,6 @@ def _scrape_one(
             events.append(ev)
             seen_urls.add(ev.get("detail_url"))
         events.sort(key=lambda e: (e.get("date") or "9999", e.get("time") or ""))
-        events = events[:max_events]
         print(f"    merged: {len(events)} total events after map-expand", flush=True)
 
     # Classify each event as classical (or jazz/opera/lieder) vs pop/musical/etc.
@@ -1539,7 +1576,7 @@ def main(
                 disc = f"{disc_strict} strict ({disc_loose} loose)"
             prog = sum(1 for e in result["events"] if e.get("program"))
             print(
-                f"    OK: {result['total_events']} events enriched "
+                f"    OK: {result['total_events']} events saved "
                 f"({prog}/{result['total_events']} with program), "
                 f"discovered={disc} → {out_path.name}"
             )

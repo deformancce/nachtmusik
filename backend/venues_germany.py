@@ -38,7 +38,7 @@ VENUES_GERMANY: List[dict] = [
     {"name": "Gewandhaus Leipzig", "city": "Leipzig",
      "url": "https://www.gewandhausorchester.de/", "tier": 0},
     {"name": "Isarphilharmonie München", "city": "München",
-     "url": "https://www.mphil.de/kalender", "tier": 0},
+     "url": "https://www.gasteig.de/veranstaltungen/?room=isarphilharmonie", "tier": 0},
     {"name": "Liederhalle Stuttgart", "city": "Stuttgart",
      "url": "https://liederhalle.de/eventkalender", "tier": 0},
 

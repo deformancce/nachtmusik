@@ -61,7 +61,7 @@ VENUE_STRICT_PATTERNS: dict[str, re.Pattern[str]] = {
         re.I,
     ),
     "elbphilharmonie_hamburg": re.compile(
-        r"elbphilharmonie\.de/.+/(?:veranstaltung|event)/[^/?#]+",
+        r"elbphilharmonie\.de/de/programm/[^/?#]+/\d+",
         re.I,
     ),
     "alte_oper_frankfurt": re.compile(
@@ -73,11 +73,11 @@ VENUE_STRICT_PATTERNS: dict[str, re.Pattern[str]] = {
         re.I,
     ),
     "tonhalle_duesseldorf": re.compile(
-        r"tonhalle\.de/.+veranstaltung[^/?#]*",
+        r"tonhalle\.de/veranstaltung/[^/?#]+/\d+-[^/?#]+",
         re.I,
     ),
     "philharmonie_essen": re.compile(
-        r"theater-essen\.de/.+p\d{3,}",
+        r"theater-essen\.de/programm/kalender/philharmonie-essen/[^/?#]+/\d+/?",
         re.I,
     ),
     "glocke_bremen": re.compile(
@@ -89,11 +89,11 @@ VENUE_STRICT_PATTERNS: dict[str, re.Pattern[str]] = {
         re.I,
     ),
     "liederhalle_stuttgart": re.compile(
-        r"liederhalle\.de/.+event[^/?#]+",
+        r"liederhalle\.de/veranstaltung/[^/?#]+",
         re.I,
     ),
     "isarphilharmonie_muenchen": re.compile(
-        r"mphil\.de/.+/\d{4,}",
+        r"gasteig\.de/veranstaltungen/[^/?#]+/?",
         re.I,
     ),
 }
