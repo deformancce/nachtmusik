@@ -48,6 +48,7 @@ class VenueCoverage:
     with_detail_url: int
     scrape_horizon_date: str | None
     latest_event_date: str | None
+    latest_discovered_event_date: str | None
     covers_horizon: bool | None
     flags: list[str] = field(default_factory=list)
 
@@ -115,13 +116,21 @@ def _analyze_file(path: Path) -> VenueCoverage:
         )
         latest_event_date = dates[-1] if dates else None
 
+    latest_discovered_event_date = data.get("latest_discovered_event_date")
+    if not isinstance(latest_discovered_event_date, str):
+        latest_discovered_event_date = latest_event_date
+
     scrape_horizon_date = data.get("scrape_horizon_date")
     if not isinstance(scrape_horizon_date, str):
         scrape_horizon_date = None
     covers_horizon = data.get("covers_horizon")
     if not isinstance(covers_horizon, bool):
+        coverage_latest = max(
+            [d for d in (latest_event_date, latest_discovered_event_date) if isinstance(d, str)],
+            default=None,
+        )
         covers_horizon = (
-            bool(latest_event_date and scrape_horizon_date and latest_event_date >= scrape_horizon_date)
+            bool(coverage_latest and scrape_horizon_date and coverage_latest >= scrape_horizon_date)
             if scrape_horizon_date else None
         )
 
@@ -159,6 +168,7 @@ def _analyze_file(path: Path) -> VenueCoverage:
         with_detail_url=with_detail,
         scrape_horizon_date=scrape_horizon_date,
         latest_event_date=latest_event_date,
+        latest_discovered_event_date=latest_discovered_event_date,
         covers_horizon=covers_horizon,
         flags=flags,
     )
@@ -197,6 +207,14 @@ def _fmt_horizon(row: VenueCoverage) -> str:
     return f"{marker} {row.scrape_horizon_date}"
 
 
+def _fmt_latest(row: VenueCoverage) -> str:
+    latest = row.latest_event_date or "—"
+    discovered = row.latest_discovered_event_date
+    if discovered and discovered != row.latest_event_date:
+        return f"{latest} / d:{discovered}"
+    return latest
+
+
 def build_markdown(rows: list[VenueCoverage], generated_at: str) -> str:
     lines = [
         "# Concert scrape coverage report",
@@ -210,8 +228,8 @@ def build_markdown(rows: list[VenueCoverage], generated_at: str) -> str:
         "- **map✓**: `total_events_discovered_strict` (detail-page patterns)",
         "- **ref**: legacy custom scraper total (if available)",
         "- **prog**: share of extracted events with non-empty program",
-        "- **last**: latest event date in JSON",
-        "- **hzn**: configured scrape horizon; ✓ means latest event reaches it",
+        "- **last**: latest dated event in JSON; `d:` suffix means latest discovered date",
+        "- **hzn**: configured scrape horizon; ✓ means discovery reaches it",
         "",
         "| Venue | ext | vis | map↓ | map✓ | ref | prog | last | hzn | flags |",
         "|-------|-----|-----|------|------|-----|------|------|-----|-------|",
@@ -223,7 +241,7 @@ def build_markdown(rows: list[VenueCoverage], generated_at: str) -> str:
             f"| {r.venue} | {r.extracted} | {_fmt_int(r.visible)} | "
             f"{_fmt_int(r.discovered_loose)} | {_fmt_int(r.discovered_strict)} | "
             f"{_fmt_int(r.reference_total)} | {_fmt_pct(r.program_rate)} | "
-            f"{r.latest_event_date or '—'} | {_fmt_horizon(r)} | {flag_s} |"
+            f"{_fmt_latest(r)} | {_fmt_horizon(r)} | {flag_s} |"
         )
 
     lines.extend([
@@ -232,8 +250,8 @@ def build_markdown(rows: list[VenueCoverage], generated_at: str) -> str:
         "",
         "- **HIGH_MAP_NOISE**: `map()` loose count ≫ visible/extracted — do not use for "
         "full enrichment (cost explosion). Prefer **map✓** or listing-only metrics.",
-        "- Firecrawl smoke uses ~7 credits/venue (1 map + 1 listing + 5 details). "
-        "Use `--skip-map` to save 1 credit/venue.",
+        "- Firecrawl smoke separates discovery from enrichment: `max_events` is the "
+        "detail-page enrichment budget, while discovered URL/stub coverage can be larger.",
         "- Discovery over-count usually comes from broad `/konzerte/` / `/programm/` "
         "paths in site-wide `map()`, not from listing extraction.",
         "- **SHORT_HORIZON**: latest event in the JSON is before the configured scrape horizon.",
@@ -256,6 +274,7 @@ def build_json(rows: list[VenueCoverage], generated_at: str) -> dict:
                 "reference_total": r.reference_total,
                 "program_rate": r.program_rate,
                 "latest_event_date": r.latest_event_date,
+                "latest_discovered_event_date": r.latest_discovered_event_date,
                 "scrape_horizon_date": r.scrape_horizon_date,
                 "covers_horizon": r.covers_horizon,
                 "noise_ratio_loose": r.noise_ratio_loose,

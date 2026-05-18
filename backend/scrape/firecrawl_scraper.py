@@ -884,7 +884,7 @@ def _discover_glocke_paginated_urls(venue: dict, max_pages: int = 20) -> list[st
 
         page_urls = _extract_event_urls_from_html(resp.text, venue)
         new_count = 0
-        for url in page_urls:
+        for url in page_urls_raw:
             clean = url.split("?", 1)[0].split("#", 1)[0]
             if clean in seen:
                 continue
@@ -904,7 +904,12 @@ def _discover_glocke_paginated_urls(venue: dict, max_pages: int = 20) -> list[st
     return out
 
 
-def _discover_liederhalle_paginated_urls(app, venue: dict, max_pages: int = 14) -> list[str]:
+def _discover_liederhalle_paginated_urls(
+    app,
+    venue: dict,
+    max_pages: int = 14,
+    horizon_date: str | None = None,
+) -> tuple[list[str], list[str]]:
     """Discover Liederhalle event URLs from its rendered TYPO3 pagination.
 
     The listing exposes links like
@@ -914,10 +919,15 @@ def _discover_liederhalle_paginated_urls(app, venue: dict, max_pages: int = 14) 
     """
     slug = _slug(venue["name"])
     base = "https://liederhalle.de/eventkalender"
-    seen: set[str] = set()
-    out: list[str] = []
-    empty_pages = 0
-    for page in range(1, max_pages + 1):
+    horizon = horizon_date or _scrape_horizon_date()
+    candidate_pages = []
+    for page in (max_pages, 12, 10, 8, 6, 4, 2, 1):
+        if 1 <= page <= max_pages and page not in candidate_pages:
+            candidate_pages.append(page)
+
+    best_urls: list[str] = []
+    best_dates: list[str] = []
+    for page in candidate_pages:
         if page == 1:
             page_url = base
         else:
@@ -933,11 +943,12 @@ def _discover_liederhalle_paginated_urls(app, venue: dict, max_pages: int = 14) 
             result = app.scrape(page_url, formats=["markdown", "html"], actions=_venue_actions(slug))
         except Exception as exc:
             print(f"    [liederhalle-pages] failed page {page}: {exc}", flush=True)
-            break
+            continue
 
         rendered = "\n".join([_extract_html(result), _extract_markdown(result)])
-        page_urls = _extract_event_urls_from_html(rendered, venue)
-        new_count = 0
+        page_urls_raw = _extract_event_urls_from_html(rendered, venue)
+        seen: set[str] = set()
+        page_urls: list[str] = []
         for url in page_urls:
             clean = url.split("?", 1)[0].split("#", 1)[0]
             if clean in seen:
@@ -945,17 +956,20 @@ def _discover_liederhalle_paginated_urls(app, venue: dict, max_pages: int = 14) 
             if not is_strict_event_url(clean, venue["url"], slug):
                 continue
             seen.add(clean)
-            out.append(clean)
-            new_count += 1
+            page_urls.append(clean)
+        page_dates = _extract_dates_from_text(rendered, horizon)
 
-        print(f"    [liederhalle-pages] page {page}: +{new_count} URLs", flush=True)
-        if new_count == 0:
-            empty_pages += 1
-            if empty_pages >= 2:
-                break
-        else:
-            empty_pages = 0
-    return out
+        print(
+            f"    [liederhalle-pages] page {page}: {len(page_urls)} URLs "
+            f"dates={page_dates[0] if page_dates else None}..{page_dates[-1] if page_dates else None}",
+            flush=True,
+        )
+        if len(page_urls) > len(best_urls):
+            best_urls = page_urls
+            best_dates = page_dates
+        if page_dates and page_dates[-1] >= horizon:
+            break
+    return best_urls, best_dates
 
 
 def _iter_month_starts(start: date, end: date) -> list[date]:
@@ -1037,16 +1051,28 @@ def _discover_essen_monthly_urls(
     return out
 
 
-def _discover_preferred_event_urls(app, venue: dict, html_fallback: str | None) -> list[str]:
+def _discover_preferred_event_urls(
+    app,
+    venue: dict,
+    html_fallback: str | None,
+    horizon_date: str | None = None,
+) -> tuple[list[str], dict]:
     """Venue-specific URL discovery that should outrank broad site map() results."""
     slug = _slug(venue["name"])
     urls: list[str] = []
+    stats: dict = {"latest_date": None, "date_count": 0}
     if html_fallback:
         urls.extend(_extract_event_urls_from_html(html_fallback, venue))
     if slug == "glocke_bremen":
         urls.extend(_discover_glocke_paginated_urls(venue))
     elif slug == "liederhalle_stuttgart":
-        urls.extend(_discover_liederhalle_paginated_urls(app, venue))
+        liederhalle_urls, liederhalle_dates = _discover_liederhalle_paginated_urls(
+            app, venue, horizon_date=horizon_date
+        )
+        urls.extend(liederhalle_urls)
+        if liederhalle_dates:
+            stats["latest_date"] = liederhalle_dates[-1]
+            stats["date_count"] = len(liederhalle_dates)
     elif slug == "philharmonie_essen":
         urls.extend(_discover_essen_monthly_urls(app, venue))
 
@@ -1060,7 +1086,7 @@ def _discover_preferred_event_urls(app, venue: dict, html_fallback: str | None) 
             continue
         seen.add(clean)
         deduped.append(clean)
-    return deduped
+    return deduped, stats
 
 
 def _unix_start_of_day(day: date) -> int:
@@ -1247,6 +1273,112 @@ def _is_valid_url(url) -> bool:
     return u.startswith(("http://", "https://"))
 
 
+def _clean_url(url) -> str:
+    if not isinstance(url, str):
+        return ""
+    return url.strip().split("?", 1)[0].split("#", 1)[0]
+
+
+def _has_enriched_data(ev: dict) -> bool:
+    return bool(
+        ev.get("program")
+        or ev.get("performers")
+        or ev.get("conductor")
+        or ev.get("price")
+        or ev.get("duration_min")
+    )
+
+
+def _mark_enrichment_status(ev: dict) -> None:
+    enriched = _has_enriched_data(ev)
+    ev["enriched"] = enriched
+    ev["enrichment_status"] = "enriched" if enriched else "stub"
+
+
+def _load_existing_event_cache(slug: str) -> dict[str, dict]:
+    path = BASE / f"firecrawl_{slug}_events.json"
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    events = data.get("events") if isinstance(data, dict) else []
+    if not isinstance(events, list):
+        return {}
+    out: dict[str, dict] = {}
+    for ev in events:
+        if not isinstance(ev, dict):
+            continue
+        clean = _clean_url(ev.get("detail_url"))
+        if clean:
+            out[clean] = ev
+    return out
+
+
+def _merge_existing_event(ev: dict, cached: dict | None) -> None:
+    if not cached:
+        return
+    copied = False
+    for key in ("date", "time", "title", "venue_hall", "conductor", "price", "duration_min"):
+        if not ev.get(key) and cached.get(key):
+            ev[key] = cached[key]
+            copied = True
+    for key in ("program", "performers"):
+        if not ev.get(key) and cached.get(key):
+            ev[key] = cached[key]
+            copied = True
+    if copied and _has_enriched_data(cached):
+        ev["reused_enrichment"] = True
+
+
+def _reuse_existing_enrichment(events: list[dict], slug: str) -> list[dict]:
+    cache = _load_existing_event_cache(slug)
+    if not cache:
+        return events
+    reused = 0
+    for ev in events:
+        before = _has_enriched_data(ev)
+        _merge_existing_event(ev, cache.get(_clean_url(ev.get("detail_url"))))
+        if not before and _has_enriched_data(ev):
+            reused += 1
+    if reused:
+        print(f"    reused enrichment from previous JSON: {reused} events", flush=True)
+    return events
+
+
+def _title_from_url(url: str) -> str:
+    path_bits = [p for p in urlparse(url).path.split("/") if p]
+    raw = path_bits[-1] if path_bits else "event"
+    if raw.isdigit() and len(path_bits) > 1:
+        raw = path_bits[-2]
+    raw = re.sub(r"^\d+-", "", raw)
+    raw = raw.replace("-", " ").strip()
+    return raw.title() if raw else "Event"
+
+
+def _event_stub_from_url(url: str, venue: dict, source: str) -> dict:
+    clean = _clean_url(url)
+    ev = {
+        "date": None,
+        "time": None,
+        "title": _title_from_url(clean),
+        "title_inferred": True,
+        "venue_hall": None,
+        "program": [],
+        "performers": [],
+        "conductor": None,
+        "price": None,
+        "detail_url": clean,
+        "venue": venue["name"],
+        "city": venue["city"],
+        "discovery_source": source,
+        "discovered_only": True,
+    }
+    _mark_enrichment_status(ev)
+    return ev
+
+
 def _enrich_events(app, events: list[dict], venue: dict, limit: int | None = None) -> list[dict]:
     """
     For each event that has a detail_url but no program, scrape the detail
@@ -1258,12 +1390,13 @@ def _enrich_events(app, events: list[dict], venue: dict, limit: int | None = Non
     for i, ev in enumerate(events):
         detail_url = ev.get("detail_url")
         budget_left = limit is None or enriched_count < limit
-        needs_enrich = budget_left and not ev.get("program") and _is_valid_url(detail_url)
+        needs_enrich = budget_left and not _has_enriched_data(ev) and _is_valid_url(detail_url)
         if needs_enrich:
             print(f"    [{i+1}/{len(events)}] enriching: {ev.get('title','')[:55]}", flush=True)
             detail = _scrape_one_detail(app, detail_url, venue)
             if detail:
                 enriched_count += 1
+                ev["discovered_only"] = False
                 # Merge: detail wins for program/performers/conductor; listing wins for date/time
                 if detail.get("program"):
                     ev["program"] = detail["program"]
@@ -1283,6 +1416,7 @@ def _enrich_events(app, events: list[dict], venue: dict, limit: int | None = Non
                     ev["date"] = detail["date"]
                 if detail.get("time") and not ev.get("time"):
                     ev["time"] = detail["time"]
+        _mark_enrichment_status(ev)
         enriched.append(ev)
     return enriched
 
@@ -1318,9 +1452,17 @@ def _latest_event_date(events: list[dict]) -> str | None:
 
 def _add_coverage_fields(payload: dict, events: list[dict], horizon_date: str) -> None:
     latest = _latest_event_date(events)
+    discovered_latest = payload.get("latest_discovered_event_date")
+    if not isinstance(discovered_latest, str):
+        discovered_latest = latest
+    coverage_latest = max(
+        [d for d in (latest, discovered_latest) if isinstance(d, str)],
+        default=None,
+    )
     payload["scrape_horizon_date"] = horizon_date
     payload["latest_event_date"] = latest
-    payload["covers_horizon"] = bool(latest and latest >= horizon_date)
+    payload["latest_discovered_event_date"] = discovered_latest
+    payload["covers_horizon"] = bool(coverage_latest and coverage_latest >= horizon_date)
 
 
 _CANCELED_PREFIXES = ("abgesagt:", "abgesagt ", "abgesagt-",
@@ -1363,18 +1505,14 @@ def _expand_via_map(
     app,
     venue: dict,
     listing_events: list[dict],
-    target: int,
     *,
     html_fallback: str | None = None,
     horizon_date: str | None = None,
+    use_map: bool = True,
 ) -> tuple[list[dict], dict]:
     """
-    Use Firecrawl map() to discover event URLs NOT already in `listing_events`,
-    detail-scrape each one, and return the NEW future events.
-
-    Stops scraping when `target` total events would be reached
-    (i.e. len(listing_events) + len(new_events) >= target) or when the map
-    budget is exhausted.
+    Discover event URLs NOT already in `listing_events` and return lightweight
+    stub events. Detail enrichment happens later and is limited by max_events.
 
     When map() yields nothing and `html_fallback` is provided, we mine the
     rendered listing HTML for venue-strict detail-page anchors instead.
@@ -1384,18 +1522,26 @@ def _expand_via_map(
     """
     stats = {
         "preferred_urls": 0, "map_urls": 0, "html_urls": 0, "new_urls": 0,
-        "scraped": 0, "past": 0, "beyond_horizon": 0, "invalid": 0, "canceled": 0,
+        "latest_discovered_date": _latest_event_date(listing_events),
     }
-    needed = target - len(listing_events)
-    if needed <= 0:
-        return [], stats
 
-    preferred_urls = _discover_preferred_event_urls(app, venue, html_fallback)
+    preferred_urls, preferred_stats = _discover_preferred_event_urls(
+        app, venue, html_fallback, horizon_date=horizon_date
+    )
     stats["preferred_urls"] = len(preferred_urls)
+    if preferred_stats.get("latest_date"):
+        stats["latest_discovered_date"] = max(
+            [d for d in (stats.get("latest_discovered_date"), preferred_stats["latest_date"]) if d],
+            default=None,
+        )
+        stats["preferred_date_count"] = preferred_stats.get("date_count", 0)
     if preferred_urls:
         print(f"    [map-expand] preferred discovery: {len(preferred_urls)} URLs", flush=True)
 
-    loose_urls, strict_urls = _discover_all_event_urls(app, venue)
+    loose_urls: list[str] = []
+    strict_urls: list[str] = []
+    if use_map:
+        loose_urls, strict_urls = _discover_all_event_urls(app, venue)
     map_urls = strict_urls or loose_urls
     stats["map_urls"] = len(map_urls)
     html_urls = _extract_event_urls_from_html(html_fallback or "", venue)
@@ -1418,7 +1564,7 @@ def _expand_via_map(
         return [], stats
 
     known = {
-        str(e.get("detail_url")).split("?", 1)[0].split("#", 1)[0]
+        _clean_url(e.get("detail_url"))
         for e in listing_events
         if e.get("detail_url")
     }
@@ -1426,57 +1572,14 @@ def _expand_via_map(
     stats["new_urls"] = len(new_urls)
     print(
         f"    [map-expand] {len(discovered_urls)} event URLs discovered "
-        f"({len(new_urls)} new beyond listing); need {needed} more events",
+        f"({len(new_urls)} new beyond listing)",
         flush=True,
     )
     if not new_urls:
         return [], stats
 
-    # Budget: allow up to 3× overhead for past/invalid scrapes.
-    budget = min(len(new_urls), needed * 3)
-    new_events: list[dict] = []
-    for i, url in enumerate(new_urls[:budget], start=1):
-        if len(new_events) >= needed:
-            break
-        if not _is_valid_url(url):
-            stats["invalid"] += 1
-            continue
-        stats["scraped"] += 1
-        print(f"    [map-expand {i}/{budget}] {url[:75]}", flush=True)
-        detail = _scrape_one_detail(app, url, venue)
-        ev = _detail_to_event(detail, url, venue)
-        if ev is None:
-            stats["invalid"] += 1
-            continue
-        if not _is_future(ev["date"]):
-            stats["past"] += 1
-            continue
-        if not _is_within_scrape_window(ev["date"], horizon_date):
-            stats["beyond_horizon"] += 1
-            continue
-        if _is_canceled(ev["title"]):
-            stats["canceled"] += 1
-            continue
-        # Guard: map-discovered pages sometimes have no visible date (tour overviews,
-        # festival landing pages) — prompt now instructs LLM to return null, which makes
-        # _detail_to_event return None above. Belt-and-suspenders: if date == today and
-        # title contains typical tour/overview keywords, skip rather than propagate noise.
-        _title_lower = (ev.get("title") or "").lower()
-        if ev["date"] == _today() and any(
-            kw in _title_lower for kw in ("tournee", " tour", "festival-tournee")
-        ):
-            stats["suspicious_date"] = stats.get("suspicious_date", 0) + 1
-            continue
-        new_events.append(ev)
-
-    print(
-        f"    [map-expand] result: +{len(new_events)} new events "
-        f"(scraped={stats['scraped']} past={stats['past']} "
-        f"beyond_horizon={stats['beyond_horizon']} "
-        f"invalid={stats['invalid']} canceled={stats['canceled']} "
-        f"suspicious_date={stats.get('suspicious_date', 0)})",
-        flush=True,
-    )
+    new_events = [_event_stub_from_url(url, venue, "url_discovery") for url in new_urls]
+    print(f"    [map-expand] result: +{len(new_events)} discovered stubs", flush=True)
     return new_events, stats
 
 
@@ -1684,14 +1787,10 @@ def _scrape_one(
     # lists from Sept 2025 chronologically — first 5 would all be past).
     listing: dict = {}
     if events_raw is None:
-        # Default cap 60 — asking the LLM for 160+ events confuses it on
-        # smaller listings (BP returned 24 instead of 63 in one observed run).
-        # max_events*2 + 10 buffer for filtered-out past/canceled events.
-        # Some venues have all events on the listing page (no map() coverage),
-        # so they need a higher cap — set via VENUE_OVERRIDES.listing_target.
+        # max_events is the detail-enrichment budget, not a discovery cap.
+        # Listing recall is controlled by per-venue listing_target instead.
         venue_override = VENUE_OVERRIDES.get(_slug(venue["name"]), {})
-        target_cap = venue_override.get("listing_target", 60)
-        listing_target = min(max(max_events * 2 + 10, 20), target_cap)
+        listing_target = venue_override.get("listing_target", 60)
         print(f"    phase 1a: listing scrape (firecrawl, target={listing_target}) ...", flush=True)
         listing = _scrape_listing(app, venue, listing_target) or {}
         events_raw = listing.get("events") if isinstance(listing, dict) else None
@@ -1749,6 +1848,8 @@ def _scrape_one(
             "detail_url": e.get("detail_url"),
             "venue": venue["name"],
             "city": venue["city"],
+            "discovery_source": source,
+            "discovered_only": False,
         }
         events.append(ev)
     events.sort(key=lambda e: (e.get("date") or "9999", e.get("time") or ""))
@@ -1767,11 +1868,7 @@ def _scrape_one(
         _add_coverage_fields(payload, [], horizon_date)
         return payload
 
-    # ── Phase 1c: Expand via map() — detail-scrape URLs beyond the listing ──
-    # When --expand-via-map is set, run map() to discover ALL event URLs on the
-    # domain. For URLs NOT already in the listing, detail-scrape each one to
-    # add as a new event. This is how we get from ~30 listing events to
-    # max_events (e.g. 100-200) — listing alone can't reach season depth.
+    # ── Phase 1c: URL expansion — discover beyond listing without enrichment ──
     map_stats: dict = {}
     new_from_map: list[dict] = []
     total_discovered_loose: int | None = total_visible
@@ -1782,8 +1879,9 @@ def _scrape_one(
         # Only expand when listing was the source (JSON-LD is already complete).
         listing_html = listing.get("_raw_html") if isinstance(listing, dict) else None
         new_from_map, map_stats = _expand_via_map(
-            app, venue, events, max_events,
+            app, venue, events,
             html_fallback=listing_html, horizon_date=horizon_date,
+            use_map=not skip_map,
         )
         total_discovered_loose = (
             map_stats.get("preferred_urls")
@@ -1806,28 +1904,33 @@ def _scrape_one(
     else:
         print(f"    phase 1b: skipped (--skip-map)", flush=True)
 
-    # ── Phase 2: Enrich listing events with detail pages ──
-    # Note: map-discovered events (new_from_map) are already fully populated
-    # from detail scrapes, so they don't need enrichment here.
-    if enrich and events:
+    # Merge listing + discovered URL stubs, dedupe by detail_url, sort by date.
+    if new_from_map:
+        seen_urls = {_clean_url(e.get("detail_url")) for e in events if e.get("detail_url")}
+        for ev in new_from_map:
+            clean = _clean_url(ev.get("detail_url"))
+            if clean in seen_urls:
+                continue
+            events.append(ev)
+            seen_urls.add(clean)
+        events.sort(key=lambda e: (e.get("date") or "9999", e.get("time") or ""))
+        print(f"    merged: {len(events)} total events after URL discovery", flush=True)
+
+    events = _reuse_existing_enrichment(events, slug)
+
+    # ── Phase 2: Enrich discovered events with detail pages ──
+    if enrich and events and max_events > 0:
         print(
-            f"    phase 2: enriching up to {max_events} listing events "
+            f"    phase 2: enriching up to {max_events} discovered events "
             f"with detail pages ...",
             flush=True,
         )
         events = _enrich_events(app, events, venue, limit=max_events)
         events = [e for e in events if _is_within_scrape_window(e.get("date"), horizon_date)]
-
-    # Merge listing + map-discovered, dedupe by detail_url, sort by date.
-    if new_from_map:
-        seen_urls = {e.get("detail_url") for e in events if e.get("detail_url")}
-        for ev in new_from_map:
-            if ev.get("detail_url") in seen_urls:
-                continue
-            events.append(ev)
-            seen_urls.add(ev.get("detail_url"))
         events.sort(key=lambda e: (e.get("date") or "9999", e.get("time") or ""))
-        print(f"    merged: {len(events)} total events after map-expand", flush=True)
+    else:
+        for ev in events:
+            _mark_enrichment_status(ev)
 
     # Classify each event as classical (or jazz/opera/lieder) vs pop/musical/etc.
     for ev in events:
@@ -1839,7 +1942,10 @@ def _scrape_one(
     # Loose count (legacy field name — often inflated by map()).
     payload["total_events_discovered"] = total_discovered_loose
     payload["total_events_discovered_strict"] = total_discovered_strict
+    payload["total_events_enriched"] = sum(1 for e in events if e.get("enriched"))
     payload["source"] = source
+    if map_stats.get("latest_discovered_date"):
+        payload["latest_discovered_event_date"] = map_stats["latest_discovered_date"]
     _add_coverage_fields(payload, events, horizon_date)
     if map_stats:
         payload["map_expand_stats"] = map_stats
