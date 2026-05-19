@@ -857,6 +857,21 @@ _ISO_DATE_RE = re.compile(r"\b(20\d{2})-(\d{2})-(\d{2})\b")
 _DE_DATE_RE = re.compile(r"\b(\d{1,2})\.(\d{1,2})\.(20\d{2})\b")
 _DE_SHORT_DATE_RE = re.compile(r"\b(\d{1,2})\.(\d{1,2})\.(\d{2})\b")
 _TIME_RE = re.compile(r"(?:Uhrzeit\s*)?([0-2]?\d:[0-5]\d)\s*Uhr\b")
+_DE_WEEKDAY_RE = r"(?:Montag|Dienstag|Mittwoch|Donnerstag|Freitag|Samstag|Sonntag)"
+_DE_MONTHS = {
+    "jan": 1, "januar": 1,
+    "feb": 2, "februar": 2,
+    "mär": 3, "märz": 3, "maerz": 3,
+    "apr": 4, "april": 4,
+    "mai": 5,
+    "jun": 6, "juni": 6,
+    "jul": 7, "juli": 7,
+    "aug": 8, "august": 8,
+    "sep": 9, "sept": 9, "september": 9,
+    "okt": 10, "oktober": 10,
+    "nov": 11, "november": 11,
+    "dez": 12, "dezember": 12,
+}
 
 
 def _extract_event_urls_from_html(html: str, venue: dict) -> list[str]:
@@ -923,6 +938,26 @@ def _parse_de_short_date(value: str | None) -> str | None:
         return date(2000 + int(year), int(month), int(day)).isoformat()
     except ValueError:
         return None
+
+
+def _parse_de_month_name_date(day: str, month_name: str, horizon_date: str) -> str | None:
+    month = _DE_MONTHS.get((month_name or "").strip().lower())
+    if not month:
+        return None
+    today = _today_date()
+    horizon = _parse_iso_date(horizon_date)
+    years = [today.year, today.year + 1]
+    for year in years:
+        try:
+            parsed = date(year, month, int(day))
+        except ValueError:
+            continue
+        if parsed < today:
+            continue
+        if horizon and parsed > horizon:
+            continue
+        return parsed.isoformat()
+    return None
 
 
 def _extract_liederhalle_listing_events(
@@ -1183,6 +1218,145 @@ def _extract_essen_listing_events(
     return out
 
 
+def _extract_konzerthaus_berlin_listing_events(
+    rendered: str,
+    venue: dict,
+    horizon_date: str,
+) -> list[dict]:
+    """Parse Konzerthaus Berlin cards from rendered markdown."""
+    if not rendered:
+        return []
+
+    header_re = re.compile(
+        rf"(?m)^\s*-\s*(?:(\d{{1,2}})\s*([A-Za-zÄÖÜäöü]+)\s+-\s*)?"
+        rf"{_DE_WEEKDAY_RE}\s*([0-2]?\d)[.:]([0-5]\d)\s*Uhr\s*([^\n\r]*)"
+    )
+    matches = list(header_re.finditer(rendered))
+    out: list[dict] = []
+    seen: set[str] = set()
+    current_date: str | None = None
+    slug = _slug(venue["name"])
+    for i, match in enumerate(matches):
+        day, month_name, hour, minute, hall = match.groups()
+        if day and month_name:
+            current_date = _parse_de_month_name_date(day, month_name, horizon_date)
+        if not current_date or not _is_within_scrape_window(current_date, horizon_date):
+            continue
+
+        block_end = matches[i + 1].start() if i + 1 < len(matches) else len(rendered)
+        block = rendered[match.end():block_end]
+        title_match = re.search(r"(?m)^\s*#+\s+\[([^\]]+)\]\((https?://[^)]+)\)", block)
+        if not title_match:
+            continue
+        title = _plain_markdown_text(title_match.group(1))
+        detail_url = _clean_url(title_match.group(2))
+        if (
+            not title
+            or _is_canceled(title)
+            or not detail_url
+            or detail_url in seen
+            or not is_strict_event_url(detail_url, venue["url"], slug)
+        ):
+            continue
+
+        ev = {
+            "date": current_date,
+            "time": f"{int(hour):02d}:{minute}",
+            "title": title,
+            "venue_hall": _plain_markdown_text(hall),
+            "program": [],
+            "performers": [],
+            "conductor": None,
+            "price": None,
+            "detail_url": detail_url,
+            "venue": venue["name"],
+            "city": venue["city"],
+            "discovery_source": "konzerthaus_berlin_listing",
+            "discovered_only": True,
+        }
+        _mark_enrichment_status(ev)
+        seen.add(detail_url)
+        out.append(ev)
+    return out
+
+
+def _extract_glocke_listing_events(
+    rendered: str,
+    venue: dict,
+    horizon_date: str,
+) -> list[dict]:
+    """Parse Glocke Bremen cards from rendered markdown."""
+    if not rendered:
+        return []
+    if "<" in rendered and "href=" in rendered:
+        def _anchor_to_markdown(match: re.Match) -> str:
+            href = match.group(1)
+            label = _plain_markdown_text(re.sub(r"<[^>]+>", " ", match.group(2))) or ""
+            return f"## [{label}]({href})"
+
+        rendered = re.sub(
+            r"(?is)<a[^>]+href=[\"']([^\"']+)[\"'][^>]*>(.*?)</a>",
+            _anchor_to_markdown,
+            rendered,
+        )
+        rendered = re.sub(r"(?i)<br\s*/?>", "\n", rendered)
+        rendered = re.sub(r"(?i)</(?:div|article|section|li|h\d|p)>", "\n", rendered)
+        rendered = re.sub(r"<[^>]+>", " ", rendered)
+        rendered = re.sub(r"&nbsp;", " ", rendered)
+        rendered = re.sub(r"&amp;", "&", rendered)
+
+    card_re = re.compile(
+        rf"(?ms)^\s*{_DE_WEEKDAY_RE}\s*(\d{{1,2}})\s+\*{{0,2}}([A-Za-zÄÖÜäöü]+)\*{{0,2}}\s*"
+        rf"(.*?)(?=^\s*{_DE_WEEKDAY_RE}\s*\d{{1,2}}\s+\*{{0,2}}[A-Za-zÄÖÜäöü]+|\Z)"
+    )
+    out: list[dict] = []
+    seen: set[str] = set()
+    slug = _slug(venue["name"])
+    for match in card_re.finditer(rendered):
+        event_date = _parse_de_month_name_date(match.group(1), match.group(2), horizon_date)
+        if not event_date or not _is_within_scrape_window(event_date, horizon_date):
+            continue
+        block = match.group(3)
+        urls = [_clean_url(url) for url in _extract_event_urls_from_html(block, venue)]
+        detail_url = next(
+            (
+                url for url in urls
+                if url and url not in seen and is_strict_event_url(url, venue["url"], slug)
+            ),
+            "",
+        )
+        if not detail_url:
+            continue
+
+        title_match = re.search(r"(?m)^#+\s+\[([^\]]+)\]\((https?://[^)]+)\)", block)
+        title = _plain_markdown_text(title_match.group(1)) if title_match else None
+        title = title or _title_from_url(detail_url)
+        if not title or _is_canceled(title):
+            continue
+
+        time_match = _TIME_RE.search(block)
+        hall_match = re.search(r"(?:####\s*)?[0-2]?\d:[0-5]\d\s*Uhr\s*(?:\\\||\|)?\s*([^\n\r<]+)", block)
+        ev = {
+            "date": event_date,
+            "time": time_match.group(1) if time_match else None,
+            "title": title,
+            "venue_hall": _plain_markdown_text(hall_match.group(1)) if hall_match else None,
+            "program": [],
+            "performers": [],
+            "conductor": None,
+            "price": None,
+            "detail_url": detail_url,
+            "venue": venue["name"],
+            "city": venue["city"],
+            "discovery_source": "glocke_listing",
+            "discovered_only": True,
+        }
+        _mark_enrichment_status(ev)
+        seen.add(detail_url)
+        out.append(ev)
+    return out
+
+
 def _extract_essen_schedule_candidate_urls(
     rendered: str,
     horizon_date: str,
@@ -1216,7 +1390,11 @@ def _extract_essen_schedule_candidate_urls(
     return out
 
 
-def _discover_glocke_paginated_urls(venue: dict, max_pages: int = 20) -> list[str]:
+def _discover_glocke_paginated_urls(
+    venue: dict,
+    max_pages: int = 20,
+    horizon_date: str | None = None,
+) -> tuple[list[str], list[str], list[dict]]:
     """Discover Glocke Bremen event URLs from its WordPress pagination.
 
     The listing is not true infinite scroll; "Weiter" maps to
@@ -1225,8 +1403,10 @@ def _discover_glocke_paginated_urls(venue: dict, max_pages: int = 20) -> list[st
     """
     slug = _slug(venue["name"])
     base = "https://www.glocke.de/tickets-programm/"
+    horizon = horizon_date or _scrape_horizon_date()
     seen: set[str] = set()
     out: list[str] = []
+    event_stubs: list[dict] = []
     empty_pages = 0
     for page in range(1, max_pages + 1):
         page_url = base if page == 1 else f"{base}page/{page}/"
@@ -1238,7 +1418,10 @@ def _discover_glocke_paginated_urls(venue: dict, max_pages: int = 20) -> list[st
             print(f"    [glocke-pages] failed page {page}: {exc}", flush=True)
             break
 
-        page_urls = _extract_event_urls_from_html(resp.text, venue)
+        page_events = _extract_glocke_listing_events(resp.text, venue, horizon)
+        page_urls = [ev["detail_url"] for ev in page_events if ev.get("detail_url")]
+        if not page_urls:
+            page_urls = _extract_event_urls_from_html(resp.text, venue)
         new_count = 0
         for url in page_urls:
             clean = url.split("?", 1)[0].split("#", 1)[0]
@@ -1249,6 +1432,10 @@ def _discover_glocke_paginated_urls(venue: dict, max_pages: int = 20) -> list[st
             seen.add(clean)
             out.append(clean)
             new_count += 1
+        event_stubs.extend(
+            ev for ev in page_events
+            if _clean_url(ev.get("detail_url")) in seen
+        )
 
         print(f"    [glocke-pages] page {page}: +{new_count} URLs", flush=True)
         if new_count == 0:
@@ -1257,7 +1444,16 @@ def _discover_glocke_paginated_urls(venue: dict, max_pages: int = 20) -> list[st
                 break
         else:
             empty_pages = 0
-    return out
+    dates = sorted({ev["date"] for ev in event_stubs if isinstance(ev.get("date"), str)})
+    deduped_events: list[dict] = []
+    seen_events: set[str] = set()
+    for ev in event_stubs:
+        clean = _clean_url(ev.get("detail_url"))
+        if not clean or clean in seen_events:
+            continue
+        seen_events.add(clean)
+        deduped_events.append(ev)
+    return out, dates, deduped_events
 
 
 def _discover_liederhalle_paginated_urls(
@@ -1574,10 +1770,48 @@ def _discover_preferred_event_urls(
             stats["date_count"] = len(koelner_dates)
         if not koelner_events:
             urls.extend(_extract_event_urls_from_html(html_fallback, venue))
+    elif html_fallback and slug == "konzerthaus_berlin":
+        khb_events = _extract_konzerthaus_berlin_listing_events(
+            html_fallback, venue, horizon_date or _scrape_horizon_date()
+        )
+        event_stubs.extend(khb_events)
+        urls.extend(ev["detail_url"] for ev in khb_events if ev.get("detail_url"))
+        khb_dates = sorted(
+            {ev["date"] for ev in khb_events if isinstance(ev.get("date"), str)}
+        )
+        if khb_dates:
+            stats["latest_date"] = khb_dates[-1]
+            stats["date_count"] = len(khb_dates)
+        if not khb_events:
+            urls.extend(_extract_event_urls_from_html(html_fallback, venue))
+    elif html_fallback and slug == "glocke_bremen":
+        glocke_events = _extract_glocke_listing_events(
+            html_fallback, venue, horizon_date or _scrape_horizon_date()
+        )
+        event_stubs.extend(glocke_events)
+        urls.extend(ev["detail_url"] for ev in glocke_events if ev.get("detail_url"))
+        glocke_dates = sorted(
+            {ev["date"] for ev in glocke_events if isinstance(ev.get("date"), str)}
+        )
+        if glocke_dates:
+            stats["latest_date"] = glocke_dates[-1]
+            stats["date_count"] = len(glocke_dates)
+        if not glocke_events:
+            urls.extend(_extract_event_urls_from_html(html_fallback, venue))
     elif html_fallback:
         urls.extend(_extract_event_urls_from_html(html_fallback, venue))
     if slug == "glocke_bremen":
-        urls.extend(_discover_glocke_paginated_urls(venue))
+        glocke_urls, glocke_dates, glocke_events = _discover_glocke_paginated_urls(
+            venue, horizon_date=horizon_date
+        )
+        urls.extend(glocke_urls)
+        event_stubs.extend(glocke_events)
+        if glocke_dates:
+            stats["latest_date"] = max(
+                [d for d in (stats.get("latest_date"), glocke_dates[-1]) if d],
+                default=None,
+            )
+            stats["date_count"] = max(stats.get("date_count", 0), len(glocke_dates))
     elif slug == "liederhalle_stuttgart":
         liederhalle_urls, liederhalle_dates, liederhalle_events = _discover_liederhalle_paginated_urls(
             app, venue, horizon_date=horizon_date
@@ -1635,6 +1869,10 @@ def _extract_preferred_listing_events(
         return _extract_koelner_listing_events(rendered, venue, horizon_date), "koelner_listing"
     if slug == "philharmonie_essen":
         return _extract_essen_listing_events(rendered, venue, horizon_date), "essen_listing"
+    if slug == "konzerthaus_berlin":
+        return _extract_konzerthaus_berlin_listing_events(rendered, venue, horizon_date), "konzerthaus_berlin_listing"
+    if slug == "glocke_bremen":
+        return _extract_glocke_listing_events(rendered, venue, horizon_date), "glocke_listing"
     return [], None
 
 
