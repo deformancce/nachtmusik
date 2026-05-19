@@ -1391,6 +1391,7 @@ def _extract_essen_schedule_candidate_urls(
 
 
 def _discover_glocke_paginated_urls(
+    app,
     venue: dict,
     max_pages: int = 20,
     horizon_date: str | None = None,
@@ -1411,6 +1412,7 @@ def _discover_glocke_paginated_urls(
     failed_pages = 0
     for page in range(1, max_pages + 1):
         page_url = base if page == 1 else f"{base}page/{page}/"
+        page_text = ""
         resp = None
         last_exc: Exception | None = None
         for attempt in range(1, 4):
@@ -1426,25 +1428,39 @@ def _discover_glocke_paginated_urls(
                     time.sleep(1.5 * attempt)
                     continue
         if resp is None:
-            failed_pages += 1
             print(f"    [glocke-pages] failed page {page}: {last_exc}", flush=True)
-            if failed_pages >= 3:
-                break
-            continue
-        if resp.status_code == 404:
+            try:
+                result = app.scrape(page_url, formats=["markdown", "html"], headers=_DE_HEADERS)
+            except TypeError:
+                result = app.scrape(page_url, formats=["markdown", "html"])
+            except Exception as exc:
+                failed_pages += 1
+                print(f"    [glocke-pages] firecrawl page {page} failed: {exc}", flush=True)
+                if failed_pages >= 3:
+                    break
+                continue
+            page_text = "\n".join([_extract_html(result), _extract_markdown(result)])
+            if not page_text.strip():
+                failed_pages += 1
+                if failed_pages >= 3:
+                    break
+                continue
+        if resp is not None and resp.status_code == 404:
             break
-        if resp.status_code >= 400:
+        if resp is not None and resp.status_code >= 400:
             failed_pages += 1
             print(f"    [glocke-pages] page {page}: HTTP {resp.status_code}", flush=True)
             if failed_pages >= 3:
                 break
             continue
+        if resp is not None:
+            page_text = resp.text
         failed_pages = 0
 
-        page_events = _extract_glocke_listing_events(resp.text, venue, horizon)
+        page_events = _extract_glocke_listing_events(page_text, venue, horizon)
         page_urls = [ev["detail_url"] for ev in page_events if ev.get("detail_url")]
         if not page_urls:
-            page_urls = _extract_event_urls_from_html(resp.text, venue)
+            page_urls = _extract_event_urls_from_html(page_text, venue)
         new_count = 0
         for url in page_urls:
             clean = url.split("?", 1)[0].split("#", 1)[0]
@@ -1825,7 +1841,7 @@ def _discover_preferred_event_urls(
         urls.extend(_extract_event_urls_from_html(html_fallback, venue))
     if slug == "glocke_bremen":
         glocke_urls, glocke_dates, glocke_events = _discover_glocke_paginated_urls(
-            venue, horizon_date=horizon_date
+            app, venue, horizon_date=horizon_date
         )
         urls.extend(glocke_urls)
         event_stubs.extend(glocke_events)
