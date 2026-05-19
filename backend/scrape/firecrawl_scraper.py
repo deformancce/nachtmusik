@@ -2212,6 +2212,7 @@ def _title_from_url(url: str) -> str:
     if raw.isdigit() and len(path_bits) > 1:
         raw = path_bits[-2]
     raw = re.sub(r"^\d{2}-\d{2}-20\d{2}-", "", raw)
+    raw = re.sub(r"-20\d{2}-\d{2}-\d{2}(?:-\d{1,2})?(?:-\d{1,2})?(?:-\d{1,2})?$", "", raw)
     raw = re.sub(r"^\d+-", "", raw)
     raw = raw.replace("-", " ").strip()
     return raw.title() if raw else "Event"
@@ -2228,10 +2229,25 @@ def _date_from_dortmund_url(url: str) -> str | None:
         return None
 
 
+def _date_from_mphil_url(url: str) -> str | None:
+    match = re.search(r"(20\d{2})-(\d{2})-(\d{2})(?:-|/?$)", urlparse(url).path)
+    if not match:
+        return None
+    year, month, day = match.groups()
+    try:
+        return date(int(year), int(month), int(day)).isoformat()
+    except ValueError:
+        return None
+
+
 def _event_stub_from_url(url: str, venue: dict, source: str) -> dict:
     clean = _clean_url(url)
     slug = _slug(venue["name"])
-    event_date = _date_from_dortmund_url(clean) if slug == "konzerthaus_dortmund" else None
+    event_date = None
+    if slug == "konzerthaus_dortmund":
+        event_date = _date_from_dortmund_url(clean)
+    elif slug == "isarphilharmonie_muenchen":
+        event_date = _date_from_mphil_url(clean)
     ev = {
         "date": event_date,
         "time": None,
