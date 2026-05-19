@@ -3,17 +3,17 @@
   "city": "Düsseldorf",
   "slug": "tonhalle_duesseldorf",
   "source_url": "https://www.tonhalle.de/veranstaltungen/kalender",
-  "scraped_at": "2026-05-18T17:40:15.464488Z",
+  "scraped_at": "2026-05-19T09:04:04.208156Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
     {
       "date": "2026-05-22",
-      "time": null,
+      "time": "00:00",
       "title": "Mendelssohn",
       "venue_hall": null,
       "program": [
-        "Mendelssohn: Concerto in E minor op. 64"
+        "Mendelssohn: Title op.X"
       ],
       "performers": [
         "Vision String",
@@ -24,11 +24,15 @@
       "detail_url": "https://www.tonhalle.de/veranstaltung/raumstation/17284-mendelssohn",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-05-23",
-      "time": "20:00",
+      "time": "00:00",
       "title": "Element of Crime",
       "venue_hall": "Mendelssohn-Saal",
       "program": [],
@@ -36,31 +40,42 @@
         "Element of Crime"
       ],
       "conductor": null,
-      "price": "Tickets ausverkauft",
+      "price": "ausverkauft",
       "detail_url": "https://www.tonhalle.de/veranstaltung/komet/20954-element-crime",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": false
     },
     {
       "date": "2026-05-30",
-      "time": null,
+      "time": "00:00",
       "title": "Melodic Lifetime",
       "venue_hall": null,
       "program": [
-        "Stockhausen: Piece feat. Markus"
+        "Stockhausen: Title"
       ],
-      "performers": [],
+      "performers": [
+        "Markus Stockhausen"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/supernova/17642-melodic-lifetime",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-05-31",
-      "time": "16:30",
+      "time": "00:00",
       "title": "Schroeder geht ins Konzert",
       "venue_hall": "Mendelssohn-Saal",
       "program": [
@@ -72,36 +87,46 @@
         "Dvořák: Slawischer Tanz C-Dur op. 72/7"
       ],
       "performers": [
-        "Düsseldorfer Symphoniker",
-        "vision string quartet",
-        "Florian Schroeder"
+        "Schroeder"
       ],
       "conductor": "Alena Hron",
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/comedy-geht-ins-konzert/17327-schroeder-geht-ins-konzert",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-06-01",
-      "time": null,
+      "time": "00:00",
       "title": "Bruce Liu",
       "venue_hall": null,
       "program": [
         "Liu: Piano Solo"
       ],
-      "performers": [],
+      "performers": [
+        "Bruce Liu"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/piano-solo/17583-bruce-liu",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-06-04",
-      "time": "20:00",
+      "time": "00:00",
       "title": "Anne-Sophie Mutter",
       "venue_hall": "Mendelssohn-Saal",
       "program": [
@@ -111,19 +136,23 @@
         "Mozart: Konzert für Violine und Orchester Nr. 5 A-Dur KV 219"
       ],
       "performers": [
-        "Anne-Sophie Mutter",
-        "Berliner Barock Solisten"
+        "Anne-Sophie Mutter"
       ],
       "conductor": "André Previn",
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/faszination-klassik/17576-anne-sophie-mutter",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-06-06",
-      "time": "20:00",
+      "time": "00:00",
       "title": "Christoph & Julian Prégardien",
       "venue_hall": "Mendelssohn-Saal",
       "program": [
@@ -132,20 +161,24 @@
         "Franz Schubert: Ausgewählte Lieder und Duette"
       ],
       "performers": [
-        "Christoph Prégardien",
-        "Julian Prégardien",
-        "Michael Gees"
+        "Christoph",
+        "Julian Prégardien"
       ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/schumannfest/19438-christoph-julian-pregardien",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-06-07",
-      "time": "11:00",
+      "time": "00:00",
       "title": "Das symphonische Palais",
       "venue_hall": "Palais Wittgenstein",
       "program": [
@@ -166,11 +199,16 @@
       "detail_url": "https://www.tonhalle.de/veranstaltung/das-symphonische-palais/18194-das-symphonische-palais",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-06-07",
-      "time": "11:00",
+      "time": "00:00",
       "title": "Ravel",
       "venue_hall": "Mendelssohn-Saal",
       "program": [
@@ -182,19 +220,23 @@
         "Ravel: La Valse"
       ],
       "performers": [
-        "Jugendsinfonieorchester (JSO) der Tonhalle Düsseldorf",
-        "vision string quartet"
+        "JSO der Tonhalle"
       ],
       "conductor": "Jascha von der Goltz",
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/big-bang-junge-tonhalle/17621-ravel",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-06-07",
-      "time": "19:00",
+      "time": "00:00",
       "title": "Gewandhaus-Quartett",
       "venue_hall": "Palais Wittgenstein",
       "program": [
@@ -203,33 +245,75 @@
         "Robert Schumann: Klavierquintett Es-Dur op. 44"
       ],
       "performers": [
-        "Gewandhaus-Quartett",
-        "Charlotte Steppes (Klavier)"
+        "Gewandhaus-Quartett"
       ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/schumannfest/20065-gewandhaus-quartett",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-08",
+      "time": "00:00",
+      "title": "Führung durch das Schumann-Haus",
+      "venue_hall": "Schumann-Haus",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/schumannfest/20066-fuehrung-durch-das-schumann-haus",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": false,
+      "enrichment_status": "stub",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-08",
+      "time": "00:00",
+      "title": "Ben Kim & Niek Baar",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "Ben Kim",
+        "Niek Baar"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/schumannfest/20217-ben-kim-niek-baar",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     }
   ],
-  "total_events": 10,
-  "total_events_visible": 9,
-  "total_events_discovered": 11,
-  "total_events_discovered_strict": 11,
+  "total_events": 12,
+  "total_events_visible": 20,
+  "total_events_discovered": 12,
+  "total_events_discovered_strict": 12,
+  "total_events_enriched": 11,
   "source": "firecrawl_listing",
-  "latest_event_date": "2026-06-07",
+  "latest_discovered_event_date": "2026-06-08",
+  "latest_event_date": "2026-06-08",
   "covers_horizon": false,
   "map_expand_stats": {
-    "preferred_urls": 11,
+    "preferred_urls": 12,
     "map_urls": 0,
-    "html_urls": 11,
-    "new_urls": 2,
-    "scraped": 2,
-    "past": 0,
-    "beyond_horizon": 0,
-    "invalid": 1,
-    "canceled": 0
+    "html_urls": 12,
+    "new_urls": 0,
+    "latest_discovered_date": "2026-06-08",
+    "preferred_date_count": 9
   }
 }
