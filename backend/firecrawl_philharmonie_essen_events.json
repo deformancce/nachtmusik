@@ -3,7 +3,7 @@
   "city": "Essen",
   "slug": "philharmonie_essen",
   "source_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/",
-  "scraped_at": "2026-05-18T17:41:21.647316Z",
+  "scraped_at": "2026-05-19T07:47:42.419710Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
@@ -19,11 +19,16 @@
         "Takeover!Ensemble"
       ],
       "conductor": "Mihalj Kekenj",
-      "price": "ab €40",
+      "price": "ab 40,00 €",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/takeover-by-miki-und-eva-briegel-juli-151425/3177/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -42,7 +47,12 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/takeover-by-miki-und-eva-briegel-juli-151425/3178/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -60,12 +70,17 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/die-prinzen-symphonisch-157996/3335/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-05-26",
       "time": "20:00",
-      "title": "Joana Mallwitz - Konzerthausorchester Berlin",
+      "title": "Joana Mallwitz Konzerthausorchester Berlin",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
         "Gustav Mahler: Symphonie No. 5",
@@ -77,6 +92,11 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/joana-mallwitzkonzerthausorchester-berlin-154813/2711/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -96,12 +116,17 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/hoer-mal-wie-das-klingt-iv-157092/3326/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-05-27",
-      "time": "09:30",
+      "time": "11:30",
       "title": "Hör mal, wie das klingt",
       "venue_hall": "NATIONAL-BANK Pavillon",
       "program": [],
@@ -116,13 +141,18 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/hoer-mal-wie-das-klingt-iv-157092/3327/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-05-27",
       "time": "19:00",
-      "title": "Gautier Capuçon - Sächsische Staatskapelle Dresden",
+      "title": "Gautier Capuçon Sächs­ische Staats­kapelle Dresden",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
         "Camille Saint-Saëns: Cellokonzert",
@@ -134,13 +164,18 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/gautier-capuconsaechsische-staatskapelle-dresden-149566/3226/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-05-30",
-      "time": "19:00",
-      "title": "TIKWAH - Festival jüdischer Musik",
-      "venue_hall": "Alfried Krupp Saal",
+      "time": "17:30",
+      "title": "Panel",
+      "venue_hall": "NATIONAL-BANK Pavillon",
       "program": [],
       "performers": [
         "Daniel Hope",
@@ -153,13 +188,18 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/panel-160260/4132/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-05-30",
       "time": "19:00",
-      "title": "Daniel Hope - Berlin 1938 - das Schicksalsjahr",
+      "title": "Daniel Hope Berlin 1938 - das Schick­sals­jahr",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
         "Hanns Eisler: [Work Title]",
@@ -188,13 +228,18 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/daniel-hopeberlin-1938-das-schicksalsjahr-148924/3227/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 150,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-05-31",
       "time": "15:00",
-      "title": "Von Tieren und Temperamenten",
+      "title": "Von Tieren und Tempe­ra­menten",
       "venue_hall": "NATIONAL-BANK Pavillon",
       "program": [
         "Uraufführung: Jedem Tier sein Element für Flöte, Klarinette, Violoncello, Tuba, Harfe und Schlagwerk"
@@ -214,13 +259,39 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/von-tieren-und-temperamenten-154359/3328/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-05-31",
-      "time": "15:00",
-      "title": "Von Tieren und Temperamenten",
+      "time": "19:00",
+      "title": "Mendelssohn „Ein Sommer­nachts­traum“",
+      "venue_hall": "Alfried Krupp Saal",
+      "program": [
+        "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €35.00",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/mendelssohn-ein-sommernachtstraum-148326/3229/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-01",
+      "time": "19:00",
+      "title": "Von Tieren und Tempe­ra­menten",
       "venue_hall": "NATIONAL-BANK Pavillon",
       "program": [
         "Uraufführung, Auftragswerk der Philharmonie Essen: Jedem Tier sein Element für Flöte, Klarinette, Violoncello, Tuba, Harfe und Schlagwerk"
@@ -240,23 +311,12 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/von-tieren-und-temperamenten-154359/3329/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 45,
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-31",
-      "time": "19:00",
-      "title": "Mendelssohn 'Ein Sommernachts Traum'",
-      "venue_hall": "Alfried Krupp Saal",
-      "program": [
-        "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum"
-      ],
-      "performers": [],
-      "conductor": null,
-      "price": "ab €35.00",
-      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/mendelssohn-ein-sommernachtstraum-148326/3229/",
-      "venue": "Philharmonie Essen",
-      "city": "Essen",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -273,14 +333,19 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/chilly-gonzales-161019/3649/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-06-03",
       "time": "19:00",
-      "title": "Ensemble Wien-Berlin  Mozart Serenade",
-      "venue_hall": "Philharmonie Essen",
+      "title": "Ensemble Wien-Berlin Mozart Serenade",
+      "venue_hall": "NATIONAL-BANK Pavillon",
       "program": [
         "Mozart: Serenade in c-Moll nach KV 388 (384a) (bearbeitet für Bläserquintett von Mordechai Rechtman)",
         "Globokar: 'Avgustin, dober je vin' für Bläserquintett",
@@ -299,7 +364,12 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/ensemble-wien-berlinmozart-serenade-154355/3052/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -314,14 +384,19 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/orgelfahrt-nach-groningenauf-den-spuren-von-arp-sc-154844/3271/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 840,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "time": "08:00",
       "title": "Orgelfahrt nach Groningen \"Auf den Spuren von Arp Schnitger\"",
-      "venue_hall": "Philharmonie Essen",
+      "venue_hall": "#### Spielzeit­präsentationen der Essener Philharmoniker und der Philharmonie Essen",
       "program": [],
       "performers": [],
       "conductor": null,
@@ -329,13 +404,18 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/orgelfahrt-nach-groningenauf-den-spuren-von-arp-sc-154844/3272/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-06-07",
       "time": "11:00",
-      "title": "Junge Elite Beethoven Trio",
-      "venue_hall": "Philharmonie Essen",
+      "title": "Junge Elite Beet­hoven Trio",
+      "venue_hall": "NATIONAL-BANK Pavillon",
       "program": [
         "Franz Waxman: Carmen-Fantasie für Violine und Klavier",
         "Niccolo Paganini: Caprice Nr. 17, op. 1",
@@ -357,7 +437,12 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/junge-elitebeethoven-trio-150000/3230/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 90,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -374,30 +459,18 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/sommerkonzert-fuer-seniorinnen-153983/3265/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 60,
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-10",
-      "time": "15:00",
-      "title": "Sommerkonzert für Senior*innen",
-      "venue_hall": "NATIONAL-BANK Pavillon",
-      "program": [],
-      "performers": [
-        "Musethica Ensemble"
-      ],
-      "conductor": "Anja Renczikowski",
-      "price": null,
-      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/sommerkonzert-fuer-seniorinnen-153983/3266/",
-      "venue": "Philharmonie Essen",
-      "city": "Essen",
-      "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-06-10",
       "time": "19:00",
-      "title": "Happy Hour - Romantische Sinfonie",
+      "title": "Happy Hour - Roman­tische Sinfonie",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
         "Mendelssohn Bartholdy: Ouvertüre zu \"Ruy Blas\" op. 95",
@@ -411,7 +484,12 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/happy-hour-romantische-sinfonie-149216/3267/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -433,7 +511,34 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/igor-levit-158010/3650/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 90,
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-12",
+      "time": "15:00",
+      "title": "Sommer­konzert für Senior*innen",
+      "venue_hall": "NATIONAL-BANK Pavillon",
+      "program": [],
+      "performers": [
+        "Musethica Ensemble"
+      ],
+      "conductor": "Anja Renczikowski",
+      "price": null,
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/sommerkonzert-fuer-seniorinnen-153983/3266/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -453,13 +558,18 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/nils-landgrenposaune-fuer-alle-148400/3268/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-06-19",
       "time": "10:30",
-      "title": "WDR Musik-Battle  Interaktives Schulkonzert I",
+      "title": "WDR Musik-Battle Interaktives Schulkonzert I",
       "venue_hall": "NATIONAL-BANK Pavillon",
       "program": [],
       "performers": [
@@ -470,7 +580,12 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/wdr-musik-battleinteraktives-schulkonzert-i-163174/4121/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -487,13 +602,18 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/wdr-musik-battleinteraktives-schulkonzert-ii-168361/4122/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-06-20",
       "time": "19:00",
-      "title": "Maxim Emelyany­chev: Mozart am Clavier",
+      "title": "Maxim Emelyany­chev Mozart am Clavier",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
         "Mozart: Fantasie c-Moll, KV 475",
@@ -510,14 +630,19 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/maxim-emelyanychevmozart-am-clavier-153095/3234/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-06-22",
-      "time": "20:00",
+      "time": "18:30",
       "title": "Park Sounds 1",
-      "venue_hall": "Stadtgarten",
+      "venue_hall": "18:30 Uhr \"Auf ein Wort\", Alfried Krupp Saal",
       "program": [],
       "performers": [
         "Institut für Computermusik und Elektronische Medien (ICEM) der Folkwang Universität der Künste"
@@ -527,7 +652,12 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/park-sounds-1-156026/3235/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -542,7 +672,12 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/park-sounds-2-156029/3236/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -560,7 +695,12 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/park-sounds-3-156032/3237/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -575,7 +715,12 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/park-sounds-4-156035/3238/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -592,7 +737,12 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/park-sounds-5-156038/3239/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -634,26 +784,30 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/ein-abend-mit-anna-netrebko-150063/3241/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
+      "discovery_source": "essen_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     }
   ],
   "total_events": 31,
-  "total_events_visible": 10,
+  "total_events_visible": 15,
   "total_events_discovered": 31,
   "total_events_discovered_strict": 31,
+  "total_events_enriched": 31,
   "source": "firecrawl_listing",
+  "latest_discovered_event_date": "2026-06-27",
   "latest_event_date": "2026-06-27",
   "covers_horizon": false,
   "map_expand_stats": {
     "preferred_urls": 31,
     "map_urls": 0,
     "html_urls": 31,
-    "new_urls": 22,
-    "scraped": 22,
-    "past": 0,
-    "beyond_horizon": 0,
-    "invalid": 0,
-    "canceled": 0
+    "new_urls": 30,
+    "latest_discovered_date": "2026-06-27",
+    "preferred_date_count": 23
   }
 }
