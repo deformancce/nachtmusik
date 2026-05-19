@@ -1612,6 +1612,24 @@ def _discover_preferred_event_urls(
     return deduped, stats, deduped_events
 
 
+def _extract_preferred_listing_events(
+    rendered: str | None,
+    venue: dict,
+    horizon_date: str,
+) -> tuple[list[dict], str | None]:
+    """Parse venue-specific listing cards when the rendered HTML is structured."""
+    if not rendered:
+        return [], None
+    slug = _slug(venue["name"])
+    if slug == "tonhalle_duesseldorf":
+        return _extract_tonhalle_listing_events(rendered, venue, horizon_date), "tonhalle_listing"
+    if slug == "koelner_philharmonie":
+        return _extract_koelner_listing_events(rendered, venue, horizon_date), "koelner_listing"
+    if slug == "philharmonie_essen":
+        return _extract_essen_listing_events(rendered, venue, horizon_date), "essen_listing"
+    return [], None
+
+
 def _unix_start_of_day(day: date) -> int:
     return int(datetime(day.year, day.month, day.day).timestamp())
 
@@ -2271,6 +2289,20 @@ def _scrape_one_discover(
                     total_visible = len(ld_future)
                     source = "jsonld_firecrawl_html"
 
+    if not events_raw and isinstance(listing, dict) and listing.get("_raw_html"):
+        parsed_events, parsed_source = _extract_preferred_listing_events(
+            listing["_raw_html"], venue, horizon_date
+        )
+        if parsed_events:
+            print(
+                f"    listing parser fallback: {len(parsed_events)} events "
+                f"from rendered cards",
+                flush=True,
+            )
+            events_raw = parsed_events
+            total_visible = len(parsed_events)
+            source = parsed_source or source
+
     if not events_raw:
         payload["error"] = "no events extracted from listing"
         payload["events"] = []
@@ -2436,6 +2468,20 @@ def _scrape_one(
                 events_raw = ld_future
                 total_visible = len(ld_future)
                 source = "jsonld_firecrawl_html"
+
+    if not events_raw and isinstance(listing, dict) and listing.get("_raw_html"):
+        parsed_events, parsed_source = _extract_preferred_listing_events(
+            listing["_raw_html"], venue, horizon_date
+        )
+        if parsed_events:
+            print(
+                f"    listing parser fallback: {len(parsed_events)} events "
+                f"from rendered cards",
+                flush=True,
+            )
+            events_raw = parsed_events
+            total_visible = len(parsed_events)
+            source = parsed_source or source
 
     if not events_raw:
         payload["error"] = "no events extracted from listing"
