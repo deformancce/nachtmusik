@@ -3,7 +3,7 @@
   "city": "Bremen",
   "slug": "glocke_bremen",
   "source_url": "https://www.glocke.de/tickets-programm/",
-  "scraped_at": "2026-05-19T15:04:11.445350Z",
+  "scraped_at": "2026-05-19T17:30:24.537911Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
@@ -216,7 +216,7 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovered_only": false,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": true
@@ -259,7 +259,7 @@
     {
       "date": "2026-05-31",
       "time": "15:30",
-      "title": "Bremer Kaffeehaus Orchester Frisch Aufgeblueht Fruehlingskonzert",
+      "title": "Bremer Kaffeehaus-Orchester »Frisch aufgeblüht« Frühlingskonzert",
       "venue_hall": "Kleiner Saal",
       "program": [
         "Verdi: Melodie",
@@ -271,14 +271,14 @@
       ],
       "conductor": "Hauke, Anselm",
       "price": "36,00 € Normal / 26,00 € Ermäßigt",
-      "detail_url": "https://www.glocke.de/event/bremer-kaffeehaus-orchester-frisch-aufgeblueht-fruehlingskonzert/",
+      "detail_url": "https://www.glocke.de/event/bremer-kaffeehaus-orchester-frisch-aufgeblueht-fruehlingskonzert/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -700,7 +700,7 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovered_only": false,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": true
@@ -711,16 +711,18 @@
       "title": "Crimenight Wahre Verbrechen 3",
       "venue_hall": "Kleiner Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Dreamlight Labs GmbH"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.glocke.de/event/crimenight-wahre-verbrechen-3/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -729,16 +731,18 @@
       "title": "Crimenight Wahre Verbrechen 4",
       "venue_hall": "Kleiner Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Dreamlight Labs GmbH"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.glocke.de/event/crimenight-wahre-verbrechen-4/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -827,7 +831,7 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovered_only": false,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": true
@@ -1401,17 +1405,24 @@
       "time": "19:30",
       "title": "Musikfest Bremen New Viaggio Trio Feat Joey Baron",
       "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
+      "program": [
+        "Galliano: Viaggio"
+      ],
+      "performers": [
+        "Richard Galliano",
+        "Adrien Moignard",
+        "Philippe Aerts",
+        "Joey Baron"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "€25–€55",
       "detail_url": "https://www.glocke.de/event/37-musikfest-bremen-new-viaggio-trio-feat-joey-baron/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1453,7 +1464,7 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovered_only": false,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": true
@@ -1471,7 +1482,7 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovered_only": false,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": true
@@ -1482,16 +1493,19 @@
       "title": "Marlene Jaschke Hier Bin Ich Mensch",
       "venue_hall": "Großer Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Marlene Jaschke",
+        "Herr Griepenstroh"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "46,15 € Normal; 41,75 € Normal; 37,35 € Normal; 32,95 € Normal",
       "detail_url": "https://www.glocke.de/event/marlene-jaschke-hier-bin-ich-mensch/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1500,16 +1514,19 @@
       "title": "Musica Viva Festliches Eroeffnungskonzert 14",
       "venue_hall": "Großer Saal",
       "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "performers": [
+        "musica viva Orchester",
+        "musica viva Chor"
+      ],
+      "conductor": "Nicolas Hrudnik",
+      "price": "€58,00 Normal, €29,00 Ermäßigt, €49,00 Normal, €24,50 Ermäßigt, €42,00 Normal, €21,00 Ermäßigt, €31,00 Normal, €15,50 Ermäßigt",
       "detail_url": "https://www.glocke.de/event/musica-viva-festliches-eroeffnungskonzert-14/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1594,9 +1611,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1731,6 +1749,24 @@
     {
       "date": "2026-10-09",
       "time": "20:00",
+      "title": "Helge Schneider Ellenbogen Vom Tisch",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.glocke.de/event/helge-schneider-ellenbogen-vom-tisch/",
+      "venue": "Glocke Bremen",
+      "city": "Bremen",
+      "discovery_source": "glocke_listing",
+      "discovered_only": true,
+      "enriched": false,
+      "enrichment_status": "stub",
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-09",
+      "time": "20:00",
       "title": "Ich Wollt Ein Straeusslein Binden Lieder Von Richard Strauss Geflochten Von Autorinnenhaenden",
       "venue_hall": "Kleiner Saal",
       "program": [
@@ -1753,27 +1789,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-10-09",
-      "time": "20:00",
-      "title": "Helge Schneider Ellenbogen Vom Tisch",
-      "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.glocke.de/event/helge-schneider-ellenbogen-vom-tisch/",
-      "venue": "Glocke Bremen",
-      "city": "Bremen",
-      "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1879,9 +1898,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2084,9 +2104,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2109,9 +2130,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2134,9 +2156,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2159,9 +2182,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2203,9 +2227,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2229,9 +2254,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2307,17 +2333,18 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     }
   ],
   "total_events": 100,
-  "total_events_visible": 9,
+  "total_events_visible": 18,
   "total_events_discovered": 100,
   "total_events_discovered_strict": 100,
-  "total_events_enriched": 67,
+  "total_events_enriched": 72,
   "source": "firecrawl_listing",
   "latest_discovered_event_date": "2026-11-11",
   "latest_event_date": "2026-11-11",
@@ -2331,7 +2358,7 @@
     "preferred_urls": 100,
     "map_urls": 0,
     "html_urls": 20,
-    "new_urls": 91,
+    "new_urls": 90,
     "latest_discovered_date": "2026-11-11",
     "preferred_date_count": 82
   }
