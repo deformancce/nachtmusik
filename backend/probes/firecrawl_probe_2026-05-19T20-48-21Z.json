@@ -1,0 +1,56 @@
+{
+  "scraped_at": "2026-05-19T20:48:21.875395Z",
+  "scrape_horizon_date": "2026-11-30",
+  "results": [
+    {
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "slug": "isarphilharmonie_muenchen",
+      "scraped_at": "2026-05-19T20:48:21.875200Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.mphil.de/kalender",
+      "best_event_urls": 252,
+      "best_last_date_seen": "2026-11-24",
+      "probes": [
+        {
+          "url": "https://www.gasteig.de/veranstaltungen/?room=isarphilharmonie",
+          "error": null,
+          "raw_lines": 420,
+          "event_urls": 24,
+          "unique_event_urls": 24,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-07-01",
+          "sample_urls": [
+            "https://www.gasteig.de/veranstaltungen/phil-extra/",
+            "https://www.gasteig.de/veranstaltungen/konzert-des-brso-16/",
+            "https://www.gasteig.de/veranstaltungen/konzert-des-brso-17/",
+            "https://www.gasteig.de/veranstaltungen/muenchner-philharmoniker-sibelius-rautavaara-vaughan-williams-2-2/",
+            "https://www.gasteig.de/veranstaltungen/muenchner-philharmoniker-sibelius-rautavaara-vaughan-williams-2/",
+            "https://www.gasteig.de/veranstaltungen/tim-bendzko-26684/",
+            "https://www.gasteig.de/veranstaltungen/muenchner-philharmoniker-mussorgsky-chatschaturjan-bizet/",
+            "https://www.gasteig.de/veranstaltungen/muenchner-philharmoniker-mussorgsky-chatschaturjan-bizet-2/"
+          ]
+        },
+        {
+          "url": "https://www.mphil.de/kalender",
+          "error": null,
+          "raw_lines": 140441,
+          "event_urls": 252,
+          "unique_event_urls": 252,
+          "first_date_seen": "2026-05-23",
+          "last_date_seen": "2026-11-24",
+          "sample_urls": [
+            "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/wagner-elgar-schubert-2025-09-09-19-3",
+            "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/wagner-elgar-schubert-2025-09-10-19-3",
+            "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/beethoven-wagner-schubert-2025-09-11-19-3",
+            "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/beethoven-wagner-schubert-2025-09-13-19",
+            "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/beethoven-wagner-schubert-2025-09-14-19",
+            "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/beethoven-wagner-2025-09-15-19",
+            "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/beethoven-wagner-schubert-2025-09-16-2",
+            "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/wagner-elgar-schubert-2025-09-17-19-3"
+          ]
+        }
+      ]
+    }
+  ]
+}
