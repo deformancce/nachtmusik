@@ -3,269 +3,10 @@
   "city": "Berlin",
   "slug": "berliner_philharmonie",
   "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-  "scraped_at": "2026-05-18T05:24:42.368195Z",
+  "scraped_at": "2026-05-19T14:01:15.442900Z",
+  "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
-    {
-      "date": "2026-05-18",
-      "time": "00:00",
-      "title": "Jonathan Nott und Pierre-Laurent Aimard",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Missy Mazzoli: Orpheus Undone Suite für Orchester",
-        "Peter Eötvös: Cziffra Psodia für Klavier und Orchester (Deutsche Erstaufführung)",
-        "Charles Ives: Symphonie Nr. 4"
-      ],
-      "performers": [
-        "Berliner Philharmoniker",
-        "Pierre-Laurent Aimard",
-        "Gregor A. Mayrhofer",
-        "Ernst Senff Chor Berlin",
-        "Steffen Schubert"
-      ],
-      "conductor": "Jonathan Nott",
-      "price": "€22–€71",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55625",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "13:00",
-      "title": "Lunchkonzert",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Cuban Grooves und »Klassik trifft Kuba«"
-      ],
-      "performers": [
-        "The Sarahbanda",
-        "Sarah Willis",
-        "Yuniet Lombida",
-        "Aylín Pino",
-        "Jorge Aragón",
-        "Carlos García",
-        "Adel González",
-        "Alejandro Aguiar"
-      ],
-      "conductor": null,
-      "price": "freier Eintritt",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55709",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "duration_min": 50,
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "13:00",
-      "title": "Lunchkonzert",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Ravel: Ma Mère lʼOye (Bearbeitung für Marimbafon und Klavier von Ria Ideta)",
-        "Sammut: Sugaria (Bearbeitung für Marimbafon und Klavier von Ria Ideta)",
-        "Gershwin: Porgy and Bess, Suite (Bearbeitung für Marimbafon und Ensemble von Ria Ideta)"
-      ],
-      "performers": [
-        "Ria Ideta",
-        "Daishin Kashimoto",
-        "Amihai Grosz",
-        "Claudio Bohórquez",
-        "Wenzel Fuchs",
-        "Esko Laine",
-        "Hayden Chisholm",
-        "Yuma Matsuoka"
-      ],
-      "conductor": null,
-      "price": "freier Eintritt",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55720",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "duration_min": 50,
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "13:00",
-      "title": "Lunchkonzert",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Bizet: Carmen: Entr'acte (Bearbeitung von Fritz Oeser)",
-        "Bach: Toccata con Fuga d-Moll BWV 565 (Bearbeitung für Harfe)",
-        "Taffanel: Thais: Meditation",
-        "Piazzolla: Histoire du Tango: Bordel 1900",
-        "Piazzolla: L’Histoire du Tango: Cafe 1930",
-        "Bizet: L'Arlésienne-Suite Nr. 2: 3. Satz Menuett",
-        "Lee: Jindo Arirang",
-        "Mouquet: La Flûte de Pan: Pan et les bergers",
-        "Mouquet: La flûte de Pan: Pan et les oiseaux",
-        "Ibert: Entr'acte (Fassung für Flöte und Harfe)"
-      ],
-      "performers": [
-        "Seohyeon Kim",
-        "Hyejin Kim"
-      ],
-      "conductor": null,
-      "price": "freier Eintritt",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55754",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "duration_min": 50,
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "20:00",
-      "title": "Lahav Shani und Alisa Weilerstein",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Prokofjew: Symphonisches Konzert für Violoncello und Orchester e-Moll op. 125",
-        "Schönberg: Pelleas und Melisande, Symphonische Dichtung op. 5"
-      ],
-      "performers": [
-        "Berliner Philharmoniker",
-        "Alisa Weilerstein"
-      ],
-      "conductor": "Lahav Shani",
-      "price": "26 bis 82 €",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55627",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "20:00",
-      "title": "Französischer Klangzauber mit Juanjo Mena",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Gabriel Pierné: Ramuntcho, Ouverture sur des thèmes populaires basques",
-        "Germaine Tailleferre: Concertino für Harfe und Orchester",
-        "Maurice Ravel: Daphnis et Chloé, vollständige Ballettmusik"
-      ],
-      "performers": [
-        "Berliner Philharmoniker",
-        "Marie-Pierre Langlamet",
-        "Rundfunkchor Berlin",
-        "Justus Barleben"
-      ],
-      "conductor": "Juanjo Mena",
-      "price": "22 bis 71 €",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55628",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "20:00",
-      "title": "Giovanni Antonini dirigiert Mozart und Haydn",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Joseph Haydn: Symphonie Nr. 54 G-Dur",
-        "Joseph Haydn: Arianna a Naxos, Kantate Hob. XXVIb:2 in der Fassung für Sopran und Streichorchester",
-        "Joseph Haydn: Symphonie Nr. 44 e-Moll »Trauer-Symphonie«",
-        "Wolfgang Amadeus Mozart: Thamos, König in Ägypten KV 345: Zwischenaktmusiken"
-      ],
-      "performers": [
-        "Berliner Philharmoniker",
-        "Fatma Said"
-      ],
-      "conductor": "Giovanni Antonini",
-      "price": "26 bis 82 €",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55633",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "20:00",
-      "title": "Kirill Petrenko und Vilde Frang",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Sergej Rachmaninow: Die Toteninsel, Symphonische Dichtung op. 29",
-        "Erich Wolfgang Korngold: Konzert für Violine und Orchester D-Dur op. 35",
-        "Antonín Dvořák: Symphonie Nr. 7 d-Moll op. 70"
-      ],
-      "performers": [
-        "Berliner Philharmoniker",
-        "Vilde Frang"
-      ],
-      "conductor": "Kirill Petrenko",
-      "price": "37 bis 106 €",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55634",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "20:00",
-      "title": "Tugan Sokhiev dirigiert Mahlers Erste",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Lili Boulanger: D’un matin de printemps (Orchesterfassung)",
-        "Donghoon Shin: Threadsuns für Viola und Orchester",
-        "Gustav Mahler: Symphonie Nr. 1 D-Dur"
-      ],
-      "performers": [
-        "Berliner Philharmoniker",
-        "Amihai Grosz"
-      ],
-      "conductor": "Tugan Sokhiev",
-      "price": "26 bis 82 €",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55639",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "20:00",
-      "title": "Kirill Petrenko mit Rachmaninows »Francesca da Rimini«",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Samuel Barber: Adagio für Streicher op. 11",
-        "Sofia Gubaidulina: Der Zorn Gottes",
-        "Sergej Rachmaninow: Francesca da Rimini op. 25"
-      ],
-      "performers": [
-        "Berliner Philharmoniker",
-        "Galina Cheplakova",
-        "Dmytro Popov",
-        "Dmitry Golovnin",
-        "Vladislav Sulimsky",
-        "Ilia Kazakov",
-        "Rundfunkchor Berlin",
-        "Gijs Leenaars"
-      ],
-      "conductor": "Kirill Petrenko",
-      "price": "37 bis 106 €",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55656",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "duration_min": 135,
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "20:00",
-      "title": "Originalklang",
-      "venue_hall": "Kammermusiksaal",
-      "program": [
-        "Jean Rondeau: »Sisyphus«"
-      ],
-      "performers": [
-        "Jean Rondeau"
-      ],
-      "conductor": null,
-      "price": "16 bis 38 €",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55766",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "is_classical": true
-    },
     {
       "date": "2026-05-20",
       "time": "13:00",
@@ -285,6 +26,10 @@
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56562/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -296,7 +41,6 @@
         "Gustav Mahler: Symphonie Nr. 3 d-Moll"
       ],
       "performers": [
-        "Yannick Nézet-Séguin",
         "Joyce DiDonato",
         "Damen des Rundfunkchors Berlin",
         "Knaben des Staats- und Domchors Berlin"
@@ -306,6 +50,10 @@
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56431/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -317,7 +65,6 @@
         "Gustav Mahler: Symphonie Nr. 3 d-Moll"
       ],
       "performers": [
-        "Yannick Nézet-Séguin",
         "Joyce DiDonato",
         "Damen des Rundfunkchors Berlin",
         "Knaben des Staats- und Domchors Berlin"
@@ -327,6 +74,10 @@
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56431/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -338,7 +89,6 @@
         "Gustav Mahler: Symphonie Nr. 3 d-Moll"
       ],
       "performers": [
-        "Yannick Nézet-Séguin",
         "Joyce DiDonato",
         "Damen des Rundfunkchors Berlin",
         "Knaben des Staats- und Domchors Berlin"
@@ -348,6 +98,10 @@
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56431/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -369,6 +123,10 @@
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56563/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -377,38 +135,22 @@
       "title": "Berliner Philharmoniker",
       "venue_hall": "Großer Saal",
       "program": [
-        "Ludwig van Beethoven: Coriolan-Ouvertüre c-Moll op. 62",
+        "Ludwig van Beethoven: Coriolan Ouvertüre c-Moll op. 62",
         "Ludwig van Beethoven: Konzert für Klavier und Orchester Nr. 5 Es-Dur op. 73",
         "Dmitri Schostakowitsch: Symphonie Nr. 5 d-Moll op. 47"
       ],
       "performers": [
-        "Semyon Bychkov",
         "Víkingur Ólafsson"
       ],
       "conductor": "Semyon Bychkov",
-      "price": "Ausverkauft",
+      "price": "Noch 1 Ticket",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-28",
-      "time": "20:00",
-      "title": "Diskurs in der Philharmonie",
-      "venue_hall": "Kammermusiksaal Oberes Foyer",
-      "program": [],
-      "performers": [
-        "Joschka Fischer",
-        "Rieke Havertz",
-        "Christiane Florin"
-      ],
-      "conductor": null,
-      "price": "13 €",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56433/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "duration_min": 90,
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -417,12 +159,11 @@
       "title": "Berliner Philharmoniker",
       "venue_hall": "Großer Saal",
       "program": [
-        "Ludwig van Beethoven: Coriolan-Ouvertüre c-Moll op. 62",
+        "Ludwig van Beethoven: Coriolan Ouvertüre c-Moll op. 62",
         "Ludwig van Beethoven: Konzert für Klavier und Orchester Nr. 5 Es-Dur op. 73",
         "Dmitri Schostakowitsch: Symphonie Nr. 5 d-Moll op. 47"
       ],
       "performers": [
-        "Semyon Bychkov",
         "Víkingur Ólafsson"
       ],
       "conductor": "Semyon Bychkov",
@@ -430,6 +171,10 @@
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -438,12 +183,11 @@
       "title": "Berliner Philharmoniker",
       "venue_hall": "Großer Saal",
       "program": [
-        "Ludwig van Beethoven: Coriolan-Ouvertüre c-Moll op. 62",
+        "Ludwig van Beethoven: Coriolan Ouvertüre c-Moll op. 62",
         "Ludwig van Beethoven: Konzert für Klavier und Orchester Nr. 5 Es-Dur op. 73",
         "Dmitri Schostakowitsch: Symphonie Nr. 5 d-Moll op. 47"
       ],
       "performers": [
-        "Semyon Bychkov",
         "Víkingur Ólafsson"
       ],
       "conductor": "Semyon Bychkov",
@@ -451,6 +195,10 @@
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -469,18 +217,17 @@
         "Jonathan Kelly",
         "Gerald Pachinger",
         "Richard Galler",
-        "Stefan Dohr",
-        "Jelka Weber",
-        "Christoph Hartmann",
-        "Andraž Golob",
-        "Václav Vonášek",
-        "Paula Ernesaks"
+        "Stefan Dohr"
       ],
       "conductor": null,
-      "price": null,
+      "price": "Tickets kaufen",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56416/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -508,160 +255,20 @@
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56564/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-04",
-      "time": "20:00",
-      "title": "Berliner Philharmoniker",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Vítězslava Kaprálová: Suite rustica op. 19",
-        "Josef Suk: Fantasie für Violine und Orchester g-Moll op. 24",
-        "Bohuslav Martinů: Symphonie Nr. 1"
-      ],
-      "performers": [
-        "Jakub Hrůša",
-        "Julia Fischer"
-      ],
-      "conductor": "Jakub Hrůša",
-      "price": null,
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56434/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-05",
-      "time": "20:00",
-      "title": "Berliner Philharmoniker",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Vítězslava Kaprálová: Suite rustica op. 19",
-        "Josef Suk: Fantasie für Violine und Orchester g-Moll op. 24",
-        "Bohuslav Martinů: Symphonie Nr. 1"
-      ],
-      "performers": [
-        "Jakub Hrůša",
-        "Julia Fischer"
-      ],
-      "conductor": "Jakub Hrůša",
-      "price": null,
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56434/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-06",
-      "time": "19:00",
-      "title": "Berliner Philharmoniker",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Vítězslava Kaprálová: Suite rustica op. 19",
-        "Josef Suk: Fantasie für Violine und Orchester g-Moll op. 24",
-        "Bohuslav Martinů: Symphonie Nr. 1"
-      ],
-      "performers": [
-        "Jakub Hrůša",
-        "Julia Fischer"
-      ],
-      "conductor": "Jakub Hrůša",
-      "price": null,
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56434/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-07",
-      "time": "11:00",
-      "title": "Orgelmatinee",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Richard Strauss: Festliches Präludium op. 61 (Bearbeitung für Orgel und großes Blechbläserensemble von Richard Gowers)",
-        "Wolfgang Amadeus Mozart: Fantasie für eine Orgelwalze f-Moll KV 608",
-        "Johann Sebastian Bach: Chromatische Fantasie und Fuge d-Moll BWV 903 (Bearbeitung für Orgel von Max Reger)",
-        "Miloslav Kabeláč: Symphonie Nr. 3 für Orgel, Blechbläser und Pauke op. 33"
-      ],
-      "performers": [
-        "Richard Gowers",
-        "Blechbläserensemble der Berliner Philharmoniker"
-      ],
-      "conductor": "Jakub Hrůša",
-      "price": null,
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56436/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-08",
-      "time": "20:00",
-      "title": "youngSTAR Festival",
-      "venue_hall": "Kammermusiksaal",
-      "program": [
-        "Festival für Schulensembles"
-      ],
-      "performers": [],
-      "conductor": null,
-      "price": "kostenfrei, Teilnahmewunsch über Formular",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56493/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "is_classical": true
-    },
-    {
-      "date": "null",
-      "time": "null",
-      "title": "Kirill Petrenko dirigiert Bruckner und Rihm",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Wolfgang Rihm: IN-SCHRIFT",
-        "Anton Bruckner: Symphonie Nr. 5 B-Dur"
-      ],
-      "performers": [
-        "Berliner Philharmoniker"
-      ],
-      "conductor": "Kirill Petrenko",
-      "price": "37 bis 106 €",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55626",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "is_classical": true
-    },
-    {
-      "date": "null",
-      "time": "null",
-      "title": "Simone Young dirigiert Bruckner und Rihm",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Rihm: Das Gehege. Eine nächtliche Szene für Sopran und Orchester",
-        "Bruckner: Symphonie Nr. 2 c-Moll (1. Fassung von 1872)"
-      ],
-      "performers": [
-        "Berliner Philharmoniker",
-        "Vida Miknevičiūtė"
-      ],
-      "conductor": "Simone Young",
-      "price": "null",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55635",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     }
   ],
-  "total_events": 29,
+  "total_events": 10,
   "total_events_visible": 60,
-  "total_events_discovered": 1474,
-  "total_events_discovered_strict": 1474,
+  "total_events_discovered": 60,
+  "total_events_discovered_strict": 60,
+  "total_events_enriched": 10,
   "source": "firecrawl_listing",
-  "map_expand_stats": {
-    "map_urls": 1474,
-    "new_urls": 1474,
-    "scraped": 102,
-    "past": 18,
-    "invalid": 71,
-    "canceled": 0
-  }
+  "latest_event_date": "2026-06-03",
+  "latest_discovered_event_date": "2026-06-03",
+  "covers_horizon": false
 }

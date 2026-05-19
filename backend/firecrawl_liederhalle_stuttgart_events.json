@@ -3,31 +3,10 @@
   "city": "Stuttgart",
   "slug": "liederhalle_stuttgart",
   "source_url": "https://liederhalle.de/eventkalender",
-  "scraped_at": "2026-05-18T21:20:27.313320Z",
+  "scraped_at": "2026-05-19T14:20:39.583601Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
-    {
-      "date": "2026-05-18",
-      "time": "19:00",
-      "title": "Homin Choir",
-      "venue_hall": "Mozart-Saal",
-      "program": [],
-      "performers": [
-        "Homin Choir"
-      ],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://liederhalle.de/veranstaltung/homin-choir",
-      "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "reused_enrichment": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
     {
       "date": "2026-05-20",
       "time": "19:00",
@@ -64,11 +43,7 @@
         "Schubert: Impromptu D 935 op. 142/1"
       ],
       "performers": [
-        "Maurizio Pollini",
-        "Martha Argerich",
-        "Krystian Zimerman",
-        "Seong-Jin Cho",
-        "Bruce Liu"
+        "SKS E. Russ GmbH"
       ],
       "conductor": null,
       "price": null,
@@ -93,7 +68,7 @@
         "Korngold: Klavierquintett E-Dur op. 15"
       ],
       "performers": [
-        "Staatsorchester Stuttgart"
+        "Staatsoper Stuttgart"
       ],
       "conductor": null,
       "price": null,
@@ -118,7 +93,7 @@
         "Fauré: Klavierquartett g-Moll op. 45"
       ],
       "performers": [
-        "Mariani Klavierquartett"
+        "SKS E. Russ GmbH"
       ],
       "conductor": null,
       "price": null,
@@ -139,7 +114,7 @@
       "venue_hall": "Beethoven-Saal",
       "program": [],
       "performers": [
-        "MainCourse"
+        "Music Circus Concertbüro GmbH & Co. KG"
       ],
       "conductor": null,
       "price": null,
@@ -148,7 +123,6 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
-      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -159,7 +133,9 @@
       "title": "Ibrahim Selim Ile Bu Gece",
       "venue_hall": "Mozart-Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Sahmeran Entertainment BV"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/ibrahim-selim-ile-bu-gece",
@@ -167,8 +143,8 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": false
     },
     {
@@ -199,7 +175,7 @@
       "venue_hall": "Mozart-Saal",
       "program": [],
       "performers": [
-        "The Umbilical Brothers"
+        "Music Circus Concertbüro GmbH & Co. KG"
       ],
       "conductor": null,
       "price": null,
@@ -208,7 +184,6 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
-      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -220,8 +195,7 @@
       "venue_hall": "Beethoven-Saal",
       "program": [],
       "performers": [
-        "Alexander Stevens",
-        "Jacqueline Belle"
+        "Konzertbüro Augsburg GmbH"
       ],
       "conductor": null,
       "price": null,
@@ -230,7 +204,6 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
-      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -242,8 +215,7 @@
       "venue_hall": "Beethoven-Saal",
       "program": [],
       "performers": [
-        "Nizar",
-        "Shayan"
+        "Nizar & Shayan GbR"
       ],
       "conductor": null,
       "price": null,
@@ -252,7 +224,6 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
-      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -264,7 +235,7 @@
       "venue_hall": "Beethoven-Saal",
       "program": [],
       "performers": [
-        "Mabel Matiz"
+        "Mystiek Productions"
       ],
       "conductor": null,
       "price": null,
@@ -273,7 +244,6 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
-      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -288,12 +258,7 @@
         "Hackett: Solo Highlights"
       ],
       "performers": [
-        "Steve Hackett",
-        "Lalle Larsson",
-        "Felix Lehrmann",
-        "Jonas Reingold",
-        "Nad Sylvan",
-        "Rob Townsend"
+        "Music Circus Concertbüro GmbH & Co. KG"
       ],
       "conductor": null,
       "price": null,
@@ -323,7 +288,6 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
-      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -368,7 +332,6 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
-      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -380,7 +343,7 @@
       "venue_hall": "Beethoven-Saal",
       "program": [],
       "performers": [
-        "Element of Crime"
+        "Music Circus Concertbüro GmbH & Co. KG"
       ],
       "conductor": null,
       "price": null,
@@ -389,7 +352,6 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
-      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -410,7 +372,6 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
-      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -424,19 +385,18 @@
         "Prinzen: Alle Hits – mit großem Orchester"
       ],
       "performers": [
-        "Die Prinzen",
-        "Thüringen Philharmonie Gotha-Eisenach"
+        "Music Circus Concertbüro GmbH & Co. KG"
       ],
       "conductor": null,
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/die-prinzen-symphonica-2026",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
-      "discovery_source": "liederhalle_listing",
-      "discovered_only": true,
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
       "is_classical": false
     },
     {
@@ -472,9 +432,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": false
     },
     {
@@ -490,7 +451,7 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": false
@@ -554,7 +515,7 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": false
@@ -572,7 +533,7 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": false
@@ -613,9 +574,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": false
     },
     {
@@ -633,9 +595,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": false
     },
     {
@@ -674,9 +637,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": false
     },
     {
@@ -692,7 +656,7 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": false
@@ -741,7 +705,7 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": false
@@ -786,7 +750,7 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": false
@@ -846,7 +810,7 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": false
@@ -1040,7 +1004,7 @@
     {
       "date": "2026-06-19",
       "time": "19:30",
-      "title": "Klassik Highlights \\#3: ERSTLINGE",
+      "title": "Klassik Highlights #3: ERSTLINGE",
       "venue_hall": "Beethoven-Saal",
       "program": [
         "Prokofjew: Sinfonie Nr. 1 „Symphonie classique\"",
@@ -1257,10 +1221,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-06-28",
@@ -1315,7 +1279,7 @@
     {
       "date": "2026-07-02",
       "time": "16:00",
-      "title": "DLR\\_Raumfahrt\\_Show: Eine Zeitreise in die Zukunft",
+      "title": "DLR_Raumfahrt_Show: Eine Zeitreise in die Zukunft",
       "venue_hall": "Mozart-Saal",
       "program": [],
       "performers": [],
@@ -1715,10 +1679,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-08-12",
@@ -1733,10 +1697,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-08-13",
@@ -1753,10 +1717,11 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "is_classical": true
+      "reused_enrichment": true,
+      "is_classical": false
     },
     {
       "date": "2026-08-14",
@@ -1771,10 +1736,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-08-15",
@@ -1789,10 +1754,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-09-06",
@@ -1811,9 +1776,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1829,10 +1795,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-09-13",
@@ -1849,9 +1815,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1870,15 +1837,16 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-09-26",
       "time": "19:30",
-      "title": "philharmonic pops \\#1 – FINAL FANTASY",
+      "title": "philharmonic pops #1 – FINAL FANTASY",
       "venue_hall": "Hegel-Saal",
       "program": [
         "UEMATSU: Opening Fanfare",
@@ -1898,9 +1866,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1919,10 +1888,11 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "is_classical": true
+      "reused_enrichment": true,
+      "is_classical": false
     },
     {
       "date": "2026-10-02",
@@ -1939,9 +1909,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1966,9 +1937,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1986,9 +1958,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2006,9 +1979,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2036,9 +2010,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2057,9 +2032,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2077,9 +2053,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2110,9 +2087,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": false
     },
     {
@@ -2134,10 +2112,11 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "is_classical": true
+      "reused_enrichment": true,
+      "is_classical": false
     },
     {
       "date": "2026-10-15",
@@ -2159,9 +2138,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2187,9 +2167,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2208,9 +2189,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2228,10 +2210,11 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "is_classical": true
+      "reused_enrichment": true,
+      "is_classical": false
     },
     {
       "date": "2026-10-17",
@@ -2249,9 +2232,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2269,15 +2253,16 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "is_classical": true
+      "reused_enrichment": true,
+      "is_classical": false
     },
     {
       "date": "2026-10-18",
       "time": "18:30",
-      "title": "22\\. Stuttgarter Comedy Night",
+      "title": "22. Stuttgarter Comedy Night",
       "venue_hall": "Hegel-Saal",
       "program": [],
       "performers": [
@@ -2289,9 +2274,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": false
     },
     {
@@ -2312,9 +2298,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2336,9 +2323,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2356,10 +2344,11 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "is_classical": true
+      "reused_enrichment": true,
+      "is_classical": false
     },
     {
       "date": "2026-10-21",
@@ -2396,9 +2385,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": false
     },
     {
@@ -2414,10 +2404,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-10-25",
@@ -2434,9 +2424,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2454,9 +2445,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": false
     },
     {
@@ -2474,10 +2466,11 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "is_classical": true
+      "reused_enrichment": true,
+      "is_classical": false
     },
     {
       "date": "2026-10-28",
@@ -2498,10 +2491,11 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "is_classical": true
+      "reused_enrichment": true,
+      "is_classical": false
     },
     {
       "date": "2026-10-30",
@@ -2524,9 +2518,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2544,9 +2539,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": false
     },
     {
@@ -2564,9 +2560,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2592,9 +2589,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2612,9 +2610,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": false
     },
     {
@@ -2632,10 +2631,11 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "is_classical": true
+      "reused_enrichment": true,
+      "is_classical": false
     },
     {
       "date": "2026-11-05",
@@ -2652,9 +2652,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2672,9 +2673,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2690,7 +2692,7 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": false
@@ -2710,10 +2712,11 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "is_classical": true
+      "reused_enrichment": true,
+      "is_classical": false
     },
     {
       "date": "2026-11-08",
@@ -2738,17 +2741,27 @@
       "time": "19:30",
       "title": "Lang Lang",
       "venue_hall": "Beethoven-Saal",
-      "program": [],
-      "performers": [],
+      "program": [
+        "Mozart: Rondo D-Dur KV 485",
+        "Beethoven: Sonate Nr. 8 c-Moll, Op. 13 (Pathétique)",
+        "Beethoven: Sonate Nr. 31 As-Dur, Op. 110",
+        "Albéniz: Auswahl aus Suite española, Op. 47",
+        "Granados: Goyescas, Op. 11 Nr. 4 – Beschwerden, oder die Maja und die Nachtigall",
+        "Franz Liszt: Trost, Nr. 2 in E-Dur",
+        "Franz Liszt: Venedig und Neapel: III. Tarantella"
+      ],
+      "performers": [
+        "Lang Lang"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/lang-lang",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2767,7 +2780,7 @@
       "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-11-11",
@@ -2785,7 +2798,7 @@
       "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-11-13",
@@ -2821,7 +2834,7 @@
       "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-11-14",
@@ -2839,7 +2852,7 @@
       "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-11-14",
@@ -2847,16 +2860,18 @@
       "title": "Wirtschaftswunder",
       "venue_hall": "Mozart-Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Wirtschaftswunder"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/wirtschaftswunder",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2875,7 +2890,7 @@
       "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-11-15",
@@ -2893,7 +2908,7 @@
       "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-11-15",
@@ -2911,7 +2926,7 @@
       "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-11-16",
@@ -2929,24 +2944,30 @@
       "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-11-17",
       "time": "19:30",
       "title": "Finnish Radio Symphony Orchestra",
       "venue_hall": "Beethoven-Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Elgar: Konzert für Violoncello und Orchester e-Moll op. 85",
+        "Sibelius: Sinfonie Nr. 1 e-Moll op. 39"
+      ],
+      "performers": [
+        "Sol Gabetta",
+        "Finnish Radio Symphony Orchestra"
+      ],
+      "conductor": "Nicholas Collon",
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/finnish-radio-symphony-orchestra",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2965,7 +2986,7 @@
       "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-11-19",
@@ -2983,24 +3004,34 @@
       "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-11-25",
       "time": "19:30",
       "title": "Hayato Sumino",
       "venue_hall": "Beethoven-Saal",
-      "program": [],
-      "performers": [],
+      "program": [
+        "Chopin: Scherzo Nr. 1 h-Moll op. 20",
+        "Chopin: Etüden As-Dur op. 25/1 \"Aeolian Harp\", a-Moll op. 25/11 \"Winterwind\", Ges-Dur op. 10/5",
+        "Chopin: Sonate Nr. 2 b-Moll op. 35, Mazurka op. 59",
+        "Sumino: Eigene Werke sowie Improvisationen zu Chopin",
+        "Saint-Saëns: \"Danse macabre\" op. 40",
+        "Adès: Mazurka op. 27/2",
+        "Strawinsky: Auszüge aus \"Der Feuervogel\" arr. von Guido Agosti"
+      ],
+      "performers": [
+        "Hayato Sumino"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/hayato-sumino",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -3008,17 +3039,24 @@
       "time": "20:00",
       "title": "Freiburger Barockorchester: Große Fuge",
       "venue_hall": "Mozart-Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Beethoven: Große Fuge op. 133",
+        "Spohr: Nonett F-Dur op. 31",
+        "Mendelssohn: Streichersinfonie Nr. 11 F-Dur"
+      ],
+      "performers": [
+        "Freiburger Barockorchester",
+        "Cecilia Bernardini, Violine & Leitung"
+      ],
+      "conductor": "Cecilia Bernardini",
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/freiburger-barockorchester-grosse-fuge",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -3037,24 +3075,30 @@
       "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-11-26",
       "time": "19:30",
       "title": "Henschel Quartett",
       "venue_hall": "Mozart-Saal",
-      "program": [],
-      "performers": [],
+      "program": [
+        "Beethoven: Streichquartett B-Dur op. 18/6",
+        "Swain: Streichquartett 'Norfolk'",
+        "Mendelssohn: Streichquartett Nr. 6 f-Moll op. 80"
+      ],
+      "performers": [
+        "Henschel Quartett"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/henschel-quartett",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -3073,24 +3117,29 @@
       "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-11-28",
       "time": "20:00",
       "title": "Joe Hisaishi's World Dream Tour",
       "venue_hall": "Beethoven-Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Joe Hisaishi: Symphonic Suite The Boy and the Heron for piano and orchestra",
+        "Joe Hisaishi: Concerto for Orchestra"
+      ],
+      "performers": [
+        "Royal Philharmonic Orchestra"
+      ],
+      "conductor": "Joe Hisaishi",
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/joe-hisaishis-world-dream-tour",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -3098,35 +3147,43 @@
       "time": "15:00",
       "title": "Sonntag um 3: Staatliches Sinfonieorchester Litauen",
       "venue_hall": "Beethoven-Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Tschaikowsky: Klavierkonzert Nr. 1 b-moll",
+        "Dvořák: Symphonie Nr. 7 d-moll"
+      ],
+      "performers": [
+        "Staatliches Sinfonieorchester Litauen",
+        "Alexander Gadjiev, Klavier"
+      ],
+      "conductor": "Gintaras Rinkevicius",
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/sonntag-um-3-staatliches-sinfonieorchester-litauen",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     }
   ],
-  "total_events": 141,
-  "total_events_visible": 30,
-  "total_events_discovered": 141,
-  "total_events_discovered_strict": 141,
-  "total_events_enriched": 101,
+  "total_events": 140,
+  "total_events_visible": 25,
+  "total_events_discovered": 140,
+  "total_events_discovered_strict": 140,
+  "total_events_enriched": 109,
   "source": "firecrawl_listing",
   "latest_discovered_event_date": "2026-11-29",
   "latest_event_date": "2026-11-29",
   "covers_horizon": false,
   "map_expand_stats": {
-    "preferred_urls": 141,
+    "preferred_urls": 140,
     "map_urls": 0,
     "html_urls": 18,
-    "new_urls": 123,
+    "new_urls": 122,
     "latest_discovered_date": "2026-11-29",
-    "preferred_date_count": 91
+    "preferred_date_count": 90,
+    "html_urls_used": 0,
+    "preferred_authoritative": true
   }
 }

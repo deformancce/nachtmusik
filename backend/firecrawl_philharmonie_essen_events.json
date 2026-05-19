@@ -3,7 +3,7 @@
   "city": "Essen",
   "slug": "philharmonie_essen",
   "source_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/",
-  "scraped_at": "2026-05-19T12:17:06.666910Z",
+  "scraped_at": "2026-05-19T14:12:00.063907Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
@@ -61,39 +61,42 @@
       "title": "Die Prinzen Symphonisch",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
-        "Werke von Felix Mendelssohn Bartholdy, Henry Purcell, Kristine Tjøgersen"
+        "Various: All Hits with Grand Orchestra"
       ],
       "performers": [
         "Die Prinzen",
         "Großes Orchester"
       ],
       "conductor": null,
-      "price": "ab €89,90",
+      "price": "€89,90",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/die-prinzen-symphonisch-157996/3335/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-05-26",
       "time": "20:00",
-      "title": "Joana Mallwitz & Konzerthausorchester Berlin",
+      "title": "Joana Mallwitz \n Konzerthausorchester Berlin",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
-        "Werke von Gustav Mahler, Ludwig van Beethoven"
+        "Gustav Mahler: Symphony No. 1",
+        "Ludwig van Beethoven: Symphony No. 5"
       ],
       "performers": [],
       "conductor": "Joana Mallwitz",
-      "price": "ab €86,90",
+      "price": "ab €71,50",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/joana-mallwitzkonzerthausorchester-berlin-154813/2711/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -151,23 +154,23 @@
     {
       "date": "2026-05-27",
       "time": "19:00",
-      "title": "Gautier Capuçon Sächs­ische Staats­kapelle Dresden",
+      "title": "Gautier Capuçon \n Sächsische Staatskapelle Dresden",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
-        "Camille Saint-Saëns: Cellokonzert",
-        "Claude Debussy: Klavierkonzert"
+        "Camille Saint-Saëns: Cello Concerto No. 1",
+        "Claude Debussy: La Mer",
+        "Richard Wagner: Isolde's Liebestod"
       ],
       "performers": [],
       "conductor": null,
-      "price": "ab €45.00",
+      "price": "ab €45",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/gautier-capuconsaechsische-staatskapelle-dresden-149566/3226/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
-      "discovery_source": "essen_listing",
-      "discovered_only": true,
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -198,7 +201,7 @@
     {
       "date": "2026-05-30",
       "time": "19:00",
-      "title": "Daniel Hope Berlin 1938 - das Schick­sals­jahr",
+      "title": "Daniel Hope \n Berlin 1938 - das Schicksalsjahr",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
         "Hanns Eisler: [Work Title]",
@@ -223,22 +226,22 @@
         "Jacques Ammon"
       ],
       "conductor": null,
-      "price": "null",
+      "price": "ab €20",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/daniel-hopeberlin-1938-das-schicksalsjahr-148924/3227/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
-      "discovery_source": "essen_listing",
-      "discovered_only": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "duration_min": 150,
       "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-05-31",
       "time": "15:00",
-      "title": "Von Tieren und Tempe­ra­menten",
+      "title": "Von Tieren und Temperamenten",
       "venue_hall": "NATIONAL-BANK Pavillon",
       "program": [
         "Uraufführung: Jedem Tier sein Element für Flöte, Klarinette, Violoncello, Tuba, Harfe und Schlagwerk"
@@ -258,33 +261,32 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/von-tieren-und-temperamenten-154359/3328/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
-      "discovery_source": "essen_listing",
-      "discovered_only": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "duration_min": 45,
       "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-05-31",
       "time": "19:00",
-      "title": "Mendelssohn „Ein Sommer­nachts­traum“",
+      "title": "Mendelssohn „Ein Sommernachtsraum“",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
-        "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum"
+        "Felix Mendelssohn Bartholdy: A Midsummer Night's Dream"
       ],
       "performers": [],
       "conductor": null,
-      "price": "ab €35.00",
+      "price": "€35",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/mendelssohn-ein-sommernachtstraum-148326/3229/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
-      "discovery_source": "essen_listing",
-      "discovered_only": true,
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -332,12 +334,12 @@
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/chilly-gonzales-161019/3649/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
-      "discovery_source": "essen_listing",
-      "discovered_only": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "duration_min": 120,
       "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -469,6 +471,34 @@
     {
       "date": "2026-06-10",
       "time": "19:00",
+      "title": "Maxim Emelyanychev \n Mozart am Clavier",
+      "venue_hall": "Alfried Krupp Saal",
+      "program": [
+        "Mozart: Fantasie c-Moll, KV 475",
+        "Mozart: Sonate Nr. 14 c-Moll, KV 457",
+        "Mozart: Sonate Nr. 16 C-Dur, KV 545 'Sonata facile'",
+        "Mozart: Rondo Nr. 3 a-Moll, KV 511",
+        "Mozart: Sonate Nr. 18 D-Dur, KV 576"
+      ],
+      "performers": [
+        "Maxim Emelyanychev"
+      ],
+      "conductor": null,
+      "price": "€35",
+      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/maxim-emelyanychevmozart-am-clavier-153095/3234/",
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "duration_min": 120,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-10",
+      "time": "19:00",
       "title": "Happy Hour - Roman­tische Sinfonie",
       "venue_hall": "Alfried Krupp Saal",
       "program": [
@@ -506,16 +536,16 @@
         "Igor Levit"
       ],
       "conductor": null,
-      "price": "€85,00",
+      "price": "ab €85",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/igor-levit-158010/3650/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
-      "discovery_source": "essen_listing",
-      "discovered_only": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "duration_min": 90,
       "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -606,34 +636,6 @@
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 60,
-      "reused_enrichment": true,
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-20",
-      "time": "19:00",
-      "title": "Maxim Emelyany­chev Mozart am Clavier",
-      "venue_hall": "Alfried Krupp Saal",
-      "program": [
-        "Mozart: Fantasie c-Moll, KV 475",
-        "Mozart: Sonate Nr. 14 c-Moll, KV 457",
-        "Mozart: Sonate Nr. 16 C-Dur, KV 545 'Sonata facile'",
-        "Mozart: Rondo Nr. 3 a-Moll, KV 511",
-        "Mozart: Sonate Nr. 18 D-Dur, KV 576"
-      ],
-      "performers": [
-        "Maxim Emelyanychev"
-      ],
-      "conductor": null,
-      "price": "€35,00",
-      "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/maxim-emelyanychevmozart-am-clavier-153095/3234/",
-      "venue": "Philharmonie Essen",
-      "city": "Essen",
-      "discovery_source": "essen_listing",
-      "discovered_only": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "duration_min": 120,
       "reused_enrichment": true,
       "is_classical": true
     },
@@ -807,10 +809,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 180,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -833,10 +836,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -856,10 +860,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -879,10 +884,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -908,10 +914,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -938,10 +945,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -959,10 +967,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -983,10 +992,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1007,10 +1017,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1044,10 +1055,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1068,10 +1080,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1092,10 +1105,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1118,10 +1132,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1147,10 +1162,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1171,10 +1187,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1196,10 +1213,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 90,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1217,10 +1235,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1243,10 +1262,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1274,10 +1294,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1296,10 +1317,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 300,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1319,10 +1341,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1338,10 +1361,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 90,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1357,10 +1381,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1376,10 +1401,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1395,10 +1421,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 59,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1425,10 +1452,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1479,10 +1507,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1502,10 +1531,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1525,10 +1555,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1546,10 +1577,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1568,10 +1600,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1590,10 +1623,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1616,10 +1650,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1644,10 +1679,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1671,10 +1707,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 90,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1697,10 +1734,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1722,10 +1760,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 90,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1749,10 +1788,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1773,10 +1813,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 150,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1792,10 +1833,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 360,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1811,10 +1853,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 360,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1834,10 +1877,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1853,10 +1897,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 360,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1874,10 +1919,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 420,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1901,10 +1947,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 90,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1930,10 +1977,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1959,10 +2007,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 90,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1982,10 +2031,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 300,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2004,10 +2054,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2026,10 +2077,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2055,10 +2107,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2081,10 +2134,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 90,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2109,10 +2163,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2134,10 +2189,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 90,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2162,10 +2218,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2173,17 +2230,25 @@
       "time": "21:00",
       "title": "International Music & The Dorf",
       "venue_hall": "Alfried Krupp Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Rubel: Neues Werk (Uraufführung, Auftragswerk des Festivals NOW!)"
+      ],
+      "performers": [
+        "Peter Rubel",
+        "Pedro Goncalves Crescenti",
+        "Joel Roters",
+        "The Dorf"
+      ],
+      "conductor": "Jan Klare",
+      "price": "€ 30,00",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/international-music--the-dorf-160191/4219/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 75,
       "is_classical": true
     },
     {
@@ -2192,16 +2257,23 @@
       "title": "Folkwang Debüt",
       "venue_hall": "NATIONAL-BANK Pavillon",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Joscha Rensing",
+        "Simon Sakel",
+        "Elin Leese",
+        "Clara Hou",
+        "Phönix Klavierquartett"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/folkwang-debuet-164801/4371/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 60,
       "is_classical": true
     },
     {
@@ -2224,10 +2296,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2235,17 +2308,22 @@
       "time": "15:00",
       "title": "20.000 Meilen unter dem Meer",
       "venue_hall": "Alfried Krupp Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Albrecht: 20.000 Meilen unter dem Meer"
+      ],
+      "performers": [
+        "Kinderorchester NRW"
+      ],
+      "conductor": "György Mészáros",
       "price": null,
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/20000-meilen-unter-dem-meer-152940/4221/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 60,
       "is_classical": true
     },
     {
@@ -2253,17 +2331,42 @@
       "time": "17:00",
       "title": "Stimme Marokkos Nouamane Lahlou",
       "venue_hall": "Alfried Krupp Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Nouamane Lahlou: Gesang",
+        "Morad Bencheikh: Violine",
+        "Khatim Hamded: Violine",
+        "Mounir Akhdar: Kanun",
+        "Yassine Mohamed Benali: Keyboard, Klavier",
+        "Montassir Hmala: Keyboard",
+        "Younes Abdellaoui: Schlagzeug",
+        "Youssef Baroudi: Bass-Gitarre",
+        "Abdellah Bissiouak: Congas, Tar",
+        "Mouhib Mohammed: Darbuka",
+        "Said Moutaouakil: Keyboard"
+      ],
+      "performers": [
+        "Nouamane Lahlou",
+        "Morad Bencheikh",
+        "Khatim Hamded",
+        "Mounir Akhdar",
+        "Yassine Mohamed Benali",
+        "Montassir Hmala",
+        "Younes Abdellaoui",
+        "Youssef Baroudi",
+        "Abdellah Bissiouak",
+        "Mouhib Mohammed",
+        "Said Moutaouakil"
+      ],
+      "conductor": "Montassir Hmala",
+      "price": "Not explicitly stated",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/stimme-marokkosnouamane-lahlou-164625/4223/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 120,
       "is_classical": true
     },
     {
@@ -2271,17 +2374,25 @@
       "time": "20:00",
       "title": "Anna Vinnitskaya Thomas Sondergaard Royal Scottish National Orchestra",
       "venue_hall": "Alfried Krupp Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Tschaikowsky: Polonaise aus \"Eugen Onegin\", op. 24",
+        "Tschaikowsky: Konzert Nr. 1 b-Moll für Klavier und Orchester, op. 23",
+        "Brahms: Sinfonie Nr. 4 e-Moll, op. 98"
+      ],
+      "performers": [
+        "Anna Vinnitskaya",
+        "Royal Scottish National Orchestra"
+      ],
+      "conductor": "Thomas Sondergard",
+      "price": "€15–€85",
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/anna-vinnitskayathomas-sondergaardroyal-scottish-n-160419/4123/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 120,
       "is_classical": true
     },
     {
@@ -2303,10 +2414,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2314,17 +2426,22 @@
       "time": "17:30",
       "title": "Michael Wollny Solo \"Winterreise\"",
       "venue_hall": "Alfried Krupp Saal",
-      "program": [],
-      "performers": [],
+      "program": [
+        "Schubert: Winterreise"
+      ],
+      "performers": [
+        "Michael Wollny"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/michael-wollny-solowinterreise-161069/4225/",
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 90,
       "is_classical": true
     },
     {
@@ -2345,17 +2462,18 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-11-22",
       "time": "15:00",
       "title": "Philharmonie­führung für Kinder",
-      "venue_hall": null,
+      "venue_hall": "Ganzes Haus (Philharmonie)",
       "program": [],
       "performers": [],
       "conductor": null,
@@ -2364,9 +2482,10 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 90,
       "is_classical": true
     },
     {
@@ -2382,16 +2501,17 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 60,
       "is_classical": true
     },
     {
       "date": "2026-11-22",
       "time": "17:00",
       "title": "Philharmonie­führung",
-      "venue_hall": null,
+      "venue_hall": "Alfried Krupp Saal",
       "program": [],
       "performers": [],
       "conductor": null,
@@ -2400,9 +2520,10 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 60,
       "is_classical": true
     },
     {
@@ -2418,9 +2539,10 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 59,
       "is_classical": true
     },
     {
@@ -2447,10 +2569,11 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 150,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2498,18 +2621,19 @@
       "venue": "Philharmonie Essen",
       "city": "Essen",
       "discovery_source": "essen_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     }
   ],
   "total_events": 103,
-  "total_events_visible": 4,
+  "total_events_visible": 12,
   "total_events_discovered": 103,
   "total_events_discovered_strict": 103,
-  "total_events_enriched": 91,
+  "total_events_enriched": 101,
   "source": "firecrawl_listing",
   "latest_discovered_event_date": "2026-11-29",
   "latest_event_date": "2026-11-29",
@@ -2518,8 +2642,10 @@
     "preferred_urls": 103,
     "map_urls": 0,
     "html_urls": 31,
-    "new_urls": 99,
+    "new_urls": 92,
     "latest_discovered_date": "2026-11-29",
-    "preferred_date_count": 67
+    "preferred_date_count": 67,
+    "html_urls_used": 0,
+    "preferred_authoritative": true
   }
 }

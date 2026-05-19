@@ -3,7 +3,7 @@
   "city": "Dortmund",
   "slug": "konzerthaus_dortmund",
   "source_url": "https://www.konzerthaus-dortmund.de/de/programm/",
-  "scraped_at": "2026-05-19T08:11:54.973244Z",
+  "scraped_at": "2026-05-19T14:05:10.081125Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
@@ -15,15 +15,15 @@
       "program": [
         "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum Schauspielmusik op. 61 (Auszüge)",
         "Jörg Widmann: ad absurdum Konzertstück für Trompete und kleines Orchester",
+        "– Pause –",
         "Ludwig van Beethoven: Sinfonie Nr. 4 B-Dur op. 60"
       ],
       "performers": [
         "Dortmunder Philharmoniker",
-        "Patrick Lange",
         "Sergei Nakariakov"
       ],
       "conductor": "Patrick Lange",
-      "price": "19 € - 49 €",
+      "price": "19 € – 49 €",
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/19-05-2026-7-philharmonisches-konzert/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
@@ -43,21 +43,20 @@
       "program": [
         "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum Schauspielmusik op. 61 (Auszüge)",
         "Jörg Widmann: ad absurdum Konzertstück für Trompete und kleines Orchester",
+        "– Pause –",
         "Ludwig van Beethoven: Sinfonie Nr. 4 B-Dur op. 60"
       ],
       "performers": [
         "Dortmunder Philharmoniker",
-        "Patrick Lange",
         "Sergei Nakariakov"
       ],
       "conductor": "Patrick Lange",
-      "price": "19 € - 49 €",
+      "price": "19 € – 49 €",
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/20-05-2026-7-philharmonisches-konzert/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
-      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -103,7 +102,7 @@
         "Jugendkonzertchor der Chorakademie"
       ],
       "conductor": null,
-      "price": "24 € - 43 €",
+      "price": "24 € – 43 €",
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/24-05-2026-festkonzert-2026-der-chorakademie/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
@@ -136,13 +135,12 @@
         "Collegium Musicum der Chorakademie"
       ],
       "conductor": null,
-      "price": "24 € - 43 €",
+      "price": "24 € – 43 €",
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/25-05-2026-festkonzert-2026-der-chorakademie/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
-      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -161,7 +159,8 @@
         "Ekki Busch",
         "Jakob Ilja",
         "Markus Runzheimer",
-        "Richard Pappik"
+        "Richard Pappik",
+        "Tristan Brusch"
       ],
       "conductor": null,
       "price": "ausverkauft",
@@ -182,9 +181,7 @@
       "title": "hr-Bigband – Miles Davis zum 100.",
       "venue_hall": "Großer Saal",
       "program": [
-        "Davis: Miles Ahead",
-        "Gershwin: Porgy and Bess",
-        "Davis: Sketches of Spain"
+        "hr-Bigband: Miles Davis zum 100."
       ],
       "performers": [
         "hr-Bigband",
@@ -193,7 +190,7 @@
         "Paolo Fresu"
       ],
       "conductor": "Miho Hazama",
-      "price": "ausverkauft",
+      "price": "26 € – 66 €",
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/27-05-2026-hr-bigband-miles-davis-zum-100/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
@@ -215,7 +212,7 @@
         "Naturally 7"
       ],
       "conductor": null,
-      "price": "21 € - 55 €",
+      "price": "21 € – 55 €",
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/28-05-2026-naturally-7/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
@@ -237,7 +234,7 @@
         "Naturally 7"
       ],
       "conductor": null,
-      "price": "21 € - 55 €",
+      "price": "21 € – 55 €",
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/29-05-2026-naturally-7/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
@@ -256,8 +253,10 @@
       "venue_hall": "Großer Saal",
       "program": [
         "Béla Bartók: Sonate für zwei Klaviere und Schlagzeug Sz 110",
+        "Alexej Gerassimez: Beyond stickability für Percussion-Duo",
+        "– Pause –",
         "George Gershwin: Rhapsody in Blue",
-        "Leonard Bernstein: Sinfonische Tänze aus »West Side Story«",
+        "Leonard Bernstein: Sinfonische Tänze aus West Side Story",
         "John Adams: Short ride in a fast machine"
       ],
       "performers": [
@@ -267,7 +266,7 @@
         "Emil Kuyumcuyan"
       ],
       "conductor": null,
-      "price": "29 € - 79 €",
+      "price": "29 € – 79 €",
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/30-05-2026-lucas-jussen-arthur-jussen/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
@@ -287,13 +286,13 @@
       "program": [
         "Alberto Ginastera: Variaciones concertantes",
         "Ernest Chausson: Poème für Violine und Orchester op. 25",
+        "– Pause –",
         "Peter Iljitsch Tschaikowsky: Sinfonie Nr. 5 e-moll op. 64"
       ],
       "performers": [
         "OZM | Symphony",
         "Fabio Mechetti",
-        "Önder Baloglu",
-        "Michael Shaham"
+        "Önder Baloglu"
       ],
       "conductor": "Fabio Mechetti",
       "price": "17 €",
@@ -326,7 +325,7 @@
         "Jan Lisiecki"
       ],
       "conductor": null,
-      "price": "29 € - 79 €",
+      "price": "29 € – 79 €",
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/02-06-2026-jan-lisiecki/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
@@ -340,8 +339,7 @@
     {
       "date": "2026-06-03",
       "time": "19:30",
-      "title": "Anne Sophie Mutter Berliner Barock Solisten",
-      "title_inferred": true,
+      "title": "Anne-Sophie Mutter & Berliner Barock Solisten",
       "venue_hall": "Großer Saal",
       "program": [
         "André Previn: Konzert für Violine und Steichorchester Nr. 2 (mit zwei Cembalo-Zwischenspielen)",
@@ -350,25 +348,44 @@
         "Wolfgang Amadeus Mozart: Konzert für Violine und Orchester Nr. 5 A-Dur KV 219"
       ],
       "performers": [
-        "Anne-Sophie Mutter",
-        "Berliner Barock Solisten"
+        "Berliner Barock Solisten",
+        "Anne-Sophie Mutter"
       ],
       "conductor": "Anne-Sophie Mutter",
-      "price": "ab €25",
+      "price": "29 € – 149 €",
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/03-06-2026-anne-sophie-mutter-berliner-barock-solisten/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
-      "discovery_source": "url_discovery",
-      "discovered_only": true,
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-04",
+      "time": "19:30",
+      "title": "Public performance",
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": null,
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": false,
+      "enrichment_status": "stub",
       "is_classical": true
     },
     {
       "date": "2026-06-05",
       "time": "19:00",
-      "title": "Junge Wilde – Lea Desandre",
+      "title": "Junge Wilde Lea Desandre",
+      "title_inferred": true,
       "venue_hall": "Konzerthaus Dortmund",
       "program": [
         "Debussy: Pagodes aus Estampes",
@@ -393,17 +410,36 @@
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/05-06-2026-junge-wilde-lea-desandre/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "reused_enrichment": true,
+      "discovery_source": "url_discovery",
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
-      "date": "2026-06-06",
+      "date": "2026-06-05",
+      "time": "19:30",
+      "title": "Junge Wilde – Lea Desandre",
+      "venue_hall": "",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": null,
+      "venue": "Konzerthaus Dortmund",
+      "city": "Dortmund",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": false,
+      "enrichment_status": "stub",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-07",
       "time": "20:00",
-      "title": "La favorite – Gaetano Donizetti",
+      "title": "Gaetano Donizetti La Favorite",
+      "title_inferred": true,
       "venue_hall": "Konzerthaus Dortmund",
       "program": [
         "Gaetano Donizetti: La favorite Grand Opéra in vier Akten"
@@ -424,39 +460,23 @@
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/07-06-2026-gaetano-donizetti-la-favorite/",
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "reused_enrichment": true,
+      "discovery_source": "url_discovery",
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-07",
-      "time": "20:00",
-      "title": "Matinée – Dortsinger Konzert",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": null,
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-06-08",
-      "time": null,
+      "time": "18:30",
       "title": "Kopfnoten Eine Kleine Geschichte Der Epochen Und Stile",
       "title_inferred": true,
-      "venue_hall": null,
+      "venue_hall": "Orchesterzentrum|NRW",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Michael Stegemann"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.konzerthaus-dortmund.de/de/programm/08-06-2026-kopfnoten-eine-kleine-geschichte-der-epochen-und-stile/",
@@ -464,8 +484,9 @@
       "city": "Dortmund",
       "discovery_source": "url_discovery",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 90,
       "is_classical": true
     },
     {
@@ -616,24 +637,6 @@
       "enriched": true,
       "enrichment_status": "enriched",
       "reused_enrichment": true,
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-21",
-      "time": "20:00",
-      "title": "Chorkonzert",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": null,
-      "venue": "Konzerthaus Dortmund",
-      "city": "Dortmund",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
       "is_classical": true
     },
     {
@@ -810,9 +813,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -856,9 +860,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -941,10 +946,11 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -967,9 +973,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1018,9 +1025,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1044,9 +1052,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1070,9 +1079,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1122,9 +1132,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1174,9 +1185,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1184,7 +1196,7 @@
       "time": null,
       "title": "Oeffentliche Hausfuehrung",
       "title_inferred": true,
-      "venue_hall": null,
+      "venue_hall": "Konzerthaus Dortmund",
       "program": [],
       "performers": [],
       "conductor": null,
@@ -1219,9 +1231,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1246,9 +1259,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1273,10 +1287,11 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1300,9 +1315,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1325,9 +1341,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1346,9 +1363,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1375,9 +1393,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1487,9 +1506,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1570,9 +1590,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1768,9 +1789,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1839,9 +1861,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1863,9 +1886,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1892,10 +1916,11 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1918,10 +1943,11 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1992,9 +2018,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2019,9 +2046,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2074,9 +2102,10 @@
       "venue": "Konzerthaus Dortmund",
       "city": "Dortmund",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2108,10 +2137,10 @@
     }
   ],
   "total_events": 80,
-  "total_events_visible": 184,
+  "total_events_visible": 150,
   "total_events_discovered": 218,
   "total_events_discovered_strict": 218,
-  "total_events_enriched": 75,
+  "total_events_enriched": 76,
   "source": "firecrawl_listing",
   "latest_discovered_event_date": "2026-11-29",
   "latest_event_date": "2026-11-29",
@@ -2120,7 +2149,7 @@
     "preferred_urls": 218,
     "map_urls": 0,
     "html_urls": 218,
-    "new_urls": 204,
+    "new_urls": 205,
     "latest_discovered_date": "2026-11-29"
   }
 }

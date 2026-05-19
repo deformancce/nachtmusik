@@ -3,7 +3,7 @@
   "city": "Düsseldorf",
   "slug": "tonhalle_duesseldorf",
   "source_url": "https://www.tonhalle.de/veranstaltungen/kalender",
-  "scraped_at": "2026-05-19T09:55:50.627421Z",
+  "scraped_at": "2026-05-19T14:07:26.587483Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
@@ -16,8 +16,7 @@
         "Mendelssohn: Title op.X"
       ],
       "performers": [
-        "Vision String",
-        "Danish String Quartet"
+        "Vision String & Danish String Quartet"
       ],
       "conductor": null,
       "price": null,
@@ -38,7 +37,7 @@
       "venue_hall": "Mendelssohn-Saal",
       "program": [],
       "performers": [
-        "Element of Crime"
+        "bereits AUSVERKAUFTElement of Crime"
       ],
       "conductor": null,
       "price": "bereits AUSVERKAUFT",
@@ -89,7 +88,7 @@
         "Dvořák: Slawischer Tanz C-Dur op. 72/7"
       ],
       "performers": [
-        "Schroeder"
+        "Schroeder geht ins Konzert"
       ],
       "conductor": "Alena Hron",
       "price": null,
@@ -112,7 +111,7 @@
         "Liu: Piano Solo"
       ],
       "performers": [
-        "Bruce Liu"
+        "SommerträumeBruce Liu"
       ],
       "conductor": null,
       "price": null,
@@ -138,7 +137,7 @@
         "Mozart: Konzert für Violine und Orchester Nr. 5 A-Dur KV 219"
       ],
       "performers": [
-        "Anne-Sophie Mutter"
+        "LiebeserklärungenAnne-Sophie Mutter"
       ],
       "conductor": "André Previn",
       "price": null,
@@ -163,8 +162,7 @@
         "Franz Schubert: Ausgewählte Lieder und Duette"
       ],
       "performers": [
-        "Christoph",
-        "Julian Prégardien"
+        "Eröffnungskonzert SchumannfestChristoph & Julian Prégardien"
       ],
       "conductor": null,
       "price": null,
@@ -192,9 +190,7 @@
         "Henri Brod: Trio op. 5 Nr. 1 für Oboe, Fagott und Klavier"
       ],
       "performers": [
-        "Fernando José Martínez Zavala",
-        "Martin Kevenhörster",
-        "Julia Golkhovaya"
+        "Das symphonische Palais"
       ],
       "conductor": null,
       "price": null,
@@ -222,7 +218,7 @@
         "Ravel: La Valse"
       ],
       "performers": [
-        "JSO der Tonhalle"
+        "JSO der TonhalleRavel"
       ],
       "conductor": "Jascha von der Goltz",
       "price": null,
@@ -263,38 +259,22 @@
     },
     {
       "date": "2026-06-08",
-      "time": null,
-      "title": "Junior-Sternzeichen",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.tonhalle.de/veranstaltung/junior-sternzeichen/21524-junior-sternzeichen-real-der-berg-ruft",
-      "venue": "Tonhalle Düsseldorf",
-      "city": "Düsseldorf",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-08",
       "time": "00:00",
       "title": "Führung durch das Schumann-Haus",
       "venue_hall": "Schumann-Haus",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Führung durch das Schumann-Haus"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/schumannfest/20066-fuehrung-durch-das-schumann-haus",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
-      "discovery_source": "tonhalle_listing",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -340,8 +320,9 @@
       "detail_url": "https://www.tonhalle.de/veranstaltung/schumannfest/20072-kebyart-saxofon-quartett",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
-      "discovery_source": "tonhalle_listing",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -355,16 +336,16 @@
         "Bach: Goldberg-Variationen BWV 988 (Bearbeitung für zwei Klaviere: Josef G. Rheinberger und Max Reger)"
       ],
       "performers": [
-        "Igor Levit",
-        "Markus Becker"
+        "Goldberg-VariationenIgor Levit & Markus Becker"
       ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/komet/19119-igor-levit-markus-becker",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
-      "discovery_source": "tonhalle_listing",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -376,15 +357,16 @@
       "venue_hall": "Palais Wittgenstein",
       "program": [],
       "performers": [
-        "Dr. Sabine Brenner-Wilczek"
+        "Führung durch das Schumannhaus"
       ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/schumannfest/20087-fuehrung-durch-das-schumannhaus",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
-      "discovery_source": "tonhalle_listing",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -392,7 +374,7 @@
     {
       "date": "2026-06-11",
       "time": "19:00",
-      "title": "Traumbilder",
+      "title": "Szenische Konzert-LesungTraumbilder",
       "venue_hall": "Palais Wittgenstein",
       "program": [
         "Clara Schumann: Drei Romanzen op. 22",
@@ -401,18 +383,35 @@
         "Johannes Brahms: Sonate für Viola und Klavier op. 120/2 (1.Satz)"
       ],
       "performers": [
-        "Jasmin-Nevin Varul",
-        "Markus J. Bachmann",
-        "Sangyoon Lee",
-        "Ani Ter-Martirosyan",
-        "Sabine Brenner-Wilczek"
+        "Szenische Konzert-LesungTraumbilder"
       ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/schumannfest/20073-traumbilder",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
-      "discovery_source": "tonhalle_listing",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-12",
+      "time": null,
+      "title": "Weihnachtsoratorium",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "Collegium Vocale GentWeihnachtsoratorium"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/sternstunden/21504-weihnachtsoratorium",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -436,10 +435,11 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -462,6 +462,27 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": null,
+      "title": "Big Bang",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "Big Bang"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/big-bang-junge-tonhalle/21490-big-bang",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -519,9 +540,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -545,7 +567,31 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "19:30",
+      "title": "Konzert für Menschlichkeit",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Mendelssohn: TBD"
+      ],
+      "performers": [
+        "DRK-BenefizkonzertKonzert für Menschlichkeit"
+      ],
+      "conductor": "Stephan Frucht",
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/komet/21710-konzert-fuer-menschlichkeit",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -569,6 +615,27 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-14",
+      "time": null,
+      "title": "Junior-Sternzeichen: Frühlingserwachen",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "Junior-Sternzeichen: Frühlingserwachen"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/junior-sternzeichen/21523-junior-sternzeichen-fruehlingserwachen",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -594,9 +661,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -619,6 +687,27 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-15",
+      "time": null,
+      "title": "The Simon and Garfunkel Story",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "The Simon and Garfunkel Story"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/komet/20955-simon-and-garfunkel-story",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -645,9 +734,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -670,9 +760,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -697,9 +788,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -722,6 +814,27 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-18",
+      "time": null,
+      "title": "Bach & Vivaldi",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "Leonidas Kavakos & Apollon EnsembleBach & Vivaldi"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/raumstation/20827-bach-vivaldi",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -744,9 +857,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -766,9 +880,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -795,9 +910,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -820,9 +936,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -850,9 +967,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -879,9 +997,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -906,9 +1025,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -933,9 +1053,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -958,9 +1079,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -989,9 +1111,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1016,9 +1139,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1042,9 +1166,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1067,9 +1192,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1097,9 +1223,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1117,9 +1244,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1144,9 +1272,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1167,9 +1296,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1193,9 +1323,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1217,6 +1348,32 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-07-01",
+      "time": "10:00",
+      "title": "Für KITAs: Sterntaler (ab 2 Jahren)",
+      "venue_hall": "Trautvetter-Brückner-Saal",
+      "program": [
+        "Kisters: Sterntaler"
+      ],
+      "performers": [
+        "Ulrich Kisters: Klavier, Gitarre, Akkordeon und Arrangements",
+        "Mira Wickert: Schauspielerin",
+        "Mitglieder der Düsseldorfer Symphoniker",
+        "Lorna Bowden: Konzept & Regie"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/sterntaler/18604-fuer-kitas-sterntaler-ab-2-jahren",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "tonhalle_listing",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -1224,74 +1381,88 @@
     },
     {
       "date": "2026-07-01",
-      "time": null,
-      "title": "Für KITAs: Sterntaler (ab 2 Jahren)",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.tonhalle.de/veranstaltung/sterntaler/18604-fuer-kitas-sterntaler-ab-2-jahren",
-      "venue": "Tonhalle Düsseldorf",
-      "city": "Düsseldorf",
-      "discovery_source": "tonhalle_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
-      "is_classical": true
-    },
-    {
-      "date": "2026-07-01",
-      "time": null,
+      "time": "10:00",
       "title": "Für Kitas - »Die Kleine Hexe«",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
+      "venue_hall": "Gerhart-Hauptmann-Haus",
+      "program": [
+        "Preußler: Die Kleine Hexe"
+      ],
+      "performers": [
+        "Tina El-Fayoumy",
+        "Benjamin Garcia",
+        "Holger Werner",
+        "Alexander Morsey",
+        "Jan Lukas Roßmüller",
+        "Katrin Sedlbauer",
+        "Lorna Bowden",
+        "Claudia Sill",
+        "Isabell Ziegler",
+        "Benjamin Schuster"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "kostenfrei",
       "detail_url": "https://www.tonhalle.de/veranstaltung/tonhalle-geht-aus/20444-fuer-kitas-die-kleine-hexe",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-07-01",
-      "time": null,
+      "time": "12:00",
       "title": "Für Grundschulen - »Die Kleine Hexe«",
-      "venue_hall": null,
+      "venue_hall": "Gerhart-Hauptmann-Haus",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Tina El-Fayoumy",
+        "Benjamin Garcia",
+        "Holger Werner",
+        "Alexander Morsey",
+        "Jan Lukas Roßmüller",
+        "Katrin Sedlbauer",
+        "Lorna Bowden",
+        "Claudia Sill",
+        "Isabell Ziegler",
+        "Benjamin Schuster"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "Das Konzert ist leider ausverkauft.",
       "detail_url": "https://www.tonhalle.de/veranstaltung/tonhalle-geht-aus/20445-fuer-grundschulen-die-kleine-hexe",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-07-01",
-      "time": null,
+      "time": "16:00",
       "title": "Sterntaler für 2-4 Jahre",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
+      "venue_hall": "Trautvetter-Brückner-Saal",
+      "program": [
+        "Ulrich Kisters: Klavier, Gitarre, Akkordeon und Arrangements",
+        "Mira Wickert: Schauspielerin",
+        "Lorna Bowden: Konzept & Regie"
+      ],
+      "performers": [
+        "Ulrich Kisters",
+        "Mira Wickert",
+        "Mitglieder der Düsseldorfer Symphoniker"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/sterntaler/17696-sterntaler-fuer-2-4-jahre",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1314,6 +1485,35 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-07-03",
+      "time": "11:00",
+      "title": "Sternschnuppe - für Schulen (ab 6)",
+      "venue_hall": "Mendelssohn-Saal",
+      "program": [
+        "Mendelssohn: Werke zur Beschreibung des Himmelsdachs"
+      ],
+      "performers": [
+        "Düsseldorfer Symphoniker",
+        "Corinna Niemeyer",
+        "Benjamin Richter",
+        "Wes Peden",
+        "Johanna Gorzellik",
+        "Jenny Patschovsky",
+        "Lorna Bowden"
+      ],
+      "conductor": "Corinna Niemeyer",
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/tonhalle-macht-schule-i/18585-sternschnuppe-fuer-schulen-ab-6",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "tonhalle_listing",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -1321,110 +1521,139 @@
     },
     {
       "date": "2026-07-03",
-      "time": null,
-      "title": "Sternschnuppe - für Schulen (ab 6)",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.tonhalle.de/veranstaltung/tonhalle-macht-schule-i/18585-sternschnuppe-fuer-schulen-ab-6",
-      "venue": "Tonhalle Düsseldorf",
-      "city": "Düsseldorf",
-      "discovery_source": "tonhalle_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
-      "is_classical": true
-    },
-    {
-      "date": "2026-07-03",
-      "time": null,
+      "time": "16:00",
       "title": "Plutino für 4-6 Jahre",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
+      "venue_hall": "Rotunde/Foyer",
+      "program": [
+        "Composer: Work Title"
+      ],
+      "performers": [
+        "Nora Pfahl",
+        "Rymon Zacharei",
+        "Musikerinnen und Musiker der Düsseldorfer Symphoniker",
+        "Katrin Sedlbauer"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/plutino/17684-plutino-fuer-4-6-jahre",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-07-04",
-      "time": null,
+      "time": "11:00",
       "title": "»Die Kleine Hexe« - für Familien",
-      "venue_hall": null,
+      "venue_hall": "Gerhart-Hauptmann-Haus",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Tina El-Fayoumy",
+        "Benjamin Garcia",
+        "Holger Werner",
+        "Alexander Morsey",
+        "Jan Lukas Roßmüller",
+        "Katrin Sedlbauer",
+        "Lorna Bowden",
+        "Claudia Sill",
+        "Isabell Ziegler",
+        "Benjamin Schuster"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "kostenfrei",
       "detail_url": "https://www.tonhalle.de/veranstaltung/tonhalle-geht-aus/20446-die-kleine-hexe-fuer-familien",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-07-04",
-      "time": null,
+      "time": "18:00",
       "title": "Treeline",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
+      "venue_hall": "Rotunde/Foyer",
+      "program": [
+        "Felix Mendelssohn Bartholdy: Ein Sommernachtstraum (Auszüge für Bläserquintett)",
+        "Graham Fitkin: Treeline"
+      ],
+      "performers": [
+        "Graham Fitkin",
+        "Musikerinnen und Musiker der Düsseldorfer Symphoniker",
+        "Performancegruppe ZentrumPlus"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/musikprojekt-gruene-tonhalle/20322-treeline",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-07-05",
-      "time": null,
+      "time": "11:00",
       "title": "Sternschnuppe ab 6 Jahren",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "venue_hall": "Mendelssohn-Saal",
+      "program": [
+        "Mendelssohn: Various Works"
+      ],
+      "performers": [
+        "Düsseldorfer Symphoniker",
+        "Benjamin Richter",
+        "Wes Peden",
+        "Johanna Gorzellik",
+        "Jenny Patschovsky",
+        "Lorna Bowden"
+      ],
+      "conductor": "Corinna Niemeyer",
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/sternschnuppen/18586-sternschnuppe-ab-6-jahren",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-07-09",
-      "time": null,
+      "time": "10:00",
       "title": "»Die Kleine Hexe« - für Kitas / Grundschulen",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
+      "venue_hall": "Freizeiteinrichtung Icklack",
+      "program": [
+        "Ottfried Preußler: Die kleine Hexe"
+      ],
+      "performers": [
+        "Tina El-Fayoumy",
+        "Benjamin Garcia",
+        "Holger Werner",
+        "Alexander Morsey",
+        "Jan Lukas Roßmüller",
+        "Katrin Sedlbauer",
+        "Lorna Bowden",
+        "Claudia Sill",
+        "Isabell Ziegler",
+        "Benjamin Schuster"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "Kostenfrei",
       "detail_url": "https://www.tonhalle.de/veranstaltung/tonhalle-geht-aus/20876-die-kleine-hexe-fuer-kitas-grundschulen",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1466,9 +1695,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1508,6 +1738,26 @@
       "is_classical": true
     },
     {
+      "date": "2026-07-20",
+      "time": null,
+      "title": "The Sound of James Bond",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "The Sound of James Bond"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/komet/20147/sound-james-bond",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
       "date": "2026-07-21",
       "time": null,
       "title": "Für OGS - »Die Kleine Hexe«",
@@ -1523,6 +1773,106 @@
       "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
+      "is_classical": true
+    },
+    {
+      "date": "2026-08-15",
+      "time": null,
+      "title": "The Sound of Zimmer & Williams",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "The Sound of Zimmer & Williams"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/komet/20958/sound-zimmer-williams",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-08-31",
+      "time": null,
+      "title": "Plutino für Kitas - für 2-4 Jahre",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "Plutino für Kitas - für 2-4 Jahre"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/sterntaler/21590-sterntaler-fuer-kitas-fuer-2-4-jahre",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-02",
+      "time": null,
+      "title": "Symphoniker für 2-6 Jahre",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "Symphoniker für 2-6 Jahre"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/sterntaler/21591-sterntaler-fuer-kitas-fuer-2-4-jahre",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-05",
+      "time": null,
+      "title": "Mendelssohn 4",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "Mendelssohn 4"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/sternzeichen/20818-mendelssohn-4",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-08",
+      "time": null,
+      "title": "Brahms 1",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "Brahms 1"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/sternzeichen/20806-brahms-1",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1581,9 +1931,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1602,6 +1953,26 @@
       "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-21",
+      "time": null,
+      "title": "Junior-Sternzeichen: Freundschaft in Tönen",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "Junior-Sternzeichen: Freundschaft in Tönen"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/junior-sternzeichen/21522-junior-sternzeichen-freundschaft-toenen",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1677,33 +2048,6 @@
       "is_classical": true
     },
     {
-      "date": "2026-09-26",
-      "time": "19:30",
-      "title": "Konzert für Menschlichkeit",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Mendelssohn: TBD"
-      ],
-      "performers": [
-        "Kyiv Symphony Orchestra",
-        "Julia Kleiter",
-        "Albrecht Mayer",
-        "Bomsori",
-        "Illia Ovcharenko",
-        "Chor des Städtischen Musikvereins zu Düsseldorf"
-      ],
-      "conductor": "Stephan Frucht",
-      "price": null,
-      "detail_url": "https://www.tonhalle.de/veranstaltung/komet/21710-konzert-fuer-menschlichkeit",
-      "venue": "Tonhalle Düsseldorf",
-      "city": "Düsseldorf",
-      "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
       "date": "2026-09-27",
       "time": null,
       "title": "Flake geht ins Konzert I",
@@ -1742,9 +2086,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1871,6 +2216,26 @@
       "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-12",
+      "time": null,
+      "title": "Eroica",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "Eroica"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/sternzeichen/20812-rutter-magnificat",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2056,6 +2421,26 @@
     {
       "date": "2026-10-22",
       "time": null,
+      "title": "The Sound of Zimmer & Williams",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "The Sound of Zimmer & Williams"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/komet/20958/sound-zimmer-williams",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-22",
+      "time": null,
       "title": "Ferdinand von Schirach",
       "venue_hall": null,
       "program": [],
@@ -2144,6 +2529,26 @@
       "is_classical": true
     },
     {
+      "date": "2026-10-30",
+      "time": null,
+      "title": "Star Wars",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "Star Wars"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.tonhalle.de/veranstaltung/komet/20296/orchestre-national-de-france",
+      "venue": "Tonhalle Düsseldorf",
+      "city": "Düsseldorf",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
       "date": "2026-10-31",
       "time": null,
       "title": "Menschen & Geschichte",
@@ -2207,24 +2612,6 @@
       "conductor": null,
       "price": null,
       "detail_url": "https://www.tonhalle.de/veranstaltung/heinersdorff-sonderkonzerte/20369-curtis-stigers",
-      "venue": "Tonhalle Düsseldorf",
-      "city": "Düsseldorf",
-      "discovery_source": "tonhalle_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
-      "is_classical": true
-    },
-    {
-      "date": "2026-11-08",
-      "time": null,
-      "title": "Junior-Sternzeichen: Freundschaft in Tönen",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.tonhalle.de/veranstaltung/junior-sternzeichen/21522-junior-sternzeichen-freundschaft-toenen",
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
@@ -2304,9 +2691,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2348,9 +2736,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2553,9 +2942,10 @@
       "venue": "Tonhalle Düsseldorf",
       "city": "Düsseldorf",
       "discovery_source": "tonhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2577,11 +2967,11 @@
       "is_classical": false
     }
   ],
-  "total_events": 119,
-  "total_events_visible": 66,
+  "total_events": 132,
+  "total_events_visible": 60,
   "total_events_discovered": 118,
   "total_events_discovered_strict": 118,
-  "total_events_enriched": 53,
+  "total_events_enriched": 79,
   "source": "firecrawl_listing",
   "latest_discovered_event_date": "2026-11-30",
   "latest_event_date": "2026-11-30",
@@ -2590,9 +2980,10 @@
     "preferred_urls": 118,
     "map_urls": 0,
     "html_urls": 224,
-    "new_urls": 109,
+    "new_urls": 102,
     "latest_discovered_date": "2026-11-30",
     "preferred_date_count": 89,
-    "html_urls_used": 0
+    "html_urls_used": 0,
+    "preferred_authoritative": true
   }
 }

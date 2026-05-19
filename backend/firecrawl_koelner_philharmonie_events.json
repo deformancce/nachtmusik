@@ -3,7 +3,7 @@
   "city": "Köln",
   "slug": "koelner_philharmonie",
   "source_url": "https://www.koelner-philharmonie.de/de/konzerte",
-  "scraped_at": "2026-05-19T13:42:57.580723Z",
+  "scraped_at": "2026-05-19T14:16:25.867900Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
@@ -1328,6 +1328,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 90,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1349,6 +1350,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 30,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1376,6 +1378,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1401,6 +1404,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1429,6 +1433,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1454,6 +1459,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1479,6 +1485,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1505,6 +1512,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1523,6 +1531,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1546,6 +1555,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 140,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1605,6 +1615,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 60,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1657,6 +1668,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1676,6 +1688,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 105,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1698,6 +1711,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 105,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1717,6 +1731,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 105,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1739,6 +1754,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1760,6 +1776,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1779,6 +1796,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 105,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1801,6 +1819,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1823,6 +1842,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1845,6 +1865,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1867,6 +1888,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1889,6 +1911,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1911,6 +1934,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1933,6 +1957,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1951,6 +1976,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1974,6 +2000,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 125,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1992,6 +2019,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2013,6 +2041,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 150,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2031,6 +2060,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2049,6 +2079,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2071,6 +2102,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2092,6 +2124,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 135,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2110,6 +2143,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2128,6 +2162,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2146,6 +2181,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2169,6 +2205,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 150,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2193,6 +2230,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 125,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2211,6 +2249,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2231,6 +2270,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2255,6 +2295,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2279,6 +2320,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2307,6 +2349,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 150,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2361,6 +2404,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2382,6 +2426,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 30,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2409,6 +2454,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 90,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2459,6 +2505,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 90,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2485,6 +2532,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2511,6 +2559,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 45,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2541,6 +2590,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2567,6 +2617,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 45,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2601,6 +2652,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 100,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2627,6 +2679,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 45,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2653,6 +2706,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 45,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2682,6 +2736,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2708,6 +2763,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 45,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2734,6 +2790,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 45,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2760,6 +2817,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 45,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2786,6 +2844,7 @@
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2839,6 +2898,7 @@
       "discovery_source": "koelner_listing",
       "discovered_only": false,
       "duration_min": 90,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2847,18 +2907,31 @@
       "date": "2026-09-20",
       "time": "16:00",
       "title": "Rising Stars: Amelio Trio",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Ives: Presto ('TSIAJ' or Medley on the Fence or on the Campus!)",
+        "Beethoven: Allegretto",
+        "Bertelsmeier: vertrautes angezogensein für Violine, Violoncello und Klavier",
+        "Haydn: Trio für Violine, Violoncello und Klavier F-Dur Hob.XV:6",
+        "Winkelman: Neues Werk",
+        "Schumann: Trio für Violine, Violoncello und Klavier Nr. 3 g-Moll op. 110"
+      ],
+      "performers": [
+        "Amelio Trio",
+        "Johanna Schubert",
+        "Merle Geissler",
+        "Philipp Kirchner"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "€ 34,-",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/rising-stars-amelio-trio/9168",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 75,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2890,108 +2963,154 @@
       "date": "2026-09-23",
       "time": "21:00",
       "title": "#round1",
-      "venue_hall": null,
+      "venue_hall": "Kölner Philharmonie",
       "program": [],
       "performers": [],
       "conductor": null,
-      "price": null,
+      "price": "€ 25,-",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/round1/9476",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-09-25",
       "time": "09:00",
       "title": "Konzert mit der Maus | Schulkonzert",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "WDR Sinfonieorchester: Das Konzert mit der Maus"
+      ],
+      "performers": [
+        "Die Maus",
+        "WDR Sinfonieorchester",
+        "Jesko Sirvend",
+        "Johannes Büchs"
+      ],
+      "conductor": "Jana Forkel",
+      "price": "kostenfreies Angebot für Schulklassen",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/konzert-mit-der-maus-schulkonzert/9253",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 90,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-09-25",
       "time": "11:30",
       "title": "Konzert mit der Maus | Schulkonzert",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Das Konzert mit der Maus"
+      ],
+      "performers": [
+        "WDR Sinfonieorchester",
+        "Jesko Sirvend",
+        "Johannes Büchs"
+      ],
+      "conductor": "Jana Forkel",
+      "price": "kostenfreies Angebot für Schulklassen",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/konzert-mit-der-maus-schulkonzert/9254",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 75,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-09-26",
       "time": "11:00",
       "title": "Das Konzert mit der Maus | Familienkonzert",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Rimski-Korsakow: Das musikalische Märchen aus 1001 Nacht"
+      ],
+      "performers": [
+        "WDR Sinfonieorchester",
+        "Jesko Sirvend",
+        "Johannes Büchs"
+      ],
+      "conductor": "Jana Forkel",
+      "price": "€ 15,- bis 17,-",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/das-konzert-mit-der-maus-familienkonzert/9255",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-09-26",
       "time": "14:00",
       "title": "Das Konzert mit der Maus | Familienkonzert",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Rimskij-Korsakow: Ein musikalisches Märchen aus 1001 Nacht",
+        "Rimskij-Korsakow: Der schnellste Hummelflug der Welt"
+      ],
+      "performers": [
+        "WDR Sinfonieorchester",
+        "Jesko Sirvend",
+        "Johannes Büchs"
+      ],
+      "conductor": "Jana Forkel",
+      "price": "€ 15,- bis 17,-",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/das-konzert-mit-der-maus-familienkonzert/9256",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 75,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-09-26",
       "time": "20:00",
       "title": "Female Voices of Resilience",
-      "venue_hall": null,
+      "venue_hall": "Kölner Philharmonie",
       "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "performers": [
+        "Gürzenich-Orchester Köln",
+        "Hani Mojtahedy",
+        "Sanam Maroufkhani",
+        "Maliheh Moradi",
+        "Mina Deris",
+        "Ghazaal Ansarirad",
+        "Samin Ghorbani",
+        "Hana Kamkar",
+        "Foroogh Fazli",
+        "Hura Mirshekari",
+        "Avin Ahmadi",
+        "Mehrnoosh Zolfaghari",
+        "Sara Hasti",
+        "Inner Unity Ensemble",
+        "Juya Shin",
+        "Yalda Yazdani"
+      ],
+      "conductor": "Juya Shin",
+      "price": "€ 30,-",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/female-voices-of-resilience/9346",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -3024,18 +3143,24 @@
       "date": "2026-09-28",
       "time": "20:00",
       "title": "Kanze Noh Theater",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Hagoromo: Nō-Drama",
+        "Kaki Yamabushi: Kyōgen-Komödie",
+        "Kokaji: Nō-Drama in verkürzter Form"
+      ],
+      "performers": [
+        "Kanze Noh Theater"
+      ],
+      "conductor": "Kiyokazu Kanze",
+      "price": "€ 34,-",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/kanze-noh-theater/9431",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -3101,36 +3226,49 @@
       "date": "2026-10-01",
       "time": "19:00",
       "title": "Anna Meredith & B'Rock",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Meredith: ANNO (Four Seasons)"
+      ],
+      "performers": [
+        "Anna Meredith",
+        "B'Rock"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "€ 34,-",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/anna-meredith-brock/9196",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 90,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-10-02",
       "time": "20:00",
       "title": "Gstaad Festival Orchestra",
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Elgar: Konzert für Violine und Orchester h-Moll op. 61",
+        "Beethoven: Sinfonie Nr. 5 c-Moll op. 67"
+      ],
+      "performers": [
+        "Daniel Hope",
+        "Gstaad Festival Orchestra"
+      ],
+      "conductor": "Jaap van Zweden",
+      "price": "€ 32,- bis 118,-",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/gstaad-festival-orchestra/9221",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
       "discovery_source": "koelner_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 120,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -4474,7 +4612,7 @@
   "total_events_visible": 193,
   "total_events_discovered": 193,
   "total_events_discovered_strict": 193,
-  "total_events_enriched": 131,
+  "total_events_enriched": 141,
   "source": "koelner_listing",
   "latest_discovered_event_date": "2026-11-30",
   "latest_event_date": "2026-11-30",
