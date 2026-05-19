@@ -1928,6 +1928,14 @@ def _expand_via_map(
     stats["map_urls"] = len(map_urls)
     html_urls = _extract_event_urls_from_html(html_fallback or "", venue)
     stats["html_urls"] = len(html_urls)
+    raw_html_urls = html_urls
+    if _slug(venue["name"]) == "tonhalle_duesseldorf" and preferred_event_by_url:
+        # Tonhalle exposes many extra /veranstaltung/ links without reliable
+        # card dates once the full grid is rendered. The local card parser above
+        # gives the bounded, dated event set; do not append naked URL stubs.
+        html_urls = []
+        stats["html_urls"] = len(raw_html_urls)
+        stats["html_urls_used"] = 0
 
     # Preferred/listing URLs first: they are the venue's visible programme order.
     # map() often sees archives, categories or overly broad URL families.
