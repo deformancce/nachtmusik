@@ -1374,6 +1374,12 @@ def _discover_essen_monthly_urls(
             )
             if dates and dates[-1] >= horizon_date:
                 return out, dates, event_stubs
+            if dates and _is_near_horizon(dates[-1], horizon_date):
+                print(
+                    f"    [essen-days] stopping near horizon ({dates[-1]} vs {horizon_date})",
+                    flush=True,
+                )
+                return out, dates, event_stubs
 
     for month in _iter_month_starts(_today_date(), horizon):
         page_url = (
@@ -1931,6 +1937,14 @@ def _latest_event_date(events: list[dict]) -> str | None:
         if isinstance(e, dict) and _parse_iso_date(e.get("date"))
     )
     return dates[-1] if dates else None
+
+
+def _is_near_horizon(event_date: str | None, horizon_date: str, grace_days: int = 1) -> bool:
+    latest = _parse_iso_date(event_date)
+    horizon = _parse_iso_date(horizon_date)
+    if not latest or not horizon:
+        return False
+    return 0 <= (horizon - latest).days <= grace_days
 
 
 def _add_coverage_fields(payload: dict, events: list[dict], horizon_date: str) -> None:
