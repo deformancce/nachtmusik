@@ -596,6 +596,95 @@ def _liederhalle_actions() -> list[dict]:
     ]
 
 
+_TONHALLE_SCROLL_JS = r"""
+async () => {
+  const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+  const log = [];
+
+  const cookieRe = /^(alle\s+akzeptieren|akzeptieren|alle\s+cookies\s+akzeptieren|einverstanden|zustimmen|alles\s+erlauben|alle\s+aktivieren|accept(?:\s+all)?|agree|got\s+it)$/i;
+  for (const el of document.querySelectorAll('button, a, [role="button"], input[type="button"]')) {
+    const t = (el.textContent || el.value || '').trim();
+    if (!t || t.length > 60) continue;
+    if (cookieRe.test(t)) {
+      try { el.click(); log.push('cookie:' + t); break; } catch (e) {}
+    }
+  }
+  await sleep(900);
+
+  // Eye-Able overlays can cover the programme grid. Hide only assistant UI;
+  // keep event images because Tonhalle's lazy grid uses them as card anchors.
+  const style = document.createElement('style');
+  style.textContent = `
+    [class*="eye"], [id*="eye"], [class*="Eye"], [id*="Eye"],
+    [class*="able"], [id*="able"], [class*="Able"], [id*="Able"],
+    iframe[src*="eye"], iframe[src*="able"] {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  `;
+  document.head.appendChild(style);
+
+  const loadMoreRe = /mehr\s+(laden|anzeigen|veranstaltungen|events)|weitere\s+(veranstaltungen|events)|show\s+more|load\s+more/i;
+  let lastLinks = 0;
+  let stable = 0;
+  let clicks = 0;
+  let rounds = 0;
+
+  // Tonhalle fades cards in as the viewport passes them. Jumping straight to
+  // document.body.scrollHeight can leave later cards unloaded, so traverse the
+  // page in viewport-sized steps and only stop after link count stabilizes.
+  for (let i = 0; i < 90; i++) {
+    const y = Math.min(
+      document.body.scrollHeight - window.innerHeight,
+      Math.max(0, Math.floor(i * window.innerHeight * 0.75))
+    );
+    window.scrollTo(0, y);
+    await sleep(650);
+
+    for (const el of document.querySelectorAll('a, button, [role="button"]')) {
+      if (el.offsetParent === null) continue;
+      const t = (el.textContent || '').replace(/\s+/g, ' ').trim();
+      if (loadMoreRe.test(t)) {
+        try {
+          el.scrollIntoView({block: 'center'});
+          el.click();
+          clicks++;
+          await sleep(1100);
+          break;
+        } catch (e) {}
+      }
+    }
+
+    const links = Array.from(document.querySelectorAll('a[href*="/veranstaltung/"]')).length;
+    if (links <= lastLinks && y >= document.body.scrollHeight - window.innerHeight - 20) {
+      stable++;
+    } else {
+      stable = 0;
+    }
+    lastLinks = Math.max(lastLinks, links);
+    rounds = i + 1;
+    if (stable >= 8) break;
+  }
+
+  window.scrollTo(0, document.body.scrollHeight);
+  await sleep(1200);
+  log.push('links:' + Array.from(document.querySelectorAll('a[href*="/veranstaltung/"]')).length);
+  log.push('rounds:' + rounds);
+  log.push('clicks:' + clicks);
+  log.push('height:' + document.body.scrollHeight);
+  return log.join(' | ');
+}
+"""
+
+
+def _tonhalle_actions() -> list[dict]:
+    return [
+        {"type": "wait", "milliseconds": 2000},
+        {"type": "executeJavascript", "script": _TONHALLE_SCROLL_JS},
+        {"type": "wait", "milliseconds": 3000},
+    ]
+
+
 VENUE_OVERRIDES: dict[str, dict] = {
     "berliner_philharmonie": {
         "actions": _bp_actions,
@@ -673,9 +762,8 @@ VENUE_OVERRIDES: dict[str, dict] = {
     },
     "tonhalle_duesseldorf": {
         # Month-grouped cards; details at /veranstaltung/<series>/<id>-<slug>.
-        # Do not hide media here: that made the lazy grid stop after ~10 links.
-        # A plain scroll loop previously exposed 200+ anchors in the rendered DOM.
-        "actions": lambda: _cookie_and_load_more_actions(max_rounds=60, settle_ms=3000),
+        # Traverse progressively; jumping to the bottom can leave lazy cards unloaded.
+        "actions": _tonhalle_actions,
         "listing_target": 150,
         "force_url_expand": True,
     },
@@ -831,6 +919,7 @@ _URL_RE = re.compile(r"https?://[^\s\"'<>)\]]+")
 _MARKDOWN_LINK_RE = re.compile(r"\]\(([^)]+)\)")
 _ISO_DATE_RE = re.compile(r"\b(20\d{2})-(\d{2})-(\d{2})\b")
 _DE_DATE_RE = re.compile(r"\b(\d{1,2})\.(\d{1,2})\.(20\d{2})\b")
+_DE_SHORT_DATE_RE = re.compile(r"\b(\d{1,2})\.(\d{1,2})\.(\d{2})\b")
 _TIME_RE = re.compile(r"(?:Uhrzeit\s*)?([0-2]?\d:[0-5]\d)\s*Uhr\b")
 
 
@@ -888,6 +977,17 @@ def _parse_de_date(value: str | None) -> str | None:
         return None
 
 
+def _parse_de_short_date(value: str | None) -> str | None:
+    match = _DE_SHORT_DATE_RE.search(value or "")
+    if not match:
+        return None
+    day, month, year = match.groups()
+    try:
+        return date(2000 + int(year), int(month), int(day)).isoformat()
+    except ValueError:
+        return None
+
+
 def _extract_liederhalle_listing_events(
     rendered: str,
     venue: dict,
@@ -939,6 +1039,72 @@ def _extract_liederhalle_listing_events(
             "venue": venue["name"],
             "city": venue["city"],
             "discovery_source": "liederhalle_listing",
+            "discovered_only": True,
+        }
+        _mark_enrichment_status(ev)
+        seen.add(detail_url)
+        out.append(ev)
+    return out
+
+
+def _extract_tonhalle_listing_events(
+    rendered: str,
+    venue: dict,
+    horizon_date: str,
+) -> list[dict]:
+    """Parse Tonhalle cards from Firecrawl markdown.
+
+    Tonhalle's calendar cards are stable in markdown:
+    thumbnail image, title, one or more short German dates, then repeated
+    event links. Parsing these cards locally gives cheap, dated stubs and
+    avoids relying on the LLM to return all 100+ visible cards.
+    """
+    if not rendered:
+        return []
+
+    out: list[dict] = []
+    seen: set[str] = set()
+    for block in re.split(r"(?m)^!\[\]\([^\n]+\)\s*", rendered)[1:]:
+        urls = [_clean_url(url) for url in _extract_event_urls_from_html(block, venue)]
+        urls = [url for i, url in enumerate(urls) if url and url not in urls[:i]]
+        if not urls:
+            continue
+
+        title: str | None = None
+        for line in block.splitlines()[:10]:
+            candidate = _plain_markdown_text(line)
+            if not candidate:
+                continue
+            if candidate.lower() == "mehr" or candidate.startswith("!"):
+                continue
+            if _DE_SHORT_DATE_RE.search(candidate) or _DE_DATE_RE.search(candidate):
+                continue
+            title = candidate
+            break
+        if not title or _is_canceled(title):
+            continue
+
+        event_date = _parse_de_short_date(block) or _parse_de_date(block)
+        if not event_date or not _is_within_scrape_window(event_date, horizon_date):
+            continue
+
+        detail_url = urls[0]
+        if detail_url in seen:
+            continue
+
+        ev = {
+            "date": event_date,
+            "time": None,
+            "title": title,
+            "venue_hall": None,
+            "program": [],
+            "performers": [],
+            "conductor": None,
+            "price": None,
+            "detail_url": detail_url,
+            "venue": venue["name"],
+            "city": venue["city"],
+            "discovery_source": "tonhalle_listing",
             "discovered_only": True,
         }
         _mark_enrichment_status(ev)
@@ -1262,7 +1428,21 @@ def _discover_preferred_event_urls(
     urls: list[str] = []
     event_stubs: list[dict] = []
     stats: dict = {"latest_date": None, "date_count": 0}
-    if html_fallback:
+    if html_fallback and slug == "tonhalle_duesseldorf":
+        tonhalle_events = _extract_tonhalle_listing_events(
+            html_fallback, venue, horizon_date or _scrape_horizon_date()
+        )
+        event_stubs.extend(tonhalle_events)
+        urls.extend(ev["detail_url"] for ev in tonhalle_events if ev.get("detail_url"))
+        tonhalle_dates = sorted(
+            {ev["date"] for ev in tonhalle_events if isinstance(ev.get("date"), str)}
+        )
+        if tonhalle_dates:
+            stats["latest_date"] = tonhalle_dates[-1]
+            stats["date_count"] = len(tonhalle_dates)
+        if not tonhalle_events:
+            urls.extend(_extract_event_urls_from_html(html_fallback, venue))
+    elif html_fallback:
         urls.extend(_extract_event_urls_from_html(html_fallback, venue))
     if slug == "glocke_bremen":
         urls.extend(_discover_glocke_paginated_urls(venue))
@@ -1362,6 +1542,13 @@ def _extract_dates_from_text(text: str, horizon_date: str) -> list[str]:
     for day, month, year in _DE_DATE_RE.findall(text or ""):
         try:
             parsed = date(int(year), int(month), int(day))
+        except ValueError:
+            continue
+        if today <= parsed <= horizon:
+            out.add(parsed.isoformat())
+    for day, month, year in _DE_SHORT_DATE_RE.findall(text or ""):
+        try:
+            parsed = date(2000 + int(year), int(month), int(day))
         except ValueError:
             continue
         if today <= parsed <= horizon:
