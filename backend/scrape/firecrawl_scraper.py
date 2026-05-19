@@ -669,6 +669,7 @@ VENUE_OVERRIDES: dict[str, dict] = {
         "actions": _isarphi_actions,
         "listing_target": 150,
         "force_url_expand": True,
+        "continue_url_discovery_on_hallucination": True,
     },
     "koelner_philharmonie": {
         # Events fade in while scrolling; HTML anchors are the best source.
@@ -2905,23 +2906,31 @@ def _scrape_one(
     print(f"    listing: {len(events)} upcoming events (total_visible={total_visible})", flush=True)
 
     # Hallucination guard — refuse to save fabricated output
+    venue_override = VENUE_OVERRIDES.get(_slug(venue["name"]), {})
     halluc = _check_hallucination(events, venue)
     if halluc:
         print(f"    HALLUCINATION_SUSPECTED: {halluc}", flush=True)
-        payload["error"] = f"hallucination suspected: {halluc}"
-        payload["events"] = []
-        payload["total_events"] = 0
-        payload["total_events_visible"] = total_visible
-        payload["total_events_discovered"] = 0
-        _add_coverage_fields(payload, [], horizon_date)
-        return payload
+        if venue_override.get("continue_url_discovery_on_hallucination") and rendered_listing:
+            print(
+                "    discarding hallucinated listing events; continuing with URL discovery",
+                flush=True,
+            )
+            events = []
+            source = "url_discovery_after_hallucination"
+        else:
+            payload["error"] = f"hallucination suspected: {halluc}"
+            payload["events"] = []
+            payload["total_events"] = 0
+            payload["total_events_visible"] = total_visible
+            payload["total_events_discovered"] = 0
+            _add_coverage_fields(payload, [], horizon_date)
+            return payload
 
     # ── Phase 1c: URL expansion — discover beyond listing without enrichment ──
     map_stats: dict = {}
     new_from_map: list[dict] = []
     total_discovered_loose: int | None = total_visible
     total_discovered_strict: int | None = total_visible
-    venue_override = VENUE_OVERRIDES.get(_slug(venue["name"]), {})
     should_expand_urls = expand_via_map or bool(venue_override.get("force_url_expand"))
     if should_expand_urls and source not in ("jsonld", "jsonld_firecrawl_html"):
         # Only expand when listing was the source (JSON-LD is already complete).
