@@ -1953,6 +1953,21 @@ def _probe_candidate_urls(venue: dict, horizon_date: str) -> list[str]:
             f"{base}?tx_bbevents_events%5Barguments%5D%5BcurrentPage%5D={page}"
             for page in range(2, 13)
         )
+    elif slug == "elbphilharmonie_hamburg":
+        urls.extend([
+            "https://www.elbphilharmonie.de/de/programm/",
+            "https://www.elbphilharmonie.de/de/programm/LHHH/TICKETS/",
+        ])
+    elif slug == "gewandhaus_leipzig":
+        urls.extend([
+            "https://www.gewandhausorchester.de/spielplan/",
+            "https://www.gewandhausorchester.de/veranstaltungen/",
+        ])
+    elif slug == "isarphilharmonie_muenchen":
+        urls.extend([
+            "https://www.gasteig.de/veranstaltungen/?room=isarphilharmonie",
+            "https://www.mphil.de/kalender",
+        ])
 
     seen: set[str] = set()
     deduped: list[str] = []
