@@ -34,6 +34,8 @@ NOISE_RATIO_WARN = 5.0  # discovered_loose / max(visible, extracted) above this 
 MAP_ABSOLUTE_WARN = 250  # loose map count above this → flag regardless of ratio
 CLASSICAL_PROGRAM_WARN = 0.60
 NONCLASSICAL_ENRICH_WARN = 0.20
+HORIZON_GRACE_DAYS = 1
+UNDATED_RATIO_WARN = 0.20
 
 
 @dataclass
@@ -199,6 +201,29 @@ def _optional_str(value: Any) -> str | None:
     return value
 
 
+def _parse_iso_date(value: str | None):
+    if not value:
+        return None
+    try:
+        return datetime.strptime(value[:10], "%Y-%m-%d").date()
+    except (TypeError, ValueError):
+        return None
+
+
+def _covers_horizon_with_grace(
+    latest: str | None,
+    horizon: str | None,
+    grace_days: int = HORIZON_GRACE_DAYS,
+) -> bool | None:
+    if not horizon:
+        return None
+    latest_date = _parse_iso_date(latest)
+    horizon_date = _parse_iso_date(horizon)
+    if not latest_date or not horizon_date:
+        return False
+    return latest_date >= horizon_date or 0 <= (horizon_date - latest_date).days <= grace_days
+
+
 def _analyze_file(path: Path) -> VenueCoverage:
     data: dict[str, Any] = json.loads(path.read_text(encoding="utf-8"))
     slug = data.get("slug") or _slug_from_path(path)
@@ -251,21 +276,21 @@ def _analyze_file(path: Path) -> VenueCoverage:
         latest_discovered_event_date = latest_event_date
 
     scrape_horizon_date = _optional_str(data.get("scrape_horizon_date"))
-    covers_horizon = data.get("covers_horizon")
-    if not isinstance(covers_horizon, bool):
-        coverage_latest = max(
-            [d for d in (latest_event_date, latest_discovered_event_date) if isinstance(d, str)],
-            default=None,
-        )
-        covers_horizon = (
-            bool(coverage_latest and scrape_horizon_date and coverage_latest >= scrape_horizon_date)
-            if scrape_horizon_date else None
-        )
+    coverage_latest = max(
+        [d for d in (latest_event_date, latest_discovered_event_date) if isinstance(d, str)],
+        default=None,
+    )
+    covers_horizon = _covers_horizon_with_grace(coverage_latest, scrape_horizon_date)
 
     loose = data.get("total_events_discovered")
     strict = data.get("total_events_discovered_strict")
     visible = data.get("total_events_visible")
     ref = _load_reference_total(slug)
+    map_stats = data.get("map_expand_stats")
+    preferred_authoritative = (
+        isinstance(map_stats, dict)
+        and map_stats.get("preferred_authoritative") is True
+    )
 
     flags: list[str] = []
     if data.get("error"):
@@ -274,8 +299,12 @@ def _analyze_file(path: Path) -> VenueCoverage:
         flags.append("NO_EVENTS")
     if with_program < extracted:
         flags.append("MISSING_PROGRAM")
-    if with_date < extracted:
-        flags.append("MISSING_DATE")
+    missing_dates = extracted - with_date
+    if missing_dates:
+        missing_ratio = missing_dates / max(extracted, 1)
+        flags.append(f"MISSING_DATE({missing_dates})")
+        if missing_ratio > UNDATED_RATIO_WARN:
+            flags.append(f"HIGH_UNDATED({missing_ratio:.0%})")
     if covers_horizon is False:
         flags.append("SHORT_HORIZON")
 
@@ -307,10 +336,11 @@ def _analyze_file(path: Path) -> VenueCoverage:
     )
 
     ratio = cov.noise_ratio_loose
-    if cov.discovered_loose is not None and cov.discovered_loose >= MAP_ABSOLUTE_WARN:
-        flags.append(f"MAP_OVERCOUNT({cov.discovered_loose})")
-    elif ratio is not None and ratio >= NOISE_RATIO_WARN:
-        flags.append(f"HIGH_MAP_NOISE×{ratio:.0f}")
+    if not preferred_authoritative:
+        if cov.discovered_loose is not None and cov.discovered_loose >= MAP_ABSOLUTE_WARN:
+            flags.append(f"MAP_OVERCOUNT({cov.discovered_loose})")
+        elif ratio is not None and ratio >= NOISE_RATIO_WARN:
+            flags.append(f"HIGH_MAP_NOISE×{ratio:.0f}")
 
     if ref and cov.discovered_strict is not None:
         drift = abs(cov.discovered_strict - ref) / max(ref, 1)

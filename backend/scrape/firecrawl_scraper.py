@@ -2073,6 +2073,14 @@ def _is_near_horizon(event_date: str | None, horizon_date: str, grace_days: int 
     return 0 <= (horizon - latest).days <= grace_days
 
 
+def _covers_horizon_with_grace(event_date: str | None, horizon_date: str, grace_days: int = 1) -> bool:
+    latest = _parse_iso_date(event_date)
+    horizon = _parse_iso_date(horizon_date)
+    if not latest or not horizon:
+        return False
+    return latest >= horizon or 0 <= (horizon - latest).days <= grace_days
+
+
 def _add_coverage_fields(payload: dict, events: list[dict], horizon_date: str) -> None:
     latest = _latest_event_date(events)
     discovered_latest = payload.get("latest_discovered_event_date")
@@ -2087,7 +2095,30 @@ def _add_coverage_fields(payload: dict, events: list[dict], horizon_date: str) -
     payload["scrape_horizon_date"] = horizon_date
     payload["latest_event_date"] = latest
     payload["latest_discovered_event_date"] = discovered_latest
-    payload["covers_horizon"] = bool(coverage_latest and coverage_latest >= horizon_date)
+    payload["covers_horizon"] = _covers_horizon_with_grace(coverage_latest, horizon_date)
+    payload["horizon_grace_days"] = 1
+
+    total = len(events)
+    dated = sum(
+        1 for event in events
+        if isinstance(event, dict) and _parse_iso_date(event.get("date"))
+    )
+    missing_dates = total - dated
+    payload["events_with_date"] = dated
+    payload["events_missing_date"] = missing_dates
+    payload["date_coverage_rate"] = round(dated / total, 4) if total else None
+
+    warnings: list[str] = []
+    if coverage_latest and not payload["covers_horizon"]:
+        warnings.append(f"SHORT_HORIZON(latest={coverage_latest}, horizon={horizon_date})")
+    elif not coverage_latest and total:
+        warnings.append(f"NO_DATED_EVENTS(horizon={horizon_date})")
+    if total and missing_dates / total > 0.20:
+        warnings.append(f"HIGH_UNDATED({missing_dates}/{total})")
+    if warnings:
+        payload["coverage_warning"] = "; ".join(warnings)
+    else:
+        payload.pop("coverage_warning", None)
 
 
 _CANCELED_PREFIXES = ("abgesagt:", "abgesagt ", "abgesagt-",
