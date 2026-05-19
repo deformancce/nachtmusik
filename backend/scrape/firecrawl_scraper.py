@@ -604,6 +604,15 @@ def _tonhalle_actions() -> list[dict]:
     )
 
 
+def _koelner_actions() -> list[dict]:
+    # Kölner Philharmonie fades cards into the DOM while the viewport moves.
+    # Native Firecrawl scroll actions preserve that intersection-observer flow
+    # better than the generic executeJavascript loop.
+    return [{"type": "wait", "milliseconds": 2500}] + _scroll_actions(
+        n=24, amount=2200, wait_ms=1000
+    )
+
+
 VENUE_OVERRIDES: dict[str, dict] = {
     "berliner_philharmonie": {
         "actions": _bp_actions,
@@ -662,7 +671,7 @@ VENUE_OVERRIDES: dict[str, dict] = {
     },
     "koelner_philharmonie": {
         # Events fade in while scrolling; HTML anchors are the best source.
-        "actions": lambda: _cookie_and_load_more_actions(max_rounds=35, settle_ms=2500),
+        "actions": _koelner_actions,
         "listing_target": 150,
         "force_url_expand": True,
     },
