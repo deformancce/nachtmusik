@@ -1098,6 +1098,39 @@ def _extract_essen_listing_events(
     return out
 
 
+def _extract_essen_schedule_candidate_urls(
+    rendered: str,
+    horizon_date: str,
+) -> list[str]:
+    """Find Essen calendar day URLs that can reveal more lazy-loaded cards."""
+    today = _today_date()
+    horizon = _parse_iso_date(horizon_date) or today
+    by_date: dict[str, set[str]] = {}
+    for match in re.finditer(
+        r"https://www\.theater-essen\.de/programm/kalender/"
+        r"(20\d{2}-\d{2})/?\?scheduleScrollTo=(20\d{2}-\d{2}-\d{2})",
+        rendered or "",
+    ):
+        month, day = match.groups()
+        parsed = _parse_iso_date(day)
+        if not parsed or parsed < today or parsed > horizon:
+            continue
+        urls = by_date.setdefault(day, set())
+        urls.add(
+            "https://www.theater-essen.de/programm/kalender/"
+            f"{month}/philharmonie-essen?scheduleScrollTo={day}"
+        )
+        if os.getenv("ESSEN_INCLUDE_GENERIC_DAY_URLS") == "1":
+            urls.add(match.group(0))
+
+    out: list[str] = []
+    for day in sorted(by_date):
+        # Try the venue-filtered URL before the generic day URL to reduce
+        # unrelated Aalto/Schauspiel cards.
+        out.extend(sorted(by_date[day], key=lambda url: ("philharmonie-essen" not in url, url)))
+    return out
+
+
 def _discover_glocke_paginated_urls(venue: dict, max_pages: int = 20) -> list[str]:
     """Discover Glocke Bremen event URLs from its WordPress pagination.
 
@@ -1285,6 +1318,63 @@ def _discover_essen_monthly_urls(
         if dates and dates[-1] >= horizon_date:
             return out, dates, event_stubs
 
+        candidate_urls = _extract_essen_schedule_candidate_urls(rendered, horizon_date)
+        latest_known = dates[-1] if dates else None
+        if latest_known:
+            filtered_candidates: list[str] = []
+            for url in candidate_urls:
+                match = re.search(r"scheduleScrollTo=(20\d{2}-\d{2}-\d{2})", url)
+                if match and match.group(1) > latest_known:
+                    filtered_candidates.append(url)
+            candidate_urls = filtered_candidates
+        max_candidates = _env_int("ESSEN_SCHEDULE_CANDIDATES", 18)
+        candidate_urls = candidate_urls[:max_candidates]
+        if candidate_urls:
+            print(
+                f"    [essen-days] probing {len(candidate_urls)} calendar day URL(s)",
+                flush=True,
+            )
+        for idx, day_url in enumerate(candidate_urls, 1):
+            try:
+                result = app.scrape(
+                    day_url,
+                    formats=["markdown", "html"],
+                    headers=_DE_HEADERS,
+                    actions=_cookie_and_load_more_actions(max_rounds=12, settle_ms=1500),
+                )
+            except TypeError:
+                result = app.scrape(
+                    day_url,
+                    formats=["markdown", "html"],
+                    actions=_cookie_and_load_more_actions(max_rounds=12, settle_ms=1500),
+                )
+            except Exception as exc:
+                print(f"    [essen-days] render failed {idx}/{len(candidate_urls)}: {exc}", flush=True)
+                continue
+
+            day_rendered = "\n".join([_extract_html(result), _extract_markdown(result)])
+            day_events = _extract_essen_listing_events(day_rendered, venue, horizon_date)
+            new_count = 0
+            for ev in day_events:
+                clean = _clean_url(ev.get("detail_url"))
+                if not clean or clean in seen:
+                    continue
+                if not is_strict_event_url(clean, venue["url"], slug):
+                    continue
+                seen.add(clean)
+                out.append(clean)
+                event_stubs.append(ev)
+                new_count += 1
+            dates = sorted({ev["date"] for ev in event_stubs if isinstance(ev.get("date"), str)})
+            day_match = re.search(r"scheduleScrollTo=(20\d{2}-\d{2}-\d{2})", day_url)
+            print(
+                f"    [essen-days] {day_match.group(1) if day_match else idx}: "
+                f"+{new_count} cards latest={dates[-1] if dates else None}",
+                flush=True,
+            )
+            if dates and dates[-1] >= horizon_date:
+                return out, dates, event_stubs
+
     for month in _iter_month_starts(_today_date(), horizon):
         page_url = (
             "https://www.theater-essen.de/programm/kalender/"
@@ -1301,6 +1391,7 @@ def _discover_essen_monthly_urls(
             print(f"    [essen-months] requests failed {month:%Y-%m}: {exc}", flush=True)
 
         if not month_urls:
+            added_from_events = 0
             try:
                 result = app.scrape(
                     page_url,
@@ -1319,7 +1410,24 @@ def _discover_essen_monthly_urls(
                 result = None
             if result is not None:
                 rendered = "\n".join([_extract_html(result), _extract_markdown(result)])
-                month_urls = _extract_event_urls_from_html(rendered, venue)
+                month_events = _extract_essen_listing_events(rendered, venue, horizon_date)
+                if month_events:
+                    month_urls = [ev["detail_url"] for ev in month_events if ev.get("detail_url")]
+                    for ev in month_events:
+                        clean = _clean_url(ev.get("detail_url"))
+                        if clean and clean not in seen and is_strict_event_url(clean, venue["url"], slug):
+                            seen.add(clean)
+                            out.append(clean)
+                            event_stubs.append(ev)
+                            added_from_events += 1
+                    month_urls = []
+                    if added_from_events:
+                        print(
+                            f"    [essen-months] {month:%Y-%m}: +{added_from_events} cards",
+                            flush=True,
+                        )
+                else:
+                    month_urls = _extract_event_urls_from_html(rendered, venue)
 
         new_count = 0
         for url in month_urls:
