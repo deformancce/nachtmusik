@@ -2167,6 +2167,12 @@ def _expand_via_map(
         stats["preferred_date_count"] = preferred_stats.get("date_count", 0)
     if preferred_urls:
         print(f"    [map-expand] preferred discovery: {len(preferred_urls)} URLs", flush=True)
+    preferred_is_authoritative = bool(
+        preferred_event_by_url
+        and preferred_stats.get("date_count", 0) >= 30
+        and horizon_date
+        and _is_near_horizon(preferred_stats.get("latest_date"), horizon_date, grace_days=1)
+    )
 
     loose_urls: list[str] = []
     strict_urls: list[str] = []
@@ -2177,13 +2183,17 @@ def _expand_via_map(
     html_urls = _extract_event_urls_from_html(html_fallback or "", venue)
     stats["html_urls"] = len(html_urls)
     raw_html_urls = html_urls
-    if _slug(venue["name"]) == "tonhalle_duesseldorf" and preferred_event_by_url:
-        # Tonhalle exposes many extra /veranstaltung/ links without reliable
-        # card dates once the full grid is rendered. The local card parser above
-        # gives the bounded, dated event set; do not append naked URL stubs.
+    if preferred_is_authoritative:
+        # If a structured card parser already found a substantial dated set up
+        # to the configured horizon, don't append naked URL stubs. Raw anchor
+        # mining often sees future-season/hidden links without dates, which
+        # bloats output and wastes enrichment budget.
         html_urls = []
+        strict_urls = []
+        loose_urls = []
         stats["html_urls"] = len(raw_html_urls)
         stats["html_urls_used"] = 0
+        stats["preferred_authoritative"] = True
 
     # Preferred/listing URLs first: they are the venue's visible programme order.
     # map() often sees archives, categories or overly broad URL families.
