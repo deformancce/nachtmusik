@@ -862,6 +862,7 @@ def _extract_event_urls_from_html(html: str, venue: dict) -> list[str]:
     candidates.extend(match.group(0).strip() for match in _URL_RE.finditer(html))
 
     for raw in candidates:
+        raw = raw.split()[0].strip()
         if not raw or raw.startswith(("javascript:", "mailto:", "tel:", "#")):
             continue
         absolute = urljoin(base_url, raw)
@@ -1024,6 +1025,73 @@ def _extract_tonhalle_listing_events(
             "venue": venue["name"],
             "city": venue["city"],
             "discovery_source": "tonhalle_listing",
+            "discovered_only": True,
+        }
+        _mark_enrichment_status(ev)
+        seen.add(detail_url)
+        out.append(ev)
+    return out
+
+
+def _extract_koelner_listing_events(
+    rendered: str,
+    venue: dict,
+    horizon_date: str,
+) -> list[dict]:
+    """Parse Kölner Philharmonie cards from rendered markdown."""
+    if not rendered:
+        return []
+
+    card_re = re.compile(
+        r"(?ms)^-\s+(?:Mo|Di|Mi|Do|Fr|Sa|So)\s+"
+        r"(\d{2}\.\d{2}\.20\d{2})\s+"
+        r"([0-2]?\d:[0-5]\d)\s+"
+        r"(.*?)(?=^-\s+(?:Mo|Di|Mi|Do|Fr|Sa|So)\s+\d{2}\.\d{2}\.20\d{2}|\Z)"
+    )
+    out: list[dict] = []
+    seen: set[str] = set()
+    slug = _slug(venue["name"])
+    for match in card_re.finditer(rendered):
+        event_date = _parse_de_date(match.group(1))
+        if not event_date or not _is_within_scrape_window(event_date, horizon_date):
+            continue
+        block = match.group(3)
+        urls = [_clean_url(url) for url in _extract_event_urls_from_html(block, venue)]
+        detail_url = next(
+            (
+                url for url in urls
+                if url and url not in seen and is_strict_event_url(url, venue["url"], slug)
+            ),
+            "",
+        )
+        if not detail_url:
+            continue
+
+        title = None
+        for line in block.splitlines():
+            stripped = line.strip()
+            if not stripped or stripped.startswith("[!"):
+                continue
+            if detail_url in stripped:
+                title = _plain_markdown_text(stripped)
+                break
+        title = title or _title_from_url(detail_url)
+        if not title or _is_canceled(title):
+            continue
+
+        ev = {
+            "date": event_date,
+            "time": match.group(2),
+            "title": title,
+            "venue_hall": None,
+            "program": [],
+            "performers": [],
+            "conductor": None,
+            "price": None,
+            "detail_url": detail_url,
+            "venue": venue["name"],
+            "city": venue["city"],
+            "discovery_source": "koelner_listing",
             "discovered_only": True,
         }
         _mark_enrichment_status(ev)
@@ -1474,6 +1542,20 @@ def _discover_preferred_event_urls(
             stats["latest_date"] = tonhalle_dates[-1]
             stats["date_count"] = len(tonhalle_dates)
         if not tonhalle_events:
+            urls.extend(_extract_event_urls_from_html(html_fallback, venue))
+    elif html_fallback and slug == "koelner_philharmonie":
+        koelner_events = _extract_koelner_listing_events(
+            html_fallback, venue, horizon_date or _scrape_horizon_date()
+        )
+        event_stubs.extend(koelner_events)
+        urls.extend(ev["detail_url"] for ev in koelner_events if ev.get("detail_url"))
+        koelner_dates = sorted(
+            {ev["date"] for ev in koelner_events if isinstance(ev.get("date"), str)}
+        )
+        if koelner_dates:
+            stats["latest_date"] = koelner_dates[-1]
+            stats["date_count"] = len(koelner_dates)
+        if not koelner_events:
             urls.extend(_extract_event_urls_from_html(html_fallback, venue))
     elif html_fallback:
         urls.extend(_extract_event_urls_from_html(html_fallback, venue))
