@@ -3,7 +3,7 @@
   "city": "Bremen",
   "slug": "glocke_bremen",
   "source_url": "https://www.glocke.de/tickets-programm/",
-  "scraped_at": "2026-05-19T19:08:13.482280Z",
+  "scraped_at": "2026-05-19T19:17:26.270758Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
@@ -40,7 +40,7 @@
     {
       "date": "2026-05-20",
       "time": "19:00",
-      "title": "»Curtis on Tour« 8. Philharmonisches Kammerkonzert",
+      "title": "Curtis On Tour 8 Philharmonisches Kammerkonzert",
       "venue_hall": "Kleiner Saal",
       "program": [
         "Martinů: Drei Madrigale",
@@ -56,14 +56,14 @@
       ],
       "conductor": "Liza Ferschtman",
       "price": "€31–€47",
-      "detail_url": "https://www.glocke.de/event/curtis-on-tour-8-philharmonisches-kammerkonzert/?back_btn=1",
+      "detail_url": "https://www.glocke.de/event/curtis-on-tour-8-philharmonisches-kammerkonzert/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "reused_enrichment": true,
+      "discovery_source": "glocke_listing",
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -177,7 +177,6 @@
       "city": "Bremen",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
-      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -211,7 +210,7 @@
     {
       "date": "2026-05-27",
       "time": "19:30",
-      "title": "Die Deutsche Kammerphilharmonie Bremen Hauptsache Tschaikowsky 5 Premieren Abonnementkonzert",
+      "title": "Die Deutsche Kammerphilharmonie Bremen »Haupt­sache Tschai­kowsky« 5. Premieren-Abonnementkonzert",
       "venue_hall": "Großer Saal",
       "program": [
         "Tschaikowsky: Klavierkonzert Nr. 1 b-Moll op. 23",
@@ -222,20 +221,20 @@
       ],
       "conductor": "Jérémie Rhorer",
       "price": null,
-      "detail_url": "https://www.glocke.de/event/die-deutsche-kammerphilharmonie-bremen-hauptsache-tschaikowsky-5-premieren-abonnementkonzert/",
+      "detail_url": "https://www.glocke.de/event/die-deutsche-kammerphilharmonie-bremen-hauptsache-tschaikowsky-5-premieren-abonnementkonzert/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-05-29",
       "time": "19:30",
-      "title": "Die Deutsche Kammerphilharmonie Bremen Hauptsache Tschaikowsky 3 Highlight Abonnementkonzert",
+      "title": "Die Deutsche Kammerphilharmonie Bremen »Haupt­sache Tschai­kowsky« 3. Highlight-Abonnementkonzert",
       "venue_hall": "Großer Saal",
       "program": [
         "Brahms: Klavierkonzert Nr. 2 B-Dur op. 83",
@@ -246,14 +245,14 @@
       ],
       "conductor": "Jérémie Rhorer",
       "price": null,
-      "detail_url": "https://www.glocke.de/event/die-deutsche-kammerphilharmonie-bremen-hauptsache-tschaikowsky-3-highlight-abonnementkonzert/",
+      "detail_url": "https://www.glocke.de/event/die-deutsche-kammerphilharmonie-bremen-hauptsache-tschaikowsky-3-highlight-abonnementkonzert/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -297,15 +296,16 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-05-30",
       "time": "20:00",
-      "title": "Flying Sound Klang Emotion Praezision Mit Tigran Maytesian Und Daniel Blumenthal",
+      "title": "»Flying Sound – Klang. Emotion. Präzision« mit Tigran Maytesian und Daniel Blumenthal",
       "venue_hall": "Kleiner Saal",
       "program": [
         "Beethoven: Sonate Nr. 5 F-Dur op. 24 »Frühlingssonate«",
@@ -327,20 +327,20 @@
       ],
       "conductor": null,
       "price": "€29,00 – €59,00",
-      "detail_url": "https://www.glocke.de/event/flying-sound-klang-emotion-praezision-mit-tigran-maytesian-und-daniel-blumenthal/",
+      "detail_url": "https://www.glocke.de/event/flying-sound-klang-emotion-praezision-mit-tigran-maytesian-und-daniel-blumenthal/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-05-31",
       "time": "15:30",
-      "title": "Bremer Kaffeehaus Orchester Frisch Aufgeblueht Fruehlingskonzert",
+      "title": "Bremer Kaffeehaus-Orchester »Frisch aufgeblüht« Frühlingskonzert",
       "venue_hall": "Kleiner Saal",
       "program": [
         "Verdi: Melodie",
@@ -352,20 +352,20 @@
       ],
       "conductor": "Hauke, Anselm",
       "price": "36,00 € Normal / 26,00 € Ermäßigt",
-      "detail_url": "https://www.glocke.de/event/bremer-kaffeehaus-orchester-frisch-aufgeblueht-fruehlingskonzert/",
+      "detail_url": "https://www.glocke.de/event/bremer-kaffeehaus-orchester-frisch-aufgeblueht-fruehlingskonzert/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-06-01",
       "time": "19:30",
-      "title": "Bremer Philharmoniker Time To Shine 11 Philharmonisches Konzert 2",
+      "title": "Bremer Philharmoniker »Time to shine« 11. Philharmonisches Konzert",
       "venue_hall": "Großer Saal",
       "program": [
         "Beethoven: Klavierkonzert Nr. 4 G-Dur op. 58",
@@ -376,20 +376,20 @@
       ],
       "conductor": "Delyana Lazarova",
       "price": "€21,00 – €62,00",
-      "detail_url": "https://www.glocke.de/event/bremer-philharmoniker-time-to-shine-11-philharmonisches-konzert-2/",
+      "detail_url": "https://www.glocke.de/event/bremer-philharmoniker-time-to-shine-11-philharmonisches-konzert-2/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-06-02",
       "time": "19:30",
-      "title": "Bremer Philharmoniker Time To Shine 11 Philharmonisches Konzert",
+      "title": "Bremer Philharmoniker »Time to shine« 11. Philharmonisches Konzert",
       "venue_hall": "Großer Saal",
       "program": [
         "Beethoven: Klavierkonzert Nr. 4 G-Dur op. 58",
@@ -400,37 +400,38 @@
       ],
       "conductor": "Delyana Lazarova",
       "price": "€21,00 – €62,00",
-      "detail_url": "https://www.glocke.de/event/bremer-philharmoniker-time-to-shine-11-philharmonisches-konzert/",
+      "detail_url": "https://www.glocke.de/event/bremer-philharmoniker-time-to-shine-11-philharmonisches-konzert/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-06-03",
       "time": "20:00",
-      "title": "Noa Ensemble The Giver And The See",
+      "title": "Noa & Ensemble »The Giver and the See«",
       "venue_hall": "Großer Saal",
       "program": [
         "Noa: The Giver and the See"
       ],
       "performers": [
-        "Noa & Ensemble"
+        "Noa",
+        "Ensemble"
       ],
       "conductor": null,
       "price": "€19,00 – €46,00",
-      "detail_url": "https://www.glocke.de/event/noa-ensemble-the-giver-and-the-see/",
+      "detail_url": "https://www.glocke.de/event/noa-ensemble-the-giver-and-the-see/?back_btn=1",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -667,15 +668,17 @@
     {
       "date": "2026-06-13",
       "time": "20:00",
-      "title": "La Strada Gala 2",
-      "venue_hall": "Großer Saal",
-      "program": [],
+      "title": "Heinz Rudolf Kunze Liest Gebrauchsgegenstand Live",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Kunze: Gebrauchgegenstand"
+      ],
       "performers": [
-        "Siegfried & Joy"
+        "Heinz Rudolf Kunze"
       ],
       "conductor": null,
-      "price": "39,00 € Normal, 34,00 € Ermäßigt",
-      "detail_url": "https://www.glocke.de/event/la-strada-gala-2/",
+      "price": "43,50 € Normal",
+      "detail_url": "https://www.glocke.de/event/heinz-rudolf-kunze-liest-gebrauchsgegenstand-live/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
@@ -688,17 +691,15 @@
     {
       "date": "2026-06-13",
       "time": "20:00",
-      "title": "Heinz Rudolf Kunze Liest Gebrauchsgegenstand Live",
-      "venue_hall": "Kleiner Saal",
-      "program": [
-        "Kunze: Gebrauchgegenstand"
-      ],
+      "title": "La Strada Gala 2",
+      "venue_hall": "Großer Saal",
+      "program": [],
       "performers": [
-        "Heinz Rudolf Kunze"
+        "Siegfried & Joy"
       ],
       "conductor": null,
-      "price": "43,50 € Normal",
-      "detail_url": "https://www.glocke.de/event/heinz-rudolf-kunze-liest-gebrauchsgegenstand-live/",
+      "price": "39,00 € Normal, 34,00 € Ermäßigt",
+      "detail_url": "https://www.glocke.de/event/la-strada-gala-2/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
@@ -823,9 +824,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1023,9 +1025,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1980,7 +1983,7 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovered_only": false,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": true
@@ -2008,6 +2011,30 @@
       "enriched": true,
       "enrichment_status": "enriched",
       "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-09",
+      "time": "20:00",
+      "title": "Helge Schneider Ellenbogen Vom Tisch",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Schneider: Ellenbogen vom Tisch!"
+      ],
+      "performers": [
+        "Helge Schneider",
+        "LEO",
+        "SANDRO"
+      ],
+      "conductor": null,
+      "price": "ab €49,65",
+      "detail_url": "https://www.glocke.de/event/helge-schneider-ellenbogen-vom-tisch/",
+      "venue": "Glocke Bremen",
+      "city": "Bremen",
+      "discovery_source": "glocke_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2042,15 +2069,15 @@
       "is_classical": true
     },
     {
-      "date": "2026-10-09",
+      "date": "2026-10-10",
       "time": "20:00",
-      "title": "Helge Schneider Ellenbogen Vom Tisch",
-      "venue_hall": "Großer Saal",
+      "title": "Birds Tree Tour 2026 Klavierkonzert Mit Jonas Derksen",
+      "venue_hall": "Kleiner Saal",
       "program": [],
       "performers": [],
       "conductor": null,
       "price": null,
-      "detail_url": "https://www.glocke.de/event/helge-schneider-ellenbogen-vom-tisch/",
+      "detail_url": "https://www.glocke.de/event/birds-tree-tour-2026-klavierkonzert-mit-jonas-derksen/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
@@ -2078,24 +2105,6 @@
       "is_classical": false
     },
     {
-      "date": "2026-10-10",
-      "time": "20:00",
-      "title": "Birds Tree Tour 2026 Klavierkonzert Mit Jonas Derksen",
-      "venue_hall": "Kleiner Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.glocke.de/event/birds-tree-tour-2026-klavierkonzert-mit-jonas-derksen/",
-      "venue": "Glocke Bremen",
-      "city": "Bremen",
-      "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
-      "is_classical": true
-    },
-    {
       "date": "2026-10-11",
       "time": "19:00",
       "title": "Rockballaden bei Kerzenschein",
@@ -2108,7 +2117,7 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovered_only": false,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": true
@@ -2176,14 +2185,14 @@
       "program": [],
       "performers": [],
       "conductor": null,
-      "price": null,
+      "price": "ab €45,20",
       "detail_url": "https://www.glocke.de/event/robert-marc-lehmann-mission-erde-live-die-welt-ist-es-wert-um-sie-zu-kaempfen/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2199,7 +2208,7 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovered_only": false,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": true
@@ -2209,17 +2218,25 @@
       "time": "20:00",
       "title": "Goetz Alsmann Band Bei Nacht",
       "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
+      "program": [
+        "Götz Alsmann: … bei Nacht …"
+      ],
+      "performers": [
+        "Götz Alsmann",
+        "Altfrid M. Sicking",
+        "Ingo Senst",
+        "Dominik Hahn",
+        "Markus Paßlick"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "ab €34,25",
       "detail_url": "https://www.glocke.de/event/goetz-alsmann-band-bei-nacht/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2660,24 +2677,6 @@
     {
       "date": "2026-11-12",
       "time": "20:00",
-      "title": "Rammstein Symphonic Tribute – Herzfeuer",
-      "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.glocke.de/event/rammstein-symphonic-tribute-herzfeuer/",
-      "venue": "Glocke Bremen",
-      "city": "Bremen",
-      "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
-      "is_classical": false
-    },
-    {
-      "date": "2026-11-12",
-      "time": "20:00",
       "title": "Burak Cebi Eine Hommage An Ludovico Einaudi",
       "venue_hall": "Kleiner Saal",
       "program": [],
@@ -2692,6 +2691,24 @@
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": true
+    },
+    {
+      "date": "2026-11-12",
+      "time": "20:00",
+      "title": "Rammstein Symphonic Tribute – Herzfeuer",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.glocke.de/event/rammstein-symphonic-tribute-herzfeuer/",
+      "venue": "Glocke Bremen",
+      "city": "Bremen",
+      "discovery_source": "glocke_listing",
+      "discovered_only": true,
+      "enriched": false,
+      "enrichment_status": "stub",
+      "is_classical": false
     },
     {
       "date": "2026-11-12",
@@ -2878,9 +2895,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2919,9 +2937,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2959,17 +2978,18 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     }
   ],
   "total_events": 127,
-  "total_events_visible": 6,
+  "total_events_visible": 12,
   "total_events_discovered": 207,
   "total_events_discovered_strict": 207,
-  "total_events_enriched": 92,
+  "total_events_enriched": 95,
   "source": "firecrawl_listing",
   "latest_discovered_event_date": "2026-11-29",
   "latest_event_date": "2026-11-29",
@@ -2982,7 +3002,7 @@
     "preferred_urls": 207,
     "map_urls": 0,
     "html_urls": 20,
-    "new_urls": 121,
+    "new_urls": 115,
     "latest_discovered_date": "2026-11-29",
     "preferred_date_count": 93,
     "preferred_dated_urls": 127,
