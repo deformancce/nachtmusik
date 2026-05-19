@@ -596,93 +596,12 @@ def _liederhalle_actions() -> list[dict]:
     ]
 
 
-_TONHALLE_SCROLL_JS = r"""
-async () => {
-  const sleep = (ms) => new Promise(r => setTimeout(r, ms));
-  const log = [];
-
-  const cookieRe = /^(alle\s+akzeptieren|akzeptieren|alle\s+cookies\s+akzeptieren|einverstanden|zustimmen|alles\s+erlauben|alle\s+aktivieren|accept(?:\s+all)?|agree|got\s+it)$/i;
-  for (const el of document.querySelectorAll('button, a, [role="button"], input[type="button"]')) {
-    const t = (el.textContent || el.value || '').trim();
-    if (!t || t.length > 60) continue;
-    if (cookieRe.test(t)) {
-      try { el.click(); log.push('cookie:' + t); break; } catch (e) {}
-    }
-  }
-  await sleep(900);
-
-  // Eye-Able overlays can cover the programme grid. Hide only assistant UI;
-  // keep event images because Tonhalle's lazy grid uses them as card anchors.
-  const style = document.createElement('style');
-  style.textContent = `
-    [class*="eye"], [id*="eye"], [class*="Eye"], [id*="Eye"],
-    [class*="able"], [id*="able"], [class*="Able"], [id*="Able"],
-    iframe[src*="eye"], iframe[src*="able"] {
-      display: none !important;
-      visibility: hidden !important;
-    }
-  `;
-  document.head.appendChild(style);
-
-  const loadMoreRe = /mehr\s+(laden|anzeigen|veranstaltungen|events)|weitere\s+(veranstaltungen|events)|show\s+more|load\s+more/i;
-  let lastLinks = 0;
-  let stable = 0;
-  let clicks = 0;
-  let rounds = 0;
-
-  // Tonhalle fades cards in as the viewport passes them. Jumping straight to
-  // document.body.scrollHeight can leave later cards unloaded, so traverse the
-  // page in viewport-sized steps and only stop after link count stabilizes.
-  for (let i = 0; i < 90; i++) {
-    const y = Math.min(
-      document.body.scrollHeight - window.innerHeight,
-      Math.max(0, Math.floor(i * window.innerHeight * 0.75))
-    );
-    window.scrollTo(0, y);
-    await sleep(650);
-
-    for (const el of document.querySelectorAll('a, button, [role="button"]')) {
-      if (el.offsetParent === null) continue;
-      const t = (el.textContent || '').replace(/\s+/g, ' ').trim();
-      if (loadMoreRe.test(t)) {
-        try {
-          el.scrollIntoView({block: 'center'});
-          el.click();
-          clicks++;
-          await sleep(1100);
-          break;
-        } catch (e) {}
-      }
-    }
-
-    const links = Array.from(document.querySelectorAll('a[href*="/veranstaltung/"]')).length;
-    if (links <= lastLinks && y >= document.body.scrollHeight - window.innerHeight - 20) {
-      stable++;
-    } else {
-      stable = 0;
-    }
-    lastLinks = Math.max(lastLinks, links);
-    rounds = i + 1;
-    if (stable >= 8) break;
-  }
-
-  window.scrollTo(0, document.body.scrollHeight);
-  await sleep(1200);
-  log.push('links:' + Array.from(document.querySelectorAll('a[href*="/veranstaltung/"]')).length);
-  log.push('rounds:' + rounds);
-  log.push('clicks:' + clicks);
-  log.push('height:' + document.body.scrollHeight);
-  return log.join(' | ');
-}
-"""
-
-
 def _tonhalle_actions() -> list[dict]:
-    return [
-        {"type": "wait", "milliseconds": 2000},
-        {"type": "executeJavascript", "script": _TONHALLE_SCROLL_JS},
-        {"type": "wait", "milliseconds": 3000},
-    ]
+    # Tonhalle's cards lazy-load reliably with Firecrawl's native scroll
+    # actions. executeJavascript scrolling currently stalls after ~12 cards.
+    return [{"type": "wait", "milliseconds": 2000}] + _scroll_actions(
+        n=24, amount=2200, wait_ms=900
+    )
 
 
 VENUE_OVERRIDES: dict[str, dict] = {
