@@ -7,6 +7,10 @@ on:
         description: "Zahl: Events pro Venue vollständig anreichern"
         required: false
         default: "5"
+      mode:
+        description: "Modus: scrape = Ergebnis-JSONs, probe = nur Discovery-Report"
+        required: false
+        default: "scrape"
       slugs:
         description: "Slug(s): optional, mit Leerzeichen getrennt; leer = alle Tier-0"
         required: false
@@ -38,9 +42,13 @@ jobs:
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
           PYTHONUNBUFFERED: "1"
           MAX_EVENTS: ${{ github.event.inputs.max_events }}
+          MODE: ${{ github.event.inputs.mode }}
           SLUGS: ${{ github.event.inputs.slugs }}
         run: |
           ARGS=(--max-events "${MAX_EVENTS:-5}" --horizon-months 6 --skip-map)
+          if [ "${MODE:-scrape}" = "probe" ]; then
+            ARGS+=(--probe-discovery)
+          fi
           if [ -n "$SLUGS" ]; then
             ARGS+=(--only $SLUGS)
           fi
@@ -52,6 +60,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add backend/firecrawl_*_events.json 2>/dev/null || true
           git add backend/raw/ 2>/dev/null || true
+          git add backend/probes/ 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
