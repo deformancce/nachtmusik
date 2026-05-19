@@ -1408,15 +1408,38 @@ def _discover_glocke_paginated_urls(
     out: list[str] = []
     event_stubs: list[dict] = []
     empty_pages = 0
+    failed_pages = 0
     for page in range(1, max_pages + 1):
         page_url = base if page == 1 else f"{base}page/{page}/"
-        try:
-            resp = requests.get(page_url, headers=_DE_HEADERS, timeout=20)
-            if resp.status_code >= 400:
+        resp = None
+        last_exc: Exception | None = None
+        for attempt in range(1, 4):
+            try:
+                resp = requests.get(page_url, headers=_DE_HEADERS, timeout=12)
+                if resp.status_code >= 500 and attempt < 3:
+                    time.sleep(1.5 * attempt)
+                    continue
                 break
-        except requests.RequestException as exc:
-            print(f"    [glocke-pages] failed page {page}: {exc}", flush=True)
+            except requests.RequestException as exc:
+                last_exc = exc
+                if attempt < 3:
+                    time.sleep(1.5 * attempt)
+                    continue
+        if resp is None:
+            failed_pages += 1
+            print(f"    [glocke-pages] failed page {page}: {last_exc}", flush=True)
+            if failed_pages >= 3:
+                break
+            continue
+        if resp.status_code == 404:
             break
+        if resp.status_code >= 400:
+            failed_pages += 1
+            print(f"    [glocke-pages] page {page}: HTTP {resp.status_code}", flush=True)
+            if failed_pages >= 3:
+                break
+            continue
+        failed_pages = 0
 
         page_events = _extract_glocke_listing_events(resp.text, venue, horizon)
         page_urls = [ev["detail_url"] for ev in page_events if ev.get("detail_url")]
