@@ -2461,6 +2461,11 @@ def _expand_via_map(
     preferred_urls, preferred_stats, preferred_events = _discover_preferred_event_urls(
         app, venue, html_fallback, horizon_date=horizon_date
     )
+    preferred_dated_urls = {
+        _clean_url(ev.get("detail_url"))
+        for ev in preferred_events
+        if _clean_url(ev.get("detail_url")) and _parse_iso_date(ev.get("date"))
+    }
     preferred_event_by_url = {
         _clean_url(ev.get("detail_url")): ev
         for ev in preferred_events
@@ -2492,6 +2497,13 @@ def _expand_via_map(
     stats["html_urls"] = len(html_urls)
     raw_html_urls = html_urls
     if preferred_is_authoritative:
+        if preferred_dated_urls:
+            preferred_urls = [url for url in preferred_urls if _clean_url(url) in preferred_dated_urls]
+            preferred_event_by_url = {
+                url: ev for url, ev in preferred_event_by_url.items()
+                if url in preferred_dated_urls
+            }
+            stats["preferred_dated_urls"] = len(preferred_dated_urls)
         # If a structured card parser already found a substantial dated set up
         # to the configured horizon, don't append naked URL stubs. Raw anchor
         # mining often sees future-season/hidden links without dates, which
