@@ -670,6 +670,7 @@ VENUE_OVERRIDES: dict[str, dict] = {
         "listing_target": 150,
         "force_url_expand": True,
         "continue_url_discovery_on_hallucination": True,
+        "drop_undated_discovery_stubs": True,
     },
     "koelner_philharmonie": {
         # Events fade in while scrolling; HTML anchors are the best source.
@@ -2269,6 +2270,29 @@ def _event_stub_from_url(url: str, venue: dict, source: str) -> dict:
     return ev
 
 
+def _date_from_event_url(url: str | None, slug: str) -> str | None:
+    if not url:
+        return None
+    clean = _clean_url(url)
+    if slug == "konzerthaus_dortmund":
+        return _date_from_dortmund_url(clean)
+    if slug == "isarphilharmonie_muenchen":
+        return _date_from_mphil_url(clean)
+    return None
+
+
+def _fill_missing_dates_from_urls(events: list[dict], slug: str) -> int:
+    filled = 0
+    for ev in events:
+        if ev.get("date"):
+            continue
+        inferred = _date_from_event_url(ev.get("detail_url"), slug)
+        if inferred:
+            ev["date"] = inferred
+            filled += 1
+    return filled
+
+
 def _enrichment_priority(event: dict, original_index: int) -> tuple[int, str, str, int]:
     if has_classical_signal(event) and not has_non_classical_signal(event):
         bucket = 0
@@ -2491,6 +2515,8 @@ def _expand_via_map(
         "preferred_urls": 0, "map_urls": 0, "html_urls": 0, "new_urls": 0,
         "latest_discovered_date": _latest_event_date(listing_events),
     }
+    slug = _slug(venue["name"])
+    venue_override = VENUE_OVERRIDES.get(slug, {})
 
     preferred_urls, preferred_stats, preferred_events = _discover_preferred_event_urls(
         app, venue, html_fallback, horizon_date=horizon_date
@@ -2589,6 +2615,15 @@ def _expand_via_map(
             _mark_enrichment_status(ev)
         else:
             ev = _event_stub_from_url(url, venue, "url_discovery")
+        if (
+            venue_override.get("drop_undated_discovery_stubs")
+            and ev.get("discovered_only")
+            and not ev.get("date")
+        ):
+            stats["undated_discovery_stubs_dropped"] = (
+                stats.get("undated_discovery_stubs_dropped", 0) + 1
+            )
+            continue
         if not _is_within_scrape_window(ev.get("date"), horizon_date):
             continue
         new_events.append(ev)
@@ -2979,6 +3014,9 @@ def _scrape_one(
         print(f"    merged: {len(events)} total events after URL discovery", flush=True)
 
     events = _reuse_existing_enrichment(events, slug)
+    filled_dates = _fill_missing_dates_from_urls(events, slug)
+    if filled_dates:
+        print(f"    filled {filled_dates} missing date(s) from event URLs", flush=True)
 
     # ── Phase 2: Enrich discovered events with detail pages ──
     if enrich and events and max_events > 0:
@@ -2988,6 +3026,9 @@ def _scrape_one(
             flush=True,
         )
         events = _enrich_events(app, events, venue, limit=max_events)
+        filled_dates = _fill_missing_dates_from_urls(events, slug)
+        if filled_dates:
+            print(f"    filled {filled_dates} missing date(s) from event URLs", flush=True)
         events = [e for e in events if _is_within_scrape_window(e.get("date"), horizon_date)]
         events.sort(key=lambda e: (e.get("date") or "9999", e.get("time") or ""))
     else:
