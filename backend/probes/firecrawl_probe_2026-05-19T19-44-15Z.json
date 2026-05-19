@@ -1,0 +1,153 @@
+{
+  "scraped_at": "2026-05-19T19:44:15.230396Z",
+  "scrape_horizon_date": "2026-11-30",
+  "results": [
+    {
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "slug": "elbphilharmonie_hamburg",
+      "scraped_at": "2026-05-19T19:43:39.367478Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.elbphilharmonie.de/de/programm/LHHH/TICKETS/",
+      "best_event_urls": 11,
+      "best_last_date_seen": "2026-05-30",
+      "probes": [
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/",
+          "error": null,
+          "raw_lines": 914,
+          "event_urls": 11,
+          "unique_event_urls": 11,
+          "first_date_seen": "2026-05-19",
+          "last_date_seen": "2026-05-21",
+          "sample_urls": [
+            "https://www.elbphilharmonie.de/de/programm/schumann-quartett/23440",
+            "https://www.elbphilharmonie.de/de/programm/marc-uwe-kling/24109",
+            "https://www.elbphilharmonie.de/de/programm/hochschule-fur-musik-und-theater-hamburg/28286",
+            "https://www.elbphilharmonie.de/de/programm/westermann-summit-2026/28420",
+            "https://www.elbphilharmonie.de/de/programm/landesjugendorchester-hamburg-ann-beth-solvang-johannes-witt/27407",
+            "https://www.elbphilharmonie.de/de/programm/hummelhirn/28199",
+            "https://www.elbphilharmonie.de/de/programm/huelgas-ensemble-paul-van-nevel/27532",
+            "https://www.elbphilharmonie.de/de/programm/les-hommes-du-swing/27744"
+          ]
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/LHHH/TICKETS/",
+          "error": null,
+          "raw_lines": 934,
+          "event_urls": 11,
+          "unique_event_urls": 11,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-30",
+          "sample_urls": [
+            "https://www.elbphilharmonie.de/de/programm/landesjugendorchester-hamburg-ann-beth-solvang-johannes-witt/27407",
+            "https://www.elbphilharmonie.de/de/programm/les-hommes-du-swing/27744",
+            "https://www.elbphilharmonie.de/de/programm/hochschule-fur-musik-und-theater-hamburg/28284",
+            "https://www.elbphilharmonie.de/de/programm/matteo-lane/27410",
+            "https://www.elbphilharmonie.de/de/programm/gotz-alsmann-band/24340",
+            "https://www.elbphilharmonie.de/de/programm/neue-philharmonie-hamburg-hovhannes-baghdasaryan/28225",
+            "https://www.elbphilharmonie.de/de/programm/kateryna-titova-klavierabend/28034",
+            "https://www.elbphilharmonie.de/de/programm/lunchkonzert-der-symphoniker-hamburg/24078"
+          ]
+        }
+      ]
+    },
+    {
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "slug": "gewandhaus_leipzig",
+      "scraped_at": "2026-05-19T19:43:58.112531Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.gewandhausorchester.de/",
+      "best_event_urls": 6,
+      "best_last_date_seen": "2026-05-22",
+      "probes": [
+        {
+          "url": "https://www.gewandhausorchester.de/",
+          "error": null,
+          "raw_lines": 3250,
+          "event_urls": 6,
+          "unique_event_urls": 6,
+          "first_date_seen": "2026-05-19",
+          "last_date_seen": "2026-05-22",
+          "sample_urls": [
+            "https://www.gewandhausorchester.de/veranstaltung/kastelruther-spatzen-9111/",
+            "https://www.gewandhausorchester.de/veranstaltung/gastspiel-in-wien-9427/",
+            "https://www.gewandhausorchester.de/veranstaltung/tim-bendzko-9146/",
+            "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-9876/",
+            "https://www.gewandhausorchester.de/veranstaltung/mnozil-brass-9464/",
+            "https://www.gewandhausorchester.de/veranstaltung/motette-9801/"
+          ]
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/spielplan/",
+          "error": null,
+          "raw_lines": 3250,
+          "event_urls": 6,
+          "unique_event_urls": 6,
+          "first_date_seen": "2026-05-19",
+          "last_date_seen": "2026-05-22",
+          "sample_urls": [
+            "https://www.gewandhausorchester.de/veranstaltung/kastelruther-spatzen-9111/",
+            "https://www.gewandhausorchester.de/veranstaltung/gastspiel-in-wien-9427/",
+            "https://www.gewandhausorchester.de/veranstaltung/tim-bendzko-9146/",
+            "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-9876/",
+            "https://www.gewandhausorchester.de/veranstaltung/mnozil-brass-9464/",
+            "https://www.gewandhausorchester.de/veranstaltung/motette-9801/"
+          ]
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltungen/",
+          "error": null,
+          "raw_lines": 608,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": null,
+          "last_date_seen": null,
+          "sample_urls": []
+        }
+      ]
+    },
+    {
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "slug": "isarphilharmonie_muenchen",
+      "scraped_at": "2026-05-19T19:44:15.230222Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.gasteig.de/veranstaltungen/?room=isarphilharmonie",
+      "best_event_urls": 24,
+      "best_last_date_seen": "2026-07-01",
+      "probes": [
+        {
+          "url": "https://www.gasteig.de/veranstaltungen/?room=isarphilharmonie",
+          "error": null,
+          "raw_lines": 420,
+          "event_urls": 24,
+          "unique_event_urls": 24,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-07-01",
+          "sample_urls": [
+            "https://www.gasteig.de/veranstaltungen/phil-extra/",
+            "https://www.gasteig.de/veranstaltungen/konzert-des-brso-16/",
+            "https://www.gasteig.de/veranstaltungen/konzert-des-brso-17/",
+            "https://www.gasteig.de/veranstaltungen/muenchner-philharmoniker-sibelius-rautavaara-vaughan-williams-2-2/",
+            "https://www.gasteig.de/veranstaltungen/muenchner-philharmoniker-sibelius-rautavaara-vaughan-williams-2/",
+            "https://www.gasteig.de/veranstaltungen/tim-bendzko-26684/",
+            "https://www.gasteig.de/veranstaltungen/muenchner-philharmoniker-mussorgsky-chatschaturjan-bizet/",
+            "https://www.gasteig.de/veranstaltungen/muenchner-philharmoniker-mussorgsky-chatschaturjan-bizet-2/"
+          ]
+        },
+        {
+          "url": "https://www.mphil.de/kalender",
+          "error": null,
+          "raw_lines": 140441,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-23",
+          "last_date_seen": "2026-11-24",
+          "sample_urls": []
+        }
+      ]
+    }
+  ]
+}
