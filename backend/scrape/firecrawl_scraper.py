@@ -39,7 +39,11 @@ sys.path.insert(0, str(BASE.parent))
 from backend.venues_germany import get_venues_by_tier
 from backend.scrape.url_filters import filter_event_urls, is_strict_event_url
 from backend.scrape import jsonld_scout, raw_store
-from backend.scrape.classify import is_classical_event
+from backend.scrape.classify import (
+    has_classical_signal,
+    has_non_classical_signal,
+    is_classical_event,
+)
 
 
 # ── Pydantic schemas ──────────────────────────────────────────────────────────
@@ -986,7 +990,7 @@ def _discover_glocke_paginated_urls(venue: dict, max_pages: int = 20) -> list[st
 def _discover_liederhalle_paginated_urls(
     app,
     venue: dict,
-    max_pages: int = 18,
+    max_pages: int = 20,
     horizon_date: str | None = None,
 ) -> tuple[list[str], list[str], list[dict]]:
     """Discover Liederhalle event URLs from its rendered TYPO3 pagination.
@@ -1477,46 +1481,82 @@ def _event_stub_from_url(url: str, venue: dict, source: str) -> dict:
     return ev
 
 
+def _enrichment_priority(event: dict, original_index: int) -> tuple[int, str, str, int]:
+    if has_classical_signal(event) and not has_non_classical_signal(event):
+        bucket = 0
+    elif is_classical_event(event) and not has_non_classical_signal(event):
+        bucket = 1
+    else:
+        bucket = 2
+    return (
+        bucket,
+        event.get("date") or "9999-99-99",
+        event.get("time") or "",
+        original_index,
+    )
+
+
 def _enrich_events(app, events: list[dict], venue: dict, limit: int | None = None) -> list[dict]:
     """
     For each event that has a detail_url but no program, scrape the detail
     page to fill in program, performers, conductor (and overwrite price/hall
     if listing didn't have them).
     """
-    enriched = []
     enriched_count = 0
-    for i, ev in enumerate(events):
+    candidates_all = [
+        (i, ev)
+        for i, ev in enumerate(events)
+        if not _has_enriched_data(ev) and _is_valid_url(ev.get("detail_url"))
+    ]
+    skipped_nonclassical = 0
+    if limit is None:
+        candidates = candidates_all
+    else:
+        candidates = []
+        for i, ev in candidates_all:
+            if has_non_classical_signal(ev):
+                skipped_nonclassical += 1
+                continue
+            candidates.append((i, ev))
+    if skipped_nonclassical:
+        print(
+            f"    skipping {skipped_nonclassical} clearly non-classical detail pages "
+            f"to preserve enrichment budget",
+            flush=True,
+        )
+    candidates.sort(key=lambda item: _enrichment_priority(item[1], item[0]))
+    for i, ev in candidates:
+        if limit is not None and enriched_count >= limit:
+            break
         detail_url = ev.get("detail_url")
-        budget_left = limit is None or enriched_count < limit
-        needs_enrich = budget_left and not _has_enriched_data(ev) and _is_valid_url(detail_url)
-        if needs_enrich:
-            print(f"    [{i+1}/{len(events)}] enriching: {ev.get('title','')[:55]}", flush=True)
-            detail = _scrape_one_detail(app, detail_url, venue)
-            if detail:
-                enriched_count += 1
-                ev["discovered_only"] = False
-                # Merge: detail wins for program/performers/conductor; listing wins for date/time
-                if detail.get("program"):
-                    ev["program"] = detail["program"]
-                if detail.get("performers"):
-                    ev["performers"] = detail["performers"]
-                if detail.get("conductor") and not ev.get("conductor"):
-                    ev["conductor"] = detail["conductor"]
-                if detail.get("price") and not ev.get("price"):
-                    ev["price"] = detail["price"]
-                if detail.get("venue_hall") and not ev.get("venue_hall"):
-                    ev["venue_hall"] = detail["venue_hall"]
-                if detail.get("duration_min"):
-                    ev["duration_min"] = detail["duration_min"]
-                if detail.get("title") and not ev.get("title"):
-                    ev["title"] = detail["title"]
-                if detail.get("date") and not ev.get("date"):
-                    ev["date"] = detail["date"]
-                if detail.get("time") and not ev.get("time"):
-                    ev["time"] = detail["time"]
+        print(f"    [{i+1}/{len(events)}] enriching: {ev.get('title','')[:55]}", flush=True)
+        detail = _scrape_one_detail(app, detail_url, venue)
+        if detail:
+            enriched_count += 1
+            ev["discovered_only"] = False
+            # Merge: detail wins for program/performers/conductor; listing wins for date/time
+            if detail.get("program"):
+                ev["program"] = detail["program"]
+            if detail.get("performers"):
+                ev["performers"] = detail["performers"]
+            if detail.get("conductor") and not ev.get("conductor"):
+                ev["conductor"] = detail["conductor"]
+            if detail.get("price") and not ev.get("price"):
+                ev["price"] = detail["price"]
+            if detail.get("venue_hall") and not ev.get("venue_hall"):
+                ev["venue_hall"] = detail["venue_hall"]
+            if detail.get("duration_min"):
+                ev["duration_min"] = detail["duration_min"]
+            if detail.get("title") and not ev.get("title"):
+                ev["title"] = detail["title"]
+            if detail.get("date") and not ev.get("date"):
+                ev["date"] = detail["date"]
+            if detail.get("time") and not ev.get("time"):
+                ev["time"] = detail["time"]
+
+    for ev in events:
         _mark_enrichment_status(ev)
-        enriched.append(ev)
-    return enriched
+    return events
 
 
 # ── Main per-venue scrape ─────────────────────────────────────────────────────

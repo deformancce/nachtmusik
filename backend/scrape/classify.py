@@ -72,6 +72,8 @@ _CLASSICAL_PERFORMER_KEYWORDS = (
     "akademie für alte musik",
     "freiburger barockorchester",
     "gewandhausorchester",
+    "lang lang", "hayato sumino", "lukas sternath",
+    "quartett", "quartet",
 )
 
 _JAZZ_KEYWORDS = (
@@ -92,16 +94,24 @@ _NON_CLASSICAL_ARTISTS = (
     "ibrahim selim", "bee gees", "naturally 7", "dionne warwick",
     "die prinzen", "max raabe",  # actually max raabe is borderline cabaret
     "the constellation choir",  # not classical
+    "olli schulz", "nino d'angelo", "nino dangelo", "olaf der flipper",
+    "andreas gabalier", "rammstein", "pink floyd", "manfred mann",
+    "fischer-z", "the sweet", "joe jackson", "mike oldfield",
     # Comedy / cabaret / spoken word
     "marc-uwe kling", "umbilical brothers", "hagen rether",
     "die deutschen podcast", "reiner calmund",
     "alexander stevens", "jacqueline belle",
-    "kabarett", "comedy", "stand-up", "standup",
+    "kabarett", "kabaret", "comedy", "stand-up", "standup",
+    "peter wohlleben", "ferdinand von schirach", "sebastian fitzek",
+    "tahsim durgun", "parshad", "lisa eckhart", "simon stäblein",
+    "nick martin", "swr1 pop", "pop & poesie",
     # Musicals / tribute / show
     "mamma mia", "pretty woman - das musical",
     "by maincourse",  # tribute act
     "cornamusa",  # folk dance show
     "kängur",  # Marc-Uwe Kling kangaroo books
+    "jobe messe", "spezialmesse", "karrieretag",
+    "circus", "flamenco dance",
 )
 
 _NON_CLASSICAL_TITLE_RE = re.compile(
@@ -115,6 +125,12 @@ _NON_CLASSICAL_TITLE_RE = re.compile(
     r"-?\s?tour[\s-]?20\d{2}|"
     r"podcast(?:\s|$)|"
     r"comedy[\s-]?show|"
+    r"live[\s-]?hörspiel|"
+    r"live[\s-]?hoerspiel|"
+    r"lesung|vortrag|jobmesse|karrieretag|"
+    r"spezialmesse|pop\s*&\s*poesie|"
+    r"german open championships|"
+    r"final fantasy|"
     r"christmas calling|"
     r"true crime|"
     r"freunde|fußball|"
@@ -134,28 +150,37 @@ def _haystack(event: dict) -> str:
     return " ".join(parts).lower()
 
 
+def has_classical_signal(event: dict) -> bool:
+    """Return True only when the event contains an explicit positive signal."""
+    text = _haystack(event)
+    # Avoid treating job fairs as liturgical "Messe" concerts.
+    if any(kw in text for kw in ("jobe messe", "spezialmesse", "karrieretag")):
+        return False
+    return any((
+        any(c in text for c in _CLASSICAL_COMPOSERS),
+        any(kw in text for kw in _CLASSICAL_PERFORMER_KEYWORDS),
+        any(kw in text for kw in _CLASSICAL_GENRE_KEYWORDS),
+        any(kw in text for kw in _OPERA_KEYWORDS),
+        any(kw in text for kw in _JAZZ_KEYWORDS),
+    ))
+
+
+def has_non_classical_signal(event: dict) -> bool:
+    """Return True for strong pop, comedy, musical, show, or event-fair signals."""
+    text = _haystack(event)
+    return any(kw in text for kw in _NON_CLASSICAL_ARTISTS) or bool(_NON_CLASSICAL_TITLE_RE.search(text))
+
+
 def is_classical_event(event: dict) -> bool:
     """Return True if the event is classical music (or jazz, opera, lieder).
     False for pop, rock, musicals, tribute shows, comedy, cabaret.
     Defaults to True when no strong signal — these are classical venues."""
-    text = _haystack(event)
-
     # 1. Strong positive — composer or classical ensemble named
-    if any(c in text for c in _CLASSICAL_COMPOSERS):
-        return True
-    if any(kw in text for kw in _CLASSICAL_PERFORMER_KEYWORDS):
-        return True
-    if any(kw in text for kw in _CLASSICAL_GENRE_KEYWORDS):
-        return True
-    if any(kw in text for kw in _OPERA_KEYWORDS):
-        return True
-    if any(kw in text for kw in _JAZZ_KEYWORDS):
+    if has_classical_signal(event):
         return True
 
     # 2. Strong negative — known pop/musical/comedy markers
-    if any(kw in text for kw in _NON_CLASSICAL_ARTISTS):
-        return False
-    if _NON_CLASSICAL_TITLE_RE.search(text):
+    if has_non_classical_signal(event):
         return False
 
     # 3. Default: classical (venues are classical halls, ambiguous = probably classical)
