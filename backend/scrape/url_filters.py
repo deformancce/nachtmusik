@@ -69,7 +69,7 @@ VENUE_STRICT_PATTERNS: dict[str, re.Pattern[str]] = {
         re.I,
     ),
     "konzerthaus_dortmund": re.compile(
-        r"konzerthaus-dortmund\.de/de/programm/\d{2}-\d{2}-\d{4}-[^/?#]+",
+        r"konzerthaus-dortmund\.de/de/programm/\d{2}-\d{2}-\d{4}-[^/?#]+/?$",
         re.I,
     ),
     "tonhalle_duesseldorf": re.compile(

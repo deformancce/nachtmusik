@@ -772,6 +772,9 @@ def _scrape_listing_with_schema(
         if html:
             extracted = dict(extracted)
             extracted["_raw_html"] = html
+        if md:
+            extracted = dict(extracted)
+            extracted["_raw_markdown"] = md
         return extracted
 
     # Try with scroll actions first, then without (some sites reject action requests)
@@ -868,6 +871,7 @@ def _extract_event_urls_from_html(html: str, venue: dict) -> list[str]:
 def _plain_markdown_text(value: str | None) -> str | None:
     if not value:
         return None
+    value = value.replace("\\", "")
     value = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", value)
     value = re.sub(r"\s+", " ", value).strip(" -")
     return value or None
@@ -940,6 +944,72 @@ def _extract_liederhalle_listing_events(
         _mark_enrichment_status(ev)
         seen.add(detail_url)
         out.append(ev)
+    return out
+
+
+def _extract_essen_listing_events(
+    rendered: str,
+    venue: dict,
+    horizon_date: str,
+) -> list[dict]:
+    """Parse Philharmonie Essen calendar cards from rendered markdown.
+
+    The calendar renders one metadata block per event followed by a markdown
+    h4 heading link:
+    date, time range, hall, calendar link, series, then
+    "#### [Title](detail_url)".
+    """
+    if not rendered:
+        return []
+
+    heading_re = re.compile(r"(?m)^####\s+\[([^\]]+)\]\((https?://[^)]+)\)")
+    matches = list(heading_re.finditer(rendered))
+    out: list[dict] = []
+    seen: set[str] = set()
+    previous_end = 0
+    for match in matches:
+        title = _plain_markdown_text(match.group(1))
+        detail_url = _clean_url(match.group(2))
+        if not title or _is_canceled(title) or not detail_url or detail_url in seen:
+            previous_end = match.end()
+            continue
+        if not is_strict_event_url(detail_url, venue["url"], _slug(venue["name"])):
+            previous_end = match.end()
+            continue
+
+        metadata = rendered[previous_end:match.start()]
+        date_matches = list(_DE_DATE_RE.finditer(metadata))
+        event_date = _parse_de_date(date_matches[-1].group(0)) if date_matches else None
+        if not event_date or not _is_within_scrape_window(event_date, horizon_date):
+            previous_end = match.end()
+            continue
+
+        time_matches = list(_TIME_RE.finditer(metadata))
+        if not time_matches:
+            time_matches = list(re.finditer(r"\b([0-2]?\d:[0-5]\d)\s*(?:-|$)", metadata))
+        hall_matches = re.findall(
+            r"(?m)^([^\n\r]{3,80}(?:Saal|Foyer|Pavillon|Philharmonie Essen))\s*$",
+            metadata,
+        )
+        ev = {
+            "date": event_date,
+            "time": time_matches[-1].group(1) if time_matches else None,
+            "title": title,
+            "venue_hall": _plain_markdown_text(hall_matches[-1]) if hall_matches else None,
+            "program": [],
+            "performers": [],
+            "conductor": None,
+            "price": None,
+            "detail_url": detail_url,
+            "venue": venue["name"],
+            "city": venue["city"],
+            "discovery_source": "essen_listing",
+            "discovered_only": True,
+        }
+        _mark_enrichment_status(ev)
+        seen.add(detail_url)
+        out.append(ev)
+        previous_end = match.end()
     return out
 
 
@@ -1079,7 +1149,8 @@ def _discover_essen_monthly_urls(
     app,
     venue: dict,
     horizon_date: str | None = None,
-) -> list[str]:
+    rendered_fallback: str | None = None,
+) -> tuple[list[str], list[str], list[dict]]:
     """Discover Philharmonie Essen detail URLs by iterating monthly calendars.
 
     Essen's calendar exposes month-specific, venue-filtered URLs:
@@ -1088,9 +1159,47 @@ def _discover_essen_monthly_urls(
     reliable and cheaper for URL discovery.
     """
     slug = _slug(venue["name"])
-    horizon = _parse_iso_date(horizon_date or _scrape_horizon_date()) or _today_date()
+    horizon_date = horizon_date or _scrape_horizon_date()
+    horizon = _parse_iso_date(horizon_date) or _today_date()
     seen: set[str] = set()
     out: list[str] = []
+    event_stubs: list[dict] = []
+
+    rendered = rendered_fallback or ""
+    if not rendered:
+        try:
+            result = app.scrape(
+                venue["url"],
+                formats=["markdown", "html"],
+                headers=_DE_HEADERS,
+                actions=_venue_actions(slug),
+            )
+        except TypeError:
+            result = app.scrape(venue["url"], formats=["markdown", "html"], actions=_venue_actions(slug))
+        except Exception as exc:
+            print(f"    [essen-listing] render failed: {exc}", flush=True)
+            result = None
+        if result is not None:
+            rendered = "\n".join([_extract_html(result), _extract_markdown(result)])
+
+    if rendered:
+        listing_events = _extract_essen_listing_events(rendered, venue, horizon_date)
+        for ev in listing_events:
+            clean = _clean_url(ev.get("detail_url"))
+            if not clean or clean in seen:
+                continue
+            seen.add(clean)
+            out.append(clean)
+            event_stubs.append(ev)
+        dates = sorted({ev["date"] for ev in event_stubs if isinstance(ev.get("date"), str)})
+        print(
+            f"    [essen-listing] {len(event_stubs)} cards "
+            f"dates={dates[0] if dates else None}..{dates[-1] if dates else None}",
+            flush=True,
+        )
+        if dates and dates[-1] >= horizon_date:
+            return out, dates, event_stubs
+
     for month in _iter_month_starts(_today_date(), horizon):
         page_url = (
             "https://www.theater-essen.de/programm/kalender/"
@@ -1138,7 +1247,8 @@ def _discover_essen_monthly_urls(
             out.append(clean)
             new_count += 1
         print(f"    [essen-months] {month:%Y-%m}: +{new_count} URLs", flush=True)
-    return out
+    dates = sorted({ev["date"] for ev in event_stubs if isinstance(ev.get("date"), str)})
+    return out, dates, event_stubs
 
 
 def _discover_preferred_event_urls(
@@ -1166,7 +1276,14 @@ def _discover_preferred_event_urls(
             stats["latest_date"] = liederhalle_dates[-1]
             stats["date_count"] = len(liederhalle_dates)
     elif slug == "philharmonie_essen":
-        urls.extend(_discover_essen_monthly_urls(app, venue))
+        essen_urls, essen_dates, essen_events = _discover_essen_monthly_urls(
+            app, venue, horizon_date=horizon_date, rendered_fallback=html_fallback
+        )
+        urls.extend(essen_urls)
+        event_stubs.extend(essen_events)
+        if essen_dates:
+            stats["latest_date"] = essen_dates[-1]
+            stats["date_count"] = len(essen_dates)
 
     seen: set[str] = set()
     deduped: list[str] = []
@@ -2029,7 +2146,12 @@ def _scrape_one(
     should_expand_urls = expand_via_map or bool(venue_override.get("force_url_expand"))
     if should_expand_urls and source not in ("jsonld", "jsonld_firecrawl_html"):
         # Only expand when listing was the source (JSON-LD is already complete).
-        listing_html = listing.get("_raw_html") if isinstance(listing, dict) else None
+        listing_html = None
+        if isinstance(listing, dict):
+            listing_html = "\n".join(
+                part for part in (listing.get("_raw_html"), listing.get("_raw_markdown"))
+                if isinstance(part, str)
+            ) or None
         new_from_map, map_stats = _expand_via_map(
             app, venue, events,
             html_fallback=listing_html, horizon_date=horizon_date,
