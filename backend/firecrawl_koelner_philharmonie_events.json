@@ -3,82 +3,32 @@
   "city": "Köln",
   "slug": "koelner_philharmonie",
   "source_url": "https://www.koelner-philharmonie.de/de/konzerte",
-  "scraped_at": "2026-05-18T14:51:46.067485Z",
+  "scraped_at": "2026-05-19T12:46:20.896624Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
-    {
-      "date": "2026-05-18",
-      "time": "10:00",
-      "title": "SingPauseKöln",
-      "venue_hall": "Kölner Philharmonie",
-      "program": [],
-      "performers": [
-        "Singpause Köln"
-      ],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/singpausekoln/9596",
-      "venue": "Kölner Philharmonie",
-      "city": "Köln",
-      "duration_min": 60,
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "12:15",
-      "title": "SingPauseKöln",
-      "venue_hall": "Kölner Philharmonie",
-      "program": [
-        "Singpause Köln"
-      ],
-      "performers": [
-        "SingPauseKöln e.V."
-      ],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/singpausekoln/9597",
-      "venue": "Kölner Philharmonie",
-      "city": "Köln",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-18",
-      "time": "20:00",
-      "title": "Aurel Dawidiuk",
-      "venue_hall": null,
-      "program": [
-        "Orgel Plus..."
-      ],
-      "performers": [
-        "Aurel Dawidiuk"
-      ],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/aurel-dawidiuk/4603",
-      "venue": "Kölner Philharmonie",
-      "city": "Köln",
-      "is_classical": true
-    },
     {
       "date": "2026-05-19",
       "time": "20:00",
       "title": "Jörg Widmann | Isabelle Faust | Jean-Guihen Queyras | Pierre-Laurent Aimard",
       "venue_hall": null,
       "program": [
-        "Quatuor pour la fin du Temps"
+        "Jörg Widmann: Quatuor pour la fin du Temps"
       ],
       "performers": [
         "Isabelle Faust",
         "Jean-Guihen Queyras",
-        "Pierre-Laurent Aimard",
-        "Jörg Widmann"
+        "Pierre-Laurent Aimard"
       ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/jorg-widmann-isabelle-faust-jean-guihen-queyras-pierre-laurent-aimard/4649",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -106,7 +56,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/klassik-mal-anders-heute-schon-gelacht/4872",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "duration_min": 90,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -128,7 +83,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/lucia-cadotsch-aki/4651",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "duration_min": 80,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -152,6 +112,11 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/singout-koln-2026/9097",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -175,6 +140,11 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/singout-koln-2026/9090",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -198,7 +168,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/steve-hackett/9100",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "duration_min": 165,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": false
     },
     {
@@ -218,7 +193,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/die-prinzen/5007",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "duration_min": 150,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": false
     },
     {
@@ -237,6 +217,11 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/singpausekoln/9598",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -247,12 +232,19 @@
       "program": [
         "WDR Sinfonieorchester"
       ],
-      "performers": [],
+      "performers": [
+        "WDR Sinfonieorchester"
+      ],
       "conductor": null,
       "price": "Eintritt frei",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonielunch/4930",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -279,7 +271,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/marie-jacquot-sommernachtstraume/4873",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "duration_min": 135,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -306,7 +303,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/marie-jacquot-sommernachtstraume/4874",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "duration_min": 135,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -323,6 +325,10 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/kolner-kantorei/4799",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -339,6 +345,10 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/kolner-kammerorchester/4894",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -351,21 +361,26 @@
         "Mahler: Sinfonie Nr. 5 cis-Moll"
       ],
       "performers": [
-        "Alice Sara Ott",
-        "Konzerthausorchester Berlin"
+        "Konzerthausorchester Berlin",
+        "Joana Mallwitz"
       ],
       "conductor": "Joana Mallwitz",
       "price": "€ 20,- bis 80,-",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/mahlers-5-sinfonie-beethovens-3-klavierkonzert/4765",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "duration_min": 150,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-06-01",
       "time": "20:00",
-      "title": "La Nuit d’Afrique – From Sahel to Rhine",
+      "title": "La Nuit d'Afrique – From Sahel to Rhine",
       "venue_hall": "Kölner Philharmonie",
       "program": [
         "La Nuit d’Afrique - From Sahel to Rhine"
@@ -385,7 +400,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/la-nuit-dafrique-from-sahel-to-rhine/9167",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -408,7 +428,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/anne-sophie-mutter/4786",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -417,7 +442,7 @@
       "title": "Jazzchor der Uni Bonn | Second Circle",
       "venue_hall": null,
       "program": [
-        "»A Human Heart« – Ein Menschenleben in Musik"
+        "A Human Heart – Ein Menschenleben in Musik"
       ],
       "performers": [],
       "conductor": null,
@@ -425,6 +450,10 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/jazzchor-der-uni-bonn-second-circle/4761",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -459,7 +488,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/richard-wagner-gotterdammerung/4731",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "duration_min": 100,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -472,14 +506,20 @@
       ],
       "performers": [
         "José Maria Blumenschein",
-        "WDR Sinfonieorchester"
+        "WDR Sinfonieorchester",
+        "Reinhard Goebel"
       ],
       "conductor": "Reinhard Goebel",
       "price": "€ 12,- bis 21,-",
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/wdr-happy-hour-mozart/4875",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "duration_min": 75,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -502,6 +542,11 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/heroes-alexander-scheer-singt-david-bowie/9150",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -518,6 +563,10 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/jugendchor-st-stephan/4888",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -526,8 +575,8 @@
       "title": "Jan Lisiecki | Rotterdams Philharmonisch Orkest | Lahav Shani",
       "venue_hall": "Kölner Philharmonie",
       "program": [
-        "Grieg: Konzert für Klavier und Orchester a-Moll op. 16",
-        "Brahms: Sinfonie Nr. 2 D-Dur op. 73"
+        "Brahms",
+        "Grieg"
       ],
       "performers": [
         "Jan Lisiecki",
@@ -538,7 +587,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/jan-lisiecki-rotterdams-philharmonisch-orkest-lahav-shani/9512",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -563,7 +617,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/belcea-quartet/4711",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "duration_min": 90,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -572,7 +631,7 @@
       "title": "Julian Prégardien | Kristian Bezuidenhout",
       "venue_hall": null,
       "program": [
-        "»Die schöne Müllerin«"
+        "Die schöne Müllerin"
       ],
       "performers": [],
       "conductor": null,
@@ -580,34 +639,10 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/julian-pregardien-kristian-bezuidenhout/4725",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-10",
-      "time": "20:00",
-      "title": "Singen mit Klasse!",
-      "venue_hall": "Kölner Philharmonie",
-      "program": [
-        "Karimé: King kommt noch"
-      ],
-      "performers": [
-        "12 Kölner Grundschulklassen",
-        "Gürzenich-Orchester Köln",
-        "Mariano Chiacchiarini",
-        "Ruth Dobernecker",
-        "Maike Hiller",
-        "Johanna Risse",
-        "Clara Siegmund",
-        "Payam Yazdani",
-        "Natalija Stanković",
-        "Georgios Kolios"
-      ],
-      "conductor": "Ruth Dobernecker",
-      "price": "Mit Anmeldung",
-      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/singen-mit-klasse/4824",
-      "venue": "Kölner Philharmonie",
-      "city": "Köln",
-      "duration_min": 60,
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -631,7 +666,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonieveedel-panz/5068",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -655,7 +695,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonieveedel-panz/5069",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -679,7 +724,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonieveedel-panz/5070",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -701,7 +751,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/geist-der-romantik-beethoven-mendelssohn/4877",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 90,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -725,7 +780,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonieveedel-panz/5071",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -749,7 +809,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonieveedel-panz/5072",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -766,6 +831,11 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/the-constellation-choir-orchestra-sir-john-eliot-gardiner/4736",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -789,7 +859,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/nacht/4971",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -813,7 +888,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonieveedel-panz/5073",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -836,7 +916,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonieveedel-panz/5074",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -862,7 +947,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/rising-stars-trio-concept/4707",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 70,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -885,6 +975,11 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/alexei-ogrintchouk-jerome-fruchart-hans-eijsackers/4801",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -908,7 +1003,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/nacht/4972",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -932,7 +1032,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonieveedel-panz/5075",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -956,7 +1061,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/philharmonieveedel-panz/5076",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -980,6 +1090,11 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/gurzenich-orchester-koln-bock-auf-klassik/4973",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1003,7 +1118,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/musik-der-zeit-hotpink/4879",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1022,7 +1142,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/stadtgeklimper-friends/4763",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1050,7 +1175,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/kolner-burgerorchester/4974",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1075,7 +1205,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/deutz-chor-koln/4880",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1098,7 +1233,12 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/hakan-hardenberger-mahler-chamber-orchestra-daniel-harding/4735",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1123,26 +1263,151 @@
       "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/barbara-kozelj-ensemble-musikfabrik-bas-wiegers/4848",
       "venue": "Kölner Philharmonie",
       "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 120,
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-25",
+      "time": "12:00",
+      "title": "Singen mit Klasse!",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Karimé: King kommt noch"
+      ],
+      "performers": [
+        "12 Kölner Grundschulklassen",
+        "Gürzenich-Orchester Köln",
+        "Mariano Chiacchiarini",
+        "Ruth Dobernecker",
+        "Maike Hiller",
+        "Johanna Risse",
+        "Clara Siegmund",
+        "Payam Yazdani",
+        "Natalija Stanković",
+        "Georgios Kolios"
+      ],
+      "conductor": "Ruth Dobernecker",
+      "price": "Mit Anmeldung",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/singen-mit-klasse/4824",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 60,
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-27",
+      "time": "20:00",
+      "title": "Universen – Măcelaru & Isabelle Faust",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Schostakowitsch: Konzert für Violine und Orchester Nr. 2 cis-Moll op. 129",
+        "Enescu: Sinfonie Nr. 3"
+      ],
+      "performers": [
+        "Isabelle Faust",
+        "WDR Rundfunkchor",
+        "WDR Sinfonieorchester"
+      ],
+      "conductor": "Cristian Măcelaru",
+      "price": "€ 24,- bis 67,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/universen-macelaru-isabelle-faust/4876",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-28",
+      "time": "11:00",
+      "title": "Singen mit Klasse!",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Ulrich Kreppein: King kommt noch",
+        "Saleh Katbeh: King kommt noch",
+        "Andrea Karimé: King kommt noch"
+      ],
+      "performers": [
+        "12 Kölner Grundschulklassen",
+        "Gürzenich-Orchester Köln",
+        "Mariano Chiacchiarini",
+        "Ruth Dobernecker",
+        "Maike Hiller",
+        "Johanna Risse",
+        "Clara Siegmund",
+        "Payam Yazdani",
+        "Natalija Stanković",
+        "Georgios Kolios",
+        "Ullrich Kreppein",
+        "Andrea Karimé"
+      ],
+      "conductor": "Ruth Dobernecker",
+      "price": "€ 9,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/singen-mit-klasse/4825",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 60,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-28",
+      "time": "16:00",
+      "title": "JSO meets GO",
+      "venue_hall": "Kölner Philharmonie",
+      "program": [
+        "Weber: Ouvertüre aus: Der Freischütz op. 77 JV 277",
+        "Dvořák: Polednice (Die Mittagshexe) op. 108 B 196",
+        "Tschaikowski: Roméo et Juliette h-moll CS 39"
+      ],
+      "performers": [
+        "Jugendsinfonieorchester der Rheinischen Musikschule",
+        "Gürzenich-Orchester Köln",
+        "Juya Shin"
+      ],
+      "conductor": "Hamed Garschi",
+      "price": "€ 24,-",
+      "detail_url": "https://www.koelner-philharmonie.de/de/konzerte/jso-meets-go/9593",
+      "venue": "Kölner Philharmonie",
+      "city": "Köln",
+      "discovery_source": "koelner_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 75,
       "is_classical": true
     }
   ],
   "total_events": 50,
-  "total_events_visible": 93,
-  "total_events_discovered": 50,
-  "total_events_discovered_strict": 50,
+  "total_events_visible": 41,
+  "total_events_discovered": 47,
+  "total_events_discovered_strict": 47,
+  "total_events_enriched": 50,
   "source": "firecrawl_listing",
-  "latest_event_date": "2026-06-22",
+  "latest_discovered_event_date": "2026-06-28",
+  "latest_event_date": "2026-06-28",
   "covers_horizon": false,
   "map_expand_stats": {
-    "preferred_urls": 50,
-    "map_urls": 4055,
+    "preferred_urls": 47,
+    "map_urls": 0,
     "html_urls": 50,
-    "new_urls": 4029,
-    "scraped": 90,
-    "past": 62,
-    "beyond_horizon": 0,
-    "invalid": 8,
-    "canceled": 0
+    "new_urls": 26,
+    "latest_discovered_date": "2026-06-28",
+    "preferred_date_count": 30
   }
 }
