@@ -800,7 +800,11 @@ def _scrape_listing_with_schema(
             extra["actions"] = actions
         try:
             extracted = _attempt(extra)
-            if extracted.get("events") or extracted.get("_raw_html"):
+            if (
+                extracted.get("events")
+                or extracted.get("_raw_html")
+                or extracted.get("_raw_markdown")
+            ):
                 return extracted
         except TypeError as e:
             # unexpected kwarg (e.g. SDK doesn't accept headers) — retry without it
@@ -808,7 +812,11 @@ def _scrape_listing_with_schema(
                 extra.pop("headers", None)
                 try:
                     extracted = _attempt(extra)
-                    if extracted.get("events") or extracted.get("_raw_html"):
+                    if (
+                        extracted.get("events")
+                        or extracted.get("_raw_html")
+                        or extracted.get("_raw_markdown")
+                    ):
                         return extracted
                 except Exception as e2:
                     last_err = e2
@@ -1630,6 +1638,15 @@ def _extract_preferred_listing_events(
     return [], None
 
 
+def _rendered_listing_text(listing: dict) -> str:
+    """Return the rendered listing text Firecrawl gave us, HTML plus markdown."""
+    if not isinstance(listing, dict):
+        return ""
+    return "\n".join(
+        part for part in (listing.get("_raw_html"), listing.get("_raw_markdown")) if part
+    )
+
+
 def _unix_start_of_day(day: date) -> int:
     return int(datetime(day.year, day.month, day.day).timestamp())
 
@@ -2289,9 +2306,10 @@ def _scrape_one_discover(
                     total_visible = len(ld_future)
                     source = "jsonld_firecrawl_html"
 
-    if not events_raw and isinstance(listing, dict) and listing.get("_raw_html"):
+    rendered_listing = _rendered_listing_text(listing)
+    if not events_raw and rendered_listing:
         parsed_events, parsed_source = _extract_preferred_listing_events(
-            listing["_raw_html"], venue, horizon_date
+            rendered_listing, venue, horizon_date
         )
         if parsed_events:
             print(
@@ -2469,9 +2487,10 @@ def _scrape_one(
                 total_visible = len(ld_future)
                 source = "jsonld_firecrawl_html"
 
-    if not events_raw and isinstance(listing, dict) and listing.get("_raw_html"):
+    rendered_listing = _rendered_listing_text(listing)
+    if not events_raw and rendered_listing:
         parsed_events, parsed_source = _extract_preferred_listing_events(
-            listing["_raw_html"], venue, horizon_date
+            rendered_listing, venue, horizon_date
         )
         if parsed_events:
             print(
