@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sys
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
@@ -20,6 +21,9 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 BACKEND = REPO_ROOT / "backend"
 DEFAULT_GLOB = "firecrawl_*_events.json"
 
+sys.path.insert(0, str(REPO_ROOT))
+from backend.scrape.classify import has_non_classical_signal, is_classical_event
+
 # Legacy full scrapes for reference totals (optional).
 LEGACY_REFERENCE: dict[str, str] = {
     "berliner_philharmonie": "berliner_philharmonie_events.json",
@@ -28,6 +32,8 @@ LEGACY_REFERENCE: dict[str, str] = {
 
 NOISE_RATIO_WARN = 5.0  # discovered_loose / max(visible, extracted) above this → flag
 MAP_ABSOLUTE_WARN = 250  # loose map count above this → flag regardless of ratio
+CLASSICAL_PROGRAM_WARN = 0.60
+NONCLASSICAL_ENRICH_WARN = 0.20
 
 
 @dataclass
@@ -46,6 +52,11 @@ class VenueCoverage:
     with_program: int
     with_date: int
     with_detail_url: int
+    classical: int
+    classical_with_program: int
+    enriched: int
+    nonclassical_enriched: int
+    discovered_only: int
     scrape_horizon_date: str | None
     latest_event_date: str | None
     latest_discovered_event_date: str | None
@@ -57,6 +68,24 @@ class VenueCoverage:
         if not self.extracted:
             return None
         return self.with_program / self.extracted
+
+    @property
+    def classical_program_rate(self) -> float | None:
+        if not self.classical:
+            return None
+        return self.classical_with_program / self.classical
+
+    @property
+    def date_rate(self) -> float | None:
+        if not self.extracted:
+            return None
+        return self.with_date / self.extracted
+
+    @property
+    def nonclassical_enrich_rate(self) -> float | None:
+        if not self.enriched:
+            return None
+        return self.nonclassical_enriched / self.enriched
 
     @property
     def noise_ratio_loose(self) -> float | None:
@@ -71,6 +100,70 @@ class VenueCoverage:
         if not base or self.discovered_strict is None:
             return None
         return self.discovered_strict / base
+
+    @property
+    def discovery_status(self) -> str:
+        if self.error or self.extracted == 0:
+            return "FAIL"
+        if self.covers_horizon is True:
+            return "OK"
+        if self.scrape_horizon_date is None:
+            return "UNK"
+        return "WARN"
+
+    @property
+    def dates_status(self) -> str:
+        if self.extracted == 0:
+            return "FAIL"
+        return "OK" if self.with_date == self.extracted else "WARN"
+
+    @property
+    def program_status(self) -> str:
+        rate = self.classical_program_rate
+        if rate is None:
+            return "UNK"
+        return "OK" if rate >= CLASSICAL_PROGRAM_WARN else "WARN"
+
+    @property
+    def map_status(self) -> str:
+        if any(f.startswith(("MAP_OVERCOUNT", "HIGH_MAP_NOISE", "STRICT_vs_LEGACY")) for f in self.flags):
+            return "WARN"
+        return "OK"
+
+    @property
+    def cost_status(self) -> str:
+        rate = self.nonclassical_enrich_rate
+        if rate is None:
+            return "UNK"
+        return "OK" if rate <= NONCLASSICAL_ENRICH_WARN else "WARN"
+
+    @property
+    def needs_adapter(self) -> bool:
+        return any((
+            self.discovery_status in ("FAIL", "WARN"),
+            self.dates_status == "WARN",
+            self.map_status == "WARN",
+        ))
+
+    @property
+    def next_action(self) -> str:
+        if self.error:
+            return "fix run error"
+        if self.extracted == 0:
+            return "repair listing extraction"
+        if self.with_date < self.extracted:
+            return "add card/date parser"
+        if self.covers_horizon is False:
+            return "extend listing/pagination discovery"
+        if self.map_status == "WARN":
+            return "tighten URL pattern or adapter"
+        if self.program_status == "WARN":
+            return "improve detail enrichment"
+        if self.cost_status == "WARN":
+            return "refine budget priority"
+        if self.scrape_horizon_date is None:
+            return "rerun with current horizon"
+        return "monitor"
 
 
 def _slug_from_path(path: Path) -> str:
@@ -97,6 +190,15 @@ def _load_reference_total(slug: str) -> int | None:
     return data.get("total_events")
 
 
+def _optional_str(value: Any) -> str | None:
+    if not isinstance(value, str):
+        return None
+    value = value.strip()
+    if not value or value.lower() in {"null", "none", "n/a"}:
+        return None
+    return value
+
+
 def _analyze_file(path: Path) -> VenueCoverage:
     data: dict[str, Any] = json.loads(path.read_text(encoding="utf-8"))
     slug = data.get("slug") or _slug_from_path(path)
@@ -106,23 +208,49 @@ def _analyze_file(path: Path) -> VenueCoverage:
 
     extracted = len(events)
     with_program = sum(1 for e in events if isinstance(e, dict) and e.get("program"))
-    with_date = sum(1 for e in events if isinstance(e, dict) and e.get("date"))
+    with_date = sum(1 for e in events if isinstance(e, dict) and _optional_str(e.get("date")))
     with_detail = sum(1 for e in events if isinstance(e, dict) and e.get("detail_url"))
-    latest_event_date = data.get("latest_event_date")
-    if not isinstance(latest_event_date, str):
+    classical = 0
+    classical_with_program = 0
+    enriched = 0
+    nonclassical_enriched = 0
+    discovered_only = 0
+    for event in events:
+        if not isinstance(event, dict):
+            continue
+        is_classical = event.get("is_classical")
+        if not isinstance(is_classical, bool):
+            is_classical = is_classical_event(event)
+        has_enrichment = bool(
+            event.get("program")
+            or event.get("performers")
+            or event.get("conductor")
+            or event.get("price")
+            or event.get("duration_min")
+        )
+        if is_classical:
+            classical += 1
+            if event.get("program"):
+                classical_with_program += 1
+        if has_enrichment:
+            enriched += 1
+            if not is_classical or has_non_classical_signal(event):
+                nonclassical_enriched += 1
+        if event.get("discovered_only"):
+            discovered_only += 1
+    latest_event_date = _optional_str(data.get("latest_event_date"))
+    if latest_event_date is None:
         dates = sorted(
-            e.get("date") for e in events
-            if isinstance(e, dict) and isinstance(e.get("date"), str)
+            date_s for e in events
+            if isinstance(e, dict) and (date_s := _optional_str(e.get("date")))
         )
         latest_event_date = dates[-1] if dates else None
 
-    latest_discovered_event_date = data.get("latest_discovered_event_date")
-    if not isinstance(latest_discovered_event_date, str):
+    latest_discovered_event_date = _optional_str(data.get("latest_discovered_event_date"))
+    if latest_discovered_event_date is None:
         latest_discovered_event_date = latest_event_date
 
-    scrape_horizon_date = data.get("scrape_horizon_date")
-    if not isinstance(scrape_horizon_date, str):
-        scrape_horizon_date = None
+    scrape_horizon_date = _optional_str(data.get("scrape_horizon_date"))
     covers_horizon = data.get("covers_horizon")
     if not isinstance(covers_horizon, bool):
         coverage_latest = max(
@@ -166,6 +294,11 @@ def _analyze_file(path: Path) -> VenueCoverage:
         with_program=with_program,
         with_date=with_date,
         with_detail_url=with_detail,
+        classical=classical,
+        classical_with_program=classical_with_program,
+        enriched=enriched,
+        nonclassical_enriched=nonclassical_enriched,
+        discovered_only=discovered_only,
         scrape_horizon_date=scrape_horizon_date,
         latest_event_date=latest_event_date,
         latest_discovered_event_date=latest_discovered_event_date,
@@ -246,6 +379,24 @@ def build_markdown(rows: list[VenueCoverage], generated_at: str) -> str:
 
     lines.extend([
         "",
+        "## Audit Matrix",
+        "",
+        "| Venue | Discovery | Dates | Program | Map | Cost | Adapter | Next |",
+        "|-------|-----------|-------|---------|-----|------|---------|------|",
+    ])
+
+    for r in sorted(rows, key=lambda x: x.venue.lower()):
+        adapter = "yes" if r.needs_adapter else "no"
+        lines.append(
+            f"| {r.venue} | {r.discovery_status} | {r.dates_status} "
+            f"({r.with_date}/{r.extracted}) | {r.program_status} "
+            f"({_fmt_pct(r.classical_program_rate)} cls) | {r.map_status} | "
+            f"{r.cost_status} ({r.nonclassical_enriched}/{r.enriched}) | "
+            f"{adapter} | {r.next_action} |"
+        )
+
+    lines.extend([
+        "",
         "## Notes",
         "",
         "- **HIGH_MAP_NOISE**: `map()` loose count ≫ visible/extracted — do not use for "
@@ -255,6 +406,10 @@ def build_markdown(rows: list[VenueCoverage], generated_at: str) -> str:
         "- Discovery over-count usually comes from broad `/konzerte/` / `/programm/` "
         "paths in site-wide `map()`, not from listing extraction.",
         "- **SHORT_HORIZON**: latest event in the JSON is before the configured scrape horizon.",
+        "- **Program** in the audit uses the programme rate for events classified as classical, "
+        "not the raw all-event programme rate.",
+        "- **Cost** warns when many enriched detail pages are clearly non-classical, because "
+        "that burns the limited Firecrawl detail budget.",
         "",
     ])
     return "\n".join(lines)
@@ -273,12 +428,26 @@ def build_json(rows: list[VenueCoverage], generated_at: str) -> dict:
                 "discovered_strict": r.discovered_strict,
                 "reference_total": r.reference_total,
                 "program_rate": r.program_rate,
+                "classical": r.classical,
+                "classical_program_rate": r.classical_program_rate,
+                "enriched": r.enriched,
+                "nonclassical_enriched": r.nonclassical_enriched,
+                "discovered_only": r.discovered_only,
                 "latest_event_date": r.latest_event_date,
                 "latest_discovered_event_date": r.latest_discovered_event_date,
                 "scrape_horizon_date": r.scrape_horizon_date,
                 "covers_horizon": r.covers_horizon,
                 "noise_ratio_loose": r.noise_ratio_loose,
                 "noise_ratio_strict": r.noise_ratio_strict,
+                "audit": {
+                    "discovery": r.discovery_status,
+                    "dates": r.dates_status,
+                    "program": r.program_status,
+                    "map": r.map_status,
+                    "cost": r.cost_status,
+                    "needs_adapter": r.needs_adapter,
+                    "next_action": r.next_action,
+                },
                 "flags": r.flags,
                 "error": r.error,
                 "scraped_at": r.scraped_at,
