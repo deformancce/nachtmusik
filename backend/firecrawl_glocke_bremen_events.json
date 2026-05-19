@@ -3,7 +3,7 @@
   "city": "Bremen",
   "slug": "glocke_bremen",
   "source_url": "https://www.glocke.de/tickets-programm/",
-  "scraped_at": "2026-05-19T17:30:24.537911Z",
+  "scraped_at": "2026-05-19T17:42:51.955384Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
@@ -40,7 +40,7 @@
     {
       "date": "2026-05-20",
       "time": "19:00",
-      "title": "»Curtis on Tour« 8. Philharmonisches Kammerkonzert",
+      "title": "Curtis On Tour 8 Philharmonisches Kammerkonzert",
       "venue_hall": "Kleiner Saal",
       "program": [
         "Martinů: Drei Madrigale",
@@ -56,14 +56,14 @@
       ],
       "conductor": "Liza Ferschtman",
       "price": "€31–€47",
-      "detail_url": "https://www.glocke.de/event/curtis-on-tour-8-philharmonisches-kammerkonzert/?back_btn=1",
+      "detail_url": "https://www.glocke.de/event/curtis-on-tour-8-philharmonisches-kammerkonzert/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "reused_enrichment": true,
+      "discovery_source": "glocke_listing",
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -158,7 +158,7 @@
     {
       "date": "2026-05-27",
       "time": "19:30",
-      "title": "Die Deutsche Kammerphilharmonie Bremen »Haupt­sache Tschai­kowsky« 5. Premieren-Abonne­ment­konzert",
+      "title": "Die Deutsche Kammerphilharmonie Bremen »Haupt­sache Tschai­kowsky« 5. Premieren-Abonnementkonzert",
       "venue_hall": "Großer Saal",
       "program": [
         "Tschaikowsky: Klavierkonzert Nr. 1 b-Moll op. 23",
@@ -182,7 +182,7 @@
     {
       "date": "2026-05-29",
       "time": "19:30",
-      "title": "Die Deutsche Kammerphilharmonie Bremen »Haupt­sache Tschai­kowsky« 3. Highlight-Abonnementkonzert",
+      "title": "Die Deutsche Kammerphilharmonie Bremen Hauptsache Tschaikowsky 3 Highlight Abonnementkonzert",
       "venue_hall": "Großer Saal",
       "program": [
         "Brahms: Klavierkonzert Nr. 2 B-Dur op. 83",
@@ -193,14 +193,14 @@
       ],
       "conductor": "Jérémie Rhorer",
       "price": null,
-      "detail_url": "https://www.glocke.de/event/die-deutsche-kammerphilharmonie-bremen-hauptsache-tschaikowsky-3-highlight-abonnementkonzert/?back_btn=1",
+      "detail_url": "https://www.glocke.de/event/die-deutsche-kammerphilharmonie-bremen-hauptsache-tschaikowsky-3-highlight-abonnementkonzert/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "reused_enrichment": true,
+      "discovery_source": "glocke_listing",
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -224,7 +224,7 @@
     {
       "date": "2026-05-30",
       "time": "20:00",
-      "title": "»Flying Sound – Klang. Emotion. Präzision« mit Tigran Maytesian und Daniel Blumenthal",
+      "title": "Flying Sound Klang Emotion Praezision Mit Tigran Maytesian Und Daniel Blumenthal",
       "venue_hall": "Kleiner Saal",
       "program": [
         "Beethoven: Sonate Nr. 5 F-Dur op. 24 »Frühlingssonate«",
@@ -246,20 +246,20 @@
       ],
       "conductor": null,
       "price": "€29,00 – €59,00",
-      "detail_url": "https://www.glocke.de/event/flying-sound-klang-emotion-praezision-mit-tigran-maytesian-und-daniel-blumenthal/?back_btn=1",
+      "detail_url": "https://www.glocke.de/event/flying-sound-klang-emotion-praezision-mit-tigran-maytesian-und-daniel-blumenthal/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "reused_enrichment": true,
+      "discovery_source": "glocke_listing",
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-05-31",
       "time": "15:30",
-      "title": "Bremer Kaffeehaus-Orchester »Frisch aufgeblüht« Frühlingskonzert",
+      "title": "Bremer Kaffeehaus Orchester Frisch Aufgeblueht Fruehlingskonzert",
       "venue_hall": "Kleiner Saal",
       "program": [
         "Verdi: Melodie",
@@ -271,14 +271,14 @@
       ],
       "conductor": "Hauke, Anselm",
       "price": "36,00 € Normal / 26,00 € Ermäßigt",
-      "detail_url": "https://www.glocke.de/event/bremer-kaffeehaus-orchester-frisch-aufgeblueht-fruehlingskonzert/?back_btn=1",
+      "detail_url": "https://www.glocke.de/event/bremer-kaffeehaus-orchester-frisch-aufgeblueht-fruehlingskonzert/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "reused_enrichment": true,
+      "discovery_source": "glocke_listing",
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -508,15 +508,17 @@
     {
       "date": "2026-06-13",
       "time": "20:00",
-      "title": "La Strada Gala 2",
-      "venue_hall": "Großer Saal",
-      "program": [],
+      "title": "Heinz Rudolf Kunze Liest Gebrauchsgegenstand Live",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Kunze: Gebrauchgegenstand"
+      ],
       "performers": [
-        "Siegfried & Joy"
+        "Heinz Rudolf Kunze"
       ],
       "conductor": null,
-      "price": "39,00 € Normal, 34,00 € Ermäßigt",
-      "detail_url": "https://www.glocke.de/event/la-strada-gala-2/",
+      "price": "43,50 € Normal",
+      "detail_url": "https://www.glocke.de/event/heinz-rudolf-kunze-liest-gebrauchsgegenstand-live/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
@@ -529,17 +531,15 @@
     {
       "date": "2026-06-13",
       "time": "20:00",
-      "title": "Heinz Rudolf Kunze Liest Gebrauchsgegenstand Live",
-      "venue_hall": "Kleiner Saal",
-      "program": [
-        "Kunze: Gebrauchgegenstand"
-      ],
+      "title": "La Strada Gala 2",
+      "venue_hall": "Großer Saal",
+      "program": [],
       "performers": [
-        "Heinz Rudolf Kunze"
+        "Siegfried & Joy"
       ],
       "conductor": null,
-      "price": "43,50 € Normal",
-      "detail_url": "https://www.glocke.de/event/heinz-rudolf-kunze-liest-gebrauchsgegenstand-live/",
+      "price": "39,00 € Normal, 34,00 € Ermäßigt",
+      "detail_url": "https://www.glocke.de/event/la-strada-gala-2/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
@@ -693,7 +693,9 @@
       "title": "Crimenight Wahre Verbrechen 5",
       "venue_hall": "Kleiner Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Dreamlight Labs GmbH"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.glocke.de/event/crimenight-wahre-verbrechen-5/",
@@ -701,8 +703,8 @@
       "city": "Bremen",
       "discovery_source": "glocke_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -720,9 +722,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -740,9 +743,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1420,9 +1424,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1503,9 +1508,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1524,9 +1530,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1535,16 +1542,19 @@
       "title": "Musica Viva Festliches Eroeffnungskonzert 13",
       "venue_hall": "Großer Saal",
       "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "performers": [
+        "musica viva Orchester",
+        "musica viva Chor"
+      ],
+      "conductor": "Nicolas Hrudnik",
+      "price": "58,00 € Normal, 29,00 € Ermäßigt, 49,00 € Normal, 24,50 € Ermäßigt, 42,00 € Normal, 21,00 € Ermäßigt, 31,00 € Normal, 15,50 € Ermäßigt",
       "detail_url": "https://www.glocke.de/event/musica-viva-festliches-eroeffnungskonzert-13/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1553,16 +1563,19 @@
       "title": "Musica Viva Festliches Eroeffnungskonzert 12",
       "venue_hall": "Großer Saal",
       "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "performers": [
+        "musica viva Orchester",
+        "musica viva Chor"
+      ],
+      "conductor": "Nicolas Hrudnik",
+      "price": "58,00 € Normal; 29,00 € Ermäßigt; 49,00 € Normal; 24,50 € Ermäßigt; 42,00 € Normal; 21,00 € Ermäßigt; 31,00 € Normal; 15,50 € Ermäßigt",
       "detail_url": "https://www.glocke.de/event/musica-viva-festliches-eroeffnungskonzert-12/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1630,7 +1643,7 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovered_only": false,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": true
@@ -1723,7 +1736,7 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovered_only": false,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": true
@@ -1733,35 +1746,23 @@
       "time": "20:00",
       "title": "Helge Schneider Ellenbogen Vom Tisch 2",
       "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
+      "program": [
+        "Schneider: Ellenbogen vom Tisch!"
+      ],
+      "performers": [
+        "Helge Schneider",
+        "Leo",
+        "Sandro"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "60,65 € Normal",
       "detail_url": "https://www.glocke.de/event/helge-schneider-ellenbogen-vom-tisch-2/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
-      "is_classical": true
-    },
-    {
-      "date": "2026-10-09",
-      "time": "20:00",
-      "title": "Helge Schneider Ellenbogen Vom Tisch",
-      "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.glocke.de/event/helge-schneider-ellenbogen-vom-tisch/",
-      "venue": "Glocke Bremen",
-      "city": "Bremen",
-      "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1793,6 +1794,24 @@
       "enriched": true,
       "enrichment_status": "enriched",
       "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-09",
+      "time": "20:00",
+      "title": "Helge Schneider Ellenbogen Vom Tisch",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.glocke.de/event/helge-schneider-ellenbogen-vom-tisch/",
+      "venue": "Glocke Bremen",
+      "city": "Bremen",
+      "discovery_source": "glocke_listing",
+      "discovered_only": true,
+      "enriched": false,
+      "enrichment_status": "stub",
       "is_classical": true
     },
     {
@@ -2341,10 +2360,10 @@
     }
   ],
   "total_events": 100,
-  "total_events_visible": 18,
+  "total_events_visible": 6,
   "total_events_discovered": 100,
   "total_events_discovered_strict": 100,
-  "total_events_enriched": 72,
+  "total_events_enriched": 76,
   "source": "firecrawl_listing",
   "latest_discovered_event_date": "2026-11-11",
   "latest_event_date": "2026-11-11",
@@ -2358,7 +2377,7 @@
     "preferred_urls": 100,
     "map_urls": 0,
     "html_urls": 20,
-    "new_urls": 90,
+    "new_urls": 94,
     "latest_discovered_date": "2026-11-11",
     "preferred_date_count": 82
   }
