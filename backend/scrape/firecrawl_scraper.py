@@ -1571,15 +1571,29 @@ def _title_from_url(url: str) -> str:
     raw = path_bits[-1] if path_bits else "event"
     if raw.isdigit() and len(path_bits) > 1:
         raw = path_bits[-2]
+    raw = re.sub(r"^\d{2}-\d{2}-20\d{2}-", "", raw)
     raw = re.sub(r"^\d+-", "", raw)
     raw = raw.replace("-", " ").strip()
     return raw.title() if raw else "Event"
 
 
+def _date_from_dortmund_url(url: str) -> str | None:
+    match = re.search(r"/(\d{2})-(\d{2})-(20\d{2})-", urlparse(url).path)
+    if not match:
+        return None
+    day, month, year = match.groups()
+    try:
+        return date(int(year), int(month), int(day)).isoformat()
+    except ValueError:
+        return None
+
+
 def _event_stub_from_url(url: str, venue: dict, source: str) -> dict:
     clean = _clean_url(url)
+    slug = _slug(venue["name"])
+    event_date = _date_from_dortmund_url(clean) if slug == "konzerthaus_dortmund" else None
     ev = {
-        "date": None,
+        "date": event_date,
         "time": None,
         "title": _title_from_url(clean),
         "title_inferred": True,
@@ -1847,6 +1861,8 @@ def _expand_via_map(
             _mark_enrichment_status(ev)
         else:
             ev = _event_stub_from_url(url, venue, "url_discovery")
+        if not _is_within_scrape_window(ev.get("date"), horizon_date):
+            continue
         new_events.append(ev)
     print(f"    [map-expand] result: +{len(new_events)} discovered stubs", flush=True)
     return new_events, stats
