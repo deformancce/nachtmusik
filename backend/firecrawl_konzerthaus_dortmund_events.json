@@ -2113,7 +2113,7 @@
   "total_events_discovered_strict": 218,
   "total_events_enriched": 75,
   "source": "firecrawl_listing",
-  "latest_discovered_event_date": "2026-06-21",
+  "latest_discovered_event_date": "2026-11-29",
   "latest_event_date": "2026-11-29",
   "covers_horizon": false,
   "map_expand_stats": {
@@ -2121,6 +2121,6 @@
     "map_urls": 0,
     "html_urls": 218,
     "new_urls": 204,
-    "latest_discovered_date": "2026-06-21"
+    "latest_discovered_date": "2026-11-29"
   }
 }

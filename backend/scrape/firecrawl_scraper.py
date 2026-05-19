@@ -1724,6 +1724,8 @@ def _add_coverage_fields(payload: dict, events: list[dict], horizon_date: str) -
     discovered_latest = payload.get("latest_discovered_event_date")
     if not isinstance(discovered_latest, str):
         discovered_latest = latest
+    elif latest:
+        discovered_latest = max(discovered_latest, latest)
     coverage_latest = max(
         [d for d in (latest, discovered_latest) if isinstance(d, str)],
         default=None,
@@ -1864,6 +1866,12 @@ def _expand_via_map(
         if not _is_within_scrape_window(ev.get("date"), horizon_date):
             continue
         new_events.append(ev)
+    new_latest = _latest_event_date(new_events)
+    if new_latest:
+        stats["latest_discovered_date"] = max(
+            [d for d in (stats.get("latest_discovered_date"), new_latest) if d],
+            default=None,
+        )
     print(f"    [map-expand] result: +{len(new_events)} discovered stubs", flush=True)
     return new_events, stats
 
