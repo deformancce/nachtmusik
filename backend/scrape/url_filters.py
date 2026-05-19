@@ -42,6 +42,13 @@ _NOISE_PATH_RE = re.compile(
 
 _NUMERIC_DETAIL_TAIL_RE = re.compile(r"/\d{3,}/?$")
 
+VENUE_ALLOWED_DOMAINS: dict[str, set[str]] = {
+    # Isarphilharmonie discovery can come from Gasteig's room-filtered venue page
+    # or from the Münchner Philharmoniker calendar, which publishes a deeper
+    # season list for concerts at the Isarphilharmonie.
+    "isarphilharmonie_muenchen": {"www.gasteig.de", "gasteig.de", "www.mphil.de", "mphil.de"},
+}
+
 # Per-venue detail URL shapes (aligned with working listing detail_url values).
 VENUE_STRICT_PATTERNS: dict[str, re.Pattern[str]] = {
     "berliner_philharmonie": re.compile(
@@ -93,7 +100,7 @@ VENUE_STRICT_PATTERNS: dict[str, re.Pattern[str]] = {
         re.I,
     ),
     "isarphilharmonie_muenchen": re.compile(
-        r"gasteig\.de/veranstaltungen/[^/?#]+/?",
+        r"(?:gasteig\.de/veranstaltungen/[^/?#]+/?|mphil\.de/konzerte-und-karten/kalender/konzerte/[^/?#]+/?$)",
         re.I,
     ),
 }
@@ -113,6 +120,16 @@ def _same_domain(url: str, base_url: str) -> bool:
     domain = urlparse(base_url).netloc
     parsed = urlparse(url)
     return not parsed.netloc or parsed.netloc == domain
+
+
+def _same_or_allowed_domain(url: str, base_url: str, venue_slug: str | None = None) -> bool:
+    parsed = urlparse(url)
+    if not parsed.netloc:
+        return True
+    allowed = VENUE_ALLOWED_DOMAINS.get(venue_slug or "")
+    if allowed and parsed.netloc in allowed:
+        return True
+    return _same_domain(url, base_url)
 
 
 def _generic_strict_detail(url: str) -> bool:
@@ -143,7 +160,7 @@ def is_loose_event_url(url: str, base_url: str) -> bool:
 
 
 def is_strict_event_url(url: str, base_url: str, venue_slug: str | None = None) -> bool:
-    if not url or not _same_domain(url, base_url):
+    if not url or not _same_or_allowed_domain(url, base_url, venue_slug):
         return False
     if _EXCLUDE_RE.search(url):
         return False

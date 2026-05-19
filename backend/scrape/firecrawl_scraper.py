@@ -663,9 +663,10 @@ VENUE_OVERRIDES: dict[str, dict] = {
         "wait_for_listing_count": 20,
     },
     "isarphilharmonie_muenchen": {
-        # Use Gasteig's room-filtered Isarphilharmonie listing. It shows a count
-        # and a "Mehr laden" button instead of the huge mphil.de archive.
-        "actions": lambda: _cookie_and_load_more_actions(max_rounds=35, settle_ms=2500),
+        # Use the Münchner Philharmoniker calendar for deeper season coverage;
+        # Gasteig's room-filtered listing currently stops around July.
+        "listing_url": "https://www.mphil.de/kalender",
+        "actions": _isarphi_actions,
         "listing_target": 150,
         "force_url_expand": True,
     },
@@ -767,6 +768,7 @@ def _scrape_listing_with_schema(
     Also persists raw markdown to backend/raw/<slug>/.
     """
     slug = _slug(venue["name"])
+    listing_url = VENUE_OVERRIDES.get(slug, {}).get("listing_url", venue["url"])
     json_fmt = {"type": "json", "schema": schema, "prompt": prompt}
     # html is requested alongside json/markdown — Firecrawl charges by the
     # most expensive format (json), so the extra html costs 0 credits.
@@ -776,11 +778,11 @@ def _scrape_listing_with_schema(
     last_err: Exception | None = None
 
     def _attempt(extra: dict) -> dict:
-        result = app.scrape(venue["url"], formats=formats, **extra)
+        result = app.scrape(listing_url, formats=formats, **extra)
         md = _extract_markdown(result)
         if md:
             try:
-                raw_store.save_markdown(slug, venue["url"], md)
+                raw_store.save_markdown(slug, listing_url, md)
             except Exception as exc:
                 print(f"    [warn] could not save raw markdown: {exc}", flush=True)
         extracted = _normalise(result) or {}
