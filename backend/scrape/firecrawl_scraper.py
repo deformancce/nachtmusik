@@ -2010,6 +2010,10 @@ def _probe_candidate_urls(venue: dict, horizon_date: str) -> list[str]:
     elif slug == "elbphilharmonie_hamburg":
         urls.extend([
             "https://www.elbphilharmonie.de/de/programm/",
+            "https://www.elbphilharmonie.de/de/programm//KON/",
+            "https://www.elbphilharmonie.de/de/programm//KON/TICKETS/",
+            "https://www.elbphilharmonie.de/de/programm/EHH/KON/",
+            "https://www.elbphilharmonie.de/de/programm/EHH/KON/TICKETS/",
             "https://www.elbphilharmonie.de/de/programm/LHHH/TICKETS/",
         ])
     elif slug == "gewandhaus_leipzig":
