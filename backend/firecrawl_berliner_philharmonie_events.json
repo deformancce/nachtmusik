@@ -3,7 +3,7 @@
   "city": "Berlin",
   "slug": "berliner_philharmonie",
   "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-  "scraped_at": "2026-05-19T14:01:15.442900Z",
+  "scraped_at": "2026-05-20T06:44:29.558149Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
@@ -41,6 +41,7 @@
         "Gustav Mahler: Symphonie Nr. 3 d-Moll"
       ],
       "performers": [
+        "Yannick Nézet-Séguin",
         "Joyce DiDonato",
         "Damen des Rundfunkchors Berlin",
         "Knaben des Staats- und Domchors Berlin"
@@ -65,6 +66,7 @@
         "Gustav Mahler: Symphonie Nr. 3 d-Moll"
       ],
       "performers": [
+        "Yannick Nézet-Séguin",
         "Joyce DiDonato",
         "Damen des Rundfunkchors Berlin",
         "Knaben des Staats- und Domchors Berlin"
@@ -89,6 +91,7 @@
         "Gustav Mahler: Symphonie Nr. 3 d-Moll"
       ],
       "performers": [
+        "Yannick Nézet-Séguin",
         "Joyce DiDonato",
         "Damen des Rundfunkchors Berlin",
         "Knaben des Staats- und Domchors Berlin"
@@ -128,147 +131,20 @@
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
-    },
-    {
-      "date": "2026-05-28",
-      "time": "20:00",
-      "title": "Berliner Philharmoniker",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Ludwig van Beethoven: Coriolan Ouvertüre c-Moll op. 62",
-        "Ludwig van Beethoven: Konzert für Klavier und Orchester Nr. 5 Es-Dur op. 73",
-        "Dmitri Schostakowitsch: Symphonie Nr. 5 d-Moll op. 47"
-      ],
-      "performers": [
-        "Víkingur Ólafsson"
-      ],
-      "conductor": "Semyon Bychkov",
-      "price": "Noch 1 Ticket",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-29",
-      "time": "20:00",
-      "title": "Berliner Philharmoniker",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Ludwig van Beethoven: Coriolan Ouvertüre c-Moll op. 62",
-        "Ludwig van Beethoven: Konzert für Klavier und Orchester Nr. 5 Es-Dur op. 73",
-        "Dmitri Schostakowitsch: Symphonie Nr. 5 d-Moll op. 47"
-      ],
-      "performers": [
-        "Víkingur Ólafsson"
-      ],
-      "conductor": "Semyon Bychkov",
-      "price": "Ausverkauft",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-30",
-      "time": "19:00",
-      "title": "Berliner Philharmoniker",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Ludwig van Beethoven: Coriolan Ouvertüre c-Moll op. 62",
-        "Ludwig van Beethoven: Konzert für Klavier und Orchester Nr. 5 Es-Dur op. 73",
-        "Dmitri Schostakowitsch: Symphonie Nr. 5 d-Moll op. 47"
-      ],
-      "performers": [
-        "Víkingur Ólafsson"
-      ],
-      "conductor": "Semyon Bychkov",
-      "price": "Ausverkauft",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-02",
-      "time": "20:00",
-      "title": "Ensemble Wien-Berlin",
-      "venue_hall": "Kammermusiksaal",
-      "program": [
-        "Wolfgang Amadeus Mozart: Serenade c-Moll KV 388 »Nacht Musique«",
-        "Luciano Berio: Opus Number Zoo (Fassung für Bläserquintett)",
-        "Vinko Globokar: Augustin, dober je vin",
-        "Joachim Raff: Sinfonietta op. 188"
-      ],
-      "performers": [
-        "Karl-Heinz Schütz",
-        "Jonathan Kelly",
-        "Gerald Pachinger",
-        "Richard Galler",
-        "Stefan Dohr"
-      ],
-      "conductor": null,
-      "price": "Tickets kaufen",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56416/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-03",
-      "time": "13:00",
-      "title": "Lunchkonzert",
-      "venue_hall": "Foyer Großer Saal",
-      "program": [
-        "Franz Schubert: Willkommen und Abschied D 767",
-        "Franz Schubert: Die Gebüsche D 646",
-        "Franz Schubert: Lachen und Weinen D 777",
-        "Franz Schubert: Die Männer sind méchant D 866 Nr. 3",
-        "Franz Schubert: Licht und Liebe D 352",
-        "Franz Schubert: An die Musik D 547",
-        "Franz Schubert: Nachtviolen D 752",
-        "Franz Schubert: Über Wildemann D 884",
-        "Franz Schubert: Suleika II D 717",
-        "Franz Schubert: Der Hochzeitsbraten D 930"
-      ],
-      "performers": [
-        "Studierende der hmt Rostock"
-      ],
-      "conductor": null,
-      "price": "Eintritt frei",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56564/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
     }
   ],
-  "total_events": 10,
-  "total_events_visible": 60,
-  "total_events_discovered": 60,
-  "total_events_discovered_strict": 60,
-  "total_events_enriched": 10,
+  "total_events": 5,
+  "total_events_visible": 5,
+  "total_events_discovered": 5,
+  "total_events_discovered_strict": 5,
+  "total_events_enriched": 5,
   "source": "firecrawl_listing",
-  "latest_event_date": "2026-06-03",
-  "latest_discovered_event_date": "2026-06-03",
-  "covers_horizon": false
+  "latest_event_date": "2026-05-27",
+  "latest_discovered_event_date": "2026-05-27",
+  "covers_horizon": false,
+  "horizon_grace_days": 1,
+  "events_with_date": 5,
+  "events_missing_date": 0,
+  "date_coverage_rate": 1.0,
+  "coverage_warning": "SHORT_HORIZON(latest=2026-05-27, horizon=2026-11-30)"
 }
