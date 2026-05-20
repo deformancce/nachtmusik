@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nachtmusik — klassische Konzerte entdecken</title>
+    <style>
+        :root {
+            --bg: #FAF8F5;
+            --surface: #FFFFFF;
+            --surface-2: #F4F1EC;
+            --line: rgba(0, 0, 0, 0.06);
+            --line-2: rgba(0, 0, 0, 0.12);
+            --text: #1A1A1A;
+            --text-2: #5C5C5C;
+            --text-3: #8E8E93;
+            --accent: #1A1A1A;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.02);
+            --shadow: 0 4px 16px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04);
+            --shadow-lg: 0 24px 56px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+            --radius-sm: 12px;
+            --radius: 20px;
+            --radius-lg: 28px;
+            --radius-pill: 999px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+                         "Helvetica Neue", "Inter", system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: "kern" 1, "ss01" 1;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ── Lovable-style soft mesh gradient ─────────────────────────── */
+        .mesh {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(ellipse 60% 50% at 25% 35%, rgba(255, 180, 200, 0.45), transparent 60%),
+                radial-gradient(ellipse 50% 50% at 75% 30%, rgba(180, 200, 255, 0.55), transparent 60%),
+                radial-gradient(ellipse 70% 50% at 50% 65%, rgba(255, 200, 150, 0.40), transparent 65%);
+            filter: blur(40px);
+        }
+        .mesh::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 0%, var(--bg) 90%);
+        }
+
+        /* ── Top nav ──────────────────────────────────────────────────── */
+        .nav {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 32px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .nav-brand {
+            font-size: 19px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav-brand .heart {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            background: linear-gradient(135deg, #FF6B9D, #FFA94D);
+            mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21s-7-4.5-9.5-9C.8 9 2 5 5.5 4.5 8 4.1 10 5.5 12 8c2-2.5 4-3.9 6.5-3.5C22 5 23.2 9 21.5 12c-2.5 4.5-9.5 9-9.5 9z'/></svg>") center/contain no-repeat;
+            -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21s-7-4.5-9.5-9C.8 9 2 5 5.5 4.5 8 4.1 10 5.5 12 8c2-2.5 4-3.9 6.5-3.5C22 5 23.2 9 21.5 12c-2.5 4.5-9.5 9-9.5 9z'/></svg>") center/contain no-repeat;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            font-size: 14px;
+            color: var(--text-2);
+        }
+        .nav-links a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text); }
+        .nav-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .btn-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-2);
+            background: none;
+            border: none;
+            padding: 8px 14px;
+            cursor: pointer;
+            border-radius: var(--radius-pill);
+            transition: background 0.2s, color 0.2s;
+        }
+        .btn-text:hover { color: var(--text); background: rgba(0,0,0,0.04); }
+        .btn-primary {
+            font-size: 14px;
+            font-weight: 500;
+            color: white;
+            background: var(--accent);
+            border: none;
+            padding: 10px 18px;
+            border-radius: var(--radius-pill);
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.1s;
+        }
+        .btn-primary:hover { opacity: 0.85; }
+        .btn-primary:active { transform: scale(0.97); }
+
+        /* ── Hero ─────────────────────────────────────────────────────── */
+        .hero {
+            position: relative;
+            z-index: 5;
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 80px 24px 60px;
+            text-align: center;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-pill);
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-2);
+            margin-bottom: 32px;
+            box-shadow: var(--shadow-sm);
+        }
+        .badge .dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #34C759;
+            box-shadow: 0 0 0 3px rgba(52, 199, 89, 0.18);
+        }
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 64px);
+            font-weight: 700;
+            letter-spacing: -0.035em;
+            line-height: 1.05;
+            margin-bottom: 16px;
+        }
+        .hero h1 .heart-inline {
+            display: inline-block;
+            width: 0.9em;
+            height: 0.9em;
+            vertical-align: -0.08em;
+            background: linear-gradient(135deg, #FF6B9D, #FFA94D);
+            mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21s-7-4.5-9.5-9C.8 9 2 5 5.5 4.5 8 4.1 10 5.5 12 8c2-2.5 4-3.9 6.5-3.5C22 5 23.2 9 21.5 12c-2.5 4.5-9.5 9-9.5 9z'/></svg>") center/contain no-repeat;
+            -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21s-7-4.5-9.5-9C.8 9 2 5 5.5 4.5 8 4.1 10 5.5 12 8c2-2.5 4-3.9 6.5-3.5C22 5 23.2 9 21.5 12c-2.5 4.5-9.5 9-9.5 9z'/></svg>") center/contain no-repeat;
+            margin: 0 0.05em;
+        }
+        .hero p {
+            font-size: 18px;
+            color: var(--text-2);
+            font-weight: 400;
+            max-width: 520px;
+            margin: 0 auto 48px;
+        }
+
+        /* ── Search box ───────────────────────────────────────────────── */
+        .searchbox {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            padding: 24px 24px 16px;
+            box-shadow: var(--shadow-lg);
+            text-align: left;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .searchbox:focus-within {
+            border-color: var(--line-2);
+            box-shadow: 0 32px 64px rgba(0,0,0,0.10), 0 8px 16px rgba(0,0,0,0.04);
+        }
+        .searchbox input {
+            width: 100%;
+            border: none;
+            background: transparent;
+            font-size: 17px;
+            font-family: inherit;
+            color: var(--text);
+            padding: 8px 4px;
+            outline: none;
+        }
+        .searchbox input::placeholder { color: var(--text-3); }
+        .searchbox-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 8px;
+        }
+        .searchbox-row-left {
+            display: flex;
+            gap: 12px;
+            color: var(--text-3);
+            font-size: 13px;
+        }
+        .searchbox-icon-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: none;
+            border: none;
+            color: var(--text-3);
+            font-size: 13px;
+            cursor: pointer;
+            padding: 6px 10px;
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            transition: background 0.15s, color 0.15s;
+        }
+        .searchbox-icon-btn:hover { color: var(--text); background: rgba(0,0,0,0.04); }
+        .searchbox-submit {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.2s, transform 0.1s;
+        }
+        .searchbox-submit:hover { opacity: 0.85; }
+        .searchbox-submit:active { transform: scale(0.94); }
+        .searchbox-submit svg { width: 16px; height: 16px; }
+
+        /* ── Pill suggestions ─────────────────────────────────────────── */
+        .pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 24px;
+        }
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-pill);
+            padding: 10px 18px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text);
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+            box-shadow: var(--shadow-sm);
+            font-family: inherit;
+        }
+        .pill:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow);
+            background: rgba(255,255,255,0.95);
+        }
+        .pill:active { transform: translateY(0); }
+        .pill svg { width: 14px; height: 14px; opacity: 0.6; }
+
+        /* ── Tiles section ────────────────────────────────────────────── */
+        .section {
+            position: relative;
+            z-index: 5;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 60px 32px 40px;
+        }
+        .section-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 28px;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .section-head h2 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+        .section-head a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-2);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: color 0.2s, gap 0.2s;
+        }
+        .section-head a:hover { color: var(--text); gap: 8px; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .tile {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+                        box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--line);
+            position: relative;
+        }
+        .tile:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .tile:active { transform: translateY(-1px); }
+
+        .tile-cover {
+            aspect-ratio: 16 / 10;
+            background: linear-gradient(135deg, #FFB4A2, #E5989B 50%, #B5828C);
+            position: relative;
+            overflow: hidden;
+        }
+        .tile-cover::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 30% 30%, rgba(255,255,255,0.35), transparent 60%),
+                radial-gradient(circle at 80% 70%, rgba(0,0,0,0.18), transparent 60%);
+        }
+        .tile:nth-child(2) .tile-cover { background: linear-gradient(135deg, #A8DADC, #457B9D 60%, #1D3557); }
+        .tile:nth-child(3) .tile-cover { background: linear-gradient(135deg, #FFD89B, #E89F4D 60%, #B97A35); }
+        .tile:nth-child(4) .tile-cover { background: linear-gradient(135deg, #CDB4DB, #9D85B9 60%, #5E437F); }
+        .tile:nth-child(5) .tile-cover { background: linear-gradient(135deg, #B5E48C, #76C893 60%, #34A0A4); }
+        .tile:nth-child(6) .tile-cover { background: linear-gradient(135deg, #FFC8DD, #EC97B6 60%, #B5638A); }
+        .tile:nth-child(7) .tile-cover { background: linear-gradient(135deg, #BDE0FE, #7AB5EE 60%, #2D6CDF); }
+        .tile:nth-child(8) .tile-cover { background: linear-gradient(135deg, #F1FAEE, #A8DADC 50%, #1D3557); }
+        .tile:nth-child(9) .tile-cover { background: linear-gradient(135deg, #FFE5B4, #FCB97D 50%, #C5896E); }
+
+        .tile-cover .badge-tile {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(8px);
+            border-radius: var(--radius-pill);
+            padding: 5px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: var(--text);
+            box-shadow: var(--shadow-sm);
+        }
+        .tile-cover .price {
+            position: absolute;
+            bottom: 14px;
+            right: 14px;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(8px);
+            color: white;
+            border-radius: var(--radius-pill);
+            padding: 5px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
+        .tile-cover .composer {
+            position: absolute;
+            bottom: 16px;
+            left: 18px;
+            color: white;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            max-width: 70%;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .tile-body {
+            padding: 18px 20px 20px;
+        }
+        .tile-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--text-3);
+            margin-bottom: 8px;
+        }
+        .tile-meta .sep {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--text-3);
+            opacity: 0.5;
+        }
+        .tile-title {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: -0.015em;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .tile-prog {
+            font-size: 13.5px;
+            color: var(--text-2);
+            line-height: 1.45;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .tile-perf {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--line);
+            font-size: 13px;
+            color: var(--text-2);
+        }
+        .tile-perf strong { color: var(--text); font-weight: 600; }
+
+        /* ── Venue chips row ──────────────────────────────────────────── */
+        .venues {
+            position: relative;
+            z-index: 5;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 30px 32px 80px;
+        }
+        .venues-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 10px;
+        }
+        .venue-chip {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 16px 18px;
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+        }
+        .venue-chip:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+            border-color: var(--line-2);
+        }
+        .venue-chip .v-city {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--text-3);
+            margin-bottom: 4px;
+        }
+        .venue-chip .v-name {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        /* ── Footer ───────────────────────────────────────────────────── */
+        footer {
+            position: relative;
+            z-index: 5;
+            text-align: center;
+            padding: 40px 32px 60px;
+            color: var(--text-3);
+            font-size: 13px;
+            border-top: 1px solid var(--line);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 640px) {
+            .nav { padding: 16px 20px; }
+            .nav-links { display: none; }
+            .hero { padding: 40px 20px 40px; }
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 16px; margin-bottom: 32px; }
+            .section { padding: 40px 20px 24px; }
+            .venues { padding: 20px 20px 60px; }
+            .section-head h2 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="mesh"></div>
+
+    <nav class="nav">
+        <div class="nav-brand">
+            <span class="heart"></span>
+            nachtmusik
+        </div>
+        <div class="nav-links">
+            <a href="#">Konzerte</a>
+            <a href="#">Spielstätten</a>
+            <a href="#">Komponisten</a>
+            <a href="#">Städte</a>
+        </div>
+        <div class="nav-actions">
+            <button class="btn-text">Anmelden</button>
+            <button class="btn-primary">Registrieren</button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="badge">
+            <span class="dot"></span>
+            150+ Konzerte aus 13 Häusern · Saison 2026/27
+        </div>
+        <h1>Finde dein nächstes <span class="heart-inline"></span> Klassikkonzert</h1>
+        <p>Suche nach Komponist, Werk, Solist, Orchester oder Stadt — und entdecke, was diese Woche in Deutschlands Konzertsälen läuft.</p>
+
+        <form class="searchbox" onsubmit="event.preventDefault(); doSearch();">
+            <input id="q" type="text" placeholder="z.B. Brahms 1, András Schiff, Elbphilharmonie, München …" autocomplete="off">
+            <div class="searchbox-row">
+                <div class="searchbox-row-left">
+                    <button type="button" class="searchbox-icon-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Zeitraum
+                    </button>
+                    <button type="button" class="searchbox-icon-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Stadt
+                    </button>
+                </div>
+                <button type="submit" class="searchbox-submit" aria-label="Suchen">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+            </div>
+        </form>
+
+        <div class="pills">
+            <button class="pill" onclick="setQuery('Brahms')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                Brahms
+            </button>
+            <button class="pill" onclick="setQuery('Elbphilharmonie')">Elbphilharmonie</button>
+            <button class="pill" onclick="setQuery('Klavierabend')">Klavierabend</button>
+            <button class="pill" onclick="setQuery('Berliner Philharmoniker')">Berliner Philharmoniker</button>
+            <button class="pill" onclick="setQuery('diese Woche')">Diese Woche</button>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-head">
+            <h2>Höhepunkte der Saison</h2>
+            <a href="#">Alle ansehen
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+        </div>
+
+        <div class="grid" id="grid"></div>
+    </section>
+
+    <section class="venues">
+        <div class="section-head">
+            <h2>Spielstätten</h2>
+            <a href="#">Alle Häuser
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+        </div>
+        <div class="venues-grid" id="venues"></div>
+    </section>
+
+    <footer>
+        nachtmusik · klassische Konzerte aus deutschen Häusern
+    </footer>
+
+<script>
+    const EVENTS = [
+        {
+            composer: "Mahler",
+            badge: "Empfehlung",
+            date: "24. Mai 2026",
+            time: "19:30",
+            venue: "Berliner Philharmonie",
+            city: "Berlin",
+            title: "Sinfonie Nr. 9",
+            program: "Mahler: Sinfonie Nr. 9 D-Dur",
+            performers: "Berliner Philharmoniker",
+            conductor: "Kirill Petrenko",
+            price: "ab €35",
+        },
+        {
+            composer: "Bach",
+            badge: "Heute",
+            date: "13. Juni 2026",
+            time: "16:00",
+            venue: "Gewandhaus",
+            city: "Leipzig",
+            title: "Klavierabend",
+            program: "Bach: Clavierübung Teil II · Partita h-Moll BWV 831 · Italienisches Konzert BWV 971",
+            performers: "András Schiff",
+            conductor: null,
+            price: "€25–€65",
+        },
+        {
+            composer: "Trifonov",
+            badge: "Neu",
+            date: "27. Sep 2026",
+            time: "19:30",
+            venue: "Gewandhaus",
+            city: "Leipzig",
+            title: "Klavierrezital — Daniil Trifonov",
+            program: "Händel: 5. Suite E-Dur HWV 430 · Strawinsky: Sonate · Schubert: Wandererfantasie",
+            performers: "Daniil Trifonov",
+            conductor: null,
+            price: "€6–€55",
+        },
+        {
+            composer: "Brahms",
+            badge: "Empfehlung",
+            date: "14. Juni 2026",
+            time: "11:00",
+            venue: "Gewandhaus",
+            city: "Leipzig",
+            title: "Variationen",
+            program: "Brahms: Haydn-Variationen op. 56a · Barber: Second Essay · Brahms: 1. Sinfonie op. 68",
+            performers: "MDR-Sinfonieorchester",
+            conductor: "Roderick Cox",
+            price: "€23–€56",
+        },
+        {
+            composer: "Pärt",
+            badge: "Chormusik",
+            date: "20. Juni 2026",
+            time: "19:00",
+            venue: "Museum der bildenden Künste",
+            city: "Leipzig",
+            title: "Astonishing Estonia",
+            program: "Pärt: Magnificat · Spiegel im Spiegel · Nunc dimittis · Tormis: Incantantio maris",
+            performers: "GewandhausChor",
+            conductor: "Gregor Meyer",
+            price: "€18",
+        },
+        {
+            composer: "Wagner",
+            badge: "Oper",
+            date: "23. Mai 2026",
+            time: "19:00",
+            venue: "Opernhaus",
+            city: "Leipzig",
+            title: "Cosí fan tutte",
+            program: "Mozart: Cosí fan tutte — Dramma giocoso KV 588",
+            performers: "Fiordiligi · Dorabella",
+            conductor: "Yura Yang",
+            price: "€18–€85",
+        },
+        {
+            composer: "Schumann",
+            badge: "Großes Konzert",
+            date: "18. Juni 2026",
+            time: "19:30",
+            venue: "Gewandhaus",
+            city: "Leipzig",
+            title: "Großes Konzert: Bienensticheln mit B-A-C-H",
+            program: "Pärt: Wenn Bach Bienen gezüchtet hätte · Schumann: Klavierkonzert a-Moll op. 54",
+            performers: "Gewandhausorchester · Yunchan Lim",
+            conductor: "Andris Nelsons",
+            price: "€6–€80",
+        },
+        {
+            composer: "Beethoven",
+            badge: "Neu",
+            date: "19. Mai 2027",
+            time: "20:00",
+            venue: "Konzerthaus Dortmund",
+            city: "Dortmund",
+            title: "Sir Simon Rattle · Eroica",
+            program: "Beethoven: 3. Sinfonie 'Eroica' Es-Dur op. 55",
+            performers: "BR-Symphonieorchester",
+            conductor: "Sir Simon Rattle",
+            price: "€29–€95",
+        },
+        {
+            composer: "Mozart",
+            badge: "Familienkonzert",
+            date: "25. Apr 2027",
+            time: "15:00",
+            venue: "Konzerthaus Dortmund",
+            city: "Dortmund",
+            title: "Karneval der Tiere",
+            program: "Saint-Saëns: Karneval der Tiere — moderiert für Familien",
+            performers: "Dodo · Dortmunder Philharmoniker",
+            conductor: null,
+            price: "€12–€28",
+        },
+    ];
+
+    const VENUES = [
+        { name: "Berliner Philharmonie", city: "Berlin" },
+        { name: "Konzerthaus Berlin", city: "Berlin" },
+        { name: "Festspielhaus", city: "Baden-Baden" },
+        { name: "Glocke", city: "Bremen" },
+        { name: "Konzerthaus", city: "Dortmund" },
+        { name: "Tonhalle", city: "Düsseldorf" },
+        { name: "Philharmonie", city: "Essen" },
+        { name: "Alte Oper", city: "Frankfurt" },
+        { name: "Elbphilharmonie", city: "Hamburg" },
+        { name: "Kölner Philharmonie", city: "Köln" },
+        { name: "Gewandhaus", city: "Leipzig" },
+        { name: "Isarphilharmonie", city: "München" },
+        { name: "Liederhalle", city: "Stuttgart" },
+    ];
+
+    function renderGrid() {
+        const grid = document.getElementById('grid');
+        grid.innerHTML = EVENTS.map(ev => `
+            <article class="tile">
+                <div class="tile-cover">
+                    <div class="badge-tile">${ev.badge}</div>
+                    <div class="composer">${ev.composer}</div>
+                    <div class="price">${ev.price}</div>
+                </div>
+                <div class="tile-body">
+                    <div class="tile-meta">
+                        <span>${ev.date}</span>
+                        <span class="sep"></span>
+                        <span>${ev.time}</span>
+                        <span class="sep"></span>
+                        <span>${ev.city}</span>
+                    </div>
+                    <div class="tile-title">${ev.title}</div>
+                    <div class="tile-prog">${ev.program}</div>
+                    <div class="tile-perf">
+                        <strong>${ev.performers}</strong>${ev.conductor ? ` · Ltg. ${ev.conductor}` : ''}
+                    </div>
+                </div>
+            </article>
+        `).join('');
+    }
+
+    function renderVenues() {
+        const el = document.getElementById('venues');
+        el.innerHTML = VENUES.map(v => `
+            <a class="venue-chip" href="#">
+                <div class="v-city">${v.city}</div>
+                <div class="v-name">${v.name}</div>
+            </a>
+        `).join('');
+    }
+
+    function setQuery(q) {
+        document.getElementById('q').value = q;
+        document.getElementById('q').focus();
+    }
+
+    function doSearch() {
+        const q = document.getElementById('q').value.trim();
+        if (q) console.log('search:', q);
+    }
+
+    renderGrid();
+    renderVenues();
+</script>
+</body>
+</html>
