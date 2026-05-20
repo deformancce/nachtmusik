@@ -2212,6 +2212,21 @@ def _unix_start_of_day(day: date) -> int:
     return int(datetime(day.year, day.month, day.day).timestamp())
 
 
+def _sample_probe_months(today: date, horizon: date) -> list[date]:
+    months = [
+        month for month in _iter_month_starts(today, horizon)
+        if month != today.replace(day=1)
+    ]
+    if len(months) <= 3:
+        return months
+    sampled = [months[0], months[len(months) // 2], months[-1]]
+    out: list[date] = []
+    for month in sampled:
+        if month not in out:
+            out.append(month)
+    return out
+
+
 def _probe_candidate_urls(venue: dict, horizon_date: str) -> list[str]:
     """Generate cheap discovery candidates for hard calendar sites."""
     slug = _slug(venue["name"])
@@ -2246,6 +2261,25 @@ def _probe_candidate_urls(venue: dict, horizon_date: str) -> list[str]:
             "https://www.elbphilharmonie.de/de/programm/EHH/KON/TICKETS/",
             "https://www.elbphilharmonie.de/de/programm/LHHH/TICKETS/",
         ])
+        for month in _sample_probe_months(today, horizon):
+            urls.append(f"https://www.elbphilharmonie.de/de/programm/LHHH/TICKETS/?date={month:%Y-%m}")
+            urls.append(f"https://www.elbphilharmonie.de/de/programm//KON/TICKETS/?date={month:%Y-%m}")
+    elif slug == "berliner_philharmonie":
+        base = "https://www.berliner-philharmoniker.de/konzerte/kalender/"
+        for month in _sample_probe_months(today, horizon):
+            urls.extend([
+                f"{base}?date={month:%Y-%m}",
+                f"{base}?month={month:%Y-%m}",
+                f"{base}?from={month:%Y-%m}-01",
+            ])
+    elif slug == "alte_oper_frankfurt":
+        base = "https://www.alteoper.de/de/programm"
+        for month in _sample_probe_months(today, horizon):
+            urls.extend([
+                f"{base}?date={month:%Y-%m}",
+                f"{base}?month={month:%Y-%m}",
+                f"{base}?from={month:%Y-%m}-01",
+            ])
     elif slug == "gewandhaus_leipzig":
         urls.extend([
             "https://www.gewandhausorchester.de/spielplan/",
@@ -2336,6 +2370,9 @@ def _probe_discovery(app, venue: dict, horizon_date: str) -> dict:
     slug = _slug(venue["name"])
     print(f"\n  [probe:{slug}] {venue['name']}", flush=True)
     probes: list[dict] = []
+    sitemap_urls = _discover_sitemap_event_urls(venue)
+    if sitemap_urls:
+        print(f"    sitemap: {len(sitemap_urls)} strict event URLs", flush=True)
     for probe_url in _probe_candidate_urls(venue, horizon_date):
         print(f"    probe: {probe_url}", flush=True)
         probe = _probe_one_url(app, venue, probe_url, horizon_date)
@@ -2357,6 +2394,8 @@ def _probe_discovery(app, venue: dict, horizon_date: str) -> dict:
         "best_url": best.get("url"),
         "best_event_urls": best.get("unique_event_urls", 0),
         "best_last_date_seen": best.get("last_date_seen"),
+        "sitemap_event_urls": len(sitemap_urls),
+        "sample_sitemap_urls": sitemap_urls[:12],
         "probes": probes,
     }
 
@@ -2386,6 +2425,76 @@ def _discover_all_event_urls(app, venue: dict) -> tuple[list[str], list[str]]:
     except Exception as e:
         print(f"    [map] failed (non-fatal): {e}", flush=True)
         return [], []
+
+
+def _extract_xml_locs(text: str) -> list[str]:
+    if not text:
+        return []
+    return [
+        re.sub(r"\s+", " ", loc).strip()
+        for loc in re.findall(r"(?is)<loc>\s*(.*?)\s*</loc>", text)
+    ]
+
+
+def _fetch_text_url(url: str) -> str:
+    try:
+        response = requests.get(url, headers=_DE_HEADERS, timeout=15)
+        if response.status_code >= 400:
+            return ""
+        return response.text or ""
+    except Exception:
+        return ""
+
+
+def _discover_sitemap_event_urls(venue: dict, *, max_sitemaps: int = 80) -> list[str]:
+    """Discover strict event URLs via robots.txt and sitemap XML without Firecrawl credits."""
+    slug = _slug(venue["name"])
+    parsed = urlparse(venue["url"])
+    root = f"{parsed.scheme}://{parsed.netloc}"
+    robots = _fetch_text_url(f"{root}/robots.txt")
+    sitemap_urls = [
+        line.split(":", 1)[1].strip()
+        for line in robots.splitlines()
+        if line.lower().startswith("sitemap:")
+    ]
+    sitemap_urls.extend([
+        f"{root}/sitemap.xml",
+        f"{root}/sitemap_index.xml",
+        f"{root}/sitemap-index.xml",
+    ])
+
+    queue: list[str] = []
+    seen_sitemaps: set[str] = set()
+    seen_events: set[str] = set()
+    event_urls: list[str] = []
+    for sitemap_url in sitemap_urls:
+        clean = sitemap_url.strip()
+        if clean and clean not in seen_sitemaps:
+            seen_sitemaps.add(clean)
+            queue.append(clean)
+
+    while queue and len(seen_sitemaps) <= max_sitemaps:
+        sitemap_url = queue.pop(0)
+        text = _fetch_text_url(sitemap_url)
+        if not text:
+            continue
+        locs = _extract_xml_locs(text)
+        for loc in locs:
+            clean = _clean_url(loc)
+            if not clean:
+                continue
+            if clean.endswith((".xml", ".xml.gz")):
+                if clean not in seen_sitemaps and len(seen_sitemaps) < max_sitemaps:
+                    seen_sitemaps.add(clean)
+                    queue.append(clean)
+                continue
+            if not is_strict_event_url(clean, venue["url"], slug):
+                continue
+            if clean in seen_events:
+                continue
+            seen_events.add(clean)
+            event_urls.append(clean)
+    return event_urls
 
 
 # ── Phase 2: Enrich event detail pages ───────────────────────────────────────
