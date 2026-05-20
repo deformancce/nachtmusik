@@ -1,0 +1,114 @@
+{
+  "scraped_at": "2026-05-20T06:37:56.376513Z",
+  "scrape_horizon_date": "2026-11-30",
+  "results": [
+    {
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "slug": "elbphilharmonie_hamburg",
+      "scraped_at": "2026-05-20T06:37:56.376390Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.elbphilharmonie.de/de/programm//KON/",
+      "best_event_urls": 14,
+      "best_last_date_seen": "2026-05-24",
+      "probes": [
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/",
+          "error": null,
+          "raw_lines": 974,
+          "event_urls": 12,
+          "unique_event_urls": 12,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-22",
+          "sample_urls": [
+            "https://www.elbphilharmonie.de/de/programm/westermann-summit-2026/28420",
+            "https://www.elbphilharmonie.de/de/programm/landesjugendorchester-hamburg-ann-beth-solvang-johannes-witt/27407",
+            "https://www.elbphilharmonie.de/de/programm/hummelhirn/28199",
+            "https://www.elbphilharmonie.de/de/programm/huelgas-ensemble-paul-van-nevel/27532",
+            "https://www.elbphilharmonie.de/de/programm/les-hommes-du-swing/27744",
+            "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-leonidas-kavakos-matthias-pintscher/23309",
+            "https://www.elbphilharmonie.de/de/programm/steve-hackett/27438",
+            "https://www.elbphilharmonie.de/de/programm/hochschule-fur-musik-und-theater-hamburg/28284"
+          ]
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm//KON/",
+          "error": null,
+          "raw_lines": 1106,
+          "event_urls": 14,
+          "unique_event_urls": 14,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-24",
+          "sample_urls": [
+            "https://www.elbphilharmonie.de/de/programm/landesjugendorchester-hamburg-ann-beth-solvang-johannes-witt/27407",
+            "https://www.elbphilharmonie.de/de/programm/huelgas-ensemble-paul-van-nevel/27532",
+            "https://www.elbphilharmonie.de/de/programm/les-hommes-du-swing/27744",
+            "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-leonidas-kavakos-matthias-pintscher/23309",
+            "https://www.elbphilharmonie.de/de/programm/steve-hackett/27438",
+            "https://www.elbphilharmonie.de/de/programm/armoniosa-ensemble/28258",
+            "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-leonidas-kavakos-matthias-pintscher/23829",
+            "https://www.elbphilharmonie.de/de/programm/ndr-bigband-jihye-lee/28198"
+          ]
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm//KON/TICKETS/",
+          "error": null,
+          "raw_lines": 926,
+          "event_urls": 11,
+          "unique_event_urls": 11,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-24",
+          "sample_urls": [
+            "https://www.elbphilharmonie.de/de/programm/landesjugendorchester-hamburg-ann-beth-solvang-johannes-witt/27407",
+            "https://www.elbphilharmonie.de/de/programm/huelgas-ensemble-paul-van-nevel/27532",
+            "https://www.elbphilharmonie.de/de/programm/les-hommes-du-swing/27744",
+            "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-leonidas-kavakos-matthias-pintscher/23309",
+            "https://www.elbphilharmonie.de/de/programm/armoniosa-ensemble/28258",
+            "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-leonidas-kavakos-matthias-pintscher/23829",
+            "https://www.elbphilharmonie.de/de/programm/ndr-bigband-jihye-lee/28198",
+            "https://www.elbphilharmonie.de/de/programm/ghada-shbeir-francois-joubert-caillet/27534"
+          ]
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/EHH/KON/",
+          "error": null,
+          "raw_lines": 137,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": null,
+          "last_date_seen": null,
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/EHH/KON/TICKETS/",
+          "error": null,
+          "raw_lines": 137,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": null,
+          "last_date_seen": null,
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/LHHH/TICKETS/",
+          "error": null,
+          "raw_lines": 934,
+          "event_urls": 11,
+          "unique_event_urls": 11,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-30",
+          "sample_urls": [
+            "https://www.elbphilharmonie.de/de/programm/landesjugendorchester-hamburg-ann-beth-solvang-johannes-witt/27407",
+            "https://www.elbphilharmonie.de/de/programm/les-hommes-du-swing/27744",
+            "https://www.elbphilharmonie.de/de/programm/hochschule-fur-musik-und-theater-hamburg/28284",
+            "https://www.elbphilharmonie.de/de/programm/matteo-lane/27410",
+            "https://www.elbphilharmonie.de/de/programm/gotz-alsmann-band/24340",
+            "https://www.elbphilharmonie.de/de/programm/neue-philharmonie-hamburg-hovhannes-baghdasaryan/28225",
+            "https://www.elbphilharmonie.de/de/programm/kateryna-titova-klavierabend/28034",
+            "https://www.elbphilharmonie.de/de/programm/lunchkonzert-der-symphoniker-hamburg/24078"
+          ]
+        }
+      ]
+    }
+  ]
+}
