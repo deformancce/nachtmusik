@@ -27,6 +27,7 @@ import sys
 import calendar
 import time
 import unicodedata
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, date
 from pathlib import Path
 from typing import Optional
@@ -2660,6 +2661,15 @@ def _probe_discovery(app, venue: dict, horizon_date: str) -> dict:
     sitemap_urls = _discover_sitemap_event_urls(venue)
     if sitemap_urls:
         print(f"    sitemap: {len(sitemap_urls)} strict event URLs", flush=True)
+    sitemap_jsonld_events: list[dict] = []
+    sitemap_jsonld_stats: dict = {}
+    if sitemap_urls:
+        sitemap_jsonld_events, sitemap_jsonld_stats = _discover_sitemap_jsonld_events(
+            venue,
+            horizon_date,
+            sitemap_urls=sitemap_urls,
+            max_pages=_env_int("SITEMAP_JSONLD_PROBE_MAX_PAGES", 120),
+        )
     if slug == "alte_oper_frankfurt":
         preferred_urls, preferred_dates, _preferred_events = _discover_alte_oper_api_events(
             venue, horizon_date=horizon_date
@@ -2715,6 +2725,15 @@ def _probe_discovery(app, venue: dict, horizon_date: str) -> dict:
         "sample_preferred_urls": preferred_urls[:12],
         "sitemap_event_urls": len(sitemap_urls),
         "sample_sitemap_urls": sitemap_urls[:12],
+        "sitemap_jsonld_stats": sitemap_jsonld_stats,
+        "sitemap_jsonld_events": len(sitemap_jsonld_events),
+        "sitemap_jsonld_first_date_seen": (
+            sitemap_jsonld_events[0].get("date") if sitemap_jsonld_events else None
+        ),
+        "sitemap_jsonld_last_date_seen": _latest_event_date(sitemap_jsonld_events),
+        "sample_sitemap_jsonld_urls": [
+            event.get("detail_url") for event in sitemap_jsonld_events[:12]
+        ],
         "sitemap_detail_probes": sitemap_detail_probes,
         "sitemap_detail_date_hits": sitemap_detail_date_hits,
         "sitemap_detail_llm_probes": sitemap_detail_llm_probes,
@@ -2818,6 +2837,220 @@ def _discover_sitemap_event_urls(venue: dict, *, max_sitemaps: int = 80) -> list
             seen_events.add(clean)
             event_urls.append(clean)
     return event_urls
+
+
+def _jsonld_detail_to_event(detail: dict, source_url: str, venue: dict) -> dict | None:
+    """Convert a JSON-LD Event found on a detail page into the normal event shape."""
+    if not isinstance(detail, dict):
+        return None
+    title = (detail.get("title") or "").strip()
+    event_date = detail.get("date")
+    if not title or not _parse_iso_date(event_date):
+        return None
+    detail_url = _clean_url(detail.get("detail_url")) or _clean_url(source_url)
+    ev: dict = {
+        "date": event_date,
+        "time": detail.get("time"),
+        "title": title,
+        "venue_hall": detail.get("venue_hall"),
+        "program": detail.get("program") or [],
+        "performers": detail.get("performers") or [],
+        "conductor": detail.get("conductor"),
+        "price": detail.get("price"),
+        "detail_url": detail_url,
+        "venue": venue["name"],
+        "city": venue["city"],
+        "discovery_source": "sitemap_jsonld",
+        "discovered_only": False,
+    }
+    _mark_enrichment_status(ev)
+    return ev
+
+
+def _discover_sitemap_jsonld_events(
+    venue: dict,
+    horizon_date: str,
+    *,
+    sitemap_urls: list[str] | None = None,
+    max_pages: int | None = None,
+) -> tuple[list[dict], dict]:
+    """
+    Free pre-pass: sitemap detail URLs -> direct JSON-LD Event extraction.
+
+    This keeps the Firecrawl pipeline, but prevents spending Firecrawl credits
+    when a venue already publishes complete Schema.org Event data on detail
+    pages. If JSON-LD is absent, callers still fall back to Firecrawl.
+    """
+    if sitemap_urls is None:
+        sitemap_urls = _discover_sitemap_event_urls(venue)
+    limit = _env_int("SITEMAP_JSONLD_MAX_PAGES", 240) if max_pages is None else max_pages
+    timeout = max(2, _env_int("SITEMAP_JSONLD_TIMEOUT", 8))
+    workers = max(1, _env_int("SITEMAP_JSONLD_WORKERS", 8))
+    candidate_urls = sitemap_urls if limit <= 0 else sitemap_urls[:limit]
+    initial_limit = min(_env_int("SITEMAP_JSONLD_INITIAL_SAMPLE", 24), len(candidate_urls))
+    initial_urls = _sample_evenly(candidate_urls, initial_limit) if initial_limit else []
+    stats: dict = {
+        "sitemap_urls": len(sitemap_urls),
+        "candidate_urls": len(candidate_urls),
+        "checked": 0,
+        "limit": limit,
+        "initial_sample": len(initial_urls),
+        "jsonld_pages": 0,
+        "events": 0,
+        "within_horizon": 0,
+        "past_or_beyond_horizon": 0,
+        "canceled": 0,
+        "invalid": 0,
+        "complete_scan": len(candidate_urls) == len(sitemap_urls),
+    }
+    if not candidate_urls:
+        return [], stats
+
+    print(
+        f"    phase 0a: sitemap JSON-LD detail scout "
+        f"({len(candidate_urls)}/{len(sitemap_urls)} candidate URLs, "
+        f"sample={len(initial_urls)}) ...",
+        flush=True,
+    )
+
+    def _scan(url: str) -> tuple[str, list[dict]]:
+        events = jsonld_scout.scout(url, timeout=timeout, verbose=False) or []
+        return url, events
+
+    events: list[dict] = []
+    seen: set[tuple[str, str | None, str]] = set()
+
+    def _consume_scan(scan_urls: list[str]) -> int:
+        jsonld_pages = 0
+        if not scan_urls:
+            return 0
+        max_workers = min(workers, len(scan_urls))
+        with ThreadPoolExecutor(max_workers=max_workers) as pool:
+            future_by_url = {pool.submit(_scan, url): url for url in scan_urls}
+            for future in as_completed(future_by_url):
+                url = future_by_url[future]
+                stats["checked"] += 1
+                try:
+                    _source_url, raw_events = future.result()
+                except Exception:
+                    stats["invalid"] += 1
+                    continue
+                if raw_events:
+                    jsonld_pages += 1
+                    stats["jsonld_pages"] += 1
+                for raw in raw_events:
+                    ev = _jsonld_detail_to_event(raw, url, venue)
+                    if not ev:
+                        stats["invalid"] += 1
+                        continue
+                    if _is_canceled(ev.get("title") or ""):
+                        stats["canceled"] += 1
+                        continue
+                    if not _is_within_scrape_window(ev.get("date"), horizon_date):
+                        stats["past_or_beyond_horizon"] += 1
+                        continue
+                    key = (
+                        _clean_url(ev.get("detail_url")),
+                        ev.get("date"),
+                        _event_title_key(ev.get("title")),
+                    )
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    events.append(ev)
+        return jsonld_pages
+
+    initial_hits = _consume_scan(initial_urls)
+    if initial_hits:
+        sampled = set(initial_urls)
+        remaining_urls = [url for url in candidate_urls if url not in sampled]
+        _consume_scan(remaining_urls)
+    elif len(initial_urls) < len(candidate_urls):
+        stats["short_circuited_no_jsonld"] = True
+
+    events.sort(key=lambda e: (e.get("date") or "9999", e.get("time") or ""))
+    stats["complete_scan"] = stats["checked"] == len(sitemap_urls)
+    stats["events"] = len(events)
+    stats["within_horizon"] = len(events)
+    latest = _latest_event_date(events)
+    if latest:
+        stats["first_date"] = events[0].get("date")
+        stats["latest_date"] = latest
+    stats["covers_horizon"] = _covers_horizon_with_grace(latest, horizon_date)
+    # Complete JSON-LD scans and horizon-covering sets are strong enough to
+    # replace the listing scrape. A large dated set is also good enough for
+    # smoke/full runs; detail enrichment can still fill program data later.
+    stats["authoritative"] = bool(
+        events
+        and (
+            (
+                stats["complete_scan"]
+                and len(events) >= _env_int("SITEMAP_JSONLD_AUTHORITATIVE_MIN_COMPLETE", 10)
+            )
+            or stats["covers_horizon"]
+            or len(events) >= _env_int("SITEMAP_JSONLD_AUTHORITATIVE_MIN", 60)
+        )
+    )
+    print(
+        f"    sitemap JSON-LD: {len(events)} events "
+        f"(jsonld_pages={stats['jsonld_pages']}, latest={stats.get('latest_date')})",
+        flush=True,
+    )
+    return events, stats
+
+
+def _copy_missing_event_fields(target: dict, source: dict) -> None:
+    """Merge deterministic discovery data into an existing event without overwriting."""
+    for key in (
+        "date", "time", "title", "venue_hall", "conductor", "price",
+        "duration_min", "detail_url",
+    ):
+        if not target.get(key) and source.get(key):
+            target[key] = source[key]
+    for key in ("program", "performers"):
+        if not target.get(key) and source.get(key):
+            target[key] = source[key]
+    if source.get("discovery_source") and not target.get("discovery_source"):
+        target["discovery_source"] = source["discovery_source"]
+    _mark_enrichment_status(target)
+
+
+def _merge_discovered_event_set(events: list[dict], discovered: list[dict]) -> int:
+    """Merge URL/date-title discoveries into `events`, returning append count."""
+    if not discovered:
+        return 0
+    by_url = {
+        _clean_url(ev.get("detail_url")): ev
+        for ev in events
+        if _clean_url(ev.get("detail_url"))
+    }
+    by_date_title: dict[tuple[str, str], dict] = {}
+    for ev in events:
+        event_date = ev.get("date")
+        title_key = _event_title_key(ev.get("title"))
+        if event_date and title_key and (event_date, title_key) not in by_date_title:
+            by_date_title[(event_date, title_key)] = ev
+
+    appended = 0
+    for ev in discovered:
+        clean = _clean_url(ev.get("detail_url"))
+        if clean and clean in by_url:
+            _copy_missing_event_fields(by_url[clean], ev)
+            continue
+        date_title = (ev.get("date"), _event_title_key(ev.get("title")))
+        if date_title[0] and date_title[1] and date_title in by_date_title:
+            target = by_date_title[date_title]
+            _copy_missing_event_fields(target, ev)
+            if clean:
+                by_url[clean] = target
+            continue
+        events.append(ev)
+        appended += 1
+        if clean:
+            by_url[clean] = ev
+        if date_title[0] and date_title[1]:
+            by_date_title[date_title] = ev
+    return appended
 
 
 # ── Phase 2: Enrich event detail pages ───────────────────────────────────────
@@ -3652,6 +3885,8 @@ def _scrape_one(
     events_raw: list[dict] | None = None
     total_visible: int | None = None
     source: str = "firecrawl_listing"
+    sitemap_jsonld_events: list[dict] = []
+    sitemap_jsonld_stats: dict = {}
 
     # ── Phase 0: JSON-LD scout (free, deterministic) ──
     print(f"    phase 0: JSON-LD scout ...", flush=True)
@@ -3669,6 +3904,17 @@ def _scrape_one(
             source = "jsonld"
     else:
         print(f"    JSON-LD: no Event objects found", flush=True)
+
+    # ── Phase 0a: Sitemap → detail-page JSON-LD scout (free) ──
+    # The listing page often has no JSON-LD, while detail pages do. Run this
+    # before any Firecrawl call; if it is strong enough, skip the listing LLM.
+    sitemap_jsonld_events, sitemap_jsonld_stats = _discover_sitemap_jsonld_events(
+        venue, horizon_date
+    )
+    if events_raw is None and sitemap_jsonld_events and sitemap_jsonld_stats.get("authoritative"):
+        events_raw = sitemap_jsonld_events
+        total_visible = len(sitemap_jsonld_events)
+        source = "sitemap_jsonld"
 
     # ── Phase 1a: Firecrawl listing fallback ──
     # Ask for more than max_events so the post-filter for past events doesn't
@@ -3689,7 +3935,7 @@ def _scrape_one(
     # Firecrawl bypasses the datacenter-IP block that Phase 0 (direct HTTP) hits.
     # If the rendered HTML carries JSON-LD Event nodes, prefer those — they're
     # deterministic, complete, and avoid LLM hallucination.
-    if source != "jsonld" and isinstance(listing, dict) and listing.get("_raw_html"):
+    if source not in ("jsonld", "sitemap_jsonld") and isinstance(listing, dict) and listing.get("_raw_html"):
         ld_events = jsonld_scout.extract_from_html(
             listing["_raw_html"], url, verbose=True, log_prefix="jsonld-fc"
         )
@@ -3781,13 +4027,26 @@ def _scrape_one(
             _add_coverage_fields(payload, [], horizon_date)
             return payload
 
+    # If sitemap JSON-LD found deterministic detail data but wasn't strong
+    # enough to replace the listing, merge it now before URL expansion.
+    if source != "sitemap_jsonld" and sitemap_jsonld_events:
+        appended = _merge_discovered_event_set(events, sitemap_jsonld_events)
+        if appended:
+            events.sort(key=lambda e: (e.get("date") or "9999", e.get("time") or ""))
+            total_visible = max(total_visible or 0, len(events))
+            print(
+                f"    merged: {len(events)} total events after sitemap JSON-LD "
+                f"(+{appended})",
+                flush=True,
+            )
+
     # ── Phase 1c: URL expansion — discover beyond listing without enrichment ──
     map_stats: dict = {}
     new_from_map: list[dict] = []
     total_discovered_loose: int | None = total_visible
     total_discovered_strict: int | None = total_visible
     should_expand_urls = expand_via_map or bool(venue_override.get("force_url_expand"))
-    if should_expand_urls and source not in ("jsonld", "jsonld_firecrawl_html"):
+    if should_expand_urls and source not in ("jsonld", "jsonld_firecrawl_html", "sitemap_jsonld"):
         # Only expand when listing was the source (JSON-LD is already complete).
         listing_html = None
         if isinstance(listing, dict):
@@ -3911,13 +4170,34 @@ def _scrape_one(
     payload["total_events"] = len(events)
     payload["total_events_visible"] = total_visible
     # Loose count (legacy field name — often inflated by map()).
-    payload["total_events_discovered"] = total_discovered_loose
-    payload["total_events_discovered_strict"] = total_discovered_strict
+    payload["total_events_discovered"] = max(
+        [value for value in (
+            total_discovered_loose,
+            len(events),
+            sitemap_jsonld_stats.get("events") if sitemap_jsonld_stats else None,
+        ) if isinstance(value, int)],
+        default=len(events),
+    )
+    payload["total_events_discovered_strict"] = max(
+        [value for value in (
+            total_discovered_strict,
+            len(events),
+            sitemap_jsonld_stats.get("events") if sitemap_jsonld_stats else None,
+        ) if isinstance(value, int)],
+        default=len(events),
+    )
     payload["total_events_enriched"] = sum(1 for e in events if e.get("enriched"))
     payload["source"] = source
+    latest_discovered_candidates = []
     if map_stats.get("latest_discovered_date"):
-        payload["latest_discovered_event_date"] = map_stats["latest_discovered_date"]
+        latest_discovered_candidates.append(map_stats["latest_discovered_date"])
+    if sitemap_jsonld_stats.get("latest_date"):
+        latest_discovered_candidates.append(sitemap_jsonld_stats["latest_date"])
+    if latest_discovered_candidates:
+        payload["latest_discovered_event_date"] = max(latest_discovered_candidates)
     _add_coverage_fields(payload, events, horizon_date)
+    if sitemap_jsonld_stats:
+        payload["sitemap_jsonld_stats"] = sitemap_jsonld_stats
     if map_stats:
         payload["map_expand_stats"] = map_stats
     if sitemap_detail_stats:
