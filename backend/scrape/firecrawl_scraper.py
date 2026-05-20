@@ -1334,6 +1334,85 @@ def _extract_konzerthaus_berlin_listing_events(
     return out
 
 
+def _extract_berliner_philharmonie_listing_events(
+    rendered: str,
+    venue: dict,
+    horizon_date: str,
+) -> list[dict]:
+    """Parse Berliner Philharmoniker calendar cards from rendered markdown."""
+    if not rendered:
+        return []
+    header_re = re.compile(
+        r"(?ms)\*\*(?:Mo|Di|Mi|Do|Fr|Sa|So)\s+"
+        r"(\d{1,2})\.\s+([A-Za-zÄÖÜäöüß]+)\s+(20\d{2}),\s+"
+        r"([0-2]?\d)[.:]([0-5]\d)\s+Uhr\*\*([^\n\r]*)"
+    )
+    matches = list(header_re.finditer(rendered))
+    out: list[dict] = []
+    seen: set[tuple[str, str, str]] = set()
+    slug = _slug(venue["name"])
+    horizon = _parse_iso_date(horizon_date)
+    today = _today_date()
+
+    for i, match in enumerate(matches):
+        day, month_name, year, hour, minute, hall = match.groups()
+        month = _DE_MONTHS.get(month_name.strip().lower())
+        if not month:
+            continue
+        try:
+            event_date_obj = date(int(year), month, int(day))
+        except ValueError:
+            continue
+        if event_date_obj < today or (horizon and event_date_obj > horizon):
+            continue
+        event_date = event_date_obj.isoformat()
+        block_end = matches[i + 1].start() if i + 1 < len(matches) else len(rendered)
+        block = rendered[match.end():block_end]
+
+        detail_match = re.search(
+            r"\[Mehr lesen\]\((https?://www\.berliner-philharmoniker\.de/konzerte/kalender/\d+/?)\)",
+            block,
+        )
+        detail_url = _clean_url(detail_match.group(1)) if detail_match else None
+        title = None
+        for bold_text in re.findall(r"\*\*([^*\n][^*]{1,120})\*\*", block):
+            label = _plain_markdown_text(bold_text)
+            if not label:
+                continue
+            low = label.lower()
+            if low in {"werke von", "programm"} or "dirigent" in low or len(label) < 3:
+                continue
+            title = label
+            break
+        if not title or not detail_url or _is_canceled(title):
+            continue
+
+        key = (event_date, f"{int(hour):02d}:{minute}", detail_url)
+        if key in seen:
+            continue
+        seen.add(key)
+        program: list[str] = []
+
+        ev = {
+            "date": event_date,
+            "time": f"{int(hour):02d}:{minute}",
+            "title": title,
+            "venue_hall": _plain_markdown_text(hall),
+            "program": program,
+            "performers": [],
+            "conductor": None,
+            "price": None,
+            "detail_url": detail_url,
+            "venue": venue["name"],
+            "city": venue["city"],
+            "discovery_source": "berliner_philharmonie_listing",
+            "discovered_only": True,
+        }
+        _mark_enrichment_status(ev)
+        out.append(ev)
+    return out
+
+
 def _extract_glocke_listing_events(
     rendered: str,
     venue: dict,
@@ -1964,6 +2043,8 @@ def _extract_preferred_listing_events(
         return _extract_essen_listing_events(rendered, venue, horizon_date), "essen_listing"
     if slug == "konzerthaus_berlin":
         return _extract_konzerthaus_berlin_listing_events(rendered, venue, horizon_date), "konzerthaus_berlin_listing"
+    if slug == "berliner_philharmonie":
+        return _extract_berliner_philharmonie_listing_events(rendered, venue, horizon_date), "berliner_philharmonie_listing"
     if slug == "glocke_bremen":
         return _extract_glocke_listing_events(rendered, venue, horizon_date), "glocke_listing"
     return [], None

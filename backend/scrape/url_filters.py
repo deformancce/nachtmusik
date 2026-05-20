@@ -52,7 +52,7 @@ VENUE_ALLOWED_DOMAINS: dict[str, set[str]] = {
 # Per-venue detail URL shapes (aligned with working listing detail_url values).
 VENUE_STRICT_PATTERNS: dict[str, re.Pattern[str]] = {
     "berliner_philharmonie": re.compile(
-        r"berliner-philharmoniker\.de/konzerte/(?:kalender/\d+|[a-z0-9äöüß-]+)/?$",
+        r"berliner-philharmoniker\.de/konzerte/kalender/\d+/?$",
         re.I,
     ),
     "koelner_philharmonie": re.compile(
