@@ -657,6 +657,7 @@ VENUE_OVERRIDES: dict[str, dict] = {
         # so the listing LLM has to extract everything in one pass. Default cap of
         # 60 lost half the events — raise so we capture the full season.
         "listing_target": 150,
+        "force_url_expand": True,
     },
     "gewandhaus_leipzig": {
         "actions": _gewandhaus_actions,
