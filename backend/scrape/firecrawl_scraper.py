@@ -690,9 +690,10 @@ VENUE_OVERRIDES: dict[str, dict] = {
     },
     "elbphilharmonie_hamburg": {
         # Infinite-scroll programme list; detail pages are /de/programm/<slug>/<id>.
-        # Detail text may be hidden behind "Mehr lesen", but the LLM sees the rendered page.
+        # Detail text may be hidden behind "Weiterlesen"; open it before extraction.
         "listing_url": "https://www.elbphilharmonie.de/de/programm/LHHH/TICKETS/",
         "actions": lambda: _cookie_and_load_more_actions(max_rounds=35, settle_ms=2500),
+        "detail_actions": lambda: _expand_read_more_actions(),
         "listing_target": 120,
         "force_url_expand": True,
     },
@@ -765,6 +766,52 @@ def _venue_actions(slug: str) -> list[dict]:
     else:
         actions = _scroll_actions()
     # Firecrawl rejects requests with > 50 actions outright.
+    if len(actions) > _FIRECRAWL_MAX_ACTIONS:
+        actions = actions[:_FIRECRAWL_MAX_ACTIONS]
+    return actions
+
+
+_EXPAND_READ_MORE_JS = """
+(() => {
+  const labels = [
+    'weiterlesen',
+    'mehr lesen',
+    'mehr erfahren',
+    'read more',
+    'show more'
+  ];
+  const nodes = Array.from(document.querySelectorAll('button, a, [role="button"]'));
+  let clicked = 0;
+  for (const node of nodes) {
+    const text = (node.innerText || node.textContent || node.getAttribute('aria-label') || '')
+      .replace(/\\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+    if (!text || !labels.some(label => text.includes(label))) continue;
+    const rect = node.getBoundingClientRect();
+    if (rect.width === 0 && rect.height === 0) continue;
+    node.click();
+    clicked += 1;
+  }
+  return clicked;
+})()
+"""
+
+
+def _expand_read_more_actions() -> list[dict]:
+    return [
+        {"type": "wait", "milliseconds": 1200},
+        {"type": "executeJavascript", "script": _EXPAND_READ_MORE_JS},
+        {"type": "wait", "milliseconds": 1200},
+    ]
+
+
+def _venue_detail_actions(slug: str) -> list[dict]:
+    override = VENUE_OVERRIDES.get(slug)
+    if override and callable(override.get("detail_actions")):
+        actions = override["detail_actions"]()
+    else:
+        actions = []
     if len(actions) > _FIRECRAWL_MAX_ACTIONS:
         actions = actions[:_FIRECRAWL_MAX_ACTIONS]
     return actions
@@ -2640,11 +2687,15 @@ def _scrape_one_detail(app, detail_url: str, venue: dict) -> dict:
     prompt = _build_detail_prompt(venue)
     schema = EventDetail.model_json_schema()
     json_fmt = {"type": "json", "schema": schema, "prompt": prompt}
+    actions = _venue_detail_actions(_slug(venue["name"]))
+    kwargs = {"formats": [json_fmt]}
+    if actions:
+        kwargs["actions"] = actions
     try:
         try:
-            result = app.scrape(detail_url, formats=[json_fmt], headers=_DE_HEADERS)
+            result = app.scrape(detail_url, headers=_DE_HEADERS, **kwargs)
         except TypeError:
-            result = app.scrape(detail_url, formats=[json_fmt])
+            result = app.scrape(detail_url, **kwargs)
         return _normalise(result)
     except Exception as e:
         print(f"    [warn] detail scrape failed ({detail_url[:60]}): {e}", flush=True)
