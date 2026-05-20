@@ -2857,14 +2857,14 @@ def _scrape_one_discover(
                     source = "jsonld_firecrawl_html"
 
     rendered_listing = _rendered_listing_text(listing)
-    if not events_raw and rendered_listing:
+    if rendered_listing:
         parsed_events, parsed_source = _extract_preferred_listing_events(
             rendered_listing, venue, horizon_date
         )
-        if parsed_events:
+        if parsed_events and len(parsed_events) > len(events_raw or []):
             print(
-                f"    listing parser fallback: {len(parsed_events)} events "
-                f"from rendered cards",
+                f"    listing parser: {len(parsed_events)} events from rendered cards "
+                f"(prefer over {len(events_raw or [])} from {source})",
                 flush=True,
             )
             events_raw = parsed_events
@@ -3038,14 +3038,14 @@ def _scrape_one(
                 source = "jsonld_firecrawl_html"
 
     rendered_listing = _rendered_listing_text(listing)
-    if not events_raw and rendered_listing:
+    if rendered_listing:
         parsed_events, parsed_source = _extract_preferred_listing_events(
             rendered_listing, venue, horizon_date
         )
-        if parsed_events:
+        if parsed_events and len(parsed_events) > len(events_raw or []):
             print(
-                f"    listing parser fallback: {len(parsed_events)} events "
-                f"from rendered cards",
+                f"    listing parser: {len(parsed_events)} events from rendered cards "
+                f"(prefer over {len(events_raw or [])} from {source})",
                 flush=True,
             )
             events_raw = parsed_events
