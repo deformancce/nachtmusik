@@ -2447,6 +2447,39 @@ def _probe_sitemap_detail_pages(
     return out
 
 
+def _probe_sitemap_detail_llm_pages(
+    app,
+    venue: dict,
+    detail_probes: list[dict],
+    *,
+    limit: int = 3,
+) -> list[dict]:
+    no_date_urls = [
+        probe["url"] for probe in detail_probes
+        if probe.get("url") and not probe.get("first_date_seen") and not probe.get("last_date_seen")
+    ]
+    sampled_urls = _sample_evenly(no_date_urls, limit)
+    out: list[dict] = []
+    for index, detail_url in enumerate(sampled_urls, start=1):
+        print(f"    sitemap-detail-llm {index}/{len(sampled_urls)}: {detail_url[:90]}", flush=True)
+        detail = _scrape_one_detail(app, detail_url, venue)
+        probe = {
+            "url": detail_url,
+            "title": detail.get("title"),
+            "date": detail.get("date"),
+            "time": detail.get("time"),
+            "program_count": len(detail.get("program") or []),
+            "performer_count": len(detail.get("performers") or []),
+            "has_price": bool(detail.get("price")),
+        }
+        print(
+            f"      date={probe['date']} title={(probe.get('title') or '')[:60]}",
+            flush=True,
+        )
+        out.append(probe)
+    return out
+
+
 def _probe_discovery(app, venue: dict, horizon_date: str) -> dict:
     slug = _slug(venue["name"])
     print(f"\n  [probe:{slug}] {venue['name']}", flush=True)
@@ -2457,6 +2490,11 @@ def _probe_discovery(app, venue: dict, horizon_date: str) -> dict:
     sitemap_detail_probes = (
         _probe_sitemap_detail_pages(app, venue, sitemap_urls, horizon_date)
         if sitemap_urls
+        else []
+    )
+    sitemap_detail_llm_probes = (
+        _probe_sitemap_detail_llm_pages(app, venue, sitemap_detail_probes)
+        if sitemap_detail_probes
         else []
     )
     for probe_url in _probe_candidate_urls(venue, horizon_date):
@@ -2475,6 +2513,10 @@ def _probe_discovery(app, venue: dict, horizon_date: str) -> dict:
         1 for probe in sitemap_detail_probes
         if probe.get("first_date_seen") or probe.get("last_date_seen")
     )
+    sitemap_detail_llm_date_hits = sum(
+        1 for probe in sitemap_detail_llm_probes
+        if probe.get("date")
+    )
     return {
         "venue": venue["name"],
         "city": venue["city"],
@@ -2488,6 +2530,8 @@ def _probe_discovery(app, venue: dict, horizon_date: str) -> dict:
         "sample_sitemap_urls": sitemap_urls[:12],
         "sitemap_detail_probes": sitemap_detail_probes,
         "sitemap_detail_date_hits": sitemap_detail_date_hits,
+        "sitemap_detail_llm_probes": sitemap_detail_llm_probes,
+        "sitemap_detail_llm_date_hits": sitemap_detail_llm_date_hits,
         "probes": probes,
     }
 
