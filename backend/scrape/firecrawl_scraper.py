@@ -3052,6 +3052,7 @@ def _discover_sitemap_detail_events(
         "scraped": 0,
         "new_events": 0,
         "missing_date_or_title": 0,
+        "today_or_past": 0,
         "past_or_beyond_horizon": 0,
         "duplicate_urls": 0,
     }
@@ -3091,6 +3092,13 @@ def _discover_sitemap_detail_events(
             stats["missing_date_or_title"] += 1
             continue
         if _is_canceled(ev.get("title") or ""):
+            continue
+        parsed_date = _parse_iso_date(ev.get("date"))
+        if not parsed_date:
+            stats["missing_date_or_title"] += 1
+            continue
+        if parsed_date <= _today_date():
+            stats["today_or_past"] += 1
             continue
         if not _is_within_scrape_window(ev.get("date"), horizon_date):
             stats["past_or_beyond_horizon"] += 1
