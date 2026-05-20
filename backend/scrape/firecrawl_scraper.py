@@ -2923,7 +2923,7 @@ def _is_future(event_date: str | None) -> bool:
         return True  # keep events with missing dates (can't filter)
     parsed = _parse_iso_date(event_date)
     if parsed is None:
-        return True
+        return False
     return parsed >= _today_date()
 
 
@@ -2932,7 +2932,9 @@ def _is_within_scrape_window(event_date: str | None, horizon_date: str | None = 
         return True  # keep events with missing dates until detail/coverage can diagnose them
     parsed = _parse_iso_date(event_date)
     horizon = _parse_iso_date(horizon_date or _scrape_horizon_date())
-    if parsed is None or horizon is None:
+    if parsed is None:
+        return False
+    if horizon is None:
         return True
     return _today_date() <= parsed <= horizon
 
@@ -3017,7 +3019,7 @@ def _detail_to_event(detail: dict, url: str, venue: dict) -> dict | None:
         return None
     title = (detail.get("title") or "").strip()
     date = detail.get("date")
-    if not title or not date:
+    if not title or not _parse_iso_date(date):
         return None
     ev: dict = {
         "date": date,
