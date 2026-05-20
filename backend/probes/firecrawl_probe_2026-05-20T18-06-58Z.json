@@ -1,0 +1,705 @@
+{
+  "scraped_at": "2026-05-20T18:06:58.245120Z",
+  "scrape_horizon_date": "2026-11-30",
+  "results": [
+    {
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin",
+      "slug": "berliner_philharmonie",
+      "scraped_at": "2026-05-20T18:03:15.330344Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
+      "best_event_urls": 73,
+      "best_last_date_seen": "2026-10-08",
+      "preferred_event_urls": 0,
+      "preferred_first_date_seen": null,
+      "preferred_last_date_seen": null,
+      "sample_preferred_urls": [],
+      "sitemap_event_urls": 1472,
+      "sample_sitemap_urls": [
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55624/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55698/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55699/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55700/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55701/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55702/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55703/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55704/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55705/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55625/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55706/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55626/"
+      ],
+      "sitemap_jsonld_stats": {
+        "sitemap_urls": 1472,
+        "candidate_urls": 120,
+        "checked": 120,
+        "limit": 120,
+        "initial_sample": 24,
+        "jsonld_pages": 85,
+        "events": 0,
+        "within_horizon": 0,
+        "past_or_beyond_horizon": 85,
+        "canceled": 0,
+        "invalid": 0,
+        "complete_scan": false,
+        "covers_horizon": false,
+        "authoritative": false
+      },
+      "sitemap_jsonld_events": 0,
+      "sitemap_jsonld_first_date_seen": null,
+      "sitemap_jsonld_last_date_seen": null,
+      "sample_sitemap_jsonld_urls": [],
+      "sitemap_detail_probes": [
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55624/",
+          "error": null,
+          "raw_lines": 652,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55894/",
+          "error": null,
+          "raw_lines": 483,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56128/",
+          "error": null,
+          "raw_lines": 444,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56451/",
+          "error": null,
+          "raw_lines": 404,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56440/",
+          "error": null,
+          "raw_lines": 589,
+          "raw_preview": null,
+          "dates": [
+            "2026-06-14"
+          ],
+          "first_date_seen": "2026-06-14",
+          "last_date_seen": "2026-06-14"
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56821/",
+          "error": null,
+          "raw_lines": 418,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57032/",
+          "error": null,
+          "raw_lines": 474,
+          "raw_preview": null,
+          "dates": [
+            "2026-08-10",
+            "2026-10-10",
+            "2026-10-11"
+          ],
+          "first_date_seen": "2026-08-10",
+          "last_date_seen": "2026-10-11"
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57257/",
+          "error": null,
+          "raw_lines": 553,
+          "raw_preview": null,
+          "dates": [
+            "2026-10-30",
+            "2026-10-31"
+          ],
+          "first_date_seen": "2026-10-30",
+          "last_date_seen": "2026-10-31"
+        }
+      ],
+      "sitemap_detail_date_hits": 3,
+      "sitemap_detail_llm_probes": [
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55624/",
+          "title": "Saisoneröffnung",
+          "date": "2024-08-23",
+          "time": "19:00",
+          "program_count": 1,
+          "performer_count": 1,
+          "has_price": true
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56128/",
+          "title": "Gastveranstaltung",
+          "date": "2025-03-02",
+          "time": "20:00",
+          "program_count": 3,
+          "performer_count": 2,
+          "has_price": false
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56821/",
+          "title": "Classical Piano Fusion",
+          "date": "2025-11-10",
+          "time": "19:30",
+          "program_count": 0,
+          "performer_count": 2,
+          "has_price": false
+        }
+      ],
+      "sitemap_detail_llm_date_hits": 3,
+      "probes": [
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
+          "error": null,
+          "raw_lines": 3593,
+          "raw_preview": null,
+          "event_urls": 73,
+          "unique_event_urls": 73,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-10-08",
+          "sample_urls": [
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56431/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56563/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56433/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56416/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56564/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56434/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56435/"
+          ]
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/?from=2026-06-01",
+          "error": null,
+          "raw_lines": 3075,
+          "raw_preview": null,
+          "event_urls": 59,
+          "unique_event_urls": 59,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-09-19",
+          "sample_urls": [
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56431/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56563/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56433/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56416/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56564/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56434/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56435/"
+          ]
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/?from=2026-09-01",
+          "error": null,
+          "raw_lines": 3075,
+          "raw_preview": null,
+          "event_urls": 59,
+          "unique_event_urls": 59,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-09-19",
+          "sample_urls": [
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56431/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56563/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56433/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56416/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56564/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56434/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56435/"
+          ]
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/?from=2026-11-01",
+          "error": null,
+          "raw_lines": 3075,
+          "raw_preview": null,
+          "event_urls": 59,
+          "unique_event_urls": 59,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-11-01",
+          "sample_urls": [
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56431/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56563/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56433/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56416/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56564/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56434/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56435/"
+          ]
+        }
+      ]
+    },
+    {
+      "venue": "Philharmonie Essen",
+      "city": "Essen",
+      "slug": "philharmonie_essen",
+      "scraped_at": "2026-05-20T18:05:33.941833Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.theater-essen.de/programm/kalender/2026-10/philharmonie-essen?scheduleScrollTo=2026-10-01",
+      "best_event_urls": 48,
+      "best_last_date_seen": "2026-11-30",
+      "preferred_event_urls": 0,
+      "preferred_first_date_seen": null,
+      "preferred_last_date_seen": null,
+      "sample_preferred_urls": [],
+      "sitemap_event_urls": 0,
+      "sample_sitemap_urls": [],
+      "sitemap_jsonld_stats": {},
+      "sitemap_jsonld_events": 0,
+      "sitemap_jsonld_first_date_seen": null,
+      "sitemap_jsonld_last_date_seen": null,
+      "sample_sitemap_jsonld_urls": [],
+      "sitemap_detail_probes": [],
+      "sitemap_detail_date_hits": 0,
+      "sitemap_detail_llm_probes": [],
+      "sitemap_detail_llm_date_hits": 0,
+      "probes": [
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/philharmonie-essen/",
+          "error": null,
+          "raw_lines": 7195,
+          "raw_preview": null,
+          "event_urls": 31,
+          "unique_event_urls": 31,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": [
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/takeover-by-miki-und-eva-briegel-juli-151425/3177/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/takeover-by-miki-und-eva-briegel-juli-151425/3178/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/die-prinzen-symphonisch-157996/3335/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/joana-mallwitzkonzerthausorchester-berlin-154813/2711/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/hoer-mal-wie-das-klingt-iv-157092/3326/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/hoer-mal-wie-das-klingt-iv-157092/3327/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/gautier-capuconsaechsische-staatskapelle-dresden-149566/3226/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/panel-160260/4132/"
+          ]
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/",
+          "error": null,
+          "raw_lines": 16104,
+          "raw_preview": null,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-05/philharmonie-essen",
+          "error": null,
+          "raw_lines": 5602,
+          "raw_preview": null,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-05/philharmonie-essen?scheduleScrollTo=2026-05-01",
+          "error": null,
+          "raw_lines": 5602,
+          "raw_preview": null,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen",
+          "error": null,
+          "raw_lines": 6066,
+          "raw_preview": null,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-06/philharmonie-essen?scheduleScrollTo=2026-06-01",
+          "error": null,
+          "raw_lines": 8868,
+          "raw_preview": null,
+          "event_urls": 28,
+          "unique_event_urls": 28,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": [
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/sing-mal-mit-der-maus-156804/3269/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/sing-mal-mit-der-maus-156804/3601/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/pierre-laurent-aimardedward-gardnerwdr-sinfonieorc-156099/3651/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/die-gruene-klangwerkstattschicht-im-schacht-155793/3331/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/jazz-crossover-nils-landgren-141970/3243/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/jazz-crossover-nils-landgren-141970/3244/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/just-do-itimprovisationsworkshop-158628/3288/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/just-do-itimprovisationsworkshop-158628/3289/"
+          ]
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-07/philharmonie-essen",
+          "error": null,
+          "raw_lines": 4982,
+          "raw_preview": null,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-07/philharmonie-essen?scheduleScrollTo=2026-07-01",
+          "error": null,
+          "raw_lines": 4982,
+          "raw_preview": null,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-08/philharmonie-essen",
+          "error": null,
+          "raw_lines": 5610,
+          "raw_preview": null,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-08/philharmonie-essen?scheduleScrollTo=2026-08-01",
+          "error": null,
+          "raw_lines": 5610,
+          "raw_preview": null,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-09/philharmonie-essen",
+          "error": null,
+          "raw_lines": 5610,
+          "raw_preview": null,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-09/philharmonie-essen?scheduleScrollTo=2026-09-01",
+          "error": null,
+          "raw_lines": 5610,
+          "raw_preview": null,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-10/philharmonie-essen",
+          "error": null,
+          "raw_lines": 6740,
+          "raw_preview": null,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-10/philharmonie-essen?scheduleScrollTo=2026-10-01",
+          "error": null,
+          "raw_lines": 11367,
+          "raw_preview": null,
+          "event_urls": 48,
+          "unique_event_urls": 48,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": [
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/now-silkroad-kids-155811/4211/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/akkordeon-zum-anfassen-165388/4212/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/akkordeon-zum-anfassen-165388/4213/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/master-neue-musik-155815/4214/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/mark-andrechor-und-elektronik-151063/4215/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/morton-feldman-string-quartet-and-orchestra-151251/4216/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/beethoven-electric-155816/4217/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/trio-abstrakt-155817/4218/"
+          ]
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-11/philharmonie-essen",
+          "error": null,
+          "raw_lines": 6147,
+          "raw_preview": null,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.theater-essen.de/programm/kalender/2026-11/philharmonie-essen?scheduleScrollTo=2026-11-01",
+          "error": null,
+          "raw_lines": 10255,
+          "raw_preview": null,
+          "event_urls": 42,
+          "unique_event_urls": 42,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-11-30",
+          "sample_urls": [
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/hoer-mal-wie-das-klingt-i-168440/4232/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/hoer-mal-wie-das-klingt-i-168440/4233/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/ein-liederabend-mit-fatma-said-161851/4236/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/hoer-mal-wie-das-klingt-i-168440/4234/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/hoer-mal-wie-das-klingt-i-168440/4235/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/sheku-kanneh-masongabor-takacs-nagyverbier-festiva-157108/4125/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/alles-sieht-so-festlich-aus-165222/4237/",
+            "https://www.theater-essen.de/programm/kalender/philharmonie-essen/alles-sieht-so-festlich-aus-165222/4238/"
+          ]
+        }
+      ]
+    },
+    {
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "slug": "gewandhaus_leipzig",
+      "scraped_at": "2026-05-20T18:06:58.244962Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.gewandhausorchester.de/",
+      "best_event_urls": 6,
+      "best_last_date_seen": "2026-06-03",
+      "preferred_event_urls": 0,
+      "preferred_first_date_seen": null,
+      "preferred_last_date_seen": null,
+      "sample_preferred_urls": [],
+      "sitemap_event_urls": 668,
+      "sample_sitemap_urls": [
+        "https://www.gewandhausorchester.de/veranstaltung/tim-bendzko-9146/",
+        "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-9876/",
+        "https://www.gewandhausorchester.de/veranstaltung/mnozil-brass-9464/",
+        "https://www.gewandhausorchester.de/veranstaltung/motette-9801/",
+        "https://www.gewandhausorchester.de/veranstaltung/the-sound-of-epic-anime-9713/",
+        "https://www.gewandhausorchester.de/veranstaltung/motette-9852/",
+        "https://www.gewandhausorchester.de/veranstaltung/cosi-fan-tutte-9591/",
+        "https://www.gewandhausorchester.de/veranstaltung/verdi-requiem-9642/",
+        "https://www.gewandhausorchester.de/veranstaltung/gastspiel-in-taipeh-9921/",
+        "https://www.gewandhausorchester.de/veranstaltung/motette-9853/",
+        "https://www.gewandhausorchester.de/veranstaltung/gastspiel-in-tainan-9922/",
+        "https://www.gewandhausorchester.de/veranstaltung/die-zauberfloete-9592/"
+      ],
+      "sitemap_jsonld_stats": {
+        "sitemap_urls": 668,
+        "candidate_urls": 120,
+        "checked": 24,
+        "limit": 120,
+        "initial_sample": 24,
+        "jsonld_pages": 0,
+        "events": 0,
+        "within_horizon": 0,
+        "past_or_beyond_horizon": 0,
+        "canceled": 0,
+        "invalid": 0,
+        "complete_scan": false,
+        "short_circuited_no_jsonld": true,
+        "covers_horizon": false,
+        "authoritative": false
+      },
+      "sitemap_jsonld_events": 0,
+      "sitemap_jsonld_first_date_seen": null,
+      "sitemap_jsonld_last_date_seen": null,
+      "sample_sitemap_jsonld_urls": [],
+      "sitemap_detail_probes": [
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/tim-bendzko-9146/",
+          "error": null,
+          "raw_lines": 1076,
+          "raw_preview": null,
+          "dates": [
+            "2026-05-20"
+          ],
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-20"
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/familiennachmittag-10452/",
+          "error": null,
+          "raw_lines": 939,
+          "raw_preview": null,
+          "dates": [
+            "2026-07-04"
+          ],
+          "first_date_seen": "2026-07-04",
+          "last_date_seen": "2026-07-04"
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9978/",
+          "error": null,
+          "raw_lines": 1152,
+          "raw_preview": null,
+          "dates": [
+            "2026-06-13",
+            "2026-06-27",
+            "2026-10-23"
+          ],
+          "first_date_seen": "2026-06-13",
+          "last_date_seen": "2026-10-23"
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-10415/",
+          "error": null,
+          "raw_lines": 958,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-impuls-10419/",
+          "error": null,
+          "raw_lines": 935,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-10430/",
+          "error": null,
+          "raw_lines": 962,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/klavierrezital-10136/",
+          "error": null,
+          "raw_lines": 1105,
+          "raw_preview": null,
+          "dates": [
+            "2026-06-13",
+            "2026-06-27"
+          ],
+          "first_date_seen": "2026-06-13",
+          "last_date_seen": "2026-06-27"
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/the-sounds-of-vangelis-10392/",
+          "error": null,
+          "raw_lines": 810,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        }
+      ],
+      "sitemap_detail_date_hits": 4,
+      "sitemap_detail_llm_probes": [
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-10415/",
+          "title": "GEWANDHAUS-FÜHRUNG",
+          "date": "2026-12-04",
+          "time": "12:30",
+          "program_count": 0,
+          "performer_count": 0,
+          "has_price": true
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-10430/",
+          "title": "GEWANDHAUS-FÜHRUNG",
+          "date": "2027-03-11",
+          "time": "12:30",
+          "program_count": 0,
+          "performer_count": 0,
+          "has_price": true
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/the-sounds-of-vangelis-10392/",
+          "title": "Beyond the Horizon - The Sounds of Vangelis",
+          "date": "2027-10-19",
+          "time": "20:00",
+          "program_count": 6,
+          "performer_count": 2,
+          "has_price": true
+        }
+      ],
+      "sitemap_detail_llm_date_hits": 3,
+      "probes": [
+        {
+          "url": "https://www.gewandhausorchester.de/",
+          "error": null,
+          "raw_lines": 3262,
+          "raw_preview": null,
+          "event_urls": 6,
+          "unique_event_urls": 6,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-06-03",
+          "sample_urls": [
+            "https://www.gewandhausorchester.de/veranstaltung/tim-bendzko-9146/",
+            "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-9876/",
+            "https://www.gewandhausorchester.de/veranstaltung/mnozil-brass-9464/",
+            "https://www.gewandhausorchester.de/veranstaltung/motette-9801/",
+            "https://www.gewandhausorchester.de/veranstaltung/the-sound-of-epic-anime-9713/",
+            "https://www.gewandhausorchester.de/veranstaltung/motette-9852/"
+          ]
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/spielplan/",
+          "error": null,
+          "raw_lines": 3262,
+          "raw_preview": null,
+          "event_urls": 6,
+          "unique_event_urls": 6,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-06-03",
+          "sample_urls": [
+            "https://www.gewandhausorchester.de/veranstaltung/tim-bendzko-9146/",
+            "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-9876/",
+            "https://www.gewandhausorchester.de/veranstaltung/mnozil-brass-9464/",
+            "https://www.gewandhausorchester.de/veranstaltung/motette-9801/",
+            "https://www.gewandhausorchester.de/veranstaltung/the-sound-of-epic-anime-9713/",
+            "https://www.gewandhausorchester.de/veranstaltung/motette-9852/"
+          ]
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltungen/",
+          "error": null,
+          "raw_lines": 608,
+          "raw_preview": null,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": null,
+          "last_date_seen": null,
+          "sample_urls": []
+        }
+      ]
+    }
+  ]
+}
