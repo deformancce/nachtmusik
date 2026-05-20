@@ -1,0 +1,266 @@
+{
+  "scraped_at": "2026-05-20T18:15:11.351113Z",
+  "scrape_horizon_date": "2026-11-30",
+  "results": [
+    {
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin",
+      "slug": "berliner_philharmonie",
+      "scraped_at": "2026-05-20T18:15:11.350907Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
+      "best_event_urls": 59,
+      "best_last_date_seen": "2026-09-19",
+      "preferred_event_urls": 0,
+      "preferred_first_date_seen": null,
+      "preferred_last_date_seen": null,
+      "sample_preferred_urls": [],
+      "sitemap_event_urls": 1472,
+      "sample_sitemap_urls": [
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55624/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55698/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55699/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55700/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55701/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55702/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55703/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55704/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55705/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55625/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55706/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55626/"
+      ],
+      "sitemap_jsonld_stats": {
+        "sitemap_urls": 1472,
+        "candidate_urls": 120,
+        "checked": 120,
+        "limit": 120,
+        "initial_sample": 24,
+        "jsonld_pages": 107,
+        "events": 13,
+        "within_horizon": 13,
+        "past_or_beyond_horizon": 94,
+        "canceled": 0,
+        "invalid": 0,
+        "complete_scan": false,
+        "first_date": "2026-06-05",
+        "latest_date": "2026-11-18",
+        "covers_horizon": false,
+        "authoritative": false
+      },
+      "sitemap_jsonld_events": 13,
+      "sitemap_jsonld_first_date_seen": "2026-06-05",
+      "sitemap_jsonld_last_date_seen": "2026-11-18",
+      "sample_sitemap_jsonld_urls": [
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/56972/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/56440/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/56933/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/56986/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/56993/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/57005/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/57215/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/57018/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/57231/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/57032/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/57046/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/57202/"
+      ],
+      "sitemap_detail_probes": [
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55624/",
+          "error": null,
+          "raw_lines": 648,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55894/",
+          "error": null,
+          "raw_lines": 483,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56128/",
+          "error": null,
+          "raw_lines": 444,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56451/",
+          "error": null,
+          "raw_lines": 404,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56440/",
+          "error": null,
+          "raw_lines": 492,
+          "raw_preview": null,
+          "dates": [
+            "2026-06-14"
+          ],
+          "first_date_seen": "2026-06-14",
+          "last_date_seen": "2026-06-14"
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56821/",
+          "error": null,
+          "raw_lines": 414,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57032/",
+          "error": null,
+          "raw_lines": 474,
+          "raw_preview": null,
+          "dates": [
+            "2026-08-10",
+            "2026-10-10",
+            "2026-10-11"
+          ],
+          "first_date_seen": "2026-08-10",
+          "last_date_seen": "2026-10-11"
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57257/",
+          "error": null,
+          "raw_lines": 553,
+          "raw_preview": null,
+          "dates": [
+            "2026-10-30",
+            "2026-10-31"
+          ],
+          "first_date_seen": "2026-10-30",
+          "last_date_seen": "2026-10-31"
+        }
+      ],
+      "sitemap_detail_date_hits": 3,
+      "sitemap_detail_llm_probes": [
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55624/",
+          "title": "Saisoneröffnung",
+          "date": "2024-08-23",
+          "time": "19:00",
+          "program_count": 1,
+          "performer_count": 1,
+          "has_price": true
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56128/",
+          "title": "Gastveranstaltung",
+          "date": "2025-03-02",
+          "time": "20:00",
+          "program_count": 3,
+          "performer_count": 3,
+          "has_price": false
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56821/",
+          "title": "Classical Piano Fusion",
+          "date": "2025-11-10",
+          "time": "19:30",
+          "program_count": 0,
+          "performer_count": 2,
+          "has_price": false
+        }
+      ],
+      "sitemap_detail_llm_date_hits": 3,
+      "probes": [
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
+          "error": null,
+          "raw_lines": 3075,
+          "raw_preview": null,
+          "event_urls": 59,
+          "unique_event_urls": 59,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-09-19",
+          "sample_urls": [
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56431/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56563/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56433/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56416/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56564/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56434/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56435/"
+          ]
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/?from=2026-06-01",
+          "error": null,
+          "raw_lines": 3075,
+          "raw_preview": null,
+          "event_urls": 59,
+          "unique_event_urls": 59,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-09-19",
+          "sample_urls": [
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56431/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56563/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56433/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56416/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56564/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56434/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56435/"
+          ]
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/?from=2026-09-01",
+          "error": null,
+          "raw_lines": 3075,
+          "raw_preview": null,
+          "event_urls": 59,
+          "unique_event_urls": 59,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-09-19",
+          "sample_urls": [
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56431/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56563/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56433/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56416/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56564/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56434/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56435/"
+          ]
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/?from=2026-11-01",
+          "error": null,
+          "raw_lines": 3075,
+          "raw_preview": null,
+          "event_urls": 59,
+          "unique_event_urls": 59,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-11-01",
+          "sample_urls": [
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56431/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56563/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56433/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56416/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56564/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56434/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56435/"
+          ]
+        }
+      ]
+    }
+  ]
+}
