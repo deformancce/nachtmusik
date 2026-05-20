@@ -714,9 +714,8 @@ VENUE_OVERRIDES: dict[str, dict] = {
         "wait_for_listing_count": 20,
     },
     "alte_oper_frankfurt": {
-        # Calendar card grid; lazy cards appear while scrolling. Parse rendered
-        # cards locally so the LLM is not responsible for discovery recall.
-        "actions": lambda: _cookie_and_load_more_actions(max_rounds=35, settle_ms=2000),
+        # Calendar card grid. Keep default native scrolling here; the generic
+        # JS bottom-jump loop causes Firecrawl to return fewer cards.
         "listing_target": 120,
         "force_url_expand": True,
     },
