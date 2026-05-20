@@ -715,8 +715,11 @@ VENUE_OVERRIDES: dict[str, dict] = {
         "wait_for_listing_count": 20,
     },
     "alte_oper_frankfurt": {
-        # Calendar card grid. Keep default native scrolling here; the generic
-        # JS bottom-jump loop causes Firecrawl to return fewer cards.
+        # Calendar card grid with lazy-loaded rows. Use native scroll actions:
+        # the generic JS bottom-jump loop causes Firecrawl to return fewer cards.
+        # Detail text may be hidden behind "Weiterlesen"; open it before extraction.
+        "actions": lambda: _scroll_actions(n=24, amount=2200, wait_ms=1000),
+        "detail_actions": lambda: _expand_read_more_actions(),
         "listing_target": 120,
         "force_url_expand": True,
     },
