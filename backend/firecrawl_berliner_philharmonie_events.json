@@ -3,36 +3,10 @@
   "city": "Berlin",
   "slug": "berliner_philharmonie",
   "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-  "scraped_at": "2026-05-20T07:06:11.690161Z",
+  "scraped_at": "2026-05-20T19:19:02.769853Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
-    {
-      "date": "2026-05-20",
-      "time": "13:00",
-      "title": "Lunchkonzert",
-      "venue_hall": "Foyer Großer Saal",
-      "program": [
-        "Johannes Brahms: Wie Melodien op. 105 Nr. 1 (Bearbeitung für Viola und Klavier von Martin Stegner)",
-        "Johannes Brahms: Sonate für Violine und Klavier Nr. 2 A-Dur op. 100 (Bearbeitung für Viola und Klavier von Martin Stegner)",
-        "Astor Piazzolla: Le Grand Tango für Violoncello und Klavier"
-      ],
-      "performers": [
-        "Martin Stegner",
-        "Tomoko Takahashi"
-      ],
-      "conductor": null,
-      "price": "Eintritt frei",
-      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56562/",
-      "venue": "Berliner Philharmonie",
-      "city": "Berlin",
-      "discovery_source": "berliner_philharmonie_listing",
-      "discovered_only": false,
-      "reused_enrichment": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
     {
       "date": "2026-05-21",
       "time": "20:00",
@@ -55,6 +29,31 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-21",
+      "time": "20:00",
+      "title": "Gastveranstaltung",
+      "venue_hall": "Kammermusiksaal",
+      "program": [
+        "Ruth Crawford Seeger: Preludes für Klavier: Auswahl",
+        "Robert Schumann: Humoreske B-Dur op. 20",
+        "Felix Mendelssohn Bartholdy: Lieder ohne Worte op. 67",
+        "Sergej Rachmaninow: Klaviersonate Nr. 2 b-Moll op. 36"
+      ],
+      "performers": [
+        "Roman Borisov"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56652/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -107,6 +106,31 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-24",
+      "time": "20:00",
+      "title": "Gastveranstaltung",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Hailstork: Lachrymosa: 1919",
+        "Sibelius: Konzert für Violine und Orchester d-Moll op. 47",
+        "Tschaikowsky: Symphonie Nr. 5 e-Moll op. 64"
+      ],
+      "performers": [
+        "Deutsches Symphonie-Orchester Berlin",
+        "Augustin Hadelich"
+      ],
+      "conductor": "Manfred Honeck",
+      "price": null,
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56682/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -170,16 +194,21 @@
       "title": "Diskurs in der Philharmonie",
       "venue_hall": "Kammermusiksaal Oberes Foyer",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Joschka Fischer",
+        "Rieke Havertz",
+        "Christiane Florin"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "13 €",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56433/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 90,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -237,21 +266,65 @@
       "is_classical": true
     },
     {
+      "date": "2026-05-31",
+      "time": "15:00",
+      "title": "Gastveranstaltung",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Orff: Carmina Burana"
+      ],
+      "performers": [
+        "Philharmonischer Chor Berlin",
+        "Brandenburgisches Staatsorchester Frankfurt",
+        "Hyeyoung Moon",
+        "Tobias Westman",
+        "Daniel Ochoa",
+        "Mädchenchor der Sing-Akademie zu Berlin"
+      ],
+      "conductor": "Florian Benfer",
+      "price": "ab €",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56744/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
       "date": "2026-06-02",
       "time": "20:00",
       "title": "Ensemble Wien-Berlin:",
       "venue_hall": "Kammermusiksaal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Mozart: Serenade c-Moll KV 388 »Nacht Musique«",
+        "Berio: Opus Number Zoo (Fassung für Bläserquintett)",
+        "Globokar: Augustin, dober je vin",
+        "Raff: Sinfonietta op. 188"
+      ],
+      "performers": [
+        "Karl-Heinz Schütz",
+        "Jonathan Kelly",
+        "Gerald Pachinger",
+        "Richard Galler",
+        "Stefan Dohr",
+        "Jelka Weber",
+        "Christoph Hartmann",
+        "Andraž Golob",
+        "Václav Vonášek",
+        "Paula Ernesaks"
+      ],
+      "conductor": "Konrad Cordes",
+      "price": "12 bis 31 €",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56416/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 120,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -283,6 +356,34 @@
       "discovered_only": false,
       "duration_min": 60,
       "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-03",
+      "time": "20:00",
+      "title": "Gastveranstaltung",
+      "venue_hall": "Kammermusiksaal",
+      "program": [
+        "Clara Schumann: Drei Romanzen op. 22 (Bearbeitung für Violine und Orchester von Bernhard Rofe)",
+        "Sebastian Fagerlund: Chamber Symphony",
+        "Lars-Erik Larsson: Pastoral-Suite op. 19",
+        "Ludwig van Beethoven: Tripelkonzert C-Dur op. 56"
+      ],
+      "performers": [
+        "Kammerakademie Potsdam",
+        "Antje Weithaas",
+        "Marie-Elisabeth Hecker",
+        "Martin Helmchen"
+      ],
+      "conductor": "John Storgårds",
+      "price": null,
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56713/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -347,16 +448,23 @@
       "title": "Mitmachkonzert: »Juchhe!«",
       "venue_hall": "Oberes Foyer Kammermusiksaal / Einführungsbereich",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Mitglieder der Berliner Philharmoniker",
+        "Carley Josephine Marholin",
+        "Giordan Cruz",
+        "Sarah Jeanne Babits",
+        "Julia Schnittger"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "7.5 bis 15 €",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56435/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 45,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -365,16 +473,23 @@
       "title": "Mitmachkonzert: »Juchhe!«",
       "venue_hall": "Oberes Foyer Kammermusiksaal / Einführungsbereich",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Mitglieder der Berliner Philharmoniker",
+        "Carley Josephine Marholin",
+        "Giordan Cruz",
+        "Sarah Jeanne Babits",
+        "Julia Schnittger"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "7.5 bis 15 €",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56435/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 45,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -410,16 +525,23 @@
       "title": "Mitmachkonzert: »Juchhe!«",
       "venue_hall": "Oberes Foyer Kammermusiksaal / Einführungsbereich",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Mitglieder der Berliner Philharmoniker",
+        "Carley Josephine Marholin",
+        "Giordan Cruz",
+        "Sarah Jeanne Babits",
+        "Julia Schnittger"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "7.5 bis 15 €",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56435/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 45,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -456,16 +578,98 @@
       "title": "Mitmachkonzert: »Juchhe!«",
       "venue_hall": "Oberes Foyer Kammermusiksaal / Einführungsbereich",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Mitglieder der Berliner Philharmoniker",
+        "Carley Josephine Marholin",
+        "Giordan Cruz",
+        "Sarah Jeanne Babits",
+        "Julia Schnittger"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "7.5 bis 15 €",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56435/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 45,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-07",
+      "time": "15:30",
+      "title": "Gastveranstaltung",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Gounod: Marche funèbre d'une marionnette (Orchesterfassung)",
+        "Poulenc: Concert champêtre für Cembalo und Orchester",
+        "Rimsky-Korsakow: Scheherazade, Symphonische Suite op. 35"
+      ],
+      "performers": [
+        "Berliner Symphoniker",
+        "Christian Rieger"
+      ],
+      "conductor": "Daniela Musca",
+      "price": null,
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56653/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-07",
+      "time": "20:00",
+      "title": "Gastveranstaltung",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Billy Childs: Diaspora, Konzert für Saxofon und Orchester",
+        "Dmitri Schostakowitsch: Symphonie Nr. 7 C-Dur op. 60 »Leningrader«"
+      ],
+      "performers": [
+        "Deutsches Symphonie-Orchester Berlin",
+        "Steven Banks"
+      ],
+      "conductor": "Rafael Payare",
+      "price": null,
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56684/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-08",
+      "time": "20:00",
+      "title": "Gastveranstaltung",
+      "venue_hall": "Kammermusiksaal",
+      "program": [
+        "Corelli: Sinfonia d-Moll zu Giovanni Lorenzo Luliers Oratorium Santa Beatrice d’Este",
+        "Corelli: Concerto grosso B-Dur op. 6 Nr. 11",
+        "Vivaldi: »Nisi Dominus« RV 608",
+        "Vivaldi: »Cessate, omai cessate«, Kantate RV 684"
+      ],
+      "performers": [
+        "Freiburger Barockorchester",
+        "Alexander Chance"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56654/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -473,17 +677,50 @@
       "time": "11:00",
       "title": "youngSTAR Festival",
       "venue_hall": "Kammermusiksaal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Lloyd Webber: Works",
+        "Boone: Works"
+      ],
+      "performers": [
+        "Concert Band (Gustav-Heinemann-Oberschule, Berlin)",
+        "Mini-Bigband (Käthe-Kollwitz-Gymnasium, Berlin)",
+        "Lily Band (Lily-Braun-Gymnasium, Berlin)",
+        "Mazel Tones (Jüdisches Gymnasium Moses Mendelssohn, Berlin)"
+      ],
+      "conductor": "Judith Kamphues",
+      "price": "kostenfrei",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56493/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-09",
+      "time": "20:00",
+      "title": "Gastveranstaltung",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Mendelssohn Bartholdy: Konzert für Violine und Orchester e-Moll op. 64",
+        "Ravel: Daphnis et Chloé, vollständige Ballettmusik"
+      ],
+      "performers": [
+        "Staatskapelle Berlin",
+        "Renaud Capuçon",
+        "Chor der Staatsoper Unter den Linden Berlin"
+      ],
+      "conductor": "François-Xavier Roth",
+      "price": null,
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56655/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -491,17 +728,25 @@
       "time": "11:00",
       "title": "youngSTAR Festival",
       "venue_hall": "Kammermusiksaal",
-      "program": [],
-      "performers": [],
+      "program": [
+        "Lloyd Webber: Work Title Not Specified",
+        "Boone: Work Title Not Specified"
+      ],
+      "performers": [
+        "Concert Band (Gustav-Heinemann-Oberschule, Berlin)",
+        "Mini-Bigband (Käthe-Kollwitz-Gymnasium, Berlin)",
+        "Lily Band (Lily-Braun-Gymnasium, Berlin)",
+        "Mazel Tones (Jüdisches Gymnasium Moses Mendelssohn, Berlin)"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "kostenfrei",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56493/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -536,17 +781,25 @@
       "time": "11:00",
       "title": "youngSTAR Festival",
       "venue_hall": "Kammermusiksaal",
-      "program": [],
-      "performers": [],
+      "program": [
+        "Lloyd Webber: Works",
+        "Boone: Works"
+      ],
+      "performers": [
+        "Concert Band (Gustav-Heinemann-Oberschule, Berlin)",
+        "Mini-Bigband (Käthe-Kollwitz-Gymnasium, Berlin)",
+        "Lily Band (Lily-Braun-Gymnasium, Berlin)",
+        "Mazel Tones (Jüdisches Gymnasium Moses Mendelssohn, Berlin)"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "kostenfrei",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56493/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -555,16 +808,19 @@
       "title": "Carte blanche",
       "venue_hall": "Kammermusiksaal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Karajan-Akademie der Berliner Philharmoniker"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "Eintritt frei",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56438/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 75,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -598,17 +854,25 @@
       "time": "10:00",
       "title": "youngSTAR Festival",
       "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Lloyd Webber: Various works",
+        "Boone: Various works"
+      ],
+      "performers": [
+        "Concert Band (Gustav-Heinemann-Oberschule, Berlin)",
+        "Mini-Bigband (Käthe-Kollwitz-Gymnasium, Berlin)",
+        "Lily Band (Lily-Braun-Gymnasium, Berlin)",
+        "Mazel Tones (Jüdisches Gymnasium Moses Mendelssohn, Berlin)"
+      ],
+      "conductor": "Not specified",
+      "price": "kostenfrei",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56493/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -686,17 +950,50 @@
       "time": "11:00",
       "title": "»Werkstatt.Dialog.Musik«: Konzertfrühstück im PalaisPopulaire",
       "venue_hall": "PalaisPopulaire",
-      "program": [],
-      "performers": [],
+      "program": [
+        "Mansurian: Duett für Viola und Schlagzeug",
+        "Berio: Naturale"
+      ],
+      "performers": [
+        "Mitglieder der Berliner Philharmoniker",
+        "Sebastian Krunnies",
+        "Jan Schlichte"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "22 €",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56441/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-14",
+      "time": "20:00",
+      "title": "Gastveranstaltung",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Montgomery: Starburst für Streichorchester",
+        "Brahms: Konzert für Violine und Orchester D-Dur op. 77",
+        "Holst: Die Planeten"
+      ],
+      "performers": [
+        "Deutsches Symphonie-Orchester Berlin",
+        "Vadim Gluzman",
+        "Damen des Rundfunkchors Berlin"
+      ],
+      "conductor": "Adam Hickox",
+      "price": null,
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56685/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -841,7 +1138,9 @@
       "time": "11:00",
       "title": "Tag der offenen Tür",
       "venue_hall": "Philharmonie",
-      "program": [],
+      "program": [
+        "Konzerte, Workshops, Führungen und mehr"
+      ],
       "performers": [],
       "conductor": null,
       "price": null,
@@ -850,8 +1149,8 @@
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -885,21 +1184,87 @@
       "is_classical": true
     },
     {
+      "date": "2026-06-26",
+      "time": "20:00",
+      "title": "Gastveranstaltung",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Boulanger: Vieille Prière bouddhique für Tenor, Chor und Orchester",
+        "Debussy: Suite bergamasque: Nr. 3 Clair de lune (Orchestrierung von André Caplet)",
+        "Fauré: Pavane fis-Moll op. 50",
+        "Mendelssohn Bartholdy: Bühnenmusik zu Ein Sommernachtstraum op. 61"
+      ],
+      "performers": [
+        "Deutsches Symphonie-Orchester Berlin",
+        "Dalia Stasevska",
+        "Katja Riemann",
+        "Mari Eriksmoen",
+        "Patrizia Nolz",
+        "Rundfunkchor Berlin",
+        "Ines Kaun"
+      ],
+      "conductor": "Dalia Stasevska",
+      "price": "Tickets in den Details",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56686/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
       "date": "2026-06-27",
       "time": "20:15",
       "title": "Saisonabschlusskonzert in der Waldbühne",
       "venue_hall": "Waldbühne Berlin",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Leoncavallo: Pagliacci: »Si, può?«, Prolog des Tonio",
+        "Leoncavallo: Pagliacci: »Recitar ... Vesti la giubba«, Arie des Canio",
+        "Verdi: La forza del destino: Ouvertüre",
+        "Respighi: Fontane di Roma",
+        "Cilèa: L'Arlesiana: »È la solita storia«, Arie des Frederico",
+        "Giordano: Fedora: »Amor ti vieta«, Arie des Loris",
+        "Respighi: Pini di Roma"
+      ],
+      "performers": [
+        "Berliner Philharmoniker",
+        "Jonas Kaufmann"
+      ],
+      "conductor": "Kirill Petrenko",
+      "price": "Ausgebucht",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56444/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-28",
+      "time": "20:00",
+      "title": "Gastveranstaltung",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Elgar: Konzert für Violine und Orchester h-Moll op. 61",
+        "Tschaikowsky: Symphonie Nr. 3 D-Dur op. 29 »Polnische«"
+      ],
+      "performers": [
+        "Rundfunk-Sinfonieorchester Berlin",
+        "Nicola Benedetti"
+      ],
+      "conductor": "Jonathan Nott",
+      "price": "ab €25",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56698/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -907,17 +1272,23 @@
       "time": "19:00",
       "title": "Saisoneröffnung",
       "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Elgar: Enigma, Variations on an Original Theme op. 36",
+        "Tschaikowsky: Symphonie Nr. 4 f-Moll op. 36"
+      ],
+      "performers": [
+        "Berliner Philharmoniker"
+      ],
+      "conductor": "Kirill Petrenko",
+      "price": "50 bis 161 €",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56981/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 105,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -925,17 +1296,22 @@
       "time": "20:30",
       "title": "Festivaltournee",
       "venue_hall": "**Konzertreise**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Elgar: Enigma, Variations on an Original Theme op. 36",
+        "Tschaikowsky: Symphonie Nr. 4 f-Moll op. 36"
+      ],
+      "performers": [
+        "Berliner Philharmoniker"
+      ],
+      "conductor": "Kirill Petrenko",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56982/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -943,17 +1319,23 @@
       "time": "21:00",
       "title": "Festivaltournee",
       "venue_hall": "**Konzertreise**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Beethoven: Konzert für Klavier und Orchester Nr. 3 c-Moll op. 37",
+        "Skrjabin: Symphonie Nr. 3 c-Moll op. 43 »Le divin poème«"
+      ],
+      "performers": [
+        "Berliner Philharmoniker",
+        "Leif Ove Andsnes"
+      ],
+      "conductor": "Kirill Petrenko",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56990/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -961,17 +1343,22 @@
       "time": "19:30",
       "title": "Festivaltournee",
       "venue_hall": "**Konzertreise**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Elgar: Enigma, Variations on an Original Theme op. 36",
+        "Tschaikowsky: Symphonie Nr. 4 f-Moll op. 36"
+      ],
+      "performers": [
+        "Berliner Philharmoniker"
+      ],
+      "conductor": "Kirill Petrenko",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56991/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1035,17 +1422,24 @@
       "time": "19:00",
       "title": "Le Concert des Nations",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Mendelssohn Bartholdy: Symphonie Nr. 3 a-Moll op. 56 »Schottische«",
+        "Mendelssohn Bartholdy: Die Hebriden, Ouvertüre h-Moll op. 26",
+        "Mendelssohn Bartholdy: Symphonie Nr. 4 A-Dur op. 90 »Italienische«"
+      ],
+      "performers": [
+        "Le Concert des Nations"
+      ],
+      "conductor": "Jordi Savall",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56995/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 100,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1097,6 +1491,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 60,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1106,17 +1501,27 @@
       "time": "19:00",
       "title": "Lucerne Festival Contemporary Orchestra",
       "venue_hall": "**57210**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Rihm: Tutuguri, Poème dansé für großes Orchester, Chor vom Tonband und Sprecher"
+      ],
+      "performers": [
+        "Lucerne Festival Contemporary Orchestra",
+        "Michael Engelhardt",
+        "Christoph Sietzen",
+        "N. N.",
+        "Markus Güdel",
+        "Maxime Le Saux"
+      ],
+      "conductor": "Jörg Widmann",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56999/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 150,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1141,6 +1546,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 90,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1167,6 +1573,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 100,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1193,6 +1600,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 100,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1220,6 +1628,7 @@
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1229,17 +1638,25 @@
       "time": "11:00",
       "title": "Das Konzert mit der Maus",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Lach- und Sachgeschichten rund um das Leben von Wolfgang Amadeus Mozart"
+      ],
+      "performers": [
+        "WDR Sinfonieorchester Köln",
+        "Die Maus",
+        "Jana Forkel",
+        "Johannes Büchs"
+      ],
+      "conductor": "Bar Avni",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57004/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 60,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1247,17 +1664,25 @@
       "time": "14:00",
       "title": "Das Konzert mit der Maus",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Wolfgang Amadeus Mozart: Lach- und Sachgeschichten rund um das Leben von Wolfgang Amadeus Mozart"
+      ],
+      "performers": [
+        "WDR Sinfonieorchester Köln",
+        "Die Maus",
+        "Jana Forkel",
+        "Johannes Büchs"
+      ],
+      "conductor": "Bar Avni",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57004/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 60,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1281,6 +1706,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1290,17 +1716,23 @@
       "time": "20:00",
       "title": "Satzwechsel: Literatur & Musik",
       "venue_hall": "Kammermusiksaal",
-      "program": [],
-      "performers": [],
+      "program": [
+        "Literature and Music Reflection"
+      ],
+      "performers": [
+        "Han Kang",
+        "Mitglieder der Berliner Philharmoniker"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "18 bis 41 €",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57007/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 90,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1324,6 +1756,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 110,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1353,6 +1786,7 @@
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1377,6 +1811,7 @@
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1402,6 +1837,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 60,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1427,6 +1863,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 100,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1436,17 +1873,27 @@
       "time": "20:00",
       "title": "Musikfest Berlin",
       "venue_hall": "**Composer in Residence**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Brett Dean: Conversations with Schumann",
+        "Brett Dean: And once I played Ophelia",
+        "Claude Debussy: La Cathédrale engloutie (Orchestrierung Colin Matthews)",
+        "Brett Dean: Beggars and Angels"
+      ],
+      "performers": [
+        "Brett Dean",
+        "Jennifer France",
+        "Berliner Philharmoniker"
+      ],
+      "conductor": "Brett Dean",
+      "price": "24 bis 77 €",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57010/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 90,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1454,17 +1901,27 @@
       "time": "20:00",
       "title": "Musikfest Berlin",
       "venue_hall": "**Composer in Residence**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Brett Dean: Conversations with Schumann",
+        "Brett Dean: And once I played Ophelia",
+        "Claude Debussy: La Cathédrale engloutie (Orchestrierung Colin Matthews)",
+        "Brett Dean: Beggars and Angels"
+      ],
+      "performers": [
+        "Berliner Philharmoniker",
+        "Brett Dean",
+        "Jennifer France"
+      ],
+      "conductor": "Brett Dean",
+      "price": "24 bis 77 €",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57010/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 90,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1472,17 +1929,27 @@
       "time": "19:00",
       "title": "Musikfest Berlin",
       "venue_hall": "**Composer in Residence**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Brett Dean: Conversations with Schumann",
+        "Brett Dean: And once I played Ophelia",
+        "Claude Debussy: La Cathédrale engloutie (Orchestrierung Colin Matthews)",
+        "Brett Dean: Beggars and Angels"
+      ],
+      "performers": [
+        "Berliner Philharmoniker",
+        "Brett Dean",
+        "Jennifer France"
+      ],
+      "conductor": "Brett Dean",
+      "price": "24 bis 77 €",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57010/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 90,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1511,6 +1978,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 90,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1520,17 +1988,27 @@
       "time": "17:00",
       "title": "Ensemble Resonanz",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Benjamin Britten: Les Illuminations op. 18",
+        "Milica Djordjević: Sky Limited",
+        "Jean-Philippe Rameau: Les Indes galantes: Suite",
+        "Enno Poppe: Neues Werk für Sopran, Kammerorchester und mikrotonales Continuo (Uraufführung)"
+      ],
+      "performers": [
+        "Ensemble Resonanz",
+        "Anna Prohaska",
+        "Enno Poppe"
+      ],
+      "conductor": "Enno Poppe",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57012/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 150,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1557,6 +2035,7 @@
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1566,17 +2045,30 @@
       "time": "20:00",
       "title": "Chineke! Orchestra",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Gershwin: Porgy and Bess"
+      ],
+      "performers": [
+        "Chineke! Orchestra",
+        "Siyabulela Ntlale",
+        "Nonhlanhla Yende",
+        "Lukhanyo Moyake",
+        "Conroy Scott",
+        "Brittany Smith",
+        "Siphamandla Moyake",
+        "Lungelwa Mdekazi",
+        "Cape Town Opera Vocal Ensemble"
+      ],
+      "conductor": "Kwamé Ryan",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57013/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 150,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1594,6 +2086,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 60,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1620,6 +2113,7 @@
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1635,9 +2129,10 @@
         "Leoš Janáček: Taras Bulba, Rhapsodie für Orchester"
       ],
       "performers": [
+        "Berliner Philharmoniker",
+        "Sir Simon Rattle",
         "Rinat Shaham",
-        "Dominik Wollenweber",
-        "Berliner Philharmoniker"
+        "Dominik Wollenweber"
       ],
       "conductor": "Sir Simon Rattle",
       "price": "28 bis 89 €",
@@ -1647,6 +2142,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 105,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1674,6 +2170,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 150,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1702,6 +2199,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 105,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1732,6 +2230,7 @@
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1741,17 +2240,38 @@
       "time": "19:00",
       "title": "Dominique Horwitz",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Strawinsky: Histoire du soldat"
+      ],
+      "performers": [
+        "Edouard Funck",
+        "Ursula Winzer",
+        "Philippe Brunner",
+        "Eva Wiener",
+        "Vladimir Fediakov",
+        "Maximilian Kiener-Laubenbacher",
+        "Veronika Grimme",
+        "Marion Mayer",
+        "Philipp Schmidt",
+        "Dominique Horwitz",
+        "Isabelle Faust",
+        "Pascal Moraguès",
+        "Giorgio Mandolesi",
+        "Reinhold Friedrich",
+        "Ian Bousfield",
+        "Wies de Boevé",
+        "Raymond Curfs",
+        "Ensemble des Salzburger Marionettentheater"
+      ],
+      "conductor": "Matthias Bundschuh",
+      "price": "Tickets",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57217/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1778,23 +2298,86 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 105,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-19",
+      "time": "22:00",
+      "title": "Late Night",
+      "venue_hall": "**Musikfest Berlin**",
+      "program": [
+        "Cathy Milliken: In Play (Uraufführung)",
+        "Brett Dean: Imaginary Ballet",
+        "Robert Schumann: Klavierquartett Es-Dur op. 47"
+      ],
+      "performers": [
+        "Noah Bendix-Balgley",
+        "Brett Dean",
+        "Ludwig Quandt",
+        "Benjamin Hochman"
+      ],
+      "conductor": null,
+      "price": "25 €",
+      "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57017/",
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin",
+      "discovery_source": "berliner_philharmonie_listing",
+      "discovered_only": false,
+      "duration_min": 60,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
     }
   ],
-  "total_events": 76,
+  "total_events": 87,
   "total_events_visible": 76,
-  "total_events_discovered": 76,
-  "total_events_discovered_strict": 76,
-  "total_events_enriched": 45,
+  "total_events_discovered": 87,
+  "total_events_discovered_strict": 87,
+  "total_events_enriched": 85,
   "source": "berliner_philharmonie_listing",
   "latest_event_date": "2026-09-19",
   "latest_discovered_event_date": "2026-09-19",
   "covers_horizon": false,
   "horizon_grace_days": 1,
-  "events_with_date": 76,
+  "events_with_date": 87,
   "events_missing_date": 0,
   "date_coverage_rate": 1.0,
-  "coverage_warning": "SHORT_HORIZON(latest=2026-09-19, horizon=2026-11-30)"
+  "coverage_warning": "SHORT_HORIZON(latest=2026-09-19, horizon=2026-11-30)",
+  "sitemap_jsonld_stats": {
+    "sitemap_urls": 0,
+    "candidate_urls": 0,
+    "checked": 0,
+    "limit": 240,
+    "initial_sample": 0,
+    "jsonld_pages": 0,
+    "events": 0,
+    "within_horizon": 0,
+    "past_or_beyond_horizon": 0,
+    "canceled": 0,
+    "invalid": 0,
+    "complete_scan": true
+  },
+  "sitemap_detail_expand_stats": {
+    "budget": 80,
+    "sitemap_urls": 1472,
+    "scraped": 12,
+    "new_events": 11,
+    "missing_date_or_title": 0,
+    "today_or_past": 1,
+    "past_or_beyond_horizon": 0,
+    "duplicate_urls": 21,
+    "date_scout": {
+      "sitemap_urls": 1472,
+      "candidate_urls": 1000,
+      "checked": 1000,
+      "dated_urls": 33,
+      "limit": 1000,
+      "first_date": "2026-05-20",
+      "latest_date": "2026-06-28"
+    },
+    "latest_date": "2026-06-28"
+  }
 }
