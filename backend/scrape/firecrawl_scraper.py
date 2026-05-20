@@ -3004,6 +3004,68 @@ def _discover_sitemap_jsonld_events(
     return events, stats
 
 
+def _discover_sitemap_dated_urls(
+    venue: dict,
+    sitemap_urls: list[str],
+    horizon_date: str,
+) -> tuple[list[str], dict]:
+    """
+    Free URL prioritisation: fetch sitemap detail pages and keep URLs whose
+    static HTML contains a date inside the scrape window.
+
+    This is deliberately generic. It does not replace Firecrawl extraction; it
+    only decides which sitemap URLs are worth spending Firecrawl detail credits on.
+    """
+    limit = _env_int("SITEMAP_DATE_SCOUT_MAX_PAGES", 1000)
+    timeout = max(2, _env_int("SITEMAP_DATE_SCOUT_TIMEOUT", 8))
+    workers = max(1, _env_int("SITEMAP_DATE_SCOUT_WORKERS", 8))
+    if limit <= 0 or len(sitemap_urls) <= limit:
+        candidate_urls = sitemap_urls
+    else:
+        candidate_urls = sitemap_urls[:limit]
+    stats: dict = {
+        "sitemap_urls": len(sitemap_urls),
+        "candidate_urls": len(candidate_urls),
+        "checked": 0,
+        "dated_urls": 0,
+        "limit": limit,
+    }
+    if not candidate_urls:
+        return [], stats
+
+    def _scan(url: str) -> tuple[str, list[str]]:
+        try:
+            response = requests.get(url, headers=_DE_HEADERS, timeout=timeout)
+            if response.status_code >= 400:
+                return url, []
+            text = response.text or ""
+        except Exception:
+            return url, []
+        return url, _extract_dates_from_text(text, horizon_date)
+
+    hits: list[tuple[str, str]] = []
+    max_workers = min(workers, len(candidate_urls))
+    with ThreadPoolExecutor(max_workers=max_workers) as pool:
+        future_by_url = {pool.submit(_scan, url): url for url in candidate_urls}
+        for future in as_completed(future_by_url):
+            stats["checked"] += 1
+            try:
+                url, dates = future.result()
+            except Exception:
+                continue
+            if not dates:
+                continue
+            hits.append((dates[0], url))
+
+    hits.sort(key=lambda item: (item[0], item[1]))
+    urls = [url for _event_date, url in hits]
+    stats["dated_urls"] = len(urls)
+    if hits:
+        stats["first_date"] = hits[0][0]
+        stats["latest_date"] = hits[-1][0]
+    return urls, stats
+
+
 def _copy_missing_event_fields(target: dict, source: dict) -> None:
     """Merge deterministic discovery data into an existing event without overwriting."""
     for key in (
@@ -3498,11 +3560,25 @@ def _discover_sitemap_detail_events(
         for event in existing_events
         if _clean_url(event.get("detail_url"))
     }
+    dated_urls, date_scout_stats = _discover_sitemap_dated_urls(
+        venue, sitemap_urls, horizon_date
+    )
+    if dated_urls:
+        stats["date_scout"] = date_scout_stats
+        candidate_pool = dated_urls
+        print(
+            f"    [sitemap-date] {len(dated_urls)} dated URLs in horizon "
+            f"({date_scout_stats.get('first_date')}..{date_scout_stats.get('latest_date')})",
+            flush=True,
+        )
+    else:
+        stats["date_scout"] = date_scout_stats
+        candidate_pool = sitemap_urls
     candidate_urls = [
-        url for url in sitemap_urls
+        url for url in candidate_pool
         if _clean_url(url) and _clean_url(url) not in known
     ]
-    stats["duplicate_urls"] = len(sitemap_urls) - len(candidate_urls)
+    stats["duplicate_urls"] = len(candidate_pool) - len(candidate_urls)
     sampled_urls = _sample_evenly(candidate_urls, budget)
     out: list[dict] = []
     seen_new: set[str] = set()
