@@ -1,0 +1,913 @@
+{
+  "scraped_at": "2026-05-20T11:52:41.825313Z",
+  "scrape_horizon_date": "2026-11-30",
+  "results": [
+    {
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin",
+      "slug": "konzerthaus_berlin",
+      "scraped_at": "2026-05-20T11:47:50.551543Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.konzerthaus.de/de/programm",
+      "best_event_urls": 108,
+      "best_last_date_seen": "2026-08-16",
+      "sitemap_event_urls": 680,
+      "sample_sitemap_urls": [
+        "https://www.konzerthaus.de/de/programm/sommerliche-fuhrung-durch-das-konzerthaus-berlin/11418",
+        "https://www.konzerthaus.de/de/programm/nationales-jugendorchester-rumaniens/11565",
+        "https://www.konzerthaus.de/de/programm/sommerliche-fuhrung-durch-das-konzerthaus-berlin/11420",
+        "https://www.konzerthaus.de/de/programm/guided-tour-of-the-konzerthaus-berlin/11419",
+        "https://www.konzerthaus.de/de/programm/dos-pares-de-la-oein-bolivien/11591",
+        "https://www.konzerthaus.de/de/programm/yerevan-youth-symphony-orchestra/11567",
+        "https://www.konzerthaus.de/de/programm/sommerliche-fuhrung-durch-das-konzerthaus-berlin/11421",
+        "https://www.konzerthaus.de/de/programm/guided-tour-of-the-konzerthaus-berlin/11422",
+        "https://www.konzerthaus.de/de/programm/ale-ale-sapmi/11592",
+        "https://www.konzerthaus.de/de/programm/joven-orquesta-nacional-de-espana/11569",
+        "https://www.konzerthaus.de/de/programm/sommerliche-fuhrung-durch-das-konzerthaus-berlin/11423",
+        "https://www.konzerthaus.de/de/programm/bundesjugendballett/11570"
+      ],
+      "sitemap_detail_probes": [
+        {
+          "url": "https://www.konzerthaus.de/de/programm/sommerliche-fuhrung-durch-das-konzerthaus-berlin/11418",
+          "error": null,
+          "raw_lines": 488,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-berlin-ivan-fischer/11453",
+          "error": null,
+          "raw_lines": 637,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-berlin-joana-mallwitz/11489",
+          "error": null,
+          "raw_lines": 684,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.konzerthaus.de/de/programm/cappella-academica-christiane-silber/12301",
+          "error": null,
+          "raw_lines": 522,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.konzerthaus.de/de/programm/berlin-pianopercussion/11705",
+          "error": null,
+          "raw_lines": 662,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.konzerthaus.de/de/programm/berlin-asian-music-festival-bamf-drei-abende-vier-lander-eine-gemeinsame-klangsprache/12720",
+          "error": null,
+          "raw_lines": 493,
+          "raw_preview": null,
+          "dates": [
+            "2026-05-25"
+          ],
+          "first_date_seen": "2026-05-25",
+          "last_date_seen": "2026-05-25"
+        },
+        {
+          "url": "https://www.konzerthaus.de/de/programm/niva-argentinien/12916",
+          "error": null,
+          "raw_lines": 526,
+          "raw_preview": null,
+          "dates": [
+            "2026-08-15"
+          ],
+          "first_date_seen": "2026-08-15",
+          "last_date_seen": "2026-08-15"
+        },
+        {
+          "url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-berlin-francois-xavier-roth/12690",
+          "error": null,
+          "raw_lines": 552,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        }
+      ],
+      "sitemap_detail_date_hits": 2,
+      "probes": [
+        {
+          "url": "https://www.konzerthaus.de/de/programm",
+          "error": null,
+          "raw_lines": 15343,
+          "raw_preview": null,
+          "event_urls": 108,
+          "unique_event_urls": 108,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-08-16",
+          "sample_urls": [
+            "https://www.konzerthaus.de/de/programm/herz-uber-kopf-mahlers-funfte/11720",
+            "https://www.konzerthaus.de/de/programm/irina-lankova/12373",
+            "https://www.konzerthaus.de/de/programm/8zehn30-kurzkonzert/11531",
+            "https://www.konzerthaus.de/de/programm/konzerthausorchester-berlin-joana-mallwitz/11532",
+            "https://www.konzerthaus.de/de/programm/2-x-horen/11722",
+            "https://www.konzerthaus.de/de/programm/fuhrung-durch-das-konzerthaus-berlin/12011",
+            "https://www.konzerthaus.de/de/programm/konzerthausorchester-berlin-joana-mallwitz/11533",
+            "https://www.konzerthaus.de/de/programm/kammermusikmatinee-des-konzerthausorchesters/11534"
+          ]
+        }
+      ]
+    },
+    {
+      "venue": "Berliner Philharmonie",
+      "city": "Berlin",
+      "slug": "berliner_philharmonie",
+      "scraped_at": "2026-05-20T11:49:07.380640Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
+      "best_event_urls": 73,
+      "best_last_date_seen": "2026-08-10",
+      "sitemap_event_urls": 1472,
+      "sample_sitemap_urls": [
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55624/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55698/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55699/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55700/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55701/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55702/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55703/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55704/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55705/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55625/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55706/",
+        "https://www.berliner-philharmoniker.de/konzerte/kalender/55626/"
+      ],
+      "sitemap_detail_probes": [
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55624/",
+          "error": null,
+          "raw_lines": 648,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/55894/",
+          "error": null,
+          "raw_lines": 483,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56128/",
+          "error": null,
+          "raw_lines": 444,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56451/",
+          "error": null,
+          "raw_lines": 404,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56440/",
+          "error": null,
+          "raw_lines": 492,
+          "raw_preview": null,
+          "dates": [
+            "2026-06-14"
+          ],
+          "first_date_seen": "2026-06-14",
+          "last_date_seen": "2026-06-14"
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56821/",
+          "error": null,
+          "raw_lines": 414,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57032/",
+          "error": null,
+          "raw_lines": 474,
+          "raw_preview": null,
+          "dates": [
+            "2026-08-10",
+            "2026-10-11"
+          ],
+          "first_date_seen": "2026-08-10",
+          "last_date_seen": "2026-10-11"
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57257/",
+          "error": null,
+          "raw_lines": 553,
+          "raw_preview": null,
+          "dates": [
+            "2026-10-30",
+            "2026-10-31"
+          ],
+          "first_date_seen": "2026-10-30",
+          "last_date_seen": "2026-10-31"
+        }
+      ],
+      "sitemap_detail_date_hits": 3,
+      "probes": [
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
+          "error": null,
+          "raw_lines": 3591,
+          "raw_preview": null,
+          "event_urls": 73,
+          "unique_event_urls": 73,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-08-10",
+          "sample_urls": [
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56431/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56563/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56433/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56416/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56564/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56434/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56435/"
+          ]
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/?from=2026-06-01",
+          "error": null,
+          "raw_lines": 3073,
+          "raw_preview": null,
+          "event_urls": 59,
+          "unique_event_urls": 59,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-06-12",
+          "sample_urls": [
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56431/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56563/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56433/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56416/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56564/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56434/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56435/"
+          ]
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/?from=2026-09-01",
+          "error": null,
+          "raw_lines": 3073,
+          "raw_preview": null,
+          "event_urls": 59,
+          "unique_event_urls": 59,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-09-01",
+          "sample_urls": [
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56431/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56563/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56433/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56416/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56564/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56434/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56435/"
+          ]
+        },
+        {
+          "url": "https://www.berliner-philharmoniker.de/konzerte/kalender/?from=2026-11-01",
+          "error": null,
+          "raw_lines": 3073,
+          "raw_preview": null,
+          "event_urls": 59,
+          "unique_event_urls": 59,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-11-01",
+          "sample_urls": [
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56431/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56563/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56432/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56433/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56416/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56564/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56434/",
+            "https://www.berliner-philharmoniker.de/konzerte/kalender/56435/"
+          ]
+        }
+      ]
+    },
+    {
+      "venue": "Alte Oper Frankfurt",
+      "city": "Frankfurt",
+      "slug": "alte_oper_frankfurt",
+      "scraped_at": "2026-05-20T11:49:37.699182Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.alteoper.de/de/programm",
+      "best_event_urls": 20,
+      "best_last_date_seen": null,
+      "sitemap_event_urls": 0,
+      "sample_sitemap_urls": [],
+      "sitemap_detail_probes": [],
+      "sitemap_detail_date_hits": 0,
+      "probes": [
+        {
+          "url": "https://www.alteoper.de/de/programm",
+          "error": null,
+          "raw_lines": 417,
+          "raw_preview": null,
+          "event_urls": 20,
+          "unique_event_urls": 20,
+          "first_date_seen": null,
+          "last_date_seen": null,
+          "sample_urls": [
+            "https://www.alteoper.de/de/programm/bee-gees-by-maincourse/18750",
+            "https://www.alteoper.de/de/programm/annettes-daschsalon/18436",
+            "https://www.alteoper.de/de/programm/miles-davis-100/18438",
+            "https://www.alteoper.de/de/programm/steve-hackett/18732",
+            "https://www.alteoper.de/de/programm/8-deutscher-patientenkongress-depression-fur-betroffene-und-angehorige/18903",
+            "https://www.alteoper.de/de/programm/kienzles-klassik/18417",
+            "https://www.alteoper.de/de/programm/orchesterfest-sachsische-staatskapelle-dresden/18344",
+            "https://www.alteoper.de/de/programm/ten-tenors/18350"
+          ]
+        }
+      ]
+    },
+    {
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "slug": "elbphilharmonie_hamburg",
+      "scraped_at": "2026-05-20T11:50:53.721312Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.elbphilharmonie.de/de/programm//KON/",
+      "best_event_urls": 14,
+      "best_last_date_seen": "2026-05-24",
+      "sitemap_event_urls": 1999,
+      "sample_sitemap_urls": [
+        "https://www.elbphilharmonie.de/de/programm/china-ncpa-orchestra-bruce-liu-myung-whun-chung/23031",
+        "https://www.elbphilharmonie.de/de/programm/seun-kuti-egypt-80/23780",
+        "https://www.elbphilharmonie.de/de/programm/noname/23781",
+        "https://www.elbphilharmonie.de/de/programm/kammerphilharmonie-hamburg-goktug-celik-julian-pontus-schirmer/23006",
+        "https://www.elbphilharmonie.de/de/programm/schleswig-holstein-festival-orchestra-midori-christoph-eschenbach/23400",
+        "https://www.elbphilharmonie.de/de/programm/jazz-now-navigating-a-changing-world/24094",
+        "https://www.elbphilharmonie.de/de/programm/fazl-say-klavierabend/23401",
+        "https://www.elbphilharmonie.de/de/programm/arctic-philharmonic-eldbjrg-hemsing-nicolo-foron/23027",
+        "https://www.elbphilharmonie.de/de/programm/mental-health-in-music/24060",
+        "https://www.elbphilharmonie.de/de/programm/concertgebouworkest-young-julia-hagen-elim-chan/23029",
+        "https://www.elbphilharmonie.de/de/programm/rufus-wainwright-dream-requiem/23025",
+        "https://www.elbphilharmonie.de/de/programm/kaan-bulak-hayali-sesler-traumklange/23409"
+      ],
+      "sitemap_detail_probes": [
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/china-ncpa-orchestra-bruce-liu-myung-whun-chung/23031",
+          "error": null,
+          "raw_lines": 975,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/rock-the-opera/22964",
+          "error": null,
+          "raw_lines": 696,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/kammerorchester-der-neuen-philharmonie-hamburg/23777",
+          "error": null,
+          "raw_lines": 724,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/tanya-tagaq-trio/23840",
+          "error": null,
+          "raw_lines": 965,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/das-verruckte-hexenkonzert/23838",
+          "error": null,
+          "raw_lines": 621,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/tovesco-trio/28251",
+          "error": null,
+          "raw_lines": 641,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-marek-janowski/27836",
+          "error": null,
+          "raw_lines": 792,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/ndr-kammerkonzert/28214",
+          "error": null,
+          "raw_lines": 612,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        }
+      ],
+      "sitemap_detail_date_hits": 0,
+      "probes": [
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/",
+          "error": null,
+          "raw_lines": 974,
+          "raw_preview": null,
+          "event_urls": 12,
+          "unique_event_urls": 12,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-22",
+          "sample_urls": [
+            "https://www.elbphilharmonie.de/de/programm/westermann-summit-2026/28420",
+            "https://www.elbphilharmonie.de/de/programm/landesjugendorchester-hamburg-ann-beth-solvang-johannes-witt/27407",
+            "https://www.elbphilharmonie.de/de/programm/hummelhirn/28199",
+            "https://www.elbphilharmonie.de/de/programm/huelgas-ensemble-paul-van-nevel/27532",
+            "https://www.elbphilharmonie.de/de/programm/les-hommes-du-swing/27744",
+            "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-leonidas-kavakos-matthias-pintscher/23309",
+            "https://www.elbphilharmonie.de/de/programm/steve-hackett/27438",
+            "https://www.elbphilharmonie.de/de/programm/hochschule-fur-musik-und-theater-hamburg/28284"
+          ]
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm//KON/",
+          "error": null,
+          "raw_lines": 1106,
+          "raw_preview": null,
+          "event_urls": 14,
+          "unique_event_urls": 14,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-24",
+          "sample_urls": [
+            "https://www.elbphilharmonie.de/de/programm/landesjugendorchester-hamburg-ann-beth-solvang-johannes-witt/27407",
+            "https://www.elbphilharmonie.de/de/programm/huelgas-ensemble-paul-van-nevel/27532",
+            "https://www.elbphilharmonie.de/de/programm/les-hommes-du-swing/27744",
+            "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-leonidas-kavakos-matthias-pintscher/23309",
+            "https://www.elbphilharmonie.de/de/programm/steve-hackett/27438",
+            "https://www.elbphilharmonie.de/de/programm/armoniosa-ensemble/28258",
+            "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-leonidas-kavakos-matthias-pintscher/23829",
+            "https://www.elbphilharmonie.de/de/programm/ndr-bigband-jihye-lee/28198"
+          ]
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm//KON/TICKETS/",
+          "error": null,
+          "raw_lines": 926,
+          "raw_preview": null,
+          "event_urls": 11,
+          "unique_event_urls": 11,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-24",
+          "sample_urls": [
+            "https://www.elbphilharmonie.de/de/programm/landesjugendorchester-hamburg-ann-beth-solvang-johannes-witt/27407",
+            "https://www.elbphilharmonie.de/de/programm/huelgas-ensemble-paul-van-nevel/27532",
+            "https://www.elbphilharmonie.de/de/programm/les-hommes-du-swing/27744",
+            "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-leonidas-kavakos-matthias-pintscher/23309",
+            "https://www.elbphilharmonie.de/de/programm/armoniosa-ensemble/28258",
+            "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-leonidas-kavakos-matthias-pintscher/23829",
+            "https://www.elbphilharmonie.de/de/programm/ndr-bigband-jihye-lee/28198",
+            "https://www.elbphilharmonie.de/de/programm/ghada-shbeir-francois-joubert-caillet/27534"
+          ]
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/EHH/KON/",
+          "error": null,
+          "raw_lines": 137,
+          "raw_preview": null,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": null,
+          "last_date_seen": null,
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/EHH/KON/TICKETS/",
+          "error": null,
+          "raw_lines": 137,
+          "raw_preview": null,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": null,
+          "last_date_seen": null,
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/LHHH/TICKETS/",
+          "error": null,
+          "raw_lines": 934,
+          "raw_preview": null,
+          "event_urls": 11,
+          "unique_event_urls": 11,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-30",
+          "sample_urls": [
+            "https://www.elbphilharmonie.de/de/programm/landesjugendorchester-hamburg-ann-beth-solvang-johannes-witt/27407",
+            "https://www.elbphilharmonie.de/de/programm/les-hommes-du-swing/27744",
+            "https://www.elbphilharmonie.de/de/programm/hochschule-fur-musik-und-theater-hamburg/28284",
+            "https://www.elbphilharmonie.de/de/programm/matteo-lane/27410",
+            "https://www.elbphilharmonie.de/de/programm/gotz-alsmann-band/24340",
+            "https://www.elbphilharmonie.de/de/programm/neue-philharmonie-hamburg-hovhannes-baghdasaryan/28225",
+            "https://www.elbphilharmonie.de/de/programm/kateryna-titova-klavierabend/28034",
+            "https://www.elbphilharmonie.de/de/programm/lunchkonzert-der-symphoniker-hamburg/24078"
+          ]
+        }
+      ]
+    },
+    {
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "slug": "gewandhaus_leipzig",
+      "scraped_at": "2026-05-20T11:52:06.589861Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.gewandhausorchester.de/",
+      "best_event_urls": 6,
+      "best_last_date_seen": "2026-05-23",
+      "sitemap_event_urls": 668,
+      "sample_sitemap_urls": [
+        "https://www.gewandhausorchester.de/veranstaltung/tim-bendzko-9146/",
+        "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-9876/",
+        "https://www.gewandhausorchester.de/veranstaltung/mnozil-brass-9464/",
+        "https://www.gewandhausorchester.de/veranstaltung/motette-9801/",
+        "https://www.gewandhausorchester.de/veranstaltung/the-sound-of-epic-anime-9713/",
+        "https://www.gewandhausorchester.de/veranstaltung/motette-9852/",
+        "https://www.gewandhausorchester.de/veranstaltung/cosi-fan-tutte-9591/",
+        "https://www.gewandhausorchester.de/veranstaltung/verdi-requiem-9642/",
+        "https://www.gewandhausorchester.de/veranstaltung/gastspiel-in-taipeh-9921/",
+        "https://www.gewandhausorchester.de/veranstaltung/motette-9853/",
+        "https://www.gewandhausorchester.de/veranstaltung/gastspiel-in-tainan-9922/",
+        "https://www.gewandhausorchester.de/veranstaltung/die-zauberfloete-9592/"
+      ],
+      "sitemap_detail_probes": [
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/tim-bendzko-9146/",
+          "error": null,
+          "raw_lines": 1076,
+          "raw_preview": null,
+          "dates": [
+            "2026-05-20"
+          ],
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-20"
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/familiennachmittag-10452/",
+          "error": null,
+          "raw_lines": 939,
+          "raw_preview": null,
+          "dates": [
+            "2026-07-04"
+          ],
+          "first_date_seen": "2026-07-04",
+          "last_date_seen": "2026-07-04"
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9978/",
+          "error": null,
+          "raw_lines": 875,
+          "raw_preview": null,
+          "dates": [
+            "2026-10-23"
+          ],
+          "first_date_seen": "2026-10-23",
+          "last_date_seen": "2026-10-23"
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-10415/",
+          "error": null,
+          "raw_lines": 681,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-impuls-10419/",
+          "error": null,
+          "raw_lines": 935,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-10430/",
+          "error": null,
+          "raw_lines": 962,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/klavierrezital-10136/",
+          "error": null,
+          "raw_lines": 1105,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/the-sounds-of-vangelis-10392/",
+          "error": null,
+          "raw_lines": 1081,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        }
+      ],
+      "sitemap_detail_date_hits": 3,
+      "probes": [
+        {
+          "url": "https://www.gewandhausorchester.de/",
+          "error": null,
+          "raw_lines": 3262,
+          "raw_preview": null,
+          "event_urls": 6,
+          "unique_event_urls": 6,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-23",
+          "sample_urls": [
+            "https://www.gewandhausorchester.de/veranstaltung/tim-bendzko-9146/",
+            "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-9876/",
+            "https://www.gewandhausorchester.de/veranstaltung/mnozil-brass-9464/",
+            "https://www.gewandhausorchester.de/veranstaltung/motette-9801/",
+            "https://www.gewandhausorchester.de/veranstaltung/the-sound-of-epic-anime-9713/",
+            "https://www.gewandhausorchester.de/veranstaltung/motette-9852/"
+          ]
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/spielplan/",
+          "error": null,
+          "raw_lines": 3262,
+          "raw_preview": null,
+          "event_urls": 6,
+          "unique_event_urls": 6,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-23",
+          "sample_urls": [
+            "https://www.gewandhausorchester.de/veranstaltung/tim-bendzko-9146/",
+            "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-9876/",
+            "https://www.gewandhausorchester.de/veranstaltung/mnozil-brass-9464/",
+            "https://www.gewandhausorchester.de/veranstaltung/motette-9801/",
+            "https://www.gewandhausorchester.de/veranstaltung/the-sound-of-epic-anime-9713/",
+            "https://www.gewandhausorchester.de/veranstaltung/motette-9852/"
+          ]
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltungen/",
+          "error": null,
+          "raw_lines": 608,
+          "raw_preview": null,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": null,
+          "last_date_seen": null,
+          "sample_urls": []
+        }
+      ]
+    },
+    {
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "slug": "isarphilharmonie_muenchen",
+      "scraped_at": "2026-05-20T11:52:41.825160Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.mphil.de/kalender",
+      "best_event_urls": 252,
+      "best_last_date_seen": "2026-11-24",
+      "sitemap_event_urls": 561,
+      "sample_sitemap_urls": [
+        "https://www.gasteig.de/veranstaltungen/tape-art-live-mit-felix-rodewaldt-und-fabifa/",
+        "https://www.gasteig.de/veranstaltungen/stop-go-trickfilm-selber-machen/",
+        "https://www.gasteig.de/veranstaltungen/40-stunden-surprise-konzerte-2/",
+        "https://www.gasteig.de/veranstaltungen/40-stunden-surprise-konzerte/",
+        "https://www.gasteig.de/veranstaltungen/christian-benning-percussion-group-beathoven/",
+        "https://www.gasteig.de/veranstaltungen/resonate-2-0-ein-indisches-internationales-rock-spektakel/",
+        "https://www.gasteig.de/veranstaltungen/gemeinschaftskueche-tischgedeck/",
+        "https://www.gasteig.de/veranstaltungen/konzert-des-brso-17/",
+        "https://www.gasteig.de/veranstaltungen/konzert-des-brso-16/",
+        "https://www.gasteig.de/veranstaltungen/hereinspaziert-98bf8/",
+        "https://www.gasteig.de/veranstaltungen/fuehrung-durch-den-gasteig-hp8-74d79/",
+        "https://www.gasteig.de/veranstaltungen/fuehrung-durch-den-gasteig-hp8-59621/"
+      ],
+      "sitemap_detail_probes": [
+        {
+          "url": "https://www.gasteig.de/veranstaltungen/tape-art-live-mit-felix-rodewaldt-und-fabifa/",
+          "error": null,
+          "raw_lines": 342,
+          "raw_preview": null,
+          "dates": [
+            "2026-05-27",
+            "2026-06-05",
+            "2026-06-06",
+            "2026-07-26",
+            "2026-07-31"
+          ],
+          "first_date_seen": "2026-05-27",
+          "last_date_seen": "2026-07-31"
+        },
+        {
+          "url": "https://www.gasteig.de/veranstaltungen/early-hours-rave-halle-e/",
+          "error": null,
+          "raw_lines": 317,
+          "raw_preview": null,
+          "dates": [
+            "2026-05-20",
+            "2026-05-24",
+            "2026-05-27",
+            "2026-05-31",
+            "2026-06-05",
+            "2026-06-06"
+          ],
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-07-31"
+        },
+        {
+          "url": "https://www.gasteig.de/veranstaltungen/sprachcafe-englisch-92/",
+          "error": null,
+          "raw_lines": 288,
+          "raw_preview": null,
+          "dates": [
+            "2026-05-20",
+            "2026-05-21",
+            "2026-05-28",
+            "2026-05-29",
+            "2026-05-30",
+            "2026-05-31"
+          ],
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-07-30"
+        },
+        {
+          "url": "https://www.gasteig.de/veranstaltungen/sprachcafe-deutsch-208/",
+          "error": null,
+          "raw_lines": 256,
+          "raw_preview": null,
+          "dates": [
+            "2026-05-20",
+            "2026-05-21",
+            "2026-05-29",
+            "2026-05-30",
+            "2026-05-31"
+          ],
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-31"
+        },
+        {
+          "url": "https://www.gasteig.de/veranstaltungen/sprachcafe-deutsch-195/",
+          "error": null,
+          "raw_lines": 272,
+          "raw_preview": null,
+          "dates": [
+            "2026-05-20",
+            "2026-05-21",
+            "2026-05-22",
+            "2026-05-26",
+            "2026-05-30",
+            "2026-06-02"
+          ],
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-07-28"
+        },
+        {
+          "url": "https://www.gasteig.de/veranstaltungen/schostakowitsch-mussorgsky/",
+          "error": null,
+          "raw_lines": 265,
+          "raw_preview": null,
+          "dates": [
+            "2026-05-20",
+            "2026-05-21",
+            "2026-05-23",
+            "2026-05-29",
+            "2026-05-30",
+            "2026-06-13"
+          ],
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-06-13"
+        },
+        {
+          "url": "https://www.gasteig.de/veranstaltungen/auftakt-konzertfuehrer-live-24c62/",
+          "error": null,
+          "raw_lines": 273,
+          "raw_preview": null,
+          "dates": [
+            "2026-05-21",
+            "2026-05-23",
+            "2026-06-06",
+            "2026-06-13",
+            "2026-06-18",
+            "2026-06-19"
+          ],
+          "first_date_seen": "2026-05-21",
+          "last_date_seen": "2026-06-28"
+        },
+        {
+          "url": "https://www.gasteig.de/veranstaltungen/muenchner-philharmoniker-mussorgsky-chatschaturjan-bizet/",
+          "error": null,
+          "raw_lines": 285,
+          "raw_preview": null,
+          "dates": [
+            "2026-05-20",
+            "2026-05-23",
+            "2026-05-25",
+            "2026-05-30",
+            "2026-06-05",
+            "2026-06-06"
+          ],
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-06-14"
+        }
+      ],
+      "sitemap_detail_date_hits": 8,
+      "probes": [
+        {
+          "url": "https://www.gasteig.de/veranstaltungen/?room=isarphilharmonie",
+          "error": null,
+          "raw_lines": 429,
+          "raw_preview": null,
+          "event_urls": 24,
+          "unique_event_urls": 24,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-06-19",
+          "sample_urls": [
+            "https://www.gasteig.de/veranstaltungen/phil-extra/",
+            "https://www.gasteig.de/veranstaltungen/konzert-des-brso-16/",
+            "https://www.gasteig.de/veranstaltungen/konzert-des-brso-17/",
+            "https://www.gasteig.de/veranstaltungen/muenchner-philharmoniker-sibelius-rautavaara-vaughan-williams-2-2/",
+            "https://www.gasteig.de/veranstaltungen/muenchner-philharmoniker-sibelius-rautavaara-vaughan-williams-2/",
+            "https://www.gasteig.de/veranstaltungen/tim-bendzko-26684/",
+            "https://www.gasteig.de/veranstaltungen/muenchner-philharmoniker-mussorgsky-chatschaturjan-bizet/",
+            "https://www.gasteig.de/veranstaltungen/muenchner-philharmoniker-mussorgsky-chatschaturjan-bizet-2/"
+          ]
+        },
+        {
+          "url": "https://www.mphil.de/kalender",
+          "error": null,
+          "raw_lines": 140441,
+          "raw_preview": null,
+          "event_urls": 252,
+          "unique_event_urls": 252,
+          "first_date_seen": "2026-05-23",
+          "last_date_seen": "2026-11-24",
+          "sample_urls": [
+            "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/wagner-elgar-schubert-2025-09-09-19-3",
+            "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/wagner-elgar-schubert-2025-09-10-19-3",
+            "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/beethoven-wagner-schubert-2025-09-11-19-3",
+            "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/beethoven-wagner-schubert-2025-09-13-19",
+            "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/beethoven-wagner-schubert-2025-09-14-19",
+            "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/beethoven-wagner-2025-09-15-19",
+            "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/beethoven-wagner-schubert-2025-09-16-2",
+            "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/wagner-elgar-schubert-2025-09-17-19-3"
+          ]
+        }
+      ]
+    }
+  ]
+}
