@@ -1406,6 +1406,109 @@ def _extract_alte_oper_listing_events(
     return out
 
 
+def _alte_oper_api_item_to_event(item: dict, venue: dict, horizon_date: str) -> dict | None:
+    if not isinstance(item, dict):
+        return None
+    title = (item.get("title") or "").strip()
+    slug = (item.get("slug") or "").strip("/")
+    event_id = item.get("id")
+    start_date = item.get("start_date") or ""
+    if not title or not slug or not event_id or "T" not in start_date:
+        return None
+
+    event_date, event_time = start_date.split("T", 1)
+    event_time = event_time[:5] if re.match(r"^[0-2]?\d:[0-5]\d$", event_time[:5]) else None
+    if not _is_within_scrape_window(event_date, horizon_date):
+        return None
+
+    price = None
+    if item.get("lowest_price"):
+        price = f"Ab {str(item['lowest_price']).replace('.', ',')} €"
+    elif item.get("ticket_text"):
+        price = _plain_markdown_text(str(item["ticket_text"]))
+
+    detail_url = f"https://www.alteoper.de/de/programm/{slug}/{event_id}"
+    ev = {
+        "date": event_date,
+        "time": event_time,
+        "title": title,
+        "venue_hall": _plain_markdown_text(item.get("room")),
+        "program": [],
+        "performers": [],
+        "conductor": None,
+        "price": price,
+        "detail_url": detail_url,
+        "venue": venue["name"],
+        "city": venue["city"],
+        "discovery_source": "alte_oper_api",
+        "discovered_only": True,
+    }
+    _mark_enrichment_status(ev)
+    return ev
+
+
+def _discover_alte_oper_api_events(
+    venue: dict,
+    horizon_date: str | None = None,
+) -> tuple[list[str], list[str], list[dict]]:
+    """Read Alte Oper's paginated Nuxt/Django JSON API.
+
+    This is a reusable pattern for JS calendars that expose an SSR `next`
+    pointer and paginated `results` objects; it avoids spending Firecrawl
+    credits just to discover event URLs.
+    """
+    horizon_date = horizon_date or _scrape_horizon_date()
+    horizon = _parse_iso_date(horizon_date)
+    url = "https://www.alteoper.de/de/api/events/"
+    seen_urls: set[str] = set()
+    urls: list[str] = []
+    events: list[dict] = []
+    dates: set[str] = set()
+    page = 0
+
+    while url and page < 60:
+        page += 1
+        try:
+            resp = requests.get(url, headers=_DE_HEADERS, timeout=20)
+            resp.raise_for_status()
+            data = resp.json()
+        except Exception as exc:
+            print(f"    [alte-oper-api] failed page {page}: {exc}", flush=True)
+            break
+
+        page_events: list[dict] = []
+        for item in data.get("results") or []:
+            ev = _alte_oper_api_item_to_event(item, venue, horizon_date)
+            if not ev:
+                start = item.get("start_date") if isinstance(item, dict) else None
+                parsed = _parse_iso_date(str(start).split("T", 1)[0]) if start else None
+                if horizon and parsed and parsed > horizon:
+                    url = None
+                    break
+                continue
+            clean = _clean_url(ev.get("detail_url"))
+            if not clean or clean in seen_urls:
+                continue
+            seen_urls.add(clean)
+            page_events.append(ev)
+            urls.append(clean)
+            dates.add(ev["date"])
+
+        events.extend(page_events)
+        if url is None:
+            break
+        url = data.get("next")
+        if not page_events and not url:
+            break
+
+    if events:
+        print(
+            f"    [alte-oper-api] {len(events)} events through {max(dates)}",
+            flush=True,
+        )
+    return urls, sorted(dates), events
+
+
 def _extract_konzerthaus_berlin_listing_events(
     rendered: str,
     venue: dict,
@@ -2202,6 +2305,15 @@ def _discover_preferred_event_urls(
         if essen_dates:
             stats["latest_date"] = essen_dates[-1]
             stats["date_count"] = len(essen_dates)
+    elif slug == "alte_oper_frankfurt":
+        alte_urls, alte_dates, alte_events = _discover_alte_oper_api_events(
+            venue, horizon_date=horizon_date
+        )
+        urls.extend(alte_urls)
+        event_stubs.extend(alte_events)
+        if alte_dates:
+            stats["latest_date"] = alte_dates[-1]
+            stats["date_count"] = len(alte_dates)
 
     seen: set[str] = set()
     deduped: list[str] = []
