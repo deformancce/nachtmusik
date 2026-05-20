@@ -1,0 +1,61 @@
+{
+  "scraped_at": "2026-05-20T13:08:25.018427Z",
+  "scrape_horizon_date": "2026-11-30",
+  "results": [
+    {
+      "venue": "Alte Oper Frankfurt",
+      "city": "Frankfurt",
+      "slug": "alte_oper_frankfurt",
+      "scraped_at": "2026-05-20T13:08:25.018210Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.alteoper.de/de/programm",
+      "best_event_urls": 20,
+      "best_last_date_seen": null,
+      "preferred_event_urls": 110,
+      "preferred_first_date_seen": "2026-05-23",
+      "preferred_last_date_seen": "2026-11-30",
+      "sample_preferred_urls": [
+        "https://www.alteoper.de/de/programm/bee-gees-by-maincourse/18750",
+        "https://www.alteoper.de/de/programm/annettes-daschsalon/18436",
+        "https://www.alteoper.de/de/programm/miles-davis-100/18438",
+        "https://www.alteoper.de/de/programm/steve-hackett/18732",
+        "https://www.alteoper.de/de/programm/8-deutscher-patientenkongress-depression-fur-betroffene-und-angehorige/18903",
+        "https://www.alteoper.de/de/programm/kienzles-klassik/18417",
+        "https://www.alteoper.de/de/programm/orchesterfest-sachsische-staatskapelle-dresden/18344",
+        "https://www.alteoper.de/de/programm/ten-tenors/18350",
+        "https://www.alteoper.de/de/programm/alexander-malofeev-klavier/18360",
+        "https://www.alteoper.de/de/programm/orchestra-of-the-18th-century/18485",
+        "https://www.alteoper.de/de/programm/frankfurter-opern-und-museumsorchester/18467",
+        "https://www.alteoper.de/de/programm/tempo/18599"
+      ],
+      "sitemap_event_urls": 0,
+      "sample_sitemap_urls": [],
+      "sitemap_detail_probes": [],
+      "sitemap_detail_date_hits": 0,
+      "sitemap_detail_llm_probes": [],
+      "sitemap_detail_llm_date_hits": 0,
+      "probes": [
+        {
+          "url": "https://www.alteoper.de/de/programm",
+          "error": null,
+          "raw_lines": 417,
+          "raw_preview": null,
+          "event_urls": 20,
+          "unique_event_urls": 20,
+          "first_date_seen": null,
+          "last_date_seen": null,
+          "sample_urls": [
+            "https://www.alteoper.de/de/programm/bee-gees-by-maincourse/18750",
+            "https://www.alteoper.de/de/programm/annettes-daschsalon/18436",
+            "https://www.alteoper.de/de/programm/miles-davis-100/18438",
+            "https://www.alteoper.de/de/programm/steve-hackett/18732",
+            "https://www.alteoper.de/de/programm/8-deutscher-patientenkongress-depression-fur-betroffene-und-angehorige/18903",
+            "https://www.alteoper.de/de/programm/kienzles-klassik/18417",
+            "https://www.alteoper.de/de/programm/orchesterfest-sachsische-staatskapelle-dresden/18344",
+            "https://www.alteoper.de/de/programm/ten-tenors/18350"
+          ]
+        }
+      ]
+    }
+  ]
+}
