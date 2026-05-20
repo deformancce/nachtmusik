@@ -3,10 +3,79 @@
   "city": "Hamburg",
   "slug": "elbphilharmonie_hamburg",
   "source_url": "https://www.elbphilharmonie.de/de/programm/",
-  "scraped_at": "2026-05-20T07:10:22.265410Z",
+  "scraped_at": "2026-05-20T12:08:29.455986Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
+    {
+      "date": "2026-05-20",
+      "time": "11:00",
+      "title": "10 Jahre Bundesärztephilharmonie – Mahler: Sinfonie Nr. 9",
+      "venue_hall": "Elbphilharmonie Hamburg",
+      "program": [
+        "Mahler: Sinfonie Nr. 9"
+      ],
+      "performers": [
+        "Bundesärztephilharmonie"
+      ],
+      "conductor": "Jürgen Bruns",
+      "price": "ab €12,40",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/10-jahre-bundesarztephilharmonie/23963",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-20",
+      "time": "13:00",
+      "title": "Alles gesagt? Live mit Scott Galloway",
+      "venue_hall": "Elbphilharmonie",
+      "program": [
+        "Galloway: Alles gesagt?"
+      ],
+      "performers": [
+        "Scott Galloway",
+        "Christoph Amend",
+        "Jochen Wegner"
+      ],
+      "conductor": null,
+      "price": "€ 15",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/alles-gesagt-live-mit-scott-galloway/28875",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-20",
+      "time": "18:00",
+      "title": "An die Regler, fertig los!",
+      "venue_hall": "Elbphilharmonie",
+      "program": [
+        "Workshop: Kreativ Modular Synthesizer"
+      ],
+      "performers": [
+        "HamburgMusik"
+      ],
+      "conductor": null,
+      "price": "€ 12",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/workshop-kreativ-modular-synthesizer/27716",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 180,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
     {
       "date": "2026-05-20",
       "time": "19:30",
@@ -28,6 +97,62 @@
       "discovery_source": "elbphilharmonie_listing",
       "discovered_only": false,
       "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-20",
+      "time": "19:30",
+      "title": "NDR Kammerkonzert",
+      "venue_hall": "Elbphilharmonie",
+      "program": [
+        "Beethoven: Streichquartett c-Moll op. 18/4",
+        "Beethoven: Streichquartett f-Moll op. 95 »Quartetto serioso«",
+        "Beethoven: Streichquartett F-Dur op. 59/1"
+      ],
+      "performers": [
+        "Noah Quartett",
+        "Alexandra Psareva",
+        "Michael Stürzinger",
+        "Erik Wenbo Xu",
+        "Bettina Barbara Bertsch"
+      ],
+      "conductor": null,
+      "price": "€ 24",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/ndr-kammerkonzert/28214",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-20",
+      "time": "20:00",
+      "title": "China NCPA Orchestra / Bruce Liu / Myung-Whun Chung",
+      "venue_hall": "Elbphilharmonie",
+      "program": [
+        "Qigang Chen: Wu Xing (Die fünf Elemente)",
+        "Maurice Ravel: Konzert für Klavier und Orchester G-Dur",
+        "Frédéric Chopin: Nocturne cis-Moll op. posth. BI 49",
+        "Sergej Prokofjew: Suiten aus dem Ballett \"Romeo und Julia\" op. 64a/b",
+        "Georges Bizet: Ouvertüre zu \"Carmen\""
+      ],
+      "performers": [
+        "China NCPA Orchestra",
+        "Bruce Liu"
+      ],
+      "conductor": "Myung-Whun Chung",
+      "price": "€ 15",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/china-ncpa-orchestra-bruce-liu-myung-whun-chung/23031",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 120,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -96,6 +221,7 @@
       "city": "Hamburg",
       "discovery_source": "elbphilharmonie_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -118,6 +244,7 @@
       "city": "Hamburg",
       "discovery_source": "elbphilharmonie_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -141,6 +268,7 @@
       "city": "Hamburg",
       "discovery_source": "elbphilharmonie_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -176,6 +304,7 @@
       "city": "Hamburg",
       "discovery_source": "elbphilharmonie_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -222,6 +351,7 @@
       "city": "Hamburg",
       "discovery_source": "elbphilharmonie_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -258,6 +388,7 @@
       "city": "Hamburg",
       "discovery_source": "elbphilharmonie_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -283,30 +414,147 @@
       "discovery_source": "elbphilharmonie_listing",
       "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-12",
+      "time": "19:00",
+      "title": "Érard-Nacht",
+      "venue_hall": "Elbphilharmonie",
+      "program": [
+        "Brahms: Sonate für Violine und Klavier A-Dur op. 100",
+        "Chopin: Nocturne c-Moll op. 48/1",
+        "Chopin: Ballade Nr. 4 f-Moll op. 52",
+        "Brahms: Sieben Fantasien op. 116",
+        "Strauss: Sonate für Violine und Klavier Es-Dur op. 18",
+        "Liszt: Fünf Lieder nach Gedichten von Heinrich Heine, Johann Wolfgang von Goethe und Emil Kuh",
+        "Ravel: Klaviertrio a-Moll"
+      ],
+      "performers": [
+        "Michael Wolfrum",
+        "Elsa Grether",
+        "Mitsuru Shiogai",
+        "Andreas Grünkorn",
+        "Mathias Weber",
+        "Eiko Okuno-Jürgensen",
+        "Stefan Matthewes",
+        "Klaus-Dieter Jung",
+        "Eberhard Hasenfratz"
+      ],
+      "conductor": null,
+      "price": "ab €19",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/10-erard-festival/27869",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-30",
+      "time": "19:30",
+      "title": "Konzert mit Viviane Hagner, Matthias Schorn, Alexey Stadler und Adam Golka",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Mieczysław Weinberg: Klaviertrio a-Moll op. 24",
+        "Olivier Messiaen: Quatuor pour la fin du temps"
+      ],
+      "performers": [
+        "Matthias Schorn",
+        "Viviane Hagner",
+        "Alexey Stadler",
+        "Adam Golka"
+      ],
+      "conductor": null,
+      "price": "€ 15",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/viviane-hagner-matthias-schorn-alexey-stadler-adam-golka/27999",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-30",
+      "time": "20:00",
+      "title": "Lars Eidinger: Hauspostille",
+      "venue_hall": "Elbphilharmonie",
+      "program": [
+        "Brecht: Hauspostille"
+      ],
+      "performers": [
+        "Lars Eidinger",
+        "Hans Jörn Brandenburg"
+      ],
+      "conductor": null,
+      "price": "ab €47,25",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/lars-eidinger/24308",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 90,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "null",
+      "time": "19:00",
+      "title": "Freundschaft Minus",
+      "venue_hall": "Laeiszhalle",
+      "program": [],
+      "performers": [
+        "Paula Döringer",
+        "Jan Kraume"
+      ],
+      "conductor": null,
+      "price": "ab €39,90",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/freundschaft-minus/27689",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
     }
   ],
-  "total_events": 11,
+  "total_events": 20,
   "total_events_visible": 11,
   "total_events_discovered": 11,
   "total_events_discovered_strict": 11,
-  "total_events_enriched": 11,
+  "total_events_enriched": 20,
   "source": "elbphilharmonie_listing",
-  "latest_discovered_event_date": "2026-05-30",
-  "latest_event_date": "2026-05-30",
-  "covers_horizon": false,
+  "latest_discovered_event_date": "2026-11-30",
+  "latest_event_date": "2026-11-30",
+  "covers_horizon": true,
   "horizon_grace_days": 1,
-  "events_with_date": 11,
-  "events_missing_date": 0,
-  "date_coverage_rate": 1.0,
-  "coverage_warning": "SHORT_HORIZON(latest=2026-05-30, horizon=2026-11-30)",
+  "events_with_date": 19,
+  "events_missing_date": 1,
+  "date_coverage_rate": 0.95,
   "map_expand_stats": {
     "preferred_urls": 11,
     "map_urls": 0,
     "html_urls": 11,
     "new_urls": 0,
     "latest_discovered_date": "2026-05-30"
+  },
+  "sitemap_detail_expand_stats": {
+    "budget": 20,
+    "sitemap_urls": 1999,
+    "scraped": 20,
+    "new_events": 9,
+    "missing_date_or_title": 6,
+    "past_or_beyond_horizon": 5,
+    "duplicate_urls": 11,
+    "latest_date": "2026-11-30"
   }
 }
