@@ -432,7 +432,7 @@ def _bp_actions() -> list[dict]:
     # SPA infinite-scroll calendar; previously failed on Firecrawl's brittle
     # selector clicks ("Error in action 1: Element not found"). JS handles
     # OneTrust + infinite scroll robustly.
-    return _cookie_and_load_more_actions(max_rounds=30, settle_ms=2000)
+    return _cookie_and_load_more_actions(max_rounds=60, settle_ms=2000)
 
 
 def _gewandhaus_actions() -> list[dict]:
@@ -691,6 +691,7 @@ VENUE_OVERRIDES: dict[str, dict] = {
     "elbphilharmonie_hamburg": {
         # Infinite-scroll programme list; detail pages are /de/programm/<slug>/<id>.
         # Detail text may be hidden behind "Mehr lesen", but the LLM sees the rendered page.
+        "listing_url": "https://www.elbphilharmonie.de/de/programm/LHHH/TICKETS/",
         "actions": lambda: _cookie_and_load_more_actions(max_rounds=35, settle_ms=2500),
         "listing_target": 120,
         "force_url_expand": True,
@@ -711,6 +712,13 @@ VENUE_OVERRIDES: dict[str, dict] = {
     "gewandhaus_leipzig": {
         "actions": _gewandhaus_actions,
         "wait_for_listing_count": 20,
+    },
+    "alte_oper_frankfurt": {
+        # Calendar card grid; lazy cards appear while scrolling. Parse rendered
+        # cards locally so the LLM is not responsible for discovery recall.
+        "actions": lambda: _cookie_and_load_more_actions(max_rounds=35, settle_ms=2000),
+        "listing_target": 120,
+        "force_url_expand": True,
     },
     "isarphilharmonie_muenchen": {
         # Use the Münchner Philharmoniker calendar for deeper season coverage;
@@ -1272,6 +1280,78 @@ def _extract_essen_listing_events(
     return out
 
 
+def _extract_alte_oper_listing_events(
+    rendered: str,
+    venue: dict,
+    horizon_date: str,
+) -> list[dict]:
+    """Parse Alte Oper Frankfurt calendar cards from rendered markdown."""
+    if not rendered:
+        return []
+
+    header_re = re.compile(
+        rf"(?ms)(?:^|\s)(?:Mo|Di|Mi|Do|Fr|Sa|So)\s*"
+        rf"(\d{{1,2}})\s*([A-Za-zÄÖÜäöüß]+)\s*(20\d{{2}})"
+        rf"\s*([0-2]?\d:[0-5]\d)\s*([^\n\r\[]{{0,90}})"
+    )
+    matches = list(header_re.finditer(rendered))
+    out: list[dict] = []
+    seen: set[str] = set()
+    slug = _slug(venue["name"])
+
+    for i, match in enumerate(matches):
+        day, month_name, year, event_time, hall = match.groups()
+        month = _DE_MONTHS.get(month_name.strip().lower())
+        if not month:
+            continue
+        try:
+            event_date = date(int(year), month, int(day)).isoformat()
+        except ValueError:
+            continue
+        if not _is_within_scrape_window(event_date, horizon_date):
+            continue
+
+        block_end = matches[i + 1].start() if i + 1 < len(matches) else len(rendered)
+        block = rendered[match.end():block_end]
+        title = None
+        detail_url = None
+        for label, url in re.findall(r"\[([^\]]+)\]\((https?://[^)]+)\)", block):
+            clean = _clean_url(url)
+            label_text = _plain_markdown_text(label)
+            if (
+                clean
+                and label_text
+                and not label.strip().startswith("!")
+                and is_strict_event_url(clean, venue["url"], slug)
+            ):
+                title = label_text
+                detail_url = clean
+                break
+        if not title or not detail_url or detail_url in seen or _is_canceled(title):
+            continue
+
+        price_match = re.search(r"\[(Ab\s+[^]]+€|[0-9][^]]*€)\]\(", block)
+        ev = {
+            "date": event_date,
+            "time": event_time,
+            "title": title,
+            "venue_hall": _plain_markdown_text(hall),
+            "program": [],
+            "performers": [],
+            "conductor": None,
+            "price": _plain_markdown_text(price_match.group(1)) if price_match else None,
+            "detail_url": detail_url,
+            "venue": venue["name"],
+            "city": venue["city"],
+            "discovery_source": "alte_oper_listing",
+            "discovered_only": True,
+        }
+        _mark_enrichment_status(ev)
+        seen.add(detail_url)
+        out.append(ev)
+    return out
+
+
 def _extract_konzerthaus_berlin_listing_events(
     rendered: str,
     venue: dict,
@@ -1326,6 +1406,72 @@ def _extract_konzerthaus_berlin_listing_events(
             "venue": venue["name"],
             "city": venue["city"],
             "discovery_source": "konzerthaus_berlin_listing",
+            "discovered_only": True,
+        }
+        _mark_enrichment_status(ev)
+        seen.add(detail_url)
+        out.append(ev)
+    return out
+
+
+def _extract_elbphilharmonie_listing_events(
+    rendered: str,
+    venue: dict,
+    horizon_date: str,
+) -> list[dict]:
+    """Parse Elbphilharmonie programme cards from rendered markdown."""
+    if not rendered:
+        return []
+
+    card_re = re.compile(
+        r"(?ms)^\s*-\s+\*\*(?:[A-Za-zÄÖÜäöüß]{2},\s*)?"
+        r"(\d{1,2})\.(\d{1,2})\.(20\d{2})\*\*\s*"
+        r"([0-2]?\d(?::[0-5]\d)?)\s*Uhr\s*"
+        r"(.*?)(?=^\s*-\s+\*\*(?:[A-Za-zÄÖÜäöüß]{2},\s*)?\d{1,2}\.\d{1,2}\.20\d{2}\*\*|\Z)"
+    )
+    out: list[dict] = []
+    seen: set[str] = set()
+    slug = _slug(venue["name"])
+
+    for match in card_re.finditer(rendered):
+        day, month, year, event_time, block = match.groups()
+        try:
+            event_date = date(int(year), int(month), int(day)).isoformat()
+        except ValueError:
+            continue
+        if not _is_within_scrape_window(event_date, horizon_date):
+            continue
+
+        hall_match = re.search(r"\*\*([^*\n]*(?:Elbphilharmonie|Laeiszhalle)[^*\n]*)\*\*", block)
+        title = None
+        detail_url = None
+        for label, url in re.findall(r"\[([^\]]+)\]\((https?://[^)]+)\)", block):
+            clean = _clean_url(url)
+            label_text = _plain_markdown_text(label)
+            if not clean or not label_text or label.strip().startswith("!"):
+                continue
+            if "/ticket/" in clean:
+                continue
+            if is_strict_event_url(clean, venue["url"], slug):
+                title = label_text
+                detail_url = clean
+                break
+        if not title or not detail_url or detail_url in seen or _is_canceled(title):
+            continue
+
+        ev = {
+            "date": event_date,
+            "time": event_time if ":" in event_time else f"{int(event_time):02d}:00",
+            "title": title,
+            "venue_hall": _plain_markdown_text(hall_match.group(1)) if hall_match else None,
+            "program": [],
+            "performers": [],
+            "conductor": None,
+            "price": "Eintritt frei" if "Eintritt frei" in block else None,
+            "detail_url": detail_url,
+            "venue": venue["name"],
+            "city": venue["city"],
+            "discovery_source": "elbphilharmonie_listing",
             "discovered_only": True,
         }
         _mark_enrichment_status(ev)
@@ -2041,8 +2187,12 @@ def _extract_preferred_listing_events(
         return _extract_koelner_listing_events(rendered, venue, horizon_date), "koelner_listing"
     if slug == "philharmonie_essen":
         return _extract_essen_listing_events(rendered, venue, horizon_date), "essen_listing"
+    if slug == "alte_oper_frankfurt":
+        return _extract_alte_oper_listing_events(rendered, venue, horizon_date), "alte_oper_listing"
     if slug == "konzerthaus_berlin":
         return _extract_konzerthaus_berlin_listing_events(rendered, venue, horizon_date), "konzerthaus_berlin_listing"
+    if slug == "elbphilharmonie_hamburg":
+        return _extract_elbphilharmonie_listing_events(rendered, venue, horizon_date), "elbphilharmonie_listing"
     if slug == "berliner_philharmonie":
         return _extract_berliner_philharmonie_listing_events(rendered, venue, horizon_date), "berliner_philharmonie_listing"
     if slug == "glocke_bremen":
