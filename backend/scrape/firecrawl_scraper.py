@@ -3022,7 +3022,10 @@ def _discover_sitemap_dated_urls(
     if limit <= 0 or len(sitemap_urls) <= limit:
         candidate_urls = sitemap_urls
     else:
-        candidate_urls = sitemap_urls[:limit]
+        # Archive-heavy sitemaps often put the current season after hundreds of
+        # historical URLs. Sample across the full list so a limited scout still
+        # sees late-season dates.
+        candidate_urls = _sample_evenly(sitemap_urls, limit)
     stats: dict = {
         "sitemap_urls": len(sitemap_urls),
         "candidate_urls": len(candidate_urls),
