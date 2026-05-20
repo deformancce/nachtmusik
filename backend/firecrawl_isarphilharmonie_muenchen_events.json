@@ -3,12 +3,12 @@
   "city": "München",
   "slug": "isarphilharmonie_muenchen",
   "source_url": "https://www.gasteig.de/veranstaltungen/?room=isarphilharmonie",
-  "scraped_at": "2026-05-19T21:07:43.642394Z",
+  "scraped_at": "2026-05-20T20:58:28.626967Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
     {
-      "date": "2026-05-19",
+      "date": "2026-05-20",
       "time": "19:30",
       "title": "Sibelius      Prokofjew      Vaughan Williams",
       "venue_hall": "Isarphilharmonie",
@@ -21,20 +21,120 @@
         "Dirigent: Tarmo Peltokoski",
         "Klavier: Behzod Abduraimov"
       ],
-      "conductor": null,
+      "conductor": "Tarmo Peltokoski",
       "price": "Karten",
-      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/sibelius-prokofjew-vaughan-williams-2026-05-19-19",
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/sibelius-prokofjew-vaughan-williams-2026-05-20-19",
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-21",
+      "time": null,
+      "title": "Brass Band München",
+      "venue_hall": "Isarphilharmonie",
+      "program": [],
+      "performers": [
+        "Brass Band München"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/konzert-brass-band-muenchen/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
     },
     {
-      "date": "2026-05-20",
-      "time": "19:00",
+      "date": "2026-05-21",
+      "time": null,
+      "title": "Münchner Philharmoniker: Korngold / Williams / Prokofjew",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Erich Wolfgang Korngold: Ouvertüre zu „The Sea Hawk\"",
+        "John Williams: Konzert für Horn und Orchester",
+        "Sergej Prokofjew: Auszüge aus „Romeo und Julia\" op. 64"
+      ],
+      "performers": [
+        "Matías Piñeira (Horn)",
+        "James Gaffigan"
+      ],
+      "conductor": "James Gaffigan",
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/korngold-williams-prokofjew/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-21",
+      "time": null,
+      "title": "Sonntagssingen – Offenes Programm von Gustavo Castillo-Estrada",
+      "venue_hall": "Gasteig HP8",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "Gratis",
+      "detail_url": "https://www.gasteig.de/veranstaltungen/sonntagssingen-%c2%96-offenes-programm-im-hp8/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-21",
+      "time": null,
+      "title": "Das 5 Elemente des Hip-Hop: Session 12",
+      "venue_hall": "Isarphilharmonie München",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/the-5-elements-of-hip-hop-session-12/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": false,
+      "enrichment_status": "stub",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-21",
+      "time": null,
+      "title": "The 5 Elements of Hip-Hop: Session 13Creative Writing (Element 3)",
+      "venue_hall": "Isarphilharmonie München",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "Gratis",
+      "detail_url": "https://www.gasteig.de/veranstaltungen/the-5elements-of-hip-hop-session-13/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-21",
+      "time": "11:00",
       "title": "Sibelius      Prokofjew      Vaughan Williams",
       "venue_hall": "Isarphilharmonie",
       "program": [
@@ -46,12 +146,236 @@
         "Dirigent: Tarmo Peltokoski",
         "Klavier: Behzod Abduraimov"
       ],
-      "conductor": null,
-      "price": "Karten",
-      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/sibelius-prokofjew-vaughan-williams-2026-05-20-19",
+      "conductor": "Tarmo Peltokoski",
+      "price": null,
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/sibelius-prokofjew-vaughan-williams-2026-05-21-11",
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-21",
+      "time": "12:30",
+      "title": "Till Eulenspiegels lustige Streiche",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Strauss: Till Eulenspiegels lustige Streiche"
+      ],
+      "performers": [
+        "Kammerorchester concierto münchen",
+        "Rainer Hipp",
+        "Monika Eibl",
+        "Paula Domínguez"
+      ],
+      "conductor": "Carlos Domínguez-Nieto",
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/till-eulenspiegel/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "duration_min": 55,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-21",
+      "time": "14:00",
+      "title": "Ein Engel fällt aus allen Wolken",
+      "venue_hall": "Saal X",
+      "program": [
+        "Ibert: (not specified)",
+        "Perl: (not specified)",
+        "Chopin: (not specified)",
+        "Elgar: (not specified)",
+        "Bach: (not specified)",
+        "Fauré: (not specified)",
+        "Mozart: (not specified)",
+        "Leclair: (not specified)"
+      ],
+      "performers": [
+        "Flöte",
+        "Harfe",
+        "Violoncello",
+        "Klavier",
+        "Moderatorin"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/%c2%84ein-engel-faellt-aus-allen-wolken%c2%93-kinderkonzert-mini-musik-e28bf/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-21",
+      "time": "18:00",
+      "title": "Ingeborg Bachmann: „Das dreißigste Jahr“",
+      "venue_hall": "Isarphilharmonie",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/ingeborg-bachmann-aa38a/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": false,
+      "enrichment_status": "stub",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-21",
+      "time": "19:00",
+      "title": "Münchner Philharmoniker: Britten / Roussel / Prokofjew",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Benjamin Britten: “Simple Symphony” für Streichorchester op. 4",
+        "Albert Roussel: Suite Nr. 2 aus dem Ballett “Bacchus et Ariane” op. 43",
+        "Sergej Prokofjew: Symphonie Nr. 5 B-Dur op. 100"
+      ],
+      "performers": [
+        "Münchner Philharmoniker"
+      ],
+      "conductor": "Tugan Sokhiev",
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/britten-roussel-prokofjew/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-21",
+      "time": "19:30",
+      "title": "Münchner Philharmoniker: Beethoven mit Maxime Pascal (Leitung)",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Ludwig van Beethoven: Symphonie Nr. 9 d-Moll op. 125"
+      ],
+      "performers": [
+        "Sopran: Axelle Fanyo",
+        "Alt: Anna Lucia Richter",
+        "Tenor: Léo Vermot-Desroches",
+        "Bassbariton: Stéphane Degout",
+        "Philharmonischer Chor München",
+        "MPhil"
+      ],
+      "conductor": "Maxime Pascal",
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/beethoven/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-21",
+      "time": "19:30",
+      "title": "Münchner Philharmoniker: Reinvere / Mahler / Schostakowitsch",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Jüri Reinvere: „Maria Anna, wach, im Nebenzimmer“, Notturno für großes Orchester",
+        "Gustav Mahler: Adagio aus der Symphonie Nr. 10",
+        "Dmitrij Schostakowitsch: Symphonie Nr. 15 A-Dur op. 141"
+      ],
+      "performers": [
+        "MPhil"
+      ],
+      "conductor": "Andris Nelsons",
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/reinvere-mahler-schostakowitsch-08bc5/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-21",
+      "time": "19:30",
+      "title": "Münchner Philharmoniker: Schostakowitsch / Sibelius / Tschaikowsky",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Dmitrij Schostakowitsch: Scherzo für Orchester fis-Moll op. 1",
+        "Jean Sibelius: Konzert für Violine und Orchester d-Moll op. 47",
+        "Peter I. Tschaikowsky: Symphonie Nr. 6 h-Moll op. 74 „Pathétique“"
+      ],
+      "performers": [
+        "Daniel Lozakovich (Violine)",
+        "Krzysztof Urbański (Leitung)"
+      ],
+      "conductor": "Krzysztof Urbański",
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/schostakowitsch-sibelius-tschaikowsky/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-22",
+      "time": null,
+      "title": "Die drei ??? – Das Erbe des Meisterdiebes",
+      "venue_hall": "Isarphilharmonie",
+      "program": [],
+      "performers": [
+        "Oliver Rohrbeck",
+        "Jörg Klinkenberg"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/die-drei-mitmachhoerspiel-tour/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-23",
+      "time": "19:00",
+      "title": "Bach: Weihnachtsoratorium",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Bach: Weihnachtsoratorium BWV 248 – Kantaten I-VI"
+      ],
+      "performers": [
+        "Orchester der KlangVerwaltung",
+        "Audi Jugendchorakademie",
+        "Julia Grüter, Sopran",
+        "Moritz Kallenberg, Tenor",
+        "Johannes Kammler, Bariton"
+      ],
+      "conductor": "Thomas Guggeis",
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/weihnachtsoratorium-orchester-der-klangverwaltung/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -60,7 +384,8 @@
     {
       "date": "2026-05-23",
       "time": "19:30",
-      "title": "Sibelius      Prokofjew      Vaughan Williams",
+      "title": "Sibelius Prokofjew Vaughan Williams",
+      "title_inferred": true,
       "venue_hall": "Isarphilharmonie",
       "program": [
         "Jean Sibelius: Finlandia",
@@ -76,7 +401,135 @@
       "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/sibelius-prokofjew-vaughan-williams-2026-05-23-19",
       "venue": "Isarphilharmonie München",
       "city": "München",
+      "discovery_source": "url_discovery",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-23",
+      "time": "19:30",
+      "title": "Mussorgsky      Chatschaturjan      Bizet",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Modest Mussorgsky: Vorspiel zu Chowanschtschina",
+        "Aram Chatschaturjan: Klavierkonzert",
+        "Georges Bizet: L’Arlésienne-Suiten Nr. 1 & 2"
+      ],
+      "performers": [
+        "Dirigent: Alain Altinoglu",
+        "Klavier: Giorgi Gigashvili"
+      ],
+      "conductor": "Alain Altinoglu",
+      "price": null,
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/chatschaturjan-mussorgsky-bizet-2026-05-23-19",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
       "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-23",
+      "time": "19:30",
+      "title": "Münchner Philharmoniker: Beethoven mit Klaus Mäkelä (Leitung)",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Beethoven: Missa solemnis D-Dur op. 123"
+      ],
+      "performers": [
+        "Klaus Mäkelä",
+        "Chen Reiss",
+        "Wiebke Lehmkuhl",
+        "Julian Prégardien",
+        "Gerald Finley",
+        "Andreas Herrmann",
+        "Philharmonischer Chor München",
+        "MPhil"
+      ],
+      "conductor": "Klaus Mäkelä",
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/beethoven-57a29/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-23",
+      "time": "19:30",
+      "title": "Münchner Philharmoniker: Glass / Bruckner",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Philip Glass: Konzert für Violine und Orchester Nr. 1",
+        "Anton Bruckner: Symphonie Nr. 4 Es-Dur WAB 104 „Romantische“"
+      ],
+      "performers": [
+        "Renaud Capuçon (Violine)",
+        "Mphil"
+      ],
+      "conductor": "Lahav Shani",
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/glass-bruckner-e8255/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-23",
+      "time": "19:30",
+      "title": "Münchner Philharmoniker: Reinvere / Mahler / Schostakowitsch",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Jüri Reinvere: „Maria Anna, wach, im Nebenzimmer“, Notturno für großes Orchester",
+        "Gustav Mahler: Adagio aus der Symphonie Nr. 10",
+        "Dmitrij Schostakowitsch: Symphonie Nr. 15 A-Dur op. 141"
+      ],
+      "performers": [
+        "Münchner Philharmoniker",
+        "Andris Nelsons"
+      ],
+      "conductor": "Andris Nelsons",
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/reinvere-mahler-schostakowitsch-e860e/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-23",
+      "time": "20:00",
+      "title": "Cuban Christmas",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Bach: Weihnachts-Oratorium",
+        "Tschaikowsky: Nussknacker Suite Op. 71a"
+      ],
+      "performers": [
+        "Sarah Willis",
+        "The Sarahbanda"
+      ],
+      "conductor": null,
+      "price": "€15–€85",
+      "detail_url": "https://www.gasteig.de/veranstaltungen/cuban-christmas/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -85,7 +538,8 @@
     {
       "date": "2026-05-24",
       "time": "11:00",
-      "title": "Sibelius      Prokofjew      Vaughan Williams",
+      "title": "Sibelius Prokofjew Vaughan Williams",
+      "title_inferred": true,
       "venue_hall": "Isarphilharmonie",
       "program": [
         "Jean Sibelius: Finlandia",
@@ -99,6 +553,32 @@
       "conductor": null,
       "price": "Karten",
       "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/sibelius-prokofjew-vaughan-williams-2026-05-24-11",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "url_discovery",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-24",
+      "time": "11:00",
+      "title": "Mussorgsky      Chatschaturjan      Bizet",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Modest Mussorgsky: Vorspiel zu Chowanschtschina",
+        "Aram Chatschaturjan: Klavierkonzert",
+        "Georges Bizet: L’Arlésienne-Suiten Nr. 1 & 2"
+      ],
+      "performers": [
+        "Dirigent: Alain Altinoglu",
+        "Klavier: Giorgi Gigashvili"
+      ],
+      "conductor": "Alain Altinoglu",
+      "price": null,
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/chatschaturjan-mussorgsky-bizet-2026-05-24-11",
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "firecrawl_listing",
@@ -148,12 +628,37 @@
         "Dirigent: Alain Altinoglu",
         "Klavier: Giorgi Gigashvili"
       ],
-      "conductor": null,
+      "conductor": "Alain Altinoglu",
       "price": "Karten",
       "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/chatschaturjan-mussorgsky-bizet-2026-05-29-19",
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-29",
+      "time": "19:30",
+      "title": "Münchner Philharmoniker: Mussorgsky / Chatschaturjan / Bizet",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Modest Mussorgsky: Vorspiel zu „Chowanschtschina“ (Bearbeitung: Dmitrij Schostakowitsch)",
+        "Aram Chatschaturjan: Konzert für Klavier und Orchester Des-Dur",
+        "Georges Bizet: „L’Arlésienne“, Orchestersuiten Nr. 1 & Nr. 2"
+      ],
+      "performers": [
+        "Giorgi Gigashvili"
+      ],
+      "conductor": "Alain Altinoglu",
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/muenchner-philharmoniker-mussorgsky-chatschaturjan-bizet-2/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -173,13 +678,14 @@
         "Dirigent: Alain Altinoglu",
         "Klavier: Giorgi Gigashvili"
       ],
-      "conductor": null,
+      "conductor": "Alain Altinoglu",
       "price": "Karten",
       "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/chatschaturjan-mussorgsky-bizet-2026-05-30-19",
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -187,8 +693,7 @@
     {
       "date": "2026-05-30",
       "time": "21:00",
-      "title": "05 30 21",
-      "title_inferred": true,
+      "title": "MPHIL Late",
       "venue_hall": "Halle E",
       "program": [],
       "performers": [
@@ -200,7 +705,116 @@
       "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/2026-05-30-21",
       "venue": "Isarphilharmonie München",
       "city": "München",
-      "discovery_source": "url_discovery",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-04",
+      "time": "19:00",
+      "title": "MKO Inside 40 Stunden Gasteig",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "W. A. Mozart: Sinfonie Nr. 41 C-Dur „Jupiter“"
+      ],
+      "performers": [
+        "Münchener Kammerorchester"
+      ],
+      "conductor": "Jörg Widmann",
+      "price": "Gratis",
+      "detail_url": "https://www.gasteig.de/veranstaltungen/40-stunden-mko-3/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-06",
+      "time": "19:30",
+      "title": "Mendelssohn Bartholdy      Schumann",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Felix Mendelssohn Bartholdy: »Mein Herz erhebet Gott, den Herrn«",
+        "Robert Schumann: Klavierkonzert a-Moll"
+      ],
+      "performers": [
+        "Dirigent: Thomas Hengelbrock",
+        "Sopran: Eleanor Lyons",
+        "Bariton: Michael Volle"
+      ],
+      "conductor": "Thomas Hengelbrock",
+      "price": null,
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/mendelssohn-bartholdy-schwan-2026-06-06-19",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-07",
+      "time": "19:00",
+      "title": "Mendelssohn Bartholdy      Schumann",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Felix Mendelssohn Bartholdy: »Mein Herz erhebet Gott, den Herrn«",
+        "Robert Schumann: Klavierkonzert a-Moll"
+      ],
+      "performers": [
+        "Dirigent: Thomas Hengelbrock",
+        "Sopran: Eleanor Lyons",
+        "Bariton: Michael Volle"
+      ],
+      "conductor": "Thomas Hengelbrock",
+      "price": null,
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/mendelssohn-bartholdy-schumann-2026-06-07-19",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-08",
+      "time": "20:00",
+      "title": "Konzert der Jazz-Kontrabassklasse Martin Zenker",
+      "venue_hall": "Kleiner Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "Gratis",
+      "detail_url": "https://www.gasteig.de/veranstaltungen/konzert-der-jazz-kontrabassklasse-martin-zenker-2/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "17:45",
+      "title": "Auftakt – Konzertführer live",
+      "venue_hall": "Isarphilharmonie",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "Gratis",
+      "detail_url": "https://www.gasteig.de/veranstaltungen/auftakt-konzertfuehrer-live-a2da4/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -277,9 +891,10 @@
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -410,10 +1025,36 @@
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 150,
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-22",
+      "time": "19:30",
+      "title": "Adams      Schumann      Tschaikowsky",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "John Adams: »Shaker Loops«",
+        "Robert Schumann: Cellokonzert",
+        "Peter I. Tschaikowsky: »Dornröschen«-Suite"
+      ],
+      "performers": [
+        "Dirigent: Maxim Emelyanychev",
+        "Violoncello: Jean-Guihen Queyras"
+      ],
+      "conductor": "Maxim Emelyanychev",
+      "price": null,
+      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/schumann-adams-tschaikowsky-2027-06-22",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -493,9 +1134,10 @@
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -524,6 +1166,31 @@
       "enriched": true,
       "enrichment_status": "enriched",
       "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-07-01",
+      "time": "19:30",
+      "title": "Münchner Philharmoniker: Dvořák / Henze / Strawinsky",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Dvořák: Konzert für Violine und Orchester a-Moll op. 53",
+        "Henze: „Sebastian im Traum“, Salzburger Nachtmusik nach einer Dichtung von Georg Trakl",
+        "Strawinsky: „L’Oiseau de feu“ (Der Feuervogel), Orchestersuite von 1919"
+      ],
+      "performers": [
+        "Isabelle Faust (Violine)",
+        "Petr Popelka (Leitung)"
+      ],
+      "conductor": "Petr Popelka",
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/muenchner-philharmoniker-dvorak-henze-strawinsky-2/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -596,9 +1263,10 @@
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -650,6 +1318,35 @@
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-07-06",
+      "time": "10:30",
+      "title": "Münchner Philharmoniker: „Das magische Tor“ Kinderkonzert",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Beethoven: Symphonie Nr. 6 F-Dur op. 68 „Pastorale\""
+      ],
+      "performers": [
+        "Hankyeol Yoon",
+        "Anna Vidyaykina",
+        "Filipe Portugal",
+        "Pamela Dürr",
+        "Tänzer\text{*}innen des Tanzfestivals Tanz und Kunst Königsfelden",
+        "MPhil"
+      ],
+      "conductor": "Hankyeol Yoon",
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/das-magische-tor/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "duration_min": 60,
+      "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -709,21 +1406,28 @@
     },
     {
       "date": "2026-08-31",
-      "time": null,
+      "time": "19:30",
       "title": "08 31",
       "title_inferred": true,
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "venue_hall": "Isarphilharmonie München",
+      "program": [
+        "Adams: The Chairman Dances",
+        "Beethoven: Konzert für Klavier und Orchester Nr. 2 B-Dur op. 19",
+        "Brahms: Symphonie Nr. 4 e-Moll op. 98"
+      ],
+      "performers": [
+        "Martha Argerich",
+        "Münchner Philharmoniker"
+      ],
+      "conductor": "Lahav Shani",
       "price": null,
       "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/2026-08-31",
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -920,32 +1624,6 @@
       "is_classical": true
     },
     {
-      "date": "2026-10-01",
-      "time": "19:30",
-      "title": "Brahms      Schumann",
-      "venue_hall": "Isarphilharmonie",
-      "program": [
-        "Johannes Brahms: Akademische Festouvertüre",
-        "Robert Schumann: Klavierkonzert a-Moll",
-        "Johannes Brahms: 3. Symphonie",
-        "Richard Wagner: Rienzi-Ouvertüre"
-      ],
-      "performers": [
-        "Dirigentin: Nathalie Stutzmann",
-        "Klavier: Beatrice Rana"
-      ],
-      "conductor": null,
-      "price": "Karten",
-      "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/wagner-brahms-schumann-2026-10-01-19",
-      "venue": "Isarphilharmonie München",
-      "city": "München",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
       "date": "2026-10-07",
       "time": "19:30",
       "title": "Mozart Von Weber",
@@ -992,28 +1670,38 @@
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-10-15",
-      "time": null,
+      "time": "18:30",
       "title": "1Jugendkonzert",
       "title_inferred": true,
-      "venue_hall": null,
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Dmitrij Schostakowitsch: Konzert für Violoncello und Orchester Nr. 1 Es-Dur op. 107",
+        "Bernd Alois Zimmermann: Musique pour les soupers du Roi Ubu",
+        "Maurice Ravel: La Valse, Poème chorégraphique pour orchestre"
+      ],
+      "performers": [
+        "Anja Bihlmaier",
+        "Nicolas Altstaedt",
+        "Malte Arkona"
+      ],
+      "conductor": "Anja Bihlmaier",
+      "price": "U30 (bis inkl. 29 Jahre): 14 € | 11 € \nBegleitperson (ab 30 Jahren; Buchung nur in Kombination mit ermäßigten Karten; maximal 2 Erwachsene pro Buchung): 32 € | 23 € | 14 € \nJugendkonzert-Abo (erhältlich ab 16.09.2026, 16 Uhr): \nU30 (bis inkl. 29 Jahre): 44 € \nBegleitperson (ab 30 Jahren; Buchung nur in Kombination mit ermäßigten Karten; maximal 2 Erwachsene pro Buchung): 128 € | 92 € | 56 € \nFür Schulklassen (VVK ab 23.09.2026, 16 Uhr): \nErmäßigter Einzelkartenpreis von 11 € pro Schüler*in/Begleiter*in und ermäßigter Abopreis von 36 € pro Schüler*in/Begleiter*in.",
       "detail_url": "https://www.mphil.de/konzerte-und-karten/kalender/konzerte/1jugendkonzert-2026-10-15",
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 120,
       "is_classical": true
     },
     {
@@ -1038,9 +1726,10 @@
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1065,6 +1754,32 @@
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-18",
+      "time": "20:00",
+      "title": "Orchestre National de France",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Berlioz: Ouvertüre zu \"Béatrice et Bénédict\"",
+        "Brahms: Konzert für Violine, Violoncello und Orchester a-Moll op. 102",
+        "Dvořák: Symphonie Nr. 8 G-Dur op. 88"
+      ],
+      "performers": [
+        "Julia Fischer (Violine)",
+        "Daniel Müller-Schott (Violoncello)"
+      ],
+      "conductor": "Cristian Măcelaru",
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/orchestre-national-de-france/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -1094,9 +1809,10 @@
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1123,9 +1839,10 @@
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1152,9 +1869,10 @@
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1181,9 +1899,10 @@
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1205,9 +1924,10 @@
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1229,9 +1949,10 @@
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1253,6 +1974,34 @@
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-15",
+      "time": "16:00",
+      "title": "Matze taucht ab",
+      "venue_hall": "Saal X",
+      "program": [
+        "Alex Naumann: Jazzstandards lustige Eigenkompositionen zum Mitsingen"
+      ],
+      "performers": [
+        "Gesang",
+        "Saxophon",
+        "Gitarre",
+        "Kontrabass",
+        "Schlagzeug",
+        "zwei Moderator*innen"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/matze-taucht-ab-3/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -1277,9 +2026,10 @@
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1302,10 +2052,34 @@
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-23",
+      "time": "20:00",
+      "title": "Max Raabe & Palast Orchester: „Hummel streicheln“",
+      "venue_hall": "Isarphilharmonie",
+      "program": [
+        "Max Raabe: Hummel streicheln"
+      ],
+      "performers": [
+        "Max Raabe",
+        "Palast Orchester"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/max-raabe-d3758/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-11-23",
@@ -1326,9 +2100,10 @@
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1350,32 +2125,100 @@
       "venue": "Isarphilharmonie München",
       "city": "München",
       "discovery_source": "url_discovery",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-29",
+      "time": "11:00",
+      "title": "Papageno und die kleine Zauberflöte",
+      "venue_hall": "Isarphilharmonie München",
+      "program": [
+        "Mozart: Die Zauberflöte"
+      ],
+      "performers": [
+        "Philipp Gaiser",
+        "Andromahi Raptis",
+        "Michael Braun",
+        "Rainer Hipp",
+        "Gabriele Steiner",
+        "Bärbl Seitz",
+        "Jess Huber",
+        "Hanna Schavoir"
+      ],
+      "conductor": "Carlos Domínguez-Nieto",
+      "price": null,
+      "detail_url": "https://www.gasteig.de/veranstaltungen/papageno-d2c00/",
+      "venue": "Isarphilharmonie München",
+      "city": "München",
+      "duration_min": 55,
+      "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
     }
   ],
-  "total_events": 52,
-  "total_events_visible": 13,
+  "total_events": 84,
+  "total_events_visible": 12,
   "total_events_discovered": 252,
   "total_events_discovered_strict": 252,
-  "total_events_enriched": 50,
+  "total_events_enriched": 82,
   "source": "firecrawl_listing",
-  "latest_discovered_event_date": "2026-11-24",
-  "latest_event_date": "2026-11-24",
-  "covers_horizon": false,
+  "latest_discovered_event_date": "2026-11-29",
+  "latest_event_date": "2026-11-29",
+  "covers_horizon": true,
   "horizon_grace_days": 1,
-  "events_with_date": 52,
+  "events_with_date": 84,
   "events_missing_date": 0,
   "date_coverage_rate": 1.0,
-  "coverage_warning": "SHORT_HORIZON(latest=2026-11-24, horizon=2026-11-30)",
+  "sitemap_jsonld_stats": {
+    "sitemap_urls": 560,
+    "candidate_urls": 240,
+    "checked": 24,
+    "limit": 240,
+    "initial_sample": 24,
+    "jsonld_pages": 0,
+    "events": 0,
+    "within_horizon": 0,
+    "past_or_beyond_horizon": 0,
+    "canceled": 0,
+    "invalid": 0,
+    "complete_scan": false,
+    "short_circuited_no_jsonld": true,
+    "covers_horizon": false,
+    "authoritative": false
+  },
   "map_expand_stats": {
     "preferred_urls": 252,
     "map_urls": 0,
     "html_urls": 252,
-    "new_urls": 249,
+    "new_urls": 250,
     "latest_discovered_date": "2026-11-24",
     "undated_discovery_stubs_dropped": 18
+  },
+  "sitemap_detail_expand_stats": {
+    "budget": 40,
+    "sitemap_urls": 560,
+    "scraped": 40,
+    "new_events": 28,
+    "missing_date_or_title": 5,
+    "today_or_past": 7,
+    "past_or_beyond_horizon": 0,
+    "duplicate_urls": 0,
+    "date_scout": {
+      "sitemap_urls": 560,
+      "candidate_urls": 560,
+      "checked": 560,
+      "dated_urls": 269,
+      "limit": 1000,
+      "first_date": "2026-05-20",
+      "latest_date": "2026-05-31"
+    },
+    "date_corrected_from_scout": 25,
+    "latest_date": "2026-11-29"
   }
 }
