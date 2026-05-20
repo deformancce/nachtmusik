@@ -1,0 +1,62 @@
+{
+  "scraped_at": "2026-05-20T06:18:13.943316Z",
+  "scrape_horizon_date": "2026-11-30",
+  "results": [
+    {
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "slug": "gewandhaus_leipzig",
+      "scraped_at": "2026-05-20T06:18:13.943201Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.gewandhausorchester.de/",
+      "best_event_urls": 6,
+      "best_last_date_seen": "2026-05-23",
+      "probes": [
+        {
+          "url": "https://www.gewandhausorchester.de/",
+          "error": null,
+          "raw_lines": 3262,
+          "event_urls": 6,
+          "unique_event_urls": 6,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-23",
+          "sample_urls": [
+            "https://www.gewandhausorchester.de/veranstaltung/tim-bendzko-9146/",
+            "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-9876/",
+            "https://www.gewandhausorchester.de/veranstaltung/mnozil-brass-9464/",
+            "https://www.gewandhausorchester.de/veranstaltung/motette-9801/",
+            "https://www.gewandhausorchester.de/veranstaltung/the-sound-of-epic-anime-9713/",
+            "https://www.gewandhausorchester.de/veranstaltung/motette-9852/"
+          ]
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/spielplan/",
+          "error": null,
+          "raw_lines": 3262,
+          "event_urls": 6,
+          "unique_event_urls": 6,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-23",
+          "sample_urls": [
+            "https://www.gewandhausorchester.de/veranstaltung/tim-bendzko-9146/",
+            "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-9876/",
+            "https://www.gewandhausorchester.de/veranstaltung/mnozil-brass-9464/",
+            "https://www.gewandhausorchester.de/veranstaltung/motette-9801/",
+            "https://www.gewandhausorchester.de/veranstaltung/the-sound-of-epic-anime-9713/",
+            "https://www.gewandhausorchester.de/veranstaltung/motette-9852/"
+          ]
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltungen/",
+          "error": null,
+          "raw_lines": 608,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": null,
+          "last_date_seen": null,
+          "sample_urls": []
+        }
+      ]
+    }
+  ]
+}
