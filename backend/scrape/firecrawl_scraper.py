@@ -26,6 +26,7 @@ import re
 import sys
 import calendar
 import time
+import unicodedata
 from datetime import datetime, date
 from pathlib import Path
 from typing import Optional
@@ -658,6 +659,7 @@ VENUE_OVERRIDES: dict[str, dict] = {
         # 60 lost half the events — raise so we capture the full season.
         "listing_target": 150,
         "force_url_expand": True,
+        "drop_unmatched_undated_discovery_stubs": True,
     },
     "gewandhaus_leipzig": {
         "actions": _gewandhaus_actions,
@@ -2221,6 +2223,22 @@ def _title_from_url(url: str) -> str:
     return raw.title() if raw else "Event"
 
 
+def _event_title_key(title: str | None) -> str:
+    """Loose title key for merging listing rows with URL-only stubs."""
+    raw = (title or "").lower()
+    raw = (
+        raw.replace("ä", "ae")
+        .replace("ö", "oe")
+        .replace("ü", "ue")
+        .replace("ß", "ss")
+    )
+    raw = unicodedata.normalize("NFKD", raw)
+    raw = "".join(ch for ch in raw if not unicodedata.combining(ch))
+    raw = re.sub(r"\b20\d{2}\b", " ", raw)
+    raw = re.sub(r"[^a-z0-9]+", " ", raw)
+    return re.sub(r"\s+", " ", raw).strip()
+
+
 def _date_from_dortmund_url(url: str) -> str | None:
     match = re.search(r"/(\d{2})-(\d{2})-(20\d{2})-", urlparse(url).path)
     if not match:
@@ -3005,9 +3023,41 @@ def _scrape_one(
     # Merge listing + discovered URL stubs, dedupe by detail_url, sort by date.
     if new_from_map:
         seen_urls = {_clean_url(e.get("detail_url")) for e in events if e.get("detail_url")}
+        listing_by_title: dict[str, dict] = {}
+        for existing in events:
+            key = _event_title_key(existing.get("title"))
+            if key and key not in listing_by_title:
+                listing_by_title[key] = existing
         for ev in new_from_map:
             clean = _clean_url(ev.get("detail_url"))
             if clean in seen_urls:
+                continue
+            title_match = listing_by_title.get(_event_title_key(ev.get("title")))
+            if title_match:
+                if not ev.get("date") and title_match.get("date"):
+                    ev["date"] = title_match.get("date")
+                    ev["time"] = ev.get("time") or title_match.get("time")
+                    ev["venue_hall"] = ev.get("venue_hall") or title_match.get("venue_hall")
+                if not title_match.get("detail_url") and clean:
+                    title_match["detail_url"] = clean
+                    title_match["program"] = title_match.get("program") or ev.get("program") or []
+                    title_match["performers"] = (
+                        title_match.get("performers") or ev.get("performers") or []
+                    )
+                    title_match["conductor"] = title_match.get("conductor") or ev.get("conductor")
+                    title_match["price"] = title_match.get("price") or ev.get("price")
+                    title_match["discovery_url_source"] = ev.get("discovery_source")
+                    _mark_enrichment_status(title_match)
+                    seen_urls.add(clean)
+                    continue
+            if (
+                venue_override.get("drop_unmatched_undated_discovery_stubs")
+                and ev.get("discovered_only")
+                and not ev.get("date")
+            ):
+                map_stats["undated_unmatched_stubs_dropped"] = (
+                    map_stats.get("undated_unmatched_stubs_dropped", 0) + 1
+                )
                 continue
             events.append(ev)
             seen_urls.add(clean)
