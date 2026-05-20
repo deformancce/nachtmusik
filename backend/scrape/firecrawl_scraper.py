@@ -711,7 +711,11 @@ VENUE_OVERRIDES: dict[str, dict] = {
         "drop_unmatched_undated_discovery_stubs": True,
     },
     "gewandhaus_leipzig": {
+        "listing_url": "https://www.gewandhausorchester.de/spielplan/",
         "actions": _gewandhaus_actions,
+        "detail_actions": lambda: _expand_read_more_actions(),
+        "listing_target": 150,
+        "force_url_expand": True,
         "wait_for_listing_count": 20,
     },
     "alte_oper_frankfurt": {
@@ -780,7 +784,7 @@ _EXPAND_READ_MORE_JS = """
     'weiterlesen',
     'mehr lesen'
   ];
-  const nodes = Array.from(document.querySelectorAll('button, [role="button"]'));
+  const nodes = Array.from(document.querySelectorAll('button, [role="button"], a'));
   let clicked = 0;
   for (const node of nodes) {
     const text = (node.innerText || node.textContent || node.getAttribute('aria-label') || '')
@@ -788,6 +792,14 @@ _EXPAND_READ_MORE_JS = """
       .trim()
       .toLowerCase();
     if (!text || !labels.some(label => text.includes(label))) continue;
+    if (node.tagName === 'A') {
+      const href = node.getAttribute('href') || '';
+      const abs = node.href || '';
+      const current = window.location.href.split('#')[0];
+      if (href && !href.startsWith('#') && !href.startsWith('javascript:') && abs.split('#')[0] !== current) {
+        continue;
+      }
+    }
     const rect = node.getBoundingClientRect();
     if (rect.width === 0 && rect.height === 0) continue;
     node.click();
