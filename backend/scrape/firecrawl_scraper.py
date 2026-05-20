@@ -775,12 +775,9 @@ _EXPAND_READ_MORE_JS = """
 (() => {
   const labels = [
     'weiterlesen',
-    'mehr lesen',
-    'mehr erfahren',
-    'read more',
-    'show more'
+    'mehr lesen'
   ];
-  const nodes = Array.from(document.querySelectorAll('button, a, [role="button"]'));
+  const nodes = Array.from(document.querySelectorAll('button, [role="button"]'));
   let clicked = 0;
   for (const node of nodes) {
     const text = (node.innerText || node.textContent || node.getAttribute('aria-label') || '')
