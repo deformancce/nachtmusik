@@ -1,0 +1,240 @@
+{
+  "scraped_at": "2026-05-20T12:35:11.189269Z",
+  "scrape_horizon_date": "2026-11-30",
+  "results": [
+    {
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "slug": "elbphilharmonie_hamburg",
+      "scraped_at": "2026-05-20T12:35:11.189101Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.elbphilharmonie.de/de/programm//KON/",
+      "best_event_urls": 14,
+      "best_last_date_seen": "2026-05-24",
+      "sitemap_event_urls": 1999,
+      "sample_sitemap_urls": [
+        "https://www.elbphilharmonie.de/de/programm/china-ncpa-orchestra-bruce-liu-myung-whun-chung/23031",
+        "https://www.elbphilharmonie.de/de/programm/seun-kuti-egypt-80/23780",
+        "https://www.elbphilharmonie.de/de/programm/noname/23781",
+        "https://www.elbphilharmonie.de/de/programm/kammerphilharmonie-hamburg-goktug-celik-julian-pontus-schirmer/23006",
+        "https://www.elbphilharmonie.de/de/programm/schleswig-holstein-festival-orchestra-midori-christoph-eschenbach/23400",
+        "https://www.elbphilharmonie.de/de/programm/jazz-now-navigating-a-changing-world/24094",
+        "https://www.elbphilharmonie.de/de/programm/fazl-say-klavierabend/23401",
+        "https://www.elbphilharmonie.de/de/programm/arctic-philharmonic-eldbjrg-hemsing-nicolo-foron/23027",
+        "https://www.elbphilharmonie.de/de/programm/mental-health-in-music/24060",
+        "https://www.elbphilharmonie.de/de/programm/concertgebouworkest-young-julia-hagen-elim-chan/23029",
+        "https://www.elbphilharmonie.de/de/programm/rufus-wainwright-dream-requiem/23025",
+        "https://www.elbphilharmonie.de/de/programm/kaan-bulak-hayali-sesler-traumklange/23409"
+      ],
+      "sitemap_detail_probes": [
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/china-ncpa-orchestra-bruce-liu-myung-whun-chung/23031",
+          "error": null,
+          "raw_lines": 975,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/rock-the-opera/22964",
+          "error": null,
+          "raw_lines": 696,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/kammerorchester-der-neuen-philharmonie-hamburg/23777",
+          "error": null,
+          "raw_lines": 724,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/tanya-tagaq-trio/23840",
+          "error": null,
+          "raw_lines": 965,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/das-verruckte-hexenkonzert/23838",
+          "error": null,
+          "raw_lines": 621,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/tovesco-trio/28251",
+          "error": null,
+          "raw_lines": 641,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-marek-janowski/27836",
+          "error": null,
+          "raw_lines": 792,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/ndr-kammerkonzert/28214",
+          "error": null,
+          "raw_lines": 612,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        }
+      ],
+      "sitemap_detail_date_hits": 0,
+      "sitemap_detail_llm_probes": [
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/china-ncpa-orchestra-bruce-liu-myung-whun-chung/23031",
+          "title": "China NCPA Orchestra / Liu / Chung",
+          "date": "2026-05-20",
+          "time": "20:00",
+          "program_count": 3,
+          "performer_count": 2,
+          "has_price": true
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/das-verruckte-hexenkonzert/23838",
+          "title": "Das verrückte Hexenkonzert",
+          "date": "2024-04-30",
+          "time": "14:30",
+          "program_count": 1,
+          "performer_count": 3,
+          "has_price": true
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/ndr-kammerkonzert/28214",
+          "title": null,
+          "date": null,
+          "time": null,
+          "program_count": 0,
+          "performer_count": 0,
+          "has_price": false
+        }
+      ],
+      "sitemap_detail_llm_date_hits": 2,
+      "probes": [
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/",
+          "error": null,
+          "raw_lines": 974,
+          "raw_preview": null,
+          "event_urls": 12,
+          "unique_event_urls": 12,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-22",
+          "sample_urls": [
+            "https://www.elbphilharmonie.de/de/programm/westermann-summit-2026/28420",
+            "https://www.elbphilharmonie.de/de/programm/landesjugendorchester-hamburg-ann-beth-solvang-johannes-witt/27407",
+            "https://www.elbphilharmonie.de/de/programm/hummelhirn/28199",
+            "https://www.elbphilharmonie.de/de/programm/huelgas-ensemble-paul-van-nevel/27532",
+            "https://www.elbphilharmonie.de/de/programm/les-hommes-du-swing/27744",
+            "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-leonidas-kavakos-matthias-pintscher/23309",
+            "https://www.elbphilharmonie.de/de/programm/steve-hackett/27438",
+            "https://www.elbphilharmonie.de/de/programm/hochschule-fur-musik-und-theater-hamburg/28284"
+          ]
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm//KON/",
+          "error": null,
+          "raw_lines": 1106,
+          "raw_preview": null,
+          "event_urls": 14,
+          "unique_event_urls": 14,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-24",
+          "sample_urls": [
+            "https://www.elbphilharmonie.de/de/programm/landesjugendorchester-hamburg-ann-beth-solvang-johannes-witt/27407",
+            "https://www.elbphilharmonie.de/de/programm/huelgas-ensemble-paul-van-nevel/27532",
+            "https://www.elbphilharmonie.de/de/programm/les-hommes-du-swing/27744",
+            "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-leonidas-kavakos-matthias-pintscher/23309",
+            "https://www.elbphilharmonie.de/de/programm/steve-hackett/27438",
+            "https://www.elbphilharmonie.de/de/programm/armoniosa-ensemble/28258",
+            "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-leonidas-kavakos-matthias-pintscher/23829",
+            "https://www.elbphilharmonie.de/de/programm/ndr-bigband-jihye-lee/28198"
+          ]
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm//KON/TICKETS/",
+          "error": null,
+          "raw_lines": 926,
+          "raw_preview": null,
+          "event_urls": 11,
+          "unique_event_urls": 11,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-24",
+          "sample_urls": [
+            "https://www.elbphilharmonie.de/de/programm/landesjugendorchester-hamburg-ann-beth-solvang-johannes-witt/27407",
+            "https://www.elbphilharmonie.de/de/programm/huelgas-ensemble-paul-van-nevel/27532",
+            "https://www.elbphilharmonie.de/de/programm/les-hommes-du-swing/27744",
+            "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-leonidas-kavakos-matthias-pintscher/23309",
+            "https://www.elbphilharmonie.de/de/programm/armoniosa-ensemble/28258",
+            "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-leonidas-kavakos-matthias-pintscher/23829",
+            "https://www.elbphilharmonie.de/de/programm/ndr-bigband-jihye-lee/28198",
+            "https://www.elbphilharmonie.de/de/programm/ghada-shbeir-francois-joubert-caillet/27534"
+          ]
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/EHH/KON/",
+          "error": null,
+          "raw_lines": 137,
+          "raw_preview": null,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": null,
+          "last_date_seen": null,
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/EHH/KON/TICKETS/",
+          "error": null,
+          "raw_lines": 137,
+          "raw_preview": null,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": null,
+          "last_date_seen": null,
+          "sample_urls": []
+        },
+        {
+          "url": "https://www.elbphilharmonie.de/de/programm/LHHH/TICKETS/",
+          "error": null,
+          "raw_lines": 934,
+          "raw_preview": null,
+          "event_urls": 11,
+          "unique_event_urls": 11,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-30",
+          "sample_urls": [
+            "https://www.elbphilharmonie.de/de/programm/landesjugendorchester-hamburg-ann-beth-solvang-johannes-witt/27407",
+            "https://www.elbphilharmonie.de/de/programm/les-hommes-du-swing/27744",
+            "https://www.elbphilharmonie.de/de/programm/hochschule-fur-musik-und-theater-hamburg/28284",
+            "https://www.elbphilharmonie.de/de/programm/matteo-lane/27410",
+            "https://www.elbphilharmonie.de/de/programm/gotz-alsmann-band/24340",
+            "https://www.elbphilharmonie.de/de/programm/neue-philharmonie-hamburg-hovhannes-baghdasaryan/28225",
+            "https://www.elbphilharmonie.de/de/programm/kateryna-titova-klavierabend/28034",
+            "https://www.elbphilharmonie.de/de/programm/lunchkonzert-der-symphoniker-hamburg/24078"
+          ]
+        }
+      ]
+    }
+  ]
+}
