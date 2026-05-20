@@ -3,7 +3,7 @@
   "city": "Berlin",
   "slug": "berliner_philharmonie",
   "source_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/",
-  "scraped_at": "2026-05-20T06:47:07.474020Z",
+  "scraped_at": "2026-05-20T07:06:11.690161Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
@@ -159,6 +159,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 130,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -187,9 +188,9 @@
       "title": "Berliner Philharmoniker",
       "venue_hall": "Großer Saal",
       "program": [
-        "Beethoven: Coriolan-Ouvertüre c-Moll op. 62",
-        "Beethoven: Konzert für Klavier und Orchester Nr. 5 Es-Dur op. 73",
-        "Schostakowitsch: Symphonie Nr. 5 d-Moll op. 47"
+        "Ludwig van Beethoven: Coriolan-Ouvertüre c-Moll op. 62",
+        "Ludwig van Beethoven: Konzert für Klavier und Orchester Nr. 5 Es-Dur op. 73",
+        "Dmitri Schostakowitsch: Symphonie Nr. 5 d-Moll op. 47"
       ],
       "performers": [
         "Berliner Philharmoniker",
@@ -203,6 +204,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 130,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -229,6 +231,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 130,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -279,6 +282,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 60,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -305,6 +309,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -315,9 +320,9 @@
       "title": "Berliner Philharmoniker",
       "venue_hall": "Großer Saal",
       "program": [
-        "Kapralová: Suite rustica op. 19",
-        "Suk: Fantasie für Violine und Orchester g-Moll op. 24",
-        "Martinů: Symphonie Nr. 1"
+        "Vítězslava Kaprálová: Suite rustica op. 19",
+        "Josef Suk: Fantasie für Violine und Orchester g-Moll op. 24",
+        "Bohuslav Martinů: Symphonie Nr. 1"
       ],
       "performers": [
         "Berliner Philharmoniker",
@@ -331,6 +336,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -393,6 +399,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -438,6 +445,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 70,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -518,6 +526,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 60,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -565,8 +574,8 @@
       "venue_hall": "Großer Saal",
       "program": [
         "Franz Schubert: Symphonie Nr. 3 D-Dur D 200",
-        "Bernd Richard Deutsch: _Intensity_ (Deutsche Erstaufführung)",
-        "Richard Strauss: _Der Rosenkavalier_: Orchestersuite zusammengestellt von Franz Welser-Möst"
+        "Bernd Richard Deutsch: Intensity (Deutsche Erstaufführung)",
+        "Richard Strauss: Der Rosenkavalier: Orchestersuite zusammengestellt von Franz Welser-Möst"
       ],
       "performers": [
         "Berliner Philharmoniker"
@@ -579,6 +588,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -622,6 +632,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -647,6 +658,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -712,6 +724,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 60,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -740,6 +753,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -750,7 +764,7 @@
       "title": "Berliner Philharmoniker",
       "venue_hall": "Großer Saal",
       "program": [
-        "Gabriela Ortiz: Revolución diamantina, Ballett für acht Stimmen und Orchester",
+        "Gabriela Ortiz: Revolución diamantina",
         "Ludwig van Beethoven: Symphonie Nr. 3 Es-Dur op. 55 »Eroica«"
       ],
       "performers": [
@@ -765,6 +779,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 130,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -775,7 +790,7 @@
       "title": "Berliner Philharmoniker",
       "venue_hall": "Großer Saal",
       "program": [
-        "Gabriela Ortiz: Revolución diamantina, Ballett für acht Stimmen und Orchester (Konzertfassung)",
+        "Gabriela Ortiz: Revolución diamantina",
         "Ludwig van Beethoven: Symphonie Nr. 3 Es-Dur op. 55 »Eroica«"
       ],
       "performers": [
@@ -790,6 +805,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 130,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -815,6 +831,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 130,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -862,6 +879,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 60,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1007,6 +1025,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 140,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1052,6 +1071,7 @@
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1062,16 +1082,23 @@
       "title": "Lunchkonzert",
       "venue_hall": "Foyer Großer Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Mitglieder der Berliner Philharmoniker",
+        "Karajan-Akademie",
+        "Gäste des Deutschen Symphonie-Orchesters",
+        "Staatskapelle Berlin",
+        "Berliner Musikhochschulen"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "freier Eintritt",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/56998/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 60,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1097,17 +1124,25 @@
       "time": "18:00",
       "title": "Quartett der Kritiker",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Schumann: Konzert für Violine und Orchester d-Moll op. 129"
+      ],
+      "performers": [
+        "Kai Luehrs-Kaiser (Freier Musikpublizist)",
+        "Yvonne Petitpierre (Freier Musikpublizist)",
+        "Elisabeth Richter (Freier Musikpublizist)",
+        "Michael Stegemann (Musikwissenschaftler)"
+      ],
+      "conductor": "Olaf Wilhelmer",
+      "price": "Eintritt frei",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57210/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 90,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1115,17 +1150,25 @@
       "time": "20:00",
       "title": "Freiburger Barockorchester",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Robert Schumann: Genoveva op. 81: Ouvertüre",
+        "Robert Schumann: Konzert für Violine und Orchester d-Moll",
+        "Robert Schumann: Symphonie Nr. 2 C-Dur op. 61"
+      ],
+      "performers": [
+        "Freiburger Barockorchester",
+        "Isabelle Faust"
+      ],
+      "conductor": "Sir Simon Rattle",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57002/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 100,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1133,17 +1176,25 @@
       "time": "19:00",
       "title": "WDR Sinfonieorchester Köln",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Nante: Eine feste Burg über den Choral BWV 302 von Johann Sebastian Bach",
+        "Loriod: La Sainte Face für Sopran und Orchester",
+        "Mendelssohn Bartholdy: Symphonie Nr. 5 d-Moll op. 107 »Reformationssymphonie«"
+      ],
+      "performers": [
+        "WDR Sinfonieorchester Köln",
+        "Sarah Aristidou"
+      ],
+      "conductor": "Kent Nagano",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57003/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 100,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1151,17 +1202,26 @@
       "time": "21:00",
       "title": "RIAS Kammerchor",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Henze: Notturno, Serenade für Blasinstrumente, Kontrabass und Klavier",
+        "Henze: Musen Siziliens, Konzert für Chor, zwei Klaviere, Bläser und Pauken auf Eklogen-Fragmente des Vergil",
+        "Brahms: Liebeslieder-Walzer für Gesang und Klavier zu vier Händen op. 52"
+      ],
+      "performers": [
+        "RIAS Kammerchor",
+        "Instrumentalist*innen der Jungen Deutschen Philharmonie",
+        "GrauSchumacher Piano Duo: Andreas Grau",
+        "Götz Schumacher"
+      ],
+      "conductor": "Gregor Meyer",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57211/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1205,17 +1265,24 @@
       "time": "20:00",
       "title": "London Symphony Orchestra",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Gubaidulina: Konzert für Viola und Orchester",
+        "Bruckner: Symphonie Nr. 9 d-Moll"
+      ],
+      "performers": [
+        "London Symphony Orchestra",
+        "Eivind Ringstad"
+      ],
+      "conductor": "Sir Antonio Pappano",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57005/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 120,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1241,17 +1308,24 @@
       "time": "20:00",
       "title": "NDR Elbphilharmonie Orchester",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Henze: Tristan, Préludes für Klavier, Tonbänder und Orchester",
+        "Brahms: Symphonie Nr. 1 c-Moll op. 68"
+      ],
+      "performers": [
+        "NDR Elbphilharmonie Orchester",
+        "Tamara Stefanovich"
+      ],
+      "conductor": "Alan Gilbert",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57006/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 110,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1259,17 +1333,28 @@
       "time": "19:00",
       "title": "Orchester der Deutschen Oper Berlin",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Karlheinz Stockhausen: Donnerstag aus Licht: 2. Akt Michaels Reise um die Erde",
+        "John Cage: 4' 33''",
+        "Richard Wagner: Parsifal: 3. Akt (Auszüge)"
+      ],
+      "performers": [
+        "Orchester der Deutschen Oper Berlin",
+        "Attilio Glaser",
+        "Tareq Nazmi",
+        "Paul Hübner",
+        "Paula Breland",
+        "Paul Jeukendrup"
+      ],
+      "conductor": "Titus Engel",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57213/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1277,17 +1362,23 @@
       "time": "20:00",
       "title": "Staatskapelle Berlin",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Mozart: Konzert für Klavier und Orchester Nr. 21 C-Dur KV 467",
+        "Bruckner: Symphonie Nr. 4 Es-Dur »Romantische« (2. Fassung von 1878/1880)"
+      ],
+      "performers": [
+        "Staatskapelle Berlin",
+        "Rudolf Buchbinder"
+      ],
+      "conductor": "Christian Thielemann",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57212/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1296,16 +1387,23 @@
       "title": "Lunchkonzert",
       "venue_hall": "Foyer Großer Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Mitglieder der Berliner Philharmoniker",
+        "Mitglieder der Karajan-Akademie",
+        "Gäste des Deutschen Symphonie-Orchesters",
+        "Staatskapelle Berlin",
+        "Berliner Musikhochschulen"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "freier Eintritt",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57008/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 60,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1313,17 +1411,24 @@
       "time": "20:00",
       "title": "Wiener Philharmoniker",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Dvořák: Konzert für Violine und Orchester a-Moll op. 53",
+        "Prokofjew: Romeo und Julia op. 64: Auszüge"
+      ],
+      "performers": [
+        "Wiener Philharmoniker",
+        "Hilary Hahn"
+      ],
+      "conductor": "Tugan Sokhiev",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57009/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 100,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1385,17 +1490,29 @@
       "time": "11:00",
       "title": "Orgelmatinee",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
+      "program": [
+        "Borodin: Fürst Igor: Polowetzer Tänze (Bearbeitung für Orgel von Shin-Young Lee)",
+        "Liszt: Trois Études de concert: Nr. 3 Un sospiro (Bearbeitung für Orgel und Harfe von Marco-Enrico Bossi)",
+        "Händel: Cembalosuite Nr. 7 g-Moll HWV 432: 6. Satz Passacaglia (Bearbeitung für Orgel von Shin-Young Lee)",
+        "Händel: Orgelkonzert op. 4 Nr. 6 B-Dur HWV 294 (Bearbeitung für Harfe und Orgel mit einer Kadenz von Marcel Grandjany)",
+        "Saint-Saëns: Samson et Dalila: „Mon cœur sʼouvre à ta voix“ (Bearbeitung für Orgel von Shin-Young Lee)",
+        "Mahler: Symphonie Nr. 5: Adagietto (Bearbeitung für Orgel und Harfe von Joachim Dorfmüller)",
+        "Vierne: Carillon de Westminster op. 54 Nr. 6"
+      ],
+      "performers": [
+        "Shin-Young Lee",
+        "Marie-Pierre Langlamet"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "25 €",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57011/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 90,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1421,17 +1538,27 @@
       "time": "20:00",
       "title": "Rundfunk-Sinfonieorchester Berlin",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Edison Denissow: Peinture",
+        "Anatol Vieru: Symphonie Nr. 2",
+        "Sergej Rachmaninow: Die Glocken (Kolokola) für Soli, Chor und Orchester op. 35"
+      ],
+      "performers": [
+        "Rundfunk-Sinfonieorchester Berlin",
+        "Galina Cheplakova",
+        "Anton Rositskiy",
+        "Vladislav Sulimsky",
+        "Rundfunkchor Berlin"
+      ],
+      "conductor": "Vladimir Jurowski",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57214/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1460,14 +1587,15 @@
       "program": [],
       "performers": [],
       "conductor": null,
-      "price": null,
+      "price": "Eintritt frei",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57014/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 60,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1475,17 +1603,25 @@
       "time": "20:00",
       "title": "Deutsches Symphonie-Orchester Berlin",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Benjamin Britten: Peter Grimes op. 33a: Four Sea Interludes",
+        "Gustav Mahler: Symphonie Nr. 10: 1. Satz Adagio",
+        "Liza Lim: Annunciation Triptych: 1. Sappho/Bioluminescence",
+        "Ludwig van Beethoven: Konzert für Klavier und Orchester Nr. 5 Es-Dur op. 73"
+      ],
+      "performers": [
+        "Deutsches Symphonie-Orchester Berlin",
+        "Francesco Piemontesi"
+      ],
+      "conductor": "Simone Young",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57215/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1493,17 +1629,26 @@
       "time": "20:00",
       "title": "Berliner Philharmoniker",
       "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Manuel de Falla: El sombrero de tres picos (Der Dreispitz), Ballettmusik",
+        "Cathy Milliken: why feather yellow, Konzert für Englischhorn und Orchester (Uraufführung)",
+        "Leoš Janáček: Taras Bulba, Rhapsodie für Orchester"
+      ],
+      "performers": [
+        "Rinat Shaham",
+        "Dominik Wollenweber",
+        "Berliner Philharmoniker"
+      ],
+      "conductor": "Sir Simon Rattle",
+      "price": "28 bis 89 €",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57015/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 105,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1511,17 +1656,26 @@
       "time": "19:00",
       "title": "Ensemble Modern",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Clara Iannotta: They left us grief-trees wailing at the wall",
+        "Clara Iannotta: echo from afar (ii)",
+        "Márton Illés: von mund zu mund"
+      ],
+      "performers": [
+        "Ensemble Modern",
+        "Neue Vocalsolisten Stuttgart",
+        "SWR Experimentalstudio"
+      ],
+      "conductor": "Michael Wendeberg",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57016/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 150,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1529,17 +1683,27 @@
       "time": "20:00",
       "title": "Berliner Philharmoniker",
       "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Manuel de Falla: El sombrero de tres picos (Der Dreispitz), Ballettmusik",
+        "Cathy Milliken: why feather yellow, Konzert für Englischhorn und Orchester (Uraufführung)",
+        "Leoš Janáček: Taras Bulba, Rhapsodie für Orchester"
+      ],
+      "performers": [
+        "Berliner Philharmoniker",
+        "Sir Simon Rattle",
+        "Rinat Shaham",
+        "Dominik Wollenweber"
+      ],
+      "conductor": "Sir Simon Rattle",
+      "price": "28 bis 89 €",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57015/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 105,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1547,17 +1711,29 @@
       "time": "17:00",
       "title": "Chor der Deutschen Oper Berlin",
       "venue_hall": "**Musikfest Berlin**",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Karlheinz Stockhausen: Mittwoch aus Licht"
+      ],
+      "performers": [
+        "Chor der Deutschen Oper Berlin",
+        "Streichquartett aus dem Orchester der Deutschen Oper Berlin",
+        "Ensemble Le Balcon Chor",
+        "Ensemble Le Balcon Musiker*innen",
+        "Tarren Johnson",
+        "Marie Groothof",
+        "Dominic Santia",
+        "Ixchel Mendoza",
+        "Laurie Young"
+      ],
+      "conductor": "Maxime Pascal",
       "price": null,
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57216/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1583,17 +1759,27 @@
       "time": "19:00",
       "title": "Berliner Philharmoniker",
       "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Manuel de Falla: El sombrero de tres picos (Der Dreispitz), Ballettmusik",
+        "Cathy Milliken: why feather yellow, Konzert für Englischhorn und Orchester (Uraufführung)",
+        "Leoš Janáček: Taras Bulba, Rhapsodie für Orchester"
+      ],
+      "performers": [
+        "Berliner Philharmoniker",
+        "Sir Simon Rattle",
+        "Rinat Shaham",
+        "Dominik Wollenweber"
+      ],
+      "conductor": "Sir Simon Rattle",
+      "price": "28 bis 89 €",
       "detail_url": "https://www.berliner-philharmoniker.de/konzerte/kalender/57015/",
       "venue": "Berliner Philharmonie",
       "city": "Berlin",
       "discovery_source": "berliner_philharmonie_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "duration_min": 105,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     }
   ],
@@ -1601,7 +1787,7 @@
   "total_events_visible": 76,
   "total_events_discovered": 76,
   "total_events_discovered_strict": 76,
-  "total_events_enriched": 25,
+  "total_events_enriched": 45,
   "source": "berliner_philharmonie_listing",
   "latest_event_date": "2026-09-19",
   "latest_discovered_event_date": "2026-09-19",

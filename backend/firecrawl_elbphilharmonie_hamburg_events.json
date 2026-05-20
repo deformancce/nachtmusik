@@ -3,81 +3,15 @@
   "city": "Hamburg",
   "slug": "elbphilharmonie_hamburg",
   "source_url": "https://www.elbphilharmonie.de/de/programm/",
-  "scraped_at": "2026-05-19T14:15:34.731440Z",
+  "scraped_at": "2026-05-20T07:10:22.265410Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
     {
-      "date": "2026-05-19",
-      "time": "19:30",
-      "title": "Schumann Quartett",
-      "venue_hall": "Kleiner Saal",
-      "program": [
-        "Haydn: Streichquartett D-Dur",
-        "Henze: Streichquartett Nr. 5",
-        "Beethoven: Streichquartett F-Dur"
-      ],
-      "performers": [
-        "Schumann Quartett"
-      ],
-      "conductor": null,
-      "price": "ab € 37",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/schumann-quartett/23440",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-19",
-      "time": "20:00",
-      "title": "Marc Uwe Kling",
-      "title_inferred": true,
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Kling: Neues vom Känguru"
-      ],
-      "performers": [
-        "Marc-Uwe Kling"
-      ],
-      "conductor": null,
-      "price": "Tickets ab € 30,21",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/marc-uwe-kling/24109",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "url_discovery",
-      "discovered_only": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "reused_enrichment": true,
-      "is_classical": false
-    },
-    {
-      "date": "2026-05-20",
-      "time": "14:00",
-      "title": "Westermann Summit 2026",
-      "venue_hall": "Kleiner Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/westermann-summit-2026/28420",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
-      "is_classical": true
-    },
-    {
       "date": "2026-05-20",
       "time": "19:30",
       "title": "Landesjugendorchester Hamburg / Ann-Beth Solvang / Johannes Witt",
-      "venue_hall": "Großer Saal",
+      "venue_hall": "Laeiszhalle",
       "program": [
         "Frühjahrskonzert"
       ],
@@ -91,59 +25,8 @@
       "detail_url": "https://www.elbphilharmonie.de/de/programm/landesjugendorchester-hamburg-ann-beth-solvang-johannes-witt/27407",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "discovery_source": "firecrawl_listing",
+      "discovery_source": "elbphilharmonie_listing",
       "discovered_only": false,
-      "reused_enrichment": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-20",
-      "time": "20:00",
-      "title": "»Hummelhirn«",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Judith Holofernes: Lesung",
-        "Nora Tschirner: Lesung"
-      ],
-      "performers": [
-        "Judith Holofernes",
-        "Nora Tschirner"
-      ],
-      "conductor": null,
-      "price": "€ 25",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/hummelhirn/28199",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "duration_min": 120,
-      "reused_enrichment": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": false
-    },
-    {
-      "date": "2026-05-21",
-      "time": "18:00",
-      "title": "Huelgas Ensemble / Paul Van Nevel",
-      "venue_hall": "Studio E",
-      "program": [
-        "Werke von Orlando di Lasso, Guillaume Dufay, Giovanni Gabrieli u.a."
-      ],
-      "performers": [
-        "Huelgas Ensemble",
-        "Paul Van Nevel"
-      ],
-      "conductor": "Paul Van Nevel",
-      "price": "ab € 13",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/huelgas-ensemble-paul-van-nevel/27532",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "duration_min": 135,
       "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -152,9 +35,8 @@
     {
       "date": "2026-05-21",
       "time": "18:00",
-      "title": "Les Hommes Du Swing",
-      "title_inferred": true,
-      "venue_hall": "Studio E",
+      "title": "Les Hommes du Swing",
+      "venue_hall": "Laeiszhalle",
       "program": [],
       "performers": [
         "Jordan Rodin",
@@ -167,36 +49,10 @@
       "detail_url": "https://www.elbphilharmonie.de/de/programm/les-hommes-du-swing/27744",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "discovery_source": "url_discovery",
-      "discovered_only": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
+      "discovery_source": "elbphilharmonie_listing",
+      "discovered_only": false,
       "duration_min": 60,
       "reused_enrichment": true,
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-21",
-      "time": "20:00",
-      "title": "NDR Elbphilharmonie Orchester / Leonidas Kavakos / Matthias Pintscher",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Wagner: Siegfried-Idyll",
-        "Szymanowski: Violinkonzert Nr. 2",
-        "Henze: Sinfonie Nr. 7"
-      ],
-      "performers": [
-        "NDR Elbphilharmonie Orchester",
-        "Leonidas Kavakos",
-        "Matthias Pintscher"
-      ],
-      "conductor": null,
-      "price": "ab € 79",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-leonidas-kavakos-matthias-pintscher/23309",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -204,53 +60,7 @@
     {
       "date": "2026-05-21",
       "time": "20:00",
-      "title": "Steve Hackett",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Genesis: Nursery Cryme",
-        "Genesis: Wind And Wuthering"
-      ],
-      "performers": [
-        "Steve Hackett"
-      ],
-      "conductor": null,
-      "price": "Derzeit keine Tickets verfügbar",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/steve-hackett/27438",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "reused_enrichment": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": false
-    },
-    {
-      "date": null,
-      "time": "20:00",
-      "title": "Hochschule Fur Musik Und Theater Hamburg",
-      "title_inferred": true,
-      "venue_hall": "Laeiszhalle",
-      "program": [],
-      "performers": [
-        "Wen-Ting Ho"
-      ],
-      "conductor": null,
-      "price": "Eintritt frei",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/hochschule-fur-musik-und-theater-hamburg/28286",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "url_discovery",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": null,
-      "time": "20:00",
-      "title": "Hochschule Fur Musik Und Theater Hamburg",
-      "title_inferred": true,
+      "title": "Hochschule für Musik und Theater Hamburg",
       "venue_hall": "Laeiszhalle",
       "program": [],
       "performers": [
@@ -261,8 +71,218 @@
       "detail_url": "https://www.elbphilharmonie.de/de/programm/hochschule-fur-musik-und-theater-hamburg/28284",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "discovery_source": "url_discovery",
+      "discovery_source": "elbphilharmonie_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-22",
+      "time": "20:00",
+      "title": "Matteo Lane",
+      "venue_hall": "Laeiszhalle",
+      "program": [
+        "Matteo Lane: We Gotta Catch Up!"
+      ],
+      "performers": [
+        "Matteo Lane"
+      ],
+      "conductor": null,
+      "price": "ab €54,60",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/matteo-lane/27410",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "elbphilharmonie_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-24",
+      "time": "20:00",
+      "title": "Götz Alsmann & Band",
+      "venue_hall": "Laeiszhalle",
+      "program": [
+        "Alsmann: ... bei Nacht ..."
+      ],
+      "performers": [
+        "Götz Alsmann"
+      ],
+      "conductor": null,
+      "price": "ab €32,65",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/gotz-alsmann-band/24340",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "elbphilharmonie_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-24",
+      "time": "20:00",
+      "title": "Neue Philharmonie Hamburg / Hovhannes Baghdasaryan",
+      "venue_hall": "Laeiszhalle",
+      "program": [
+        "Vivaldi: Le quattro stagioni op. 8"
+      ],
+      "performers": [
+        "Hovhannes Baghdasaryan: Violine",
+        "Kammerorchester der Neuen Philharmonie Hamburg"
+      ],
+      "conductor": null,
+      "price": "ab €12,35",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/neue-philharmonie-hamburg-hovhannes-baghdasaryan/28225",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "elbphilharmonie_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-25",
+      "time": "18:00",
+      "title": "Kateryna Titova / Klavierabend",
+      "venue_hall": "Laeiszhalle",
+      "program": [
+        "Bach: Präludium und Fuge C-Dur BWV 870",
+        "Bach: Präludium und Fuge c-Moll BWV 871",
+        "C. P. E. Bach: Rondo c-Moll Wq 59",
+        "Bach, Liszt: Variationen über das Motiv von »Weinen, Klagen, Sorgen, Zagen« S 180",
+        "Bach: Ich ruf’ zu dir, Herr Jesu Christ BWV 639",
+        "J. C. Bach: Sonate A-Dur op. 17/5",
+        "Bach: Air aus: Orchestersuite Nr. 3 D-Dur BWV 1068",
+        "Bach: Präludium und Fuge g-Moll BWV 885",
+        "Bach: Sonate für Flöte und Cembalo Es-Dur BWV 1031",
+        "Bach: Schafe können sicher weiden BWV 208",
+        "Bach: Präludium aus: Partita Nr. 1 B-Dur BWV 825",
+        "Bach: Gigue aus: Partita Nr. 1 B-Dur BWV 825",
+        "Bach: Toccata e-Moll BWV 914",
+        "Bach: Gavotte aus: Partita für Violine solo Nr. 3 E-Dur BWV 1006"
+      ],
+      "performers": [
+        "Kateryna Titova"
+      ],
+      "conductor": null,
+      "price": "€16,75",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/kateryna-titova-klavierabend/28034",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "elbphilharmonie_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-26",
+      "time": "12:30",
+      "title": "Lunchkonzert der Symphoniker Hamburg",
+      "venue_hall": "Laeiszhalle",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "Eintritt frei",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/lunchkonzert-der-symphoniker-hamburg/24078",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "elbphilharmonie_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-27",
+      "time": "19:00",
+      "title": "Pianissimo Festival 2026: George Harliono",
+      "venue_hall": "Laeiszhalle",
+      "program": [
+        "Bach / Busoni: Chaconne / aus: Partita Nr. 2 d-Moll BWV 1004",
+        "Liszt: Étude Des-Dur »Un sospiro« / aus: Trois Études de concert S 144",
+        "Liszt: Liebesträume Nr. 3 / Drei Notturnos S 541",
+        "Liszt: Erster Mephisto-Walzer S 514 »Der Tanz in der Dorfschenke«",
+        "Chopin: Nocturne c-Moll op. 48/1",
+        "Glinka, Balakirew: Die Lerche",
+        "Balakirew: Islamej / Orientalische Fantasie"
+      ],
+      "performers": [
+        "George Harliono"
+      ],
+      "conductor": null,
+      "price": "ab €34",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/pianissimo-festival-2026-george-harliono/28234",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "elbphilharmonie_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-29",
+      "time": "19:30",
+      "title": "Klassikphilharmonie Hamburg",
+      "venue_hall": "Laeiszhalle",
+      "program": [
+        "Richard Strauss: Sonnenaufgang aus: Also sprach Zarathustra op. 30 / aus der Filmmusik zu »2001 – Odyssee im Weltraum«",
+        "Ernest Gold: Exodus-Thema / aus der Filmmusik zu »Exodus«",
+        "Craig Armstrong: Suite / aus der Filmmusik zu »Tatsächlich ... Liebe«",
+        "Michael Giacchino: Sinfonische Suite / aus der Filmmusik zu »Star Trek Into Darkness«",
+        "Nino Rota: Liebesthema / aus der Filmmusik zu »Der Pate«",
+        "Charles Chaplin / Aldo Forte: Ein Porträt von Charlie Chaplin",
+        "Alain Silvestri: Suite / aus der Filmmusik zu »Zurück in die Zukunft«",
+        "John Williams: Main Title aus der Filmmusik zu »Der Weiße Hai«",
+        "John Barry: Musik zum Film »Out of Africa«",
+        "Jerry Goldsmith: The Parachutes / aus der Filmmusik zu »Air Force One«",
+        "Hans Zimmer: Chevaliers De Sangreal / aus der Filmmusik zu »The Da Vinci Code«",
+        "James Horner: Suite / aus der Filmmusik zu »Titanic«",
+        "Ennio Morricone: Cinema Paradiso",
+        "John Williams: Musik zum Film »Jäger des Verlorenen Schatzes« / Regie: Steven Spielberg, US 1981"
+      ],
+      "performers": [
+        "KlassikPhilharmonie Hamburg",
+        "Marek Pavelec"
+      ],
+      "conductor": "Russell Harris",
+      "price": "€ 59,11",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/klassikphilharmonie-hamburg/24170",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "elbphilharmonie_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-30",
+      "time": "20:00",
+      "title": "Albert Schweitzer Jugendorchester / Levi Schechtmann / Sebastian Beckedorf",
+      "venue_hall": "Laeiszhalle",
+      "program": [
+        "Rachmaninow: Konzert für Klavier und Orchester Nr. 2 c-Moll op. 18",
+        "Dvořák: Sinfonie Nr. 8 G-Dur op. 88"
+      ],
+      "performers": [
+        "Albert Schweitzer Jugendorchester",
+        "Levi Schechtmann"
+      ],
+      "conductor": "Sebastian Beckedorf",
+      "price": "ab €18",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/albert-schweitzer-jugendorchester-levi-schechtmann-sebastian-beckedorf/27516",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "elbphilharmonie_listing",
+      "discovered_only": false,
+      "duration_min": 120,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -272,16 +292,21 @@
   "total_events_visible": 11,
   "total_events_discovered": 11,
   "total_events_discovered_strict": 11,
-  "total_events_enriched": 10,
-  "source": "firecrawl_listing",
-  "latest_discovered_event_date": "2026-05-21",
-  "latest_event_date": "2026-05-21",
+  "total_events_enriched": 11,
+  "source": "elbphilharmonie_listing",
+  "latest_discovered_event_date": "2026-05-30",
+  "latest_event_date": "2026-05-30",
   "covers_horizon": false,
+  "horizon_grace_days": 1,
+  "events_with_date": 11,
+  "events_missing_date": 0,
+  "date_coverage_rate": 1.0,
+  "coverage_warning": "SHORT_HORIZON(latest=2026-05-30, horizon=2026-11-30)",
   "map_expand_stats": {
     "preferred_urls": 11,
     "map_urls": 0,
     "html_urls": 11,
-    "new_urls": 4,
-    "latest_discovered_date": "2026-05-21"
+    "new_urls": 0,
+    "latest_discovered_date": "2026-05-30"
   }
 }
