@@ -3,15 +3,15 @@
   "city": "Hamburg",
   "slug": "elbphilharmonie_hamburg",
   "source_url": "https://www.elbphilharmonie.de/de/programm/",
-  "scraped_at": "2026-05-20T12:08:29.455986Z",
+  "scraped_at": "2026-05-20T12:14:36.577233Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
     {
       "date": "2026-05-20",
       "time": "11:00",
-      "title": "10 Jahre Bundesärztephilharmonie – Mahler: Sinfonie Nr. 9",
-      "venue_hall": "Elbphilharmonie Hamburg",
+      "title": "10 Jahre Bundesärztephilharmonie",
+      "venue_hall": "Elbphilharmonie",
       "program": [
         "Mahler: Sinfonie Nr. 9"
       ],
@@ -35,7 +35,7 @@
       "title": "Alles gesagt? Live mit Scott Galloway",
       "venue_hall": "Elbphilharmonie",
       "program": [
-        "Galloway: Alles gesagt?"
+        "Galloway: Live Podcast Alles gesagt?"
       ],
       "performers": [
         "Scott Galloway",
@@ -51,25 +51,24 @@
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-05-20",
-      "time": "18:00",
-      "title": "An die Regler, fertig los!",
+      "time": "19:00",
+      "title": "Schwarmintelligenz - Das Quiz",
       "venue_hall": "Elbphilharmonie",
-      "program": [
-        "Workshop: Kreativ Modular Synthesizer"
-      ],
+      "program": [],
       "performers": [
-        "HamburgMusik"
+        "Jan Merseburger",
+        "Max Dietrich"
       ],
       "conductor": null,
-      "price": "€ 12",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/workshop-kreativ-modular-synthesizer/27716",
+      "price": "€ 352",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/schwarmintelligenz-das-quiz/24358",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "duration_min": 180,
+      "duration_min": 130,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
@@ -97,6 +96,32 @@
       "discovery_source": "elbphilharmonie_listing",
       "discovered_only": false,
       "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-20",
+      "time": "19:30",
+      "title": "Viviane Hagner, Matthias Schorn, Alexey Stadler, Adam Golka",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Mieczysław Weinberg: Klaviertrio a-Moll op. 24",
+        "Olivier Messiaen: Quatuor pour la fin du temps"
+      ],
+      "performers": [
+        "Matthias Schorn",
+        "Viviane Hagner",
+        "Alexey Stadler",
+        "Adam Golka"
+      ],
+      "conductor": null,
+      "price": "ab € 15",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/viviane-hagner-matthias-schorn-alexey-stadler-adam-golka/27999",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -132,7 +157,7 @@
     {
       "date": "2026-05-20",
       "time": "20:00",
-      "title": "China NCPA Orchestra / Bruce Liu / Myung-Whun Chung",
+      "title": "China NCPA Orchestra / Liu / Chung",
       "venue_hall": "Elbphilharmonie",
       "program": [
         "Qigang Chen: Wu Xing (Die fünf Elemente)",
@@ -420,10 +445,10 @@
       "is_classical": true
     },
     {
-      "date": "2026-11-12",
+      "date": "2026-11-20",
       "time": "19:00",
-      "title": "Érard-Nacht",
-      "venue_hall": "Elbphilharmonie",
+      "title": "Érard Nacht",
+      "venue_hall": "Großer Saal",
       "program": [
         "Brahms: Sonate für Violine und Klavier A-Dur op. 100",
         "Chopin: Nocturne c-Moll op. 48/1",
@@ -445,7 +470,7 @@
         "Eberhard Hasenfratz"
       ],
       "conductor": null,
-      "price": "ab €19",
+      "price": "ab € 19",
       "detail_url": "https://www.elbphilharmonie.de/de/programm/10-erard-festival/27869",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
@@ -456,49 +481,26 @@
       "is_classical": true
     },
     {
-      "date": "2026-11-30",
-      "time": "19:30",
-      "title": "Konzert mit Viviane Hagner, Matthias Schorn, Alexey Stadler und Adam Golka",
-      "venue_hall": "Kleiner Saal",
-      "program": [
-        "Mieczysław Weinberg: Klaviertrio a-Moll op. 24",
-        "Olivier Messiaen: Quatuor pour la fin du temps"
-      ],
-      "performers": [
-        "Matthias Schorn",
-        "Viviane Hagner",
-        "Alexey Stadler",
-        "Adam Golka"
-      ],
-      "conductor": null,
-      "price": "€ 15",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/viviane-hagner-matthias-schorn-alexey-stadler-adam-golka/27999",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-11-30",
+      "date": "2026-11-20",
       "time": "20:00",
-      "title": "Lars Eidinger: Hauspostille",
-      "venue_hall": "Elbphilharmonie",
+      "title": "Ivo Pogorelich & Solistenquartett der Staatskapelle Berlin",
+      "venue_hall": "Elbphilharmonie Hamburg",
       "program": [
-        "Brecht: Hauspostille"
+        "Chopin: Konzert für Klavier und Orchester Nr. 1 e-Moll op. 11",
+        "Chopin: Konzert für Klavier und Orchester Nr. 2 f-Moll op. 21"
       ],
       "performers": [
-        "Lars Eidinger",
-        "Hans Jörn Brandenburg"
+        "Jiyoon Lee",
+        "Krzysztof Specjal",
+        "Yulia Deyneka",
+        "Claudius Popp",
+        "Ivo Pogorelich"
       ],
       "conductor": null,
-      "price": "ab €47,25",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/lars-eidinger/24308",
+      "price": "ab €39",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/ivo-pogorelich-solistenquartett-der-staatskapelle-berlin/27764",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "duration_min": 90,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
@@ -506,11 +508,13 @@
       "is_classical": true
     },
     {
-      "date": "null",
+      "date": "2026-11-30",
       "time": "19:00",
       "title": "Freundschaft Minus",
-      "venue_hall": "Laeiszhalle",
-      "program": [],
+      "venue_hall": "Elbphilharmonie Hamburg",
+      "program": [
+        "Freundschaft Minus: Live & Unfiltered"
+      ],
       "performers": [
         "Paula Döringer",
         "Jan Kraume"
@@ -537,9 +541,9 @@
   "latest_event_date": "2026-11-30",
   "covers_horizon": true,
   "horizon_grace_days": 1,
-  "events_with_date": 19,
-  "events_missing_date": 1,
-  "date_coverage_rate": 0.95,
+  "events_with_date": 20,
+  "events_missing_date": 0,
+  "date_coverage_rate": 1.0,
   "map_expand_stats": {
     "preferred_urls": 11,
     "map_urls": 0,
