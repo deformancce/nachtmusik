@@ -3037,6 +3037,79 @@ def _detail_to_event(detail: dict, url: str, venue: dict) -> dict | None:
     return ev
 
 
+def _discover_sitemap_detail_events(
+    app,
+    venue: dict,
+    existing_events: list[dict],
+    horizon_date: str,
+    budget: int,
+) -> tuple[list[dict], dict]:
+    stats = {
+        "budget": max(budget, 0),
+        "sitemap_urls": 0,
+        "scraped": 0,
+        "new_events": 0,
+        "missing_date_or_title": 0,
+        "past_or_beyond_horizon": 0,
+        "duplicate_urls": 0,
+    }
+    if budget <= 0:
+        return [], stats
+
+    sitemap_urls = _discover_sitemap_event_urls(venue)
+    stats["sitemap_urls"] = len(sitemap_urls)
+    if not sitemap_urls:
+        return [], stats
+
+    known = {
+        _clean_url(event.get("detail_url"))
+        for event in existing_events
+        if _clean_url(event.get("detail_url"))
+    }
+    candidate_urls = [
+        url for url in sitemap_urls
+        if _clean_url(url) and _clean_url(url) not in known
+    ]
+    stats["duplicate_urls"] = len(sitemap_urls) - len(candidate_urls)
+    sampled_urls = _sample_evenly(candidate_urls, budget)
+    out: list[dict] = []
+    seen_new: set[str] = set()
+    print(
+        f"    phase 1d: sitemap detail discovery "
+        f"({len(sampled_urls)}/{len(candidate_urls)} candidate URLs) ...",
+        flush=True,
+    )
+    for index, detail_url in enumerate(sampled_urls, start=1):
+        clean = _clean_url(detail_url)
+        print(f"    [sitemap {index}/{len(sampled_urls)}] {clean[:80]}", flush=True)
+        detail = _scrape_one_detail(app, clean, venue)
+        stats["scraped"] += 1
+        ev = _detail_to_event(detail, clean, venue)
+        if not ev:
+            stats["missing_date_or_title"] += 1
+            continue
+        if _is_canceled(ev.get("title") or ""):
+            continue
+        if not _is_within_scrape_window(ev.get("date"), horizon_date):
+            stats["past_or_beyond_horizon"] += 1
+            continue
+        if clean in known or clean in seen_new:
+            stats["duplicate_urls"] += 1
+            continue
+        ev["discovery_source"] = "sitemap_detail"
+        ev["discovered_only"] = False
+        _mark_enrichment_status(ev)
+        seen_new.add(clean)
+        out.append(ev)
+
+    stats["new_events"] = len(out)
+    latest = _latest_event_date(out)
+    if latest:
+        stats["latest_date"] = latest
+    print(f"    sitemap detail discovery result: +{len(out)} events", flush=True)
+    return out, stats
+
+
 def _expand_via_map(
     app,
     venue: dict,
@@ -3358,6 +3431,7 @@ def _scrape_one(
     *,
     skip_map: bool = False,
     expand_via_map: bool = False,
+    sitemap_detail_budget: int = 0,
 ) -> dict:
     slug = _slug(venue["name"])
     url = venue["url"]
@@ -3590,6 +3664,22 @@ def _scrape_one(
         events.sort(key=lambda e: (e.get("date") or "9999", e.get("time") or ""))
         print(f"    merged: {len(events)} total events after URL discovery", flush=True)
 
+    sitemap_detail_stats: dict = {}
+    if sitemap_detail_budget > 0:
+        sitemap_events, sitemap_detail_stats = _discover_sitemap_detail_events(
+            app, venue, events, horizon_date, sitemap_detail_budget
+        )
+        if sitemap_events:
+            seen_urls = {_clean_url(e.get("detail_url")) for e in events if e.get("detail_url")}
+            for ev in sitemap_events:
+                clean = _clean_url(ev.get("detail_url"))
+                if clean in seen_urls:
+                    continue
+                events.append(ev)
+                seen_urls.add(clean)
+            events.sort(key=lambda e: (e.get("date") or "9999", e.get("time") or ""))
+            print(f"    merged: {len(events)} total events after sitemap details", flush=True)
+
     events = _reuse_existing_enrichment(events, slug)
     filled_dates = _fill_missing_dates_from_urls(events, slug)
     if filled_dates:
@@ -3629,6 +3719,8 @@ def _scrape_one(
     _add_coverage_fields(payload, events, horizon_date)
     if map_stats:
         payload["map_expand_stats"] = map_stats
+    if sitemap_detail_stats:
+        payload["sitemap_detail_expand_stats"] = sitemap_detail_stats
     return payload
 
 
@@ -3644,6 +3736,7 @@ def main(
     probe_discovery: bool = False,
     enrich_count: int = 10,
     horizon_months: int = 6,
+    sitemap_detail_budget: int = 0,
 ) -> None:
     os.environ["SCRAPE_HORIZON_MONTHS"] = str(horizon_months)
     horizon_date = _scrape_horizon_date(horizon_months)
@@ -3693,6 +3786,8 @@ def main(
             if enrich
             else f"listing only (--skip-enrich, {map_note})"
         )
+        if sitemap_detail_budget > 0:
+            mode += f" + sitemap-detail-discovery({sitemap_detail_budget})"
     print(
         f"\nFire crawl scraping {len(venues)} Tier-0 venue(s), "
         f"max {max_events} events, horizon {horizon_date}. Mode: {mode}\n"
@@ -3711,6 +3806,7 @@ def main(
             result = _scrape_one(
                 app, venue, max_events, enrich=enrich,
                 skip_map=skip_map, expand_via_map=expand_via_map,
+                sitemap_detail_budget=sitemap_detail_budget,
             )
         out_path = BASE / f"firecrawl_{result['slug']}_events.json"
 
@@ -3809,6 +3905,15 @@ if __name__ == "__main__":
             "(default: 6, or SCRAPE_HORIZON_MONTHS)."
         ),
     )
+    parser.add_argument(
+        "--sitemap-detail-budget",
+        type=int,
+        default=_env_int("SITEMAP_DETAIL_BUDGET", 0),
+        help=(
+            "Optional discovery budget: scrape up to N strict sitemap detail "
+            "pages as full event details. Default 0."
+        ),
+    )
     args = parser.parse_args()
     main(
         args.only, args.max_events,
@@ -3819,4 +3924,5 @@ if __name__ == "__main__":
         probe_discovery=args.probe_discovery,
         enrich_count=args.enrich_count,
         horizon_months=args.horizon_months,
+        sitemap_detail_budget=args.sitemap_detail_budget,
     )

@@ -24,6 +24,9 @@ fi
 pip3 install -q --upgrade firecrawl-py==4.27.1 pydantic requests beautifulsoup4 2>/dev/null || true
 
 ARGS=(--max-events "${MAX_EVENTS:-5}" --horizon-months "${SCRAPE_HORIZON_MONTHS:-6}" --skip-map)
+if [[ "${SITEMAP_DETAIL_BUDGET:-0}" != "0" ]]; then
+  ARGS+=(--sitemap-detail-budget "${SITEMAP_DETAIL_BUDGET:-0}")
+fi
 if [[ "${MODE:-scrape}" == "probe" ]]; then
   ARGS+=(--probe-discovery)
 fi

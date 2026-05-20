@@ -15,6 +15,10 @@ on:
         description: "Slug(s): optional, mit Leerzeichen getrennt; leer = alle Tier-0"
         required: false
         default: ""
+      sitemap_detail_budget:
+        description: "Optional: max. Sitemap-Detailseiten pro Venue als Discovery scrapen"
+        required: false
+        default: "0"
 
 permissions:
   contents: write
@@ -53,8 +57,12 @@ jobs:
           MAX_EVENTS: ${{ github.event.inputs.max_events }}
           MODE: ${{ github.event.inputs.mode }}
           SLUGS: ${{ github.event.inputs.slugs }}
+          SITEMAP_DETAIL_BUDGET: ${{ github.event.inputs.sitemap_detail_budget }}
         run: |
           ARGS=(--max-events "${MAX_EVENTS:-5}" --horizon-months 6 --skip-map)
+          if [ "${SITEMAP_DETAIL_BUDGET:-0}" != "0" ]; then
+            ARGS+=(--sitemap-detail-budget "${SITEMAP_DETAIL_BUDGET:-0}")
+          fi
           if [ "${MODE:-scrape}" = "probe" ]; then
             ARGS+=(--probe-discovery)
           fi
