@@ -436,9 +436,56 @@ def _bp_actions() -> list[dict]:
 
 
 def _gewandhaus_actions() -> list[dict]:
-    # Homepage shows 5 teasers; "Weitere Veranstaltungen laden" loads more.
-    # The old dedicated scraper does up to 60 clicks per category.
-    return _cookie_and_load_more_actions(max_rounds=30, settle_ms=2000)
+    # Gewandhaus' load-more button is present in the rendered text, but
+    # headless visibility checks can report it as hidden. Click by text without
+    # offsetParent gating, mirroring the older Playwright scraper.
+    script = r"""
+async () => {
+  const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+  const log = [];
+  const cookieRe = /^(alle\s+akzeptieren|akzeptieren|alle\s+cookies\s+akzeptieren|einverstanden|zustimmen|alles\s+erlauben|alle\s+aktivieren|accept(?:\s+all)?|agree|got\s+it)$/i;
+  for (const el of document.querySelectorAll('button, a, [role="button"], input[type="button"]')) {
+    const t = (el.textContent || el.value || '').trim();
+    if (t && t.length <= 80 && cookieRe.test(t)) {
+      try { el.click(); log.push('cookie:' + t); break; } catch (e) {}
+    }
+  }
+  await sleep(1000);
+  const countEvents = () => document.querySelectorAll('[class*="event-teaser"], [id^="event-"], a[href*="/veranstaltung/"]').length;
+  let lastCount = countEvents();
+  let clicks = 0;
+  for (let i = 0; i < 60; i++) {
+    window.scrollTo(0, document.body.scrollHeight);
+    await sleep(500);
+    let clicked = false;
+    for (const el of document.querySelectorAll('button, a, [role="button"], input[type="button"]')) {
+      const t = (el.textContent || el.value || '').trim();
+      if (!/Weitere\s+Veranstaltungen\s+laden/i.test(t)) continue;
+      try {
+        el.scrollIntoView({block: 'center'});
+        el.click();
+        clicked = true;
+        clicks++;
+        break;
+      } catch (e) {}
+    }
+    if (!clicked) break;
+    await sleep(1700);
+    const nextCount = countEvents();
+    if (nextCount <= lastCount) break;
+    lastCount = nextCount;
+  }
+  log.push('clicks:' + clicks);
+  log.push('events:' + lastCount);
+  log.push('height:' + document.body.scrollHeight);
+  return log.join(' | ');
+}
+"""
+    return [
+        {"type": "wait", "milliseconds": 2000},
+        {"type": "executeJavascript", "script": script},
+        {"type": "wait", "milliseconds": 2500},
+    ]
 
 
 # mphil.de calendar renders all events from Sept 2025 → future (13k+ line markdown).
