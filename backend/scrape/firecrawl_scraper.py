@@ -2261,25 +2261,14 @@ def _probe_candidate_urls(venue: dict, horizon_date: str) -> list[str]:
             "https://www.elbphilharmonie.de/de/programm/EHH/KON/TICKETS/",
             "https://www.elbphilharmonie.de/de/programm/LHHH/TICKETS/",
         ])
-        for month in _sample_probe_months(today, horizon):
-            urls.append(f"https://www.elbphilharmonie.de/de/programm/LHHH/TICKETS/?date={month:%Y-%m}")
-            urls.append(f"https://www.elbphilharmonie.de/de/programm//KON/TICKETS/?date={month:%Y-%m}")
     elif slug == "berliner_philharmonie":
         base = "https://www.berliner-philharmoniker.de/konzerte/kalender/"
         for month in _sample_probe_months(today, horizon):
-            urls.extend([
-                f"{base}?date={month:%Y-%m}",
-                f"{base}?month={month:%Y-%m}",
-                f"{base}?from={month:%Y-%m}-01",
-            ])
+            urls.append(f"{base}?from={month:%Y-%m}-01")
     elif slug == "alte_oper_frankfurt":
-        base = "https://www.alteoper.de/de/programm"
-        for month in _sample_probe_months(today, horizon):
-            urls.extend([
-                f"{base}?date={month:%Y-%m}",
-                f"{base}?month={month:%Y-%m}",
-                f"{base}?from={month:%Y-%m}-01",
-            ])
+        # The common date/month/from query parameters do not change the rendered
+        # card set here, so keep probe mode focused on stronger generic sources.
+        pass
     elif slug == "gewandhaus_leipzig":
         urls.extend([
             "https://www.gewandhausorchester.de/spielplan/",
@@ -2366,6 +2355,69 @@ def _probe_one_url(app, venue: dict, probe_url: str, horizon_date: str) -> dict:
     }
 
 
+def _sample_evenly(values: list[str], limit: int) -> list[str]:
+    if limit <= 0 or len(values) <= limit:
+        return values[:]
+    if limit == 1:
+        return [values[0]]
+    last = len(values) - 1
+    indexes = sorted({round(i * last / (limit - 1)) for i in range(limit)})
+    return [values[i] for i in indexes]
+
+
+def _probe_one_detail_text(app, venue: dict, detail_url: str, horizon_date: str) -> dict:
+    result = None
+    error = None
+    try:
+        try:
+            result = app.scrape(detail_url, formats=["markdown", "html"], headers=_DE_HEADERS)
+        except TypeError:
+            result = app.scrape(detail_url, formats=["markdown", "html"])
+    except Exception as exc:
+        error = str(exc)
+
+    text = "\n".join([
+        _extract_html(result) if result is not None else "",
+        _extract_markdown(result) if result is not None else "",
+    ])
+    dates = _extract_dates_from_text(text, horizon_date)
+    return {
+        "url": detail_url,
+        "error": error,
+        "raw_lines": len(text.splitlines()),
+        "dates": dates[:6],
+        "first_date_seen": dates[0] if dates else None,
+        "last_date_seen": dates[-1] if dates else None,
+    }
+
+
+def _probe_sitemap_detail_pages(
+    app,
+    venue: dict,
+    sitemap_urls: list[str],
+    horizon_date: str,
+    *,
+    limit: int = 8,
+) -> list[dict]:
+    """Sample sitemap detail URLs to see whether sitemap expansion is viable.
+
+    This is intentionally probe-only. It answers the scalable question:
+    "Can detail pages expose dates without relying on the listing page?"
+    """
+    sampled_urls = _sample_evenly(sitemap_urls, limit)
+    out: list[dict] = []
+    for index, detail_url in enumerate(sampled_urls, start=1):
+        print(f"    sitemap-detail {index}/{len(sampled_urls)}: {detail_url[:90]}", flush=True)
+        probe = _probe_one_detail_text(app, venue, detail_url, horizon_date)
+        print(
+            f"      dates={probe['first_date_seen']}..{probe['last_date_seen']} "
+            f"lines={probe['raw_lines']}",
+            flush=True,
+        )
+        out.append(probe)
+    return out
+
+
 def _probe_discovery(app, venue: dict, horizon_date: str) -> dict:
     slug = _slug(venue["name"])
     print(f"\n  [probe:{slug}] {venue['name']}", flush=True)
@@ -2373,6 +2425,11 @@ def _probe_discovery(app, venue: dict, horizon_date: str) -> dict:
     sitemap_urls = _discover_sitemap_event_urls(venue)
     if sitemap_urls:
         print(f"    sitemap: {len(sitemap_urls)} strict event URLs", flush=True)
+    sitemap_detail_probes = (
+        _probe_sitemap_detail_pages(app, venue, sitemap_urls, horizon_date)
+        if sitemap_urls
+        else []
+    )
     for probe_url in _probe_candidate_urls(venue, horizon_date):
         print(f"    probe: {probe_url}", flush=True)
         probe = _probe_one_url(app, venue, probe_url, horizon_date)
@@ -2385,6 +2442,10 @@ def _probe_discovery(app, venue: dict, horizon_date: str) -> dict:
         probes.append(probe)
 
     best = max(probes, key=lambda p: (p.get("unique_event_urls") or 0, p.get("raw_lines") or 0), default={})
+    sitemap_detail_date_hits = sum(
+        1 for probe in sitemap_detail_probes
+        if probe.get("first_date_seen") or probe.get("last_date_seen")
+    )
     return {
         "venue": venue["name"],
         "city": venue["city"],
@@ -2396,6 +2457,8 @@ def _probe_discovery(app, venue: dict, horizon_date: str) -> dict:
         "best_last_date_seen": best.get("last_date_seen"),
         "sitemap_event_urls": len(sitemap_urls),
         "sample_sitemap_urls": sitemap_urls[:12],
+        "sitemap_detail_probes": sitemap_detail_probes,
+        "sitemap_detail_date_hits": sitemap_detail_date_hits,
         "probes": probes,
     }
 
