@@ -3060,6 +3060,7 @@ def _discover_sitemap_dated_urls(
     hits.sort(key=lambda item: (item[0], item[1]))
     urls = [url for _event_date, url in hits]
     stats["dated_urls"] = len(urls)
+    stats["_date_by_url"] = {url: event_date for event_date, url in hits}
     if hits:
         stats["first_date"] = hits[0][0]
         stats["latest_date"] = hits[-1][0]
@@ -3564,6 +3565,7 @@ def _discover_sitemap_detail_events(
         venue, sitemap_urls, horizon_date
     )
     if dated_urls:
+        date_by_url = date_scout_stats.pop("_date_by_url", {})
         stats["date_scout"] = date_scout_stats
         candidate_pool = dated_urls
         print(
@@ -3572,6 +3574,8 @@ def _discover_sitemap_detail_events(
             flush=True,
         )
     else:
+        date_by_url = {}
+        date_scout_stats.pop("_date_by_url", None)
         stats["date_scout"] = date_scout_stats
         candidate_pool = sitemap_urls
     candidate_urls = [
@@ -3592,6 +3596,16 @@ def _discover_sitemap_detail_events(
         print(f"    [sitemap {index}/{len(sampled_urls)}] {clean[:80]}", flush=True)
         detail = _scrape_one_detail(app, clean, venue)
         stats["scraped"] += 1
+        scouted_date = date_by_url.get(clean)
+        if scouted_date and (
+            not _parse_iso_date(detail.get("date"))
+            or not _is_within_scrape_window(detail.get("date"), horizon_date)
+        ):
+            detail = dict(detail or {})
+            detail["date"] = scouted_date
+            stats["date_corrected_from_scout"] = (
+                stats.get("date_corrected_from_scout", 0) + 1
+            )
         ev = _detail_to_event(detail, clean, venue)
         if not ev:
             stats["missing_date_or_title"] += 1
