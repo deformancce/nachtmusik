@@ -917,12 +917,20 @@ _MARKDOWN_LINK_RE = re.compile(r"\]\(([^)]+)\)")
 _ISO_DATE_RE = re.compile(r"\b(20\d{2})-(\d{2})-(\d{2})\b")
 _DE_DATE_RE = re.compile(r"\b(\d{1,2})\.(\d{1,2})\.(20\d{2})\b")
 _DE_SHORT_DATE_RE = re.compile(r"\b(\d{1,2})\.(\d{1,2})\.(\d{2})\b")
+_DE_TEXT_DATE_RE = re.compile(
+    r"(?i)\b"
+    r"(?:(?:mo|di|mi|do|fr|sa|so|montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonntag)\.?,?\s*)?"
+    r"(\d{1,2})\.?\s+"
+    r"(jan|januar|feb|februar|mär|märz|maerz|mrz|apr|april|mai|jun|juni|jul|juli|aug|august|"
+    r"sep|sept|september|okt|oktober|nov|november|dez|dezember)"
+    r"\s+(20\d{2})\b"
+)
 _TIME_RE = re.compile(r"(?:Uhrzeit\s*)?([0-2]?\d:[0-5]\d)\s*Uhr\b")
 _DE_WEEKDAY_RE = r"(?:Montag|Dienstag|Mittwoch|Donnerstag|Freitag|Samstag|Sonntag)"
 _DE_MONTHS = {
     "jan": 1, "januar": 1,
     "feb": 2, "februar": 2,
-    "mär": 3, "märz": 3, "maerz": 3,
+    "mär": 3, "märz": 3, "maerz": 3, "mrz": 3,
     "apr": 4, "april": 4,
     "mai": 5,
     "jun": 6, "juni": 6,
@@ -2311,6 +2319,16 @@ def _extract_dates_from_text(text: str, horizon_date: str) -> list[str]:
     for day, month, year in _DE_SHORT_DATE_RE.findall(text or ""):
         try:
             parsed = date(2000 + int(year), int(month), int(day))
+        except ValueError:
+            continue
+        if today <= parsed <= horizon:
+            out.add(parsed.isoformat())
+    for day, month_name, year in _DE_TEXT_DATE_RE.findall(text or ""):
+        month = _DE_MONTHS.get(month_name.strip().lower())
+        if not month:
+            continue
+        try:
+            parsed = date(int(year), month, int(day))
         except ValueError:
             continue
         if today <= parsed <= horizon:
