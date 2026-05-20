@@ -27,7 +27,16 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install --quiet firecrawl-py pydantic requests beautifulsoup4
+        run: pip install --quiet firecrawl-py==4.27.1 pydantic requests beautifulsoup4
+
+      - name: Check Firecrawl secret
+        env:
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+        run: |
+          if [ -z "$FIRECRAWL_API_KEY" ]; then
+            echo "FIRECRAWL_API_KEY secret is not available to this workflow run." >&2
+            exit 1
+          fi
 
       - name: Run Firecrawl discovery probe
         env:

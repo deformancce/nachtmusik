@@ -2318,6 +2318,13 @@ def _extract_dates_from_text(text: str, horizon_date: str) -> list[str]:
     return sorted(out)
 
 
+def _probe_text_preview(text: str, *, limit: int = 280) -> str | None:
+    clean = re.sub(r"\s+", " ", text or "").strip()
+    if not clean:
+        return None
+    return clean[:limit]
+
+
 def _probe_one_url(app, venue: dict, probe_url: str, horizon_date: str) -> dict:
     slug = _slug(venue["name"])
     formats = ["markdown", "html"]
@@ -2343,10 +2350,12 @@ def _probe_one_url(app, venue: dict, probe_url: str, horizon_date: str) -> dict:
     text = "\n".join([html, md])
     urls = _extract_event_urls_from_html(text, venue)
     dates = _extract_dates_from_text(text, horizon_date)
+    raw_lines = len(text.splitlines())
     return {
         "url": probe_url,
         "error": error,
-        "raw_lines": len(text.splitlines()),
+        "raw_lines": raw_lines,
+        "raw_preview": _probe_text_preview(text) if raw_lines <= 3 else None,
         "event_urls": len(urls),
         "unique_event_urls": len({u.split('?', 1)[0].split('#', 1)[0] for u in urls}),
         "first_date_seen": dates[0] if dates else None,
@@ -2381,10 +2390,12 @@ def _probe_one_detail_text(app, venue: dict, detail_url: str, horizon_date: str)
         _extract_markdown(result) if result is not None else "",
     ])
     dates = _extract_dates_from_text(text, horizon_date)
+    raw_lines = len(text.splitlines())
     return {
         "url": detail_url,
         "error": error,
-        "raw_lines": len(text.splitlines()),
+        "raw_lines": raw_lines,
+        "raw_preview": _probe_text_preview(text) if raw_lines <= 3 else None,
         "dates": dates[:6],
         "first_date_seen": dates[0] if dates else None,
         "last_date_seen": dates[-1] if dates else None,
