@@ -2886,7 +2886,12 @@ def _discover_sitemap_jsonld_events(
     limit = _env_int("SITEMAP_JSONLD_MAX_PAGES", 240) if max_pages is None else max_pages
     timeout = max(2, _env_int("SITEMAP_JSONLD_TIMEOUT", 8))
     workers = max(1, _env_int("SITEMAP_JSONLD_WORKERS", 8))
-    candidate_urls = sitemap_urls if limit <= 0 else sitemap_urls[:limit]
+    if limit <= 0 or len(sitemap_urls) <= limit:
+        candidate_urls = sitemap_urls
+    else:
+        # Sitemaps are often archive-ordered. Sampling across the whole sitemap
+        # avoids spending the JSON-LD scout budget only on historical pages.
+        candidate_urls = _sample_evenly(sitemap_urls, limit)
     initial_limit = min(_env_int("SITEMAP_JSONLD_INITIAL_SAMPLE", 24), len(candidate_urls))
     initial_urls = _sample_evenly(candidate_urls, initial_limit) if initial_limit else []
     stats: dict = {
