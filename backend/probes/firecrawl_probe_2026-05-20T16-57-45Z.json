@@ -1,0 +1,200 @@
+{
+  "scraped_at": "2026-05-20T16:57:45.958732Z",
+  "scrape_horizon_date": "2026-11-30",
+  "results": [
+    {
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "slug": "gewandhaus_leipzig",
+      "scraped_at": "2026-05-20T16:57:45.958598Z",
+      "scrape_horizon_date": "2026-11-30",
+      "best_url": "https://www.gewandhausorchester.de/",
+      "best_event_urls": 6,
+      "best_last_date_seen": "2026-06-03",
+      "preferred_event_urls": 0,
+      "preferred_first_date_seen": null,
+      "preferred_last_date_seen": null,
+      "sample_preferred_urls": [],
+      "sitemap_event_urls": 668,
+      "sample_sitemap_urls": [
+        "https://www.gewandhausorchester.de/veranstaltung/tim-bendzko-9146/",
+        "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-9876/",
+        "https://www.gewandhausorchester.de/veranstaltung/mnozil-brass-9464/",
+        "https://www.gewandhausorchester.de/veranstaltung/motette-9801/",
+        "https://www.gewandhausorchester.de/veranstaltung/the-sound-of-epic-anime-9713/",
+        "https://www.gewandhausorchester.de/veranstaltung/motette-9852/",
+        "https://www.gewandhausorchester.de/veranstaltung/cosi-fan-tutte-9591/",
+        "https://www.gewandhausorchester.de/veranstaltung/verdi-requiem-9642/",
+        "https://www.gewandhausorchester.de/veranstaltung/gastspiel-in-taipeh-9921/",
+        "https://www.gewandhausorchester.de/veranstaltung/motette-9853/",
+        "https://www.gewandhausorchester.de/veranstaltung/gastspiel-in-tainan-9922/",
+        "https://www.gewandhausorchester.de/veranstaltung/die-zauberfloete-9592/"
+      ],
+      "sitemap_detail_probes": [
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/tim-bendzko-9146/",
+          "error": null,
+          "raw_lines": 1076,
+          "raw_preview": null,
+          "dates": [
+            "2026-05-20"
+          ],
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-05-20"
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/familiennachmittag-10452/",
+          "error": null,
+          "raw_lines": 939,
+          "raw_preview": null,
+          "dates": [
+            "2026-07-04"
+          ],
+          "first_date_seen": "2026-07-04",
+          "last_date_seen": "2026-07-04"
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9978/",
+          "error": null,
+          "raw_lines": 1152,
+          "raw_preview": null,
+          "dates": [
+            "2026-06-13",
+            "2026-06-27",
+            "2026-10-23"
+          ],
+          "first_date_seen": "2026-06-13",
+          "last_date_seen": "2026-10-23"
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-10415/",
+          "error": null,
+          "raw_lines": 958,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-impuls-10419/",
+          "error": null,
+          "raw_lines": 935,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-10430/",
+          "error": null,
+          "raw_lines": 962,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/klavierrezital-10136/",
+          "error": null,
+          "raw_lines": 1105,
+          "raw_preview": null,
+          "dates": [
+            "2026-06-13",
+            "2026-06-27"
+          ],
+          "first_date_seen": "2026-06-13",
+          "last_date_seen": "2026-06-27"
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/the-sounds-of-vangelis-10392/",
+          "error": null,
+          "raw_lines": 1081,
+          "raw_preview": null,
+          "dates": [],
+          "first_date_seen": null,
+          "last_date_seen": null
+        }
+      ],
+      "sitemap_detail_date_hits": 4,
+      "sitemap_detail_llm_probes": [
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-10415/",
+          "title": "GEWANDHAUS-FÜHRUNG",
+          "date": "2026-12-04",
+          "time": "12:30",
+          "program_count": 0,
+          "performer_count": 0,
+          "has_price": true
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-10430/",
+          "title": "GEWANDHAUS-FÜHRUNG",
+          "date": "2027-03-11",
+          "time": "12:30",
+          "program_count": 0,
+          "performer_count": 0,
+          "has_price": true
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltung/the-sounds-of-vangelis-10392/",
+          "title": "Beyond the Horizon - The Sounds of Vangelis",
+          "date": "2027-10-19",
+          "time": "20:00",
+          "program_count": 1,
+          "performer_count": 1,
+          "has_price": true
+        }
+      ],
+      "sitemap_detail_llm_date_hits": 3,
+      "probes": [
+        {
+          "url": "https://www.gewandhausorchester.de/",
+          "error": null,
+          "raw_lines": 3262,
+          "raw_preview": null,
+          "event_urls": 6,
+          "unique_event_urls": 6,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-06-03",
+          "sample_urls": [
+            "https://www.gewandhausorchester.de/veranstaltung/tim-bendzko-9146/",
+            "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-9876/",
+            "https://www.gewandhausorchester.de/veranstaltung/mnozil-brass-9464/",
+            "https://www.gewandhausorchester.de/veranstaltung/motette-9801/",
+            "https://www.gewandhausorchester.de/veranstaltung/the-sound-of-epic-anime-9713/",
+            "https://www.gewandhausorchester.de/veranstaltung/motette-9852/"
+          ]
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/spielplan/",
+          "error": null,
+          "raw_lines": 3262,
+          "raw_preview": null,
+          "event_urls": 6,
+          "unique_event_urls": 6,
+          "first_date_seen": "2026-05-20",
+          "last_date_seen": "2026-06-03",
+          "sample_urls": [
+            "https://www.gewandhausorchester.de/veranstaltung/tim-bendzko-9146/",
+            "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-9876/",
+            "https://www.gewandhausorchester.de/veranstaltung/mnozil-brass-9464/",
+            "https://www.gewandhausorchester.de/veranstaltung/motette-9801/",
+            "https://www.gewandhausorchester.de/veranstaltung/the-sound-of-epic-anime-9713/",
+            "https://www.gewandhausorchester.de/veranstaltung/motette-9852/"
+          ]
+        },
+        {
+          "url": "https://www.gewandhausorchester.de/veranstaltungen/",
+          "error": null,
+          "raw_lines": 608,
+          "raw_preview": null,
+          "event_urls": 0,
+          "unique_event_urls": 0,
+          "first_date_seen": null,
+          "last_date_seen": null,
+          "sample_urls": []
+        }
+      ]
+    }
+  ]
+}
