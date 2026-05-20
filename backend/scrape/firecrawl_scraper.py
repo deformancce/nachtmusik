@@ -2643,9 +2643,21 @@ def _probe_discovery(app, venue: dict, horizon_date: str) -> dict:
     slug = _slug(venue["name"])
     print(f"\n  [probe:{slug}] {venue['name']}", flush=True)
     probes: list[dict] = []
+    preferred_urls: list[str] = []
+    preferred_dates: list[str] = []
     sitemap_urls = _discover_sitemap_event_urls(venue)
     if sitemap_urls:
         print(f"    sitemap: {len(sitemap_urls)} strict event URLs", flush=True)
+    if slug == "alte_oper_frankfurt":
+        preferred_urls, preferred_dates, _preferred_events = _discover_alte_oper_api_events(
+            venue, horizon_date=horizon_date
+        )
+        print(
+            f"    preferred-api: {len(preferred_urls)} URLs "
+            f"dates={preferred_dates[0] if preferred_dates else None}.."
+            f"{preferred_dates[-1] if preferred_dates else None}",
+            flush=True,
+        )
     sitemap_detail_probes = (
         _probe_sitemap_detail_pages(app, venue, sitemap_urls, horizon_date)
         if sitemap_urls
@@ -2685,6 +2697,10 @@ def _probe_discovery(app, venue: dict, horizon_date: str) -> dict:
         "best_url": best.get("url"),
         "best_event_urls": best.get("unique_event_urls", 0),
         "best_last_date_seen": best.get("last_date_seen"),
+        "preferred_event_urls": len(preferred_urls),
+        "preferred_first_date_seen": preferred_dates[0] if preferred_dates else None,
+        "preferred_last_date_seen": preferred_dates[-1] if preferred_dates else None,
+        "sample_preferred_urls": preferred_urls[:12],
         "sitemap_event_urls": len(sitemap_urls),
         "sample_sitemap_urls": sitemap_urls[:12],
         "sitemap_detail_probes": sitemap_detail_probes,
