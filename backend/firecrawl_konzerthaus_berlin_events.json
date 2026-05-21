@@ -3,7 +3,7 @@
   "city": "Berlin",
   "slug": "konzerthaus_berlin",
   "source_url": "https://www.konzerthaus.de/de/programm",
-  "scraped_at": "2026-05-21T13:29:01.968937Z",
+  "scraped_at": "2026-05-21T14:42:27.804507Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
@@ -22,6 +22,7 @@
       "discovery_source": "sitemap_jsonld",
       "discovered_only": false,
       "duration_min": 30,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -29,24 +30,23 @@
     {
       "date": "2026-05-22",
       "time": "20:00",
-      "title": "2 x hören",
-      "venue_hall": "Werner-Otto-Saal",
+      "title": "Konzerthausorchester Berlin, Joana Mallwitz",
+      "venue_hall": "Großer Saal",
       "program": [
-        "Neuwirth: in the realms of the unreal"
+        "Beethoven: Konzert für Klavier und Orchester Nr. 3 c-Moll op. 37",
+        "Mahler: Sinfonie Nr. 5 cis-Moll"
       ],
       "performers": [
-        "Ensemble Resonanz",
-        "Barbara Bultmann",
-        "Benjamin Spillner",
-        "Tim-Erik Winzer",
-        "Martin Egidi"
+        "Konzerthausorchester Berlin",
+        "Joana Mallwitz",
+        "Alice Sara Ott"
       ],
-      "conductor": "Christian Jost",
-      "price": "17 Euro",
-      "detail_url": "https://www.konzerthaus.de/de/programm/2-x-horen/11722",
+      "conductor": "Joana Mallwitz",
+      "price": "35 / 46 / 57 / 69 / 84 / 99 Euro",
+      "detail_url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-berlin-joana-mallwitz/11532",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
-      "duration_min": 90,
+      "duration_min": 150,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
@@ -124,6 +124,7 @@
       "detail_url": "https://www.konzerthaus.de/de/programm/kammermusikmatinee-des-konzerthausorchesters/11534",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
+      "duration_min": 120,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
@@ -187,35 +188,6 @@
     },
     {
       "date": "2026-05-25",
-      "time": "19:00",
-      "title": "Berlin Asian Music Festival (BAMF) Drei Abende. Vier Länder. Eine gemeinsame Klangsprache.",
-      "venue_hall": "Kleiner Saal",
-      "program": [
-        "Isang Yun: Work Title",
-        "Hyunjeong Park: Work Title",
-        "Dongjin Kim: Work Title",
-        "Youngsim Noh: Work Title",
-        "Junho Kim: Work Title"
-      ],
-      "performers": [
-        "Khukh Tenger (Mongolei)",
-        "Sorichum",
-        "Quarticolo",
-        "NUNC Akademie"
-      ],
-      "conductor": null,
-      "price": "12 / 17 EUR zzgl. VVG/ Studenten 8 EUR zzgl. VVG",
-      "detail_url": "https://www.konzerthaus.de/de/programm/berlin-asian-music-festival-bamf-drei-abende-vier-lander-eine-gemeinsame-klangsprache/12720",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-25",
       "time": "20:00",
       "title": "Konzerthausorchester Gastspiel Bielefeld",
       "venue_hall": "Rudolf-Oetker-Halle – Rudolf-Oetker-Halle Bielefeld",
@@ -236,6 +208,32 @@
       "discovery_source": "sitemap_jsonld",
       "discovered_only": false,
       "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-26",
+      "time": "14:00",
+      "title": "Espresso-Konzert",
+      "venue_hall": "Werner-Otto-Saal",
+      "program": [
+        "Hindemith: Drei Stücke für Violoncello und Klavier op. 8 (Auszüge)",
+        "Franck: Sonate für Violoncello und Klavier A-Dur (nach der Violinsonate)",
+        "Lutosławski: Sacher Variationen für Violoncello solo",
+        "Fauré: Romanze für Violoncello und Klavier A-Dur op. 69"
+      ],
+      "performers": [
+        "Yu-Ju Yen",
+        "Maria Guignard"
+      ],
+      "conductor": null,
+      "price": "12 Euro",
+      "detail_url": "https://www.konzerthaus.de/de/programm/espresso-konzert/11724",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -297,31 +295,6 @@
       "is_classical": true
     },
     {
-      "date": "2026-05-26",
-      "time": "20:00",
-      "title": "Orchester der Barenboim-Said Akademie",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Schubert: Ouvertüre zu „Die Zauberharfe“ C-Dur D 644",
-        "Schumann: Konzert für Violoncello und Orchester a-Moll op. 129",
-        "Brahms: Sinfonie Nr. 1 c-Moll op. 68"
-      ],
-      "performers": [
-        "Kian Soltani",
-        "Orchester der Barenboim-Said Akademie"
-      ],
-      "conductor": "Nabil Shehata",
-      "price": null,
-      "detail_url": "https://www.konzerthaus.de/de/programm/orchester-der-barenboim-said-akademie/12281",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
       "date": "2026-05-27",
       "time": "13:00",
       "title": "Rundgang",
@@ -345,17 +318,18 @@
       "title": "Berlin Asian Music Festival (BAMF) Drei Abende. Vier Länder. Eine gemeinsame Klangsprache.",
       "venue_hall": "Kleiner Saal",
       "program": [
-        "Kim: Werke von Daeseong Kim",
-        "Im: Werke von Kyungshin Im",
-        "Lim: Werke von Junehee Lim",
-        "Noh: Werke von Sunlak Noh"
+        "Kim: SORI: Atem & Arirang",
+        "Daeseong Kim: unspecified work",
+        "Kyungshin Im: unspecified work",
+        "Junehee Lim: unspecified work",
+        "Sunlak Noh: unspecified work"
       ],
       "performers": [
         "4 Jit",
         "Ensemble NUNC"
       ],
       "conductor": null,
-      "price": "12 / 17 EUR zzgl. VVG/ Studenten 8 EUR zzgl. VVG",
+      "price": "12 / 17 EUR zzgl. VVG / Studenten 8 EUR zzgl. VVG",
       "detail_url": "https://www.konzerthaus.de/de/programm/berlin-asian-music-festival-bamf-drei-abende-vier-lander-eine-gemeinsame-klangsprache/12721",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -402,7 +376,8 @@
       ],
       "performers": [
         "Dresdner Residenz Orchester",
-        "Igor Malinovsky"
+        "Igor Malinovsky",
+        "Elias David Moncado"
       ],
       "conductor": "Elias David Moncado",
       "price": "44/ 52/ 63 EUR zzgl. VVG",
@@ -417,20 +392,28 @@
     },
     {
       "date": "2026-05-28",
-      "time": "13:00",
-      "title": "Rundgang",
-      "venue_hall": "Konzerthaus Berlin",
-      "program": [],
-      "performers": [],
+      "time": "19:00",
+      "title": "Berlin Asian Music Festival (BAMF) Drei Abende. Vier Länder. Eine gemeinsame Klangsprache.",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Woojung Choi: Werk",
+        "Joohwa Park: Werk",
+        "Junho Kim: Werk"
+      ],
+      "performers": [
+        "Sanare",
+        "Ensemble NUNC",
+        "Gitarre: Jeonghyun Kim"
+      ],
       "conductor": null,
-      "price": null,
-      "detail_url": "https://www.konzerthaus.de/de/programm/rundgang/12895",
+      "price": "12 / 17 EUR zzgl. VVG, Studenten 8 EUR zzgl. VVG",
+      "detail_url": "https://www.konzerthaus.de/de/programm/berlin-asian-music-festival-bamf-drei-abende-vier-lander-eine-gemeinsame-klangsprache/12722",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -472,10 +455,11 @@
       "detail_url": "https://www.konzerthaus.de/de/programm/rundgang/12896",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
+      "duration_min": 30,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -552,24 +536,6 @@
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-30",
-      "time": "13:05",
-      "title": "Guided tour of the Konzerthaus Berlin",
-      "venue_hall": "Konzerthaus Berlin",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": "3 Euro zzgl. Webgebühr (begrenzte Teilnehmerzahl)",
-      "detail_url": "https://www.konzerthaus.de/de/programm/guided-tour-of-the-konzerthaus-berlin/12013",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
       "reused_enrichment": true,
       "is_classical": true
     },
@@ -627,6 +593,31 @@
     {
       "date": "2026-05-30",
       "time": "20:00",
+      "title": "Konzerthausorchester Gastspiel Nürnberg",
+      "venue_hall": "Meistersingerhalle",
+      "program": [
+        "Beethoven: Konzert für Klavier und Orchester Nr. 3 c-Moll op. 37",
+        "Mahler: Sinfonie Nr. 5 cis-Moll"
+      ],
+      "performers": [
+        "Joana Mallwitz",
+        "Alice Sara Ott",
+        "Konzerthausorchester Berlin"
+      ],
+      "conductor": "Joana Mallwitz",
+      "price": null,
+      "detail_url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-gastspiel-nurnberg/12957",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-30",
+      "time": "20:00",
       "title": "Rundfunk-Sinfonieorchester Berlin, Simone Young",
       "venue_hall": "Großer Saal",
       "program": [
@@ -638,7 +629,7 @@
         "Christian Tetzlaff"
       ],
       "conductor": "Simone Young",
-      "price": "Verkauf über www.rsb-online.de",
+      "price": "Tickets available online",
       "detail_url": "https://www.konzerthaus.de/de/programm/rundfunk-sinfonieorchester-berlin-simone-young/11977",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -694,30 +685,6 @@
       "conductor": "Joana Mallwitz",
       "price": null,
       "detail_url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-gastspiel-koln/12958",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-02",
-      "time": "20:00",
-      "title": "Rezital Elisabeth Leonskaja",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Brahms: Sonate C-Dur op. 1",
-        "Brahms: Sonate fis-Moll op. 2",
-        "Brahms: Sonate f-Moll op. 5"
-      ],
-      "performers": [
-        "Elisabeth Leonskaja"
-      ],
-      "conductor": null,
-      "price": "46 / 57 / 67 / 79 Euro",
-      "detail_url": "https://www.konzerthaus.de/de/programm/rezital-elisabeth-leonskaja/11725",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
       "discovery_source": "sitemap_detail",
@@ -809,58 +776,33 @@
     },
     {
       "date": "2026-06-07",
-      "time": "11:30",
-      "title": "Haydn im Quartett",
-      "venue_hall": "Werner-Otto-Saal",
-      "program": [
-        "Haydn: Streichquartett C-Dur op. 33 Nr. 3 Hob III:39 („Vogelquartett“)",
-        "Lombardini Sirmen: Streichquartett B-Dur op. 3 Nr. 4",
-        "Haydn: Streichquartett B-Dur op. 76 Nr. 4 Hob III:78 („Sonnenaufgang“)"
-      ],
-      "performers": [
-        "Petr Matěják",
-        "Linda Fichtner",
-        "Matthias Gallien",
-        "Nerina Mancini"
-      ],
-      "conductor": null,
-      "price": "17 und 22 Euro, optional plus Frühstück",
-      "detail_url": "https://www.konzerthaus.de/de/programm/haydn-im-quartett/12420",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin",
-      "duration_min": 65,
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-07",
       "time": "14:00",
       "title": "FamilienKonzert mit dem Konzerthausorchester & Joana Mallwitz",
       "venue_hall": "Großer Saal",
       "program": [
-        "Haydn: Sinfonie Nr. 82 C-Dur Hob I:82 („Der Bär“), 1. und 4. Satz",
-        "Haydn: Sinfonie Nr. 83 g-Moll Hob I:83 („Die Henne“), 1. Satz",
+        "Haydn: Sinfonie Nr. 82 C-Dur Hob I:82 (“Der Bär”), 1. und 4. Satz",
+        "Haydn: Sinfonie Nr. 83 g-Moll Hob I:83 (“Die Henne”), 1. Satz",
         "Saint-Saëns: „Der Karneval der Tiere“ - Eine zoologische Fantasie (Auszüge), Arrangement für Streichquartett",
-        "Haydn: Streichquartett C-Dur op. 33 Nr. 3 Hob III:39 („Vogelquartett“), 4. Satz",
-        "Haydn: Sinfonie Nr. 8 G-Dur Hob I:8 („Le Soir“), 4. Satz \"Der Sturm\""
+        "Haydn: Streichquartett C-Dur op. 33 Nr. 3 Hob III:39 (“Vogelquartett”), 4. Satz",
+        "Haydn: Sinfonie Nr. 8 G-Dur Hob I:8 (“Le Soir”), 4. Satz",
+        "Der Sturm"
       ],
       "performers": [
         "Konzerthausorchester Berlin",
-        "Joana Mallwitz"
+        "Joana Mallwitz",
+        "Abak Safaei-Rad"
       ],
       "conductor": "Joana Mallwitz",
-      "price": "ab 20 Euro, für Kinder 5 Euro",
+      "price": "20 Euro, für Kinder 5 Euro",
       "detail_url": "https://www.konzerthaus.de/de/programm/familienkonzert-mit-dem-konzerthausorchester-joana-mallwitz/12421",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
-      "duration_min": 60,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
+      "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -877,8 +819,9 @@
         "Panna Dobos",
         "Daniel Yan Pruzansky",
         "Egor Sergeev",
-        "Sylvia Ackermann",
+        "Giorgio Bani",
         "Thor-Harald Johnsen",
+        "Sylvia Ackermann",
         "Elli Neubert",
         "Petra Schnakenberg",
         "Lucilla Schmidinger"
@@ -891,6 +834,33 @@
       "discovery_source": "sitemap_jsonld",
       "discovered_only": false,
       "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-07",
+      "time": "16:00",
+      "title": "Alice Sara Ott & Mitglieder des Konzerthausorchesters",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Haydn: Various works",
+        "Bach: Various works",
+        "Mozart: Various works",
+        "Pleyel: Various works"
+      ],
+      "performers": [
+        "Sayako Kusaka",
+        "Alice Sara Ott"
+      ],
+      "conductor": "Sayako Kusaka",
+      "price": "17 and 22 Euro",
+      "detail_url": "https://www.konzerthaus.de/de/programm/alice-sara-ott-mitglieder-des-konzerthausorchesters/12423",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin",
+      "duration_min": 90,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -962,7 +932,7 @@
       "program": [
         "Hensel: Ouvertüre C-Dur",
         "Mozart: Konzert für Klavier und Orchester C-Dur KV 467",
-        "Mendelssohn Bartholdy: Sinfonie Nr. 5 d-Moll op. 107 („Reformations-Sinfonie“)"
+        "Mendelssohn Bartholdy: Sinfonie Nr. 5 d-Moll op. 107 (\"Reformations-Sinfonie\")"
       ],
       "performers": [
         "Rundfunk-Sinfonieorchester Berlin",
@@ -1017,10 +987,10 @@
         "Brecher: Frühe Lieder"
       ],
       "performers": [
-        "Pia Davila",
-        "Linda Leine"
+        "Sopranistin Pia Davila",
+        "Linda Leine am Klavier"
       ],
-      "conductor": null,
+      "conductor": "Gustav Brecher",
       "price": "8 Euro",
       "detail_url": "https://www.konzerthaus.de/de/programm/musica-reanimata-gesprachskonzert/11620",
       "venue": "Konzerthaus Berlin",
@@ -1029,6 +999,7 @@
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1037,9 +1008,9 @@
       "title": "KlangKüken",
       "venue_hall": "Werner-Otto-Saal",
       "program": [
-        "Fabiana Striffler: Violine",
-        "Viktor Wolf: Klarinette und Saxophon",
-        "Kristina Feix: Objekt- und Puppenspiel",
+        "Fabiana Striffler: Violin",
+        "Viktor Wolf: Clarinet and Saxophone",
+        "Kristina Feix: Object and Puppet Play",
         "Katrin Bethge: Illustration"
       ],
       "performers": [
@@ -1049,36 +1020,8 @@
         "Katrin Bethge"
       ],
       "conductor": null,
-      "price": "15 Euro, für Kinder 5 Euro",
+      "price": "€15",
       "detail_url": "https://www.konzerthaus.de/de/programm/klangkuken/11658",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-13",
-      "time": "14:30",
-      "title": "KlangKüken",
-      "venue_hall": "Werner-Otto-Saal",
-      "program": [
-        "Eldar Tsalikov: Klarinette",
-        "Igor Spallati: Kontrabass",
-        "Kristina Feix: Objekt- und Puppenspiel",
-        "Katrin Bethge: Illustration"
-      ],
-      "performers": [
-        "Eldar Tsalikov",
-        "Igor Spallati",
-        "Kristina Feix",
-        "Katrin Bethge"
-      ],
-      "conductor": null,
-      "price": "15 Euro, für Kinder 5 Euro",
-      "detail_url": "https://www.konzerthaus.de/de/programm/klangkuken/11661",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
       "discovery_source": "sitemap_detail",
@@ -1105,7 +1048,7 @@
         "Katrin Bethge"
       ],
       "conductor": null,
-      "price": "15 Euro",
+      "price": "15 Euro, für Kinder 5 Euro",
       "detail_url": "https://www.konzerthaus.de/de/programm/klangkuken/11696",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -1117,24 +1060,23 @@
     },
     {
       "date": "2026-06-13",
-      "time": "15:00",
+      "time": "14:30",
       "title": "KlangKüken",
       "venue_hall": "Werner-Otto-Saal",
       "program": [
-        "Striffler: KlangKüken - Freundschaft – Von harmonischen Unterschieden und dissonanten Gemeinsamkeiten"
+        "Unspecified Composer: Freundschaft – Von tremolotiefen Einsamkeiten und hochtrillernden Zweisamkeiten"
       ],
       "performers": [
-        "Fabiana Striffler",
-        "Viktor Wolf",
-        "Kristina Feix",
+        "Susanne Paul",
+        "Tobias Dutschke",
+        "Martina Couturier",
         "Katrin Bethge"
       ],
       "conductor": null,
-      "price": "ab €15",
-      "detail_url": "https://www.konzerthaus.de/de/programm/klangkuken/11660",
+      "price": "15 Euro, für Kinder 5 Euro",
+      "detail_url": "https://www.konzerthaus.de/de/programm/klangkuken/11728",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
-      "duration_min": 45,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
@@ -1147,13 +1089,43 @@
       "title": "KlangKüken",
       "venue_hall": "Werner-Otto-Saal",
       "program": [
-        "Freundschaft – Von leisen Erwartungen und lauten Enttäuschungen"
+        "Freundschaft – Von harmonischen Unterschieden und dissonanten Gemeinsamkeiten"
       ],
       "performers": [
+        "Fabiana Striffler",
+        "Viktor Wolf",
+        "Kristina Feix",
+        "Katrin Bethge"
+      ],
+      "conductor": null,
+      "price": "ab €15, für Kinder €5",
+      "detail_url": "https://www.konzerthaus.de/de/programm/klangkuken/11660",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 45,
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "15:00",
+      "title": "KlangKüken",
+      "venue_hall": "Werner-Otto-Saal",
+      "program": [
         "Eldar Tsalikov: Klarinette",
         "Igor Spallati: Kontrabass",
         "Kristina Feix: Objekt- und Puppenspiel",
         "Katrin Bethge: Illustration"
+      ],
+      "performers": [
+        "Eldar Tsalikov",
+        "Igor Spallati",
+        "Kristina Feix",
+        "Katrin Bethge"
       ],
       "conductor": null,
       "price": "15 Euro, für Kinder 5 Euro",
@@ -1185,15 +1157,16 @@
         "Katrin Bethge"
       ],
       "conductor": null,
-      "price": "15 Euro, für Kinder 5 Euro",
+      "price": "€15",
       "detail_url": "https://www.konzerthaus.de/de/programm/klangkuken/11699",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
-      "duration_min": 45,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
+      "duration_min": 45,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1214,7 +1187,7 @@
         "Katrin Bethge"
       ],
       "conductor": null,
-      "price": "15 Euro, für Kinder 5 Euro",
+      "price": "ab €15",
       "detail_url": "https://www.konzerthaus.de/de/programm/klangkuken/11659",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -1230,23 +1203,19 @@
       "title": "KlangKüken",
       "venue_hall": "Werner-Otto-Saal",
       "program": [
-        "Jawad Salkhordeh: Tombak, Daf, Setar und Udu",
-        "Yuval Halpern: Klavier und Gesang",
-        "Martina Couturier: Puppenspiel",
-        "Katrin Bethge: Illustration"
+        "Komponist: Freundschaft – Von leisen Erwartungen und lauten Enttäuschungen"
       ],
       "performers": [
-        "Jawad Salkhordeh",
-        "Yuval Halpern",
-        "Martina Couturier",
-        "Katrin Bethge"
+        "Eldar Tsalikov: Klarinette",
+        "Igor Spallati: Kontrabass",
+        "Kristina Feix: Objekt- und Puppenspiel",
+        "Katrin Bethge: Illustration"
       ],
       "conductor": null,
-      "price": "ab €15",
-      "detail_url": "https://www.konzerthaus.de/de/programm/klangkuken/11698",
+      "price": "15 Euro, für Kinder 5 Euro",
+      "detail_url": "https://www.konzerthaus.de/de/programm/klangkuken/11662",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
-      "duration_min": 90,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
@@ -1262,13 +1231,13 @@
         "H. Beltz: KlangKüken"
       ],
       "performers": [
-        "Susanne Paul",
-        "Tobias Dutschke",
-        "Martina Couturier",
-        "Katrin Bethge"
+        "Susanne Paul: Violoncello",
+        "Tobias Dutschke: Percussion",
+        "Martina Couturier: Puppenspiel",
+        "Katrin Bethge: Illustration"
       ],
       "conductor": null,
-      "price": "€15",
+      "price": "15 Euro, für Kinder 5 Euro",
       "detail_url": "https://www.konzerthaus.de/de/programm/klangkuken/11729",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -1276,6 +1245,7 @@
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1309,34 +1279,6 @@
     {
       "date": "2026-06-14",
       "time": "11:00",
-      "title": "Kinderbetreuung Mozart-Matinee – KlangKüken",
-      "venue_hall": "Werner-Otto-Saal",
-      "program": [
-        "Mozart: Werke für Kinder"
-      ],
-      "performers": [
-        "Susanne Paul",
-        "Tobias Dutschke",
-        "Martina Couturier",
-        "Katrin Bethge",
-        "Bärbel Buse",
-        "Pinja Zenk"
-      ],
-      "conductor": null,
-      "price": "ab 3 Euro",
-      "detail_url": "https://www.konzerthaus.de/de/programm/kinderbetreuung-mozart-matinee-klangkuken/11933",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin",
-      "duration_min": 90,
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-14",
-      "time": "11:00",
       "title": "Mozart-Matinee",
       "venue_hall": "Großer Saal",
       "program": [
@@ -1347,7 +1289,7 @@
         "Konzerthausorchester Berlin"
       ],
       "conductor": "Fabio Biondi",
-      "price": "ab 23 und 34 Euro, Kinder (ab 7 Jahre) 8 Euro",
+      "price": "ab 7 Euro",
       "detail_url": "https://www.konzerthaus.de/de/programm/mozart-matinee/11539",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -1407,7 +1349,7 @@
       "detail_url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-berlin-fabio-biondi/11540",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
-      "duration_min": 105,
+      "duration_min": 90,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
@@ -1456,6 +1398,7 @@
       "detail_url": "https://www.konzerthaus.de/de/programm/espresso-konzert/11731",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
+      "duration_min": 60,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
@@ -1519,8 +1462,8 @@
         "Anton Bruckner: Sinfonie Nr. 7 E-Dur"
       ],
       "performers": [
-        "Konzerthausorchester Berlin",
-        "Anastasia Kobekina"
+        "Anastasia Kobekina",
+        "Konzerthausorchester Berlin"
       ],
       "conductor": "Iván Fischer",
       "price": "28 / 35 / 46 / 57 / 67 / 79 Euro",
@@ -1553,31 +1496,56 @@
       "detail_url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-berlin-ivan-fischer/11542",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
-      "duration_min": 105,
       "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 105,
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-21",
+      "time": "20:00",
+      "title": "Shanghai Conservatory of Music",
+      "venue_hall": "Kleiner Saal",
+      "program": [],
+      "performers": [
+        "Shanghai Conservatory of Music - Soloists Chamber Ensemble",
+        "Liao Changyong",
+        "Zhang Aozhe ",
+        "Zhu Wanchen",
+        "Ma Yong"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.konzerthaus.de/de/programm/shanghai-conservatory-of-music/12985",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin",
+      "discovery_source": "sitemap_jsonld",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
     },
     {
-      "date": "2026-06-22",
+      "date": "2026-06-23",
       "time": "20:00",
-      "title": "29. Benefizgala des Lions Club Berlin-Wannsee",
-      "venue_hall": "Großer Saal",
+      "title": "„Mein ganzes Sein senke ich in dich‘",
+      "venue_hall": "Kleiner Saal",
       "program": [
-        "Francis Poulenc: Suite française d’après Claude Gervaise",
-        "Claude Debussy: „Première Rhapsodie“ für Orchester und Klarinette solo in B",
-        "Camille Saint-Saëns: „Danse macabre“ - Poëme symphonique op. 40",
-        "Hector Berlioz: „Symphonie fantastique“ op. 14"
+        "Schumann: Ehetagebücher"
       ],
       "performers": [
-        "Landesjugendorchester Berlin",
-        "Emily Poser"
+        "Theresa Pilsl",
+        "Jeeyoung Lim",
+        "Amelie Wallner",
+        "Elenora Pertz",
+        "Tabea Streicher"
       ],
-      "conductor": "Lancelot Fuhry",
-      "price": "75/49/29 EUR zzgl. VVG",
-      "detail_url": "https://www.konzerthaus.de/de/programm/29-benefizgala-des-lions-club-berlin-wannsee/12986",
+      "conductor": null,
+      "price": "Spendenempfehlung ab 40 Euro pro Person",
+      "detail_url": "https://www.konzerthaus.de/de/programm/mein-ganzes-sein-senke-ich-in-dich/12746",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
       "discovery_source": "sitemap_detail",
@@ -1623,7 +1591,7 @@
         "Nikolai Medvedev"
       ],
       "conductor": null,
-      "price": "38/32/25 EUR zzgl. VVG/ Erm. 28,50/24/18,75 EUR zzgl. VVG",
+      "price": "38/ 32/ 25 EUR zzgl. VVG/ Erm. 28,50/ 24/ 18,75 EUR zzgl. VVG",
       "detail_url": "https://www.konzerthaus.de/de/programm/nikolai-medvedev-fusions/12388",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -1639,11 +1607,17 @@
       "title": "Berlin Tracks: A Song For You & Konzerthausorchester Berlin",
       "venue_hall": "Großer Saal",
       "program": [
-        "Noah Slee/Stefan Behrisch: A Soulful Missa – Groovegetriebene Songs für Soulchor und Orchester"
+        "Beethoven: Missa solemnis"
       ],
       "performers": [
         "Konzerthausorchester Berlin",
-        "A Song For You"
+        "A Song For You",
+        "Noah Slee",
+        "Stefan Behrisch",
+        "Dhanesh Jayaselan",
+        "Philipp Seliger",
+        "Moment Seven",
+        "Stephanie Ilova"
       ],
       "conductor": "Jonathan Stockhammer",
       "price": "30 Euro auf allen Plätzen",
@@ -1672,6 +1646,7 @@
       "discovery_source": "sitemap_jsonld",
       "discovered_only": false,
       "duration_min": 75,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -1725,32 +1700,6 @@
       "is_classical": true
     },
     {
-      "date": "2026-06-27",
-      "time": "20:00",
-      "title": "Wolfgang Emanuel Schmidt & Boris Kusnezow – The Recital",
-      "venue_hall": "Kleiner Saal",
-      "program": [
-        "Schumann: Drei Fantasiestücke op. 73",
-        "Beethoven: Sonate für Klavier und Violoncello D-Dur op. 102 Nr. 2",
-        "Schumann: Adagio und Allegro für Violoncello und Klavier As-Dur op. 70",
-        "Brahms: Sonate für Violoncello und Klavier e-Moll op. 38"
-      ],
-      "performers": [
-        "Wolfgang Emanuel Schmidt",
-        "Boris Kusnezow"
-      ],
-      "conductor": null,
-      "price": "30/20 EUR zzgl. VVG/ Erm. 15/ 10 EUR zzgl. VVG",
-      "detail_url": "https://www.konzerthaus.de/de/programm/wolfgang-emanuel-schmidt-boris-kusnezow-the-recital/12397",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
       "date": "2026-06-28",
       "time": "11:00",
       "title": "Familienführung",
@@ -1758,7 +1707,7 @@
       "program": [],
       "performers": [],
       "conductor": null,
-      "price": "3 Euro zzgl. Webgebühr (begrenzte Teilnehmerzahl) zzgl. Systemgebühr",
+      "price": "3 Euro zzgl. Webgebühr",
       "detail_url": "https://www.konzerthaus.de/de/programm/familienfuhrung/11943",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -1776,8 +1725,8 @@
       "program": [],
       "performers": [],
       "conductor": null,
-      "price": "3 Euro zzgl. Webgebühr (begrenzte Teilnehmerzahl)",
-      "detail_url": "https://www.konzerthaus.de/de/programm/familienfuhrung/11947",
+      "price": "ab 3 Euro zzgl. Webgebühr",
+      "detail_url": "https://www.konzerthaus.de/de/programm/familienfuhrung/11946",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
       "discovery_source": "sitemap_detail",
@@ -1799,7 +1748,7 @@
       ],
       "conductor": "N/A",
       "price": "ab 3 Euro zzgl. Webgebühr",
-      "detail_url": "https://www.konzerthaus.de/de/programm/familienfuhrung/11948",
+      "detail_url": "https://www.konzerthaus.de/de/programm/familienfuhrung/11947",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
       "duration_min": 60,
@@ -1817,7 +1766,7 @@
       "program": [],
       "performers": [],
       "conductor": null,
-      "price": "ab 3 Euro zzgl. Webgebühr",
+      "price": "3 Euro zzgl. Webgebühr (begrenzte Teilnehmerzahl)",
       "detail_url": "https://www.konzerthaus.de/de/programm/familienfuhrung/11949",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -1835,7 +1784,7 @@
       "program": [],
       "performers": [],
       "conductor": null,
-      "price": "ab 3 Euro zzgl. Webgebühr",
+      "price": "ab 3 Euro zzgl. Webgebühr (begrenzte Teilnehmerzahl)",
       "detail_url": "https://www.konzerthaus.de/de/programm/familienfuhrung/11950",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -1853,8 +1802,8 @@
       "program": [],
       "performers": [],
       "conductor": null,
-      "price": "ab 3 Euro zzgl. Webgebühr",
-      "detail_url": "https://www.konzerthaus.de/de/programm/familienfuhrung/11952",
+      "price": "ab 3 Euro zzgl. Webgebühr (begrenzte Teilnehmerzahl)",
+      "detail_url": "https://www.konzerthaus.de/de/programm/familienfuhrung/11951",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
       "discovery_source": "sitemap_detail",
@@ -1930,16 +1879,16 @@
         "Pierre Boulez: Anthèmes für Violine solo",
         "Hanurij Lee: Stuff #2B für Klarinette, Viola und Klavier (Kompositionsauftrag von Track3)",
         "Ursula Mamlok: Rhapsody für Klarinette, Viola und Klavier",
-        "György Kurtág: „Hommage à R. Sch.“ op.15d für Klarinette (auch große Trommel), Viola und Klavier",
+        "György Kurtág: Hommage à R. Sch. op.15d für Klarinette (auch große Trommel), Viola und Klavier",
         "Johannes Staud: Towards a Brighter Hue für Violine solo",
-        "Márton Illés: Scene polidimensionali X „Vonalterek“ für Klar., Viola und Klavier",
+        "Márton Illés: Scene polidimensionali X „Vonalterek“ für Klarinette, Viola und Klavier",
         "Ursula Mamlok: From My Garden für Violine solo"
       ],
       "performers": [
-        "Taavi Orro",
-        "Elijah Spies",
-        "Shan-Chi Hsu",
-        "Rachel Koblyakov"
+        "Taavi Orro (Klarinette)",
+        "Elijah Spies (Viola)",
+        "Shan-Chi Hsu (Klavier)",
+        "Rachel Koblyakov (Violine solo)"
       ],
       "conductor": null,
       "price": "15 EUR zzgl. VVG/ Schüler, Studenten 12 EUR zzgl. VVG",
@@ -1984,13 +1933,14 @@
       "program": [
         "Hildegard von Bingen: Sed Diabolus",
         "Björk: Ancestors",
-        "Sonar Quartett: Improvisation über Samuel Barbers Adagio for Strings",
+        "Sonar Quartett: Improvisation über Samuel Barbers „Adagio for Strings“",
         "George Crumb: Black Angels – Thirteen Images from the Dark Land for Electric String Quartet",
         "John Cage: 4'33''",
         "Radiohead: Pyramid Song",
-        "Olivier Messiaen: Louange à l'Éternitè de Jèsus aus dem Quatuor pour la fin du temps"
+        "Olivier Messiaen: Louange à l'Èternitè de Jèsus aus dem „Quatuor pour la fin du temps“"
       ],
       "performers": [
+        "Sonar Quartett",
         "Wojciech Garbowski",
         "Emilija Kortus",
         "Ian Anderson",
@@ -2056,29 +2006,28 @@
       "is_classical": true
     },
     {
-      "date": "2026-07-02",
-      "time": "20:00",
-      "title": "Rundfunk-Sinfonieorchester Berlin, Katharina Wincor",
+      "date": "2026-07-03",
+      "time": "19:00",
+      "title": "Konzerthausorchester Berlin, Juraj Valčuha",
       "venue_hall": "Großer Saal",
       "program": [
-        "Augusta Read Thomas: Plea for Peace für Kammerorchester",
-        "Fazil Say: Never Give Up – Konzert für Violoncello und Orchester",
-        "Ludwig van Beethoven: Sinfonie Nr. 6 F-Dur op. 68 (\"Pastorale\")"
+        "Žuraj: Unveiled – Konzert für Violoncello und Orchester",
+        "Schumann: Sinfonie Nr. 2 C-Dur op. 61"
       ],
       "performers": [
-        "Rundfunk-Sinfonieorchester Berlin",
-        "Camille Thomas"
+        "Konzerthausorchester Berlin",
+        "Jean-Guihen Queyras"
       ],
-      "conductor": "Katharina Wincor",
-      "price": "Tickets available online",
-      "detail_url": "https://www.konzerthaus.de/de/programm/rundfunk-sinfonieorchester-berlin-katharina-wincor/11979",
+      "conductor": "Juraj Valčuha",
+      "price": "19 / 24 / 35 / 46 / 57 / 66 Euro zzgl. Systemgebühr",
+      "detail_url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-berlin-juraj-valcuha/11543",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
+      "duration_min": 105,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2100,6 +2049,7 @@
       "discovery_source": "sitemap_jsonld",
       "discovered_only": false,
       "duration_min": 75,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -2181,37 +2131,12 @@
       "is_classical": true
     },
     {
-      "date": "2026-07-05",
-      "time": "20:00",
-      "title": "Zafraan Ensemble",
-      "venue_hall": "Werner-Otto-Saal",
-      "program": [
-        "Keiko Devaux: Arras",
-        "Eres Holz: Kataklothes",
-        "Ajtony Csaba: Taajuu (UA)",
-        "Michaela Catranis: Inside the Veins of a Petal"
-      ],
-      "performers": [
-        "Zafraan Ensemble"
-      ],
-      "conductor": "Miguel Pérez Iñesta",
-      "price": "17 Euro zzgl. Systemgebühr",
-      "detail_url": "https://www.konzerthaus.de/de/programm/zafraan-ensemble/11738",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
       "date": "2026-07-09",
       "time": "19:30",
       "title": "Classic Open Air Eröffnungsabend",
       "venue_hall": "Freitreppe",
       "program": [
-        "Gershwin: Ein Amerikaner in Paris - Sinfonische Fantasie",
+        "Gershwin: Ein Amerikaner in Paris",
         "Gershwin: Rhapsody in Blue für Klavier und Orchester",
         "Weill: Sinfonie Nr. 2"
       ],
@@ -2221,7 +2146,7 @@
         "Hayato Sumino"
       ],
       "conductor": "Joana Mallwitz",
-      "price": "64,50 / 70,50 / 93,50 / 104,50 / 116,50 Euro zzgl. VVG",
+      "price": "€64.50 / €70.50 / €93.50 / €104.50 / €116.50",
       "detail_url": "https://www.konzerthaus.de/de/programm/classic-open-air-eroffnungsabend/12287",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -2259,15 +2184,15 @@
       "title": "MOHIRON – Tadschikistan",
       "venue_hall": "Werner-Otto-Saal",
       "program": [
-        "Traditional melodies meet international compositions: Various works performed with traditional instruments."
+        "Tadschikische Melodien: diverse traditionelle Werke"
       ],
       "performers": [
-        "Idibek Toshev",
-        "Shohmaqsud Quvvatov",
-        "Muhammad Yorov",
-        "Jovidon Hasanov",
-        "Guljamol Zohidova",
-        "Mehrafzuni Mahmadullo"
+        "Idibek Toshev - Rubab, Dumra",
+        "Shohmaqsud Quvvatov - Bass-Dotar, Synthesizer",
+        "Muhammad Yorov - Ney",
+        "Jovidon Hasanov - Ghichak",
+        "Guljamol Zohidova - Qanun",
+        "Mehrafzuni Mahmadullo - Tablak, Daf, Cajón"
       ],
       "conductor": null,
       "price": null,
@@ -2275,6 +2200,31 @@
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
       "duration_min": 60,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-08-01",
+      "time": "19:00",
+      "title": "Youth Symphony Orchestra of Ukraine",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Bohdan Sehin: Kaiserwald-Walzer für Symphonieorchester (UA)",
+        "Johannes Brahms: Konzert für Klavier und Orchester Nr. 1 d-Moll op. 15",
+        "Antonín Dvořák: Sinfonie Nr. 8 G-Dur op. 88"
+      ],
+      "performers": [
+        "Youth Symphony Orchestra of Ukraine",
+        "Illia Ovcharenko"
+      ],
+      "conductor": "Oksana Lyniv",
+      "price": null,
+      "detail_url": "https://www.konzerthaus.de/de/programm/youth-symphony-orchestra-of-ukraine/12899",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin",
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
@@ -2297,32 +2247,6 @@
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
       "discovery_source": "sitemap_jsonld",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-08-02",
-      "time": "19:00",
-      "title": "Orchestre National des Jeunes du Luxembourg",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Hy-Khang Dang: Neues Werk (DEA)",
-        "Sergej Rachmaninow: Rhapsodie über ein Thema von Paganini für Klavier und Orchester op. 43",
-        "Igor Strawinsky: Zirkus-Polka (für einen jungen Elefanten)",
-        "Igor Strawinsky: Der Feuervogel - Suite aus der Ballettmusik (Fassung von 1945)"
-      ],
-      "performers": [
-        "Joseph Moog",
-        "Orchestre National des Jeunes du Luxembourg"
-      ],
-      "conductor": "Pit Brosius",
-      "price": "Tickets available through Young Euro Classic",
-      "detail_url": "https://www.konzerthaus.de/de/programm/orchestre-national-des-jeunes-du-luxembourg/12901",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin",
-      "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -2386,12 +2310,11 @@
       ],
       "performers": [
         "Zhejiang Conservatory of Music",
-        "Orchester",
         "SUN Yutong",
-        "Klavier"
+        "ZHANG Yi"
       ],
       "conductor": "ZHANG Yi",
-      "price": "Tickets available through Young Euro Classic",
+      "price": "Tickets available through Young Euro Classic, pricing not specified",
       "detail_url": "https://www.konzerthaus.de/de/programm/zhejiang-conservatory-of-music-orchester/12904",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
@@ -2426,23 +2349,69 @@
       "is_classical": true
     },
     {
-      "date": "2026-08-08",
-      "time": "16:30",
-      "title": "JISR // جسر // BRÜCKE – Marokko",
-      "venue_hall": "Werner-Otto-Saal",
+      "date": "2026-08-07",
+      "time": "19:00",
+      "title": "Jovem Orquestra Portuguesa",
+      "venue_hall": "Großer Saal",
       "program": [
-        "Traditional: Masterpieces with Contemporary Compositions"
+        "Berlioz: Le Corsaire - Ouvertüre op. 21",
+        "Berlioz: Ah, je vais mourir... - Arie der Dido aus der Oper Les Troyens",
+        "Berlioz: Sur les lagunes - Nr.5 aus Les nuits d'été",
+        "César Rafael: Saudades, só portugueses (UA)",
+        "Tschaikovsky: Sinfonie Nr. 6 h-Moll op. 74 (Pathétique)"
       ],
       "performers": [
-        "Mohcine Ramdan",
-        "Assala El Hamdouchi",
-        "Alaa Zouiten",
-        "Dalal El Bied",
-        "Anass Ouldkalbi"
+        "Pedro Carneiro",
+        "Cláudia Ribas"
+      ],
+      "conductor": "Pedro Carneiro",
+      "price": null,
+      "detail_url": "https://www.konzerthaus.de/de/programm/jovem-orquestra-portuguesa/12906",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-08-08",
+      "time": "19:00",
+      "title": "Nationale Jugendphilharmonie der Türkei",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [
+        "Nationale Jugendphilharmonie der Türkei",
+        "Cem Mansur",
+        "Özgür Ünaldİ"
       ],
       "conductor": null,
       "price": null,
-      "detail_url": "https://www.konzerthaus.de/de/programm/jisr-brucke-marokko/12907",
+      "detail_url": "https://www.konzerthaus.de/de/programm/nationale-jugendphilharmonie-der-turkei/12908",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin",
+      "discovery_source": "sitemap_jsonld",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-08-09",
+      "time": "11:00",
+      "title": "Rock’n Roll im Konzerthaus",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Puschban: Rock’n Roll im Konzerthaus"
+      ],
+      "performers": [
+        "Suli Puschban",
+        "die Kapelle der guten Hoffnung"
+      ],
+      "conductor": null,
+      "price": "ab €5",
+      "detail_url": "https://www.konzerthaus.de/de/programm/rockn-roll-im-konzerthaus/12920",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
       "discovery_source": "sitemap_detail",
@@ -2492,6 +2461,159 @@
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-08-09",
+      "time": "19:00",
+      "title": "Turkmenisches Jugendorchester",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Chary Nurymov: Konzert für Klavier und Orchester",
+        "Weli Muhatov: Mein Vaterland - Sinfonische Dichtung",
+        "Aidan Gold: Lieder aus Turkmenistan, Konzert für Schlagwerk und Orchester (DEA)",
+        "Pierre Thilloy: Diable qui danse op. 265 (DEA)",
+        "Nury Halmammedov: Wind der Karakum-Wüste - Sinfonische Bilder",
+        "Arturo Márquez: Danzón Nr. 2"
+      ],
+      "performers": [
+        "Youth Symphony Orchestra of Turkmenistan",
+        "Aynur Otuzova"
+      ],
+      "conductor": "Rasul Klychev",
+      "price": null,
+      "detail_url": "https://www.konzerthaus.de/de/programm/turkmenisches-jugendorchester/12910",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-08-10",
+      "time": "19:00",
+      "title": "Orchestra of the Americas &amp; Penderecki Youth Orchestra",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [
+        "Orchestra of the Americas &amp; Penderecki Youth Orchestra",
+        "Carlos Miguel Prieto"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.konzerthaus.de/de/programm/orchestra-of-the-americas-penderecki-youth-orchestra/12911",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin",
+      "discovery_source": "sitemap_jsonld",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-08-11",
+      "time": "19:00",
+      "title": "The Jakob Manz – Karthik Mani Project",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Nils Kugelmann: Bass",
+        "Erik Konertz: Posaune",
+        "Karthik Mani: Ghatam-Trommel, Schlagwerk, Konnakol",
+        "Bhumika L. Madhusudan: Gesang, Konnakol",
+        "S. Janardhan: Indische Violine"
+      ],
+      "performers": [
+        "Jakob Manz",
+        "Nils Kugelmann",
+        "Erik Konertz",
+        "Karthik Mani",
+        "Bhumika L. Madhusudan",
+        "S. Janardhan"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.konzerthaus.de/de/programm/the-jakob-manz-karthik-mani-project/12912",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-08-12",
+      "time": "19:00",
+      "title": "Ulster Youth Orchestra",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Harty: The Children of Lir",
+        "Rachmaninow: Sinfonische Tänze op. 45",
+        "Max Todes: Journey to the Otherworld (UA)"
+      ],
+      "performers": [
+        "Ulster Youth Orchestra",
+        "Rebecca Murphy"
+      ],
+      "conductor": "Jac van Steen",
+      "price": "Tickets available via Young Euro Classic",
+      "detail_url": "https://www.konzerthaus.de/de/programm/ulster-youth-orchestra/12913",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-08-13",
+      "time": "19:00",
+      "title": "Slovenian Youth Orchestra",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [
+        "Slovenian Youth Orchestra",
+        "Živa Ploj Peršuh",
+        "Lauri Porra"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.konzerthaus.de/de/programm/slovenian-youth-orchestra/12914",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin",
+      "discovery_source": "sitemap_jsonld",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-08-14",
+      "time": "19:00",
+      "title": "Angelika Prokopp Sommerakademie der Wiener Philharmoniker",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Wagner: Siegfried-Idyll",
+        "Glière: Konzert für Harfe und Orchester Es-Dur op. 74",
+        "Varga: Neues Werk (DEA)",
+        "Beethoven: Sinfonie Nr. 4 B-Dur op. 60"
+      ],
+      "performers": [
+        "Anneleen Lenaerts"
+      ],
+      "conductor": "Martin Rajna",
+      "price": null,
+      "detail_url": "https://www.konzerthaus.de/de/programm/angelika-prokopp-sommerakademie-der-wiener-philharmoniker/12915",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2512,6 +2634,31 @@
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
       "discovery_source": "sitemap_jsonld",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-08-16",
+      "time": "16:30",
+      "title": "&ñịoن – Vietnam, Deutschland, Ägypten und Argentinien",
+      "venue_hall": "Werner-Otto-Saal",
+      "program": [
+        "FUTURE NOW-Ensemble: Performance"
+      ],
+      "performers": [
+        "Vinh Tran",
+        "Laris / Lara Bäucker",
+        "Hatem Hamdy",
+        "Joaquin Macedo"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.konzerthaus.de/de/programm/nio-vietnam-deutschland-agypten-und-argentinien/12918",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin",
+      "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -2552,7 +2699,7 @@
       "venue_hall": "Großer Saal",
       "program": [
         "Richard Strauss: Walzerfolgen aus der Oper „Der Rosenkavalier“ op. 59",
-        "Maurice Ravel: „La Valse“ - Poème choréographique für Orchester",
+        "Maurice Ravel: „La Valse“ - Poème chorégraphique für Orchester",
         "Unsuk Chin: „Subito con forza“ für Orchester",
         "Sergej Prokofjew: „Romeo und Julia“ - Sätze aus der Ballettmusik op. 64"
       ],
@@ -2564,11 +2711,12 @@
       "detail_url": "https://www.konzerthaus.de/de/programm/konzert-zur-saisoneroffnung/12465",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
-      "duration_min": 105,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
+      "duration_min": 105,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2604,12 +2752,13 @@
         "Händel: Kantate „Il delirio amoroso“ („Da quel giorno fatale“) HWV 99"
       ],
       "performers": [
+        "Akademie für Alte Musik Berlin",
         "Bernhard Forck",
         "Yves Ytier",
         "Jiayu Jin",
         "Xenia Löffler"
       ],
-      "conductor": null,
+      "conductor": "Bernhard Forck",
       "price": "19 / 24 / 35 / 46 / 57 / 66 Euro",
       "detail_url": "https://www.konzerthaus.de/de/programm/akademie-fur-alte-musik-berlin/12471",
       "venue": "Konzerthaus Berlin",
@@ -2637,33 +2786,6 @@
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
       "discovery_source": "sitemap_jsonld",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-09-27",
-      "time": "16:00",
-      "title": "Konzerthausorchester Berlin, Iván Fischer",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Strawinsky: Scherzo à la russe",
-        "Strawinsky: Konzert für Violine und Orchester in D",
-        "Bartók: Konzert für Orchester Sz 116"
-      ],
-      "performers": [
-        "Konzerthausorchester Berlin",
-        "Iván Fischer",
-        "Patricia Kopatchinskaja"
-      ],
-      "conductor": "Iván Fischer",
-      "price": "28 / 35 / 46 / 57 / 67 / 79 Euro",
-      "detail_url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-berlin-ivan-fischer/12477",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin",
-      "duration_min": 105,
-      "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -2719,14 +2841,43 @@
       "is_classical": true
     },
     {
+      "date": "2026-10-03",
+      "time": "19:00",
+      "title": "Konzerthausorchester Berlin, Joana Mallwitz",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Alban Berg: Sinfonische Stücke aus „Lulu“",
+        "Giuseppe Verdi: Vorspiel zum 1. Akt der Oper „La Traviata“",
+        "Giuseppe Verdi: „È strano ... Sempre libera“ - Arie der Violetta aus der Oper „La Traviata“",
+        "Ludwig van Beethoven: \"Abscheulicher... Komm, Hoffnung\" - Rez. und Arie der Leonore aus der Oper„Fidelio\" op. 72",
+        "Ludwig van Beethoven: Ouvertüre zur Oper „Leonore“ Nr. 3 C-Dur op. 72a"
+      ],
+      "performers": [
+        "Konzerthausorchester Berlin",
+        "Joana Mallwitz",
+        "Vera-Lotte Boecker"
+      ],
+      "conductor": "Joana Mallwitz",
+      "price": "35 / 46 / 57 / 69 / 84 / 99 Euro",
+      "detail_url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-berlin-joana-mallwitz/12486",
+      "venue": "Konzerthaus Berlin",
+      "city": "Berlin",
+      "duration_min": 105,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
       "date": "2026-10-16",
       "time": "20:00",
       "title": "Kammermusik des Konzerthausorchesters",
       "venue_hall": "Kleiner Saal",
       "program": [
-        "Bridge: Phantasy für Klavierquartett fis-Moll",
-        "Dohnányi: Serenade für Streichtrio C-Dur op. 10",
-        "Schumann: Klavierquartett Es-Dur op. 47"
+        "Frank Bridge: Phantasy für Klavierquartett fis-Moll",
+        "Ernst von Dohnányi: Serenade für Streichtrio C-Dur op. 10",
+        "Robert Schumann: Klavierquartett Es-Dur op. 47"
       ],
       "performers": [
         "Vlad Popescu",
@@ -2765,31 +2916,6 @@
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
       "discovery_source": "sitemap_jsonld",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-10-17",
-      "time": "19:00",
-      "title": "Konzerthausorchester Berlin, François Leleux",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Dvořák: Legenden op. 59 (Auswahl)",
-        "Hummel: Introduktion, Thema und Variationen für Oboe und Orchester op. 102",
-        "Mozart: Sinfonie D-Dur KV 504 („Prager“)"
-      ],
-      "performers": [
-        "Konzerthausorchester Berlin",
-        "François Leleux"
-      ],
-      "conductor": "François Leleux",
-      "price": "19 / 24 / 35 / 46 / 57 / 66 Euro",
-      "detail_url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-berlin-francois-leleux/12495",
-      "venue": "Konzerthaus Berlin",
-      "city": "Berlin",
-      "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -2861,6 +2987,7 @@
       "detail_url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-berlin-joana-mallwitz/12501",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
+      "duration_min": 90,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
@@ -2890,25 +3017,22 @@
       "is_classical": true
     },
     {
-      "date": "2026-11-24",
-      "time": "19:00",
-      "title": "Armida Quartett",
-      "venue_hall": "Kleiner Saal",
+      "date": "2026-11-01",
+      "time": "16:00",
+      "title": "Konzerthausorchester Berlin, Joana Mallwitz",
+      "venue_hall": "Großer Saal",
       "program": [
-        "Beethoven: Streichquartett F-Dur op. 18 Nr. 1",
-        "Caroline Shaw: „Entr'acte“ für Streichquartett",
-        "Schubert: Streichquartett a-Moll op. 29 D 804 („Rosamunde\")"
+        "Brahms: Akademische Festouvertüre op. 80",
+        "Schumann: Konzert für Violoncello und Orchester a-Moll op. 129",
+        "Schumann: Sinfonie Nr. 2 C-Dur op. 61"
       ],
       "performers": [
-        "Armida Quartett",
-        "Martin Funda",
-        "Johanna Staemmler",
-        "Teresa Schwamm-Biskamp",
-        "Peter-Philipp Staemmler"
+        "Konzerthausorchester Berlin",
+        "Pablo Ferrandez"
       ],
-      "conductor": null,
-      "price": "17 und 22 Euro",
-      "detail_url": "https://www.konzerthaus.de/de/programm/armida-quartett/12447",
+      "conductor": "Riccardo Minasi",
+      "price": "35 / 46 / 57 / 69 / 84 / 99 Euro",
+      "detail_url": "https://www.konzerthaus.de/de/programm/konzerthausorchester-berlin-joana-mallwitz/12503",
       "venue": "Konzerthaus Berlin",
       "city": "Berlin",
       "discovery_source": "sitemap_detail",
@@ -3013,17 +3137,17 @@
       "is_classical": true
     }
   ],
-  "total_events": 120,
-  "total_events_visible": 42,
-  "total_events_discovered": 120,
-  "total_events_discovered_strict": 120,
-  "total_events_enriched": 116,
+  "total_events": 124,
+  "total_events_visible": 46,
+  "total_events_discovered": 124,
+  "total_events_discovered_strict": 124,
+  "total_events_enriched": 122,
   "source": "sitemap_jsonld",
   "latest_discovered_event_date": "2026-11-29",
   "latest_event_date": "2026-11-29",
   "covers_horizon": true,
   "horizon_grace_days": 1,
-  "events_with_date": 120,
+  "events_with_date": 124,
   "events_missing_date": 0,
   "date_coverage_rate": 1.0,
   "sitemap_jsonld_stats": {
@@ -3032,9 +3156,9 @@
     "checked": 240,
     "limit": 240,
     "initial_sample": 24,
-    "jsonld_pages": 234,
-    "events": 42,
-    "within_horizon": 42,
+    "jsonld_pages": 238,
+    "events": 46,
+    "within_horizon": 46,
     "past_or_beyond_horizon": 192,
     "canceled": 0,
     "invalid": 0,
@@ -3052,17 +3176,17 @@
     "missing_date_or_title": 0,
     "today_or_past": 2,
     "past_or_beyond_horizon": 0,
-    "duplicate_urls": 42,
+    "duplicate_urls": 46,
     "date_scout": {
       "sitemap_urls": 680,
       "candidate_urls": 680,
       "checked": 680,
-      "dated_urls": 140,
+      "dated_urls": 152,
       "limit": 1000,
       "first_date": "2026-05-21",
       "latest_date": "2026-11-29"
     },
-    "date_corrected_from_scout": 16,
+    "date_corrected_from_scout": 14,
     "latest_date": "2026-11-28"
   }
 }

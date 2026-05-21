@@ -3,94 +3,14 @@
   "city": "Bremen",
   "slug": "glocke_bremen",
   "source_url": "https://www.glocke.de/tickets-programm/",
-  "scraped_at": "2026-05-19T19:17:26.270758Z",
+  "scraped_at": "2026-05-21T15:06:47.269479Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
     {
-      "date": "2026-05-19",
-      "time": "20:00",
-      "title": "Jan Lisiecki »Tanz auf den Tasten« 5. Meisterkonzert",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Schubert: 16 Deutsche Tänze D 783",
-        "Bartók: Rumänische Volkstänze Sz 56",
-        "Chopin: Grande valse brillante Es-Dur op. 18",
-        "Brahms: Walzer As-Dur op. 39/15",
-        "Brahms: weitere Werke",
-        "Chopin: weitere Werke",
-        "Ginastera: weitere Werke",
-        "Piazzolla: weitere Werke"
-      ],
-      "performers": [
-        "Jan Lisiecki"
-      ],
-      "conductor": null,
-      "price": "ab €28,20",
-      "detail_url": "https://www.glocke.de/event/jan-lisiecki-tanz-auf-den-tasten-5-meisterkonzert/?back_btn=1",
-      "venue": "Glocke Bremen",
-      "city": "Bremen",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "reused_enrichment": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-20",
-      "time": "19:00",
-      "title": "Curtis On Tour 8 Philharmonisches Kammerkonzert",
-      "venue_hall": "Kleiner Saal",
-      "program": [
-        "Martinů: Drei Madrigale",
-        "Beethoven: Klaviertrio D-Dur op. 70/1 (»Geistertrio«)",
-        "Brahms: Klavierquintett f-Moll op. 34"
-      ],
-      "performers": [
-        "Liza Ferschtman",
-        "Benjamin Hochman",
-        "Leah Amory",
-        "Davin Mar",
-        "Carson Ling-Efird"
-      ],
-      "conductor": "Liza Ferschtman",
-      "price": "€31–€47",
-      "detail_url": "https://www.glocke.de/event/curtis-on-tour-8-philharmonisches-kammerkonzert/",
-      "venue": "Glocke Bremen",
-      "city": "Bremen",
-      "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "reused_enrichment": true,
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-20",
-      "time": "20:00",
-      "title": "Marc-Uwe Kling: »Neues vom Känguru«",
-      "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [
-        "Marc-Uwe Kling"
-      ],
-      "conductor": null,
-      "price": "39,75 € Normal - Nur noch Einzelplätze",
-      "detail_url": "https://www.glocke.de/event/marc-uwe-kling-neues-vom-kaenguru/?back_btn=1",
-      "venue": "Glocke Bremen",
-      "city": "Bremen",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "reused_enrichment": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": false
-    },
-    {
       "date": "2026-05-23",
       "time": "19:30",
-      "title": "Dennis Alexander Volk »Storytelling Piano«",
+      "title": "Dennis Alexander Volk Storytelling Piano",
       "venue_hall": "Großer Saal",
       "program": [],
       "performers": [
@@ -98,10 +18,10 @@
       ],
       "conductor": null,
       "price": null,
-      "detail_url": "https://www.glocke.de/event/dennis-alexander-volk-storytelling-piano/?back_btn=1",
+      "detail_url": "https://www.glocke.de/event/dennis-alexander-volk-storytelling-piano/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "firecrawl_listing",
+      "discovery_source": "glocke_listing",
       "discovered_only": false,
       "duration_min": 120,
       "reused_enrichment": true,
@@ -112,7 +32,7 @@
     {
       "date": "2026-05-24",
       "time": "17:00",
-      "title": "Philharmonie der Solisten »Vivaldi – Die vier Jahreszeiten«",
+      "title": "Philharmonie Der Solisten Vivaldi Die Vier Jahreszeiten 7",
       "venue_hall": "Kleiner Saal",
       "program": [
         "Vivaldi: »Die vier Jahreszeiten« op. 8/1-4",
@@ -125,10 +45,10 @@
       ],
       "conductor": "Vladik Otaryan",
       "price": "56,35 € Normal, 45,35 € Schüler/Studierende, 45,35 € Schwerbehinderung, 45,35 € Normal, 34,35 € Schüler/Studierende, 34,35 € Schwerbehinderung, 34,35 € Normal, 28,35 € Schüler/Studierende, 28,35 € Schwerbehinderung",
-      "detail_url": "https://www.glocke.de/event/philharmonie-der-solisten-vivaldi-die-vier-jahreszeiten-7/?back_btn=1",
+      "detail_url": "https://www.glocke.de/event/philharmonie-der-solisten-vivaldi-die-vier-jahreszeiten-7/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "firecrawl_listing",
+      "discovery_source": "glocke_listing",
       "discovered_only": false,
       "reused_enrichment": true,
       "enriched": true,
@@ -172,11 +92,12 @@
       ],
       "conductor": null,
       "price": null,
-      "detail_url": "https://www.glocke.de/event/olegg-vynnyk-live-2026/?back_btn=1",
+      "detail_url": "https://www.glocke.de/event/olegg-vynnyk-live-2026/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "firecrawl_listing",
+      "discovery_source": "glocke_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -210,7 +131,7 @@
     {
       "date": "2026-05-27",
       "time": "19:30",
-      "title": "Die Deutsche Kammerphilharmonie Bremen »Haupt­sache Tschai­kowsky« 5. Premieren-Abonnementkonzert",
+      "title": "Die Deutsche Kammerphilharmonie Bremen Hauptsache Tschaikowsky 5 Premieren Abonnementkonzert",
       "venue_hall": "Großer Saal",
       "program": [
         "Tschaikowsky: Klavierkonzert Nr. 1 b-Moll op. 23",
@@ -221,10 +142,10 @@
       ],
       "conductor": "Jérémie Rhorer",
       "price": null,
-      "detail_url": "https://www.glocke.de/event/die-deutsche-kammerphilharmonie-bremen-hauptsache-tschaikowsky-5-premieren-abonnementkonzert/?back_btn=1",
+      "detail_url": "https://www.glocke.de/event/die-deutsche-kammerphilharmonie-bremen-hauptsache-tschaikowsky-5-premieren-abonnementkonzert/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "firecrawl_listing",
+      "discovery_source": "glocke_listing",
       "discovered_only": false,
       "reused_enrichment": true,
       "enriched": true,
@@ -234,7 +155,7 @@
     {
       "date": "2026-05-29",
       "time": "19:30",
-      "title": "Die Deutsche Kammerphilharmonie Bremen »Haupt­sache Tschai­kowsky« 3. Highlight-Abonnementkonzert",
+      "title": "Die Deutsche Kammerphilharmonie Bremen Hauptsache Tschaikowsky 3 Highlight Abonnementkonzert",
       "venue_hall": "Großer Saal",
       "program": [
         "Brahms: Klavierkonzert Nr. 2 B-Dur op. 83",
@@ -245,10 +166,10 @@
       ],
       "conductor": "Jérémie Rhorer",
       "price": null,
-      "detail_url": "https://www.glocke.de/event/die-deutsche-kammerphilharmonie-bremen-hauptsache-tschaikowsky-3-highlight-abonnementkonzert/?back_btn=1",
+      "detail_url": "https://www.glocke.de/event/die-deutsche-kammerphilharmonie-bremen-hauptsache-tschaikowsky-3-highlight-abonnementkonzert/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "firecrawl_listing",
+      "discovery_source": "glocke_listing",
       "discovered_only": false,
       "reused_enrichment": true,
       "enriched": true,
@@ -305,7 +226,7 @@
     {
       "date": "2026-05-30",
       "time": "20:00",
-      "title": "»Flying Sound – Klang. Emotion. Präzision« mit Tigran Maytesian und Daniel Blumenthal",
+      "title": "Flying Sound Klang Emotion Praezision Mit Tigran Maytesian Und Daniel Blumenthal",
       "venue_hall": "Kleiner Saal",
       "program": [
         "Beethoven: Sonate Nr. 5 F-Dur op. 24 »Frühlingssonate«",
@@ -327,10 +248,10 @@
       ],
       "conductor": null,
       "price": "€29,00 – €59,00",
-      "detail_url": "https://www.glocke.de/event/flying-sound-klang-emotion-praezision-mit-tigran-maytesian-und-daniel-blumenthal/?back_btn=1",
+      "detail_url": "https://www.glocke.de/event/flying-sound-klang-emotion-praezision-mit-tigran-maytesian-und-daniel-blumenthal/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "firecrawl_listing",
+      "discovery_source": "glocke_listing",
       "discovered_only": false,
       "reused_enrichment": true,
       "enriched": true,
@@ -340,7 +261,7 @@
     {
       "date": "2026-05-31",
       "time": "15:30",
-      "title": "Bremer Kaffeehaus-Orchester »Frisch aufgeblüht« Frühlingskonzert",
+      "title": "Bremer Kaffeehaus Orchester Frisch Aufgeblueht Fruehlingskonzert",
       "venue_hall": "Kleiner Saal",
       "program": [
         "Verdi: Melodie",
@@ -352,10 +273,10 @@
       ],
       "conductor": "Hauke, Anselm",
       "price": "36,00 € Normal / 26,00 € Ermäßigt",
-      "detail_url": "https://www.glocke.de/event/bremer-kaffeehaus-orchester-frisch-aufgeblueht-fruehlingskonzert/?back_btn=1",
+      "detail_url": "https://www.glocke.de/event/bremer-kaffeehaus-orchester-frisch-aufgeblueht-fruehlingskonzert/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "firecrawl_listing",
+      "discovery_source": "glocke_listing",
       "discovered_only": false,
       "reused_enrichment": true,
       "enriched": true,
@@ -365,7 +286,7 @@
     {
       "date": "2026-06-01",
       "time": "19:30",
-      "title": "Bremer Philharmoniker »Time to shine« 11. Philharmonisches Konzert",
+      "title": "Bremer Philharmoniker Time To Shine 11 Philharmonisches Konzert 2",
       "venue_hall": "Großer Saal",
       "program": [
         "Beethoven: Klavierkonzert Nr. 4 G-Dur op. 58",
@@ -376,10 +297,10 @@
       ],
       "conductor": "Delyana Lazarova",
       "price": "€21,00 – €62,00",
-      "detail_url": "https://www.glocke.de/event/bremer-philharmoniker-time-to-shine-11-philharmonisches-konzert-2/?back_btn=1",
+      "detail_url": "https://www.glocke.de/event/bremer-philharmoniker-time-to-shine-11-philharmonisches-konzert-2/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "firecrawl_listing",
+      "discovery_source": "glocke_listing",
       "discovered_only": false,
       "reused_enrichment": true,
       "enriched": true,
@@ -389,7 +310,7 @@
     {
       "date": "2026-06-02",
       "time": "19:30",
-      "title": "Bremer Philharmoniker »Time to shine« 11. Philharmonisches Konzert",
+      "title": "Bremer Philharmoniker Time To Shine 11 Philharmonisches Konzert",
       "venue_hall": "Großer Saal",
       "program": [
         "Beethoven: Klavierkonzert Nr. 4 G-Dur op. 58",
@@ -400,10 +321,10 @@
       ],
       "conductor": "Delyana Lazarova",
       "price": "€21,00 – €62,00",
-      "detail_url": "https://www.glocke.de/event/bremer-philharmoniker-time-to-shine-11-philharmonisches-konzert/?back_btn=1",
+      "detail_url": "https://www.glocke.de/event/bremer-philharmoniker-time-to-shine-11-philharmonisches-konzert/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "firecrawl_listing",
+      "discovery_source": "glocke_listing",
       "discovered_only": false,
       "reused_enrichment": true,
       "enriched": true,
@@ -413,7 +334,7 @@
     {
       "date": "2026-06-03",
       "time": "20:00",
-      "title": "Noa & Ensemble »The Giver and the See«",
+      "title": "Noa Ensemble The Giver And The See",
       "venue_hall": "Großer Saal",
       "program": [
         "Noa: The Giver and the See"
@@ -424,10 +345,10 @@
       ],
       "conductor": null,
       "price": "€19,00 – €46,00",
-      "detail_url": "https://www.glocke.de/event/noa-ensemble-the-giver-and-the-see/?back_btn=1",
+      "detail_url": "https://www.glocke.de/event/noa-ensemble-the-giver-and-the-see/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
-      "discovery_source": "firecrawl_listing",
+      "discovery_source": "glocke_listing",
       "discovered_only": false,
       "reused_enrichment": true,
       "enriched": true,
@@ -453,10 +374,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -509,10 +430,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -533,10 +454,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -613,10 +534,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -638,16 +559,16 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-06-12",
       "time": "20:00",
-      "title": "Weiter &gt;",
+      "title": "La Strada Gala",
       "venue_hall": "Großer Saal",
       "program": [],
       "performers": [
@@ -659,10 +580,31 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "20:00",
+      "title": "La Strada Gala 2",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [
+        "Siegfried & Joy"
+      ],
+      "conductor": null,
+      "price": "39,00 € Normal, 34,00 € Ermäßigt",
+      "detail_url": "https://www.glocke.de/event/la-strada-gala-2/",
+      "venue": "Glocke Bremen",
+      "city": "Bremen",
+      "discovery_source": "glocke_listing",
+      "discovered_only": false,
       "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -682,31 +624,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-13",
-      "time": "20:00",
-      "title": "La Strada Gala 2",
-      "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [
-        "Siegfried & Joy"
-      ],
-      "conductor": null,
-      "price": "39,00 € Normal, 34,00 € Ermäßigt",
-      "detail_url": "https://www.glocke.de/event/la-strada-gala-2/",
-      "venue": "Glocke Bremen",
-      "city": "Bremen",
-      "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -735,7 +656,7 @@
     {
       "date": "2026-06-17",
       "time": "9:30",
-      "title": "Golly Gosch Green",
+      "title": "Weiter &gt;",
       "venue_hall": "Kleiner Saal",
       "program": [
         "Gosch: Various Compositions"
@@ -750,11 +671,11 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
+      "discovered_only": false,
       "duration_min": 45,
       "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -1272,7 +1193,7 @@
     {
       "date": "2026-08-18",
       "time": "19:30",
-      "title": "Musikfest Bremen Orfeo Son Io",
+      "title": "&lt; Zurück",
       "venue_hall": "Großer Saal",
       "program": [
         "Monteverdi: Orfeo",
@@ -1784,7 +1705,7 @@
     {
       "date": "2026-09-13",
       "time": "15:00",
-      "title": "Musica Viva Festliches Eroeffnungskonzert 13",
+      "title": "&lt; Zurück",
       "venue_hall": "Großer Saal",
       "program": [],
       "performers": [
@@ -2016,30 +1937,6 @@
     {
       "date": "2026-10-09",
       "time": "20:00",
-      "title": "Helge Schneider Ellenbogen Vom Tisch",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Schneider: Ellenbogen vom Tisch!"
-      ],
-      "performers": [
-        "Helge Schneider",
-        "LEO",
-        "SANDRO"
-      ],
-      "conductor": null,
-      "price": "ab €49,65",
-      "detail_url": "https://www.glocke.de/event/helge-schneider-ellenbogen-vom-tisch/",
-      "venue": "Glocke Bremen",
-      "city": "Bremen",
-      "discovery_source": "glocke_listing",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-10-09",
-      "time": "20:00",
       "title": "Ich Wollt Ein Straeusslein Binden Lieder Von Richard Strauss Geflochten Von Autorinnenhaenden",
       "venue_hall": "Kleiner Saal",
       "program": [
@@ -2069,21 +1966,28 @@
       "is_classical": true
     },
     {
-      "date": "2026-10-10",
+      "date": "2026-10-09",
       "time": "20:00",
-      "title": "Birds Tree Tour 2026 Klavierkonzert Mit Jonas Derksen",
-      "venue_hall": "Kleiner Saal",
-      "program": [],
-      "performers": [],
+      "title": "Helge Schneider Ellenbogen Vom Tisch",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Schneider: Ellenbogen vom Tisch!"
+      ],
+      "performers": [
+        "Helge Schneider",
+        "LEO",
+        "SANDRO"
+      ],
       "conductor": null,
-      "price": null,
-      "detail_url": "https://www.glocke.de/event/birds-tree-tour-2026-klavierkonzert-mit-jonas-derksen/",
+      "price": "ab €49,65",
+      "detail_url": "https://www.glocke.de/event/helge-schneider-ellenbogen-vom-tisch/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
       "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2103,6 +2007,24 @@
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": false
+    },
+    {
+      "date": "2026-10-10",
+      "time": "20:00",
+      "title": "Birds Tree Tour 2026 Klavierkonzert Mit Jonas Derksen",
+      "venue_hall": "Kleiner Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.glocke.de/event/birds-tree-tour-2026-klavierkonzert-mit-jonas-derksen/",
+      "venue": "Glocke Bremen",
+      "city": "Bremen",
+      "discovery_source": "glocke_listing",
+      "discovered_only": true,
+      "enriched": false,
+      "enrichment_status": "stub",
+      "is_classical": true
     },
     {
       "date": "2026-10-11",
@@ -2190,9 +2112,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2234,9 +2157,10 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2244,17 +2168,21 @@
       "time": "20:00",
       "title": "Freedom Ballet Tanzauffuehrung Der Schrank",
       "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Freedom Ballet: Der Schrank"
+      ],
+      "performers": [
+        "Freedom Ballet"
+      ],
+      "conductor": "Elena Koliadenko",
+      "price": "Normalpreis 69,00 € bis 109,00 €",
       "detail_url": "https://www.glocke.de/event/freedom-ballet-tanzauffuehrung-der-schrank/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2270,7 +2198,7 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovered_only": false,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": true
@@ -2278,19 +2206,37 @@
     {
       "date": "2026-10-22",
       "time": "20:00",
-      "title": "Lords Of The Sound The Music Of Hans Zimmer",
+      "title": "&lt; Zurück",
       "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Zimmer: Dune",
+        "Zimmer: Spider-Man 2",
+        "Zimmer: The Dark Knight",
+        "Zimmer: Interstellar",
+        "Zimmer: Gravity",
+        "Zimmer: Sherlock Holmes",
+        "Zimmer: Angels and Demons",
+        "Zimmer: Da Vinci Code",
+        "Zimmer: Pearl Harbor",
+        "Zimmer: Gladiator",
+        "Zimmer: Mission Impossible, The Beginning",
+        "Zimmer: Pirates of the Caribbean",
+        "Zimmer: Spirit",
+        "Zimmer: Wonder Woman",
+        "Zimmer: Madagascar"
+      ],
+      "performers": [
+        "Lords of the Sound"
+      ],
+      "conductor": "Nazar Yakobenchuk",
+      "price": "€49,00 – €89,00",
       "detail_url": "https://www.glocke.de/event/lords-of-the-sound-the-music-of-hans-zimmer/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2299,16 +2245,18 @@
       "title": "Dialoge der Epochen",
       "venue_hall": "Kleiner Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Varjas"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.glocke.de/event/dialoge-der-epochen/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2316,17 +2264,28 @@
       "time": "19:30",
       "title": "Tanz Trance Flamenco Meets Concierto Iberico",
       "venue_hall": "Kleiner Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
+      "program": [
+        "Sanz: Canarios",
+        "Soler: Fandangos",
+        "Boccherini: Various Works"
+      ],
+      "performers": [
+        "Juan González Martínez",
+        "Lea Suter",
+        "Inés Pina Pérez",
+        "Izhar Elias",
+        "Peter Kuhnsch",
+        "Anna Castillo"
+      ],
+      "conductor": "Juan González Martínez",
       "price": null,
       "detail_url": "https://www.glocke.de/event/tanz-trance-flamenco-meets-concierto-iberico/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2354,15 +2313,15 @@
       "venue_hall": "Kleiner Saal",
       "program": [],
       "performers": [],
-      "conductor": null,
+      "conductor": "Ufuk Ocak",
       "price": null,
       "detail_url": "https://www.glocke.de/event/osmanen-aufstieg-macht-und-vermaechtnis-eines-weltreichs-2/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2370,17 +2329,23 @@
       "time": "20:45",
       "title": "Serienkiller Deutschlands Schlimmste Serienmoerder 2",
       "venue_hall": "Kleiner Saal",
-      "program": [],
-      "performers": [],
+      "program": [
+        "DAS MONSTER DER GOLDENEN ZWANZIGER – Eine Reise zurück in eine Zeit ohne moderne Spurensicherung",
+        "DER UNSCHEINBARE NACHBAR DER NACHKRIEGSZEIT – Ein Blick hinter die Fassade der 50er-Jahre",
+        "DER MODERNE ALBTRAUM – Ein Fall der jüngsten Gegenwart, der erst vor kurzem endgültig gelöst wurde"
+      ],
+      "performers": [
+        "Dreamlight Labs GmbH"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.glocke.de/event/serienkiller-deutschlands-schlimmste-serienmoerder-2/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2389,16 +2354,22 @@
       "title": "Karat 2",
       "venue_hall": "Großer Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Claudius Dreilich",
+        "Bernd Römer",
+        "Martin Becker",
+        "Heiko Jung",
+        "Daniel Bätge"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "ab €45,35",
       "detail_url": "https://www.glocke.de/event/karat-2/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2511,16 +2482,19 @@
       "title": "Elena Uhlig Fritz Karl Die Ehe Eine Feindliche Uebernahme",
       "venue_hall": "Großer Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Elena Uhlig",
+        "Fritz Karl"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "47,40 € Normal - Estrade -",
       "detail_url": "https://www.glocke.de/event/elena-uhlig-fritz-karl-die-ehe-eine-feindliche-uebernahme/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2590,7 +2564,7 @@
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
+      "discovered_only": false,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": true
@@ -2598,7 +2572,7 @@
     {
       "date": "2026-11-07",
       "time": "20:00",
-      "title": "&lt; Zurück",
+      "title": "Hagen Rether Liebe",
       "venue_hall": "Großer Saal",
       "program": [],
       "performers": [],
@@ -2611,7 +2585,7 @@
       "discovered_only": true,
       "enriched": false,
       "enrichment_status": "stub",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-11-08",
@@ -2619,16 +2593,18 @@
       "title": "Orchester Der Musikfreunde Bremen 11",
       "venue_hall": "Großer Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Orchester der Musikfreunde Bremen"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.glocke.de/event/orchester-der-musikfreunde-bremen-11/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2636,17 +2612,28 @@
       "time": "20:00",
       "title": "Spanische Nacht",
       "venue_hall": "Kleiner Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
+      "program": [
+        "Bizet: Habanera der Carmen"
+      ],
+      "performers": [
+        "Javi Castrillon: Gesang",
+        "Gilberto Torres: Gitarre",
+        "Antonio »El Pumuki«: Perkussion",
+        "Manuel Reina: Tanz",
+        "Blanca Nieves: Tanz und Moderation",
+        "Domenico Capotorto: Klavier",
+        "Lucie Leker: Violine",
+        "Margherita Rotondi: Gesang"
+      ],
+      "conductor": "Blanca Nieves",
+      "price": "49,00 € Normal, 39,00 € Ermäßigt, 39,00 € Normal, 29,00 € Ermäßigt, 29,00 € Normal, 19,00 € Ermäßigt",
       "detail_url": "https://www.glocke.de/event/spanische-nacht/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2677,24 +2664,6 @@
     {
       "date": "2026-11-12",
       "time": "20:00",
-      "title": "Burak Cebi Eine Hommage An Ludovico Einaudi",
-      "venue_hall": "Kleiner Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.glocke.de/event/burak-cebi-eine-hommage-an-ludovico-einaudi/",
-      "venue": "Glocke Bremen",
-      "city": "Bremen",
-      "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
-      "is_classical": true
-    },
-    {
-      "date": "2026-11-12",
-      "time": "20:00",
       "title": "Rammstein Symphonic Tribute – Herzfeuer",
       "venue_hall": "Großer Saal",
       "program": [],
@@ -2713,37 +2682,69 @@
     {
       "date": "2026-11-12",
       "time": "20:00",
+      "title": "Burak Cebi Eine Hommage An Ludovico Einaudi",
+      "venue_hall": "Kleiner Saal",
+      "program": [
+        "Einaudi: Works featured in film 'Ziemlich Beste Freunde'"
+      ],
+      "performers": [
+        "Burak Çebi"
+      ],
+      "conductor": null,
+      "price": "50,95 € Normal / 45,40 € Ermäßigt / 39,85 € Normal / 34,30 € Ermäßigt / 28,75 € Normal / 23,20 € Ermäßigt",
+      "detail_url": "https://www.glocke.de/event/burak-cebi-eine-hommage-an-ludovico-einaudi/",
+      "venue": "Glocke Bremen",
+      "city": "Bremen",
+      "discovery_source": "glocke_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": false
+    },
+    {
+      "date": "2026-11-12",
+      "time": "20:00",
       "title": "Karat 45 Jahre Der Blaue Planet",
       "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
+      "program": [
+        "KARAT: Der blaue Planet"
+      ],
+      "performers": [
+        "Claudius Dreilich",
+        "Bernd Römer",
+        "Martin Becker",
+        "Heiko Jung",
+        "Daniel Bätge"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "ab €45,25",
       "detail_url": "https://www.glocke.de/event/karat-45-jahre-der-blaue-planet/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-11-14",
       "time": "20:00",
-      "title": "Gerburg Jahnke Frau Jahnke Hat Eingeladen 3",
+      "title": "&lt; Zurück",
       "venue_hall": "Großer Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Gerburg Jahnke"
+      ],
       "conductor": null,
-      "price": null,
+      "price": "44,70 € Normal",
       "detail_url": "https://www.glocke.de/event/gerburg-jahnke-frau-jahnke-hat-eingeladen-3/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2769,17 +2770,25 @@
       "time": "19:30",
       "title": "Daniel Martinez Flamenco Company Art Of Andalucia Flamenco Tanz",
       "venue_hall": "Kleiner Saal",
-      "program": [],
-      "performers": [],
+      "program": [
+        "Daniel Martinez: Originalkompositionen für die Produktion"
+      ],
+      "performers": [
+        "Ángel Reyes",
+        "Gabriela Pouso",
+        "Inma Montero",
+        "Danielo Olivera",
+        "Julián Ticotico"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.glocke.de/event/daniel-martinez-flamenco-company-art-of-andalucia-flamenco-tanz/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2863,16 +2872,18 @@
       "title": "Pago »Geht's noch?«",
       "venue_hall": "Kleiner Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Balke"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://www.glocke.de/event/pago-gehts-noch/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2909,14 +2920,36 @@
       "program": [],
       "performers": [],
       "conductor": null,
-      "price": null,
+      "price": "153,90 € Normal, 142,90 € Normal, 120,90 € Normal, 98,90 € Normal, 87,90 € Normal",
       "detail_url": "https://www.glocke.de/event/klassik-radio-live-in-concert-2026/",
       "venue": "Glocke Bremen",
       "city": "Bremen",
       "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-28",
+      "time": "20:00",
+      "title": "Rebekka Bakken Winter Nights 2",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Bakken: Winter Nights"
+      ],
+      "performers": [
+        "Rebekka Bakken"
+      ],
+      "conductor": null,
+      "price": "ab €42",
+      "detail_url": "https://www.glocke.de/event/rebekka-bakken-winter-nights-2/",
+      "venue": "Glocke Bremen",
+      "city": "Bremen",
+      "discovery_source": "glocke_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2944,24 +2977,6 @@
       "is_classical": true
     },
     {
-      "date": "2026-11-28",
-      "time": "20:00",
-      "title": "Rebekka Bakken Winter Nights 2",
-      "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.glocke.de/event/rebekka-bakken-winter-nights-2/",
-      "venue": "Glocke Bremen",
-      "city": "Bremen",
-      "discovery_source": "glocke_listing",
-      "discovered_only": true,
-      "enriched": false,
-      "enrichment_status": "stub",
-      "is_classical": true
-    },
-    {
       "date": "2026-11-29",
       "time": "18:00",
       "title": "Ndr Elbphilharmonie Orchester Kino Fuer Die Ohren 2 Meisterkonzert",
@@ -2985,28 +3000,52 @@
       "is_classical": true
     }
   ],
-  "total_events": 127,
-  "total_events_visible": 12,
+  "total_events": 124,
+  "total_events_visible": 20,
   "total_events_discovered": 207,
   "total_events_discovered_strict": 207,
-  "total_events_enriched": 95,
-  "source": "firecrawl_listing",
+  "total_events_enriched": 109,
+  "source": "glocke_listing",
   "latest_discovered_event_date": "2026-11-29",
   "latest_event_date": "2026-11-29",
   "covers_horizon": true,
   "horizon_grace_days": 1,
-  "events_with_date": 127,
+  "events_with_date": 124,
   "events_missing_date": 0,
   "date_coverage_rate": 1.0,
+  "sitemap_jsonld_stats": {
+    "sitemap_urls": 0,
+    "candidate_urls": 0,
+    "checked": 0,
+    "limit": 240,
+    "initial_sample": 0,
+    "jsonld_pages": 0,
+    "events": 0,
+    "within_horizon": 0,
+    "past_or_beyond_horizon": 0,
+    "canceled": 0,
+    "invalid": 0,
+    "complete_scan": true
+  },
   "map_expand_stats": {
     "preferred_urls": 207,
     "map_urls": 0,
     "html_urls": 20,
-    "new_urls": 115,
+    "new_urls": 104,
     "latest_discovered_date": "2026-11-29",
-    "preferred_date_count": 93,
-    "preferred_dated_urls": 127,
+    "preferred_date_count": 91,
+    "preferred_dated_urls": 124,
     "html_urls_used": 0,
     "preferred_authoritative": true
+  },
+  "sitemap_detail_expand_stats": {
+    "budget": 80,
+    "sitemap_urls": 0,
+    "scraped": 0,
+    "new_events": 0,
+    "missing_date_or_title": 0,
+    "today_or_past": 0,
+    "past_or_beyond_horizon": 0,
+    "duplicate_urls": 0
   }
 }

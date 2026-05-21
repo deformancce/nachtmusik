@@ -3,33 +3,15 @@
   "city": "Hamburg",
   "slug": "elbphilharmonie_hamburg",
   "source_url": "https://www.elbphilharmonie.de/de/programm/",
-  "scraped_at": "2026-05-20T20:44:48.936101Z",
+  "scraped_at": "2026-05-21T15:57:58.767404Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
     {
-      "date": "2026-05-20",
-      "time": "14:00",
-      "title": "Westermann Summit 2026",
-      "venue_hall": "Elbphilharmonie Kleiner Saal",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/westermann-summit-2026/28420",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "sitemap_jsonld",
-      "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
-      "is_classical": true
-    },
-    {
       "date": "2026-05-21",
       "time": "18:00",
       "title": "Les Hommes du Swing",
-      "venue_hall": "Laeiszhalle",
+      "venue_hall": "Kulturcafé",
       "program": [],
       "performers": [
         "Jordan Rodin",
@@ -42,7 +24,7 @@
       "detail_url": "https://www.elbphilharmonie.de/de/programm/les-hommes-du-swing/27744",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "discovery_source": "elbphilharmonie_listing",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
       "duration_min": 60,
       "reused_enrichment": true,
@@ -54,7 +36,7 @@
       "date": "2026-05-21",
       "time": "20:00",
       "title": "Hochschule für Musik und Theater Hamburg",
-      "venue_hall": "Laeiszhalle",
+      "venue_hall": "Kleiner Saal",
       "program": [],
       "performers": [
         "Emma Stratton"
@@ -64,7 +46,7 @@
       "detail_url": "https://www.elbphilharmonie.de/de/programm/hochschule-fur-musik-und-theater-hamburg/28284",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "discovery_source": "elbphilharmonie_listing",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
       "reused_enrichment": true,
       "enriched": true,
@@ -75,7 +57,7 @@
       "date": "2026-05-22",
       "time": "20:00",
       "title": "Matteo Lane",
-      "venue_hall": "Laeiszhalle",
+      "venue_hall": "Großer Saal",
       "program": [
         "Matteo Lane: We Gotta Catch Up!"
       ],
@@ -83,11 +65,11 @@
         "Matteo Lane"
       ],
       "conductor": null,
-      "price": "ab €54,60",
+      "price": "ab € 54,60",
       "detail_url": "https://www.elbphilharmonie.de/de/programm/matteo-lane/27410",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "discovery_source": "elbphilharmonie_listing",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
       "reused_enrichment": true,
       "enriched": true,
@@ -95,10 +77,33 @@
       "is_classical": true
     },
     {
+      "date": "2026-05-22",
+      "time": "20:00",
+      "title": "Dörte Hansen: Lesung",
+      "venue_hall": "Elbphilharmonie Hamburg",
+      "program": [
+        "Hansen: Mittagsstunde"
+      ],
+      "performers": [
+        "Dörte Hansen",
+        "Julia Westlake"
+      ],
+      "conductor": null,
+      "price": "ab € 22",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/dorte-hansen/28949",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": false
+    },
+    {
       "date": "2026-05-24",
       "time": "20:00",
       "title": "Götz Alsmann & Band",
-      "venue_hall": "Laeiszhalle",
+      "venue_hall": "Großer Saal",
       "program": [
         "Alsmann: ... bei Nacht ..."
       ],
@@ -106,11 +111,11 @@
         "Götz Alsmann"
       ],
       "conductor": null,
-      "price": "ab €32,65",
+      "price": "ab € 32,65",
       "detail_url": "https://www.elbphilharmonie.de/de/programm/gotz-alsmann-band/24340",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "discovery_source": "elbphilharmonie_listing",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
       "reused_enrichment": true,
       "enriched": true,
@@ -121,20 +126,20 @@
       "date": "2026-05-24",
       "time": "20:00",
       "title": "Neue Philharmonie Hamburg / Hovhannes Baghdasaryan",
-      "venue_hall": "Laeiszhalle",
+      "venue_hall": "Kleiner Saal",
       "program": [
-        "Vivaldi: Le quattro stagioni op. 8"
+        "Vivaldi: Die vier Jahreszeiten"
       ],
       "performers": [
         "Hovhannes Baghdasaryan: Violine",
         "Kammerorchester der Neuen Philharmonie Hamburg"
       ],
       "conductor": null,
-      "price": "ab €12,35",
+      "price": "ab € 12,35",
       "detail_url": "https://www.elbphilharmonie.de/de/programm/neue-philharmonie-hamburg-hovhannes-baghdasaryan/28225",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "discovery_source": "elbphilharmonie_listing",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
       "reused_enrichment": true,
       "enriched": true,
@@ -145,32 +150,19 @@
       "date": "2026-05-25",
       "time": "18:00",
       "title": "Kateryna Titova / Klavierabend",
-      "venue_hall": "Laeiszhalle",
+      "venue_hall": "Kleiner Saal",
       "program": [
-        "Bach: Präludium und Fuge C-Dur BWV 870",
-        "Bach: Präludium und Fuge c-Moll BWV 871",
-        "C. P. E. Bach: Rondo c-Moll Wq 59",
-        "Bach, Liszt: Variationen über das Motiv von »Weinen, Klagen, Sorgen, Zagen« S 180",
-        "Bach: Ich ruf’ zu dir, Herr Jesu Christ BWV 639",
-        "J. C. Bach: Sonate A-Dur op. 17/5",
-        "Bach: Air aus: Orchestersuite Nr. 3 D-Dur BWV 1068",
-        "Bach: Präludium und Fuge g-Moll BWV 885",
-        "Bach: Sonate für Flöte und Cembalo Es-Dur BWV 1031",
-        "Bach: Schafe können sicher weiden BWV 208",
-        "Bach: Präludium aus: Partita Nr. 1 B-Dur BWV 825",
-        "Bach: Gigue aus: Partita Nr. 1 B-Dur BWV 825",
-        "Bach: Toccata e-Moll BWV 914",
-        "Bach: Gavotte aus: Partita für Violine solo Nr. 3 E-Dur BWV 1006"
+        "Bach / Liszt / Bach"
       ],
       "performers": [
         "Kateryna Titova"
       ],
       "conductor": null,
-      "price": "€16,75",
+      "price": "ab € 16,75",
       "detail_url": "https://www.elbphilharmonie.de/de/programm/kateryna-titova-klavierabend/28034",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "discovery_source": "elbphilharmonie_listing",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
       "reused_enrichment": true,
       "enriched": true,
@@ -179,20 +171,27 @@
     },
     {
       "date": "2026-05-26",
-      "time": "10:00",
-      "title": "Flairdrum Workshop",
-      "venue_hall": "Elbphilharmonie",
+      "time": "11:00",
+      "title": "Funkelkonzert »Obotaqua«",
+      "venue_hall": "Kaistudio",
       "program": [
-        "DIY Instrument: Flairdrum - Recycled PET bottles"
+        "Musik- und Tanztheater, das scheinbar ferne Klangwelten fantasievoll zusammenbringt"
       ],
       "performers": [
-        "HamburgMusik"
+        "Syriab Duo",
+        "Friedrike Kayser",
+        "Ibrahim Bajo",
+        "Jin Lee",
+        "Ceren Oran",
+        "Sigrid Wurzinger",
+        "Franziska Stolz"
       ],
       "conductor": null,
-      "price": "€ 8",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/flairdrum/28810",
+      "price": "€ 12",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/funkelkonzert-s-obotaqua/28292",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
+      "duration_min": 60,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
@@ -205,35 +204,34 @@
       "title": "Funkelkonzert »Obotaqua«",
       "venue_hall": "Elbphilharmonie Hamburg",
       "program": [
-        "Obotaqua: Musical and dance theater uniting distant sound worlds"
+        "Unspecified Composer: Unspecified Work Title"
       ],
       "performers": [
+        "Syriab Duo",
         "Friedrike Kayser",
         "Ibrahim Bajo",
-        "Jin Lee",
-        "Ceren Oran",
-        "Sigrid Wurzinger",
-        "Franziska Stolz"
+        "Jin Lee"
       ],
       "conductor": null,
       "price": "€ 12",
       "detail_url": "https://www.elbphilharmonie.de/de/programm/funkelkonzert-s-obotaqua/28300",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "duration_min": 60,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
+      "duration_min": 60,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-05-26",
-      "time": "12:00",
+      "time": "11:00",
       "title": "Vielfalt der Orchesterinstrumente",
       "venue_hall": "Elbphilharmonie Hamburg",
       "program": [
-        "Workshop: Klassiko Orchesterinstrumente"
+        "N/A"
       ],
       "performers": [
         "HamburgMusik"
@@ -252,19 +250,21 @@
     },
     {
       "date": "2026-05-26",
-      "time": "12:00",
-      "title": "Workshop: Kreativ Klangsafari",
+      "time": "11:00",
+      "title": "Workshop: Klassiko Schlaginstrumente",
       "venue_hall": "Elbphilharmonie",
-      "program": [],
+      "program": [
+        "Workshop: Ein Überblick über Schlaginstrumente"
+      ],
       "performers": [
         "HamburgMusik"
       ],
       "conductor": null,
       "price": "€ 16",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/workshop-kreativ-klangsafari/28536",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/workshop-klassiko-schlaginstrumente/28563",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "duration_min": 180,
+      "duration_min": 90,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
@@ -275,7 +275,7 @@
       "date": "2026-05-26",
       "time": "12:30",
       "title": "Lunchkonzert der Symphoniker Hamburg",
-      "venue_hall": "Laeiszhalle",
+      "venue_hall": "Brahms-Foyer",
       "program": [],
       "performers": [],
       "conductor": null,
@@ -283,7 +283,30 @@
       "detail_url": "https://www.elbphilharmonie.de/de/programm/lunchkonzert-der-symphoniker-hamburg/24078",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "discovery_source": "elbphilharmonie_listing",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-26",
+      "time": "14:00",
+      "title": "Kosmos Klang Workshop",
+      "venue_hall": "Elbphilharmonie",
+      "program": [
+        "N/A"
+      ],
+      "performers": [
+        "HamburgMusik"
+      ],
+      "conductor": null,
+      "price": "€ 16",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/workshop-kosmos-klang/28594",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 165,
+      "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -293,25 +316,19 @@
       "date": "2026-05-27",
       "time": "19:00",
       "title": "Pianissimo Festival 2026: George Harliono",
-      "venue_hall": "Laeiszhalle",
+      "venue_hall": "Kleiner Saal",
       "program": [
-        "Bach / Busoni: Chaconne / aus: Partita Nr. 2 d-Moll BWV 1004",
-        "Liszt: Étude Des-Dur »Un sospiro« / aus: Trois Études de concert S 144",
-        "Liszt: Liebesträume Nr. 3 / Drei Notturnos S 541",
-        "Liszt: Erster Mephisto-Walzer S 514 »Der Tanz in der Dorfschenke«",
-        "Chopin: Nocturne c-Moll op. 48/1",
-        "Glinka, Balakirew: Die Lerche",
-        "Balakirew: Islamej / Orientalische Fantasie"
+        "Bach / Liszt / Chopin / Balakirew"
       ],
       "performers": [
         "George Harliono"
       ],
       "conductor": null,
-      "price": "ab €34",
+      "price": "ab € 34",
       "detail_url": "https://www.elbphilharmonie.de/de/programm/pianissimo-festival-2026-george-harliono/28234",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "discovery_source": "elbphilharmonie_listing",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
       "reused_enrichment": true,
       "enriched": true,
@@ -325,10 +342,10 @@
       "venue_hall": "Elbphilharmonie Kleiner Saal",
       "program": [],
       "performers": [
-        "Markus Conrads",
         "Tobias Reisige",
         "Johannes Behr",
-        "Wildes Holz"
+        "Wildes Holz",
+        "Markus Conrads"
       ],
       "conductor": null,
       "price": "ab €28",
@@ -345,33 +362,20 @@
       "date": "2026-05-29",
       "time": "19:30",
       "title": "Klassikphilharmonie Hamburg",
-      "venue_hall": "Laeiszhalle",
+      "venue_hall": "Großer Saal",
       "program": [
-        "Richard Strauss: Sonnenaufgang aus: Also sprach Zarathustra op. 30 / aus der Filmmusik zu »2001 – Odyssee im Weltraum«",
-        "Ernest Gold: Exodus-Thema / aus der Filmmusik zu »Exodus«",
-        "Craig Armstrong: Suite / aus der Filmmusik zu »Tatsächlich ... Liebe«",
-        "Michael Giacchino: Sinfonische Suite / aus der Filmmusik zu »Star Trek Into Darkness«",
-        "Nino Rota: Liebesthema / aus der Filmmusik zu »Der Pate«",
-        "Charles Chaplin / Aldo Forte: Ein Porträt von Charlie Chaplin",
-        "Alain Silvestri: Suite / aus der Filmmusik zu »Zurück in die Zukunft«",
-        "John Williams: Main Title aus der Filmmusik zu »Der Weiße Hai«",
-        "John Barry: Musik zum Film »Out of Africa«",
-        "Jerry Goldsmith: The Parachutes / aus der Filmmusik zu »Air Force One«",
-        "Hans Zimmer: Chevaliers De Sangreal / aus der Filmmusik zu »The Da Vinci Code«",
-        "James Horner: Suite / aus der Filmmusik zu »Titanic«",
-        "Ennio Morricone: Cinema Paradiso",
-        "John Williams: Musik zum Film »Jäger des Verlorenen Schatzes« / Regie: Steven Spielberg, US 1981"
+        "Movie Classics 2026"
       ],
       "performers": [
         "KlassikPhilharmonie Hamburg",
         "Marek Pavelec"
       ],
       "conductor": "Russell Harris",
-      "price": "€ 59,11",
+      "price": "ab € 59,11",
       "detail_url": "https://www.elbphilharmonie.de/de/programm/klassikphilharmonie-hamburg/24170",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "discovery_source": "elbphilharmonie_listing",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
       "reused_enrichment": true,
       "enriched": true,
@@ -382,21 +386,21 @@
       "date": "2026-05-30",
       "time": "20:00",
       "title": "Albert Schweitzer Jugendorchester / Levi Schechtmann / Sebastian Beckedorf",
-      "venue_hall": "Laeiszhalle",
+      "venue_hall": "Großer Saal",
       "program": [
-        "Rachmaninow: Konzert für Klavier und Orchester Nr. 2 c-Moll op. 18",
-        "Dvořák: Sinfonie Nr. 8 G-Dur op. 88"
+        "Rachmaninow: Klavierkonzert Nr. 2",
+        "Dvořák: Sinfonie Nr. 8"
       ],
       "performers": [
         "Albert Schweitzer Jugendorchester",
         "Levi Schechtmann"
       ],
       "conductor": "Sebastian Beckedorf",
-      "price": "ab €18",
+      "price": "ab € 18",
       "detail_url": "https://www.elbphilharmonie.de/de/programm/albert-schweitzer-jugendorchester-levi-schechtmann-sebastian-beckedorf/27516",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "discovery_source": "elbphilharmonie_listing",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
       "duration_min": 120,
       "reused_enrichment": true,
@@ -408,23 +412,10 @@
       "date": "2026-05-31",
       "time": "11:00",
       "title": "Andreas Staier / Mozartfest-Ensemble / David Dieterle",
-      "venue_hall": "Laeiszhalle",
+      "venue_hall": "Großer Saal",
       "program": [
-        "Alex Schöppl: m:re / für Band und Orchester (Uraufführung)",
-        "Wolfgang Amadeus Mozart: Konzert für Klavier und Orchester G-Dur KV 453",
-        "Jean-Philippe Rameau: La Poule",
-        "Wolfgang Amadeus Mozart: Ouvertüre zu 'Così fan tutte' KV 588",
-        "Wolfgang Amadeus Mozart: Voi che sapete che cosa è amor aus 'Le nozze di Figaro' KV 492",
-        "Wolfgang Amadeus Mozart: Chaconne aus 'Ballettmusik zu Idomeneo' KV 367",
-        "Wolfgang Amadeus Mozart: Madamina, il catalogo è questo aus 'Don Giovanni' KV 527",
-        "Wolfgang Amadeus Mozart: Marcia aus 'Idomeneo, Rè di Creta' KV 366",
-        "Wolfgang Amadeus Mozart: Fra i pensier piu funesti di morte aus 'Lucio Silla' KV 135",
-        "Wolfgang Amadeus Mozart: Allegro – Allegretto aus 'Thamos, König in Ägypten' KV 336a",
-        "Wolfgang Amadeus Mozart: Deh, vieni alla finestra aus 'Don Giovanni' KV 527",
-        "Wolfgang Amadeus Mozart: Pa, pa, pa, pa ... Duett Papagena aus 'Die Zauberflöte' KV 620",
-        "Wolfgang Amadeus Mozart: Allegro aus 'Sinfonie D-Dur' KV 297 'Pariser Sinfonie'",
-        "Wolfgang Amadeus Mozart: Là ci darem la mano aus 'Don Giovanni' KV 527",
-        "Wolfgang Amadeus Mozart: Ruhe sanft, mein holdes Leben aus 'Zaïde' KV 336b"
+        "Mozart: Klavierkonzert Nr. 17",
+        "Schöppl: m:re für Band und Orchester"
       ],
       "performers": [
         "Carly Power",
@@ -440,24 +431,57 @@
       "detail_url": "https://www.elbphilharmonie.de/de/programm/andreas-staier-mozartfest-ensemble-david-dieterle/27705",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "discovery_source": "elbphilharmonie_listing",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
     },
     {
       "date": "2026-05-31",
-      "time": "13:30",
-      "title": "Vielfalt der Orchesterinstrumente",
-      "venue_hall": "Elbphilharmonie",
-      "program": [],
-      "performers": [
-        "HamburgMusik"
+      "time": "19:00",
+      "title": "Symphoniker Hamburg / Diyang Mei / Katharina Konradi / Long Yu",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Wagner: Siegfried-Idyll",
+        "Hisaishi: Viola Saga",
+        "Mahler: Sinfonie Nr. 4"
       ],
-      "conductor": null,
-      "price": "€ 8",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/workshop-klassiko-orchesterinstrumente/23536",
+      "performers": [
+        "Symphoniker Hamburg",
+        "Katharina Konradi",
+        "Diyang Mei"
+      ],
+      "conductor": "Long Yu",
+      "price": "ab € 12,10",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/symphoniker-hamburg-diyang-mei-katharina-konradi-long-yu/23248",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "duration_min": 120,
+      "reused_enrichment": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-01",
+      "time": "11:00",
+      "title": "Philharmonisches Staatsorchester Hamburg - Christian Tetzlaff & Alexander Soddy",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Berg: Konzert für Violine und Orchester »Dem Andenken eines Engels«",
+        "Schostakowitsch: Sinfonie Nr. 5 d-Moll op. 47"
+      ],
+      "performers": [
+        "Philharmonisches Staatsorchester Hamburg",
+        "Christian Tetzlaff"
+      ],
+      "conductor": "Alexander Soddy",
+      "price": "ab € 19",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/philharmonisches-staatsorchester-hamburg-christian-tetzlaff-alexander-soddy/27790",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
       "discovery_source": "sitemap_detail",
@@ -467,28 +491,24 @@
       "is_classical": true
     },
     {
-      "date": "2026-05-31",
-      "time": "19:00",
-      "title": "Symphoniker Hamburg / Diyang Mei / Katharina Konradi / Long Yu",
-      "venue_hall": "Laeiszhalle",
+      "date": "2026-06-01",
+      "time": "11:00",
+      "title": "Philharmonisches Staatsorchester Hamburg",
+      "venue_hall": "Großer Saal",
       "program": [
-        "Wagner: Siegfried-Idyll E-Dur WWV 103",
-        "Hisaishi: Viola Saga für Orchester (Deutsche Erstaufführung)",
-        "Mahler: Sinfonie Nr. 4 G-Dur"
+        "Sergej Prokofjew: Sinfonie Nr. 7 cis-Moll op. 131",
+        "Ludwig van Beethoven: Streichquartett cis-Moll op. 131 / Bearbeitung für Streichorchester von Dimitri Mitropoulos"
       ],
       "performers": [
-        "Symphoniker Hamburg",
-        "Katharina Konradi",
-        "Diyang Mei"
+        "Philharmonisches Staatsorchester Hamburg"
       ],
-      "conductor": "Long Yu",
-      "price": "€12,10",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/symphoniker-hamburg-diyang-mei-katharina-konradi-long-yu/23248",
+      "conductor": "Omer Meir Wellber",
+      "price": "ab € 19",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/philharmonisches-staatsorchester-hamburg-omer-meir-wellber/27788",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "discovery_source": "elbphilharmonie_listing",
+      "discovery_source": "sitemap_detail",
       "discovered_only": false,
-      "duration_min": 120,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -497,13 +517,9 @@
       "date": "2026-06-01",
       "time": "20:00",
       "title": "Accademia Bizantina / Ottavio Dantone",
-      "venue_hall": "Laeiszhalle",
+      "venue_hall": "Großer Saal",
       "program": [
-        "Bach: Brandenburgisches Konzert Nr. 5 D-Dur BWV 1050",
-        "Bach: Konzert für Flöte, Violine, Cembalo, Basso continuo und Streicher a-Moll BWV 1044 »Tripelkonzert«",
-        "Bach: Konzert für drei Cembali d-Moll BWV 1063",
-        "Bach: Konzert für drei Cembali C-Dur BWV 1064",
-        "Bach: Konzert für vier Cembali a-Moll BWV 1065"
+        "J.S. Bach: 5. Brandenburgisches Konzert"
       ],
       "performers": [
         "Accademia Bizantina",
@@ -517,25 +533,26 @@
       "detail_url": "https://www.elbphilharmonie.de/de/programm/accademia-bizantina-ottavio-dantone/23458",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
-      "discovery_source": "elbphilharmonie_listing",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
       "duration_min": 120,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
     },
     {
-      "date": "2026-06-02",
+      "date": "2026-06-01",
       "time": "20:00",
-      "title": "Abschlussprüfungen der Hochschule für Musik und Theater Hamburg",
-      "venue_hall": "Laeiszhalle",
+      "title": "Leo Kottke",
+      "venue_hall": "Elbphilharmonie Hamburg",
       "program": [],
       "performers": [
-        "Saida Timinia"
+        "Leo Kottke"
       ],
       "conductor": null,
-      "price": "Eintritt frei",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/hochschule-fur-musik-und-theater-hamburg/28285",
+      "price": null,
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/verschoben-leo-kottke/27603",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
       "discovery_source": "sitemap_detail",
@@ -546,21 +563,27 @@
     },
     {
       "date": "2026-06-04",
-      "time": "20:00",
-      "title": "Mit guter Laune in die Sommerpause",
-      "venue_hall": "Großer Saal",
+      "time": "09:30",
+      "title": "Ausflug zum Mond",
+      "venue_hall": "Elbphilharmonie Hamburg",
       "program": [
-        "Franz Schubert: Sinfonie Nr. 3 D-Dur D 200",
-        "Richard Strauss: Suite aus 'Der Rosenkavalier' op. 59 / Zusammenstellung von Franz Welser-Möst"
+        "Debussy: Works",
+        "Tschaikowsky: Works",
+        "Prokofjew: Works",
+        "Hisaishi: Works"
       ],
       "performers": [
-        "NDR Elbphilharmonie Orchester"
+        "Piano & Sand",
+        "Anna Vidyaykina",
+        "Sabina Hasanova",
+        "Elisabeth Pöcksteiner"
       ],
-      "conductor": "Franz Welser-Möst",
-      "price": "ab € 124",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/ndr-elbphilharmonie-orchester-franz-welser-most/23317",
+      "conductor": null,
+      "price": "€ 8",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/schulkonzert-ausflug-zum-mond/28438",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
+      "duration_min": 50,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
@@ -568,23 +591,18 @@
       "is_classical": true
     },
     {
-      "date": "2026-06-10",
-      "time": "11:00",
-      "title": "Symphoniker Hamburg: Rachmaninow & Dvořák",
+      "date": "2026-06-06",
+      "time": "10:00",
+      "title": "Gamelan",
       "venue_hall": "Elbphilharmonie Hamburg",
-      "program": [
-        "Rachmaninow: Konzert für Klavier und Orchester Nr. 3 d-Moll op. 30",
-        "Dvořák: Sinfonie Nr. 9 e-Moll op. 95 »Aus der Neuen Welt«"
-      ],
-      "performers": [
-        "Symphoniker Hamburg",
-        "Szymon Nehring"
-      ],
-      "conductor": "Delyana Lazarova",
-      "price": "ab €12,10",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/symphoniker-hamburg-szymon-nehring-delyana-lazarova/23250",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "€ 12",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/workshop-kosmos-gamelan/23594",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
+      "duration_min": 330,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
@@ -614,69 +632,90 @@
       "is_classical": true
     },
     {
-      "date": "2026-06-11",
+      "date": "2026-06-10",
       "time": "20:00",
-      "title": "Abschlussprüfungen der Hochschule für Musik und Theater Hamburg",
-      "venue_hall": "Laeiszhalle",
-      "program": [],
-      "performers": [
-        "Rosa Amata Lüttschwager"
-      ],
-      "conductor": null,
-      "price": "Eintritt frei",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/hochschule-fur-musik-und-theater-hamburg/28553",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-16",
-      "time": "10:30",
-      "title": "Gipfeltreffen der Klangstrolche",
-      "venue_hall": "Laeiszhalle",
-      "program": [],
-      "performers": [
-        "Rolf Zuckowski: Gesang",
-        "Tänzer:innen der Hip-Hop Academy"
-      ],
-      "conductor": "Juri Tetzlaff",
-      "price": "€ 17,50",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/gipfeltreffen-der-klangstrolche/27781",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-20",
-      "time": "19:00",
-      "title": "Mnozil Brass",
-      "venue_hall": "Großer Saal",
+      "title": "Best of Science Slam Hamburg 2026",
+      "venue_hall": "Kleiner Saal",
       "program": [
-        "Strau$$ – Ein Tänzchen zwischen den Stühlen"
+        "Various: Ten-minute presentations by young scientists"
       ],
       "performers": [
-        "Mnozil Brass",
-        "Thomas Gansch",
-        "Robert Rother",
-        "Roman Rindberger",
-        "Gerhard Füssl",
-        "Leonhard Paul",
-        "Zoltán Kiss",
-        "Wilfried Brandstötter"
+        "Science Slammer"
       ],
       "conductor": null,
-      "price": "ab €73",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/mnozil-brass/24294",
+      "price": "€ 25",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/best-of-science-slam-2026/28355",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
+      "duration_min": 150,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-12",
+      "time": "21:00",
+      "title": "voiceXchange: Auf zu neuen Ufern",
+      "venue_hall": "Elbphilharmonie Hamburg",
+      "program": [
+        "NDR Vokalensemble: 'Klassische Vokalmusik' mit mahoin: 'Shanty-Folk und Bläser-Beats'"
+      ],
+      "performers": [
+        "Catherina Witting",
+        "Anna-Maria Torkel",
+        "Christian Georg",
+        "Andreas Heinemeyer",
+        "mahoin"
+      ],
+      "conductor": "Vendula Nováková",
+      "price": "€15",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/ndr-vokalensemble/24114",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-14",
+      "time": "11:00",
+      "title": "Unter Wasser",
+      "venue_hall": "Elbphilharmonie Hamburg",
+      "program": [
+        "Dvořak: Der Wassermann / Sinfonische Dichtung op. 107",
+        "Zemlinsky: Die Seejungfrau / Fantasie für Orchester"
+      ],
+      "performers": [
+        "Junge Symphoniker Hamburg"
+      ],
+      "conductor": "Daniel Kirchmann",
+      "price": "ab €9,90",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/junge-symphoniker-hamburg/28192",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-21",
+      "time": "10:00",
+      "title": "An die Regler, fertig, los!",
+      "venue_hall": "Elbphilharmonie",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "€ 12",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/workshop-kreativ-modular-synthesizer/23612",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 420,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
@@ -685,21 +724,32 @@
     },
     {
       "date": "2026-06-23",
-      "time": "19:00",
-      "title": "Symphoniker Hamburg: Jennifer Holloway & Sylvain Cambreling",
-      "venue_hall": "Großer Saal",
+      "time": "19:30",
+      "title": "Hamburger Kammermusikfest International 2026",
+      "venue_hall": "Elbphilharmonie",
       "program": [
-        "Ludwig van Beethoven: Die Geschöpfe des Prometheus op. 43 (Auszüge)",
-        "Richard Wagner: Fünf Gedichte für Frauenstimme und Klavier WWV 91A »Wesendonck-Lieder« / Bearbeitung für Sopran und Orchester",
-        "Hans Zender: Schumann-Fantasie"
+        "Tschaikowsky: Duett aus »Pique Dame«",
+        "Gounod: Salut! Demeure chaste et pure / Gegrüßt sei mir, o heil’ge Stätte / Salve! dimora casta e pura / Cavatine des Faust aus »Faust«",
+        "Gounod: Ah! Je veux vivre / Walzerlied der Juliette aus »Roméo et Juliette«",
+        "Bizet: Chanson Bohème aus »Carmen«",
+        "Delibes: Viens, Mallika ... Sous le domé epais / Duett aus der Oper »Lakmé«",
+        "Verdi: Lunge da lei ... Oh mio rimorso! Oh infamia! (Ferne von ihr) / Arie und Cabaletta des Alfredo aus »La traviata«",
+        "Mozart: O zittre nicht, mein lieber Sohn ... Zum Leiden bin ich auserkoren / Rezitativ und Arie der Königin der Nacht aus »Die Zauberflöte« KV 620",
+        "Donizetti: Chi è mai quel matto… Esulti pur la Barbara aus »L’elisir d’amore«",
+        "Verdi: O don fatale (Verhängnisvoll war das Geschenk) / Arie der Eboli aus der Oper »Don Carlos«",
+        "Verdi: E strano ... Ah, fors’ è lui ... Sempre libera (’s ist seltsam) / Arie der Violetta aus der Oper »La traviata«",
+        "Puccini: Che gelida manina (Wie eiskalt ist dies Händchen) / Arie des Rodolfo aus der Oper »La Bohème«",
+        "Chapí: Carceleras aus Zarzuela »Las hijas del Zebedeo«"
       ],
       "performers": [
-        "Symphoniker Hamburg",
-        "Jennifer Holloway"
+        "Maria Kokareva - Sopran",
+        "Alexandra Yangel - Mezzosopran",
+        "Junho Hwang - Tenor",
+        "classicYoungstRs Ensemble Hamburger Kammermusikfest International 2026"
       ],
-      "conductor": "Sylvain Cambreling",
-      "price": "ab €12,10",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/symphoniker-hamburg-jennifer-holloway-sylvain-cambreling/28044",
+      "conductor": "Elisaveta Blumina",
+      "price": "€ 27,50",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/hamburger-opernsalon-hamburger-kammermusikfest-international-2026/27986",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
       "discovery_source": "sitemap_detail",
@@ -709,22 +759,45 @@
       "is_classical": true
     },
     {
-      "date": "2026-08-26",
-      "time": "19:30",
-      "title": "Shootingstar der Geige",
-      "venue_hall": "Elbphilharmonie Hamburg",
+      "date": "2026-07-11",
+      "time": "18:15",
+      "title": "Chilly Gonzales",
+      "venue_hall": null,
       "program": [
-        "Grieg: Violinsonate Nr. 3",
-        "Röntgen-Maier: Werke",
-        "Stenhammar: Sonate für Violine und Klavier"
+        "Chilly Gonzales: Gonzo"
       ],
       "performers": [
-        "Johan Dalene",
-        "Christian Ihle Hadland"
+        "Chilly Gonzales",
+        "Fergus McCreadie"
       ],
       "conductor": null,
-      "price": "ab € 29",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/johan-dalene-christian-ihle-hadland/28267",
+      "price": "ab €50",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/elbjazz/27614",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-08-19",
+      "time": "20:00",
+      "title": "Royal Stockholm Philharmonic Orchestra with Xavier de Maistre",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Felix Mendelssohn Bartholdy: Ouvertüre zu »Ein Sommernachtstraum« op. 21",
+        "Reinhold Moritzewitsch Glière: Konzert für Harfe und Orchester Es-Dur op. 74",
+        "Allan Pettersson: Sinfonie Nr. 7"
+      ],
+      "performers": [
+        "Royal Stockholm Philharmonic Orchestra",
+        "Xavier de Maistre"
+      ],
+      "conductor": "Ryan Bancroft",
+      "price": "ab € 49",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/royal-stockholm-philharmonic-orchestra-xavier-de-maistre-ryan-bancroft/28262",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
       "discovery_source": "sitemap_detail",
@@ -736,8 +809,54 @@
     {
       "date": "2026-09-01",
       "time": "09:30",
-      "title": "Ein musikalischer Spaziergang",
+      "title": "Kitakonzerte für Kitas und Vorschulen",
       "venue_hall": "Elbphilharmonie",
+      "program": [
+        "Bodypercussion, Stimme, der ganze Körper macht Musik – Körpermusik eben"
+      ],
+      "performers": [
+        "Simon Filippi",
+        "Julien Vasnier"
+      ],
+      "conductor": null,
+      "price": "€ 8",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/kitakonzert-los/28303",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 45,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-01",
+      "time": "09:30",
+      "title": "Sonne, Mond und Streicher",
+      "venue_hall": "Elbphilharmonie",
+      "program": [
+        "Bauckholt: Sonne, Mond und Streicher"
+      ],
+      "performers": [
+        "Ensemble Resonanz"
+      ],
+      "conductor": null,
+      "price": "€ 8",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/schulkonzert-sonne-mond-und-streicher/28381",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-01",
+      "time": "11:00",
+      "title": "In Omas Garten",
+      "venue_hall": "Elbphilharmonie Hamburg",
       "program": [],
       "performers": [
         "Juan Carlos Díaz Bueno",
@@ -750,7 +869,39 @@
       ],
       "conductor": null,
       "price": "€ 12",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/funkelkonzert-s-in-omis-garten/28369",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/funkelkonzert-s-in-omis-garten/28368",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-01",
+      "time": "11:00",
+      "title": "Es ist Zeit",
+      "venue_hall": "Elbphilharmonie Hamburg",
+      "program": [
+        "Omelchuk: Musiktheater für Kinder ab 8 Jahren"
+      ],
+      "performers": [
+        "Studio Dan",
+        "Kirstin Schwab",
+        "Helena Matzawrakos",
+        "Daniel Riegler",
+        "Manfred Weissensteiner",
+        "David Valentek",
+        "Oxana Omelchuk",
+        "Johannes Schrettle",
+        "Milena Czernovsky",
+        "Werner Angerer",
+        "Tom Grassegger"
+      ],
+      "conductor": "Daniel Riegler",
+      "price": "€ 16",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/funkelkonzert-xl-es-ist-zeit/28444",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
       "duration_min": 60,
@@ -762,70 +913,156 @@
     },
     {
       "date": "2026-09-01",
-      "time": "09:30",
-      "title": "Es ist Zeit",
-      "venue_hall": "Elbphilharmonie",
-      "program": [
-        "Omelchuk: Musiktheater für Kinder ab 8 Jahren"
-      ],
-      "performers": [
-        "Studio Dan",
-        "Daniel Riegler",
-        "Kirstin Schwab",
-        "Helena Matzawrakos",
-        "Manfred Weissensteiner",
-        "David Valentek",
-        "Oxana Omelchuk",
-        "Johannes Schrettle",
-        "Milena Czernovsky",
-        "Werner Angerer",
-        "Tom Grassegger"
-      ],
-      "conductor": "Daniel Riegler",
-      "price": "€ 8",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/schulkonzert-es-ist-zeit/28448",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "duration_min": 120,
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-09-01",
-      "time": "14:00",
-      "title": "Workshop Kosmos Klang",
-      "venue_hall": "Elbphilharmonie",
-      "program": [],
-      "performers": [],
-      "conductor": null,
-      "price": "€ 16",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/workshop-kosmos-klang/28595",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "duration_min": 105,
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-09-01",
-      "time": "18:00",
-      "title": "Das Handwerk hinter der Musik",
+      "time": "11:00",
+      "title": "Workshop: Klassiko Schlaginstrumente",
       "venue_hall": "Elbphilharmonie Hamburg",
       "program": [
-        "Ensemble Resonanz: Performance with string instruments"
+        "Unknown: Unknown"
+      ],
+      "performers": [
+        "HamburgMusik"
+      ],
+      "conductor": null,
+      "price": "€ 16",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/workshop-klassiko-schlaginstrumente/28570",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 90,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-01",
+      "time": "11:00",
+      "title": "Gamelan Workshop",
+      "venue_hall": "Elbphilharmonie",
+      "program": [
+        "N/A"
+      ],
+      "performers": [
+        "N/A"
+      ],
+      "conductor": null,
+      "price": "€ 16",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/workshop-kosmos-gamelan/28586",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 90,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-01",
+      "time": "12:00",
+      "title": "Workshop: Kosmos Minimal Music",
+      "venue_hall": "Elbphilharmonie",
+      "program": [
+        "Multiple Composers: Various Works in Minimal Music Style"
+      ],
+      "performers": [
+        "Workshop Participants"
+      ],
+      "conductor": null,
+      "price": "€ 16",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/workshop-kosmos-minimal-music/28575",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 180,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-01",
+      "time": "16:00",
+      "title": "Klangzeit",
+      "venue_hall": "Elbphilharmonie Hamburg",
+      "program": [
+        "Penderecki: Drei Stücke im alten Stil / nach der Musik zu dem Film »Die Handschrift von Saragossa«",
+        "Fuchs: Fantasiestück op. 105/2",
+        "Volkslied: Bunt sind schon die Wälder",
+        "Michael Haydn: Divertimento Es-Dur für Viola, Violoncello und Kontrabass",
+        "Penderecki: Drei Stücke im alten Stil, Arr. Gregor Dierck / nach der Musik zu dem Film »Die Handschrift von Saragossa«",
+        "Volkslied: Hejo, spann’ den Wagen an",
+        "Sibelius: Wassertropfen für Violine und Violoncello",
+        "Alvarez: Metro Chabacano",
+        "Cutting: Greensleeves",
+        "Mozart: Allegro di molto / aus: Divertimento B-Dur KV 137 »Salzburger Sinfonie Nr. 2«",
+        "Bacewicz: Duos für zwei Violinen »Folk Songs«",
+        "Volkslied: O wie ist es kalt geworden",
+        "Vivaldi: Concerto f-Moll RV 297 »L’inverno (Der Winter)« / aus: Die vier Jahreszeiten",
+        "Volkslied: Die Sonne geht auf",
+        "Bartók: Menetelő nóta 2 (Ungarischer Marsch 2) / aus: 44 Duos für zwei Violinen Sz 98",
+        "Joplin: The Easy Winners"
       ],
       "performers": [
         "Ensemble Resonanz"
       ],
       "conductor": null,
-      "price": "€ 24",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/insight-strings-workshop-streichinstrumente/28808",
+      "price": "€ 12",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/klangzeit/28692",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 60,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-01",
+      "time": "20:00",
+      "title": "Elbphilharmonie Publikumsorchester",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Various: Works performed by the Elbphilharmonie Publikumsorchester"
+      ],
+      "performers": [
+        "Elbphilharmonie Publikumsorchester"
+      ],
+      "conductor": "Michael Petermann",
+      "price": "€ 12",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/elbphilharmonie-publikumsorchester/28449",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 135,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-01",
+      "time": "20:00",
+      "title": "Djavan: 50 Years: The Greatest Hits",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Djavan: 50 Years: The Greatest Hits"
+      ],
+      "performers": [
+        "Djavan",
+        "Jessé Sadoc",
+        "Rafael Rocha",
+        "Marcelo Martins",
+        "Torcuato Mariano",
+        "Paulo Calasans",
+        "Renato Fonseca",
+        "Marcelo Mariano",
+        "Felipe Alves"
+      ],
+      "conductor": null,
+      "price": "ab €36",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/djavan/27985",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
       "discovery_source": "sitemap_detail",
@@ -835,18 +1072,77 @@
       "is_classical": true
     },
     {
-      "date": "2026-09-04",
+      "date": "2026-09-02",
       "time": "20:00",
-      "title": "Somnoversum: Das Traumlabor",
-      "venue_hall": "Elbphilharmonie Hamburg",
-      "program": [],
-      "performers": [
-        "Jan Josef Liefers",
-        "Ingo Fietze"
+      "title": "Klänge aus der Neuen Welt",
+      "venue_hall": "Elbphilharmonie",
+      "program": [
+        "Carlos Simon: Four Black American Dances",
+        "Samuel Barber: Konzert für Violine und Orchester op. 14",
+        "Antonín Dvořák: Sinfonie Nr. 9 e-Moll op. 95 »Aus der Neuen Welt«"
       ],
-      "conductor": null,
-      "price": "ab €22,05",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/abgesagt-somnoversum-das-traumlabor/27610",
+      "performers": [
+        "Pittsburgh Symphony Orchestra",
+        "Augustin Hadelich"
+      ],
+      "conductor": "Manfred Honeck",
+      "price": "ab € 37,10",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/pittsburgh-symphony-orchestra-augustin-hadelich-manfred-honeck/27871",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-14",
+      "time": null,
+      "title": "Anna Lapwood & Philharmonia Orchestra",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Kristina Arakelyan: Toccata",
+        "Hans Zimmer: Chevaliers De Sangreal aus der Filmmusik zu »The Da Vinci Code«",
+        "Max Richter: Cosmology für Orgel, Chor und Orchester",
+        "Hans Zimmer: Interstellar Suite",
+        "Camille Saint-Saëns: Sinfonie Nr. 3 c-Moll op. 78 »Orgelsinfonie«"
+      ],
+      "performers": [
+        "Philharmonia Orchestra",
+        "I Vocalisti",
+        "ChorWerk Potsdam",
+        "Anna Lapwood"
+      ],
+      "conductor": "Kerem Hasan",
+      "price": "Tickets ab € 32,60",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/philharmonia-orchestra-anna-lapwood-kerem-hasan/27890",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-17",
+      "time": "20:00",
+      "title": "NDR Bigband & Bundesjazzorchester: TOYTOY",
+      "venue_hall": "Elbphilharmonie",
+      "program": [
+        "Bundesjazzorchester: Performance",
+        "NDR Bigband: Performance",
+        "TOYTOY: Performance"
+      ],
+      "performers": [
+        "NDR Bigband",
+        "Bundesjazzorchester",
+        "TOYTOY"
+      ],
+      "conductor": "Steffen Schorn",
+      "price": "€25",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/ndr-bigband-bundesjazzorchester-toytoy/28863",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
       "discovery_source": "sitemap_detail",
@@ -857,35 +1153,24 @@
     },
     {
       "date": "2026-09-27",
-      "time": "19:30",
-      "title": "International Mendelssohn Festival 2026",
+      "time": "11:00",
+      "title": "Kammerkonzert der Symphoniker Hamburg",
       "venue_hall": "Elbphilharmonie",
       "program": [
-        "Mendelssohn Bartholdy: Trois Fantaisies ou Caprices op. 16",
-        "Weber: Klavierquartett B-Dur op. 8",
-        "Mozart: Konzert für Klavier und Orchester C-Dur KV 467",
-        "Montague: Thule Ultima"
+        "Turina: La oración del torero op. 34",
+        "Schostakowitsch: Streichquartett Nr. 8 c-Moll op. 110",
+        "Dvořák: Streichquintett G-Dur op. 77"
       ],
       "performers": [
-        "Meret Louisa Vogel",
-        "Jiyeon Noh",
-        "Max Godinić",
-        "Annika Koll",
-        "Una Weske",
-        "Ralph Evans",
-        "Efim Boico",
-        "Gil Sharon",
-        "Niklas Schmidt",
-        "Mark Gothóni",
-        "Anna Kreetta Gribajcevic",
-        "Arto Noras",
-        "Jens Bomhardt",
-        "Alon Goldstein",
-        "Juhani Lagerspetz"
+        "Mariko Miwa",
+        "Yu Lin",
+        "Juhee Lee",
+        "David Martín Gutiérrez",
+        "Rafael Cunha"
       ],
       "conductor": null,
-      "price": "ab €15",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/international-mendelssohn-festival-hamburg-2026/28825",
+      "price": "ab €9,90",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/kammerkonzert-der-symphoniker-hamburg/28077",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
       "discovery_source": "sitemap_detail",
@@ -895,22 +1180,115 @@
       "is_classical": true
     },
     {
-      "date": "2026-10-13",
-      "time": "19:30",
-      "title": "Beethoven: Die Sonaten I",
-      "venue_hall": "Elbphilharmonie",
+      "date": "2026-09-30",
+      "time": "20:00",
+      "title": "God Save The Queen",
+      "venue_hall": "Elbphilharmonie Hamburg",
       "program": [
-        "Beethoven: Sonate für Klavier f-Moll op. 2/1",
-        "Beethoven: Sonate für Klavier As-Dur op. 26",
-        "Beethoven: Sonate für Klavier G-Dur op. 79 »Sonatine«",
-        "Beethoven: Sonate für Klavier C-Dur op. 53 »Waldstein-Sonate«"
+        "Queen: Bohemian Rhapsody",
+        "Queen: We Will Rock You",
+        "Queen: It's A Kind Of Magic",
+        "Queen: Another One Bites The Dust"
       ],
       "performers": [
-        "Igor Levit"
+        "Q-Revival Band",
+        "Josch Hinder",
+        "Stefan Pfeiffer",
+        "Piid Plötzer",
+        "Chris Stowasser",
+        "Sebastian Simmich"
       ],
       "conductor": null,
-      "price": "ab € 29,30",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/igor-levit-klavierabend/27885",
+      "price": "ab €45,90",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/q-revival-band/28343",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 150,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-01",
+      "time": "19:30",
+      "title": "Kammerphilharmonie Hamburg",
+      "venue_hall": "Elbphilharmonie",
+      "program": [
+        "Mozart: Konzert für Violine und Orchester A-Dur KV 219",
+        "Önder: Dialogs with Schlenker",
+        "Bruckner: Streichquintett für zwei Violinen, zwei Violen und Violoncello F-Dur / Bearbeitung für Kammerorchester"
+      ],
+      "performers": [
+        "Kammerphilharmonie Hamburg",
+        "Anton Barakhovsky"
+      ],
+      "conductor": "Arndt Auhagen",
+      "price": "ab €29,50",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/kammerphilharmonie-hamburg-anton-barakhovsky/27757",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 120,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-03",
+      "time": "15:00",
+      "title": "Die Schule der magischen Tiere",
+      "venue_hall": "Elbphilharmonie Hamburg",
+      "program": [
+        "Auer: Die Schule der magischen Tiere"
+      ],
+      "performers": [
+        "Margit Auer",
+        "Markus Tietjen"
+      ],
+      "conductor": "null",
+      "price": "ab €15,95",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/margit-auer/28922",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-08",
+      "time": "20:30",
+      "title": "Jlin",
+      "venue_hall": "Elbphilharmonie Kleiner Saal",
+      "program": [],
+      "performers": [
+        "Jlin"
+      ],
+      "conductor": null,
+      "price": "€28",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/jlin/28423",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_jsonld",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-16",
+      "time": "19:30",
+      "title": "Blind Date",
+      "venue_hall": "Elbphilharmonie",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "€ 32",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/blind-date/28168",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
       "discovery_source": "sitemap_detail",
@@ -921,10 +1299,224 @@
     },
     {
       "date": "2026-10-18",
+      "time": "19:00",
+      "title": "Konzert der Tenöre",
+      "venue_hall": "Laeiszhalle Großer Saal",
+      "program": [],
+      "performers": [
+        "Mike Steurenthaler",
+        "Giuseppe Verdi Chor Hamburg",
+        "Hamburger Konzertchor",
+        "HansePhilharmonie Hamburg"
+      ],
+      "conductor": null,
+      "price": "ab €18.95",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/konzert-der-tenore/28254",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_jsonld",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-25",
+      "time": "11:00",
+      "title": "Herbstmatinee",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Yagisawa: Festive Overture",
+        "Gillingham: With Heart and Voice",
+        "Reed: Armenian Dances (Part I)",
+        "Sparkes: Music for a Festival",
+        "Beltrán-Cecilia: Vikings: The Legend"
+      ],
+      "performers": [
+        "Symphonisches Blasorchester Norderstedt"
+      ],
+      "conductor": "Bernhard Volk",
+      "price": "€16",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/symphonisches-blasorchester-norderstedt/28907",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-01",
+      "time": "20:00",
+      "title": "Heiter bis virtuos",
+      "venue_hall": "Elbphilharmonie",
+      "program": [
+        "Berlioz: Ouvertüre zu »Béatrice et Bénédict«",
+        "Saint-Saëns: Konzert für Violine und Orchester Nr. 3 h-Moll op. 61",
+        "Dvořák: Sinfonie Nr. 8 G-Dur op. 88"
+      ],
+      "performers": [
+        "Orchestre National de France",
+        "Julia Fischer"
+      ],
+      "conductor": "Cristian Măcelaru",
+      "price": "ab €32,60",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/orchestre-national-de-france-julia-fischer-cristian-macelaru/27879",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-03",
+      "time": "11:00",
+      "title": "Viva Banana",
+      "venue_hall": "Elbphilharmonie Hamburg",
+      "program": [
+        "Tocuyito: Die magische und feurige Welt venezolanischer Klänge und Rhythmen"
+      ],
+      "performers": [
+        "Dalina Ugarte",
+        "Santo Scala",
+        "Joseph Avila"
+      ],
+      "conductor": null,
+      "price": "€ 16",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/funkelkonzert-l-viva-banana/28496",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-05",
+      "time": "20:00",
+      "title": "Nacht der Gitarren",
+      "venue_hall": "Laeiszhalle Kleiner Saal",
+      "program": [],
+      "performers": [
+        "André Cavalcante",
+        "Roxane Elfasci",
+        "Niwel Tsumbu",
+        "Minnie Marks"
+      ],
+      "conductor": null,
+      "price": "ab €18.50",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/nacht-der-gitarren/27714",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_jsonld",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-05",
+      "time": "20:00",
+      "title": "Nie wieder ist jetzt!",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Ludwig van Beethoven: Leonoren-Ouvertüre Nr. 1 op. 138",
+        "Johannes Brahms: Schicksalslied für Chor und Orchester op. 54",
+        "Hans Werner Henze: Sinfonie Nr. 9 für gemischten Chor und Orchester"
+      ],
+      "performers": [
+        "Rundfunk-Sinfonieorchester Berlin",
+        "Rundfunkchor Berlin"
+      ],
+      "conductor": "Vladimir Jurowski",
+      "price": "€ 15",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/rundfunk-sinfonieorchester-berlin-rundfunkchor-berlin-vladimir-jurowski/23670",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 120,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-07",
+      "time": "20:00",
+      "title": "The Ukulele Orchestra of Great Britain",
+      "venue_hall": "Elbphilharmonie Hamburg",
+      "program": [],
+      "performers": [
+        "The Ukulele Orchestra of Great Britain"
+      ],
+      "conductor": "null",
+      "price": "€ 25",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/abgesagt-the-ukulele-orchestra-of-great-britain/23682",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-11",
+      "time": "20:00",
+      "title": "Wolf Biermann Konzert zum 90. Geburtstag",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Biermann: Lieder und Texte zu seinem 90. Geburtstag"
+      ],
+      "performers": [
+        "Wolf Biermann"
+      ],
+      "conductor": null,
+      "price": "ab €39,90",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/wolf-biermann-konzert-zum-90-geburtstag/28196",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-15",
+      "time": "14:30",
+      "title": "Kinderkonzert der Symphoniker Hamburg",
+      "venue_hall": "Elbphilharmonie Hamburg",
+      "program": [
+        "Elgar: Variationen über ein eigenes Thema für Orchester op. 36 »Enigma-Variationen«"
+      ],
+      "performers": [
+        "Symphoniker Hamburg"
+      ],
+      "conductor": "Jason Weaver",
+      "price": "ab €11",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/juri-knackt-den-enigma-code/28060",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 60,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-15",
       "time": "19:30",
       "title": "Jules Ahoi",
       "venue_hall": "Elbphilharmonie Hamburg",
-      "program": [],
+      "program": [
+        "Ahoi: Robinson Crusoe"
+      ],
       "performers": [
         "Jules Ahoi"
       ],
@@ -940,46 +1532,21 @@
       "is_classical": true
     },
     {
-      "date": "2026-10-29",
-      "time": "20:00",
-      "title": "Die Feisten",
-      "venue_hall": "Laeiszhalle Großer Saal",
-      "program": [],
-      "performers": [
-        "C",
-        "Rainer Schacht",
-        "Die feisten"
-      ],
-      "conductor": null,
-      "price": "ab €44.35",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/die-feisten/27450",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "sitemap_jsonld",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-11-06",
+      "date": "2026-11-18",
       "time": "11:00",
-      "title": "Philharmonisches Staatsorchester Hamburg: ZeitenLos",
+      "title": "ZeitSpiel Zehn",
       "venue_hall": "Großer Saal",
       "program": [
-        "Tschaikowsky: Sinfonische Fantasie op. posth. 77 „Fatum“",
-        "Fazıl Say: Konzert für Klavier und Orchester Nr. 3 op. 11 „Silence of Anatolia“",
-        "Beethoven: Poco sostenuto – Vivace / aus: Sinfonie Nr. 7 A-Dur op. 92",
-        "Beethoven: Adagio cantabile / aus: Sinfonie Nr. 4 B-Dur op. 60",
-        "Beethoven: Allegros / aus: Sinfonie Nr. 5 c-Moll op. 67"
+        "Max Bruch: Konzert für Violine und Orchester Nr. 1 g-Moll op. 26 / Mit Überschreibung des 1. Satzes von Barbara Assiginaak (Uraufführung)",
+        "Antonín Dvořák: Sinfonie Nr. 9 e-Moll op. 95 »Aus der Neuen Welt«"
       ],
       "performers": [
         "Philharmonisches Staatsorchester Hamburg",
-        "Fazıl Say"
+        "Hilary Hahn"
       ],
       "conductor": "Omer Meir Wellber",
-      "price": "ab €19",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/philharmonisches-staatsorchester-hamburg-fazl-say-omer-meir-wellber/27804",
+      "price": "ab € 21",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/philharmonisches-staatsorchester-hamburg-hilary-hahn-omer-meir-wellber/23364",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
       "discovery_source": "sitemap_detail",
@@ -989,87 +1556,23 @@
       "is_classical": true
     },
     {
-      "date": "2026-11-06",
-      "time": "19:30",
-      "title": "Giorgi Gigashvili / Nikala Zubiashvili",
-      "venue_hall": "Elbphilharmonie Kleiner Saal",
-      "program": [],
-      "performers": [
-        "Giorgi Gigashvili",
-        "Nikala Zubiashvili"
-      ],
-      "conductor": null,
-      "price": "ab €17.60",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/giorgi-gigashvili-nikala-zubiashvili/28155",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "sitemap_jsonld",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-11-06",
-      "time": "19:30",
-      "title": "Elisabeth Brauß Klavierabend",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Domenico Scarlatti: Sonate D-Dur K 119",
-        "Domenico Scarlatti: Sonate A-Dur K 208",
-        "Domenico Scarlatti: Sonate a-Moll K 175",
-        "Isaac Albéniz: Evocación / aus: Iberia-Suite, Heft 1",
-        "Domenico Scarlatti: Sonate As-Dur K 127",
-        "Domenico Scarlatti: Sonate c-Moll K 11",
-        "Domenico Scarlatti: Sonate G-Dur K 427",
-        "Olivier Messiaen: Le baiser de l’enfant-Jésus / aus: Vingt regards sur l’enfant-Jésus",
-        "Domenico Scarlatti: Sonate c-Moll K 58",
-        "Domenico Scarlatti: Sonate c-Moll K 116",
-        "Domenico Scarlatti: Sonate c-Moll K 115",
-        "Robert Schumann: Arabeske C-Dur op. 18",
-        "Domenico Scarlatti: Sonate c-Moll K 56",
-        "Béla Bartók: 14 Bagatellen Sz 38 (Auswahl)",
-        "Domenico Scarlatti: Sonate h-Moll K 87",
-        "Domenico Scarlatti: Sonate Fis-Dur K 319",
-        "Domenico Scarlatti: Sonate g-Moll K 450",
-        "Wolfgang Amadeus Mozart: Rondo a-Moll KV 511",
-        "Domenico Scarlatti: Sonate f-Moll K 69",
-        "Domenico Scarlatti: Sonate f-Moll K 386",
-        "Domenico Scarlatti: Sonate g-Moll K 373",
-        "Maurice Ravel: Le tombeau de Couperin (Auswahl)"
-      ],
-      "performers": [
-        "Elisabeth Brauß"
-      ],
-      "conductor": null,
-      "price": "ab €14",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/elisabeth-brau-klavierabend/27979",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-11-10",
+      "date": "2026-11-20",
       "time": "20:00",
-      "title": "Elbphilharmonie: WDR Sinfonieorchester - Marie Jacquot",
+      "title": "Anne-Sophie Mutter & Berliner Barock Solisten",
       "venue_hall": "Großer Saal",
       "program": [
-        "Richard Wagner: Ouvertüre zu »Tannhäuser« WWV 70",
-        "Thierry Escaich: La nuit des chants / Konzert für Viola und Orchester",
-        "Camille Saint-Saëns: Sinfonie Nr. 3 c-Moll op. 78 »Orgelsinfonie«"
+        "Previn: Konzert für Violine und Orchester Nr. 2",
+        "Mozart: Konzert für Violine und Orchester B-Dur KV 207",
+        "Darvishi: Likoo für Violine solo",
+        "Mozart: Konzert für Violine und Orchester A-Dur KV 219"
       ],
       "performers": [
-        "WDR Sinfonieorchester",
-        "Antoine Tamestit",
-        "Iveta Apkalna"
+        "Anne-Sophie Mutter",
+        "Berliner Barock Solisten"
       ],
-      "conductor": "Marie Jacquot",
-      "price": "ab €15",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/wdr-sinfonieorchester-antoine-tamestit-iveta-apkalna-marie-jacquot/27947",
+      "conductor": "Anne-Sophie Mutter",
+      "price": "ab €39,40",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/anne-sophie-mutter-berliner-barock-solisten/23139",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
       "duration_min": 120,
@@ -1080,66 +1583,21 @@
       "is_classical": true
     },
     {
-      "date": "2026-11-16",
-      "time": "12:00",
-      "title": "Kosmos Jazz Workshop",
-      "venue_hall": "Elbphilharmonie",
+      "date": "2026-11-21",
+      "time": "14:30",
+      "title": "Kuscheltier ins Konzert",
+      "venue_hall": "Studio E",
       "program": [
-        "Various Artists: Jazz Instrument Familiarization Workshop"
+        "Symphoniker Hamburg: Das Hasi-Konzert"
       ],
       "performers": [
-        "Herbie Hancock"
+        "Juri Tetzlaff",
+        "Melanie Weirather",
+        "Mitglieder der Symphoniker Hamburg"
       ],
       "conductor": null,
-      "price": "€8",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/workshop-kosmos-jazz/23627",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "duration_min": 90,
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-11-18",
-      "time": "21:00",
-      "title": "Tina Dico",
-      "venue_hall": "Laeiszhalle",
-      "program": [
-        "Tina Dico: New Songs"
-      ],
-      "performers": [
-        "Tina Dico"
-      ],
-      "conductor": null,
-      "price": "ab €47,80",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/tina-dico/27609",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": false
-    },
-    {
-      "date": "2026-11-30",
-      "time": "16:00",
-      "title": "Elbphilharmonie Publikumsorchester",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Kagel: Zehn Märsche, um den Sieg zu verfehlen",
-        "Elgar: Serenade für Streichorchester e-Moll op. 20",
-        "Mussorgsky / Ravel: Bilder einer Ausstellung"
-      ],
-      "performers": [
-        "Elbphilharmonie Publikumsorchester"
-      ],
-      "conductor": "Michael Petermann",
-      "price": "€12",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/elbphilharmonie-publikumsorchester/23878",
+      "price": null,
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/hasi-konzert/28086",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
       "discovery_source": "sitemap_detail",
@@ -1149,174 +1607,190 @@
       "is_classical": true
     },
     {
-      "date": "2026-11-30",
-      "time": "19:30",
-      "title": "Jason Moran plays Duke Ellington",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Ellington: Black and Tan Fantasy"
-      ],
-      "performers": [
-        "Jason Moran"
-      ],
-      "conductor": null,
-      "price": "€32",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/jason-moran-plays-duke-ellington/28923",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-11-30",
-      "time": "19:30",
-      "title": "Ein furchtloses Quartett",
-      "venue_hall": "Kleiner Saal",
-      "program": [
-        "Beethoven: Streichquartett c-Moll op. 18/4",
-        "Schostakowitsch: Streichquartett Nr. 8 c-Moll op. 110",
-        "Schubert: Streichquartett a-Moll D 804 \"Rosamunde\""
-      ],
-      "performers": [
-        "Leonkoro Quartett",
-        "Jonathan Schwarz",
-        "Emiri Kakiuchi",
-        "Mayu Konoe",
-        "Lukas Schwarz"
-      ],
-      "conductor": null,
-      "price": "ab € 13",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/leonkoro-quartett/28143",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "duration_min": 105,
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-11-30",
-      "time": "20:00",
-      "title": "Tanz für den Frieden",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Leon Gurvitch: 5 Seasons / mit einer Choreografie von Edvin Revazov (Uraufführung)"
-      ],
-      "performers": [
-        "Hamburger Kammerballett",
-        "Leon Gurvitch Ensemble"
-      ],
-      "conductor": "Leon Gurvitch",
-      "price": "ab €10",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/hamburger-kammerballett-leon-gurvitch-ensemble/27750",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-11-30",
-      "time": "20:00",
-      "title": "Doppelte Geburtstagsparty",
-      "venue_hall": "Elbphilharmonie",
-      "program": [
-        "Coltrane/Davis: Milestones",
-        "Coltrane/Davis: Kind of Blue",
-        "Coltrane: Giant Steps"
-      ],
-      "performers": [
-        "Terence Blanchard",
-        "Ravi Coltrane",
-        "Charles Altura",
-        "Tom Oren",
-        "David Ginyard",
-        "Jaylen Petinaud"
-      ],
-      "conductor": null,
-      "price": "ab €32",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/miles-100-terence-blanchard-ravi-coltrane/27570",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-11-30",
-      "time": "20:00",
-      "title": "Dancing Queen",
-      "venue_hall": "Elbphilharmonie",
-      "program": [
-        "Rameau: Various Works",
-        "ABBA: Various Works"
-      ],
-      "performers": [
-        "lautten compagney BERLIN",
-        "Asya Fateyeva"
-      ],
-      "conductor": "Wolfgang Katschner",
-      "price": "ab €45",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/lautten-compagney-berlin-asya-fateyeva/27509",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-11-30",
-      "time": "20:00",
-      "title": "Missa Salisburgensis",
-      "venue_hall": "Elbphilharmonie",
-      "program": [
-        "Biber: Missa Salisburgensis à 53 voci"
-      ],
-      "performers": [
-        "Barockensemble des Bayerischen Staatsorchesters",
-        "Les Cornets Noirs",
-        "Augsburger Domsingknaben"
-      ],
-      "conductor": "Stefan Steinemann",
-      "price": "€66",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/augsburger-domsingknaben-missa-salisburgensis/27642",
-      "venue": "Elbphilharmonie Hamburg",
-      "city": "Hamburg",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-11-30",
-      "time": "20:00",
-      "title": "Virtuosität hoch zwei",
+      "date": "2026-11-22",
+      "time": "11:00",
+      "title": "Kammerkonzert der Symphoniker Hamburg",
       "venue_hall": "Elbphilharmonie Hamburg",
       "program": [
-        "Brahms: Sonate für Violine und Klavier G-Dur op. 78",
-        "Janáček: Sonate für Violine und Klavier",
-        "Beach: Romance op. 23",
-        "Prokofjew: Sonate für Violine und Klavier D-Dur op. 94a"
+        "Schulhoff: Fünf Stücke für Streichquartett",
+        "Mozart: Streichquartett C-Dur KV 465 »Dissonanzenquartett«",
+        "Bruch: Streichoktett B-Dur"
       ],
       "performers": [
-        "Augustin Hadelich",
-        "Seong-Jin Cho"
+        "Barbara Hefele",
+        "Yiju Seo",
+        "Makrouhi Hagel",
+        "Katharina Ivanova",
+        "Hsiang-Hsiang Tsai",
+        "N.N.",
+        "Theresia Rosendorfer",
+        "João Vargas"
       ],
       "conductor": null,
-      "price": "ab € 27",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/augustin-hadelich-seong-jin-cho/27891",
+      "price": "ab € 9,90",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/kammerkonzert-der-symphoniker-hamburg/28078",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-26",
+      "time": "20:00",
+      "title": "Il Pomo d'Oro: Jakub Józef Orliński & Madison Nonoa",
+      "venue_hall": "Elbphilharmonie",
+      "program": [
+        "Arvo Pärt: My Heart’s in the Highlands",
+        "Komitas Vardapet: Dle Yaman",
+        "Giovanni Battista Pergolesi: Stabat mater"
+      ],
+      "performers": [
+        "Jakub Józef Orliński",
+        "Madison Nonoa",
+        "Il Pomo d’Oro"
+      ],
+      "conductor": null,
+      "price": "ab €29,30",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/jakub-jozef-orlinski-madison-nonoa-il-pomo-doro/27893",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 72,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-30",
+      "time": "09:30",
+      "title": "Funkelkonzert S »O Canto da Baleia«",
+      "venue_hall": "Elbphilharmonie",
+      "program": [],
+      "performers": [
+        "Mosaicollective",
+        "Elena La Conte",
+        "Kristina van de Sand",
+        "Elide Gramegna",
+        "Djuna Lund Llopis"
+      ],
+      "conductor": null,
+      "price": "€6",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/funkelkonzert-s-o-canto-da-baleia/23217",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 45,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-30",
+      "time": "14:00",
+      "title": "Funkelkonzerte M / 3-5 Jahre",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Bodypercussion: Körpermusik"
+      ],
+      "performers": [
+        "Simon Filippi",
+        "Julien Vasnier"
+      ],
+      "conductor": null,
+      "price": "€ 12",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/funkelkonzert-m-los/28352",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 45,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-30",
+      "time": "14:30",
+      "title": "Mit dem Kuscheltier ins Konzert",
+      "venue_hall": "Studio E",
+      "program": [
+        "Symphoniker Hamburg: Hasi-Konzert"
+      ],
+      "performers": [
+        "Symphoniker Hamburg",
+        "Melanie Weirather",
+        "Juri Tetzlaff"
+      ],
+      "conductor": null,
+      "price": "€ 8,25 | 16,50",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/hasi-konzert/23809",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-30",
+      "time": "18:30",
+      "title": "Finding Home",
+      "venue_hall": "Elbphilharmonie",
+      "program": [
+        "Sahl: Tango / aus: Exiles’ Café",
+        "Weill: Lost in the Stars / aus dem Musical »Lost in the Stars«",
+        "Ravaei: Variations on »This Land is Your Land«",
+        "Burleigh: From the Southland (Auswahl)",
+        "Price: Clouds",
+        "Ruo: Diffluent / aus: Three Pieces for Piano",
+        "Castelnuovo-Tedesco: I naviganti op. 13",
+        "del Aguila: Music in a Bottle op. 67",
+        "Bonds: Troubled Water / aus: Spiritual Suite",
+        "Burhans: In Time of Desperation",
+        "Peterson: Hymn to Freedom",
+        "Gordon: Finding Home / aus dem Musical »Dream True«"
+      ],
+      "performers": [
+        "Lara Downes"
+      ],
+      "conductor": null,
+      "price": "€ 32",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/lara-downes-klavier/28424",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-30",
+      "time": "19:30",
+      "title": "Hamburger Kammermusikfest International 2026",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Beethoven: Quintett Es-Dur op. 16 (Fassung für Klavierquartett)",
+        "Liszt: Après une lecture du Dante, fantasia quasi Sonata / aus: Années de pèlerinage, deuxième année, Italie S 161",
+        "Fauré: Klavierquartett Nr. 1 c-Moll op. 15",
+        "Brahms: Ungarische Tänze"
+      ],
+      "performers": [
+        "Angela Golubeva",
+        "Nora Romanoff-Schwarzberg",
+        "Franz Ortner",
+        "Martin Lucas Staub",
+        "Christian Staub"
+      ],
+      "conductor": null,
+      "price": "€ 27,50",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/hamburger-kammermusikfest-international-2026/27989",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
       "discovery_source": "sitemap_detail",
@@ -1328,19 +1802,45 @@
     {
       "date": "2026-11-30",
       "time": "20:00",
-      "title": "In Extremo: Tranquilo II",
-      "venue_hall": "Elbphilharmonie",
+      "title": "Violin Concert with Hilary Hahn",
+      "venue_hall": "Großer Saal",
       "program": [
-        "In Extremo: Tranquilo II"
+        "Dvořák: Konzert für Violine und Orchester a-Moll op. 53",
+        "Prokofjew: Romeo und Julia / Ballett in vier Akten und Epilog op. 64 (Auszüge)"
       ],
       "performers": [
-        "In Extremo"
+        "Wiener Philharmoniker",
+        "Hilary Hahn"
       ],
-      "conductor": null,
-      "price": "ab €63,75",
-      "detail_url": "https://www.elbphilharmonie.de/de/programm/in-extremo-unplugged/28491",
+      "conductor": "Tugan Sokhiev",
+      "price": "ab € 41,60",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/wiener-philharmoniker-hilary-hahn-tugan-sokhiev/27872",
       "venue": "Elbphilharmonie Hamburg",
       "city": "Hamburg",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-30",
+      "time": "20:00",
+      "title": "Café del Mundo",
+      "venue_hall": "Elbphilharmonie Hamburg",
+      "program": [
+        "Guitarize"
+      ],
+      "performers": [
+        "Jan Pascal",
+        "Alexander Kilian"
+      ],
+      "conductor": null,
+      "price": "ab €49,95",
+      "detail_url": "https://www.elbphilharmonie.de/de/programm/cafe-del-mundo/28193",
+      "venue": "Elbphilharmonie Hamburg",
+      "city": "Hamburg",
+      "duration_min": 165,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
@@ -1348,17 +1848,17 @@
       "is_classical": true
     }
   ],
-  "total_events": 53,
-  "total_events_visible": 18,
-  "total_events_discovered": 53,
-  "total_events_discovered_strict": 53,
-  "total_events_enriched": 52,
-  "source": "elbphilharmonie_listing",
+  "total_events": 74,
+  "total_events_visible": 27,
+  "total_events_discovered": 74,
+  "total_events_discovered_strict": 74,
+  "total_events_enriched": 74,
+  "source": "firecrawl_listing",
   "latest_discovered_event_date": "2026-11-30",
   "latest_event_date": "2026-11-30",
   "covers_horizon": true,
   "horizon_grace_days": 1,
-  "events_with_date": 53,
+  "events_with_date": 74,
   "events_missing_date": 0,
   "date_coverage_rate": 1.0,
   "sitemap_jsonld_stats": {
@@ -1367,15 +1867,15 @@
     "checked": 240,
     "limit": 240,
     "initial_sample": 24,
-    "jsonld_pages": 33,
+    "jsonld_pages": 29,
     "events": 5,
     "within_horizon": 5,
-    "past_or_beyond_horizon": 27,
-    "canceled": 1,
+    "past_or_beyond_horizon": 22,
+    "canceled": 2,
     "invalid": 0,
     "complete_scan": false,
-    "first_date": "2026-05-20",
-    "latest_date": "2026-11-06",
+    "first_date": "2026-05-27",
+    "latest_date": "2026-11-05",
     "covers_horizon": false,
     "authoritative": false
   },
@@ -1384,27 +1884,27 @@
     "map_urls": 0,
     "html_urls": 13,
     "new_urls": 0,
-    "latest_discovered_date": "2026-11-06"
+    "latest_discovered_date": "2026-11-05"
   },
   "sitemap_detail_expand_stats": {
-    "budget": 40,
+    "budget": 80,
     "sitemap_urls": 1999,
-    "scraped": 40,
-    "new_events": 35,
-    "missing_date_or_title": 0,
-    "today_or_past": 5,
+    "scraped": 80,
+    "new_events": 56,
+    "missing_date_or_title": 1,
+    "today_or_past": 23,
     "past_or_beyond_horizon": 0,
     "duplicate_urls": 13,
     "date_scout": {
       "sitemap_urls": 1999,
       "candidate_urls": 1000,
       "checked": 1000,
-      "dated_urls": 314,
+      "dated_urls": 317,
       "limit": 1000,
-      "first_date": "2026-05-20",
+      "first_date": "2026-05-21",
       "latest_date": "2026-11-30"
     },
-    "date_corrected_from_scout": 11,
+    "date_corrected_from_scout": 19,
     "latest_date": "2026-11-30"
   }
 }

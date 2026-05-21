@@ -3,7 +3,7 @@
   "city": "Frankfurt",
   "slug": "alte_oper_frankfurt",
   "source_url": "https://www.alteoper.de/de/programm",
-  "scraped_at": "2026-05-20T13:10:09.064632Z",
+  "scraped_at": "2026-05-21T15:56:29.849006Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
@@ -329,7 +329,7 @@
       "program": [],
       "performers": [],
       "conductor": null,
-      "price": "Ab 35,00 €",
+      "price": "Ab 44,00 €",
       "detail_url": "https://www.alteoper.de/de/programm/frankfurter-opern-und-museumsorchester/18468",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
@@ -523,7 +523,7 @@
       "program": [],
       "performers": [],
       "conductor": null,
-      "price": "Ab 32,50 €",
+      "price": "Ab 47,50 €",
       "detail_url": "https://www.alteoper.de/de/programm/six-the-musical/18723",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
@@ -719,9 +719,10 @@
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "discovery_source": "alte_oper_api",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -762,9 +763,10 @@
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "discovery_source": "alte_oper_api",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -787,9 +789,10 @@
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "discovery_source": "alte_oper_api",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -877,9 +880,10 @@
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "discovery_source": "alte_oper_api",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -895,9 +899,10 @@
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "discovery_source": "alte_oper_api",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -913,9 +918,10 @@
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "discovery_source": "alte_oper_api",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -931,9 +937,10 @@
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "discovery_source": "alte_oper_api",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -949,10 +956,11 @@
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "discovery_source": "alte_oper_api",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "duration_min": 30,
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1025,9 +1033,10 @@
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "discovery_source": "alte_oper_api",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1081,9 +1090,10 @@
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "discovery_source": "alte_oper_api",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1146,9 +1156,10 @@
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "discovery_source": "alte_oper_api",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1159,7 +1170,7 @@
       "program": [],
       "performers": [],
       "conductor": null,
-      "price": "44,18 | 49,93 | 55,68 | 61,43 € (Endpreise) Tickets nur über den Veranstalter",
+      "price": "44,18 | 49,93 | 55,68 | 61,43 € Tickets nur über den Veranstalter",
       "detail_url": "https://www.alteoper.de/de/programm/freya-ridings/19028",
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
@@ -1350,9 +1361,10 @@
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "discovery_source": "alte_oper_api",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1392,9 +1404,10 @@
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "discovery_source": "alte_oper_api",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1650,9 +1663,10 @@
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "discovery_source": "alte_oper_api",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1710,9 +1724,10 @@
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "discovery_source": "alte_oper_api",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1874,9 +1889,10 @@
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "discovery_source": "alte_oper_api",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -1950,9 +1966,10 @@
       "venue": "Alte Oper Frankfurt",
       "city": "Frankfurt",
       "discovery_source": "alte_oper_api",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2149,6 +2166,20 @@
   "events_with_date": 110,
   "events_missing_date": 0,
   "date_coverage_rate": 1.0,
+  "sitemap_jsonld_stats": {
+    "sitemap_urls": 0,
+    "candidate_urls": 0,
+    "checked": 0,
+    "limit": 240,
+    "initial_sample": 0,
+    "jsonld_pages": 0,
+    "events": 0,
+    "within_horizon": 0,
+    "past_or_beyond_horizon": 0,
+    "canceled": 0,
+    "invalid": 0,
+    "complete_scan": true
+  },
   "map_expand_stats": {
     "preferred_urls": 110,
     "map_urls": 0,
@@ -2159,5 +2190,15 @@
     "preferred_dated_urls": 110,
     "html_urls_used": 0,
     "preferred_authoritative": true
+  },
+  "sitemap_detail_expand_stats": {
+    "budget": 80,
+    "sitemap_urls": 0,
+    "scraped": 0,
+    "new_events": 0,
+    "missing_date_or_title": 0,
+    "today_or_past": 0,
+    "past_or_beyond_horizon": 0,
+    "duplicate_urls": 0
   }
 }

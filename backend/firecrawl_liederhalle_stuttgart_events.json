@@ -3,85 +3,10 @@
   "city": "Stuttgart",
   "slug": "liederhalle_stuttgart",
   "source_url": "https://liederhalle.de/eventkalender",
-  "scraped_at": "2026-05-19T14:20:39.583601Z",
+  "scraped_at": "2026-05-21T17:12:56.744494Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
-    {
-      "date": "2026-05-20",
-      "time": "19:00",
-      "title": "SWR Symphonieorchester: Dans la cuisine du chef",
-      "venue_hall": "Hegel-Saal",
-      "program": [
-        "Haydn: Sinfonie Nr. 101 D-Dur ('Die Uhr')"
-      ],
-      "performers": [
-        "SWR"
-      ],
-      "conductor": "François-Xavier Roth",
-      "price": "Freier Eintritt, Reservierung erforderlich",
-      "detail_url": "https://liederhalle.de/veranstaltung/swr-symphonieorchester-dans-la-cuisine-du-chef",
-      "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "reused_enrichment": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-20",
-      "time": "19:30",
-      "title": "Chopin Preisträger",
-      "venue_hall": "Beethoven-Saal",
-      "program": [
-        "Schumann: Klavierstücke „Waldszenen“ op. 82",
-        "Chopin: Polonaise Nr. 2 op. 71",
-        "Chopin: Ballade Nr. 4 op. 52",
-        "Chopin: Sonate Nr. 3 op. 58",
-        "Schubert: Impromptu D 935 op. 142/1"
-      ],
-      "performers": [
-        "SKS E. Russ GmbH"
-      ],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://liederhalle.de/veranstaltung/chopin-preistraeger",
-      "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "reused_enrichment": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-05-20",
-      "time": "19:30",
-      "title": "Staatsorchester Stuttgart: 7. Kammerkonzert - Film ab!",
-      "venue_hall": "Mozart-Saal",
-      "program": [
-        "Rota: Trio für Klarinette, Violoncello und Klavier",
-        "Vaughan Williams: Phantasy Quintet für Streichquintett",
-        "Korngold: Klavierquintett E-Dur op. 15"
-      ],
-      "performers": [
-        "Staatsoper Stuttgart"
-      ],
-      "conductor": null,
-      "price": null,
-      "detail_url": "https://liederhalle.de/veranstaltung/staatsorchester-stuttgart-7-kammerkonzert-film-ab",
-      "venue": "Liederhalle Stuttgart",
-      "city": "Stuttgart",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "reused_enrichment": true,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
     {
       "date": "2026-05-21",
       "time": "19:30",
@@ -123,6 +48,7 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -143,6 +69,7 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -184,6 +111,7 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -204,6 +132,7 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -224,6 +153,7 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -244,6 +174,7 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -288,6 +219,7 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -332,6 +264,7 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -352,6 +285,7 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -372,6 +306,7 @@
       "city": "Stuttgart",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": false
@@ -405,16 +340,18 @@
       "title": "Miraz",
       "venue_hall": "Mozart-Saal",
       "program": [],
-      "performers": [],
+      "performers": [
+        "Miraz"
+      ],
       "conductor": null,
       "price": null,
       "detail_url": "https://liederhalle.de/veranstaltung/miraz",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
-      "discovery_source": "liederhalle_listing",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
-      "enriched": false,
-      "enrichment_status": "stub",
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -431,11 +368,11 @@
       "detail_url": "https://liederhalle.de/veranstaltung/pretty-woman-das-musical-2",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
-      "discovery_source": "liederhalle_listing",
-      "discovered_only": true,
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
-      "reused_enrichment": true,
       "is_classical": false
     },
     {
@@ -450,8 +387,8 @@
       "detail_url": "https://liederhalle.de/veranstaltung/pretty-woman-das-musical-3",
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
-      "discovery_source": "liederhalle_listing",
-      "discovered_only": true,
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
       "enriched": false,
       "enrichment_status": "stub",
       "is_classical": false
@@ -942,6 +879,28 @@
       "enriched": true,
       "enrichment_status": "enriched",
       "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "19:30",
+      "title": "CHORMÄLEON AND FRIENDS 2026: Chor der DHBW Stuttgart & Männerchor Eglofs/Allgäu",
+      "venue_hall": "Schiller-Saal",
+      "program": [],
+      "performers": [
+        "Chor der DHBW Stuttgart",
+        "Männerchor Eglofs",
+        "Ensemble Quintessenz"
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://liederhalle.de/veranstaltung/chormaeleon-and-friends-2026-chor-der-dhbw-stuttgart-maennerchor-eglofs-allgaeu",
+      "venue": "Liederhalle Stuttgart",
+      "city": "Stuttgart",
+      "discovery_source": "liederhalle_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "is_classical": true
     },
     {
@@ -2759,9 +2718,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2869,9 +2829,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -2965,9 +2926,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -3029,9 +2991,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -3054,9 +3017,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -3096,9 +3060,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -3137,9 +3102,10 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -3161,29 +3127,59 @@
       "venue": "Liederhalle Stuttgart",
       "city": "Stuttgart",
       "discovery_source": "liederhalle_listing",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     }
   ],
-  "total_events": 140,
-  "total_events_visible": 25,
-  "total_events_discovered": 140,
-  "total_events_discovered_strict": 140,
-  "total_events_enriched": 109,
+  "total_events": 138,
+  "total_events_visible": 40,
+  "total_events_discovered": 138,
+  "total_events_discovered_strict": 138,
+  "total_events_enriched": 108,
   "source": "firecrawl_listing",
   "latest_discovered_event_date": "2026-11-29",
   "latest_event_date": "2026-11-29",
-  "covers_horizon": false,
+  "covers_horizon": true,
+  "horizon_grace_days": 1,
+  "events_with_date": 138,
+  "events_missing_date": 0,
+  "date_coverage_rate": 1.0,
+  "sitemap_jsonld_stats": {
+    "sitemap_urls": 0,
+    "candidate_urls": 0,
+    "checked": 0,
+    "limit": 240,
+    "initial_sample": 0,
+    "jsonld_pages": 0,
+    "events": 0,
+    "within_horizon": 0,
+    "past_or_beyond_horizon": 0,
+    "canceled": 0,
+    "invalid": 0,
+    "complete_scan": true
+  },
   "map_expand_stats": {
-    "preferred_urls": 140,
+    "preferred_urls": 138,
     "map_urls": 0,
     "html_urls": 18,
-    "new_urls": 122,
+    "new_urls": 120,
     "latest_discovered_date": "2026-11-29",
-    "preferred_date_count": 90,
+    "preferred_date_count": 89,
+    "preferred_dated_urls": 138,
     "html_urls_used": 0,
     "preferred_authoritative": true
+  },
+  "sitemap_detail_expand_stats": {
+    "budget": 80,
+    "sitemap_urls": 0,
+    "scraped": 0,
+    "new_events": 0,
+    "missing_date_or_title": 0,
+    "today_or_past": 0,
+    "past_or_beyond_horizon": 0,
+    "duplicate_urls": 0
   }
 }

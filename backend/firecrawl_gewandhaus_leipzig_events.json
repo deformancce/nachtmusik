@@ -3,30 +3,10 @@
   "city": "Leipzig",
   "slug": "gewandhaus_leipzig",
   "source_url": "https://www.gewandhausorchester.de/",
-  "scraped_at": "2026-05-20T18:23:41.137160Z",
+  "scraped_at": "2026-05-21T16:43:07.516305Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
-    {
-      "date": "2026-05-20",
-      "time": "20:00",
-      "title": "Alles, nur nicht zurück - Tour 2026 TIM BENDZKO",
-      "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [
-        "TIM BENDZKO"
-      ],
-      "conductor": null,
-      "price": "90,10/76,10/61,10 EUR (inkl. VVK-Gebühr)",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/tim-bendzko-9146/",
-      "venue": "Gewandhaus Leipzig",
-      "city": "Leipzig",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": false
-    },
     {
       "date": "2026-05-21",
       "time": "10:00",
@@ -41,9 +21,10 @@
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -51,12 +32,14 @@
       "time": "20:00",
       "title": "Mnozil Brass",
       "venue_hall": "Großer Saal",
-      "program": [],
+      "program": [
+        "Mnozil Brass: Strau$$"
+      ],
       "performers": [
         "Mnozil Brass"
       ],
-      "conductor": null,
-      "price": "59,95/54,95/49,95 EUR (inkl. VVK-Gebühr)",
+      "conductor": "null",
+      "price": "59,95/54,95/49,95 EUR",
       "detail_url": "https://www.gewandhausorchester.de/veranstaltung/mnozil-brass-9464/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
@@ -85,9 +68,10 @@
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "discovery_source": "url_discovery",
-      "discovered_only": false,
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
@@ -96,15 +80,15 @@
       "title": "The Sound of Epic Anime",
       "venue_hall": "Großer Saal",
       "program": [
-        "Various Composers: Music from Anime"
+        "Filmorchester Babelsberg: The Sound of Epic Anime"
       ],
       "performers": [
         "Filmorchester Babelsberg",
         "John Jesensky",
         "Hubertus von Lerchenfeld"
       ],
-      "conductor": null,
-      "price": "109,90/99,90/89,90/79,90/69,90/59,90 EUR (inkl. VVK-Gebühr)",
+      "conductor": "John Jesensky",
+      "price": "109,90/99,90/89,90/79,90/69,90/59,90 EUR",
       "detail_url": "https://www.gewandhausorchester.de/veranstaltung/the-sound-of-epic-anime-9713/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
@@ -117,22 +101,21 @@
     {
       "date": "2026-05-23",
       "time": "15:00",
-      "title": "Motette 9852",
-      "title_inferred": true,
+      "title": "Motette",
       "venue_hall": "Thomaskirche",
       "program": [
-        "Bach: Messe h-Moll BWV 232 (Auszüge)"
+        "Johann Sebastian Bach: Messe h-Moll BWV 232 (Auszüge)"
       ],
       "performers": [
         "Gewandhausorchester",
         "Thomanerchor Leipzig"
       ],
       "conductor": "Andreas Reize",
-      "price": null,
+      "price": "null",
       "detail_url": "https://www.gewandhausorchester.de/veranstaltung/motette-9852/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
-      "discovery_source": "url_discovery",
+      "discovery_source": "firecrawl_listing",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
@@ -141,18 +124,43 @@
     {
       "date": "2026-05-23",
       "time": "19:00",
-      "title": "Così fan tutte",
+      "title": "COSÌ FAN TUTTE",
       "venue_hall": "Opernhaus",
       "program": [
-        "Mozart: Così fan tutte - Dramma giocoso in zwei Akten KV 588"
+        "Wolfgang Amadeus Mozart: Così fan tutte - Dramma giocoso in zwei Akten KV 588"
       ],
       "performers": [
         "Gewandhausorchester",
-        "Yura Yang"
+        "Yura Yang",
+        "Katharina Thoma"
       ],
       "conductor": "Yura Yang",
-      "price": "18/39/48/63/78/88 EUR",
+      "price": "88/78/63/48/39/18 EUR",
       "detail_url": "https://www.gewandhausorchester.de/veranstaltung/cosi-fan-tutte-9591/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-23",
+      "time": "20:00",
+      "title": "Gastspiel des Gewandhausorchesters in Taipei",
+      "venue_hall": "National Theater and Concert Hall",
+      "program": [
+        "Rachmaninoff: 2. Konzert für Klavier und Orchester c-Moll op. 18",
+        "Schostakowitsch: 10. Sinfonie e-Moll op. 93"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Yulianna Avdeeva"
+      ],
+      "conductor": "Andris Nelsons",
+      "price": null,
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/gastspiel-in-taipeh-9921/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "discovery_source": "sitemap_detail",
@@ -162,29 +170,53 @@
       "is_classical": true
     },
     {
-      "date": "2026-05-26",
-      "time": "19:30",
-      "title": "Elite Chorus in Leipzig",
+      "date": "2026-05-25",
+      "time": "20:00",
+      "title": "Carmina Burana",
       "venue_hall": "Großer Saal",
       "program": [
-        "Beethoven: Fantasie c-Moll op. 80",
-        "Schubert: Erlkönig D 328",
-        "Huang: The Light of Hope",
-        "Hsian: Romance of Four Seasons",
-        "Huang: Boatman and Taohua",
-        "Hsian: Spring Breeze",
-        "Rimski-Korsakow: Oh! My God!"
+        "Orff: Carmina Burana"
       ],
       "performers": [
-        "Elite Chorus Los Angeles",
-        "Kammerorchester",
-        "Cliff Yang",
-        "Lynn Huang",
-        "Ling Quan Lee"
+        "Extrachor der Oper Halle",
+        "Singphonique Ensemble Dresden",
+        "Singakademie Rostock",
+        "Jugendchor der Oper Halle",
+        "Kinderchor der Oper Halle",
+        "Philharmonie Leipzig",
+        "Friederike Meinke",
+        "Dan Karlström",
+        "Thomas Mohr",
+        "Friedhelm Eberle"
       ],
-      "conductor": "Cliff Yang",
-      "price": "37/27 EUR",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/chorkonzert-mit-elite-9912/",
+      "conductor": "Michael Koehler",
+      "price": "51,51/45,51/38,01/31,51/29,51 EUR (zzgl. VVK-Gebühr)",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/carmina-burana-von-carl-orff-9835/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-29",
+      "time": "20:00",
+      "title": "Filmmusik LIVE",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Zimmer: Filmmusik",
+        "Williams: Filmmusik"
+      ],
+      "performers": [
+        "Roman Petermann",
+        "Holger Engelhardt",
+        "Michael Koehler"
+      ],
+      "conductor": "Michael Koehler",
+      "price": "74/64/54/44/34 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/filmmusik-live-9729/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "discovery_source": "sitemap_detail",
@@ -195,19 +227,19 @@
     },
     {
       "date": "2026-05-30",
-      "time": "16:00",
-      "title": "Von Zwergen, Riesen und Kindern - Eine Kinderoper frei nach einem Kunstmärchen von Oscar Wilde",
-      "venue_hall": "Mendelssohn-Saal",
+      "time": "15:00",
+      "title": "Motette",
+      "venue_hall": "Thomaskirche",
       "program": [
-        "Elster: Von Zwergen, Riesen und Kindern - Eine Kinderoper frei nach einem Kunstmärchen von Oscar Wilde"
+        "Bach: Messe h-Moll BWV 232 (Auszüge)"
       ],
       "performers": [
-        "GewandhausKinderchor",
-        "Mitglieder des Gewandhausorchesters"
+        "Gewandhausorchester",
+        "Thomanerchor Leipzig"
       ],
-      "conductor": "Frank-Steffen Elster",
-      "price": "20 EUR",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/choere-9377/",
+      "conductor": "Andreas Reize",
+      "price": null,
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/motette-9854/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "discovery_source": "sitemap_detail",
@@ -217,9 +249,389 @@
       "is_classical": true
     },
     {
-      "date": "2026-06-04",
+      "date": "2026-06-02",
+      "time": "11:00",
+      "title": "KRIEG. STELL DIR VOR, ER WÄRE HIER",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Lange: Krieg. Stell dir vor, er wäre hier"
+      ],
+      "performers": [
+        "Gewandhausorchester"
+      ],
+      "conductor": "Sebastian Camaño Saavedra",
+      "price": "30 € / ermäßigt 15 €",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/krieg-stell-dir-vor-er-waere-hier-10315/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "duration_min": 75,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-02",
+      "time": "17:00",
+      "title": "Carmen",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Georges Bizet: Carmen - Oper in vier Akten"
+      ],
+      "performers": [
+        "Gewandhausorchester"
+      ],
+      "conductor": "Friedrich Praetorius",
+      "price": "99/87/69/53/42/19 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/carmen-10308/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "duration_min": 180,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-02",
+      "time": "17:00",
+      "title": "Der Nussknacker",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Tschaikowski: Der Nussknacker op. 71"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Leipziger Ballett"
+      ],
+      "conductor": "Matthias Foremny",
+      "price": "106/95/76/62/49/27 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/der-nussknacker-10243/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "duration_min": 120,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-02",
+      "time": "17:00",
+      "title": "Eugen Onegin",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Tschaikowski: Oper 'Eugen Onegin' op. 24"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Yura Yang"
+      ],
+      "conductor": "Yura Yang",
+      "price": "ab €27",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/eugen-onegin-10244/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "duration_min": 180,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-02",
+      "time": "17:00",
+      "title": "Figaros Hochzeit",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Mozart: Le nozze di Figaro / Opera buffa in vier Akten K 492"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Yura Yang",
+        "Ilaria Lanzino"
+      ],
+      "conductor": "Yura Yang",
+      "price": "106/95/76/62/49/27 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/figaros-hochzeit-10279/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "duration_min": 195,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-02",
+      "time": "17:00",
+      "title": "La Bohème",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Giacomo Puccini: La Bohème / Oper in vier Akten"
+      ],
+      "performers": [
+        "Gewandhausorchester"
+      ],
+      "conductor": "Friedrich Praetorius",
+      "price": "106/95/76/62/49/27 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/la-boheme-10227/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "duration_min": 135,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-02",
+      "time": "18:00",
+      "title": "»OH DU FRÖHLICHE« - ADVENTS- UND MITSINGKONZERT",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Christmas Melodies"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Chor der Oper Leipzig",
+        "Kinderchor der Oper Leipzig"
+      ],
+      "conductor": "Sebastian Camaño Saavedra",
+      "price": "30 € / ermäßigt 15 €",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/adventssingen-10229/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-02",
+      "time": "19:00",
+      "title": "Don Giovanni",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Mozart: Don Giovanni"
+      ],
+      "performers": [
+        "Gewandhausorchester"
+      ],
+      "conductor": "Yura Yang",
+      "price": "99/87/69/53/42/19 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/don-giovanni-10310/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-02",
+      "time": "19:00",
+      "title": "Ein Sommernachtstraum",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Mendelssohn Bartholdy: Ein Sommernachtstraum",
+        "Barber: Music from Various Works"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Leipziger Ballett"
+      ],
+      "conductor": "Matthias Foremny",
+      "price": "99/87/69/53/42/19 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/ein-sommernachtstraum-10284/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "duration_min": 120,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-02",
+      "time": "19:00",
+      "title": "IL TRITTICO",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Puccini: Il tabarro",
+        "Puccini: Suor Angelica",
+        "Puccini: Gianni Schicchi"
+      ],
+      "performers": [
+        "Gewandhausorchester"
+      ],
+      "conductor": "Ivan Repušić",
+      "price": "99/87/69/53/42/19 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/il-trittico-10313/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "duration_min": 180,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-02",
+      "time": "19:00",
+      "title": "La Traviata",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Verdi: La Traviata - Melodramma in drei Akten"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Christoph Gedschold"
+      ],
+      "conductor": "Christoph Gedschold",
+      "price": "99/87/69/53/42/19 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/la-traviata-10259/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "duration_min": 135,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-02",
+      "time": "19:00",
+      "title": "O Fortuna",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Leoncavallo: Pagliacci",
+        "Orff: Carmina Burana"
+      ],
+      "performers": [
+        "Gewandhausorchester"
+      ],
+      "conductor": "Ivan Repušić",
+      "price": "106/95/76/62/49/27 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/o-fortuna-10297/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "duration_min": 150,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-02",
+      "time": "19:00",
+      "title": "O Fortuna",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Leoncavallo: Pagliacci",
+        "Orff: Carmina Burana"
+      ],
+      "performers": [
+        "Gewandhausorchester"
+      ],
+      "conductor": "Friedrich Praetorius",
+      "price": "99/87/69/53/42/19 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/o-fortuna-10318/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "duration_min": 150,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-02",
+      "time": "19:00",
+      "title": "Sibelius | Bruckner",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Sibelius: 2. Sinfonie D-Dur op. 43",
+        "Bruckner: 8. Sinfonie c-Moll WAB 108, III. Adagio"
+      ],
+      "performers": [
+        "Gewandhausorchester"
+      ],
+      "conductor": "Christoph Gedschold",
+      "price": "99/87/69/53/42/19 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/sibelius-bruckner-10268/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "duration_min": 120,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-02",
+      "time": "19:00",
+      "title": "Tosca",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Puccini: Tosca / Oper in drei Akten"
+      ],
+      "performers": [
+        "Gewandhausorchester"
+      ],
+      "conductor": "Ivan Repušić",
+      "price": "99/87/69/53/42/19 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/tosca-10256/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-02",
+      "time": "19:30",
+      "title": "Der Nussknacker",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Tschaikowski: Der Nussknacker op. 71"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Leipziger Ballett"
+      ],
+      "conductor": "Matthias Foremny",
+      "price": "106/95/76/62/49/27 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/der-nussknacker-10232/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "duration_min": 120,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-03",
       "time": "10:00",
-      "title": "Lauschkonzert",
+      "title": "LAUSCHKONZERT",
       "venue_hall": "Konzertfoyer Opernhaus",
       "program": [
         "Mozart: Konzert für Klavier und Orchester B-Dur KV 450"
@@ -229,7 +641,7 @@
       ],
       "conductor": "Samuel Emanuel",
       "price": "6 € / ermäßigt 3 €",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/lauschkonzert-10186/",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/lauschkonzert-10185/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "duration_min": 60,
@@ -240,19 +652,658 @@
       "is_classical": true
     },
     {
-      "date": "2026-06-07",
-      "time": "14:45",
-      "title": "Orgelpräsentation für Erwachsene",
+      "date": "2026-06-06",
+      "time": "10:00",
+      "title": "Musikfest für Alle",
+      "venue_hall": "Gewandhaus",
+      "program": [],
+      "performers": [
+        "Musikschule Leipzig \"Johann Sebastian Bach\"",
+        "Musik- und Kunstschule \"Ottmar Gerster\""
+      ],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/musikfest-fuer-alle-10381/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-12",
+      "time": "22:00",
+      "title": "Bachfest-Lounge",
+      "venue_hall": "Schumann-Haus",
+      "program": [
+        "Malfatti: Chillout in den Komponistenhäusern"
+      ],
+      "performers": [
+        "Johannes Malfatti _DJ_",
+        "Arno Lücker _Moderation_"
+      ],
+      "conductor": null,
+      "price": "25 Euro zzgl. VVK-Gebühr/ermäßigt 15 Euro zzgl. VVK-Gebühr",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/bachfest-lounge-9767/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "09:00",
+      "title": "Zwergenkonzert",
+      "venue_hall": "Mendelssohn-Saal",
+      "program": [],
+      "performers": [
+        "Mit Mitgliedern des Gewandhausorchesters"
+      ],
+      "conductor": null,
+      "price": "ab 5 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/zwergenkonzert-10031/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "09:00",
+      "title": "Zwergenkonzert",
+      "venue_hall": "Mendelssohn-Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "5 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/zwergenkonzert-10124/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "11:00",
+      "title": "Eine Weihnachtsgeschichte",
+      "venue_hall": "Mendelssohn-Saal",
+      "program": [
+        "Thomalla: Eine Weihnachtsgeschichte"
+      ],
+      "performers": [
+        "GewandhausKinderchor",
+        "Frank-Steffen Elster",
+        "Sebastian Ude",
+        "Diego Ponce Hase",
+        "Hans-Günther Thomasius",
+        "Wolfram Stephan",
+        "Gudrun Hinze",
+        "Walter Zoller",
+        "Heike Ronniger"
+      ],
+      "conductor": "Frank-Steffen Elster",
+      "price": "29/23 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/choere-10039/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "11:00",
+      "title": "Herzklopfen & Heldenmut",
       "venue_hall": "Großer Saal",
       "program": [
-        "Schönheit: Orgelpräsentation"
+        "GewandhausKinderchor: Herzklopfen & Heldenmut"
+      ],
+      "performers": [
+        "GewandhausKinderchor",
+        "Nachwuchschor",
+        "Malte Arkona",
+        "Guido Mattausch",
+        "Mitglieder des Gewandhausorchesters"
+      ],
+      "conductor": "Frank-Steffen Elster",
+      "price": "20 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/chor-familienkonzert-10159/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "11:00",
+      "title": "Salonmusik: „O du schöner Friedenstraum…“ – Geschichten von weihnachtlicher Sehnsucht",
+      "venue_hall": "Mendelssohn-Saal",
+      "program": [
+        "Salonorchester CAPPUCCINO, Albrecht Winter Leitung"
+      ],
+      "performers": [
+        "Salonorchester CAPPUCCINO"
+      ],
+      "conductor": "Albrecht Winter",
+      "price": "32/26 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/salonmusik-10028/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "15:00",
+      "title": "Orgelkonzert zur Sterbestunde Christi",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Haydn: Die sieben letzten Worte unseres Erlösers am Kreuze Hob. XX:2 (Fassung für Tasteninstrumente)"
+      ],
+      "performers": [
+        "Michael Schönheit",
+        "Axel Thielmann"
+      ],
+      "conductor": null,
+      "price": "18 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/orgelkonzert-zur-sterbestunde-christi-10100/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "15:00",
+      "title": "Kammermusik - Beethoven Festival Leipzig 2027",
+      "venue_hall": "Mendelssohn-Saal",
+      "program": [
+        "Beethoven: Sonate E-Dur op. 14/1 (Bearbeitung für Streichquartett)",
+        "Beethoven: Streichquartett G-Dur op. 18/2",
+        "Beethoven: Streichquartett B-Dur op. 130"
+      ],
+      "performers": [
+        "Gewandhaus-Quartett",
+        "Frank-Michael Erben (Violine)",
+        "Yun-Jin Cho (Violine)",
+        "Vincent Aucante (Viola)",
+        "Isang Enders (Violoncello)"
+      ],
+      "conductor": null,
+      "price": "35/30 EUR, Flexpreise: 38/33 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/quartett-10138/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "16:00",
+      "title": "Manege frei!",
+      "venue_hall": "Mendelssohn-Saal",
+      "program": [
+        "Bodecker: Buch/Pantomime",
+        "Neander: Buch/Pantomime",
+        "Schmalhofer: Violine",
+        "Defranoux: Violoncello",
+        "Jutzi: Klavier"
+      ],
+      "performers": [
+        "Bodecker & Neander",
+        "Nathalie Schmalhofer",
+        "Nicolas Defranoux",
+        "Yona Sophia Jutzi"
+      ],
+      "conductor": null,
+      "price": "14 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/erlebniskonzert-10073/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "16:00",
+      "title": "Orgelstunde",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Gade: Moderato – Nr. 1 aus 'Drei Tonstücke für die Orgel' op. 22",
+        "Mendelssohn Bartholdy: Sonate für Orgel A-Dur op. 65/3 MWV W 58",
+        "Gade: Allegro – Nr. 3 aus 'Drei Tonstücke für die Orgel' op. 22",
+        "Hesse: Variationen über ein Originalthema für die Orgel op. 47",
+        "Schumann: Skizzen für den Pedalflügel op. 58",
+        "Merkel: Variationen über ein Thema von Beethoven op. 45"
       ],
       "performers": [
         "Michael Schönheit"
       ],
       "conductor": null,
-      "price": "5 EUR",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/orgelpraesentation-fuer-erwachsene-9453/",
+      "price": "8 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/orgelstunde-10107/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "16:00",
+      "title": "Orgelstunde zum 3. Advent",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Marcel Dupré: Ave Maris Stella – Verse VI bis IX aus den \"Vespern für das Fest der heiligen Jungfrau\" op. 18",
+        "Johann Sebastian Bach: Choralbearbeitung \"Meine Seele erhebt den Herren\" BWV 648",
+        "Johann Sebastian Bach: Fuga sopra il Magnificat BWV 733 (\"Meine Seele erhebt den Herren\")",
+        "Sigfrid Karg-Elert: 66 Choralimprovisationen op. 65 (Auszüge)",
+        "Sigfrid Karg-Elert: Aus meines Herzens Grunde - aus \"66 Choralimprovisationen\" op. 65/2",
+        "Sigfrid Karg-Elert: Alles ist an Gottes Segen - aus \"66 Choralimprovisationen\" op. 65/3",
+        "Sigfrid Karg-Elert: Es ist das Heil uns kommen her – aus \"66 Choralimprovisationen\" op. 65/4",
+        "Sigfrid Karg-Elert: Freu dich sehr, o meine Seele – aus \"66 Choralimprovisationen\" op. 65/5",
+        "Sigfrid Karg-Elert: Mit Ernst, o Menschenkinder - aus \"66 Choralimprovisationen\" op. 65/9",
+        "Sigfrid Karg-Elert: Valet will ich dir geben (Wie soll ich dich empfangen) - aus \"66 Choralimprovisationen\" op. 65/11",
+        "Johannes Weyrauch: Partita über \"O Heiland, reiß die Himmel auf\"",
+        "Joseph Rheinberger: 4. Sonate für Orgel a-Moll op. 98"
+      ],
+      "performers": [
+        "Michael Schönheit"
+      ],
+      "conductor": null,
+      "price": "16 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/orgelstunde-zum-3-advent-10026/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "17:00",
+      "title": "Großes Concert zur Eröffnung des Beethoven-Jahres",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Beethoven: 9. Sinfonie d-Moll op. 125"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Chor der Oper Leipzig",
+        "GewandhausChor",
+        "GewandhausKinderchor",
+        "Christiane Karg",
+        "Gerhild Romberger",
+        "Klaus Florian Vogt",
+        "Alexander Roslavets"
+      ],
+      "conductor": "Andris Nelsons",
+      "price": "145/115/95/85/75/50 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-zur-eroeffnung-des-beethoven-jahres-10045/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "18:00",
+      "title": "Kammermusik",
+      "venue_hall": "Mendelssohn-Saal",
+      "program": [
+        "Schubert: Trio für Violine, Viola und Violoncello B-Dur D 581",
+        "Mozart: Divertimento Es-Dur KV 563"
+      ],
+      "performers": [
+        "Sebastian Breuninger",
+        "Luke Turrell",
+        "Oliver Aldort"
+      ],
+      "conductor": null,
+      "price": "19/15 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/kammermusik-10081/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "18:00",
+      "title": "Kammermusik",
+      "venue_hall": "Mendelssohn-Saal",
+      "program": [
+        "Beethoven: Trio für Violine, Viola und Violoncello c-Moll op. 9/3",
+        "Schubert: Quintett für zwei Violinen, Viola und zwei Violoncelli C-Dur D 956"
+      ],
+      "performers": [
+        "Lukas Stepp _Violine_",
+        "Federico Kasik _Violine_",
+        "Holger Grohs _Viola_",
+        "Sebastian Fritsch _Violoncello_",
+        "Teresa Beldi _Violoncello_"
+      ],
+      "conductor": null,
+      "price": "19/15 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/kammermusik-10156/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "19:30",
+      "title": "Die Neunte – historisch anders",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Beethoven: 9. Sinfonie d-Moll op. 125 (Fassung für Soli, Chor, zwei Klaviere und Pauke, in Anlehnung an die Bearbeitung für zwei Klaviere von Franz Liszt)"
+      ],
+      "performers": [
+        "Pavel Kolesnikov & Samson Tsoy Klaviere",
+        "Tom Greenleaves Pauken",
+        "Marie Smolka Sopran",
+        "Susan Zarrabi Alt",
+        "Christopher Willoughby Tenor",
+        "Gerrit Illenberger Bass",
+        "GewandhausChor"
+      ],
+      "conductor": "Gregor Meyer",
+      "price": "30 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/beethoven-plus-10142/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "19:30",
+      "title": "Grosse Concerte",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Fauré: Suite aus der Bühnenmusik zu \"Pelléas et Mélisande\" op. 80",
+        "Poulenc: Konzert für Orgel, Streichorchester und Pauken g-Moll FP 93",
+        "Schumann: 3. Sinfonie Es-Dur op. 97 (\"Rheinische\")"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Marek Janowski",
+        "Michael Schönheit"
+      ],
+      "conductor": "Marek Janowski",
+      "price": "ab €6",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-10017/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "19:30",
+      "title": "Grosse Concerte",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Kapustin: 4. Konzert für Klavier und Orchester op. 56",
+        "Schostakowitsch: 5. Sinfonie d-Moll op. 47"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Santtu-Matias Rouvali",
+        "Frank Dupree"
+      ],
+      "conductor": "Santtu-Matias Rouvali",
+      "price": "ab €6",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-10058/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "19:30",
+      "title": "Kurt Masur zum 100. Geburtstag",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Mendelssohn Bartholdy: 2. Konzert für Klavier und Orchester d-Moll op. 40 MWV O 11",
+        "Schnittke: 3. Sinfonie"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Seong-Jin Cho"
+      ],
+      "conductor": "Andris Nelsons",
+      "price": "89/68/54/40/25/6 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-10072/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "19:30",
+      "title": "AN COUPERIN GEDACHT",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Ravel: Le tombeau de Couperin (Bearbeitung für Orchester)",
+        "Hindemith: Konzert für Violine und Orchester",
+        "Strawinsky: Petruschka – Burleske in vier Szenen (Fassung von 1947)"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Elim Chan",
+        "Frank Peter Zimmermann"
+      ],
+      "conductor": "Elim Chan",
+      "price": "89/68/54/40/25/6 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-10093/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "19:30",
+      "title": "Kurt Masur zum 100. Geburtstag",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Bartók: 2. Konzert für Klavier und Orchester Sz 95",
+        "Henze: Seconda sonata per archi",
+        "Hindemith: Sinfonie \"Mathis der Maler\""
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Alan Gilbert",
+        "Martin Helmchen Klavier"
+      ],
+      "conductor": "Alan Gilbert",
+      "price": "ab €25",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-10116/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "19:30",
+      "title": "Beethoven Festival Leipzig 2027",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Beethoven: 6. Sinfonie F-Dur op. 68 (\"Pastorale\")",
+        "Beethoven: 5. Konzert für Klavier und Orchester Es-Dur op. 73"
+      ],
+      "performers": [
+        "Lang Lang",
+        "Gewandhausorchester"
+      ],
+      "conductor": "Andris Nelsons",
+      "price": "170/140/110/80/60/30 EUR; Flexpreise: 187/154/121/88/66/33 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-10147/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "19:30",
+      "title": "Gewandhausorchester, Herbert Blomstedt _Dirigent_",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Bruckner: 5. Sinfonie B-Dur WAB 105"
+      ],
+      "performers": [
+        "Gewandhausorchester"
+      ],
+      "conductor": "Herbert Blomstedt",
+      "price": "130/110/90/70/40/20 EUR, Flexpreise: 143/121/99/77/44/22 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-10177/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "19:30",
+      "title": "Klavierrezital",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Beethoven: Sonate f-Moll op. 2/1",
+        "Beethoven: Sonate d-Moll op. 31/2 ('Der Sturm')",
+        "Beethoven: Sonatine G-Dur op. 79",
+        "Beethoven: Sonate C-Dur op. 53 ('Waldstein-Sonate')"
+      ],
+      "performers": [
+        "Igor Levit"
+      ],
+      "conductor": null,
+      "price": "60/50/40/30/20/10 EUR, Flexpreise: 66/55/44/33/22/11 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/klavierrezital-10136/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "19:30",
+      "title": "Kammermusik",
+      "venue_hall": "Mendelssohn-Saal",
+      "program": [
+        "Beethoven: Sieben Variationen über das Duett \"Bei Männern, welche Liebe fühlen\" aus Mozarts \"Zauberflöte\" für Violoncello und Klavier Es-Dur WoO 46",
+        "Beethoven: Sonate für Violine und Klavier c-Moll op. 30/2",
+        "Beethoven: Trio für Klavier, Violine und Violoncello B-Dur op. 97 (\"Erzherzog-Trio\")"
+      ],
+      "performers": [
+        "Julia Fischer",
+        "Marie-Elisabeth Hecker",
+        "Martin Helmchen"
+      ],
+      "conductor": null,
+      "price": "35/30 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/klaviertrio-10145/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "19:30",
+      "title": "musica nova",
+      "venue_hall": "Mendelssohn-Saal",
+      "program": [
+        "Webern: Quartett für Violine, Klarinette, Tenorsaxophon und Klavier op. 22",
+        "Hauer: Nachklangstudien op. 16",
+        "Thiele: Streichtrio im Gedenken an Josef Matthias Hauer",
+        "Webern: Streichquartett op. 28",
+        "Thiele: Tutti ricercano un re",
+        "Hauer: Nomos op. 19 (arrangiert für Kammerensemble von Steffen Schleiermacher)"
+      ],
+      "performers": [
+        "Ensemble Avantgarde",
+        "Steffen Schleiermacher"
+      ],
+      "conductor": "Steffen Schleiermacher",
+      "price": "14 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/musica-nova-10121/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "discovery_source": "sitemap_detail",
@@ -263,18 +1314,46 @@
     },
     {
       "date": "2026-06-14",
-      "time": "14:45",
-      "title": "Orgelpräsentation für Familien",
-      "venue_hall": "Großer Saal",
+      "time": "17:00",
+      "title": "Eurydike",
+      "venue_hall": "Opernhaus",
       "program": [
-        "Schönheit: Orgelpräsentation für Familien"
+        "Krzysztof Penderecki: Adagietto für Englischhorn und Streichorchester",
+        "Krzysztof Penderecki: Intermezzo für 24 Streicher",
+        "Krzysztof Penderecki: Ciaccona für Streichorchester - aus dem Polnischen Requiem",
+        "Krzysztof Penderecki: Sinfonietta Nr. 3 (Fassung für Streichorchester)",
+        "Henryk Mikołaj Górecki: Quasi una fantasia op. 78",
+        "Wojciech Kilar: Orawa für Streicher"
       ],
       "performers": [
-        "Michael Schönheit"
+        "Gewandhausorchester",
+        "Leipziger Ballett"
+      ],
+      "conductor": "Yura Yang",
+      "price": "€18–€88",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/eurydike-9603/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-16",
+      "time": "17:00",
+      "title": "Klavierabend",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Bach: Die Kunst der Fuge BWV 1080"
+      ],
+      "performers": [
+        "András Schiff"
       ],
       "conductor": null,
-      "price": "5 EUR",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/orgelpraesentation-fuer-familien-9454/",
+      "price": "65/52/39/25 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/klavierabend-9386/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "discovery_source": "sitemap_detail",
@@ -285,19 +1364,17 @@
     },
     {
       "date": "2026-06-18",
-      "time": "20:00",
-      "title": "Bachfest-Lounge",
-      "venue_hall": "Garten des Mendelssohn-Hauses",
-      "program": [
-        "Kowalski: Chillout in den Komponistenhäusern"
-      ],
+      "time": "10:00",
+      "title": "Unvergessliche Musik",
+      "venue_hall": "Mendelssohn-Saal",
+      "program": [],
       "performers": [
-        "Mateusz Kowalski _Gitarre_",
-        "Gottfried Haufe _Moderation_"
+        "Gunnar Harms _Violine_",
+        "Hazel Beh _Klavier_"
       ],
       "conductor": null,
-      "price": "25 Euro zzgl. VVK-Gebühr/ermäßigt 15 Euro zzgl. VVK-Gebühr",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/bachfest-lounge-9769/",
+      "price": "10 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/unvergessliche-musik-9389/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "discovery_source": "sitemap_detail",
@@ -308,54 +1385,19 @@
     },
     {
       "date": "2026-06-20",
-      "time": "19:30",
-      "title": "Bachfest: Mit Bach in Paris",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Bach: Fantasie G-Dur BWV 572 (\"Pièce d'Orgue\")",
-        "Franck: Pièce héroïque",
-        "Franck: 1. Choral E-Dur",
-        "Franck: Prélude, fugue et variation h-Moll op. 18",
-        "Bach: Passacaglia c-Moll BWV 582",
-        "Franck: 2. Choral h-Moll",
-        "Bach: Präludium und Fuge a-Moll BWV 543",
-        "Franck: 3. Choral a-Moll"
-      ],
-      "performers": [
-        "Michael Schönheit"
-      ],
-      "conductor": null,
-      "price": "18 EUR",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/orgelkonzert-9394/",
-      "venue": "Gewandhaus Leipzig",
-      "city": "Leipzig",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-06-26",
-      "time": "19:30",
-      "title": "EURYDIKE",
+      "time": "19:00",
+      "title": "Pique Dame",
       "venue_hall": "Opernhaus",
       "program": [
-        "Krzysztof Penderecki: Sinfonietta Nr. 3 (Fassung für Streichorchester)",
-        "Krzysztof Penderecki: Ciaccona für Streichorchester - aus dem Polnischen Requiem",
-        "Krzysztof Penderecki: Intermezzo für 24 Streicher",
-        "Krzysztof Penderecki: Adagietto für Englischhorn und Streichorchester",
-        "Wojciech Kilar: Orawa für Streicher",
-        "Henryk Mikołaj Górecki: Quasi una fantasia op. 78"
+        "Tschaikowski: Pique Dame - Oper in drei Akten und sieben Bildern op. 68"
       ],
       "performers": [
         "Gewandhausorchester",
-        "Leipziger Ballett",
-        "Yura Yang"
+        "Christoph Gedschold"
       ],
-      "conductor": "Yura Yang",
-      "price": "18/39/48/63/78/88 EUR",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/eurydike-9608/",
+      "conductor": "Christoph Gedschold",
+      "price": "€88/€78/€63/€48/€39/€18",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/pique-dame-9605/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "discovery_source": "sitemap_detail",
@@ -365,68 +1407,101 @@
       "is_classical": true
     },
     {
-      "date": "2026-06-28",
-      "time": "11:00",
-      "title": "Kammermusik der Mendelssohn-Orchesterakademie",
-      "venue_hall": "Hochschule für Musik und Theater \"Felix Mendelssohn Bartholdy\" Leipzig",
-      "program": [
-        "Françaix: Sérénade pour petit orchestre",
-        "Dvořák: Quintett für zwei Violinen, Viola, Violoncello und Kontrabass G-Dur op. 77",
-        "Dvořák: Quartett für Klavier, Violine, Viola und Violoncello Es-Dur op. 87",
-        "Hindemith: Kammermusik Nr. I op. 24/1"
-      ],
-      "performers": [
-        "Mitglieder der Mendelssohn-Orchesterakademie"
-      ],
-      "conductor": "Leonard Weiss",
-      "price": null,
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/kammermusik-der-mendelssohn-orchesterakademie-9399/",
-      "venue": "Gewandhaus Leipzig",
-      "city": "Leipzig",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-09-02",
-      "time": "18:30",
-      "title": "Eine Veranstaltung im Rahmen der Demokratie-Initiative 2026",
+      "date": "2026-06-24",
+      "time": "18:00",
+      "title": "Sommerkonzert für Familien",
       "venue_hall": "Mendelssohn-Saal",
-      "program": [],
+      "program": [
+        "Mendelssohn: Sommerkonzert"
+      ],
       "performers": [
-        "Nora Bossong",
-        "Katrin Göring-Eckardt",
-        "Hedwig Richter",
-        "Michal Hvorecky"
+        "Vorbereitungsensemble Blechbläser",
+        "Nachwuchsblasorchester",
+        "Sinfonisches Blasorchester der Musikschule Leipzig \"Johann Sebastian Bach\""
       ],
       "conductor": null,
-      "price": null,
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/demokratie-10363/",
+      "price": "12 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/sommerkonzert-fuer-familien-9930/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-27",
+      "time": "17:00",
+      "title": "Giulio Cesare",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Händel: Giulio Cesare in Egitto - Dramma per musica in drei Akten HWV 17"
+      ],
+      "performers": [
+        "Gewandhausorchester"
+      ],
+      "conductor": "Rubén Dubrovsky",
+      "price": "18/35/44/58/73/82 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/giulio-cesare-9609/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-07-03",
+      "time": "20:30",
+      "title": "KLASSIK AIRLEBEN",
+      "venue_hall": "Open-Air-Bühne im Rosental",
+      "program": [],
+      "performers": [
+        "Gewandhausorchester",
+        "Vasily Petrenko",
+        "Malte Arkona"
+      ],
+      "conductor": "Vasily Petrenko",
+      "price": "Eintritt frei",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9400/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-03",
+      "time": "09:00",
+      "title": "Gewandhaus-Führung IMPULS",
+      "venue_hall": "Hauptfoyer",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-impuls-10401/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": false,
+      "enrichment_status": "stub",
       "is_classical": true
     },
     {
       "date": "2026-09-10",
-      "time": "10:00",
-      "title": "Schulkonzert",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Brahms: 4. Sinfonie e-Moll op. 98"
-      ],
-      "performers": [
-        "Gewandhausorchester",
-        "Johanna Rost"
-      ],
-      "conductor": "Petr Popelka",
-      "price": null,
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/schulkonzert-10374/",
+      "time": "12:30",
+      "title": "GEWANDHAUS-FÜHRUNG",
+      "venue_hall": "Mendelssohn-Foyer",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "10 EUR / 11 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-10402/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "discovery_source": "sitemap_detail",
@@ -436,9 +1511,42 @@
       "is_classical": true
     },
     {
-      "date": "2026-09-18",
+      "date": "2026-09-12",
       "time": "19:30",
-      "title": "Grosse Concerte - Bruno Walter zum 150. Geburtstag",
+      "title": "Orgelkonzert",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Liszt: Oratorium \"Die Legende von der heiligen Elisabeth\" S 2"
+      ],
+      "performers": [
+        "Merseburger Hofmusik",
+        "Collegium Vocale Leipzig",
+        "GewandhausJugendchor",
+        "GewandhausKinderchor",
+        "Frank-Steffen Elster Einstudierung",
+        "Michael Schönheit Leitung",
+        "Frieda Jolande Barck Sopran",
+        "Britta Schwarz Mezzosopran",
+        "Martin Häßler Bass",
+        "Andreas Scheibner Bass",
+        "Mitglied des GewandhausKinderchores Knabensopran",
+        "Denny Wilke Orgel"
+      ],
+      "conductor": "Michael Schönheit",
+      "price": "18 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/orgelkonzert-9951/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-17",
+      "time": "19:30",
+      "title": "Grosse Concerte",
       "venue_hall": "Großer Saal",
       "program": [
         "Bruckner: 8. Sinfonie c-Moll WAB 108 (2. Fassung von 1890, neu herausgegeben von Paul Hawkshaw)"
@@ -448,8 +1556,8 @@
         "Herbert Blomstedt"
       ],
       "conductor": "Herbert Blomstedt",
-      "price": "€6–€98",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9953/",
+      "price": "ab €25",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9952/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "discovery_source": "sitemap_detail",
@@ -460,47 +1568,14 @@
     },
     {
       "date": "2026-09-19",
-      "time": "19:30",
-      "title": "Chöre: GewandhausChor",
-      "venue_hall": "Großer Saal",
-      "program": [
-        "Hans Gál: De profundis op. 50 – Kantate für Soli, Chor und Orchester"
-      ],
-      "performers": [
-        "GewandhausChor",
-        "Robert-Schumann-Philharmonie",
-        "Cathrin Lange (Sopran)",
-        "Henriette Gödde (Alt)",
-        "Tobias Hunger (Tenor)",
-        "Simon Robinson (Bass)"
-      ],
-      "conductor": "Gregor Meyer",
-      "price": "18 EUR",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/choere-9954/",
-      "venue": "Gewandhaus Leipzig",
-      "city": "Leipzig",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-09-20",
-      "time": "18:00",
-      "title": "Kammermusik",
+      "time": "15:30",
+      "title": "Zauber der Operette",
       "venue_hall": "Mendelssohn-Saal",
-      "program": [
-        "Haydn: Streichquartett d-Moll Hob. III:76 (\"Quintenquartett\")",
-        "Schostakowitsch: 3. Streichquartett F-Dur op. 73",
-        "Brahms: 2. Streichquartett a-Moll op. 51/2"
-      ],
-      "performers": [
-        "Gewandhaus-Quartett (Frank-Michael Erben Violine, Yun-Jin Cho Violine, Vincent Aucante Viola, Isang Enders Violoncello)"
-      ],
+      "program": [],
+      "performers": [],
       "conductor": null,
-      "price": "19/15 EUR",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/kammermusik-9956/",
+      "price": "49/45 EUR (inkl. VVK-Gebühr)",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/zauber-der-operette-9664/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "discovery_source": "sitemap_detail",
@@ -511,19 +1586,18 @@
     },
     {
       "date": "2026-09-26",
-      "time": "15:00",
-      "title": "Motette",
-      "venue_hall": "Thomaskirche",
+      "time": "16:00",
+      "title": "Salonmusik",
+      "venue_hall": "Mendelssohn-Saal",
       "program": [
-        "Johann Sebastian Bach: Kantate \"Wer sich selbst erhöhet, der soll erniedrigt werden\" BWV 47"
+        "Unbekannt: Fast ein Volk von Zuckerbäckern oder: Warum die Schweizer Schokolade so berühmt wurde…"
       ],
       "performers": [
-        "Gewandhausorchester",
-        "Thomanerchor Leipzig"
+        "Salonorchester CAPPUCCINO"
       ],
-      "conductor": "Andreas Reize",
-      "price": null,
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/motette-10469/",
+      "conductor": "Albrecht Winter",
+      "price": "32/26 EUR, Flexpreise: 35/29 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/salonmusik-9960/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "discovery_source": "sitemap_detail",
@@ -533,19 +1607,113 @@
       "is_classical": true
     },
     {
-      "date": "2026-09-27",
-      "time": "11:00",
-      "title": "Salonmusik - Fast ein Volk von Zuckerbäckern",
+      "date": "2026-09-29",
+      "time": "09:00",
+      "title": "Zwergenkonzert",
       "venue_hall": "Mendelssohn-Saal",
       "program": [
-        "Unspecified: Fast ein Volk von Zuckerbäckern - Warum die Schweizer Schokolade so berühmt wurde"
+        "Mendelssohn: Die Entdeckung der Noten"
       ],
       "performers": [
-        "Salonorchester CAPPUCCINO"
+        "Mitglieder des Gewandhausorchesters",
+        "Marie Christine Brüning"
       ],
-      "conductor": "Albrecht Winter",
-      "price": "32/26 EUR, Flexpreise: 35/29 EUR",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/salonmusik-9961/",
+      "conductor": "Marie Christine Brüning",
+      "price": "5 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/zwergenkonzert-9965/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-30",
+      "time": "11:00",
+      "title": "Der Karneval der Tiere",
+      "venue_hall": "Konzertfoyer Opernhaus",
+      "program": [
+        "Saint-Saëns: Der Karneval der Tiere"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Leipziger Ballett"
+      ],
+      "conductor": "Samuel Emanuel",
+      "price": "10 € / ermäßigt 5 €",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/der-karneval-der-tiere-10198/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-03",
+      "time": "17:00",
+      "title": "Leipzig singt!",
+      "venue_hall": "Großer Saal",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "35/35/26 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/leipzig-singt-10388/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-08",
+      "time": "19:30",
+      "title": "DAS A UND O",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Mendelssohn Bartholdy: 4. Sinfonie A-Dur MWV N 16 (\"Italienische\")",
+        "Beethoven: 7. Sinfonie A-Dur op. 92"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Daniel Barenboim"
+      ],
+      "conductor": "Daniel Barenboim",
+      "price": "89/68/54/40/25/6 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9972/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-11",
+      "time": "17:00",
+      "title": "Eurydike",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Wojciech Kilar: Orawa für Streicher",
+        "Krzysztof Penderecki: Adagietto für Englischhorn und Streichorchester",
+        "Krzysztof Penderecki: Intermezzo für 24 Streicher",
+        "Krzysztof Penderecki: Ciaccona für Streichorchester - aus dem Polnischen Requiem",
+        "Krzysztof Penderecki: Sinfonietta Nr. 3 (Fassung für Streichorchester)",
+        "Henryk Mikołaj Górecki: Quasi una fantasia op. 78"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Leipziger Ballett"
+      ],
+      "conductor": "Yura Yang",
+      "price": "99/87/69/53/42/19 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/eurydike-10204/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "discovery_source": "sitemap_detail",
@@ -557,35 +1725,15 @@
     {
       "date": "2026-10-12",
       "time": "20:00",
-      "title": "Smokie",
+      "title": "50 Years of Music - Tour 2026",
       "venue_hall": "Großer Saal",
       "program": [],
       "performers": [
         "Smokie"
       ],
       "conductor": null,
-      "price": "ab €63,45",
+      "price": "€88,75/79,55/71,50/63,45",
       "detail_url": "https://www.gewandhausorchester.de/veranstaltung/smokie-9643/",
-      "venue": "Gewandhaus Leipzig",
-      "city": "Leipzig",
-      "discovery_source": "sitemap_detail",
-      "discovered_only": false,
-      "enriched": true,
-      "enrichment_status": "enriched",
-      "is_classical": true
-    },
-    {
-      "date": "2026-10-17",
-      "time": "20:00",
-      "title": "Germany Live 2026",
-      "venue_hall": "Großer Saal",
-      "program": [],
-      "performers": [
-        "Paul Carrack"
-      ],
-      "conductor": null,
-      "price": "83/76/71/65 EUR",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/paul-carrack-9836/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "discovery_source": "sitemap_detail",
@@ -595,29 +1743,22 @@
       "is_classical": false
     },
     {
-      "date": "2026-10-23",
-      "time": "19:30",
-      "title": "Aufstieg und Fall der Stadt Mahagonny",
-      "venue_hall": "Großer Saal",
+      "date": "2026-10-16",
+      "time": "20:00",
+      "title": "Legendäre Klaviersonaten",
+      "venue_hall": "Mendelssohn-Saal",
       "program": [
-        "Weill: Aufstieg und Fall der Stadt Mahagonny – Oper in drei Akten auf einen Text von Bertolt Brecht"
+        "Mozart: Sonate A-Dur KV 331 (KV 300i)",
+        "Beethoven: Sonate cis-Moll op. 27/2 (\"Mondscheinsonate\")",
+        "Chopin: Sonate b-Moll op. 35",
+        "Chopin: 3. Sonate für Klavier h-Moll op. 58"
       ],
       "performers": [
-        "Gewandhausorchester",
-        "MDR-Rundfunkchor Mädchen und Männer von Mahagonny",
-        "Wallis Giunta",
-        "Michael Laurenz",
-        "Florian Boesch",
-        "Lauren Michelle",
-        "Mirko Roschkowski",
-        "Jörg Schneider",
-        "Markus Butter",
-        "Tilmann Rönnebeck",
-        "Gideon Poppe"
+        "Grzegorz Niemczuk"
       ],
-      "conductor": "HK Gruber",
-      "price": "89/68/54/40/25/6 EUR & Flexpreise: 98/75/59/44/28/7 EUR",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9978/",
+      "conductor": null,
+      "price": "43,79/39,39 EUR (inkl. VVK-Gebühr)",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/legendaere-klaviersonaten-9887/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "discovery_source": "sitemap_detail",
@@ -627,22 +1768,129 @@
       "is_classical": true
     },
     {
-      "date": "2026-10-31",
-      "time": "11:00",
-      "title": "Herbstkonzert 2026",
+      "date": "2026-10-24",
+      "time": "20:00",
+      "title": "Lars Eidinger",
       "venue_hall": "Großer Saal",
       "program": [
-        "Holmès: La nuit et l’amour",
-        "Bruch: 1. Konzert für Violine und Orchester g-Moll op. 26",
-        "Brahms: 2. Sinfonie D-Dur op. 73"
+        "Brecht: Auswahl aus Gedichtsammlung"
       ],
       "performers": [
-        "Leipziger Lehrerorchester",
-        "Mayu Lefherz-Nihei"
+        "Lars Eidinger",
+        "Hans Jörn Brandenburg"
       ],
-      "conductor": "Eva Meitner",
-      "price": "16 EUR",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/herbstkonzert-2026-10377/",
+      "conductor": null,
+      "price": "76,95/68,90/59,70 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/lars-eidinger-9807/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-25",
+      "time": "18:00",
+      "title": "Kammermusik",
+      "venue_hall": "Mendelssohn-Saal",
+      "program": [
+        "Joseph Achron: Kindersuite op. 57 (Fassung für zwei Violinen, Viola, Violoncello, Klarinette und Klavier)",
+        "Felix Mendelssohn Bartholdy: Variations sérieuses d-Moll op. 54 MWV U 156",
+        "Joseph Achron: Hebräisches Wiegenlied op. 35/2",
+        "Joseph Achron: Hebräische Melodie für Violine und Klavier op. 33 (Bearbeitung für Violine, Viola, Violoncello, Klarinette und Klavier)",
+        "Karel Reiner: Minda-Minda – Sieben Klavierstücke für Kinder",
+        "Karl Amadeus Hartmann: Sonate »27. April 1945«",
+        "Wolfgang Amadeus Mozart: Rondo a-Moll KV 511"
+      ],
+      "performers": [
+        "Karl Heinrich Niebuhr Violine",
+        "Minah Lee Violine",
+        "Sofia Ugusheva Viola",
+        "Dorothée Erbiner Violoncello",
+        "Edgar Heßke Klarinette",
+        "Charlotte Steppes Klavier"
+      ],
+      "conductor": null,
+      "price": "19/15 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/kammermusik-9980/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-30",
+      "time": "19:00",
+      "title": "DER FLIEGENDE HOLLÄNDER",
+      "venue_hall": "Opernhaus",
+      "program": [
+        "Wagner: Der fliegende Holländer"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Yura Yang"
+      ],
+      "conductor": "Yura Yang",
+      "price": "115/103/86/71/57/33 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/der-fliegende-hollaender-10208/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "duration_min": 165,
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-01",
+      "time": "17:00",
+      "title": "Gastkonzert",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Beethoven: Konzert für Klavier, Violine, Violoncello und Orchester C-Dur op. 56 (\"Tripelkonzert\")",
+        "Mendelssohn Bartholdy: 3. Sinfonie a-Moll op. 56 MWV N 18 (\"Schottische\")"
+      ],
+      "performers": [
+        "Orchester der Barenboim-Said Akademie",
+        "Nathalia Milstein (Klavier)",
+        "Mohamed Hiber (Violine)",
+        "Astrig Siranossian (Violoncello)"
+      ],
+      "conductor": "Nabil Shehata",
+      "price": "30 EUR (zzgl. VVK-Gebühr)",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/gastkonzert-10453/",
+      "venue": "Gewandhaus Leipzig",
+      "city": "Leipzig",
+      "discovery_source": "sitemap_detail",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-06",
+      "time": "19:30",
+      "title": "Mendelssohn-Festtage | Fokus: »Tacheles« – Jahr der jüdischen Kultur in Sachsen 2026",
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Mendelssohn Bartholdy: 6. Sinfonie C-Dur MWV N 19 – 1. und 2. Satz, vervollständigt von Luukas Hiltunen",
+        "Mendelssohn Bartholdy: Konzert für Violine und Orchester e-Moll op. 64 MWV O 14",
+        "Schumann: 4. Sinfonie d-Moll op. 120"
+      ],
+      "performers": [
+        "Gewandhausorchester",
+        "Andris Nelsons",
+        "Augustin Hadelich"
+      ],
+      "conductor": "Andris Nelsons",
+      "price": "89/68/54/40/25/6 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/grosses-concert-9990/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "discovery_source": "sitemap_detail",
@@ -654,14 +1902,14 @@
     {
       "date": "2026-11-09",
       "time": "19:00",
-      "title": "After-Work Concert",
+      "title": "After Work Concert",
       "venue_hall": "Barlach-Ebene",
       "program": [
         "Beethoven: Streichtrio G-Dur op. 9/1",
         "Dohnányi: Serenade C-Dur op. 10"
       ],
       "performers": [
-        "Ariosa Trio (Karl Heinrich Niebuhr _Violine_, Ivan Bezpalov _Viola_, Henriette-Luise Neubert _Violoncello_)"
+        "Ariosa Trio (Karl Heinrich Niebuhr, Violine; Ivan Bezpalov, Viola; Henriette-Luise Neubert, Violoncello)"
       ],
       "conductor": null,
       "price": "20 EUR",
@@ -675,24 +1923,19 @@
       "is_classical": true
     },
     {
-      "date": "2026-11-15",
-      "time": "18:00",
-      "title": "Nils Lindberg — Requiem",
+      "date": "2026-11-16",
+      "time": "20:00",
+      "title": "Helmut Lotti Goes Classic",
       "venue_hall": "Großer Saal",
-      "program": [
-        "Lindberg: Requiem"
-      ],
+      "program": [],
       "performers": [
-        "GewandhausChor",
-        "Spielvereinigung Süd",
-        "Gregor Meyer",
-        "Jeannette Köhn",
-        "Tanja Pannier",
-        "Matthias Knoche"
+        "Helmut Lotti",
+        "The Golden Symphonic Orchestra",
+        "Fine Fleur"
       ],
-      "conductor": "Gregor Meyer",
-      "price": "18 EUR",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/choere-10002/",
+      "conductor": null,
+      "price": "102,05/94,50/83/71,50 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/helmut-lotti-goes-classic-9730/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
       "discovery_source": "sitemap_detail",
@@ -703,22 +1946,21 @@
     },
     {
       "date": "2026-11-18",
-      "time": "19:30",
-      "title": "Gastspiel in Köln",
-      "venue_hall": "Kölner Philharmonie",
+      "time": "15:00",
+      "title": "Die Zauberflöte",
+      "venue_hall": "Opernhaus",
       "program": [
-        "Smyth: Ouvertüre und Vorspiel zum 2. Akt (»On the Cliffs of Cornwall«) aus der Oper »The Wreckers«",
-        "Tschaikowski: Fantasie-Ouvertüre \"Romeo und Julia\"",
-        "Dvořák: 9. Sinfonie e-Moll op. 95 (\"Aus der Neuen Welt\")"
+        "Mozart: Die Zauberflöte - Oper in zwei Aufzügen KV 620"
       ],
       "performers": [
         "Gewandhausorchester"
       ],
-      "conductor": "Andris Nelsons",
-      "price": null,
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/gastspiel-in-koeln-10003/",
+      "conductor": "Sebastian Camaño Saavedra",
+      "price": "99/87/69/53/42/19 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/die-zauberfloete-10215/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
+      "duration_min": 180,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
@@ -746,25 +1988,21 @@
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
-      "date": "2026-11-22",
-      "time": "17:00",
-      "title": "La Traviata",
-      "venue_hall": "Opernhaus",
-      "program": [
-        "Verdi: La Traviata - Melodramma in drei Akten"
-      ],
-      "performers": [
-        "Gewandhausorchester"
-      ],
-      "conductor": "Christoph Gedschold",
-      "price": "99/87/69/53/42/19 EUR",
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/la-traviata-10219/",
+      "date": "2026-11-21",
+      "time": "13:00",
+      "title": "GEWANDHAUS-FÜHRUNG",
+      "venue_hall": "Mendelssohn-Foyer",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "10 EUR",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/gewandhaus-fuehrung-10413/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
-      "duration_min": 135,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
@@ -774,27 +2012,26 @@
     {
       "date": "2026-11-24",
       "time": "19:30",
-      "title": "Gastspiel in Wien",
-      "venue_hall": "Musikverein Wien",
+      "title": "Symphonic Tribute To Metallica by Orion feat. Tobias Regner",
+      "venue_hall": "Mendelssohn-Saal",
       "program": [
-        "Dvořák: Konzert für Violoncello und Orchester h-Moll op. 104",
-        "Dvořák: 9. Sinfonie e-Moll op. 95 (\"Aus der Neuen Welt\")"
+        "Metallica: Symphonic Tribute"
       ],
       "performers": [
-        "Gewandhausorchester",
-        "Andris Nelsons",
-        "Gautier Capuçon"
+        "Orion Orchestra",
+        "Tobias Regner"
       ],
-      "conductor": "Andris Nelsons",
-      "price": null,
-      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/gastspiel-in-wien-10010/",
+      "conductor": null,
+      "price": "ab €49,99",
+      "detail_url": "https://www.gewandhausorchester.de/veranstaltung/symphonic-tribute-to-metallica-by-orion-feat-tobias-regner-9886/",
       "venue": "Gewandhaus Leipzig",
       "city": "Leipzig",
+      "duration_min": 115,
       "discovery_source": "sitemap_detail",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
-      "is_classical": true
+      "is_classical": false
     },
     {
       "date": "2026-11-29",
@@ -815,21 +2052,21 @@
       "is_classical": true
     }
   ],
-  "total_events": 34,
-  "total_events_visible": 3,
-  "total_events_discovered": 34,
-  "total_events_discovered_strict": 34,
-  "total_events_enriched": 34,
+  "total_events": 85,
+  "total_events_visible": 5,
+  "total_events_discovered": 85,
+  "total_events_discovered_strict": 85,
+  "total_events_enriched": 84,
   "source": "firecrawl_listing",
   "latest_discovered_event_date": "2026-11-29",
   "latest_event_date": "2026-11-29",
   "covers_horizon": true,
   "horizon_grace_days": 1,
-  "events_with_date": 34,
+  "events_with_date": 85,
   "events_missing_date": 0,
   "date_coverage_rate": 1.0,
   "sitemap_jsonld_stats": {
-    "sitemap_urls": 668,
+    "sitemap_urls": 667,
     "candidate_urls": 240,
     "checked": 24,
     "limit": 240,
@@ -849,27 +2086,28 @@
     "preferred_urls": 6,
     "map_urls": 0,
     "html_urls": 6,
-    "new_urls": 3,
-    "latest_discovered_date": "2026-05-22"
+    "new_urls": 2,
+    "latest_discovered_date": "2026-05-23"
   },
   "sitemap_detail_expand_stats": {
-    "budget": 60,
-    "sitemap_urls": 668,
-    "scraped": 60,
-    "new_events": 28,
+    "budget": 80,
+    "sitemap_urls": 667,
+    "scraped": 80,
+    "new_events": 79,
     "missing_date_or_title": 1,
     "today_or_past": 0,
-    "past_or_beyond_horizon": 31,
+    "past_or_beyond_horizon": 0,
     "duplicate_urls": 6,
     "date_scout": {
-      "sitemap_urls": 668,
-      "candidate_urls": 668,
-      "checked": 668,
-      "dated_urls": 542,
+      "sitemap_urls": 667,
+      "candidate_urls": 667,
+      "checked": 667,
+      "dated_urls": 541,
       "limit": 1000,
-      "first_date": "2026-05-20",
+      "first_date": "2026-05-21",
       "latest_date": "2026-11-29"
     },
+    "date_corrected_from_scout": 41,
     "latest_date": "2026-11-29"
   }
 }
