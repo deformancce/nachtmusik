@@ -764,7 +764,6 @@ VENUE_OVERRIDES: dict[str, dict] = {
         # 60 lost half the events — raise so we capture the full season.
         "listing_target": 150,
         "force_url_expand": True,
-        "drop_unmatched_undated_discovery_stubs": True,
     },
     "gewandhaus_leipzig": {
         "listing_url": "https://www.gewandhausorchester.de/spielplan/",
