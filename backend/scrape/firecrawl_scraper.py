@@ -25,13 +25,14 @@ import os
 import re
 import sys
 import calendar
+import difflib
 import time
 import unicodedata
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, date
 from pathlib import Path
 from typing import Optional
-from urllib.parse import urlparse, urljoin
+from urllib.parse import urlparse, urljoin, unquote
 
 from pydantic import BaseModel, Field
 import requests
@@ -764,6 +765,7 @@ VENUE_OVERRIDES: dict[str, dict] = {
         # 60 lost half the events — raise so we capture the full season.
         "listing_target": 150,
         "force_url_expand": True,
+        "drop_unmatched_undated_discovery_stubs": True,
     },
     "gewandhaus_leipzig": {
         "listing_url": "https://www.gewandhausorchester.de/spielplan/",
@@ -1198,6 +1200,139 @@ def _extract_liederhalle_listing_events(
         }
         _mark_enrichment_status(ev)
         seen.add(detail_url)
+        out.append(ev)
+    return out
+
+
+def _festspielhaus_url_title_key(url: str) -> str:
+    raw = unquote(urlparse(url).path.rstrip("/").split("/")[-1])
+    return _event_title_key(raw.replace("-", " "))
+
+
+def _best_festspielhaus_url(
+    title: str,
+    candidates: list[tuple[str, str]],
+    used: set[str],
+) -> str | None:
+    title_key = _event_title_key(title)
+    if not title_key:
+        return None
+
+    for url, url_key in candidates:
+        if url in used:
+            continue
+        if title_key == url_key:
+            return url
+
+    title_tokens = set(title_key.split())
+    best_url: str | None = None
+    best_score = 0.0
+    for url, url_key in candidates:
+        if url in used or not url_key:
+            continue
+        url_tokens = set(url_key.split())
+        token_score = 0.0
+        if title_tokens and url_tokens:
+            token_score = len(title_tokens & url_tokens) / max(len(title_tokens), len(url_tokens))
+        seq_score = difflib.SequenceMatcher(None, title_key, url_key).ratio()
+        score = max(token_score, seq_score)
+        if score > best_score:
+            best_score = score
+            best_url = url
+    return best_url if best_score >= 0.70 else None
+
+
+def _extract_festspielhaus_listing_events(
+    rendered: str,
+    venue: dict,
+    horizon_date: str,
+) -> list[dict]:
+    """Parse Festspielhaus cards from rendered listing markdown.
+
+    The DOM carries detail links, while the markdown text carries reliable card
+    dates. Joining them by title gives dated stubs before detail enrichment, so
+    hidden/future anchors don't become undated output.
+    """
+    if not rendered:
+        return []
+
+    urls = []
+    seen_urls: set[str] = set()
+    for url in _extract_event_urls_from_html(rendered, venue):
+        clean = _clean_url(url)
+        if not clean or clean in seen_urls:
+            continue
+        seen_urls.add(clean)
+        urls.append(clean)
+    if not urls:
+        return []
+
+    candidates = [(url, _festspielhaus_url_title_key(url)) for url in urls]
+    date_re = re.compile(
+        rf"(?m)({_DE_WEEKDAY_RE})\s*(\d{{1,2}})\.(\d{{1,2}})\.(\d{{2}})\s*"
+        r"([0-2]?\d:[0-5]\d)\s*Uhr"
+    )
+    matches = list(date_re.finditer(rendered))
+    out: list[dict] = []
+    used: set[str] = set()
+    today = _today_date()
+
+    for index, match in enumerate(matches):
+        day, month, year, event_time = match.group(2), match.group(3), match.group(4), match.group(5)
+        try:
+            parsed_date = date(2000 + int(year), int(month), int(day))
+        except ValueError:
+            continue
+        if parsed_date < today:
+            continue
+
+        block_end = matches[index + 1].start() if index + 1 < len(matches) else len(rendered)
+        block = rendered[match.end():block_end]
+        headings = [
+            _plain_markdown_text(item)
+            for item in re.findall(r"(?m)^##\s+(.+?)\s*$", block)
+        ]
+        headings = [item for item in headings if item]
+        if len(headings) < 2:
+            continue
+        genre, title = headings[0], headings[1]
+        if not title or _is_canceled(title):
+            continue
+
+        detail_url = _best_festspielhaus_url(title, candidates, used)
+        if not detail_url:
+            continue
+
+        body_after_title = block.split(f"## {headings[1]}", 1)[-1]
+        subtitle = None
+        for raw_line in body_after_title.splitlines()[1:8]:
+            line = _plain_markdown_text(raw_line)
+            if not line or line in {"Programmdetails", "Zum Festival"}:
+                continue
+            if line.startswith("Karten ") or line.startswith("!"):
+                continue
+            if line == genre:
+                continue
+            subtitle = line
+            break
+
+        ev = {
+            "date": parsed_date.isoformat(),
+            "time": event_time,
+            "title": title,
+            "venue_hall": None,
+            "program": [subtitle] if subtitle and genre in {"Konzert", "Kammermusik", "Oper", "Oper im Konzert"} else [],
+            "performers": [],
+            "conductor": None,
+            "price": None,
+            "detail_url": detail_url,
+            "venue": venue["name"],
+            "city": venue["city"],
+            "discovery_source": "festspielhaus_listing",
+            "discovered_only": True,
+        }
+        _mark_enrichment_status(ev)
+        used.add(detail_url)
         out.append(ev)
     return out
 
@@ -2351,6 +2486,20 @@ def _discover_preferred_event_urls(
             stats["latest_date"] = glocke_dates[-1]
             stats["date_count"] = len(glocke_dates)
         if not glocke_events:
+            urls.extend(_extract_event_urls_from_html(html_fallback, venue))
+    elif html_fallback and slug == "festspielhaus_baden_baden":
+        festspielhaus_events = _extract_festspielhaus_listing_events(
+            html_fallback, venue, horizon_date or _scrape_horizon_date()
+        )
+        event_stubs.extend(festspielhaus_events)
+        urls.extend(ev["detail_url"] for ev in festspielhaus_events if ev.get("detail_url"))
+        festspielhaus_dates = sorted(
+            {ev["date"] for ev in festspielhaus_events if isinstance(ev.get("date"), str)}
+        )
+        if festspielhaus_dates:
+            stats["latest_date"] = festspielhaus_dates[-1]
+            stats["date_count"] = len(festspielhaus_dates)
+        if not festspielhaus_events:
             urls.extend(_extract_event_urls_from_html(html_fallback, venue))
     elif html_fallback:
         urls.extend(_extract_event_urls_from_html(html_fallback, venue))
@@ -4155,6 +4304,7 @@ def _scrape_one(
 
     # Filter past + canceled events (prompt guard isn't always reliable)
     events: list[dict] = []
+    venue_slug = _slug(venue["name"])
     for e in events_raw:
         if not isinstance(e, dict):
             continue
@@ -4163,6 +4313,9 @@ def _scrape_one(
         title = (e.get("title") or "").strip()
         if _is_canceled(title):
             continue
+        detail_url = _clean_url(e.get("detail_url"))
+        if detail_url and not is_strict_event_url(detail_url, venue["url"], venue_slug):
+            detail_url = None
         ev = {
             "date": e.get("date"),
             "time": e.get("time"),
@@ -4172,7 +4325,7 @@ def _scrape_one(
             "performers": e.get("performers") or [],
             "conductor": e.get("conductor"),
             "price": e.get("price"),
-            "detail_url": e.get("detail_url"),
+            "detail_url": detail_url,
             "venue": venue["name"],
             "city": venue["city"],
             "discovery_source": source,
