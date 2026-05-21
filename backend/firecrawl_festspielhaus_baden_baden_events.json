@@ -3,13 +3,13 @@
   "city": "Baden-Baden",
   "slug": "festspielhaus_baden_baden",
   "source_url": "https://www.festspielhaus.de/programm/",
-  "scraped_at": "2026-05-21T14:41:05.291777Z",
+  "scraped_at": "2026-05-21T17:22:55.470859Z",
   "scrape_horizon_date": "2026-11-30",
   "engine": "firecrawl",
   "events": [
     {
-      "date": "2026-05-21",
-      "time": "19:00",
+      "date": "2026-05-22",
+      "time": "21:00",
       "title": "Die Pfingstfestspiele Baden-Baden",
       "venue_hall": "Festspielhaus Baden-Baden",
       "program": [
@@ -19,12 +19,13 @@
         "SWR Symphonieorchester"
       ],
       "conductor": "null",
-      "price": "29 €",
+      "price": "ab €45",
       "detail_url": "https://www.festspielhaus.de/festivals/presence/",
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
+      "reused_enrichment": true,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
@@ -32,40 +33,55 @@
     {
       "date": "2026-05-22",
       "time": "21:00",
-      "title": "Ich atmet' einen linden Duft",
+      "title": "Late Night Libor Sima",
+      "title_inferred": true,
       "venue_hall": "Weinbrennersaal, Kurhaus Baden-Baden",
       "program": [
-        "Gustav Mahler: Einzelne Lieder"
+        "Libor Šíma: Weeny Weasel",
+        "Libor Šíma: Nevertheless",
+        "Libor Šíma: Herr Mann pudelt seinen Pudel Hermann",
+        "Libor Šíma: Sonett",
+        "Michel Legrand: You Must Believe in Spring",
+        "Maurice Ravel: Quatuor",
+        "Gordon Sumner: Sting"
       ],
       "performers": [
-        "Libor Šíma"
+        "Libor Šíma",
+        "Gesa Jenne",
+        "Emily Körner",
+        "Felix Borel",
+        "Ada Gosling-Pozo",
+        "Dora Scheili",
+        "Janis Lielbardis",
+        "Panu Sundqvist",
+        "Markus Tillier",
+        "Jakob Krupp",
+        "Meinhard “Obi” Jenne"
       ],
-      "conductor": "null",
+      "conductor": null,
       "price": "45 €",
-      "detail_url": "https://www.festspielhaus.de/veranstaltungen/ich-atmet-einen-linden-duft/",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/late-night-libor-sima/",
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden",
-      "discovery_source": "firecrawl_listing",
+      "discovery_source": "url_discovery",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
+      "duration_min": 60,
       "is_classical": true
     },
     {
       "date": "2026-05-23",
       "time": "18:00",
       "title": "Late Night",
-      "venue_hall": "Weinbrennersaal, Kurhaus Baden-Baden",
-      "program": [
-        "Libor Šíma & Friends: jazz"
-      ],
+      "venue_hall": null,
+      "program": [],
       "performers": [
-        "Libor Šíma",
-        "Friends"
+        "Libor Šíma & Friends"
       ],
-      "conductor": "null",
-      "price": "ab 25 €",
-      "detail_url": "https://www.festspielhaus.de/veranstaltungen/late-night/",
+      "conductor": null,
+      "price": "ab €25",
+      "detail_url": "https://www.festspielhaus.de/imager/images/7455098/Kristian-Bezuidenhout-001-by-Marco-Borggreve-HR_52a41692d2fbdfa1305c559cc34a0e94.webp",
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden",
       "discovery_source": "firecrawl_listing",
@@ -78,6 +94,29 @@
       "date": "2026-05-24",
       "time": "16:00",
       "title": "Von Versailles nach Wien",
+      "venue_hall": null,
+      "program": [
+        "Lully: Title",
+        "Mozart: Title",
+        "Haydn: Title"
+      ],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €33",
+      "detail_url": "https://www.festspielhaus.de/imager/images/Veranstaltungen/7396243/2021-julia-kleiter_059_cfrank-schemmann_web_52a41692d2fbdfa1305c559cc34a0e94.webp",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-24",
+      "time": "16:00",
+      "title": "Von Versailles Nach Wien",
+      "title_inferred": true,
       "venue_hall": "Weinbrennersaal, Kurhaus Baden-Baden",
       "program": [
         "Lully, Mozart & Haydn: Werke"
@@ -90,6 +129,25 @@
       "detail_url": "https://www.festspielhaus.de/veranstaltungen/von-versailles-nach-wien/",
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-28",
+      "time": "19:30",
+      "title": "Richard Strauss: Der Rosenkavalier",
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": "François-Xavier Roth",
+      "price": "ab €40.20",
+      "detail_url": "https://www.festspielhaus.de/imager/images/Veranstaltungen/7248366/Format-1-1240x480-CTS-Header_dfd15669404d31d73cbf193f8a95d6a0.webp",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
       "discovery_source": "firecrawl_listing",
       "discovered_only": false,
       "enriched": true,
@@ -99,7 +157,8 @@
     {
       "date": "2026-05-28",
       "time": "19:30",
-      "title": "Richard Strauss: Der Rosenkavalier",
+      "title": "Richard Strauss Der Rosenkavalier",
+      "title_inferred": true,
       "venue_hall": "Festspielhaus Baden-Baden",
       "program": [
         "Richard Strauss: Der Rosenkavalier"
@@ -112,16 +171,36 @@
       "detail_url": "https://www.festspielhaus.de/veranstaltungen/richard-strauss-der-rosenkavalier/",
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
+      "discovery_source": "url_discovery",
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": true
     },
     {
       "date": "2026-05-30",
       "time": "20:00",
       "title": "Dionne Warwick & Klassische Philharmonie Nordwest; One Last Time, Germany!",
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €25",
+      "detail_url": "https://www.festspielhaus.de/imager/images/artists/7119110/Nils-Landgren_3439_18632_c_Nikola-Stankovic_web_02b17be47eba944a21b78a4ae7770c41.webp",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": false
+    },
+    {
+      "date": "2026-05-30",
+      "time": "20:00",
+      "title": "Dionne Warwick",
+      "title_inferred": true,
       "venue_hall": "Festspielhaus Baden-Baden",
       "program": [
         "Dionne Warwick: Konzert"
@@ -135,26 +214,102 @@
       "detail_url": "https://www.festspielhaus.de/veranstaltungen/dionne-warwick/",
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden",
-      "discovery_source": "firecrawl_listing",
-      "discovered_only": false,
+      "discovery_source": "url_discovery",
+      "discovered_only": true,
       "enriched": true,
       "enrichment_status": "enriched",
+      "reused_enrichment": true,
       "is_classical": false
     },
     {
       "date": "2026-05-31",
       "time": "11:00",
-      "title": "Nils Landgren Konzert zum 70. Geburtstag",
+      "title": "Nils Landgren",
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €11",
+      "detail_url": "https://www.festspielhaus.de/imager/images/Veranstaltungen/7365057/3-Valerie-Fritz-Dino-Bossnini_52a41692d2fbdfa1305c559cc34a0e94.webp",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-31",
+      "time": "11:00",
+      "title": "Nils Landgren 2026",
+      "title_inferred": true,
       "venue_hall": "Festspielhaus Baden-Baden",
       "program": [
-        "Nils Landgren: Geburtstag"
+        "Mendoza: Arrangement für Sinfonieorchester"
       ],
       "performers": [
-        "Nils Landgren"
+        "Nils Landgren",
+        "Joel Lyssarides",
+        "Lars Danielsson",
+        "Robert Ikiz",
+        "Philharmonie Baden-Baden"
       ],
-      "conductor": "null",
-      "price": "ab 11 €",
-      "detail_url": "https://www.festspielhaus.de/veranstaltungen/nils-landgren-geburtstag/",
+      "conductor": "Karsten Jahnke",
+      "price": "25 - 90 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/nils-landgren-2026/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-05-31",
+      "time": "11:00",
+      "title": "Sonntagsmatinee Valerie Fritz",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Arvo Pärt: Fratres, arr. für Violoncello und Akkordeon",
+        "Robert Schumann: Fünf Stücke im Volkston, op. 102, arr. für Violoncello und Akkordeon",
+        "Jennifer Walshe: The sheer task of being alive",
+        "Niels Rosing-Schow: Short of Breath aus „Respiro ergo sum“",
+        "Sofia Gubaidulina: In croce, für Violoncello and Akkordeon",
+        "Goran Stevanovich: Sevdah Verse III, für Violoncello und Akkordeon",
+        "Mikołaj Majkusiak: Rhythms of doubt, part III, für Violoncello and Akkordeon"
+      ],
+      "performers": [
+        "Valerie Fritz",
+        "Goran Stevanovich"
+      ],
+      "conductor": null,
+      "price": "11 - 40 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/sonntagsmatinee-valerie-fritz/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 60,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-05",
+      "time": "19:30",
+      "title": "Sonntagsmatinee",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "Valerie Fritz"
+      ],
+      "conductor": null,
+      "price": "ab €34.99",
+      "detail_url": "https://www.festspielhaus.de/imager/images/Veranstaltungen/7557735/Yamato-foto01-credit-Greg-Inda_web_fb55b6c41ed0beacade4a4c605edc14e.webp",
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden",
       "discovery_source": "firecrawl_listing",
@@ -166,17 +321,36 @@
     {
       "date": "2026-06-05",
       "time": "19:30",
-      "title": "Sonntagsmatinee",
-      "venue_hall": "Weinbrennersaal, Kurhaus Baden-Baden",
+      "title": "Yamato 2026",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus",
       "program": [
-        "valerie fritz: sonntagsmatinee"
+        "Yamato: Hito no Chikara – Die Macht der menschlichen Stärke"
       ],
       "performers": [
-        "Valerie Fritz"
+        "YAMATO"
       ],
-      "conductor": "null",
-      "price": "ab 34.99 €",
-      "detail_url": "https://www.festspielhaus.de/veranstaltungen/sonntagsmatinee/",
+      "conductor": null,
+      "price": "34.99 - 99.99 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/yamato-2026/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-06",
+      "time": "14:30",
+      "title": "YAMATO „Yamato – The Drummers of Japan“",
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €34.99",
+      "detail_url": "https://www.festspielhaus.de/imager/images/Veranstaltungen/7557735/Yamato-foto01-credit-Greg-Inda_web_fb55b6c41ed0beacade4a4c605edc14e.webp",
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden",
       "discovery_source": "firecrawl_listing",
@@ -187,18 +361,14 @@
     },
     {
       "date": "2026-06-06",
-      "time": "14:30",
+      "time": "19:30",
       "title": "YAMATO „Yamato – The Drummers of Japan“",
-      "venue_hall": "Festspielhaus Baden-Baden",
-      "program": [
-        "Yamato: Konzert"
-      ],
-      "performers": [
-        "Yamato"
-      ],
-      "conductor": "null",
-      "price": "ab 34.99 €",
-      "detail_url": "https://www.festspielhaus.de/veranstaltungen/yamato/",
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €34.99",
+      "detail_url": "https://www.festspielhaus.de/imager/images/Veranstaltungen/7557735/Yamato-foto01-credit-Greg-Inda_web_fb55b6c41ed0beacade4a4c605edc14e.webp",
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden",
       "discovery_source": "firecrawl_listing",
@@ -208,9 +378,1046 @@
       "is_classical": true
     },
     {
+      "date": "2026-06-07",
+      "time": "14:00",
+      "title": "YAMATO „Yamato – The Drummers of Japan“",
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €34.99",
+      "detail_url": "https://www.festspielhaus.de/imager/images/Veranstaltungen/7557735/Yamato-foto01-credit-Greg-Inda_web_fb55b6c41ed0beacade4a4c605edc14e.webp",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "18:00",
+      "title": "Die schöne Müllerin",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "Klaus Florian Vogt"
+      ],
+      "conductor": null,
+      "price": "ab €25",
+      "detail_url": "https://www.festspielhaus.de/imager/images/artists/7386268/Klaus-Florian-Vogt_c_Wolfgang-Wilde_cfa6318fa38701bfcd99879de7d32c96.webp",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-13",
+      "time": "18:00",
+      "title": "Die Schoene Muellerin 2026",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Franz Schubert: Die schöne Müllerin, Liederzyklus, für Tenor und Kammerensemble bearbeitet von Andreas N. Tarkmann"
+      ],
+      "performers": [
+        "Klaus Florian Vogt Tenor",
+        "Ensemble Acht"
+      ],
+      "conductor": null,
+      "price": "25 - 90 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/die-schoene-muellerin-2026/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 70,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-14",
+      "time": "17:00",
+      "title": "Fazıl Say",
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €25",
+      "detail_url": "https://www.festspielhaus.de/imager/images/Presence/4654248/FazilSay04_cMarcoBorggreve_c9f90b244943cce1989d1a0f3e55df9e.webp",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-14",
+      "time": "17:00",
+      "title": "Fazil Say 2026",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Bach: Goldberg-Variationen",
+        "Fazıl Say: Sonate für Klavier op. 99 „Yeni hayat\"",
+        "Fazıl Say: Drei Balladen: Nazim, Ses, Kumru",
+        "Fazıl Say: Kara Toprak (Schwarze Erde) für Klavier",
+        "Fazıl Say: Jazz Fantasies: Summertime, Paganini Jazz"
+      ],
+      "performers": [
+        "Fazıl Say"
+      ],
+      "conductor": null,
+      "price": "€25–€95",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/fazil-say-2026/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-21",
+      "time": "11:00",
+      "title": "Sonntagsmatinee Giorgi Gigashvili",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Scarlatti: Sonate C-Dur K487",
+        "Scarlatti: Sonate D-Dur K29",
+        "Scarlatti: Sonate A-Dur K113",
+        "Chopin: Ballade Nr. 4 f-Moll op. 52",
+        "Beridze: Holy Atoms",
+        "Boulanger: D’un vieux jardin aus „Trois Morceaux“",
+        "Boulanger: D’un jardin clair aus „Trois Morceaux“",
+        "Ravel: Miroirs"
+      ],
+      "performers": [
+        "Giorgi Gigashvili"
+      ],
+      "conductor": null,
+      "price": "11 - 40 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/sonntagsmatinee-giorgi-gigashvili/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 75,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-26",
+      "time": "19:00",
+      "title": "Yannick Nézet-Séguin",
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €36",
+      "detail_url": "https://www.festspielhaus.de/imager/images/7162126/Yannick_Nezet-Seguin_022_web-c_Paola-Kudacki_0c8878fa8a0d787026766db23eedd6f3.webp",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-26",
+      "time": "19:00",
+      "title": "Yannick Nezet Seguin 2026",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Franz Schubert: Sinfonie h-Moll „Unvollendete“",
+        "Carl Maria von Weber: Klarinettenkonzert Nr. 1 f-Moll op. 73",
+        "Felix Mendelssohn Bartholdy: Sinfonie Nr. 4 A-Dur op. 90 „Italienische“"
+      ],
+      "performers": [
+        "Romain Guyot",
+        "Chamber Orchestra of Europe"
+      ],
+      "conductor": "Yannick Nézet-Séguin",
+      "price": "36 - 155 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/yannick-nezet-seguin-2026/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-27",
+      "time": "11:00",
+      "title": "Krabbelkonzert für Kinder",
+      "venue_hall": "Orchesterprobesaal, Festspielhaus Baden-Baden",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €10",
+      "detail_url": "https://www.festspielhaus.de/imager/images/La-Capitale-d-%C3%89t%C3%A9/7397539/DSC_5359_web_219d26812b8161e048c8027bcc826f88.webp",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-27",
+      "time": "11:00",
+      "title": "Krabbelkonzert 2026",
+      "title_inferred": true,
+      "venue_hall": "Orchesterprobesaal",
+      "program": [
+        "Keine spezifischen Werke angegeben"
+      ],
+      "performers": [
+        "Ingrid Hausl",
+        "Marie Lloyd",
+        "Julian Poore"
+      ],
+      "conductor": null,
+      "price": "10 - 18 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/krabbelkonzert-2026/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 30,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-27",
+      "time": "15:00",
+      "title": "Krabbelkonzert für Kinder",
+      "venue_hall": "Orchesterprobesaal, Festspielhaus Baden-Baden",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €10",
+      "detail_url": "https://www.festspielhaus.de/imager/images/La-Capitale-d-%C3%89t%C3%A9/7397539/DSC_5359_web_219d26812b8161e048c8027bcc826f88.webp",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-27",
+      "time": "18:00",
+      "title": "Krabbelkonzert für Kinder",
+      "venue_hall": "Orchesterprobesaal, Festspielhaus Baden-Baden",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €18",
+      "detail_url": "https://www.festspielhaus.de/imager/images/La-Capitale-d-%C3%89t%C3%A9/7323483/240719_YNS_Friends_34_d63abd18f2190682539befb7a440374d.webp",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-27",
+      "time": "18:00",
+      "title": "Yannick Friends 2026",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "F.Schubert: Symphony No. 8 in B Minor, D. 759 \"Unfinished\": II. Andante con moto",
+        "C.M.Weber: Clarinet Concerto No. 1 in F Minor, Op. 73: I. Allegro",
+        "F.Mendelssohn: Symphony No. 4 in A Major, Op. 90, MWV N 16 \"Italian\": IV. Saltarello (Allegro di molto)",
+        "C.M.V.Weber: Oberon, J. 306: Overture",
+        "F.Schubert: Symphony No. 9 in C Major, D. 944 \"Great\": II. Andante con moto",
+        "S.Rachmaninoff: Rhapsody on a Theme of Paganini, Op. 43: Variation No. 18 (Andante cantabile)",
+        "S.Rachmaninoff: Symphony No. 2 in E Minor, Op. 27: III. Adagio",
+        "L.V.Beethoven: Violin Concerto in D major, Op. 61: I. Allegro ma non troppo",
+        "R.Wagner: Tristan und Isolde, WWV 90, Act III: Prelude (Live)",
+        "W.A.Mozart: Violin Concerto No. 3 in G Major, K. 216: I. Allegro",
+        "F.J.Haydn: Symphony No. 104 in D Major, Hob. I:104, \"London\": I. Adagio - Allegro",
+        "J.Offenbach: Larmes de Jacqueline, Op. 76 No. 2",
+        "W.A.Mozart: Sinfonia concertante for violin, viola and orchestra in E-Flat Major, K. 364/320d: I. Allegro maestoso"
+      ],
+      "performers": [
+        "Yannick Nézet-Séguin",
+        "Chamber Orchestra of Europe"
+      ],
+      "conductor": "Yannick Nézet-Séguin",
+      "price": "18 - 70 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/yannick-friends-2026/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-28",
+      "time": "11:00",
+      "title": "Ein Bild Von Einer Rose",
+      "title_inferred": true,
+      "venue_hall": "Garten des Brenners Park-Hotel & Spa",
+      "program": [],
+      "performers": [
+        "Martina Schulz"
+      ],
+      "conductor": null,
+      "price": "80 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/ein-bild-von-einer-rose/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-06-28",
+      "time": "17:00",
+      "title": "Yannick Nezet Seguin Chamber Orchestra Of Europe",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus",
+      "program": [
+        "Carl Maria von Weber: Oberon Ouvertüre",
+        "Ludwig van Beethoven: Klavierkonzert Nr. 4 in G-Dur op. 58",
+        "Franz Schubert: Sinfonie Nr. 8 \"Die Große\" in C-Dur D 944"
+      ],
+      "performers": [
+        "Yannick Nézet-Séguin",
+        "Alexandre Kantorow",
+        "Chamber Orchestra of Europe"
+      ],
+      "conductor": "Yannick Nézet-Séguin",
+      "price": "36 - 155 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/yannick-nezet-seguin-chamber-orchestra-of-europe/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 140,
+      "is_classical": true
+    },
+    {
+      "date": "2026-07-04",
+      "time": "19:00",
+      "title": "Yannick Nézet-Séguin",
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €36",
+      "detail_url": "https://www.festspielhaus.de/imager/images/7162073/Yannick_Nezet-Seguin_093_web_c_Paola-Kudacki_52a41692d2fbdfa1305c559cc34a0e94.webp",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-07-05",
+      "time": "17:00",
+      "title": "London Symphony Orchestra",
+      "venue_hall": "",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €36",
+      "detail_url": "https://www.festspielhaus.de/imager/images/Presence/6372362/Pappano_Antonio_2013a_PC_-Musacchio-Ianniello-licensed-to-EMI-Classics_300_71ed6d8de1cb87552e73ad5d34bed88a.webp",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-07-05",
+      "time": "17:00",
+      "title": "London Symphony Orchestra 2026",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Prokofjew: Klavierkonzert Nr. 3 C-Dur op. 26",
+        "Rachmaninow: Sinfonie Nr. 2 e-Moll op. 27"
+      ],
+      "performers": [
+        "Yuja Wang",
+        "London Symphony Orchestra"
+      ],
+      "conductor": "Yannick Nézet-Séguin",
+      "price": "36 - 155 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/london-symphony-orchestra-2026/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-07-11",
+      "time": "10:00",
+      "title": "Wagner & Beethoven",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "London Symphony Orchestra"
+      ],
+      "conductor": null,
+      "price": "35",
+      "detail_url": "https://www.festspielhaus.de/imager/images/Veranstaltungen/7476734/DSC_0941_web_64d3db55d81d5be2265575c049e96881.webp",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-07-11",
+      "time": "10:00",
+      "title": "Wagner Beethoven",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Ludwig van Beethoven: Konzert für Violine und Orchester D-Dur op. 61",
+        "Richard Wagner: Dritter Aufzug aus „Tristan und Isolde“"
+      ],
+      "performers": [
+        "London Symphony Orchestra",
+        "Vilde Frang",
+        "Sarah Jakubiak",
+        "Marina Prudenskaya",
+        "Clay Hilley",
+        "Franz-Josef Selig",
+        "Gyula Orendt",
+        "Neal Cooper",
+        "Michael Gibson",
+        "James Emerson"
+      ],
+      "conductor": "Antonio Pappano",
+      "price": "36 - 155 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/wagner-beethoven/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 105,
+      "is_classical": true
+    },
+    {
+      "date": "2026-07-11",
+      "time": "10:00",
+      "title": "Mitsingfest",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "— 10-13:30 Uhr Workshop für interessierte Chorsänger",
+        "— 14-15.30 Uhr Probe im Saal aller Teilnehmerinnen und Teilnehmer",
+        "— 16 Uhr IM.PULS- Abschlussaufführung des Schulprojekts",
+        "— 17 Uhr Open Stage der teilnehmenden Chöre",
+        "— 18 Uhr Abschlusskonzert mit allen teilnehmenden Chören und den Workshopteilnehmern"
+      ],
+      "performers": [
+        "Mateo Peñaloza Cecconi"
+      ],
+      "conductor": null,
+      "price": "35 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/mitsingfest/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-07-11",
+      "time": "16:00",
+      "title": "Im Puls 2026",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "IM.PULS: Abschlusskonzert",
+        "Open Stage der teilnehmenden Chöre",
+        "Abschlusskonzert mit allen teilnehmenden Chören und Workshopteilnehmern"
+      ],
+      "performers": [
+        "Calmus Vokalensemble",
+        "Philharmonischer Chor des Helmholtz-Gymnasiums Karlsruhe"
+      ],
+      "conductor": "Mateo Peñaloza Cecconi",
+      "price": "Freier Eintritt",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/im-puls-2026/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-07-12",
+      "time": "18:00",
+      "title": "Abschlusskonzert Mitsingfest & IM.PULS",
+      "venue_hall": "",
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €24",
+      "detail_url": "https://www.festspielhaus.de/imager/images/Veranstaltungen/7517787/241124_Singfest__09_web_52a41692d2fbdfa1305c559cc34a0e94.webp",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-08-23",
+      "time": "17:00",
+      "title": "Mehta Hope Zukerman",
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "Zürcher Kammerorchester"
+      ],
+      "conductor": null,
+      "price": "ab €28",
+      "detail_url": "https://www.festspielhaus.de/imager/images/Veranstaltungen/7360002/67a4c615fb0e02595a0ee136_7K6A7716-1_web_e5b43a49f4403a086b86d800333f7307.webp",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-08-23",
+      "time": "17:00",
+      "title": "Mehta Hope Zukerman",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Mozart: Konzert für Violine und Orchester G-Dur KV 216",
+        "Haydn: Sinfonie D-Dur Hob I:104",
+        "Offenbach: Les Larmes de Jacqueline op. 76/2, Fassung für Violoncello und Kammerorchester",
+        "Mozart: Sinfonia Concertante Es-Dur KV 364"
+      ],
+      "performers": [
+        "Daniel Hope",
+        "Pinchas Zukerman",
+        "Amanda Forsyth",
+        "Zürcher Kammerorchester"
+      ],
+      "conductor": "Zubin Mehta",
+      "price": "24 - 155 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/mehta-hope-zukerman/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-08-23",
+      "time": "17:00",
+      "title": "Giacomo Puccini La Boheme",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Puccini: La Bohème"
+      ],
+      "performers": [
+        "Carolina López Moreno",
+        "Benjamin Bernheim",
+        "Sandra Hamaoui",
+        "Lodovico Filippo Ravizza",
+        "Biagio Pizzuti",
+        "Gianluca Buratto",
+        "Roberto Abbondanza",
+        "Gstaad Festival Orchestra",
+        "Chor der Bühnen Bern"
+      ],
+      "conductor": "Marco Armiliato",
+      "price": "28 - 175 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/giacomo-puccini-la-boheme/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 105,
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-27",
+      "time": "19:00",
+      "title": "Teodor Currentzis",
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": "ab €66.50",
+      "detail_url": "https://www.festspielhaus.de/imager/images/La-Grande-Gare/7360612/Anton-Zavjyalov-_051_web_52a41692d2fbdfa1305c559cc34a0e94.webp",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "firecrawl_listing",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-09-27",
+      "time": "19:00",
+      "title": "Teodor Currentzis 2026",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Dmitri Schostakowitsch: Violinkonzert Nr. 1 a-Moll op. 77",
+        "Igor Strawinsky: Le Sacre du printemps"
+      ],
+      "performers": [
+        "Teodor Currentzis",
+        "Daniel Lozakovich",
+        "Utopia Orchestra"
+      ],
+      "conductor": "Teodor Currentzis",
+      "price": "33 - 135 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/teodor-currentzis-2026/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-01",
+      "time": "19:00",
+      "title": "Ballettwerkstatt 2026",
+      "title_inferred": true,
+      "venue_hall": null,
+      "program": [
+        "John Neumeier: Ballett-Werkstatt"
+      ],
+      "performers": [
+        "John Neumeier Moderation",
+        "Hamburg Ballett",
+        "Bayerisches Staatsballett"
+      ],
+      "conductor": null,
+      "price": "22 - 70 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/ballettwerkstatt-2026/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-02",
+      "time": "19:30",
+      "title": "Illusionen Wie Schwanensee",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus",
+      "program": [
+        "Tschaikowsky: Ballettmusik zu Schwanensee"
+      ],
+      "performers": [
+        "Bayerisches Staatsballett",
+        "Philharmonie Baden-Baden"
+      ],
+      "conductor": "John Neumeier",
+      "price": "33 - 135 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/illusionen-wie-schwanensee/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 150,
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-03",
+      "time": "16:00",
+      "title": "Winndance",
+      "title_inferred": true,
+      "venue_hall": "Theater Baden-Baden",
+      "program": [
+        "Neumeier: WINNDance – When, If Not Now?"
+      ],
+      "performers": [
+        "Marijn Rademaker",
+        "Slava Tutukin"
+      ],
+      "conductor": null,
+      "price": "21 - 40 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/winndance/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-05",
+      "time": "18:00",
+      "title": "Absprung 2026",
+      "title_inferred": true,
+      "venue_hall": "Kongresshaus Baden-Baden",
+      "program": [
+        "Choreografien: Absolventinnen und Absolventen stellen ihre Choreografien vor."
+      ],
+      "performers": [
+        "Ballettschule des Hamburg Ballett"
+      ],
+      "conductor": null,
+      "price": "40 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/absprung-2026/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 60,
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-06",
+      "time": "19:00",
+      "title": "Bundesjugendballett 2026",
+      "title_inferred": true,
+      "venue_hall": "Bénazetsaal, Kurhaus Baden-Baden",
+      "program": [
+        "Tradition, Education, Inspiration, Creativity"
+      ],
+      "performers": [
+        "Bundesjugendballett"
+      ],
+      "conductor": "John Neumeier",
+      "price": "40 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/bundesjugendballett-2026/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-09",
+      "time": "19:30",
+      "title": "Der Nussknacker",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Tschaikovsky: Der Nussknacker"
+      ],
+      "performers": [
+        "Hamburg Ballett",
+        "Württembergische Philharmonie Reutlingen"
+      ],
+      "conductor": "Nathan Brock",
+      "price": "33 - 135 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/der-nussknacker/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 90,
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-17",
+      "time": "20:00",
+      "title": "Berta Das Ei Ist Hart",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Loriot: Berta, das Ei ist hart."
+      ],
+      "performers": [
+        "Christine Sommer",
+        "Martin Brambach",
+        "Dietmar Loeffler"
+      ],
+      "conductor": null,
+      "price": "13 - 55 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/berta-das-ei-ist-hart/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 120,
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-18",
+      "time": "11:00",
+      "title": "Sonntagsmatinee Aron Horvath",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Traditional Hungarian Folk Music: Mixed Works"
+      ],
+      "performers": [
+        "Áron Horváth"
+      ],
+      "conductor": null,
+      "price": "11 - 40 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/sonntagsmatinee-aron-horvath/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 75,
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-24",
+      "time": "19:00",
+      "title": "Jazzrausch Bigband 2026",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Eine Technosinfonie"
+      ],
+      "performers": [
+        "Jazzrausch Bigband",
+        "Bergson Philharmonic Orchestra"
+      ],
+      "conductor": "Roman Sladek",
+      "price": "17 - 55 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/jazzrausch-bigband-2026/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-25",
+      "time": "10:00",
+      "title": "Workshop Find Your Sound Erste Schritte In Die Improvisation",
+      "title_inferred": true,
+      "venue_hall": "Orchesterprobesaal",
+      "program": [],
+      "performers": [
+        "Jazzrausch Bigband",
+        "Ihr selbst!"
+      ],
+      "conductor": null,
+      "price": "25 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/workshop-find-your-sound-erste-schritte-in-die-improvisation/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-25",
+      "time": "10:00",
+      "title": "Workshop Connecting The Dots",
+      "title_inferred": true,
+      "venue_hall": "Ballettprobesaal",
+      "program": [
+        "Workshop beim „Bigband Bootcamp“ mit der Jazzrausch Bigband: Connecting The Dots"
+      ],
+      "performers": [
+        "Jazzrausch Bigband",
+        "Ihr selbst!"
+      ],
+      "conductor": null,
+      "price": "€25",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/workshop-connecting-the-dots/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 180,
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-25",
+      "time": "12:30",
+      "title": "Mitmachfest",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Jazzrausch Bigband: Talk beim „Bigband Bootcamp“"
+      ],
+      "performers": [
+        "Jazzrausch Bigband"
+      ],
+      "conductor": null,
+      "price": "Freier Eintritt",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/mitmachfest/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 30,
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-25",
+      "time": "13:00",
+      "title": "Workshop Hybride Klaenge",
+      "title_inferred": true,
+      "venue_hall": "Orchesterprobesaal",
+      "program": [
+        "Jazzrausch Bigband: Workshop Hybride Klänge"
+      ],
+      "performers": [
+        "Jazzrausch Bigband",
+        "Ihr selbst!"
+      ],
+      "conductor": null,
+      "price": "€25",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/workshop-hybride-klaenge/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 90,
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-25",
+      "time": "13:00",
+      "title": "Workshop Rhythmik Feel The Groove",
+      "title_inferred": true,
+      "venue_hall": "Ballettprobesaal",
+      "program": [
+        "Jazzrausch Bigband: Rhythmik - Feel the Groove"
+      ],
+      "performers": [
+        "Jazzrausch Bigband",
+        "Ihr selbst!"
+      ],
+      "conductor": null,
+      "price": "€25",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/workshop-rhythmik-feel-the-groove/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 90,
+      "is_classical": true
+    },
+    {
+      "date": "2026-10-28",
+      "time": "20:00",
+      "title": "Vier Pianisten Ein Konzert",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Sebastian Knauer: Klavier",
+        "Martin Tingvall: Klavier",
+        "Joja Wendt: Klavier",
+        "Axel Zwingenberger: Klavier"
+      ],
+      "performers": [
+        "Sebastian Knauer",
+        "Martin Tingvall",
+        "Joja Wendt",
+        "Axel Zwingenberger"
+      ],
+      "conductor": null,
+      "price": "36.75 - 74.15 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/vier-pianisten-ein-konzert/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
       "date": "2026-11-01",
       "time": "15:00",
-      "title": "Das Vögelchen",
+      "title": "The Birds",
+      "title_inferred": true,
       "venue_hall": "Orchesterprobesaal",
       "program": [
         "Lydia Mahnkopf: Mitmachkonzert für Babys und Kleinkinder",
@@ -226,28 +1433,363 @@
       "detail_url": "https://www.festspielhaus.de/veranstaltungen/the-birds/",
       "venue": "Festspielhaus Baden-Baden",
       "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": true,
+      "enriched": true,
+      "enrichment_status": "enriched",
       "duration_min": 45,
-      "discovery_source": "sitemap_detail",
+      "reused_enrichment": true,
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-04",
+      "time": "20:00",
+      "title": "Mireille Mathieu",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Mireille Mathieu: Goodbye my Love Goodbye"
+      ],
+      "performers": [
+        "Mireille Mathieu"
+      ],
+      "conductor": null,
+      "price": "80.05 - 192.75 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/mireille-mathieu/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-07",
+      "time": "19:25",
+      "title": "Brandenburgische Konzerte",
+      "title_inferred": true,
+      "venue_hall": "Großer Saal",
+      "program": [
+        "Johann Sebastian Bach: Brandenburgische Konzerte Nr. 1–6"
+      ],
+      "performers": [
+        "Balthasar-Neumann-Orchester"
+      ],
+      "conductor": "Teodor Currentzis",
+      "price": "25 - 95 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/brandenburgische-konzerte/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-14",
+      "time": "18:00",
+      "title": "Gabriel Faure Requiem",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Fauré: Requiem op. 48",
+        "Reger: Chorwerke",
+        "Brahms: Chorwerke"
+      ],
+      "performers": [
+        "Erica Eloff",
+        "Jérôme Boutillier",
+        "Balthasar-Neumann-Orchester",
+        "Balthasar-Neumann-Chor"
+      ],
+      "conductor": "Lionel Sow",
+      "price": "33 - 135 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/gabriel-faure-requiem/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 110,
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-15",
+      "time": "17:00",
+      "title": "Beethoven Sinfonie Nr 9 2026",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Beethoven: Sinfonie Nr. 9 d-Moll mit Schlusschor über Schillers Ode „An die Freude“"
+      ],
+      "performers": [
+        "Regula Mühlemann",
+        "Catriona Morison",
+        "Julian Prégardien",
+        "Domen Križaj",
+        "Balthasar-Neumann-Orchester",
+        "Balthasar-Neumann-Chor"
+      ],
+      "conductor": "Pablo González",
+      "price": "21 - 135 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/beethoven-sinfonie-nr-9-2026/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 75,
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-21",
+      "time": "20:15",
+      "title": "Mahler Sinfonie Nr 5",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Leonard Bernstein: Candide-Ouvertüre",
+        "George Gershwin: Rhapsody in Blue",
+        "Gustav Mahler: Sinfonie Nr. 5"
+      ],
+      "performers": [
+        "Hayato Sumino",
+        "Tonhalle-Orchester Zürich"
+      ],
+      "conductor": "Paavo Järvi",
+      "price": "36 - 155 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/mahler-sinfonie-nr-5/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": "2026-11-22",
+      "time": "17:00",
+      "title": "Mahler Sinfonie Nr 6",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Gustav Mahler: Sinfonie Nr. 6 a-Moll"
+      ],
+      "performers": [
+        "Paavo Järvi",
+        "Tonhalle-Orchester Zürich"
+      ],
+      "conductor": "Paavo Järvi",
+      "price": "36 - 155 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/mahler-sinfonie-nr-6/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "duration_min": 95,
+      "is_classical": true
+    },
+    {
+      "date": null,
+      "time": null,
+      "title": "Rea Garveys Christmas Calling",
+      "title_inferred": true,
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/rea-garveys-christmas-calling/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": true,
+      "enriched": false,
+      "enrichment_status": "stub",
+      "is_classical": false
+    },
+    {
+      "date": null,
+      "time": null,
+      "title": "Tina Dico",
+      "title_inferred": true,
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/tina-dico/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": true,
+      "enriched": false,
+      "enrichment_status": "stub",
+      "is_classical": false
+    },
+    {
+      "date": null,
+      "time": null,
+      "title": "Max Raabe Palast Orchester 2026",
+      "title_inferred": true,
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/max-raabe-palast-orchester-2026/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": true,
+      "enriched": false,
+      "enrichment_status": "stub",
+      "is_classical": false
+    },
+    {
+      "date": null,
+      "time": null,
+      "title": "Chinesischer Nationalcircus",
+      "title_inferred": true,
+      "venue_hall": null,
+      "program": [],
+      "performers": [],
+      "conductor": null,
+      "price": null,
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/chinesischer-nationalcircus/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": true,
+      "enriched": false,
+      "enrichment_status": "stub",
+      "is_classical": false
+    },
+    {
+      "date": null,
+      "time": null,
+      "title": "Mozart Requiem 2027",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Beethoven: Chorfantasie c-moll op. 80",
+        "Mozart: Requiem KV. 626"
+      ],
+      "performers": [
+        "Joana Mallwitz",
+        "Alice Sara Ott",
+        "Regula Mühlemann",
+        "Marina Viotti",
+        "Sebastian Kohlhepp",
+        "Alexander Grassauer",
+        "Philharmonia Chor Wien",
+        "Mahler Chamber Orchestra"
+      ],
+      "conductor": "Joana Mallwitz",
+      "price": "43 - 270 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/mozart-requiem-2027/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": null,
+      "time": null,
+      "title": "Hello Again",
+      "title_inferred": true,
+      "venue_hall": null,
+      "program": [],
+      "performers": [
+        "„Hello! Again?\"-Ensemble"
+      ],
+      "conductor": null,
+      "price": "59.9 - 129.9 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/hello-again/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": null,
+      "time": "20:00",
+      "title": "Seong Jin Cho",
+      "title_inferred": true,
+      "venue_hall": "Festspielhaus Baden-Baden",
+      "program": [
+        "Jörg Widmann: Sonatina Facile für Klavier",
+        "Sergej Prokofjew: 10 Stücke aus „Romeo und Julia“, op. 75",
+        "Wolfgang Amadeus Mozart: Fantasia in C-Moll, KV 396 (vervollständigt von Maximilian Stadler)",
+        "Sergej Prokofjew: Klaviersonate Nr. 8 B-Dur op. 84"
+      ],
+      "performers": [
+        "Seong-Jin Cho"
+      ],
+      "conductor": null,
+      "price": "37 - 175 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/seong-jin-cho/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
+      "discovered_only": false,
+      "enriched": true,
+      "enrichment_status": "enriched",
+      "is_classical": true
+    },
+    {
+      "date": null,
+      "time": "21:00",
+      "title": "Also Sprach Zarathustra",
+      "title_inferred": true,
+      "venue_hall": null,
+      "program": [
+        "Johannes Brahms: Klavierkonzert Nr. 1 d-Moll op. 15",
+        "Richard Strauss: Also sprach Zarathustra op. 30"
+      ],
+      "performers": [
+        "Víkingur Ólafsson Klavier",
+        "Berliner Philharmoniker"
+      ],
+      "conductor": "Kirill Petrenko",
+      "price": "43 - 270 €",
+      "detail_url": "https://www.festspielhaus.de/veranstaltungen/also-sprach-zarathustra/",
+      "venue": "Festspielhaus Baden-Baden",
+      "city": "Baden-Baden",
+      "discovery_source": "url_discovery",
       "discovered_only": false,
       "enriched": true,
       "enrichment_status": "enriched",
       "is_classical": true
     }
   ],
-  "total_events": 10,
-  "total_events_visible": 31,
-  "total_events_discovered": 73,
-  "total_events_discovered_strict": 73,
-  "total_events_enriched": 10,
+  "total_events": 74,
+  "total_events_visible": 28,
+  "total_events_discovered": 74,
+  "total_events_discovered_strict": 74,
+  "total_events_enriched": 70,
   "source": "firecrawl_listing",
-  "latest_discovered_event_date": "2026-11-01",
-  "latest_event_date": "2026-11-01",
+  "latest_discovered_event_date": "2026-11-22",
+  "latest_event_date": "2026-11-22",
   "covers_horizon": false,
   "horizon_grace_days": 1,
-  "events_with_date": 10,
-  "events_missing_date": 0,
-  "date_coverage_rate": 1.0,
-  "coverage_warning": "SHORT_HORIZON(latest=2026-11-01, horizon=2026-11-30)",
+  "events_with_date": 66,
+  "events_missing_date": 8,
+  "date_coverage_rate": 0.8919,
+  "coverage_warning": "SHORT_HORIZON(latest=2026-11-22, horizon=2026-11-30)",
   "sitemap_jsonld_stats": {
     "sitemap_urls": 670,
     "candidate_urls": 240,
@@ -266,31 +1808,10 @@
     "authoritative": false
   },
   "map_expand_stats": {
-    "preferred_urls": 73,
+    "preferred_urls": 72,
     "map_urls": 0,
-    "html_urls": 73,
-    "new_urls": 69,
-    "latest_discovered_date": "2026-06-06",
-    "undated_unmatched_stubs_dropped": 69
-  },
-  "sitemap_detail_expand_stats": {
-    "budget": 80,
-    "sitemap_urls": 670,
-    "scraped": 1,
-    "new_events": 1,
-    "missing_date_or_title": 0,
-    "today_or_past": 0,
-    "past_or_beyond_horizon": 0,
-    "duplicate_urls": 0,
-    "date_scout": {
-      "sitemap_urls": 670,
-      "candidate_urls": 670,
-      "checked": 670,
-      "dated_urls": 1,
-      "limit": 1000,
-      "first_date": "2026-11-01",
-      "latest_date": "2026-11-01"
-    },
-    "latest_date": "2026-11-01"
+    "html_urls": 72,
+    "new_urls": 72,
+    "latest_discovered_date": "2026-09-27"
   }
 }
