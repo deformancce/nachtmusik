@@ -2779,13 +2779,21 @@ def _extract_xml_locs(text: str) -> list[str]:
 
 
 def _fetch_text_url(url: str) -> str:
-    try:
-        response = requests.get(url, headers=_DE_HEADERS, timeout=15)
-        if response.status_code >= 400:
-            return ""
-        return response.text or ""
-    except Exception:
-        return ""
+    timeout = max(5, _env_int("SITEMAP_FETCH_TIMEOUT", 25))
+    retries = max(1, _env_int("SITEMAP_FETCH_RETRIES", 3))
+    for attempt in range(retries):
+        try:
+            response = requests.get(url, headers=_DE_HEADERS, timeout=timeout)
+            if response.status_code >= 500 and attempt + 1 < retries:
+                time.sleep(min(2 ** attempt, 5))
+                continue
+            if response.status_code >= 400:
+                return ""
+            return response.text or ""
+        except requests.RequestException:
+            if attempt + 1 < retries:
+                time.sleep(min(2 ** attempt, 5))
+    return ""
 
 
 def _discover_sitemap_event_urls(venue: dict, *, max_sitemaps: int = 80) -> list[str]:
