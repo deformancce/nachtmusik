@@ -159,6 +159,61 @@ def _env_int(name: str, default: int) -> int:
         return default
 
 
+def _env_float(name: str, default: float) -> float:
+    try:
+        return float(os.getenv(name, str(default)))
+    except ValueError:
+        return default
+
+
+_FIRECRAWL_LAST_REQUEST_AT = 0.0
+
+
+def _firecrawl_wait_for_slot() -> None:
+    """Keep Firecrawl page renders from hitting venues in a tight burst."""
+    global _FIRECRAWL_LAST_REQUEST_AT
+    min_delay = max(0.0, _env_float("FIRECRAWL_MIN_DELAY_SECONDS", 1.0))
+    if min_delay <= 0:
+        return
+    now = time.monotonic()
+    wait_s = (_FIRECRAWL_LAST_REQUEST_AT + min_delay) - now
+    if wait_s > 0:
+        time.sleep(wait_s)
+    _FIRECRAWL_LAST_REQUEST_AT = time.monotonic()
+
+
+def _firecrawl_call(label: str, func, *args, **kwargs):
+    retries = max(1, _env_int("FIRECRAWL_MAX_RETRIES", 3))
+    backoff = max(0.0, _env_float("FIRECRAWL_BACKOFF_SECONDS", 4.0))
+    for attempt in range(1, retries + 1):
+        _firecrawl_wait_for_slot()
+        try:
+            return func(*args, **kwargs)
+        except TypeError:
+            # Let callers keep their SDK-compatibility fallback, e.g. retrying
+            # without headers for older firecrawl-py versions.
+            raise
+        except Exception as exc:
+            if attempt >= retries:
+                raise
+            sleep_s = backoff * (2 ** (attempt - 1))
+            print(
+                f"    [warn] Firecrawl {label} failed "
+                f"(attempt {attempt}/{retries}): {exc}; retrying in {sleep_s:.1f}s",
+                flush=True,
+            )
+            if sleep_s > 0:
+                time.sleep(sleep_s)
+
+
+def _firecrawl_scrape(app, url: str, **kwargs):
+    return _firecrawl_call("scrape", app.scrape, url, **kwargs)
+
+
+def _firecrawl_map(app, url: str):
+    return _firecrawl_call("map", app.map, url)
+
+
 def _parse_iso_date(value: str | None) -> date | None:
     if not value:
         return None
@@ -897,7 +952,7 @@ def _scrape_listing_with_schema(
     last_err: Exception | None = None
 
     def _attempt(extra: dict) -> dict:
-        result = app.scrape(listing_url, formats=formats, **extra)
+        result = _firecrawl_scrape(app, listing_url, formats=formats, **extra)
         md = _extract_markdown(result)
         if md:
             try:
@@ -1879,9 +1934,11 @@ def _discover_glocke_paginated_urls(
         if resp is None:
             print(f"    [glocke-pages] failed page {page}: {last_exc}", flush=True)
             try:
-                result = app.scrape(page_url, formats=["markdown", "html"], headers=_DE_HEADERS)
+                result = _firecrawl_scrape(
+                    app, page_url, formats=["markdown", "html"], headers=_DE_HEADERS
+                )
             except TypeError:
-                result = app.scrape(page_url, formats=["markdown", "html"])
+                result = _firecrawl_scrape(app, page_url, formats=["markdown", "html"])
             except Exception as exc:
                 failed_pages += 1
                 print(f"    [glocke-pages] firecrawl page {page} failed: {exc}", flush=True)
@@ -1974,14 +2031,17 @@ def _discover_liederhalle_paginated_urls(
         else:
             page_url = f"{base}?tx_bbevents_events%5Barguments%5D%5BcurrentPage%5D={page}"
         try:
-            result = app.scrape(
+            result = _firecrawl_scrape(
+                app,
                 page_url,
                 formats=["markdown", "html"],
                 headers=_DE_HEADERS,
                 actions=_venue_actions(slug),
             )
         except TypeError:
-            result = app.scrape(page_url, formats=["markdown", "html"], actions=_venue_actions(slug))
+            result = _firecrawl_scrape(
+                app, page_url, formats=["markdown", "html"], actions=_venue_actions(slug)
+            )
         except Exception as exc:
             print(f"    [liederhalle-pages] failed page {page}: {exc}", flush=True)
             continue
@@ -2055,14 +2115,17 @@ def _discover_essen_monthly_urls(
     rendered = rendered_fallback or ""
     if not rendered:
         try:
-            result = app.scrape(
+            result = _firecrawl_scrape(
+                app,
                 venue["url"],
                 formats=["markdown", "html"],
                 headers=_DE_HEADERS,
                 actions=_venue_actions(slug),
             )
         except TypeError:
-            result = app.scrape(venue["url"], formats=["markdown", "html"], actions=_venue_actions(slug))
+            result = _firecrawl_scrape(
+                app, venue["url"], formats=["markdown", "html"], actions=_venue_actions(slug)
+            )
         except Exception as exc:
             print(f"    [essen-listing] render failed: {exc}", flush=True)
             result = None
@@ -2105,14 +2168,16 @@ def _discover_essen_monthly_urls(
             )
         for idx, day_url in enumerate(candidate_urls, 1):
             try:
-                result = app.scrape(
+                result = _firecrawl_scrape(
+                    app,
                     day_url,
                     formats=["markdown", "html"],
                     headers=_DE_HEADERS,
                     actions=_cookie_and_load_more_actions(max_rounds=12, settle_ms=1500),
                 )
             except TypeError:
-                result = app.scrape(
+                result = _firecrawl_scrape(
+                    app,
                     day_url,
                     formats=["markdown", "html"],
                     actions=_cookie_and_load_more_actions(max_rounds=12, settle_ms=1500),
@@ -2168,14 +2233,16 @@ def _discover_essen_monthly_urls(
         if not month_urls:
             added_from_events = 0
             try:
-                result = app.scrape(
+                result = _firecrawl_scrape(
+                    app,
                     page_url,
                     formats=["markdown", "html"],
                     headers=_DE_HEADERS,
                     actions=_cookie_and_load_more_actions(max_rounds=10, settle_ms=1500),
                 )
             except TypeError:
-                result = app.scrape(
+                result = _firecrawl_scrape(
+                    app,
                     page_url,
                     formats=["markdown", "html"],
                     actions=_cookie_and_load_more_actions(max_rounds=10, settle_ms=1500),
@@ -2521,7 +2588,8 @@ def _probe_one_url(app, venue: dict, probe_url: str, horizon_date: str) -> dict:
     result = None
     error = None
     try:
-        result = app.scrape(
+        result = _firecrawl_scrape(
+            app,
             probe_url,
             formats=formats,
             headers=_DE_HEADERS,
@@ -2529,7 +2597,9 @@ def _probe_one_url(app, venue: dict, probe_url: str, horizon_date: str) -> dict:
         )
     except TypeError:
         try:
-            result = app.scrape(probe_url, formats=formats, actions=_venue_actions(slug))
+            result = _firecrawl_scrape(
+                app, probe_url, formats=formats, actions=_venue_actions(slug)
+            )
         except Exception as exc:
             error = str(exc)
     except Exception as exc:
@@ -2569,9 +2639,11 @@ def _probe_one_detail_text(app, venue: dict, detail_url: str, horizon_date: str)
     error = None
     try:
         try:
-            result = app.scrape(detail_url, formats=["markdown", "html"], headers=_DE_HEADERS)
+            result = _firecrawl_scrape(
+                app, detail_url, formats=["markdown", "html"], headers=_DE_HEADERS
+            )
         except TypeError:
-            result = app.scrape(detail_url, formats=["markdown", "html"])
+            result = _firecrawl_scrape(app, detail_url, formats=["markdown", "html"])
     except Exception as exc:
         error = str(exc)
 
@@ -2749,7 +2821,7 @@ def _discover_all_event_urls(app, venue: dict) -> tuple[list[str], list[str]]:
     """
     slug = _slug(venue["name"])
     try:
-        result = app.map(venue["url"])
+        result = _firecrawl_map(app, venue["url"])
         if hasattr(result, "links"):
             links = result.links or []
         elif isinstance(result, dict):
@@ -3145,9 +3217,9 @@ def _scrape_one_detail(app, detail_url: str, venue: dict) -> dict:
         kwargs["actions"] = actions
     try:
         try:
-            result = app.scrape(detail_url, headers=_DE_HEADERS, **kwargs)
+            result = _firecrawl_scrape(app, detail_url, headers=_DE_HEADERS, **kwargs)
         except TypeError:
-            result = app.scrape(detail_url, **kwargs)
+            result = _firecrawl_scrape(app, detail_url, **kwargs)
         return _normalise(result)
     except Exception as e:
         print(f"    [warn] detail scrape failed ({detail_url[:60]}): {e}", flush=True)
@@ -4348,6 +4420,13 @@ def main(
     app = ClientCls(api_key=api_key)
     print(f"firecrawl-py version: {getattr(_fc_module, '__version__', 'unknown')}")
     print(f"Client class: {ClientCls.__name__}")
+    print(
+        "Firecrawl throttle: "
+        f"min_delay={max(0.0, _env_float('FIRECRAWL_MIN_DELAY_SECONDS', 1.0)):.2f}s, "
+        f"retries={max(1, _env_int('FIRECRAWL_MAX_RETRIES', 3))}, "
+        f"backoff={max(0.0, _env_float('FIRECRAWL_BACKOFF_SECONDS', 4.0)):.1f}s",
+        flush=True,
+    )
 
     venues = get_venues_by_tier(0)
     if slugs_filter:

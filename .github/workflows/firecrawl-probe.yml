@@ -43,6 +43,9 @@ jobs:
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
           PYTHONUNBUFFERED: "1"
           SLUGS: ${{ github.event.inputs.slugs }}
+          FIRECRAWL_MIN_DELAY_SECONDS: "1.0"
+          FIRECRAWL_MAX_RETRIES: "3"
+          FIRECRAWL_BACKOFF_SECONDS: "4.0"
         run: |
           ARGS=(--probe-discovery --horizon-months 6)
           if [ -n "$SLUGS" ]; then

@@ -58,6 +58,9 @@ jobs:
           MODE: ${{ github.event.inputs.mode }}
           SLUGS: ${{ github.event.inputs.slugs }}
           SITEMAP_DETAIL_BUDGET: ${{ github.event.inputs.sitemap_detail_budget }}
+          FIRECRAWL_MIN_DELAY_SECONDS: "1.0"
+          FIRECRAWL_MAX_RETRIES: "3"
+          FIRECRAWL_BACKOFF_SECONDS: "4.0"
         run: |
           ARGS=(--max-events "${MAX_EVENTS:-5}" --horizon-months 6 --skip-map)
           if [ "${SITEMAP_DETAIL_BUDGET:-0}" != "0" ]; then
