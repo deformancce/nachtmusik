@@ -2,22 +2,27 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#10224f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>nachtmusik — klassische Konzerte entdecken</title>
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap">
     <style>
         :root {
-            --bg: #FAF8F5;
-            --surface: #FFFFFF;
-            --surface-2: #F4F1EC;
-            --line: rgba(0, 0, 0, 0.06);
-            --line-2: rgba(0, 0, 0, 0.12);
-            --text: #1A1A1A;
-            --text-2: #5C5C5C;
-            --text-3: #8E8E93;
-            --accent: #1A1A1A;
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.02);
-            --shadow: 0 4px 16px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04);
-            --shadow-lg: 0 24px 56px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+            --bg: #1C2B36;
+            --surface: rgba(41, 55, 67, 0.75);
+            --surface-2: rgba(31, 46, 57, 0.85);
+            --line: rgba(255, 255, 255, 0.07);
+            --line-2: rgba(255, 255, 255, 0.14);
+            --text: #DCE8F0;
+            --text-2: #7FA3BB;
+            --text-3: #4E7087;
+            --accent: hsla(206,34%,44%,1);
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(0, 0, 0, 0.15);
+            --shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 2px 4px rgba(0, 0, 0, 0.20);
+            --shadow-lg: 0 24px 56px rgba(0, 0, 0, 0.50), 0 4px 12px rgba(0, 0, 0, 0.25);
             --radius-sm: 12px;
             --radius: 20px;
             --radius-lg: 28px;
@@ -26,10 +31,36 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        html {
+            background-color: #10224f;
+        }
+
         html, body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+            font-family: "Satoshi", -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
                          "Helvetica Neue", "Inter", system-ui, sans-serif;
-            background: var(--bg);
+            background:
+                radial-gradient(circle at 48% -4%,
+                    rgba(255, 220, 158, 0.9) 0%,
+                    rgba(215, 178, 215, 0.65) 18%,
+                    transparent 44%),
+                radial-gradient(circle at 102% 62%,
+                    rgba(255, 105, 103, 0.78) 0%,
+                    rgba(172, 88, 168, 0.48) 20%,
+                    transparent 45%),
+                radial-gradient(circle at -4% 38%,
+                    rgba(28, 88, 255, 0.9) 0%,
+                    rgba(70, 94, 210, 0.45) 25%,
+                    transparent 52%),
+                radial-gradient(circle at 50% 92%,
+                    rgba(2, 10, 30, 0.95) 0%,
+                    rgba(5, 16, 43, 0.8) 36%,
+                    transparent 68%),
+                linear-gradient(140deg,
+                    #10224f 0%,
+                    #3f4f98 32%,
+                    #7870a8 58%,
+                    #d48691 100%);
+            background-attachment: fixed;
             color: var(--text);
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
@@ -39,26 +70,17 @@
 
         body {
             min-height: 100vh;
+            min-height: 100dvh;
             overflow-x: hidden;
         }
 
-        /* ── Lovable-style soft mesh gradient ─────────────────────────── */
+        /* ── Vignette overlay ───────────────────────────────────────────── */
         .mesh {
             position: fixed;
             inset: 0;
             z-index: 0;
             pointer-events: none;
-            background:
-                radial-gradient(ellipse 60% 50% at 25% 35%, rgba(255, 180, 200, 0.45), transparent 60%),
-                radial-gradient(ellipse 50% 50% at 75% 30%, rgba(180, 200, 255, 0.55), transparent 60%),
-                radial-gradient(ellipse 70% 50% at 50% 65%, rgba(255, 200, 150, 0.40), transparent 65%);
-            filter: blur(40px);
-        }
-        .mesh::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 0%, var(--bg) 90%);
+            background: radial-gradient(ellipse 100% 60% at 50% 0%, transparent 40%, rgba(10,18,25,0.5) 100%);
         }
 
         /* ── Top nav ──────────────────────────────────────────────────── */
@@ -73,20 +95,21 @@
             margin: 0 auto;
         }
         .nav-brand {
-            font-size: 19px;
-            font-weight: 600;
+            font-size: 22px;
+            font-weight: 700;
             letter-spacing: -0.02em;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
+            color: var(--text);
+            text-decoration: none;
         }
-        .nav-brand .heart {
+        .nav-logo {
             display: inline-block;
-            width: 22px;
+            flex-shrink: 0;
             height: 22px;
-            background: linear-gradient(135deg, #FF6B9D, #FFA94D);
-            mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21s-7-4.5-9.5-9C.8 9 2 5 5.5 4.5 8 4.1 10 5.5 12 8c2-2.5 4-3.9 6.5-3.5C22 5 23.2 9 21.5 12c-2.5 4.5-9.5 9-9.5 9z'/></svg>") center/contain no-repeat;
-            -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21s-7-4.5-9.5-9C.8 9 2 5 5.5 4.5 8 4.1 10 5.5 12 8c2-2.5 4-3.9 6.5-3.5C22 5 23.2 9 21.5 12c-2.5 4.5-9.5 9-9.5 9z'/></svg>") center/contain no-repeat;
+            width: auto;
+            color: var(--text);
         }
         .nav-links {
             display: flex;
@@ -116,7 +139,7 @@
             border-radius: var(--radius-pill);
             transition: background 0.2s, color 0.2s;
         }
-        .btn-text:hover { color: var(--text); background: rgba(0,0,0,0.04); }
+        .btn-text:hover { color: var(--text); background: rgba(255,255,255,0.07); }
         .btn-primary {
             font-size: 14px;
             font-weight: 500;
@@ -134,17 +157,74 @@
         /* ── Hero ─────────────────────────────────────────────────────── */
         .hero {
             position: relative;
-            z-index: 5;
+            z-index: 50;
             max-width: 880px;
             margin: 0 auto;
-            padding: 80px 24px 60px;
+            padding: 40px 24px 64px;
             text-align: center;
+            min-height: calc(100vh - 84px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero > .searchbox { width: 100%; }
+        .hero > h1, .hero > .pills { width: 100%; }
+        body.is-results .hero {
+            min-height: 0;
+            display: block;
+            padding-top: 72px;
+            padding-bottom: 28px;
+        }
+        .scroll-cue {
+            position: absolute;
+            left: 50%;
+            bottom: 24px;
+            transform: translateX(-50%);
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-2);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            opacity: 0.7;
+            background: none;
+            border: 0;
+            cursor: pointer;
+            font-family: inherit;
+            padding: 8px;
+            transition: opacity 0.2s, color 0.2s;
+        }
+        .scroll-cue:hover { opacity: 1; color: var(--text); }
+        .scroll-cue svg {
+            width: 18px;
+            height: 18px;
+            animation: scroll-bounce 1.8s ease-in-out infinite;
+        }
+        @keyframes scroll-bounce {
+            0%, 100% { transform: translateY(0); opacity: 0.6; }
+            50%      { transform: translateY(6px); opacity: 1; }
+        }
+        body.is-results .scroll-cue { display: none; }
+        @media (prefers-reduced-motion: reduce) {
+            .scroll-cue svg { animation: none; }
+        }
+        body.is-results .hero h1 {
+            margin-bottom: 42px;
+        }
+        body.is-results .badge,
+        body.is-results .pills,
+        body.is-results .content-card {
+            display: none;
         }
         .badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(41, 55, 67, 0.75);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--line);
@@ -169,16 +249,18 @@
             font-weight: 700;
             letter-spacing: -0.035em;
             line-height: 1.05;
-            margin-bottom: 16px;
+            margin-bottom: 48px;
         }
-        .hero h1 .heart-inline {
+        .hero-title-link {
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .hero h1 .logo-inline {
             display: inline-block;
-            width: 0.9em;
-            height: 0.9em;
+            width: 0.82em;
+            height: 0.82em;
             vertical-align: -0.08em;
-            background: linear-gradient(135deg, #FF6B9D, #FFA94D);
-            mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21s-7-4.5-9.5-9C.8 9 2 5 5.5 4.5 8 4.1 10 5.5 12 8c2-2.5 4-3.9 6.5-3.5C22 5 23.2 9 21.5 12c-2.5 4.5-9.5 9-9.5 9z'/></svg>") center/contain no-repeat;
-            -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21s-7-4.5-9.5-9C.8 9 2 5 5.5 4.5 8 4.1 10 5.5 12 8c2-2.5 4-3.9 6.5-3.5C22 5 23.2 9 21.5 12c-2.5 4.5-9.5 9-9.5 9z'/></svg>") center/contain no-repeat;
             margin: 0 0.05em;
         }
         .hero p {
@@ -191,22 +273,34 @@
 
         /* ── Search box ───────────────────────────────────────────────── */
         .searchbox {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--line);
+            background: #0B1422;
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: var(--radius-lg);
             padding: 24px 24px 16px;
-            box-shadow: var(--shadow-lg);
+            box-shadow:
+                0 0 0 1px rgba(255,255,255,0.04),
+                0 24px 60px rgba(0,0,0,0.55),
+                0 0 60px 12px rgba(140, 175, 255, 0.22),
+                0 0 140px 32px rgba(140, 175, 255, 0.12);
             text-align: left;
-            transition: border-color 0.2s, box-shadow 0.2s;
+            transition: border-color 0.25s, box-shadow 0.25s;
+            position: relative;
+            z-index: 20;
         }
+        .searchbox::before { content: none; }
         .searchbox:focus-within {
             border-color: var(--line-2);
-            box-shadow: 0 32px 64px rgba(0,0,0,0.10), 0 8px 16px rgba(0,0,0,0.04);
+            box-shadow: 0 32px 64px rgba(0,0,0,0.40), 0 8px 16px rgba(0,0,0,0.20);
+        }
+        .searchbox-input {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         .searchbox input {
-            width: 100%;
+            flex: 1;
+            min-width: 0;
             border: none;
             background: transparent;
             font-size: 17px;
@@ -216,6 +310,23 @@
             outline: none;
         }
         .searchbox input::placeholder { color: var(--text-3); }
+        .searchbox-clear {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255,255,255,0.10);
+            color: var(--text-2);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 0;
+            transition: background 0.15s ease, color 0.15s ease;
+        }
+        .searchbox-clear:hover { background: rgba(255,255,255,0.18); color: var(--text); }
+        .searchbox-clear[hidden] { display: none; }
         .searchbox-row {
             display: flex;
             align-items: center;
@@ -242,7 +353,7 @@
             font-family: inherit;
             transition: background 0.15s, color 0.15s;
         }
-        .searchbox-icon-btn:hover { color: var(--text); background: rgba(0,0,0,0.04); }
+        .searchbox-icon-btn:hover { color: var(--text); background: rgba(255,255,255,0.07); }
         .searchbox-submit {
             width: 36px;
             height: 36px;
@@ -259,6 +370,66 @@
         .searchbox-submit:hover { opacity: 0.85; }
         .searchbox-submit:active { transform: scale(0.94); }
         .searchbox-submit svg { width: 16px; height: 16px; }
+        .suggestions {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: calc(100% + 14px);
+            z-index: 200;
+            display: none;
+            max-height: 360px;
+            overflow: auto;
+            background: #0B1422;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-lg);
+            box-shadow:
+                0 0 0 1px rgba(255,255,255,0.04),
+                0 24px 60px rgba(0,0,0,0.55),
+                0 32px 60px 12px rgba(140, 175, 255, 0.22),
+                0 60px 140px 32px rgba(140, 175, 255, 0.12);
+            clip-path: inset(0 -200px -200px -200px round 28px);
+            padding: 10px;
+        }
+        .suggestions.is-open { display: flex; flex-direction: column; gap: 6px; }
+        .suggestion {
+            width: 100%;
+            border: 1px solid rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.025);
+            color: var(--text);
+            border-radius: 14px;
+            padding: 12px 14px;
+            text-align: left;
+            cursor: pointer;
+            font: inherit;
+            display: grid;
+            gap: 4px;
+            transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+        }
+        .suggestion:hover,
+        .suggestion.is-active {
+            background: rgba(140, 175, 255, 0.10);
+            border-color: rgba(140, 175, 255, 0.30);
+        }
+        .suggestion-kind {
+            color: var(--text-3);
+            font-size: 11px;
+            font-weight: 650;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .suggestion-main {
+            font-size: 14px;
+            font-weight: 650;
+            line-height: 1.25;
+        }
+        .suggestion-sub {
+            color: var(--text-2);
+            font-size: 12px;
+            line-height: 1.35;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
 
         /* ── Pill suggestions ─────────────────────────────────────────── */
         .pills {
@@ -267,12 +438,14 @@
             justify-content: center;
             gap: 8px;
             margin-top: 24px;
+            position: relative;
+            z-index: 1;
         }
         .pill {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.75);
+            background: rgba(41, 55, 67, 0.70);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--line);
@@ -289,18 +462,115 @@
         .pill:hover {
             transform: translateY(-1px);
             box-shadow: var(--shadow);
-            background: rgba(255,255,255,0.95);
+            background: rgba(61, 94, 114, 0.70);
         }
         .pill:active { transform: translateY(0); }
         .pill svg { width: 14px; height: 14px; opacity: 0.6; }
 
-        /* ── Tiles section ────────────────────────────────────────────── */
-        .section {
+        /* ── Content card (Lovable-style sheet) ──────────────────────── */
+        .content-card {
+            position: relative;
+            z-index: 1;
+            background: hsla(57, 38%, 88%, 0.1);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 28px;
+            margin: 48px 20px 20px;
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 24px 64px rgba(0,0,0,0.20);
+        }
+
+        /* ── Search results page state ────────────────────────────────── */
+        .results-page {
+            display: none;
             position: relative;
             z-index: 5;
-            max-width: 1280px;
+            max-width: 1120px;
+            margin: 40px auto 80px;
+            padding: 0 24px;
+        }
+        body.is-results .results-page { display: block; }
+        .results-panel {
+            background: hsla(57, 38%, 88%, 0.1);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 28px;
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 24px 64px rgba(0,0,0,0.20);
+            padding: 32px;
+        }
+        .results-summary {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 22px;
+            color: var(--text-2);
+        }
+        .results-summary h2 {
+            color: var(--text);
+            font-size: 28px;
+            letter-spacing: -0.025em;
+        }
+        .results-list {
+            display: grid;
+            gap: 10px;
+        }
+        .result-row {
+            display: grid;
+            grid-template-columns: 145px minmax(0, 1fr) 190px;
+            gap: 18px;
+            padding: 18px;
+            background: #0B1422;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            color: var(--text);
+            text-decoration: none;
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.03), 0 12px 28px rgba(0,0,0,0.35);
+            transition: background 0.15s ease, border-color 0.15s ease;
+        }
+        .result-row:hover {
+            border-color: rgba(140, 175, 255, 0.30);
+            background: rgba(140, 175, 255, 0.10);
+        }
+        .result-date {
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .result-time {
+            margin-top: 2px;
+            color: var(--text-3);
+            font-size: 13px;
+        }
+        .result-title {
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            margin-bottom: 6px;
+        }
+        .result-program {
+            color: var(--text-2);
+            font-size: 13.5px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .result-venue {
+            color: var(--text-2);
+            font-size: 13px;
+        }
+        .result-venue strong {
+            display: block;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        /* ── Tiles section ────────────────────────────────────────────── */
+        .section {
+            max-width: 1480px;
             margin: 0 auto;
-            padding: 60px 32px 40px;
+            padding: 60px 24px 40px;
         }
         .section-head {
             display: flex;
@@ -329,8 +599,8 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
         }
 
         .tile {
@@ -351,33 +621,25 @@
         .tile:active { transform: translateY(-1px); }
 
         .tile-cover {
-            aspect-ratio: 16 / 10;
-            background: linear-gradient(135deg, #FFB4A2, #E5989B 50%, #B5828C);
+            aspect-ratio: 16 / 8;
+            background: #0F1F4A;
             position: relative;
             overflow: hidden;
         }
-        .tile-cover::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(circle at 30% 30%, rgba(255,255,255,0.35), transparent 60%),
-                radial-gradient(circle at 80% 70%, rgba(0,0,0,0.18), transparent 60%);
-        }
-        .tile:nth-child(2) .tile-cover { background: linear-gradient(135deg, #A8DADC, #457B9D 60%, #1D3557); }
-        .tile:nth-child(3) .tile-cover { background: linear-gradient(135deg, #FFD89B, #E89F4D 60%, #B97A35); }
-        .tile:nth-child(4) .tile-cover { background: linear-gradient(135deg, #CDB4DB, #9D85B9 60%, #5E437F); }
-        .tile:nth-child(5) .tile-cover { background: linear-gradient(135deg, #B5E48C, #76C893 60%, #34A0A4); }
-        .tile:nth-child(6) .tile-cover { background: linear-gradient(135deg, #FFC8DD, #EC97B6 60%, #B5638A); }
-        .tile:nth-child(7) .tile-cover { background: linear-gradient(135deg, #BDE0FE, #7AB5EE 60%, #2D6CDF); }
-        .tile:nth-child(8) .tile-cover { background: linear-gradient(135deg, #F1FAEE, #A8DADC 50%, #1D3557); }
-        .tile:nth-child(9) .tile-cover { background: linear-gradient(135deg, #FFE5B4, #FCB97D 50%, #C5896E); }
+        .tile-cover::before { content: none; }
+        /* Monochrom & gedeckt — eine dunkle Farbe pro Kachel */
+        .tile:nth-child(6n+1) .tile-cover { background: #0F1F4A; }  /* Blau */
+        .tile:nth-child(6n+2) .tile-cover { background: #4A1A1A; }  /* Coral */
+        .tile:nth-child(6n+3) .tile-cover { background: #3A1738; }  /* Purpur */
+        .tile:nth-child(6n+4) .tile-cover { background: #4A3618; }  /* Cream/Bronze */
+        .tile:nth-child(6n+5) .tile-cover { background: #251F44; }  /* Lila */
+        .tile:nth-child(6n+6) .tile-cover { background: #3F1F26; }  /* Rosé */
 
         .tile-cover .badge-tile {
             position: absolute;
             top: 14px;
             left: 14px;
-            background: rgba(255,255,255,0.92);
+            background: rgba(28, 43, 54, 0.85);
             backdrop-filter: blur(8px);
             border-radius: var(--radius-pill);
             padding: 5px 12px;
@@ -399,40 +661,57 @@
             font-size: 12px;
             font-weight: 600;
             letter-spacing: 0.01em;
+            max-width: 44%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .tile-cover .composer {
             position: absolute;
             bottom: 16px;
             left: 18px;
+            right: 118px;
             color: white;
             font-size: 22px;
             font-weight: 700;
             letter-spacing: -0.02em;
             line-height: 1.1;
-            max-width: 70%;
+            max-width: none;
             text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
 
         .tile-body {
             padding: 18px 20px 20px;
         }
         .tile-meta {
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            display: grid;
+            grid-template-columns: auto auto minmax(0, 1fr);
+            align-items: start;
+            gap: 10px;
             font-size: 12px;
             font-weight: 600;
             letter-spacing: 0.04em;
             text-transform: uppercase;
             color: var(--text-3);
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+        }
+        .tile-meta span {
+            min-width: 0;
+        }
+        .tile-meta .meta-date,
+        .tile-meta .meta-venue {
+            overflow-wrap: anywhere;
+        }
+        .tile-meta .meta-time {
+            white-space: nowrap;
+            color: var(--text-2);
         }
         .tile-meta .sep {
-            width: 3px;
-            height: 3px;
-            border-radius: 50%;
-            background: var(--text-3);
-            opacity: 0.5;
+            display: none;
         }
         .tile-title {
             font-size: 18px;
@@ -462,11 +741,9 @@
 
         /* ── Venue chips row ──────────────────────────────────────────── */
         .venues {
-            position: relative;
-            z-index: 5;
-            max-width: 1280px;
+            max-width: 1480px;
             margin: 0 auto;
-            padding: 30px 32px 80px;
+            padding: 30px 24px 80px;
         }
         .venues-grid {
             display: grid;
@@ -488,6 +765,12 @@
             transform: translateY(-2px);
             box-shadow: var(--shadow);
             border-color: var(--line-2);
+            background: rgba(61, 94, 114, 0.55);
+        }
+        .venue-chip.is-active {
+            border-color: rgba(255, 255, 255, 0.28);
+            background: rgba(61, 94, 114, 0.78);
+            box-shadow: var(--shadow);
         }
         .venue-chip .v-city {
             font-size: 12px;
@@ -505,8 +788,6 @@
 
         /* ── Footer ───────────────────────────────────────────────────── */
         footer {
-            position: relative;
-            z-index: 5;
             text-align: center;
             padding: 40px 32px 60px;
             color: var(--text-3);
@@ -514,16 +795,178 @@
             border-top: 1px solid var(--line);
             margin-top: 40px;
         }
+        .empty-state {
+            grid-column: 1 / -1;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-2);
+            border: 1px dashed var(--line-2);
+            border-radius: var(--radius);
+            background: rgba(28, 43, 54, 0.45);
+            font-size: 15px;
+            text-align: center;
+            padding: 28px;
+        }
+        .notify-soon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 38px;
+            padding: 0 16px;
+            border: 1px solid var(--line-2);
+            border-radius: var(--radius-pill);
+            background: rgba(61, 94, 114, 0.58);
+            color: var(--text);
+            font: inherit;
+            font-size: 14px;
+            font-weight: 650;
+            cursor: pointer;
+            text-decoration: none;
+            transition: opacity 0.15s ease, transform 0.15s ease;
+        }
+        .notify-soon:hover { opacity: 0.9; transform: translateY(-1px); }
+        .notify-soon[disabled], .notify-soon:disabled { cursor: not-allowed; opacity: 0.82; }
+        .notify-note {
+            color: var(--text-3);
+            font-size: 13px;
+        }
 
         @media (max-width: 640px) {
+            html, body {
+                min-height: 100svh;
+                background:
+                    radial-gradient(
+                        circle at 55% 8%,
+                        rgba(255, 221, 168, 0.88) 0%,
+                        rgba(219, 185, 212, 0.62) 14%,
+                        rgba(136, 120, 214, 0.34) 31%,
+                        transparent 52%
+                    ),
+                    radial-gradient(
+                        circle at 112% 55%,
+                        rgba(255, 109, 118, 0.72) 0%,
+                        rgba(191, 87, 158, 0.44) 18%,
+                        transparent 43%
+                    ),
+                    radial-gradient(
+                        circle at -18% 42%,
+                        rgba(0, 97, 255, 0.95) 0%,
+                        rgba(38, 83, 218, 0.62) 22%,
+                        transparent 48%
+                    ),
+                    radial-gradient(
+                        circle at 50% 86%,
+                        rgba(2, 8, 28, 0.98) 0%,
+                        rgba(5, 14, 42, 0.9) 34%,
+                        rgba(7, 18, 52, 0.65) 58%,
+                        transparent 78%
+                    ),
+                    linear-gradient(
+                        180deg,
+                        #0a1030 0%,
+                        #18245d 28%,
+                        #4d49a0 48%,
+                        #3d2f68 66%,
+                        #070b22 100%
+                    );
+                background-attachment: fixed;
+                background-size: cover;
+            }
             .nav { padding: 16px 20px; }
             .nav-links { display: none; }
-            .hero { padding: 40px 20px 40px; }
+            .hero { padding: 32px 20px 24px; }
             .hero h1 { font-size: 36px; }
             .hero p { font-size: 16px; margin-bottom: 32px; }
+            .searchbox input { font-size: 15px; }
+            .pills { margin-top: 18px; gap: 6px; }
+            .pill { padding: 7px 12px; font-size: 12px; gap: 6px; }
+            .pill svg { width: 12px; height: 12px; }
+            /* Pin the scroll-cue to the bottom edge of the viewport on
+               mobile so it doesn't collide with the wrapped pill row. */
+            .scroll-cue {
+                position: fixed;
+                left: 50%;
+                bottom: 16px;
+                transform: translateX(-50%);
+                z-index: 5;
+                opacity: 0.85;
+            }
+            .scroll-cue span { display: none; }
+            .scroll-cue svg { width: 22px; height: 22px; }
+            body.is-results .scroll-cue,
+            body.is-searching-mobile .scroll-cue { display: none; }
+            /* Tiny breathing room above the searchbox once the nav is
+               collapsed in mobile search mode. */
+            .searchbox { scroll-margin-top: 16px; }
+            .badge {
+                justify-content: center;
+                width: fit-content;
+                max-width: calc(100vw - 64px);
+                padding: 6px 14px;
+                font-size: 12px;
+                line-height: 1.35;
+                gap: 5px;
+                margin: 0 auto 26px;
+                text-align: center;
+                flex-wrap: nowrap;
+                white-space: nowrap;
+            }
+            .badge .dot {
+                width: 5px;
+                height: 5px;
+                box-shadow: 0 0 0 2px rgba(52, 199, 89, 0.18);
+            }
+            .content-card { border-radius: 20px; margin: 12px 12px 12px; }
+            .grid { grid-template-columns: 1fr; }
             .section { padding: 40px 20px 24px; }
             .venues { padding: 20px 20px 60px; }
             .section-head h2 { font-size: 24px; }
+            .results-page { padding: 0 12px; }
+            .results-panel { border-radius: 20px; padding: 18px; }
+            .result-row { grid-template-columns: 1fr; gap: 8px; }
+
+            /* Mobile "search-focus" mode: pulls the searchbox up to the top
+               so the on-screen keyboard doesn't cover the suggestions, and
+               fades out content below to keep the focus tight. */
+            body.is-searching-mobile .badge,
+            body.is-searching-mobile .hero h1,
+            body.is-searching-mobile .hero p,
+            body.is-searching-mobile .pills,
+            body.is-searching-mobile .scroll-cue,
+            body.is-searching-mobile .content-card {
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.18s ease;
+            }
+            body.is-searching-mobile {
+                overflow: hidden;
+                height: 100svh;
+                touch-action: none;
+            }
+            body.is-searching-mobile .hero {
+                padding-top: 12px;
+            }
+            body.is-searching-mobile .nav {
+                opacity: 0;
+                pointer-events: none;
+                height: 0;
+                padding: 0;
+                overflow: hidden;
+                transition: opacity 0.18s ease;
+            }
+            .results-summary {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+                margin-bottom: 16px;
+            }
+            .results-summary h2 { font-size: 20px; line-height: 1.25; word-break: break-word; }
+            #search-count { font-size: 13px; white-space: nowrap; }
         }
     </style>
 </head>
@@ -531,32 +974,38 @@
     <div class="mesh"></div>
 
     <nav class="nav">
-        <div class="nav-brand">
-            <span class="heart"></span>
-            nachtmusik
-        </div>
-        <div class="nav-links">
-            <a href="#">Konzerte</a>
-            <a href="#">Spielstätten</a>
-            <a href="#">Komponisten</a>
-            <a href="#">Städte</a>
-        </div>
+        <a class="nav-brand" href="./home.html" aria-label="Nachtmusik – zur Startseite">
+            <svg class="nav-logo" viewBox="0 0 776 151" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" aria-hidden="true">
+                <g transform="matrix(1,0,0,1,-119.239355,-98.493852)">
+                    <g transform="matrix(8.933333,0,0,8.933333,-2584.632768,-1143.933462)">
+                        <text x="323.147" y="151.523" style="font-family:'Satoshi-Black','Satoshi',sans-serif;font-weight:900;font-size:12px;fill:currentColor;">nachtmusik</text>
+                    </g>
+                    <g transform="matrix(0.212707,0,0,0.212707,73.869429,68.18535)">
+                        <path d="M699.159,406.54C698.908,404.833 697.136,392.818 694.594,385.464C692.061,378.134 677.798,336.863 627.502,315.496C513.887,267.232 406.79,346.027 392.473,451.496C389.005,477.046 392.848,748.328 390.431,750.419C389.357,751.347 215.141,750.913 214.435,750.623C213.422,750.207 213.507,749.681 213.413,611.5C213.388,574.94 213.116,176.67 213.506,154.5C213.557,151.644 216.055,152.16 218.497,152.148C223.934,152.123 387.439,152.159 387.53,152.165C390.37,152.356 389.786,153.913 389.782,192.501C389.779,213.803 389.277,217.327 391.724,214.98C403.066,204.102 436.074,180.169 464.697,167.959C654.483,87.002 838.698,209.721 853.02,385.526C854.209,400.116 853.984,400.125 853.808,568.501C853.667,704.319 856.18,715.31 842.022,749.292C802.654,843.787 688.849,876.758 607.221,823.914C515.931,764.814 511.473,642.849 580.756,577.766C630.394,531.136 685.966,533.746 697.506,533.641C700.849,533.61 699.911,529.123 699.913,528.502C700.252,421.28 699.881,416.27 699.159,406.54Z" fill="currentColor"/>
+                    </g>
+                </g>
+            </svg>
+        </a>
         <div class="nav-actions">
             <button class="btn-text">Anmelden</button>
             <button class="btn-primary">Registrieren</button>
         </div>
     </nav>
 
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="badge">
             <span class="dot"></span>
-            150+ Konzerte aus 13 Häusern · Saison 2026/27
+            <span id="event-count">1.441</span> Konzerte aus <span id="venue-count">13</span> Häusern
         </div>
-        <h1>Finde dein nächstes <span class="heart-inline"></span> Klassikkonzert</h1>
-        <p>Suche nach Komponist, Werk, Solist, Orchester oder Stadt — und entdecke, was diese Woche in Deutschlands Konzertsälen läuft.</p>
-
+        <h1><a class="hero-title-link" href="./home.html" aria-label="Zur Startseite">Finde dein nächstes Klassikkonzert</a></h1>
         <form class="searchbox" onsubmit="event.preventDefault(); doSearch();">
-            <input id="q" type="text" placeholder="z.B. Brahms 1, András Schiff, Elbphilharmonie, München …" autocomplete="off">
+            <div class="searchbox-input">
+                <input id="q" type="text" placeholder="z.B. Brahms 1, András Schiff, Elbphilharmonie, München …" autocomplete="off">
+                <button type="button" id="clear-q" class="searchbox-clear" aria-label="Suche leeren" hidden>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+                </button>
+            </div>
+            <div class="suggestions" id="suggestions" role="listbox"></div>
             <div class="searchbox-row">
                 <div class="searchbox-row-left">
                     <button type="button" class="searchbox-icon-btn">
@@ -574,213 +1023,952 @@
             </div>
         </form>
 
+        <button type="button" class="scroll-cue" aria-label="Weiter scrollen" onclick="document.querySelector('.content-card')?.scrollIntoView({behavior:'smooth'})">
+            <span>Mehr entdecken</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+
         <div class="pills">
-            <button class="pill" onclick="setQuery('Brahms')">
+            <button class="pill" onclick="setQuery('Mahler 3')">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-                Brahms
+                Mahler 3
             </button>
-            <button class="pill" onclick="setQuery('Elbphilharmonie')">Elbphilharmonie</button>
-            <button class="pill" onclick="setQuery('Klavierabend')">Klavierabend</button>
-            <button class="pill" onclick="setQuery('Berliner Philharmoniker')">Berliner Philharmoniker</button>
-            <button class="pill" onclick="setQuery('diese Woche')">Diese Woche</button>
+            <button class="pill" onclick="setQuery('Brahms 1')">Brahms 1</button>
+            <button class="pill" onclick="setQuery('Tschaikowsky 4')">Tschaikowsky 4</button>
+            <button class="pill" onclick="setQuery('Beethoven 5')">Beethoven 5</button>
+            <button class="pill" onclick="setQuery('Klavierkonzert')">Klavierkonzert</button>
         </div>
     </section>
 
-    <section class="section">
-        <div class="section-head">
-            <h2>Höhepunkte der Saison</h2>
-            <a href="#">Alle ansehen
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
+    <section class="results-page" id="results-page">
+        <div class="results-panel">
+            <div class="results-summary">
+                <h2 id="search-title">Suchergebnisse</h2>
+                <span id="search-count"></span>
+            </div>
+            <div class="results-list" id="results-list"></div>
         </div>
-
-        <div class="grid" id="grid"></div>
     </section>
 
-    <section class="venues">
-        <div class="section-head">
-            <h2>Spielstätten</h2>
-            <a href="#">Alle Häuser
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-        </div>
-        <div class="venues-grid" id="venues"></div>
-    </section>
+    <div class="content-card">
+        <section class="section">
+            <div class="section-head">
+                <h2 id="results-title">Nachtmusik Picks</h2>
+                <a href="#" id="show-all">
+                    Alle anzeigen
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+            </div>
 
-    <footer>
-        nachtmusik · klassische Konzerte aus deutschen Häusern
-    </footer>
+            <div class="grid" id="grid"></div>
+        </section>
 
+        <section class="venues">
+            <div class="section-head">
+                <h2>Spielstätten</h2>
+                <a href="#">Alle Häuser
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+            </div>
+            <div class="venues-grid" id="venues"></div>
+        </section>
+
+        <footer>
+            nachtmusik · klassische Konzerte aus deutschen Häusern
+        </footer>
+    </div>
+
+<script src="./crawl-data.js"></script>
 <script>
-    const EVENTS = [
-        {
-            composer: "Mahler",
-            badge: "Empfehlung",
-            date: "24. Mai 2026",
-            time: "19:30",
-            venue: "Berliner Philharmonie",
-            city: "Berlin",
-            title: "Sinfonie Nr. 9",
-            program: "Mahler: Sinfonie Nr. 9 D-Dur",
-            performers: "Berliner Philharmoniker",
-            conductor: "Kirill Petrenko",
-            price: "ab €35",
-        },
-        {
-            composer: "Bach",
-            badge: "Heute",
-            date: "13. Juni 2026",
-            time: "16:00",
-            venue: "Gewandhaus",
-            city: "Leipzig",
-            title: "Klavierabend",
-            program: "Bach: Clavierübung Teil II · Partita h-Moll BWV 831 · Italienisches Konzert BWV 971",
-            performers: "András Schiff",
-            conductor: null,
-            price: "€25–€65",
-        },
-        {
-            composer: "Trifonov",
-            badge: "Neu",
-            date: "27. Sep 2026",
-            time: "19:30",
-            venue: "Gewandhaus",
-            city: "Leipzig",
-            title: "Klavierrezital — Daniil Trifonov",
-            program: "Händel: 5. Suite E-Dur HWV 430 · Strawinsky: Sonate · Schubert: Wandererfantasie",
-            performers: "Daniil Trifonov",
-            conductor: null,
-            price: "€6–€55",
-        },
-        {
-            composer: "Brahms",
-            badge: "Empfehlung",
-            date: "14. Juni 2026",
-            time: "11:00",
-            venue: "Gewandhaus",
-            city: "Leipzig",
-            title: "Variationen",
-            program: "Brahms: Haydn-Variationen op. 56a · Barber: Second Essay · Brahms: 1. Sinfonie op. 68",
-            performers: "MDR-Sinfonieorchester",
-            conductor: "Roderick Cox",
-            price: "€23–€56",
-        },
-        {
-            composer: "Pärt",
-            badge: "Chormusik",
-            date: "20. Juni 2026",
-            time: "19:00",
-            venue: "Museum der bildenden Künste",
-            city: "Leipzig",
-            title: "Astonishing Estonia",
-            program: "Pärt: Magnificat · Spiegel im Spiegel · Nunc dimittis · Tormis: Incantantio maris",
-            performers: "GewandhausChor",
-            conductor: "Gregor Meyer",
-            price: "€18",
-        },
-        {
-            composer: "Wagner",
-            badge: "Oper",
-            date: "23. Mai 2026",
-            time: "19:00",
-            venue: "Opernhaus",
-            city: "Leipzig",
-            title: "Cosí fan tutte",
-            program: "Mozart: Cosí fan tutte — Dramma giocoso KV 588",
-            performers: "Fiordiligi · Dorabella",
-            conductor: "Yura Yang",
-            price: "€18–€85",
-        },
-        {
-            composer: "Schumann",
-            badge: "Großes Konzert",
-            date: "18. Juni 2026",
-            time: "19:30",
-            venue: "Gewandhaus",
-            city: "Leipzig",
-            title: "Großes Konzert: Bienensticheln mit B-A-C-H",
-            program: "Pärt: Wenn Bach Bienen gezüchtet hätte · Schumann: Klavierkonzert a-Moll op. 54",
-            performers: "Gewandhausorchester · Yunchan Lim",
-            conductor: "Andris Nelsons",
-            price: "€6–€80",
-        },
-        {
-            composer: "Beethoven",
-            badge: "Neu",
-            date: "19. Mai 2027",
-            time: "20:00",
-            venue: "Konzerthaus Dortmund",
-            city: "Dortmund",
-            title: "Sir Simon Rattle · Eroica",
-            program: "Beethoven: 3. Sinfonie 'Eroica' Es-Dur op. 55",
-            performers: "BR-Symphonieorchester",
-            conductor: "Sir Simon Rattle",
-            price: "€29–€95",
-        },
-        {
-            composer: "Mozart",
-            badge: "Familienkonzert",
-            date: "25. Apr 2027",
-            time: "15:00",
-            venue: "Konzerthaus Dortmund",
-            city: "Dortmund",
-            title: "Karneval der Tiere",
-            program: "Saint-Saëns: Karneval der Tiere — moderiert für Familien",
-            performers: "Dodo · Dortmunder Philharmoniker",
-            conductor: null,
-            price: "€12–€28",
-        },
-    ];
+    const RAW_EVENTS = window.CRAWL_EVENTS || [];
+    let EVENTS = [];
+    const VENUES = window.CRAWL_VENUES || [];
+    const SEARCH_API = '/api/search';
+    let searchRequestSeq = 0;
+    let searchDebounceTimer = null;
+    let activeVenue = null;
+    let showAllEvents = false;
+    let visibleLimit = 65;
+    let activeSuggestion = -1;
+    let currentSuggestions = [];
 
-    const VENUES = [
-        { name: "Berliner Philharmonie", city: "Berlin" },
-        { name: "Konzerthaus Berlin", city: "Berlin" },
-        { name: "Festspielhaus", city: "Baden-Baden" },
-        { name: "Glocke", city: "Bremen" },
-        { name: "Konzerthaus", city: "Dortmund" },
-        { name: "Tonhalle", city: "Düsseldorf" },
-        { name: "Philharmonie", city: "Essen" },
-        { name: "Alte Oper", city: "Frankfurt" },
-        { name: "Elbphilharmonie", city: "Hamburg" },
-        { name: "Kölner Philharmonie", city: "Köln" },
-        { name: "Gewandhaus", city: "Leipzig" },
-        { name: "Isarphilharmonie", city: "München" },
-        { name: "Liederhalle", city: "Stuttgart" },
-    ];
+    const SEARCH_ALIASES = {
+        "brahms": ["johannes brahms"],
+        "beethoven": ["ludwig van beethoven"],
+        "mozart": ["wolfgang amadeus mozart"],
+        "bach": ["johann sebastian bach", "j s bach"],
+        "mahler": ["gustav mahler"],
+        "schubert": ["franz schubert"],
+        "schumann": ["robert schumann", "clara schumann"],
+        "mendelssohn": ["felix mendelssohn", "felix mendelssohn bartholdy"],
+        "strauss": ["richard strauss", "johann strauss"],
+        "weber": ["carl maria von weber", "c m weber", "cm weber"],
+        "tschaikowsky": ["tchaikovsky", "peter iljitsch tschaikowsky", "pyotr ilyich tchaikovsky"],
+        "tchaikovsky": ["tschaikowsky", "peter iljitsch tschaikowsky"],
+        "dvorak": ["dvorak", "antonin dvorak", "antonín dvořák"],
+        "prokofjew": ["prokofiev", "sergej prokofjew", "sergei prokofiev"],
+        "prokofiev": ["prokofjew", "sergej prokofjew"],
+        "bartok": ["bartók", "bela bartok", "béla bartók"],
+        "dimitri": ["dmitri", "dmitrij"],
+        "dmitri": ["dimitri", "dmitrij"],
+        "dmitrij": ["dimitri", "dmitri"],
+        "schostakowitsch": ["shostakovich"],
+        "shostakovich": ["schostakowitsch"],
+        "symphony": ["symphonie", "sinfonie", "sinfonia"],
+        "symphonie": ["symphony", "sinfonie", "sinfonia"],
+        "sinfonie": ["symphony", "symphonie", "sinfonia"],
+        "piano": ["klavier"],
+        "klavier": ["piano"],
+        "concerto": ["konzert"],
+        "konzert": ["concerto"],
+        "violin": ["violine", "geige"],
+        "violine": ["violin", "geige"],
+        "quartet": ["quartett"],
+        "quartett": ["quartet"],
+        "erste": ["1"],
+        "erster": ["1"],
+        "first": ["1"],
+        "zweite": ["2"],
+        "zweiter": ["2"],
+        "second": ["2"],
+        "dritte": ["3"],
+        "dritter": ["3"],
+        "third": ["3"],
+        "vierte": ["4"],
+        "vierter": ["4"],
+        "fourth": ["4"],
+        "fuenfte": ["5"],
+        "fünfte": ["5"],
+        "fuenfter": ["5"],
+        "fünfter": ["5"],
+        "fifth": ["5"],
+    };
+
+    const WORK_WORDS = ["symphonie", "sinfonie", "symphony", "konzert", "concerto", "quartett", "quartet", "sonate", "messe"];
+    const COMPOSER_DISPLAY_NAMES = {
+        "bach": "Johann Sebastian Bach",
+        "j s bach": "Johann Sebastian Bach",
+        "js bach": "Johann Sebastian Bach",
+        "beethoven": "Ludwig van Beethoven",
+        "l v beethoven": "Ludwig van Beethoven",
+        "lv beethoven": "Ludwig van Beethoven",
+        "brahms": "Johannes Brahms",
+        "j brahms": "Johannes Brahms",
+        "joh brahms": "Johannes Brahms",
+        "mahler": "Gustav Mahler",
+        "g mahler": "Gustav Mahler",
+        "mozart": "Wolfgang Amadeus Mozart",
+        "w a mozart": "Wolfgang Amadeus Mozart",
+        "wa mozart": "Wolfgang Amadeus Mozart",
+        "schubert": "Franz Schubert",
+        "f schubert": "Franz Schubert",
+        "f schuberts": "Franz Schubert",
+        "schumann": "Robert Schumann",
+        "r schumann": "Robert Schumann",
+        "mendelssohn": "Felix Mendelssohn",
+        "f mendelssohn": "Felix Mendelssohn",
+        "weber": "Carl Maria von Weber",
+        "c m weber": "Carl Maria von Weber",
+        "cm weber": "Carl Maria von Weber",
+        "carl maria von weber": "Carl Maria von Weber",
+        "strauss": "Richard Strauss",
+        "r strauss": "Richard Strauss",
+        "richard strauss": "Richard Strauss",
+        "tschaikowsky": "Peter Iljitsch Tschaikowsky",
+        "tchaikovsky": "Peter Iljitsch Tschaikowsky",
+        "dvorak": "Antonín Dvořák",
+        "prokofjew": "Sergej Prokofjew",
+        "prokofiev": "Sergej Prokofjew",
+        "bartok": "Béla Bartók",
+        "schostakowitsch": "Dimitri Schostakowitsch",
+        "schostakowitschs": "Dimitri Schostakowitsch",
+        "dmitri schostakowitsch": "Dimitri Schostakowitsch",
+        "dimitri schostakowitsch": "Dimitri Schostakowitsch",
+        "dmitrij schostakowitsch": "Dimitri Schostakowitsch",
+        "shostakovich": "Dimitri Schostakowitsch",
+        "dmitri shostakovich": "Dimitri Schostakowitsch",
+        "dimitri shostakovich": "Dimitri Schostakowitsch",
+        "dmitrij shostakovich": "Dimitri Schostakowitsch",
+    };
+
+    function canonicalComposerName(name) {
+        const normalized = normalizeComposerAlias(name)
+            .replace(/s$/, '');
+        return COMPOSER_DISPLAY_NAMES[normalizeComposerAlias(name)] ||
+            COMPOSER_DISPLAY_NAMES[normalized] ||
+            name;
+    }
+
+    function normalizeComposerAlias(name) {
+        return normalizeSearch(String(name || '')
+            .replace(/\b([A-ZÄÖÜ])\./g, '$1 ')
+            .replace(/\b([A-ZÄÖÜ])\s*\.?\s*([A-ZÄÖÜ])\./g, '$1 $2 '));
+    }
+
+    function enrichEvent(ev) {
+        const mainWork = chooseMainWork(ev);
+        return {
+            ...ev,
+            title: cleanEventTitle(ev.title, ev.url),
+            mainWork,
+        };
+    }
+
+    function cleanEventTitle(title, url = '') {
+        let value = String(title || '').replace(/\s+/g, ' ').trim();
+        value = value
+            .replace(/\bFuenfte\b/g, 'Fünfte')
+            .replace(/\bFuenfter\b/g, 'Fünfter')
+            .replace(/\bFuer\b/g, 'Für')
+            .replace(/\bHoeren\b/g, 'Hören')
+            .replace(/\bKuenstler\b/g, 'Künstler')
+            .replace(/\bMaerchen\b/g, 'Märchen');
+
+        const pathPart = String(url || '').split('?')[0].replace(/\/$/, '').split('/').pop() || '';
+        const urlSuffix = pathPart.match(/-(\d{1,5})$/)?.[1];
+        if (urlSuffix && new RegExp(`\\s${urlSuffix}$`).test(value)) {
+            value = value.replace(new RegExp(`\\s${urlSuffix}$`), '');
+        }
+
+        value = value.replace(/\b(\d{1,2})\s+(Philharmonisches|Meister|Abonnement|Afterwork|Konzert)\b/g, '$1. $2');
+        value = value.replace(/\b(5)\s*Nachsechs\b/g, '$1nachsechs');
+        value = value.replace(/^Bremer Philharmoniker\s+(.+?)\s+(\d{1,2}\.\s+Philharmonisches Konzert)$/i, 'Bremer Philharmoniker: $1 · $2');
+        value = value.replace(/\s+([,.:;!?])/g, '$1').replace(/\s+/g, ' ').trim();
+        return value;
+    }
+
+    function chooseMainWork(ev) {
+        const works = (ev.program || [])
+            .map((entry, index) => parseProgramEntry(entry, index, ev.title))
+            .filter(Boolean)
+            .sort((a, b) => b.score - a.score || a.index - b.index);
+        return works[0] || null;
+    }
+
+    function parseProgramEntry(entry, index, eventTitle) {
+        const raw = String(entry || '').trim();
+        if (!raw || !raw.includes(':')) return null;
+        const [composerRaw, ...rest] = raw.split(':');
+        const composer = canonicalComposerName(composerRaw.trim());
+        const workTitle = rest.join(':').trim();
+        if (!composer || !workTitle) return null;
+        return {
+            composer,
+            title: cleanProgramTitle(workTitle),
+            label: `${composer}: ${cleanProgramTitle(workTitle)}`,
+            score: mainWorkScore(composer, workTitle, index, eventTitle),
+            index,
+        };
+    }
+
+    function cleanProgramTitle(title) {
+        return String(title || '')
+            .replace(/\bSymphony\s+No\.?\s*/gi, 'Sinfonie Nr. ')
+            .replace(/\bSymphony\b/gi, 'Sinfonie')
+            .replace(/\bClarinet\s+Concerto\s+No\.?\s*/gi, 'Klarinettenkonzert Nr. ')
+            .replace(/\bPiano\s+Concerto\s+No\.?\s*/gi, 'Klavierkonzert Nr. ')
+            .replace(/\bViolin\s+Concerto\s+No\.?\s*/gi, 'Violinkonzert Nr. ')
+            .replace(/\bCello\s+Concerto\s+No\.?\s*/gi, 'Cellokonzert Nr. ')
+            .replace(/\bConcerto\s+No\.?\s*/gi, 'Konzert Nr. ')
+            .replace(/\bNo\.?\s*/g, 'Nr. ')
+            .replace(/\bin\s+B\s+Minor\b/gi, 'in h-Moll')
+            .replace(/\bin\s+C\s+Major\b/gi, 'in C-Dur')
+            .replace(/\bin\s+F\s+Minor\b/gi, 'in f-Moll')
+            .replace(/\bin\s+A\s+Major\b/gi, 'in A-Dur')
+            .replace(/\bin\s+D\s+Major\b/gi, 'in D-Dur')
+            .replace(/\bin\s+D\s+Minor\b/gi, 'in d-Moll')
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+
+    function mainWorkScore(composer, title, index, eventTitle) {
+        const text = normalizeSearch(`${composer} ${title}`);
+        const eventText = normalizeSearch(eventTitle);
+        let score = 20 - index * 4;
+        if (/\b(symphonie|sinfonie|symphony)\b/.test(text)) score += 120;
+        if (/\b(klavierkonzert|violinkonzert|cellokonzert|bratschenkonzert)\b/.test(text)) score += 92;
+        else if (/\b(konzert|concerto)\b/.test(text)) score += 72;
+        if (/\b(oper|requiem|messe|oratorium|passion)\b/.test(text)) score += 82;
+        if (/\b(sonate|quartett|quintett|sextett|trio)\b/.test(text)) score += 50;
+        if (/\b(ouvertuere|ouverture|suite|variation|variationen)\b/.test(text)) score += 30;
+        if (/\b(nr|no|op|opus|kv|bwv|hob|d)\s*\d+\b/.test(text)) score += 18;
+        if (eventText.includes(normalizeSearch(composer))) score += 30;
+        if (/\b(fuenfte|funfte|fünfte|5)\b/.test(eventText) && /\b(symphonie|sinfonie|symphony).*\b5\b|\b5\b.*\b(symphonie|sinfonie|symphony)\b/.test(text)) score += 90;
+        if (/\b(masquerade|finlandia|vorspiel|prelude)\b/.test(text)) score -= 20;
+        return score;
+    }
+
+    function composerQueryFor(query) {
+        const normalizedQuery = normalizeSearch(query);
+        const candidates = new Map();
+        for (const [alias, display] of Object.entries(COMPOSER_DISPLAY_NAMES)) {
+            candidates.set(normalizeSearch(alias), display);
+            candidates.set(normalizeSearch(display), display);
+        }
+        for (const [candidate, display] of candidates) {
+            if (candidate && normalizedQuery.includes(candidate)) return display;
+        }
+        return null;
+    }
+
+    function composerQueryTerms(query) {
+        const composer = composerQueryFor(query);
+        return composer ? new Set(normalizeSearch(composer).split(' ')) : new Set();
+    }
+
+    const dateFormatter = new Intl.DateTimeFormat('de-DE', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+    });
+
+    function formatDate(isoDate) {
+        const [year, month, day] = isoDate.split('-').map(Number);
+        return dateFormatter.format(new Date(year, month - 1, day));
+    }
+
+    function escapeHtml(value) {
+        return String(value ?? '').replace(/[&<>"']/g, char => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#039;',
+        }[char]));
+    }
+
+    function normalizeSearch(value) {
+        return String(value ?? '')
+            .toLowerCase()
+            .replace(/ß/g, 'ss')
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/[^a-z0-9]+/g, ' ')
+            .trim()
+            .replace(/\s+/g, ' ');
+    }
+
+    function eventSearchFields(ev) {
+        return {
+            title: normalizeSearch(ev.title),
+            program: normalizeSearch((ev.program || []).join(' ')),
+            performers: normalizeSearch((ev.performers || []).join(' ')),
+            venue: normalizeSearch([ev.venue, ev.city, ev.hall].filter(Boolean).join(' ')),
+            conductor: normalizeSearch(ev.conductor || ''),
+        };
+    }
+
+    EVENTS = RAW_EVENTS.map(enrichEvent);
+
+    const SEARCH_INDEX = EVENTS.map(ev => {
+        const fields = eventSearchFields(ev);
+        return {
+            ev,
+            fields,
+            text: Object.values(fields).join(' '),
+        };
+    });
+
+    function expandTerm(term) {
+        const normalized = normalizeSearch(term);
+        const aliases = SEARCH_ALIASES[normalized] || [];
+        return Array.from(new Set([normalized, ...aliases.map(normalizeSearch)].filter(Boolean)));
+    }
+
+    function queryTerms(query) {
+        return normalizeSearch(query)
+            .split(' ')
+            .filter(term => term.length > 1 || /^\d+$/.test(term))
+            .map(term => {
+                const alternatives = expandTerm(term);
+                const numericAlias = alternatives.find(value => /^\d+$/.test(value));
+                return {
+                    raw: numericAlias || term,
+                    numeric: Boolean(numericAlias) || /^\d+$/.test(term),
+                    alternatives,
+                };
+            });
+    }
+
+    function includesAny(text, alternatives) {
+        return alternatives.some(term => text.includes(term));
+    }
+
+    function numberMatches(text, number) {
+        const escaped = String(number).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const patterns = [
+            new RegExp(`\\b(nr|no|number|op|opus|kv|bwv|hob) ${escaped}\\b`),
+            new RegExp(`\\b${escaped} (symphonie|sinfonie|symphony|konzert|concerto|quartett|quartet|sonate)\\b`),
+            new RegExp(`\\b(symphonie|sinfonie|symphony|konzert|concerto|quartett|quartet|sonate) (nr |no |number )?${escaped}\\b`),
+        ];
+        return patterns.some(pattern => pattern.test(text));
+    }
+
+    function symphonyNumberMatches(text, number) {
+        const escaped = String(number).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        return new RegExp(`\\b(symphonie|sinfonie|symphony) (nr |no |number )?${escaped}\\b`).test(text) ||
+            new RegExp(`\\b${escaped} (symphonie|sinfonie|symphony)\\b`).test(text);
+    }
+
+    function scoreSearchItem(item, query) {
+        const normalizedQuery = normalizeSearch(query);
+        if (!normalizedQuery) return eventQuality(item.ev);
+
+        const terms = queryTerms(query);
+        if (!terms.length) return eventQuality(item.ev);
+
+        let score = 0;
+        const fieldWeights = [
+            ['title', 34],
+            ['program', 40],
+            ['performers', 22],
+            ['conductor', 18],
+            ['venue', 14],
+        ];
+
+        for (const term of terms) {
+            let matched = false;
+            for (const [field, weight] of fieldWeights) {
+                const fieldText = item.fields[field];
+                const fieldMatched = term.numeric
+                    ? numberMatches(fieldText, term.raw)
+                    : includesAny(fieldText, term.alternatives);
+                if (fieldMatched) {
+                    matched = true;
+                    score += weight;
+                    if (field === 'program') score += 10;
+                }
+            }
+            if (!matched) return 0;
+        }
+
+        if (item.text.includes(normalizedQuery)) score += 60;
+        if (item.fields.title.includes(normalizedQuery)) score += 80;
+        if (item.fields.program.includes(normalizedQuery)) score += 70;
+
+        const hasWorkWord = WORK_WORDS.some(word => item.text.includes(word));
+        const queryHasComposer = terms.some(term =>
+            ['brahms', 'beethoven', 'mahler', 'mozart', 'bach', 'schubert', 'schumann', 'mendelssohn', 'tschaikowsky', 'tchaikovsky', 'dvorak'].includes(term.raw)
+        );
+        const queryHasNumber = terms.some(term => term.numeric);
+        if (queryHasComposer && queryHasNumber && hasWorkWord) score += 55;
+        if (queryHasComposer && queryHasNumber) {
+            const composerTerms = terms
+                .filter(term => !term.numeric)
+                .flatMap(term => term.alternatives);
+            const numberTerms = terms.filter(term => term.numeric).map(term => term.raw);
+            const composerInProgram = composerTerms.some(term => item.fields.program.includes(term));
+            const composerInTitle = composerTerms.some(term => item.fields.title.includes(term));
+            const symphonyNumberInProgram = numberTerms.some(number => symphonyNumberMatches(item.fields.program, number));
+            const symphonyNumberInTitle = numberTerms.some(number => symphonyNumberMatches(item.fields.title, number));
+            if (composerInProgram && symphonyNumberInProgram) score += 180;
+            if (composerInTitle && symphonyNumberInTitle) score += 90;
+        }
+
+        return score + eventQuality(item.ev) * 4;
+    }
+
+    function searchEvents(source, query) {
+        const allowed = new Set(source);
+        return SEARCH_INDEX
+            .filter(item => allowed.has(item.ev))
+            .map(item => ({ ev: item.ev, score: scoreSearchItem(item, query) }))
+            .filter(result => result.score > 0)
+            .sort((a, b) =>
+                b.score - a.score ||
+                a.ev.date.localeCompare(b.ev.date) ||
+                (a.ev.time || '99:99').localeCompare(b.ev.time || '99:99')
+            )
+            .map(result => result.ev);
+    }
+
+    function dateRangeForQuery(query) {
+        const normalized = normalizeSearch(query);
+        if (!normalized.includes('diese woche') && !normalized.includes('this week')) return null;
+        const firstDate = EVENTS.reduce((min, ev) => ev.date < min ? ev.date : min, EVENTS[0]?.date || '2026-05-21');
+        const [year, month, day] = firstDate.split('-').map(Number);
+        const end = new Date(year, month - 1, day + 7);
+        const endIso = [
+            end.getFullYear(),
+            String(end.getMonth() + 1).padStart(2, '0'),
+            String(end.getDate()).padStart(2, '0'),
+        ].join('-');
+        return { start: firstDate, end: endIso };
+    }
+
+    function stripDateShortcut(query) {
+        return query.replace(/diese\s+woche/ig, '').replace(/this\s+week/ig, '').trim();
+    }
+
+    function shortList(items, fallback) {
+        if (!items || !items.length) return fallback;
+        return items.slice(0, 3).map(escapeHtml).join(' · ') + (items.length > 3 ? ' · ...' : '');
+    }
+
+    function programPreview(ev) {
+        const program = (ev.program || []).map(formatProgramEntry);
+        if (ev.mainWork?.label) {
+            const mainIndex = program.findIndex(entry => programEntryMatchesMain(entry, ev.mainWork));
+            if (mainIndex > 0) {
+                const [main] = program.splice(mainIndex, 1);
+                program.unshift(main);
+            }
+        }
+        return shortList(program, escapeHtml(ev.hall || ev.venue));
+    }
+
+    function plainShortList(items, fallback) {
+        if (!items || !items.length) return fallback;
+        return items.slice(0, 4).map(escapeHtml).join(' · ') + (items.length > 4 ? ' · ...' : '');
+    }
+
+    function plainProgramPreview(ev) {
+        const program = (ev.program || []).map(formatProgramEntry);
+        if (ev.mainWork?.label) {
+            const mainIndex = program.findIndex(entry => programEntryMatchesMain(entry, ev.mainWork));
+            if (mainIndex > 0) {
+                const [main] = program.splice(mainIndex, 1);
+                program.unshift(main);
+            }
+        }
+        return plainShortList(program, escapeHtml(ev.hall || ev.venue));
+    }
+
+    function programEntryMatchesMain(entry, mainWork) {
+        const entryText = normalizeSearch(entry);
+        const titleText = normalizeSearch(mainWork?.title || '');
+        const composerText = normalizeSearch(mainWork?.composer || '').split(' ').pop();
+        return Boolean(
+            titleText && entryText.includes(titleText) ||
+            composerText && entryText.includes(composerText) && titleText.split(' ').some(part => part.length > 3 && entryText.includes(part))
+        );
+    }
+
+    function formatProgramEntry(entry) {
+        const raw = String(entry || '').trim();
+        if (!raw.includes(':')) return cleanProgramTitle(raw);
+        const [composerRaw, ...rest] = raw.split(':');
+        const composer = canonicalComposerName(composerRaw.trim());
+        const title = cleanProgramTitle(rest.join(':').trim());
+        return `${composer}: ${title}`;
+    }
+
+    function composerFromProgram(ev) {
+        if (ev.mainWork?.composer) return ev.mainWork.composer;
+        const text = (ev.program && ev.program[0]) || ev.title || ev.venue;
+        const match = String(text).match(/^([^:·-]{3,28})[:·-]/);
+        return match ? canonicalComposerName(match[1].trim()) : ev.city;
+    }
+
+    function badgeFor(ev) {
+        if (ev.program && ev.program.length) return 'Programm';
+        if (ev.performers && ev.performers.length) return 'Besetzung';
+        return ev.city;
+    }
+
+    function eventQuality(ev) {
+        return Number(Boolean(ev.program && ev.program.length)) +
+            Number(Boolean(ev.performers && ev.performers.length)) +
+            Number(Boolean(ev.hall)) +
+            Number(Boolean(ev.conductor));
+    }
+
+    function fivePerVenue() {
+        return VENUES.flatMap(venue => EVENTS
+            .filter(ev => ev.slug === venue.slug)
+            .slice()
+            .sort((a, b) =>
+                eventQuality(b) - eventQuality(a) ||
+                a.date.localeCompare(b.date) ||
+                (a.time || '99:99').localeCompare(b.time || '99:99')
+            )
+            .slice(0, 5)
+        );
+    }
+
+    function getFilteredEvents() {
+        const q = document.getElementById('q').value.trim();
+        const dateRange = dateRangeForQuery(q);
+        const cleanQuery = stripDateShortcut(q);
+        const source = (!showAllEvents && !activeVenue && !q) ? fivePerVenue() : EVENTS;
+        const scoped = source.filter(ev => {
+            if (activeVenue && ev.slug !== activeVenue) return false;
+            if (dateRange && (ev.date < dateRange.start || ev.date > dateRange.end)) return false;
+            return true;
+        });
+        return cleanQuery ? searchEvents(scoped, cleanQuery) : scoped;
+    }
+
+    async function fetchSuggestions(query) {
+        const q = query.trim();
+        if (!q) return [];
+        const seq = ++searchRequestSeq;
+        try {
+            const res = await fetch(`${SEARCH_API}?q=${encodeURIComponent(q)}`);
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const data = await res.json();
+            // Only honour the freshest request — older ones still inflight
+            // when a newer one was issued are discarded.
+            if (seq !== searchRequestSeq) return null;
+            return data.suggestions || [];
+        } catch (err) {
+            if (seq !== searchRequestSeq) return null;
+            console.warn('search failed', err);
+            return [];
+        }
+    }
+
+    function buildEventBackedSuggestions(query, limit = 8) {
+        const composerSuggestions = buildComposerSuggestionsFromEvents(query, 3);
+        const workSuggestions = searchEvents(EVENTS, query)
+            .flatMap(ev => (ev.program || []).map(work => ({ ev, work })))
+            .filter(item => scoreWork(item.work, query) > 0)
+            .slice(0, limit)
+            .map(item => ({
+                kind: 'Werk',
+                label: item.work,
+                sub: `${item.ev.venue} · aktueller Termin`,
+                value: item.work,
+            }));
+        const seen = new Set();
+        return [...composerSuggestions, ...workSuggestions].filter(suggestion => {
+            const key = normalizeSearch(suggestion.value);
+            if (seen.has(key)) return false;
+            seen.add(key);
+            return true;
+        }).slice(0, limit);
+    }
+
+    function buildComposerSuggestionsFromEvents(query, limit = 3) {
+        const composers = new Map();
+        for (const ev of EVENTS) {
+            for (const entry of ev.program || []) {
+                const composer = composerFromWork(entry);
+                if (!composer) continue;
+                const score = scoreComposer(composer, query);
+                if (!score) continue;
+                const key = normalizeSearch(composer);
+                const current = composers.get(key) || { composer, score: 0, count: 0 };
+                current.score = Math.max(current.score, score);
+                current.count += 1;
+                composers.set(key, current);
+            }
+        }
+        return Array.from(composers.values())
+            .sort((a, b) => b.score - a.score || b.count - a.count)
+            .slice(0, limit)
+            .map(item => ({
+                kind: 'Komponist',
+                label: item.composer,
+                sub: `${item.count} aktuelle Termine`,
+                value: item.composer,
+            }));
+    }
+
+    function composerFromWork(work) {
+        const raw = String(work || '').split(':')[0]?.trim();
+        if (!raw || raw.length < 3) return null;
+        if (/^(various|uraufführung|basso continuo|pause)$/i.test(raw)) return null;
+        return canonicalComposerName(raw);
+    }
+
+    function scoreComposer(composer, query) {
+        const normalized = normalizeSearch(composer);
+        const terms = queryTerms(query).filter(term => !term.numeric);
+        if (!terms.length) return 0;
+        let score = 0;
+        for (const term of terms) {
+            if (!includesAny(normalized, term.alternatives)) return 0;
+            score += 50;
+        }
+        if (normalized.split(' ').some(part => part.startsWith(normalizeSearch(query)))) score += 70;
+        if (Object.values(COMPOSER_DISPLAY_NAMES).some(name => normalizeSearch(name) === normalized)) score += 90;
+        return score;
+    }
+
+    function buildComposerSuggestions(query, limit = 5) {
+        if (!KLASSIKA_COMPOSERS.length) return [];
+        const qNorm = normalizeSearch(query);
+        if (!qNorm) return [];
+        const qTerms = qNorm.split(' ').filter(Boolean);
+        if (!qTerms.length) return [];
+
+        const scored = [];
+        for (const c of KLASSIKA_COMPOSERS) {
+            const slug = c.slug;
+            let score = 0;
+            let allMatched = true;
+            for (const term of qTerms) {
+                if (!slug.includes(term)) { allMatched = false; break; }
+                score += 30;
+                const parts = slug.split(' ');
+                if (parts.some(p => p.startsWith(term))) score += 20;
+                if (parts.some(p => p === term)) score += 35;
+            }
+            if (!allMatched) continue;
+            if (slug === qNorm) score += 200;
+            else if (slug.startsWith(qNorm)) score += 80;
+            else if (slug.split(' ').pop().startsWith(qNorm)) score += 60;
+
+            // Relevance boost: current events dominate, works count is a
+            // secondary signal (capped so sheer prolificness doesn't overwhelm
+            // close name matches).
+            const events = eventCountFor(c.name);
+            score += events * 1000;
+            score += Math.min(c.works || 0, 500);
+            scored.push({ c, score, eventCount: events });
+        }
+
+        return scored
+            .sort((a, b) => b.score - a.score || a.c.name.localeCompare(b.c.name))
+            .slice(0, limit)
+            .map(({ c, eventCount: events }) => {
+                const sub = events
+                    ? `${events.toLocaleString('de-DE')} ${events === 1 ? 'aktueller Termin' : 'aktuelle Termine'}`
+                    : `0 aktuelle Termine · Benachrichtigung einrichten`;
+                return {
+                    kind: 'Komponist',
+                    label: c.name,
+                    sub,
+                    value: c.name,
+                    eventCount: events,
+                    composerSlug: c.slug,
+                };
+            });
+    }
+
+    function scoreWork(work, query) {
+        const normalized = normalizeSearch(work);
+        const terms = queryTerms(query);
+        if (!terms.length) return 0;
+        const workComposer = composerFromWork(work);
+        const queryComposer = composerQueryFor(query);
+        const queryComposerTerms = composerQueryTerms(query);
+        const composerMatches = queryComposer && workComposer &&
+            normalizeSearch(canonicalComposerName(workComposer)) === normalizeSearch(queryComposer);
+        let score = 0;
+        for (const term of terms) {
+            const matched = term.numeric
+                ? numberMatches(normalized, term.raw)
+                : includesAny(normalized, term.alternatives) ||
+                    (composerMatches && queryComposerTerms.has(term.raw));
+            if (!matched) return 0;
+            score += term.numeric ? 32 : 24;
+        }
+        if (composerMatches) score += 120;
+        const numberTerm = terms.find(term => term.numeric);
+        if (numberTerm && symphonyNumberMatches(normalized, numberTerm.raw)) score += 90;
+        if (WORK_WORDS.some(word => normalized.includes(word))) score += 24;
+        return score;
+    }
+
+    function buildWorkSuggestions(query, limit = 8) {
+        const terms = queryTerms(query);
+        const queryComposer = composerQueryFor(query);
+        return KLASSIKA_WORKS
+            .map(work => ({ work, score: scoreCatalogWork(work, query, terms, queryComposer) }))
+            .filter(item => item.score > 0)
+            .sort((a, b) =>
+                (b.work.eventUrls || []).length - (a.work.eventUrls || []).length ||
+                b.score - a.score ||
+                a.work.label.localeCompare(b.work.label)
+            )
+            .slice(0, limit)
+            .map(item => {
+                const eventCount = (item.work.eventUrls || []).length;
+                const rawGenre = (item.work.genre || '').trim();
+                const genre = (!rawGenre || rawGenre.toLowerCase() === 'crawl') ? '' : rawGenre;
+                const eventLabel = eventCount
+                    ? `${eventCount} ${eventCount === 1 ? 'aktueller Termin' : 'aktuelle Termine'}`
+                    : `0 aktuelle Termine · Benachrichtigung einrichten`;
+                const sub = genre ? `${eventLabel} · ${genre}` : eventLabel;
+                return {
+                    kind: 'Werk',
+                    label: item.work.label,
+                    sub,
+                    value: item.work.label,
+                    workId: item.work.id,
+                    workLabel: item.work.label,
+                    workComposer: item.work.composer || '',
+                    eventCount,
+                };
+            });
+    }
+
+    function scoreCatalogWork(work, query, preparedTerms = null, preparedComposer = undefined) {
+        const haystack = `${work.search || ''} ${normalizeSearch(work.label)}`;
+        const terms = preparedTerms || queryTerms(query);
+        if (!terms.length) return 0;
+        const queryComposer = preparedComposer === undefined ? composerQueryFor(query) : preparedComposer;
+        let score = 0;
+        for (const term of terms) {
+            const matched = term.numeric
+                ? numberMatches(haystack, term.raw)
+                : includesAny(haystack, term.alternatives) ||
+                    (queryComposer && normalizeSearch(work.composer) === normalizeSearch(queryComposer));
+            if (!matched) return 0;
+            score += term.numeric ? 40 : 26;
+        }
+        if (queryComposer && normalizeSearch(work.composer) === normalizeSearch(queryComposer)) score += 120;
+        const numberTerm = terms.find(term => term.numeric);
+        if (numberTerm && symphonyNumberMatches(haystack, numberTerm.raw)) score += 100;
+        if ((work.eventUrls || []).length) score += 45;
+        return score;
+    }
+
+    function renderSuggestions() {
+        const q = document.getElementById('q').value;
+        if (!q.trim()) {
+            currentSuggestions = [];
+            renderSuggestionsDOM();
+            return;
+        }
+        if (searchDebounceTimer) clearTimeout(searchDebounceTimer);
+        searchDebounceTimer = setTimeout(async () => {
+            const result = await fetchSuggestions(q);
+            if (result === null) return; // superseded
+            currentSuggestions = result;
+            activeSuggestion = Math.min(activeSuggestion, currentSuggestions.length - 1);
+            renderSuggestionsDOM();
+        }, 120);
+    }
+
+    function renderSuggestionsDOM() {
+        const el = document.getElementById('suggestions');
+        if (!currentSuggestions.length) {
+            el.classList.remove('is-open');
+            document.getElementById('hero').classList.remove('suggestions-open');
+            el.innerHTML = '';
+            return;
+        }
+        el.innerHTML = currentSuggestions.map((suggestion, index) => `
+            <button type="button" class="suggestion ${index === activeSuggestion ? 'is-active' : ''}" role="option" onclick="chooseSuggestion(${index}, { search: true })">
+                <span class="suggestion-kind">${escapeHtml(suggestion.kind)}</span>
+                <span class="suggestion-main">${escapeHtml(suggestion.label)}</span>
+                <span class="suggestion-sub">${escapeHtml(suggestion.sub)}</span>
+            </button>
+        `).join('');
+        el.classList.add('is-open');
+    }
+
+    function chooseSuggestion(index, options = {}) {
+        const suggestion = currentSuggestions[index];
+        if (!suggestion) return;
+        if (suggestion.kind === 'Komponist' && suggestion.eventCount === 0) {
+            window.location.href = `./notify.html?composer=${encodeURIComponent(suggestion.value)}`;
+            return;
+        }
+        if (suggestion.kind === 'Werk' && suggestion.eventCount === 0) {
+            const params = new URLSearchParams({ work: suggestion.workLabel || suggestion.value });
+            if (suggestion.workComposer) params.set('composer', suggestion.workComposer);
+            window.location.href = `./notify.html?${params.toString()}`;
+            return;
+        }
+        document.getElementById('q').value = suggestion.value;
+        document.getElementById('suggestions').classList.remove('is-open');
+        document.getElementById('hero').classList.remove('suggestions-open');
+        activeSuggestion = -1;
+        activeVenue = null;
+        showAllEvents = true;
+        visibleLimit = 65;
+        if (options.search) {
+            doSearch();
+        } else {
+            renderSuggestions();
+        }
+    }
+
+    function acceptSuggestion(index, options = {}) {
+        const suggestion = currentSuggestions[index];
+        if (!suggestion) return;
+        const input = document.getElementById('q');
+        input.value = suggestion.value + (options.appendSpace ? ' ' : '');
+        input.focus();
+        input.setSelectionRange(input.value.length, input.value.length);
+        activeSuggestion = -1;
+        renderSuggestions();
+    }
+
+    function renderSearchResults(query) {
+        const results = searchEvents(EVENTS, query);
+        document.body.classList.add('is-results');
+        document.title = `${query} — Nachtmusik`;
+        document.getElementById('q').value = query;
+        document.getElementById('search-title').textContent = `Suche: ${query}`;
+        document.getElementById('search-count').textContent = `${results.length.toLocaleString('de-DE')} passende Konzerte`;
+        document.getElementById('results-list').innerHTML = results.length
+            ? results.map(ev => `
+                <a class="result-row" href="${escapeHtml(ev.url)}" target="_blank" rel="noopener">
+                    <div>
+                        <div class="result-date">${formatDate(ev.date)}</div>
+                        <div class="result-time">${escapeHtml(ev.time || 'Uhrzeit offen')}</div>
+                    </div>
+                    <div>
+                        <div class="result-title">${escapeHtml(ev.title)}</div>
+                        <div class="result-program">${plainProgramPreview(ev)}</div>
+                    </div>
+                    <div class="result-venue">
+                        <strong>${escapeHtml(ev.venue)}</strong>
+                        ${escapeHtml(ev.city)}${ev.hall ? ` · ${escapeHtml(ev.hall)}` : ''}
+                    </div>
+                </a>
+            `).join('')
+            : `<div class="empty-state">
+                <strong>Keine aktuellen Konzerte gefunden.</strong>
+                <a class="notify-soon" href="./notify.html?q=${encodeURIComponent(query)}">🔔 Benachrichtigen lassen</a>
+                <span class="notify-note">Wir melden uns, sobald ein passender Termin angekündigt wird.</span>
+            </div>`;
+    }
+
+    function renderStartPage() {
+        document.body.classList.remove('is-results');
+        document.title = 'nachtmusik — klassische Konzerte entdecken';
+        renderGrid();
+        renderVenues();
+    }
 
     function renderGrid() {
         const grid = document.getElementById('grid');
-        grid.innerHTML = EVENTS.map(ev => `
-            <article class="tile">
+        const filtered = getFilteredEvents();
+        const shown = filtered.slice(0, visibleLimit);
+        document.getElementById('results-title').textContent =
+            activeVenue
+                ? `${VENUES.find(v => v.slug === activeVenue)?.name || 'Haus'} · ${filtered.length} Events`
+                : showAllEvents
+                    ? `Alle Events · ${filtered.length} Events`
+                    : 'Nachtmusik Picks';
+        grid.innerHTML = shown.map(ev => `
+            <article class="tile" onclick="window.open('${escapeHtml(ev.url)}', '_blank', 'noopener')">
                 <div class="tile-cover">
-                    <div class="badge-tile">${ev.badge}</div>
-                    <div class="composer">${ev.composer}</div>
-                    <div class="price">${ev.price}</div>
+                    <div class="badge-tile">${badgeFor(ev)}</div>
+                    <div class="composer">${escapeHtml(composerFromProgram(ev))}</div>
+                    <div class="price">${escapeHtml(ev.city)}</div>
                 </div>
                 <div class="tile-body">
                     <div class="tile-meta">
-                        <span>${ev.date}</span>
-                        <span class="sep"></span>
-                        <span>${ev.time}</span>
-                        <span class="sep"></span>
-                        <span>${ev.city}</span>
+                        <span class="meta-date">${formatDate(ev.date)}</span>
+                        <span class="meta-time">${ev.time || 'Uhrzeit offen'}</span>
+                        <span class="meta-venue">${escapeHtml(ev.venue)}</span>
                     </div>
-                    <div class="tile-title">${ev.title}</div>
-                    <div class="tile-prog">${ev.program}</div>
+                    <div class="tile-title">${escapeHtml(ev.title)}</div>
+                    <div class="tile-prog">${programPreview(ev)}</div>
                     <div class="tile-perf">
-                        <strong>${ev.performers}</strong>${ev.conductor ? ` · Ltg. ${ev.conductor}` : ''}
+                        <strong>${shortList(ev.performers, 'Besetzung offen')}</strong>${ev.conductor ? ` · Ltg. ${escapeHtml(ev.conductor)}` : ''}
                     </div>
                 </div>
             </article>
         `).join('');
+        if (!shown.length) {
+            grid.innerHTML = `<div class="empty-state">Keine passenden Events gefunden.</div>`;
+        }
     }
 
     function renderVenues() {
         const el = document.getElementById('venues');
         el.innerHTML = VENUES.map(v => `
-            <a class="venue-chip" href="#">
-                <div class="v-city">${v.city}</div>
-                <div class="v-name">${v.name}</div>
+            <a class="venue-chip ${activeVenue === v.slug ? 'is-active' : ''}" href="#" onclick="filterVenue('${v.slug}'); return false;">
+                <div class="v-city">${escapeHtml(v.city)} · ${v.count}</div>
+                <div class="v-name">${escapeHtml(v.name)}</div>
             </a>
         `).join('');
     }
@@ -788,15 +1976,118 @@
     function setQuery(q) {
         document.getElementById('q').value = q;
         document.getElementById('q').focus();
+        document.getElementById('suggestions').classList.remove('is-open');
+        doSearch();
     }
 
     function doSearch() {
+        document.getElementById('suggestions').classList.remove('is-open');
+        document.getElementById('hero').classList.remove('suggestions-open');
         const q = document.getElementById('q').value.trim();
-        if (q) console.log('search:', q);
+        if (!q) return;
+        window.location.href = `./home.html?q=${encodeURIComponent(q)}`;
     }
 
-    renderGrid();
-    renderVenues();
+    function filterVenue(slug) {
+        activeVenue = activeVenue === slug ? null : slug;
+        showAllEvents = true;
+        visibleLimit = 65;
+        renderGrid();
+        renderVenues();
+        document.getElementById('grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    document.getElementById('q').addEventListener('input', () => {
+        activeSuggestion = -1;
+        updateClearButton();
+        renderSuggestions();
+    });
+
+    function updateClearButton() {
+        const btn = document.getElementById('clear-q');
+        if (!btn) return;
+        btn.hidden = !document.getElementById('q').value;
+    }
+
+    document.getElementById('clear-q').addEventListener('click', () => {
+        const input = document.getElementById('q');
+        input.value = '';
+        updateClearButton();
+        activeSuggestion = -1;
+        renderSuggestions();
+        input.focus();
+    });
+    updateClearButton();
+    const mobileSearchMQ = window.matchMedia('(max-width: 640px)');
+    document.getElementById('q').addEventListener('focus', () => {
+        if (mobileSearchMQ.matches) {
+            document.body.classList.add('is-searching-mobile');
+            // Scroll the searchbox to the top of the viewport so the keyboard
+            // doesn't push suggestions out of sight.
+            requestAnimationFrame(() => {
+                const box = document.querySelector('.searchbox');
+                if (box) box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        }
+        renderSuggestions();
+    });
+    document.getElementById('q').addEventListener('blur', () => {
+        setTimeout(() => {
+            document.getElementById('suggestions').classList.remove('is-open');
+            document.getElementById('hero').classList.remove('suggestions-open');
+            document.body.classList.remove('is-searching-mobile');
+        }, 120);
+    });
+    document.getElementById('q').addEventListener('keydown', event => {
+        if (!currentSuggestions.length) return;
+        if (event.key === 'ArrowDown') {
+            event.preventDefault();
+            activeSuggestion = (activeSuggestion + 1) % currentSuggestions.length;
+            renderSuggestionsDOM();
+        }
+        if (event.key === 'ArrowUp') {
+            event.preventDefault();
+            activeSuggestion = (activeSuggestion - 1 + currentSuggestions.length) % currentSuggestions.length;
+            renderSuggestionsDOM();
+        }
+        if (event.key === 'Enter' && activeSuggestion >= 0) {
+            event.preventDefault();
+            chooseSuggestion(activeSuggestion, { search: true });
+        }
+        if (event.key === ' ' && activeSuggestion >= 0) {
+            event.preventDefault();
+            acceptSuggestion(activeSuggestion, { appendSpace: true });
+        }
+        if (event.key === 'Escape') {
+            event.preventDefault();
+            const input = document.getElementById('q');
+            document.getElementById('suggestions').classList.remove('is-open');
+            document.getElementById('hero').classList.remove('suggestions-open');
+            document.body.classList.remove('is-searching-mobile');
+            input.blur();
+        }
+    });
+    document.getElementById('show-all').addEventListener('click', event => {
+        event.preventDefault();
+        showAllEvents = true;
+        visibleLimit = EVENTS.length;
+        renderGrid();
+    });
+    document.getElementById('event-count').textContent = EVENTS.length.toLocaleString('de-DE');
+    document.getElementById('venue-count').textContent = VENUES.length.toLocaleString('de-DE');
+    const initialQuery = new URLSearchParams(window.location.search).get('q');
+    if (initialQuery) {
+        renderSearchResults(initialQuery);
+    } else {
+        renderStartPage();
+    }
+
+    // Warm up the search function so the first keystroke isn't a cold start.
+    if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(() => fetch('/api/search?q=').catch(() => {}), { timeout: 3500 });
+    } else {
+        window.setTimeout(() => fetch('/api/search?q=').catch(() => {}), 1800);
+    }
 </script>
 </body>
 </html>
