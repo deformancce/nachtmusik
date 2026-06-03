@@ -1,6 +1,12 @@
 # op.us
 
-Find classical music live — search composers, works, and upcoming concerts.
+Find classical music live.
+
+op.us is a search interface for classical concerts in Germany. It combines venue
+scrapers, structured repertoire data, and a fast search frontend so listeners can
+look up composers, works, and upcoming performances in one place.
+
+Live site: [nachtmusik.netlify.app](https://nachtmusik.netlify.app)
 
 ## Project Structure
 
