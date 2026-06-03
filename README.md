@@ -1,8 +1,8 @@
-# op.us
+# nachtmusik
 
 Find classical music live.
 
-op.us is a search interface for classical concerts in Germany. It combines venue
+nachtmusik is a search interface for classical concerts in Germany. It combines venue
 scrapers, structured repertoire data, and a fast search frontend so listeners can
 look up composers, works, and upcoming performances in one place.
 
@@ -11,7 +11,7 @@ Live site: [nachtmusik.netlify.app](https://nachtmusik.netlify.app)
 ## Project Structure
 
 ```
-op.us/
+nachtmusik/
 ├── backend/
 │   ├── app.py                          # FastAPI server (smart search)
 │   ├── requirements.txt
