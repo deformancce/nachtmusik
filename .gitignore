@@ -19,7 +19,12 @@ backend/*.html
 
 # Environment
 .env
-.env.local
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
 
 # OS
 .DS_Store
@@ -28,12 +33,14 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+.claude/
 *.swp
 
 # Node
 node_modules/
 dist/
 .netlify/
+frontend/portfolio/
 *.log
 
 # Playwright
